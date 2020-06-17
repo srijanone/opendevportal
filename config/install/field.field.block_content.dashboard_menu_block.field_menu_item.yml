@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dashboard_menu_block
+    - field.storage.block_content.field_menu_item
+    - paragraphs.paragraphs_type.menu_list
+  module:
+    - entity_reference_revisions
+id: block_content.dashboard_menu_block.field_menu_item
+field_name: field_menu_item
+entity_type: block_content
+bundle: dashboard_menu_block
+label: 'Menu Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      menu_list: menu_list
+    target_bundles_drag_drop:
+      menu_list:
+        enabled: true
+        weight: 3
+      product_paragraph:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

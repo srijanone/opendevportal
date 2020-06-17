@@ -1,0 +1,141 @@
+name: Openapi API Exchange
+type: profile
+description: 'A plug and play distribution for Developer Portals.'
+version: VERSION
+core: 8.x
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed
+# automatically.
+install:
+ - address
+ - admin_toolbar
+ - allowed_formats
+ - automated_cron
+ - big_pipe
+ - block
+ - block_content
+ - block_type_templates
+ - breakpoint
+ - ckeditor
+ - codesnippet
+ - color
+ - comment
+ - config
+ - config_filter
+ - config_ignore
+ - contact
+ - content_moderation
+ - contextual
+ - ctools
+ - datetime
+ - dblog
+ - developer_portal_api
+ - developer_portal_api_listing_block
+ - developer_portal_block
+ - developer_portal_breadcrumb
+ - developer_portal_connector
+ - developer_portal_content
+ - developer_portal_content_reference
+ - developer_portal_menu
+ - developer_portal_navigation_block
+ - developer_portal_organisation
+ - developer_portal_taxonomy
+ - developer_portal_user
+ - dynamic_page_cache
+ - easy_breadcrumb
+ - editor
+ - entity_reference_revisions
+ - field
+ - field_group
+ - field_permissions
+ - field_ui
+ - file
+ - filter
+ - fivestar
+ - formtips
+ - help
+ - history
+ - hook_post_action
+ - icon_select
+ - image
+ - jsonapi
+ - jsonapi_defaults
+ - jsonapi_extras
+ - kint
+ - layout_builder
+ - layout_discovery
+ - link
+ - markdown
+ - media
+ - media_library
+ - menu_per_role
+ - menu_token
+ - menu_ui
+ - metatag
+ - node
+ - openapi
+ - openapi_jsonapi
+ - openapi_ui
+ - openapi_ui_redoc
+ - openapi_ui_swagger
+ - options
+ - page_cache
+ - path
+ - path_alias
+ - permissions_by_term
+ - quickedit
+ - rdf
+ - redoc_field_formatter
+ - rest
+ - restui
+ - schemata
+ - schemata_json_schema
+ - search
+ - serialization
+ - shortcut
+ - social_api
+ - social_auth
+ - social_auth_github
+ - social_auth_google
+ - social_media
+ - social_media_links
+ - svg_image
+ - swagger_ui_formatter
+ - system
+ - taxonomy
+ - text
+ - textfield_counter
+ - token
+ - toolbar
+ - tour
+ - twitter_block
+ - update
+ - user
+ - views_ui
+ - votingapi
+ - workflows
+ - ds
+ - forum
+ - menu_link_content
+ - pathauto
+ - views
+ - paragraphs
+ - login_redirect_per_role
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+ - node
+ - block
+ - views
+
+# List any themes that should be installed as part of the profile installation.
+# Note that this will not set any theme as the default theme.
+themes:
+  - stable
+  - classy
+  - seven
+  - bootstrap_barrio
+  - devportal
+  - adminimal_theme
+  - devportal_admin

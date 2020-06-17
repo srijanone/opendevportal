@@ -1,0 +1,42 @@
+login:
+  authenticated:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  administrator:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  product_manager:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  admin:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  developer:
+    redirect_url: /dashboard
+    weight: 0
+    allow_destination: false
+logout:
+  authenticated:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  administrator:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  product_manager:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  admin:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false
+  developer:
+    redirect_url: ''
+    weight: 0
+    allow_destination: false

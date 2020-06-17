@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:dashboard_block:dcce02ba-f265-44f7-8630-a4da3e41996c'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - devportal
+id: developerdashboardlisting
+theme: devportal
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:dcce02ba-f265-44f7-8630-a4da3e41996c'
+settings:
+  id: 'block_content:dcce02ba-f265-44f7-8630-a4da3e41996c'
+  label: 'Developer Dashboard Listing'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: default
+visibility:
+  request_path:
+    id: request_path
+    pages: /dashboard
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      developer: developer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

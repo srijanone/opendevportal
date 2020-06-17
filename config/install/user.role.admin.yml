@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: admin
+label: Admin
+weight: 4
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer permissions'
+  - 'create terms in organisation'
+  - 'view field_client_id'
+  - 'view own field_client_id'

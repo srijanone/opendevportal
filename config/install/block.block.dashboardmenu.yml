@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dashboard-menu
+  module:
+    - system
+    - user
+  theme:
+    - devportal
+id: dashboardmenu
+theme: devportal
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:dashboard-menu'
+settings:
+  id: 'system_menu_block:dashboard-menu'
+  label: Dashboard
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      product_manager: product_manager
+      developer: developer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: "/apimanager/*\r\n/appmanager/*"
+    negate: false
+    context_mapping: {  }

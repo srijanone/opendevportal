@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: gallery_slider_image
+label: gallery-slider-image
+effects:
+  f92cd0cc-fb98-4796-9a50-7ffb4f0f4bd7:
+    uuid: f92cd0cc-fb98-4796-9a50-7ffb4f0f4bd7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1140
+      height: 642
+      anchor: center-center

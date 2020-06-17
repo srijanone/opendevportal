@@ -1,0 +1,140 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.document_overview.comment
+    - field.field.node.document_overview.field_api_detail_section
+    - field.field.node.document_overview.field_api_product
+    - field.field.node.document_overview.field_banners_image
+    - field.field.node.document_overview.field_description
+    - field.field.node.document_overview.field_listing_image
+    - field.field.node.document_overview.field_organisation
+    - field.field.node.document_overview.field_tags
+    - field.field.node.document_overview.field_user_rating
+    - field.field.node.document_overview.layout_builder__layout
+    - node.type.document_overview
+  module:
+    - ds
+    - entity_reference_revisions
+    - layout_builder
+    - social_media
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          9fa096d0-9f9e-4111-a0d1-96185de4a91a:
+            uuid: 9fa096d0-9f9e-4111-a0d1-96185de4a91a
+            region: ds_content
+            configuration:
+              id: 'field_block:node:document_overview:field_description'
+              label: 'Page Summary'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          ea9bf541-3982-4357-a9d3-ac6c927ff322:
+            uuid: ea9bf541-3982-4357-a9d3-ac6c927ff322
+            region: ds_content
+            configuration:
+              id: 'field_block:node:document_overview:field_api_detail_section'
+              label: 'Overview Section'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  ds:
+                    ds_limit: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          e16a3728-2348-44b6-b8e6-a256792ff320:
+            uuid: e16a3728-2348-44b6-b8e6-a256792ff320
+            region: ds_content
+            configuration:
+              id: social_sharing_block
+              label: 'Social Sharing block'
+              provider: social_media
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+id: node.document_overview.full
+targetEntityType: node
+bundle: document_overview
+mode: full
+content:
+  field_api_detail_section:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_banners_image:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_entity_id
+    region: content
+  field_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_tags:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  comment: true
+  field_api_product: true
+  field_listing_image: true
+  field_organisation: true
+  field_user_rating: true
+  layout_builder__layout: true

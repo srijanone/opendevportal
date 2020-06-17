@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.api_document
+    - node.type.apps
+  module:
+    - content_moderation
+id: approval_workflow
+label: 'Approval Workflow'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      published: false
+      default_revision: false
+      label: Inactive
+      weight: -2
+    pending_for_approval:
+      published: false
+      default_revision: false
+      label: 'Submitted for Approval'
+      weight: -1
+    published:
+      published: true
+      default_revision: true
+      label: Active
+      weight: 0
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: -2
+      from:
+        - draft
+        - pending_for_approval
+        - published
+    pending_approval:
+      label: 'Submitted for approval'
+      from:
+        - draft
+      to: pending_for_approval
+      weight: -1
+    publish:
+      label: Publish
+      to: published
+      weight: 0
+      from:
+        - draft
+        - pending_for_approval
+        - published
+  entity_types:
+    node:
+      - api_document
+      - apps
+  default_moderation_state: draft

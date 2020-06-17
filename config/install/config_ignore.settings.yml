@@ -1,0 +1,6 @@
+ignored_config_entities:
+  - social_auth_github.settings
+  - developer_portal_connector.settings
+  - block.block.dashboardnavigationblock
+  - block.block.product_api
+  - block.block.*

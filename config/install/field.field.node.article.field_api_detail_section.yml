@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_detail_section
+    - node.type.article
+    - paragraphs.paragraphs_type.product_paragraph
+  module:
+    - entity_reference_revisions
+id: node.article.field_api_detail_section
+field_name: field_api_detail_section
+entity_type: node
+bundle: article
+label: 'Article Section'
+description: 'Use this field to add sections in article content.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      product_paragraph: product_paragraph
+    target_bundles_drag_drop:
+      product_paragraph:
+        enabled: true
+        weight: 2
+      dashboard_listing:
+        weight: 5
+        enabled: false
+      menu_list:
+        weight: 6
+        enabled: false
+      slider_details:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

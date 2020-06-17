@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.getting_curious
+    - field.storage.block_content.field_sign_up
+  module:
+    - link
+id: block_content.getting_curious.field_sign_up
+field_name: field_sign_up
+entity_type: block_content
+bundle: getting_curious
+label: 'Sign Up'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 1
+field_type: link

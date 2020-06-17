@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - developer_portal_navigation_block
+    - system
+    - user
+  theme:
+    - devportal
+id: dashboardnavigationblock
+theme: devportal
+region: sidebar_first
+weight: 0
+provider: null
+plugin: dashboard_navigation_block
+settings:
+  id: dashboard_navigation_block
+  label: 'Dashboard Navigation Block'
+  provider: developer_portal_navigation_block
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/dashboard/contents/*'
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      product_manager: product_manager
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

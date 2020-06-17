@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: main-dashboard-navigation
+label: 'Main Dashboard Navigation'
+description: 'Main navigation menu for the user dashboard'
+locked: false

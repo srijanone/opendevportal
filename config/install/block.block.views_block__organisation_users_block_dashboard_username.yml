@@ -1,0 +1,32 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.organisation_users
+  module:
+    - user
+    - views
+  theme:
+    - devportal
+id: views_block__organisation_users_block_dashboard_username
+theme: devportal
+region: primary_menu
+weight: -11
+provider: null
+plugin: 'views_block:organisation_users-block_dashboard_username'
+settings:
+  id: 'views_block:organisation_users-block_dashboard_username'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      product_manager: product_manager
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

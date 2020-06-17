@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.use_cases
+id: node.use_cases.title
+field_name: title
+entity_type: node
+bundle: use_cases
+label: 'Use Case Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

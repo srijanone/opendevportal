@@ -1,0 +1,15 @@
+formtips_trigger_action: hover
+formtips_hoverintent: 1
+formtips_timeout: 1000
+formtips_interval: 500
+formtips_sensitivity: 3
+formtips_max_width: 500px
+formtips_selectors: ''
+formtips_themes:
+  classy: classy
+  seven: seven
+  stable: stable
+  adminimal_theme: adminimal_theme
+  bootstrap_barrio: bootstrap_barrio
+  devportal: devportal
+  devportal_admin: devportal_admin

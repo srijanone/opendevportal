@@ -1,0 +1,191 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
+    - field.field.node.issues.body
+    - field.field.node.issues.comment
+    - field.field.node.issues.field_api_product
+    - field.field.node.issues.field_attach_file
+    - field.field.node.issues.field_organisation
+    - field.field.node.issues.field_status
+    - field.field.node.issues.field_type
+    - field.field.node.issues.field_user_rating
+    - field.field.node.issues.layout_builder__layout
+    - node.type.issues
+  module:
+    - comment
+    - ds
+    - file
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          0f87d545-3fc9-4d4d-a474-7145c6c0bda3:
+            uuid: 0f87d545-3fc9-4d4d-a474-7145c6c0bda3
+            region: ds_content
+            configuration:
+              id: 'field_block:node:issues:body'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          42b92d5d-0a01-43a1-8541-e5c09610a812:
+            uuid: 42b92d5d-0a01-43a1-8541-e5c09610a812
+            region: ds_content
+            configuration:
+              id: 'field_block:node:issues:field_attach_file'
+              label: 'Attach File'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: file_default
+                settings:
+                  use_description_as_link_text: true
+                third_party_settings:
+                  ds:
+                    ds_limit: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+          65eb1b57-aa4b-496a-9753-2f817021b91a:
+            uuid: 65eb1b57-aa4b-496a-9753-2f817021b91a
+            region: ds_content
+            configuration:
+              id: 'field_block:node:issues:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -7
+          32e61a46-261a-46b4-88ef-19a8850cf993:
+            uuid: 32e61a46-261a-46b4-88ef-19a8850cf993
+            region: ds_content
+            configuration:
+              id: 'field_block:node:issues:field_user_rating'
+              label: 'User Rating'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: fivestar_stars
+                settings:
+                  fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+                  display_format: average
+                  text_format: average
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+        third_party_settings: {  }
+id: node.issues.full
+targetEntityType: node
+bundle: issues
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment:
+    weight: 7
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_api_product:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_attach_file:
+    weight: 2
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_organisation:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_status:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_type:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_user_rating: true
+  layout_builder__layout: true

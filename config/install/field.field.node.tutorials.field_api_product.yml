@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_product
+    - node.type.api_product
+    - node.type.tutorials
+id: node.tutorials.field_api_product
+field_name: field_api_product
+entity_type: node
+bundle: tutorials
+label: 'Api Product'
+description: 'Add a reference to API Product.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      api_product: api_product
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

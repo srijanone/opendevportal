@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.getting_curious
+    - field.field.block_content.getting_curious.body
+    - field.field.block_content.getting_curious.field_have_an_account_login
+    - field.field.block_content.getting_curious.field_sign_up
+  module:
+    - link
+    - text
+id: block_content.getting_curious.default
+targetEntityType: block_content
+bundle: getting_curious
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_have_an_account_login:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_sign_up:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

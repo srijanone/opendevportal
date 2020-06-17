@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_listing
+label: 'Dashboard Listing'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph is used to add multiple listings.'
+behavior_plugins: {  }

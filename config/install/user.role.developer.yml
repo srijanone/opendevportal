@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies: {  }
+id: developer
+label: Developer
+weight: 5
+is_admin: null
+permissions:
+  - 'administer user display'
+  - 'create apps content'
+  - 'create field_user_rating'
+  - 'create image media'
+  - 'create issues content'
+  - 'create media'
+  - 'delete own apps content'
+  - 'edit any issues content'
+  - 'edit own apps content'
+  - 'edit own field_user_rating'
+  - 'edit own image media'
+  - 'update media'
+  - 'use approval_workflow transition create_new_draft'
+  - 'use approval_workflow transition pending_approval'
+  - 'view any unpublished content'
+  - 'view field_client_secret'
+  - 'view field_organisation'
+  - 'view latest version'
+  - 'view media'
+  - 'view own field_client_id'
+  - 'view own field_client_secret'
+  - 'view own field_organisation'
+  - 'view own unpublished content'
+  - 'view own unpublished media'

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assets_category
+    - node.type.assets
+    - taxonomy.vocabulary.assets_category
+id: node.assets.field_assets_category
+field_name: field_assets_category
+entity_type: node
+bundle: assets
+label: 'Assets Category'
+description: 'Use to add a reference to the assets category.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      assets_category: assets_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
