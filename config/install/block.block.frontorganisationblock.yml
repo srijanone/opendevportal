@@ -2,7 +2,7 @@ langcode: en
 status: false
 dependencies:
   module:
-    - developer_portal_organisation
+    - opendevx_organisation
     - user
   theme:
     - devportal
@@ -15,7 +15,7 @@ plugin: front_organisation_block
 settings:
   id: front_organisation_block
   label: 'Front Organisation Block'
-  provider: developer_portal_organisation
+  provider: opendevx_organisation
   label_display: '0'
   organisation_title: 'Select your organisation'
   organisation_description: "<p>By default, the dashboard displays content that is available for your default Organisation. However, the dashboard may show content for an organisation different from the one selected by default. Please select the Organisation for which you want to view the content.</p>\r\n"

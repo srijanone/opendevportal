@@ -15,7 +15,7 @@ dependencies:
     - node.type.api_document
     - views.view.api_document_formatter
   module:
-    - developer_portal_rapidoc_formatter
+    - opendevx_rapidoc_formatter
     - ds
     - layout_builder
     - swagger_ui_formatter
@@ -72,7 +72,7 @@ third_party_settings:
             configuration:
               id: api_formatter_option_block
               label: 'API DISPLAY VIEWER'
-              provider: developer_portal_rapidoc_formatter
+              provider: opendevx_rapidoc_formatter
               label_display: visible
               context_mapping: {  }
             additional: {  }

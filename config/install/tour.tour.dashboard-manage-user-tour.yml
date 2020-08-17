@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_user
+    - opendevx_user
 id: dashboard-manage-user-tour
 label: 'Dashboard Manage User Tour'
-module: developer_portal_user
+module: opendevx_user
 routes:
   -
     route_name: view.organisation_users.page_dashboard_users

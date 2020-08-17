@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_api_listing_block
+    - opendevx_api_listing_block
 id: dashboard-manage-block-tour
 label: 'Dashboard Manage Block Tour'
-module: developer_portal_api_listing_block
+module: opendevx_api_listing_block
 routes:
   -
     route_name: view.block_content.page_2

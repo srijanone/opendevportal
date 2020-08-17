@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_content
+    - opendevx_content
 id: dashboard-product-tour
 label: 'Dashboard Product Tour'
-module: developer_portal_content
+module: opendevx_content
 routes:
   -
     route_name: view.dashboard_listing.page_product_management

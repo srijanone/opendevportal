@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_content
+    - opendevx_content
 id: dashboard-manage-content-tour
 label: 'Dashboard Manage Content Tour'
-module: developer_portal_content
+module: opendevx_content
 routes:
   -
     route_name: view.content.page_admin_content

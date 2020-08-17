@@ -30,18 +30,18 @@ install:
  - ctools
  - datetime
  - dblog
- - developer_portal_api
- - developer_portal_api_listing_block
- - developer_portal_block
- - developer_portal_breadcrumb
- - developer_portal_connector
- - developer_portal_content
- - developer_portal_content_reference
- - developer_portal_menu
- - developer_portal_navigation_block
- - developer_portal_organisation
- - developer_portal_taxonomy
- - developer_portal_user
+ - opendevx_api
+ - opendevx_api_listing_block
+ - opendevx_block
+ - opendevx_breadcrumb
+ - opendevx_connector
+ - opendevx_content
+ - opendevx_content_reference
+ - opendevx_menu
+ - opendevx_navigation_block
+ - opendevx_organisation
+ - opendevx_taxonomy
+ - opendevx_user
  - dynamic_page_cache
  - easy_breadcrumb
  - editor

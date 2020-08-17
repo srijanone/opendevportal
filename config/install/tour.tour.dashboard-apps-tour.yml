@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_connector
+    - opendevx_connector
 id: dashboard-apps-tour
 label: 'Dashboard Apps Tour'
-module: developer_portal_connector
+module: opendevx_connector
 routes:
   -
     route_name: view.proxies_listing.page_apps_listing

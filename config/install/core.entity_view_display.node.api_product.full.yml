@@ -24,8 +24,8 @@ dependencies:
     - views.view.api_product
     - views.view.content_listing_block
   module:
-    - developer_portal_block
-    - developer_portal_subscription
+    - opendevx_block
+    - opendevx_subscription
     - ds
     - layout_builder
     - social_media
@@ -56,7 +56,7 @@ third_party_settings:
             configuration:
               id: product_banner_block
               label: 'Product Banner Block'
-              provider: developer_portal_block
+              provider: opendevx_block
               label_display: '0'
               context_mapping: {  }
             additional: {  }
@@ -124,7 +124,7 @@ third_party_settings:
             configuration:
               id: cta_block
               label: 'CTA Block'
-              provider: developer_portal_block
+              provider: opendevx_block
               label_display: '0'
               cta_section:
                 id:
@@ -167,7 +167,7 @@ third_party_settings:
             configuration:
               id: openapidevx_subscription_block
               label: 'Subscription Block'
-              provider: developer_portal_subscription
+              provider: opendevx_subscription
               label_display: '0'
               context_mapping: {  }
             additional: {  }

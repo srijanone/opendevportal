@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_navigation_block
+    - opendevx_navigation_block
     - system
     - user
   theme:
@@ -16,7 +16,7 @@ plugin: dashboard_navigation_block
 settings:
   id: dashboard_navigation_block
   label: 'Product Dashboard Navigation Block'
-  provider: developer_portal_navigation_block
+  provider: opendevx_navigation_block
   label_display: '0'
   dvp_product_sidebar_navigation:
     document_overview:

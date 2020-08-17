@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_apps
+    - opendevx_apps
 id: dashboard-apps-gallery-tour
 label: 'Dashboard App Gallery Tour'
-module: developer_portal_apps
+module: opendevx_apps
 routes:
   -
     route_name: view.app_gallery.page_1

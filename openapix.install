@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the developer_portal installation profile.
+ * Install, update and uninstall functions for the opendevx installation profile.
  */
 
 use Drupal\user\Entity\User;

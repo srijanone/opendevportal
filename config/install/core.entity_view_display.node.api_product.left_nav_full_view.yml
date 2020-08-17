@@ -23,8 +23,8 @@ dependencies:
     - node.type.api_product
   module:
     - comment
-    - developer_portal_block
-    - developer_portal_subscription
+    - opendevx_block
+    - opendevx_subscription
     - ds
     - entity_reference_revisions
     - fivestar
@@ -123,7 +123,7 @@ third_party_settings:
             configuration:
               id: cta_block
               label: 'CTA Block'
-              provider: developer_portal_block
+              provider: opendevx_block
               label_display: '0'
               cta_section:
                 id:
@@ -176,7 +176,7 @@ third_party_settings:
             configuration:
               id: openapidevx_subscription_block
               label: 'Subscription Block'
-              provider: developer_portal_subscription
+              provider: opendevx_subscription
               label_display: '0'
               context_mapping: {  }
             additional: {  }

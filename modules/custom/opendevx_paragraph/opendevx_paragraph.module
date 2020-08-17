@@ -19,7 +19,7 @@ function opendevx_paragraph_field_widget_paragraphs_form_alter(
    $context) {
   /** @var \Drupal\field\Entity\FieldConfig $field_definition */
   $field_definition = $context['items']->getFieldDefinition();
-  $element = developer_portal_paragragh_add_conditional_logic($element, $field_definition);
+  $element = opendevx_paragragh_add_conditional_logic($element, $field_definition);
 }
 
 /**
@@ -33,7 +33,7 @@ function opendevx_paragraph_field_widget_entity_reference_paragraphs_form_alter(
   $context) {
   /** @var \Drupal\field\Entity\FieldConfig $field_definition */
   $field_definition = $context['items']->getFieldDefinition();
-  $element = developer_portal_paragragh_add_conditional_logic($element, $field_definition);
+  $element = opendevx_paragragh_add_conditional_logic($element, $field_definition);
 }
 
 /**
@@ -46,7 +46,7 @@ function opendevx_paragraph_field_widget_entity_reference_paragraphs_form_alter(
  *
  * @return object
  */
-function developer_portal_paragragh_add_conditional_logic($element, $field_definition) {
+function opendevx_paragragh_add_conditional_logic($element, $field_definition) {
   // Get the paragraph machine name.
   $paragraph_ref_name = $field_definition->getName();
   switch ($paragraph_ref_name) {

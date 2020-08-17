@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_forum
+    - opendevx_forum
     - system
   theme:
     - devportal
@@ -15,7 +15,7 @@ plugin: Forum_stats_block
 settings:
   id: Forum_stats_block
   label: 'Forum Stats Block'
-  provider: developer_portal_forum
+  provider: opendevx_forum
   label_display: visible
 visibility:
   request_path:

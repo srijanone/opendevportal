@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_user
+    - opendevx_user
     - user
   theme:
     - devportal
@@ -15,7 +15,7 @@ plugin: user_organisation_block
 settings:
   id: null
   label: 'User Organisation Block'
-  provider: developer_portal_user
+  provider: opendevx_user
   label_display: '0'
   organisation_title: 'Program Selector'
   organisation_description: "<p>By default, the dashboard displays content that is available for your default Program. However, the dashboard may show content for an program&nbsp;different from the one selected by default. Please select the program for which you want to view the content.</p>\r\n"
