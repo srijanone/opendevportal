@@ -10,6 +10,6 @@ dependencies:
   - allowed_formats:allowed_formats
   - drupal:media_library
   - textfield_counter:textfield_counter
-  - opendevx_taxonomy:developer_portal_organisation
+  - opendevx_taxonomy:opendevx_organisation
   - drupal:layout_builder
   - drupal:content_moderation

@@ -48,7 +48,7 @@ function opendevx_user_user_login($account) {
     $pid = \Drupal::request()->get('pid');
     $tempstore = \Drupal::service('tempstore.private');
     // Get the store collection.
-    $store = $tempstore->get('developer_portal_block');
+    $store = $tempstore->get('opendevx_block');
     // Set the key/value pair.
     $store->set('store_pid', $pid);
     $store->set('store_path', $path);

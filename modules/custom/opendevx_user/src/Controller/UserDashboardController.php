@@ -67,7 +67,7 @@ class UserDashboardController extends ControllerBase {
     if (preg_match($regex, $referer) == TRUE) {
       $tempstore = \Drupal::service('tempstore.private');
       // Get the store collection.
-      $store = $tempstore->get('developer_portal_block');
+      $store = $tempstore->get('opendevx_block');
       // Get the key/value pair.
       $pid = $store->get('store_pid');
       $path = $store->get('store_path');

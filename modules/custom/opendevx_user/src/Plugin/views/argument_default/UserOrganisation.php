@@ -5,7 +5,7 @@ namespace Drupal\opendevx_user\Plugin\views\argument_default;
 use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\opendevx_user\Organisation as UserOrganisations;
-use Drupal\developer_portal_organisation\Organisation;
+use Drupal\opendevx_organisation\Organisation;
 use Drupal\Core\Session\AccountInterface;
 
 /**
@@ -31,7 +31,7 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
   /**
    * Organisation object.
    *
-   * @var \Drupal\developer_portal_organisation\Organisation $org
+   * @var \Drupal\opendevx_organisation\Organisation $org
    *
    */
   protected $org;
@@ -39,7 +39,7 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
   /**
    * Organisation object.
    *
-   * @var \Drupal\developer_portal_organisation\Organisation $account
+   * @var \Drupal\opendevx_organisation\Organisation $account
    *
    */
   protected $account;
@@ -77,7 +77,7 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
       $plugin_id,
       $plugin_definition,
       $container->get('opendevx_user.organisation'),
-      $container->get('developer_portal_organisation.organisation'),
+      $container->get('opendevx_organisation.organisation'),
       $container->get('current_user')
     );
   }

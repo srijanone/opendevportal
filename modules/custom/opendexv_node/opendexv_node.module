@@ -131,7 +131,7 @@ $form_id) {
     0 => 'revision_information',
     'actions' => ['preview'],
   ];
-  // @todo will move into developer_portal_apps module.
+  // @todo will move into opendevx_apps module.
   // Array of forms which are affecting in this alteration.
   $affected_forms = [
     'node_apps_edit_form',
@@ -153,7 +153,7 @@ $form_id) {
   // Call the tempstore service for storing values from storage.
   $tempstore = \Drupal::service('tempstore.private');
   // Get the store collection.
-  $store = $tempstore->get('developer_portal_block');
+  $store = $tempstore->get('opendevx_block');
   // Get the key/value pair.
   $product_id = $store->get('store_pid');
   if (!empty(\Drupal::request()->get('pid'))) {
@@ -191,7 +191,7 @@ $form_id) {
         $first_option['All'] = reset($form['org']['#options']);
         $form['org']['#options'] = $first_option +
           array_intersect_key($form['org']['#options'],
-          \Drupal::service('developer_portal_organisation.organisation')
+          \Drupal::service('opendevx_user.organisation')
             ->getOrganisationsDataByAccess());
         break;
 
@@ -245,7 +245,7 @@ function opendexv_node_apps_form_submit(array $form,
 FormStateInterface $form_state) {
   $tempstore = \Drupal::service('tempstore.private');
   // Get the store collection.
-  $store = $tempstore->get('developer_portal_block');
+  $store = $tempstore->get('opendevx_block');
   // Get the key/value pair.
   $store->set('store_pid', '');
   $store->set('store_path', '');
@@ -274,7 +274,7 @@ function opendexv_node_issues_form_submit(array $form,
 FormStateInterface $form_state) {
   $tempstore = \Drupal::service('tempstore.private');
   // Get the store collection.
-  $store = $tempstore->get('developer_portal_block');
+  $store = $tempstore->get('opendevx_block');
   // Get the key/value pair.
   $store->set('store_pid', '');
   $store->set('store_path', '');
@@ -295,7 +295,7 @@ function opendexv_node_entity_access(EntityInterface $entity, $operation, Accoun
     // Expecting there is only one organisation assigned with the entity.
     $org_id = (int) $entity->get('field_organisation')->getString();
     if ($org_id) {
-      $organizations = \Drupal::service('developer_portal_organisation.organisation')->getOrganisationsDataByAccess();
+      $organizations = \Drupal::service('opendevx_user.organisation')->getOrganisationsDataByAccess();
       if (empty($organizations) && $account->isAnonymous()) {
         return AccessResult::forbidden('Access revoked by opendexv_node module.');
       }

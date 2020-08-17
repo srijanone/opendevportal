@@ -16,7 +16,7 @@ REQUIREMENTS
 The module has following requirements.
   - opendevx_product_page
   - opendevx_api_product
-  - developer_portal_organisation
+  - opendevx_organisation
   - allowed_formats
   - comment
   - content_moderation

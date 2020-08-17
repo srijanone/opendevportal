@@ -1,7 +1,0 @@
-developer_portal_block.cta_redirection:
-  path: 'data/{apikey}/{node-id},'
-  defaults:
-    _controller: '\Drupal\developer_portal_block\Controller\CtaController::redirectCtaUrl'
-    _title: ''
-  requirements:
-    _permission: 'access content'

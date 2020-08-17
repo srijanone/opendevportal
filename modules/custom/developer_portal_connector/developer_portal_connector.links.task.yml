@@ -1,9 +1,0 @@
-developer_portal_connector.manage_configuration_form:
-  title: Manage
-  route_name: developer_portal_connector.manage_configuration_form
-  base_route: developer_portal_connector.manage_configuration_form
-
-# developer_portal_connector.synchronization:
-#   title: Synchronization
-#   route_name: developer_portal_connector.manage_configuration_form
-#   base_route: developer_portal_connector.manage_configuration_form

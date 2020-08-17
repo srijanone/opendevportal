@@ -9,7 +9,7 @@ dependencies:
   - opendevx_product_page:opendevx_product_page
   - opendexv_node:opendexv_node
   - opendevx_api_product:opendevx_api_product
-  - opendevx_taxonomy:developer_portal_event_type
+  - opendevx_taxonomy:opendevx_event_type
   - address:address
 
 project: opendevx_events

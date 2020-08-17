@@ -6,8 +6,8 @@ use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Logger\LoggerChannelTrait;
-use Drupal\developer_portal_organisation\Organisation as Programs;
-use Drupal\developer_portal_organisation\Utility\OrganisationUtility;
+use Drupal\opendevx_organisation\Organisation as Programs;
+use Drupal\opendevx_organisation\Utility\OrganisationUtility;
 
 /**
  * Class Organisation.

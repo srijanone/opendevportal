@@ -1,4 +1,0 @@
-services:
-  developer_portal_organisation.organisation:
-   class: Drupal\developer_portal_organisation\Organisation
-   arguments: ['@database', '@current_user']

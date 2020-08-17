@@ -1,4 +1,0 @@
-services:
-  developer_portal_block.products:
-   class: Drupal\developer_portal_block\ApiProducts
-   arguments: ['@database', '@current_user']

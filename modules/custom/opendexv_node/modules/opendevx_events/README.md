@@ -17,7 +17,7 @@ The module has following requirements.
   - opendevx_product_page
   - opendexv_node
   - opendevx_api_product
-  - developer_portal_event_type
+  - opendevx_event_type
   - address
   - comment
   - datetime
