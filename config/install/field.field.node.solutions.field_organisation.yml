@@ -9,8 +9,8 @@ id: node.solutions.field_organisation
 field_name: field_organisation
 entity_type: node
 bundle: solutions
-label: Organisation
-description: 'Use this field to reference any organization to the solution content.'
+label: Program
+description: 'Use this field to reference any program to the solution content.'
 required: false
 translatable: true
 default_value: {  }

@@ -1,6 +1,16 @@
 ignored_config_entities:
+  - smtp.settings
   - social_auth_github.settings
+  - social_auth_google.settings
   - developer_portal_connector.settings
-  - block.block.dashboardnavigationblock
   - block.block.product_api
-  - block.block.*
+  - 'core.entity_view_display.node.api_product*'
+  - notifications_widget.settings
+  - disqus.settings
+  - recaptcha.settings
+  - captcha.settings
+  - 'captcha.captcha_point.*'
+  - opendevx_notification.settings
+  - 'tour.tour.*'
+  - stripe.settings
+  - developer_portal_subscription.settings

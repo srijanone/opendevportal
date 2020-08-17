@@ -14,7 +14,6 @@ dependencies:
   module:
     - field_group
     - file
-    - link
     - options
     - text
 third_party_settings:
@@ -77,18 +76,6 @@ content:
     third_party_settings: {  }
     type: list_key
     region: content
-  field_link:
-    weight: 3
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
   field_select_file:
     type: list_key
     weight: 6
@@ -113,4 +100,5 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_link: true

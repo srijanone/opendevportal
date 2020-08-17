@@ -9,8 +9,8 @@ id: node.document_overview.field_organisation
 field_name: field_organisation
 entity_type: node
 bundle: document_overview
-label: Organisation
-description: 'Reference field to organisation.'
+label: Program
+description: 'Reference field to program.'
 required: false
 translatable: true
 default_value: {  }

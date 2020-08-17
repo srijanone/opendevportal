@@ -8,10 +8,10 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Resources
+name: Download
 type: resources
-description: 'Use <i>Resources</i> to add a resource for any API Product.'
+description: 'Use <i>Downloads</i> to add a resource for any API Product.'
 help: ''
-new_revision: false
-preview_mode: 1
-display_submitted: true
+new_revision: true
+preview_mode: 0
+display_submitted: false

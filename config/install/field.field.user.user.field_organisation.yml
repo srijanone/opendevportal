@@ -10,7 +10,7 @@ id: user.user.field_organisation
 field_name: field_organisation
 entity_type: user
 bundle: user
-label: Organisation
+label: Program
 description: ''
 required: false
 translatable: false

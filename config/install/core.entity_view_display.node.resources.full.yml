@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.resources.body
     - field.field.node.resources.comment
     - field.field.node.resources.field_api_detail_section
     - field.field.node.resources.field_api_product
@@ -11,14 +12,18 @@ dependencies:
     - field.field.node.resources.field_listing_image
     - field.field.node.resources.field_organisation
     - field.field.node.resources.field_tags
+    - field.field.node.resources.field_upload_doc_files
+    - field.field.node.resources.field_upload_files
     - field.field.node.resources.field_user_rating
     - field.field.node.resources.layout_builder__layout
     - node.type.resources
   module:
+    - book
     - ds
     - entity_reference_revisions
     - layout_builder
     - social_media
+    - system
     - text
     - user
 third_party_settings:
@@ -39,68 +44,66 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          a083965b-4598-4393-90d6-5345c404d43a:
-            uuid: a083965b-4598-4393-90d6-5345c404d43a
+          a63684be-7329-4b30-90c2-bb8e1972412d:
+            uuid: a63684be-7329-4b30-90c2-bb8e1972412d
             region: ds_content
             configuration:
-              id: 'field_block:node:resources:field_description'
-              label: 'Resource Summary'
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_2col
+        layout_settings:
+          label: ''
+          wrappers:
+            left: div
+            right: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          0ecec8e1-f197-4cfa-aae3-f79329fc3890:
+            uuid: 0ecec8e1-f197-4cfa-aae3-f79329fc3890
+            region: left
+            configuration:
+              id: book_navigation
+              label: 'Book navigation'
+              provider: book
+              label_display: '0'
+              block_mode: 'book pages'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          a7142830-128a-476f-9579-5d41405919c0:
+            uuid: a7142830-128a-476f-9579-5d41405919c0
+            region: right
+            configuration:
+              id: 'field_block:node:resources:field_upload_doc_files'
+              label: 'Upload Files'
               provider: layout_builder
               label_display: '0'
               formatter:
                 label: hidden
-                type: text_default
-                settings: {  }
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: default
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -10
-          fddf47e7-058d-4360-9714-69e422f4027e:
-            uuid: fddf47e7-058d-4360-9714-69e422f4027e
-            region: ds_content
-            configuration:
-              id: 'field_block:node:resources:field_api_detail_section'
-              label: 'Resources Section'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
-          1d511220-bb72-4fb5-8c25-04041d921157:
-            uuid: 1d511220-bb72-4fb5-8c25-04041d921157
-            region: ds_content
-            configuration:
-              id: 'field_block:node:resources:comment'
-              label: Comments
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: comment_default
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -5
-          eefc593d-9325-422a-88a8-c9147781cb6a:
-            uuid: eefc593d-9325-422a-88a8-c9147781cb6a
-            region: ds_content
+            weight: 2
+          afa01aa9-8235-495b-873e-535ef5845126:
+            uuid: afa01aa9-8235-495b-873e-535ef5845126
+            region: right
             configuration:
               id: 'field_block:node:resources:field_tags'
               label: Tags
@@ -118,10 +121,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -8
-          31dd9a4a-a5ab-427c-8684-309a82a909b8:
-            uuid: 31dd9a4a-a5ab-427c-8684-309a82a909b8
-            region: ds_content
+            weight: 3
+          6d8012c7-b368-483d-888e-e7617d239a15:
+            uuid: 6d8012c7-b368-483d-888e-e7617d239a15
+            region: right
             configuration:
               id: 'field_block:node:resources:field_user_rating'
               label: 'User Rating'
@@ -131,7 +134,7 @@ third_party_settings:
                 label: hidden
                 type: fivestar_stars
                 settings:
-                  fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+                  fivestar_widget: basic
                   display_format: average
                   text_format: average
                 third_party_settings: {  }
@@ -139,10 +142,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
-          d4f75dc6-3c6b-4188-9efc-347eec02ad6d:
-            uuid: d4f75dc6-3c6b-4188-9efc-347eec02ad6d
-            region: ds_content
+            weight: 4
+          232a4cc9-3a06-4033-bc8c-6618c1d5329a:
+            uuid: 232a4cc9-3a06-4033-bc8c-6618c1d5329a
+            region: right
             configuration:
               id: social_sharing_block
               label: 'Social Sharing block'
@@ -150,7 +153,27 @@ third_party_settings:
               label_display: '0'
               context_mapping: {  }
             additional: {  }
-            weight: -6
+            weight: 5
+          d86bc487-77e7-4288-bf9f-e6b70d18b4f3:
+            uuid: d86bc487-77e7-4288-bf9f-e6b70d18b4f3
+            region: right
+            configuration:
+              id: 'field_block:node:resources:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 6
         third_party_settings: {  }
 id: node.resources.full
 targetEntityType: node
@@ -205,8 +228,12 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   comment: true
   field_api_product: true
   field_organisation: true
+  field_upload_doc_files: true
+  field_upload_files: true
   field_user_rating: true
+  langcode: true
   layout_builder__layout: true

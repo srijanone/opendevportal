@@ -9,7 +9,7 @@ id: node.api_product.field_organisation
 field_name: field_organisation
 entity_type: node
 bundle: api_product
-label: Organisation
+label: Program
 description: ''
 required: false
 translatable: true

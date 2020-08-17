@@ -7,12 +7,13 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_api_detail_section
     - field.field.node.article.field_api_product
+    - field.field.node.article.field_banners_image
     - field.field.node.article.field_description
     - field.field.node.article.field_listing_image
     - field.field.node.article.field_organisation
     - field.field.node.article.field_tags
-    - field.field.node.article.layout_builder__layout
     - field.field.node.article.field_user_rating
+    - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
     - user
@@ -29,6 +30,7 @@ hidden:
   comment: true
   field_api_detail_section: true
   field_api_product: true
+  field_banners_image: true
   field_description: true
   field_listing_image: true
   field_organisation: true

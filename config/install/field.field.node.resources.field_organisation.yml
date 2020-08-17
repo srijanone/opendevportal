@@ -9,8 +9,8 @@ id: node.resources.field_organisation
 field_name: field_organisation
 entity_type: node
 bundle: resources
-label: Organisation
-description: 'Reference field to organization field'
+label: Program
+description: 'Reference field to program field'
 required: false
 translatable: true
 default_value: {  }

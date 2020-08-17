@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.developer_dashboard
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - devportal
+id: views_block__developer_dashboard_block_issues
+theme: devportal
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:developer_dashboard-block_issues'
+settings:
+  id: 'views_block:developer_dashboard-block_issues'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /dashboard
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      developer: developer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

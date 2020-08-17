@@ -1,0 +1,103 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - developer_portal_connector
+id: dashboard-apps-tour
+label: 'Dashboard Apps Tour'
+module: developer_portal_connector
+routes:
+  -
+    route_name: view.proxies_listing.page_apps_listing
+  -
+    route_name: view.proxies_listing.page_2
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: -100
+    attributes: null
+    body: 'This Page is used to create or manage apps.'
+    location: top
+  create-button:
+    id: create-button
+    plugin: text
+    label: 'Create Button'
+    weight: -99
+    attributes:
+      data-class: create-button
+    body: 'Create Button is used to create the new app in the system.'
+    location: left
+  sync-button:
+    id: sync-button
+    plugin: text
+    label: 'Sync Button'
+    weight: -98
+    attributes:
+      data-class: sync-button
+    body: 'Sync button is used to sync the configurations'
+    location: right
+  api-program:
+    id: api-program
+    plugin: text
+    label: 'API Program'
+    weight: -97
+    attributes:
+      data-class: form-type-entity-autocomplete
+    body: 'Search by the name of API program'
+    location: top
+  search-by-application-name:
+    id: search-by-application-name
+    plugin: text
+    label: 'Search By Application Name'
+    weight: -96
+    attributes:
+      data-id: edit-app-name
+    body: 'This search button is used to search application by name'
+    location: top
+  developer-name:
+    id: developer-name
+    plugin: text
+    label: 'Developer Name'
+    weight: -95
+    attributes:
+      data-id: edit-uid
+    body: 'Search by Username'
+    location: top
+  email:
+    id: email
+    plugin: text
+    label: Email
+    weight: -94
+    attributes:
+      data-class: form-item-mail
+    body: 'Search content my mail address.'
+    location: top
+  node-status:
+    id: node-status
+    plugin: text
+    label: 'Node Status'
+    weight: -93
+    attributes:
+      data-class: js-form-item-state
+    body: 'Used to display the moderation state of the node.'
+    location: top
+  bulk-operations:
+    id: bulk-operations
+    plugin: text
+    label: 'Bulk operations'
+    weight: -92
+    attributes:
+      data-id: edit-action
+    body: 'Options of bulk operations'
+    location: left
+  apply-button-of-bulk-operation:
+    id: apply-button-of-bulk-operation
+    plugin: text
+    label: 'Apply button of bulk operation'
+    weight: -91
+    attributes:
+      data-id: edit-actions--3
+    body: 'Apply button used to apply  the options of bulk operation.'
+    location: top

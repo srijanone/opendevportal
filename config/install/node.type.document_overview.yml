@@ -11,8 +11,8 @@ third_party_settings:
     parent: 'admin:system.admin_content'
 name: Page
 type: document_overview
-description: 'Use <i>Page</i> to add an overview pages of any API Product.'
+description: 'Use <i>page</i> to add an overview page of any API Product.'
 help: ''
-new_revision: false
-preview_mode: 1
-display_submitted: true
+new_revision: true
+preview_mode: 0
+display_submitted: false

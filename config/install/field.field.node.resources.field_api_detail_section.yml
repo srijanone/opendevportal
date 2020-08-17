@@ -11,8 +11,8 @@ id: node.resources.field_api_detail_section
 field_name: field_api_detail_section
 entity_type: node
 bundle: resources
-label: 'Resources Section'
-description: 'Add Resource Section.'
+label: 'Download Section'
+description: 'Add the download Section.'
 required: false
 translatable: true
 default_value: {  }
@@ -30,8 +30,11 @@ settings:
       dashboard_listing:
         weight: 5
         enabled: false
-      menu_list:
-        weight: 6
+      features:
+        weight: 7
+        enabled: false
+      product_attributes:
+        weight: 8
         enabled: false
       slider_details:
         weight: 8

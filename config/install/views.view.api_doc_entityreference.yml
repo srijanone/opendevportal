@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - node.type.api_document
+    - node.type.api_product
   module:
     - node
     - user
@@ -220,7 +221,7 @@ display:
   entity_reference_1:
     display_plugin: entity_reference
     id: entity_reference_1
-    display_title: 'Entity Reference'
+    display_title: 'Entity Reference - API'
     position: 1
     display_options:
       display_extenders: {  }
@@ -237,6 +238,92 @@ display:
             title: title
           separator: '-'
           hide_empty: false
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  entity_reference_2:
+    display_plugin: entity_reference
+    id: entity_reference_2
+    display_title: 'Entity Reference - API PRODUCT'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            api_product: api_product
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      display_description: ''
+      style:
+        type: entity_reference
+        options:
+          search_fields:
+            title: title
     cache_metadata:
       max-age: -1
       contexts:

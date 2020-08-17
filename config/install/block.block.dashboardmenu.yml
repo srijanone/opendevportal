@@ -11,7 +11,7 @@ dependencies:
 id: dashboardmenu
 theme: devportal
 region: sidebar_first
-weight: 0
+weight: -16
 provider: null
 plugin: 'system_menu_block:dashboard-menu'
 settings:
@@ -27,12 +27,13 @@ visibility:
     id: user_role
     roles:
       product_manager: product_manager
+      admin: admin
       developer: developer
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
   request_path:
     id: request_path
-    pages: "/apimanager/*\r\n/appmanager/*"
+    pages: "/dashboard/apimanager/*\r\n/dashboard/appmanager/*\r\n/dashboard/topic\r\n/dashboard/topic/my\r\n/apimanager/*\r\n/dashboard/admin/manage/people\r\n/dashboard/program\r\n/dashboard/products\r\n/dashboard/manage/*"
     negate: false
     context_mapping: {  }

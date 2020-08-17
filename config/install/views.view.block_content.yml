@@ -1,9 +1,12 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - user.role.admin
   module:
     - block_content
     - user
+    - views_autocomplete_filters
 id: block_content
 label: 'Custom block library'
 module: views
@@ -537,4 +540,68 @@ display:
         - url.query_args
         - user.permissions
       max-age: -1
+      tags: {  }
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: 'Site Admin Dashboard - Manage Blocks'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      title: 'Manage Blocks'
+      defaults:
+        title: false
+        header: false
+        pager: false
+        access: false
+      path: dashboard/manage/blocks
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<span><a class="create-button" href="/block/add?destination==/dashboard/manage/blocks">Create Block</a></span>'
+            format: full_html
+          plugin_id: text
+      pager:
+        type: full
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      access:
+        type: role
+        options:
+          role:
+            admin: admin
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.roles
       tags: {  }

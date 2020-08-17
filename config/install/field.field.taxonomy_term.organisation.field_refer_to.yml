@@ -10,7 +10,7 @@ id: taxonomy_term.organisation.field_refer_to
 field_name: field_refer_to
 entity_type: taxonomy_term
 bundle: organisation
-label: 'Refer To'
+label: 'Link to'
 description: ''
 required: false
 translatable: false

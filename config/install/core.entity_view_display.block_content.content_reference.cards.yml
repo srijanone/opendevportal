@@ -6,8 +6,10 @@ dependencies:
     - core.entity_view_mode.block_content.cards
     - field.field.block_content.content_reference.body
     - field.field.block_content.content_reference.field_contents
+    - field.field.block_content.content_reference.field_cta_link_text
   module:
     - layout_builder
+    - link
     - text
 third_party_settings:
   layout_builder:
@@ -33,4 +35,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_cta_link_text:
+    type: link
+    weight: 2
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
 hidden: {  }

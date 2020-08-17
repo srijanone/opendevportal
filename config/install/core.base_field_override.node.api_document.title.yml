@@ -7,7 +7,7 @@ id: node.api_document.title
 field_name: title
 entity_type: node
 bundle: api_document
-label: Name
+label: 'API Name'
 description: ''
 required: true
 translatable: true

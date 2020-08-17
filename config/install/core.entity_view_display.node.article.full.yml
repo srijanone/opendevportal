@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_api_detail_section
     - field.field.node.article.field_api_product
+    - field.field.node.article.field_banners_image
     - field.field.node.article.field_description
     - field.field.node.article.field_listing_image
     - field.field.node.article.field_organisation
@@ -17,11 +18,13 @@ dependencies:
     - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
+    - book
     - comment
     - ds
     - entity_reference_revisions
     - layout_builder
     - social_media
+    - system
     - text
     - user
 third_party_settings:
@@ -42,48 +45,50 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          971fcad8-87f3-40b6-a72a-9c5358cb3ad5:
-            uuid: 971fcad8-87f3-40b6-a72a-9c5358cb3ad5
+          82cf2474-3187-4d00-a9dd-c288f338cc04:
+            uuid: 82cf2474-3187-4d00-a9dd-c288f338cc04
             region: ds_content
             configuration:
-              id: 'field_block:node:article:body'
-              label: Body
-              provider: layout_builder
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              context_mapping: {  }
             additional: {  }
-            weight: -10
-          9dd92b3b-93f3-46ce-87f8-793045d8721a:
-            uuid: 9dd92b3b-93f3-46ce-87f8-793045d8721a
-            region: ds_content
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_2col_fluid
+        layout_settings:
+          label: ''
+          wrappers:
+            left: div
+            right: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          9f81aaf5-ad5b-4b05-99fa-da528136c0f4:
+            uuid: 9f81aaf5-ad5b-4b05-99fa-da528136c0f4
+            region: left
             configuration:
-              id: 'field_block:node:article:field_description'
-              label: 'Article Summary'
-              provider: layout_builder
+              id: book_navigation
+              label: 'Book navigation'
+              provider: book
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              block_mode: 'book pages'
+              context_mapping: {  }
             additional: {  }
-            weight: -9
-          826f83b4-9ee9-4f71-b6c3-beb26bf51cd7:
-            uuid: 826f83b4-9ee9-4f71-b6c3-beb26bf51cd7
-            region: ds_content
+            weight: 0
+          413c93fd-3079-46d0-9cf5-861639d71ed0:
+            uuid: 413c93fd-3079-46d0-9cf5-861639d71ed0
+            region: right
             configuration:
               id: 'field_block:node:article:field_api_detail_section'
-              label: 'Article Section'
+              label: 'Blog Section'
               provider: layout_builder
               label_display: '0'
               formatter:
@@ -98,30 +103,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -8
-          ca7619ae-d04b-45ae-88fb-8f73d69179b7:
-            uuid: ca7619ae-d04b-45ae-88fb-8f73d69179b7
-            region: ds_content
-            configuration:
-              id: 'field_block:node:article:comment'
-              label: Comments
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: comment_default
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -4
-          1673044f-d6fa-46b7-a34e-9fb65d5aca69:
-            uuid: 1673044f-d6fa-46b7-a34e-9fb65d5aca69
-            region: ds_content
+            weight: -9
+          d4bbe0ed-5c13-4dec-98e3-714fb64f1a5c:
+            uuid: d4bbe0ed-5c13-4dec-98e3-714fb64f1a5c
+            region: right
             configuration:
               id: 'field_block:node:article:field_tags'
               label: Tags
@@ -139,10 +124,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
-          98a7f77b-a609-4171-8f05-dd84ac413cf4:
-            uuid: 98a7f77b-a609-4171-8f05-dd84ac413cf4
-            region: ds_content
+            weight: -8
+          799f9d95-d556-465d-a143-ee01805df83b:
+            uuid: 799f9d95-d556-465d-a143-ee01805df83b
+            region: right
             configuration:
               id: 'field_block:node:article:field_user_rating'
               label: 'User Rating'
@@ -152,7 +137,7 @@ third_party_settings:
                 label: hidden
                 type: fivestar_stars
                 settings:
-                  fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+                  fivestar_widget: basic
                   display_format: average
                   text_format: average
                 third_party_settings: {  }
@@ -160,10 +145,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -6
-          c6c72e15-7f04-443b-88d2-3ca8f0472fb2:
-            uuid: c6c72e15-7f04-443b-88d2-3ca8f0472fb2
-            region: ds_content
+            weight: -7
+          c558d8f1-44c9-42b6-afd3-b4460382fdbd:
+            uuid: c558d8f1-44c9-42b6-afd3-b4460382fdbd
+            region: right
             configuration:
               id: social_sharing_block
               label: 'Social Sharing block'
@@ -171,7 +156,45 @@ third_party_settings:
               label_display: '0'
               context_mapping: {  }
             additional: {  }
+            weight: -6
+          858508d8-65f7-4511-ad11-41f814a80652:
+            uuid: 858508d8-65f7-4511-ad11-41f814a80652
+            region: right
+            configuration:
+              id: 'field_block:node:article:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
             weight: -5
+          452deb49-54d3-4d63-8347-ffd2f215f34b:
+            uuid: 452deb49-54d3-4d63-8347-ffd2f215f34b
+            region: right
+            configuration:
+              id: 'field_block:node:article:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.article.full
 targetEntityType: node
@@ -233,6 +256,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_api_product: true
+  field_banners_image: true
   field_listing_image: true
   field_organisation: true
   field_user_rating: true

@@ -10,7 +10,7 @@ dependencies:
 id: devportal_account_menu
 theme: devportal
 region: primary_menu
-weight: -12
+weight: -15
 provider: null
 plugin: 'system_menu_block:account'
 settings:

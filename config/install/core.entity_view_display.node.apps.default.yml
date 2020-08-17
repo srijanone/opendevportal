@@ -3,16 +3,22 @@ status: true
 dependencies:
   config:
     - field.field.node.apps.body
+    - field.field.node.apps.field_add_to_gallery
     - field.field.node.apps.field_api_document
+    - field.field.node.apps.field_api_product_single
     - field.field.node.apps.field_app_ref_id
     - field.field.node.apps.field_app_url
     - field.field.node.apps.field_client_id
     - field.field.node.apps.field_client_secret
     - field.field.node.apps.field_display_name
+    - field.field.node.apps.field_expected_call_volume
     - field.field.node.apps.field_expiry
     - field.field.node.apps.field_issued
     - field.field.node.apps.field_organisation
     - field.field.node.apps.field_products_image
+    - field.field.node.apps.field_version
+    - field.field.node.apps.field_video
+    - field.field.node.apps.layout_builder__layout
     - node.type.apps
   module:
     - datetime
@@ -74,7 +80,7 @@ third_party_settings:
         required_fields: false
       label: 'App Details'
   layout_builder:
-    allow_custom: false
+    allow_custom: true
     enabled: true
     sections:
       -
@@ -230,39 +236,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 6
-          580a34a2-f097-46fd-b2e2-82200411e07f:
-            uuid: 580a34a2-f097-46fd-b2e2-82200411e07f
-            region: ds_content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:apps:field_issued'
-              formatter:
-                label: above
-                settings:
-                  format_type: medium
-                  timezone_override: ''
-                third_party_settings: {  }
-                type: datetime_default
-            additional: {  }
-            weight: 7
-          69ee5134-4d8f-43da-b615-79003fec244a:
-            uuid: 69ee5134-4d8f-43da-b615-79003fec244a
-            region: ds_content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:apps:field_expiry'
-              formatter:
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-                type: string
-            additional: {  }
-            weight: 8
           60aef487-fa47-4638-88d4-75cef1728df4:
             uuid: 60aef487-fa47-4638-88d4-75cef1728df4
             region: content
@@ -394,31 +367,14 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 7
-          9c69547a-3203-4d1b-82fc-c2b322a4c538:
-            uuid: 9c69547a-3203-4d1b-82fc-c2b322a4c538
+          fdd6c909-1f52-45d5-970c-0e96a65b1616:
+            uuid: fdd6c909-1f52-45d5-970c-0e96a65b1616
             region: ds_content
             configuration:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:apps:field_issued'
-              formatter:
-                label: above
-                settings:
-                  format_type: medium
-                  timezone_override: ''
-                third_party_settings: {  }
-                type: datetime_default
-            additional: {  }
-            weight: 9
-          bcdccc28-a0ea-48fc-bd0c-64649f1bb6fa:
-            uuid: bcdccc28-a0ea-48fc-bd0c-64649f1bb6fa
-            region: ds_content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:apps:field_expiry'
+              id: 'field_block:node:apps:field_expected_call_volume'
               formatter:
                 label: above
                 settings:
@@ -426,7 +382,56 @@ third_party_settings:
                 third_party_settings: {  }
                 type: string
             additional: {  }
+            weight: 7
+          011f131c-a753-4fd3-9f32-35c465a5258a:
+            uuid: 011f131c-a753-4fd3-9f32-35c465a5258a
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:apps:field_version'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 8
+          0e525836-5122-4a6e-95a4-c8fb89487dca:
+            uuid: 0e525836-5122-4a6e-95a4-c8fb89487dca
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:apps:field_video'
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
             weight: 10
+          901b1667-95a6-4f99-a11e-84717352069c:
+            uuid: 901b1667-95a6-4f99-a11e-84717352069c
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:apps:field_api_product_single'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 11
         third_party_settings: {  }
       -
         layout_id: ds_1col
@@ -560,6 +565,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_api_product_single:
+    weight: 18
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
   field_app_url:
     type: link
     weight: 10
@@ -596,6 +609,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_expected_call_volume:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
   field_expiry:
     weight: 13
     label: above
@@ -629,7 +650,27 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_version:
+    weight: 15
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_video:
+    type: entity_reference_entity_view
+    weight: 17
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: ds_content
 hidden:
   content_moderation_control: true
+  field_add_to_gallery: true
   field_app_ref_id: true
+  langcode: true
+  layout_builder__layout: true
   links: true

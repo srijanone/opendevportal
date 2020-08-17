@@ -11,15 +11,16 @@ dependencies:
     - field.field.node.resources.field_listing_image
     - field.field.node.resources.field_organisation
     - field.field.node.resources.field_tags
-    - field.field.node.resources.layout_builder__layout
+    - field.field.node.resources.field_upload_doc_files
     - field.field.node.resources.field_user_rating
+    - field.field.node.resources.layout_builder__layout
     - node.type.resources
   module:
     - comment
     - entity_reference_revisions
+    - fivestar
     - layout_builder
     - layout_discovery
-    - fivestar
     - text
     - user
 third_party_settings:
@@ -141,6 +142,23 @@ third_party_settings:
                 type: comment_default
             additional: {  }
             weight: 6
+          5df23930-feb4-477c-bf33-23a6e05e6b93:
+            uuid: 5df23930-feb4-477c-bf33-23a6e05e6b93
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:resources:field_upload_doc_files'
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 7
         third_party_settings: {  }
 id: node.resources.default
 targetEntityType: node
@@ -198,6 +216,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_upload_doc_files:
+    type: entity_reference_entity_view
+    weight: 7
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_user_rating:
     weight: 6
     label: above
@@ -214,6 +241,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_api_product: true
   field_organisation: true
   layout_builder__layout: true

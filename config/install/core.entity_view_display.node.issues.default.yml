@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.issues.body
     - field.field.node.issues.comment
     - field.field.node.issues.field_api_product
+    - field.field.node.issues.field_application
     - field.field.node.issues.field_attach_file
     - field.field.node.issues.field_organisation
     - field.field.node.issues.field_status
@@ -15,7 +16,6 @@ dependencies:
     - node.type.issues
   module:
     - comment
-    - file
     - fivestar
     - layout_builder
     - layout_discovery
@@ -56,22 +56,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
-          a1e874c1-ca5b-4307-a017-1e99d3cb56e0:
-            uuid: a1e874c1-ca5b-4307-a017-1e99d3cb56e0
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:issues:field_attach_file'
-              formatter:
-                label: above
-                settings:
-                  use_description_as_link_text: true
-                third_party_settings: {  }
-                type: file_default
-            additional: {  }
-            weight: 2
           05280a08-0687-4a8b-b9dc-ba5048a4319b:
             uuid: 05280a08-0687-4a8b-b9dc-ba5048a4319b
             region: content
@@ -171,6 +155,39 @@ third_party_settings:
                 type: fivestar_stars
             additional: {  }
             weight: 8
+          a99a5817-fdeb-496a-b728-829bf3972d91:
+            uuid: a99a5817-fdeb-496a-b728-829bf3972d91
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issues:field_application'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 9
+          968f3686-a9df-466f-bca4-301459c4d664:
+            uuid: 968f3686-a9df-466f-bca4-301459c4d664
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:issues:field_attach_file'
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 10
         third_party_settings: {  }
 id: node.issues.default
 targetEntityType: node
@@ -201,13 +218,22 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_attach_file:
-    weight: 2
+  field_application:
+    weight: 9
     label: above
     settings:
-      use_description_as_link_text: true
+      link: true
     third_party_settings: {  }
-    type: file_default
+    type: entity_reference_label
+    region: content
+  field_attach_file:
+    type: entity_reference_entity_view
+    weight: 10
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   field_organisation:
     weight: 6

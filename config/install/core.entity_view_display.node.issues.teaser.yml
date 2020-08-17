@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.issues.body
     - field.field.node.issues.comment
     - field.field.node.issues.field_api_product
+    - field.field.node.issues.field_application
     - field.field.node.issues.field_attach_file
     - field.field.node.issues.field_organisation
     - field.field.node.issues.field_status
@@ -37,6 +38,7 @@ content:
 hidden:
   comment: true
   field_api_product: true
+  field_application: true
   field_attach_file: true
   field_organisation: true
   field_status: true

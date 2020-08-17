@@ -9,22 +9,23 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
+    full_html: full_html
+    markdown: markdown
     basic_html: '0'
-    code_snippet: '0'
     restricted_html: '0'
-    full_html: '0'
     plain_text: '0'
+    code_snippet: '0'
 id: node.issues.body
 field_name: body
 entity_type: node
 bundle: issues
 label: Description
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
-  required_summary: false
+  display_summary: true
+  required_summary: true
 field_type: text_with_summary

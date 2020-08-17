@@ -9,9 +9,9 @@ id: node.api_product.field_api_specifications
 field_name: field_api_specifications
 entity_type: node
 bundle: api_product
-label: 'API Specifications'
-description: 'Reference field to <i>API Document</i>.'
-required: false
+label: APIs
+description: 'Reference field to <i>API</i>.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

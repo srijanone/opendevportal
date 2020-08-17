@@ -9,8 +9,8 @@ id: node.assets.field_organisation
 field_name: field_organisation
 entity_type: node
 bundle: assets
-label: Organisation
-description: 'Use to add a reference to the organization.'
+label: Program
+description: 'Use to add a reference to the program.'
 required: false
 translatable: true
 default_value: {  }

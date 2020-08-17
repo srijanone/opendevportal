@@ -10,7 +10,7 @@ field_name: field_banners_image
 entity_type: node
 bundle: assets
 label: 'Banner Image'
-description: 'Use to add banner image assets content type.'
+description: "Use to add banner image assets content type.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG\r\n<br> This image will be used to show a banner on the front page."
 required: false
 translatable: true
 default_value: {  }

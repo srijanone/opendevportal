@@ -10,7 +10,7 @@ field_name: field_listing_image
 entity_type: node
 bundle: article
 label: 'Listing Image'
-description: 'Use this field to add a listing image.'
+description: 'Use this field to add a listing image.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
 required: false
 translatable: true
 default_value: {  }

@@ -10,7 +10,7 @@ field_name: field_video
 entity_type: paragraph
 bundle: product_paragraph
 label: Video
-description: 'Add video to this section.'
+description: 'Add video to this section.<br>Supported File Types: MP4'
 required: false
 translatable: false
 default_value: {  }

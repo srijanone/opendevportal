@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 name: Icons
 vid: icons
-description: ''
+description: 'Icons are used to manage the icons appearing in the Header block'
 weight: 0

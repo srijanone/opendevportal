@@ -8,7 +8,7 @@ dependencies:
 id: devportal_help
 theme: devportal
 region: content
-weight: -13
+weight: -15
 provider: null
 plugin: help_block
 settings:

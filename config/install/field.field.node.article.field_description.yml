@@ -13,14 +13,15 @@ third_party_settings:
     restricted_html: restricted_html
     full_html: full_html
     plain_text: plain_text
+    markdown: '0'
     code_snippet: '0'
 id: node.article.field_description
 field_name: field_description
 entity_type: node
 bundle: article
-label: 'Article Summary'
-description: 'Use this field to add a summary to article content.'
-required: false
+label: 'Blog Summary'
+description: 'Use this field to add a summary to blog content.'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

@@ -4,36 +4,50 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.api_document.body
+    - field.field.node.api_document.field_api_categories
+    - field.field.node.api_document.field_banners_image
     - field.field.node.api_document.field_document
+    - field.field.node.api_document.field_format
+    - field.field.node.api_document.field_listing_image
     - field.field.node.api_document.field_organisation
     - field.field.node.api_document.field_user_rating
     - field.field.node.api_document.layout_builder__layout
     - node.type.api_document
+    - views.view.api_document_formatter
   module:
-    - developer_portal_block
+    - developer_portal_rapidoc_formatter
     - ds
     - layout_builder
-    - layout_discovery
     - swagger_ui_formatter
+    - system
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: true
     enabled: true
     sections:
       -
-        layout_id: layout_onecol
+        layout_id: ds_1col
         layout_settings:
-          label: 'Try Out Block'
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
         components:
-          bc690a36-cfd6-4665-9a66-9677a8d56535:
-            uuid: bc690a36-cfd6-4665-9a66-9677a8d56535
-            region: content
+          614a2ae9-d4b5-4e2d-a3ca-22931d492294:
+            uuid: 614a2ae9-d4b5-4e2d-a3ca-22931d492294
+            region: ds_content
             configuration:
-              id: try_out_block
-              label: 'Try Out Block'
-              provider: developer_portal_block
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
               label_display: '0'
               context_mapping: {  }
             additional: {  }
@@ -52,42 +66,44 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          a991ef00-6445-4b6b-8178-292622d327a8:
-            uuid: a991ef00-6445-4b6b-8178-292622d327a8
+          592cc518-2459-4cc2-a0bd-d352e01588c9:
+            uuid: 592cc518-2459-4cc2-a0bd-d352e01588c9
             region: ds_content
             configuration:
-              id: 'field_block:node:api_document:body'
-              label: Description
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              id: api_formatter_option_block
+              label: 'API DISPLAY VIEWER'
+              provider: developer_portal_rapidoc_formatter
+              label_display: visible
+              context_mapping: {  }
             additional: {  }
-            weight: -10
-          86e81e22-f8da-49a5-8067-44c8623efcd9:
-            uuid: 86e81e22-f8da-49a5-8067-44c8623efcd9
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          2c85677d-7266-45de-ba34-b67cea0970f6:
+            uuid: 2c85677d-7266-45de-ba34-b67cea0970f6
             region: ds_content
             configuration:
-              id: 'field_block:node:api_document:field_document'
-              label: Document
-              provider: layout_builder
+              id: 'views_block:api_document_formatter-block_1'
+              label: ''
+              provider: views
               label_display: '0'
-              formatter:
-                label: hidden
-                type: redoc_ui
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
             additional: {  }
-            weight: -8
+            weight: -9
         third_party_settings: {  }
 id: node.api_document.full
 targetEntityType: node
@@ -132,6 +148,10 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_api_categories: true
+  field_banners_image: true
+  field_format: true
+  field_listing_image: true
   field_organisation: true
   field_user_rating: true
   layout_builder__layout: true

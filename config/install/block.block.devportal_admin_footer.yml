@@ -1,5 +1,5 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -10,7 +10,7 @@ dependencies:
     - devportal_admin
 id: devportal_admin_footer
 theme: devportal_admin
-region: footer_first
+region: header
 weight: -8
 provider: null
 plugin: 'system_menu_block:footer'

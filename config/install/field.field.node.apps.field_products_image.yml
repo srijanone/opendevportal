@@ -10,8 +10,8 @@ field_name: field_products_image
 entity_type: node
 bundle: apps
 label: 'App Image'
-description: ''
-required: false
+description: 'Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

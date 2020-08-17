@@ -9,8 +9,8 @@ id: node.api_product.field_api_category
 field_name: field_api_category
 entity_type: node
 bundle: api_product
-label: 'API Category'
-description: 'Select one api category to link this content type.'
+label: 'Product Category'
+description: 'Select one product category to link this content type.'
 required: false
 translatable: false
 default_value: {  }

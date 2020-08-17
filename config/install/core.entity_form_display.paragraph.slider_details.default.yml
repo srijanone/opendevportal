@@ -3,10 +3,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.slider_details.field_description
+    - field.field.paragraph.slider_details.field_link_dashboard
     - field.field.paragraph.slider_details.field_slider_image
     - field.field.paragraph.slider_details.field_title
     - paragraphs.paragraphs_type.slider_details
   module:
+    - link
     - media_library
     - text
 id: paragraph.slider_details.default
@@ -21,6 +23,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_link_dashboard:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_slider_image:
     type: media_library_widget

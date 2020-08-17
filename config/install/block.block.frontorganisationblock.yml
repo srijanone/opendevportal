@@ -1,5 +1,5 @@
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - developer_portal_organisation
@@ -9,7 +9,7 @@ dependencies:
 id: frontorganisationblock
 theme: devportal
 region: primary_menu
-weight: -13
+weight: -14
 provider: null
 plugin: front_organisation_block
 settings:

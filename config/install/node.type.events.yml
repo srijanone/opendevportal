@@ -13,5 +13,5 @@ type: events
 description: 'Use <i>Events</i> to add an event of any API Product.'
 help: ''
 new_revision: true
-preview_mode: 1
-display_submitted: true
+preview_mode: 0
+display_submitted: false

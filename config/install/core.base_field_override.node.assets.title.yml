@@ -7,7 +7,7 @@ id: node.assets.title
 field_name: title
 entity_type: node
 bundle: assets
-label: 'Assets Name'
+label: 'Media Name'
 description: ''
 required: true
 translatable: true

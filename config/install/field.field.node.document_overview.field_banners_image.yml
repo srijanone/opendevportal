@@ -10,7 +10,7 @@ field_name: field_banners_image
 entity_type: node
 bundle: document_overview
 label: 'Banner Image'
-description: 'Add Banner Image for overview page.'
+description: 'Add Banner Image for the overview page.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
 required: false
 translatable: true
 default_value: {  }

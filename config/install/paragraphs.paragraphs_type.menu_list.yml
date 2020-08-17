@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: menu_list
-label: 'Menu List'
-icon_uuid: null
-icon_default: null
-description: 'Create a set of title, description and multiple links for each item. '
-behavior_plugins: {  }

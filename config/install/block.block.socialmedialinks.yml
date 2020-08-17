@@ -3,13 +3,12 @@ status: true
 dependencies:
   module:
     - social_media_links
-    - system
   theme:
     - devportal
 id: socialmedialinks
 theme: devportal
 region: footer_first
-weight: -7
+weight: -17
 provider: null
 plugin: social_media_links_block
 settings:
@@ -109,9 +108,4 @@ settings:
     installed_iconsets:
       fontawesome:
         examples: ''
-visibility:
-  request_path:
-    id: request_path
-    pages: "/dashboard-listing\r\n/dashboard/*\r\n/apimanager/*\r\n/dashboard"
-    negate: true
-    context_mapping: {  }
+visibility: {  }

@@ -7,7 +7,7 @@ id: node.resources.title
 field_name: title
 entity_type: node
 bundle: resources
-label: 'Resource Name'
+label: 'Download Name'
 description: ''
 required: true
 translatable: true

@@ -8,7 +8,7 @@ dependencies:
 id: devportal_breadcrumbs
 theme: devportal
 region: content
-weight: -16
+weight: -18
 provider: null
 plugin: system_breadcrumb_block
 settings:
@@ -16,4 +16,9 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/set-organisation\r\n/products\r\n/landing-page/solutions\r\n/landing-page/use-cases\r\n/home\r\n"
+    negate: true
+    context_mapping: {  }

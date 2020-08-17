@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+    - field.storage.block_content.field_banner_images
+    - media.type.image
+id: block_content.header_block.field_banner_images
+field_name: field_banner_images
+entity_type: block_content
+bundle: header_block
+label: Images
+description: 'Use 1680 X 412 px size for displaying the image on full banner else use a smaller image to overlay on the background image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

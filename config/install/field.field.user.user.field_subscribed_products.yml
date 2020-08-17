@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_subscribed_products
+    - node.type.api_product
+  module:
+    - user
+id: user.user.field_subscribed_products
+field_name: field_subscribed_products
+entity_type: user
+bundle: user
+label: 'Subscribed Products'
+description: 'List of subscribed products by the user'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      api_product: api_product
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

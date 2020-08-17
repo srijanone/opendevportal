@@ -5,6 +5,7 @@ dependencies:
     - block_content.type.content_reference
     - field.field.block_content.content_reference.body
     - field.field.block_content.content_reference.field_contents
+    - field.field.block_content.content_reference.field_cta_link_text
   module:
     - text
 id: block_content.content_reference.default
@@ -27,4 +28,5 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-hidden: {  }
+hidden:
+  field_cta_link_text: true

@@ -5,15 +5,20 @@ dependencies:
     - field.storage.node.field_banners_image
     - media.type.image
     - node.type.api_product
+  content:
+    - 'media:image:0626c1f1-22e7-49f4-b84f-7d06dd717b92'
 id: node.api_product.field_banners_image
 field_name: field_banners_image
 entity_type: node
 bundle: api_product
 label: 'Banner Image'
-description: ''
+description: "Minimum Dimension of the Image. \r\nWidth:- 1440px.\r\nHeight:- 218px.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG"
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    weight: '0'
+    target_uuid: 0626c1f1-22e7-49f4-b84f-7d06dd717b92
 default_value_callback: ''
 settings:
   handler: 'default:media'

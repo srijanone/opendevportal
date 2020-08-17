@@ -1,10 +1,10 @@
-name: 'Developer Portal'
+name: 'Open API Exchange'
 mail: vijay.singh@srijan.net
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /landing-page/home
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

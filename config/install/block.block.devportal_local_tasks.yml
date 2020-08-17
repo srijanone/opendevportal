@@ -6,7 +6,7 @@ dependencies:
 id: devportal_local_tasks
 theme: devportal
 region: content
-weight: -14
+weight: -16
 provider: null
 plugin: local_tasks_block
 settings:

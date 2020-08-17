@@ -1,12 +1,14 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - devportal
 id: devportal_page_title
 theme: devportal
 region: content
-weight: -15
+weight: -17
 provider: null
 plugin: page_title_block
 settings:
@@ -14,4 +16,9 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/api-product/*'
+    negate: true
+    context_mapping: {  }

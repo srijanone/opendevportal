@@ -9,10 +9,10 @@ third_party_settings:
       - main
       - tools
     parent: 'main:'
-name: Apps
+name: Application
 type: apps
 description: 'Applications or Apps content type is used to determines the app creates by developers.'
 help: ''
 new_revision: true
-preview_mode: 1
+preview_mode: 0
 display_submitted: false

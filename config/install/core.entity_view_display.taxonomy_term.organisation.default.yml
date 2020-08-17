@@ -2,14 +2,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.organisation.field_access
     - field.field.taxonomy_term.organisation.field_external_link
+    - field.field.taxonomy_term.organisation.field_font_family
+    - field.field.taxonomy_term.organisation.field_header_background_color
+    - field.field.taxonomy_term.organisation.field_icons_bg_color
+    - field.field.taxonomy_term.organisation.field_link_color
     - field.field.taxonomy_term.organisation.field_organisation_hash
-    - field.field.taxonomy_term.organisation.field_organisation_image
+    - field.field.taxonomy_term.organisation.field_organisation_images
     - field.field.taxonomy_term.organisation.field_organisation_page
     - field.field.taxonomy_term.organisation.field_refer_to
+    - field.field.taxonomy_term.organisation.field_site_logo
+    - field.field.taxonomy_term.organisation.field_text_color
+    - image.style.thumbnail
     - taxonomy.vocabulary.organisation
   module:
     - link
+    - media
     - options
     - text
 id: taxonomy_term.organisation.default
@@ -24,6 +33,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_access:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_external_link:
     weight: 4
     label: above
@@ -44,6 +60,15 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_organisation_images:
+    type: media_thumbnail
+    weight: 5
+    label: above
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    region: content
   field_organisation_page:
     weight: 2
     label: above
@@ -60,4 +85,9 @@ content:
     type: list_default
     region: content
 hidden:
-  field_organisation_image: true
+  field_font_family: true
+  field_header_background_color: true
+  field_icons_bg_color: true
+  field_link_color: true
+  field_site_logo: true
+  field_text_color: true

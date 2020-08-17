@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - developer_portal_forum
+    - system
+  theme:
+    - devportal
+id: toptagsblock
+theme: devportal
+region: sidebar_second
+weight: -17
+provider: null
+plugin: Top_Tags_block
+settings:
+  id: Top_Tags_block
+  label: 'Top Tags Block'
+  provider: developer_portal_forum
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/dashboard/topic\r\n/dashboard/topic/*"
+    negate: false
+    context_mapping: {  }

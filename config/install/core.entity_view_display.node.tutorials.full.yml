@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.tutorials.body
     - field.field.node.tutorials.comment
     - field.field.node.tutorials.field_api_detail_section
     - field.field.node.tutorials.field_api_product
@@ -15,10 +16,12 @@ dependencies:
     - field.field.node.tutorials.layout_builder__layout
     - node.type.tutorials
   module:
+    - book
     - ds
     - entity_reference_revisions
     - layout_builder
     - social_media
+    - system
     - text
     - user
 third_party_settings:
@@ -39,27 +42,47 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          6d093efa-b328-4a76-b990-71dea7809079:
-            uuid: 6d093efa-b328-4a76-b990-71dea7809079
+          a0cc5fe3-de76-496c-abd6-19f41453ebc3:
+            uuid: a0cc5fe3-de76-496c-abd6-19f41453ebc3
             region: ds_content
             configuration:
-              id: 'field_block:node:tutorials:field_description'
-              label: 'Tutorial Summary'
-              provider: layout_builder
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              context_mapping: {  }
             additional: {  }
-            weight: -10
-          83b80c6f-464c-4fcf-a1fb-9a7d5cc3524a:
-            uuid: 83b80c6f-464c-4fcf-a1fb-9a7d5cc3524a
-            region: ds_content
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_2col
+        layout_settings:
+          label: ''
+          wrappers:
+            left: div
+            right: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          2bbf6f4d-9f02-47b4-a1c4-00ccd4505376:
+            uuid: 2bbf6f4d-9f02-47b4-a1c4-00ccd4505376
+            region: left
+            configuration:
+              id: book_navigation
+              label: 'Book navigation'
+              provider: book
+              label_display: '0'
+              block_mode: 'book pages'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          c94d8fae-f82b-4ae4-8217-d529ae771a40:
+            uuid: c94d8fae-f82b-4ae4-8217-d529ae771a40
+            region: right
             configuration:
               id: 'field_block:node:tutorials:field_api_detail_section'
               label: 'Tutorial Section'
@@ -78,9 +101,9 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -9
-          dfe0fcda-43cb-4b75-95cc-aaba4f6288c1:
-            uuid: dfe0fcda-43cb-4b75-95cc-aaba4f6288c1
-            region: ds_content
+          9e310152-102b-49cd-9be6-91eeac2300ed:
+            uuid: 9e310152-102b-49cd-9be6-91eeac2300ed
+            region: right
             configuration:
               id: 'field_block:node:tutorials:field_tags'
               label: Tags
@@ -99,9 +122,41 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -8
-          8a9effba-252b-4820-afa9-0fbe3bf46295:
-            uuid: 8a9effba-252b-4820-afa9-0fbe3bf46295
-            region: ds_content
+          8c3e1663-1171-4644-899d-eef93ee7ceed:
+            uuid: 8c3e1663-1171-4644-899d-eef93ee7ceed
+            region: right
+            configuration:
+              id: 'field_block:node:tutorials:field_user_rating'
+              label: 'User Rating'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: fivestar_stars
+                settings:
+                  fivestar_widget: basic
+                  display_format: average
+                  text_format: average
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -7
+          faac87a0-21ad-4a2c-9200-9f0e6c74852a:
+            uuid: faac87a0-21ad-4a2c-9200-9f0e6c74852a
+            region: right
+            configuration:
+              id: social_sharing_block
+              label: 'Social Sharing block'
+              provider: social_media
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: -6
+          da8412ae-77f4-4e20-b8c8-abbac3452099:
+            uuid: da8412ae-77f4-4e20-b8c8-abbac3452099
+            region: right
             configuration:
               id: 'field_block:node:tutorials:comment'
               label: Comments
@@ -119,38 +174,24 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -5
-          f569edbc-e9a8-42c6-bf55-af7b5f69414e:
-            uuid: f569edbc-e9a8-42c6-bf55-af7b5f69414e
-            region: ds_content
+          f4a04678-3a64-4ba8-8996-d54c0ef6f430:
+            uuid: f4a04678-3a64-4ba8-8996-d54c0ef6f430
+            region: right
             configuration:
-              id: 'field_block:node:tutorials:field_user_rating'
-              label: 'User Rating'
+              id: 'field_block:node:tutorials:body'
+              label: Description
               provider: layout_builder
               label_display: '0'
               formatter:
                 label: hidden
-                type: fivestar_stars
-                settings:
-                  fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
-                  display_format: average
-                  text_format: average
+                type: text_default
+                settings: {  }
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
-          52401044-2954-4520-afb4-81b6c4665e5a:
-            uuid: 52401044-2954-4520-afb4-81b6c4665e5a
-            region: ds_content
-            configuration:
-              id: social_sharing_block
-              label: 'Social Sharing block'
-              provider: social_media
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: -6
+            weight: -10
         third_party_settings: {  }
 id: node.tutorials.full
 targetEntityType: node
@@ -196,9 +237,11 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   comment: true
   field_api_product: true
   field_listing_image: true
   field_organisation: true
   field_user_rating: true
+  langcode: true
   layout_builder__layout: true

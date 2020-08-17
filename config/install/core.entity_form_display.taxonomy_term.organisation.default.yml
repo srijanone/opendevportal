@@ -2,18 +2,91 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.organisation.field_access
     - field.field.taxonomy_term.organisation.field_external_link
+    - field.field.taxonomy_term.organisation.field_font_family
+    - field.field.taxonomy_term.organisation.field_header_background_color
+    - field.field.taxonomy_term.organisation.field_icons_bg_color
+    - field.field.taxonomy_term.organisation.field_link_color
     - field.field.taxonomy_term.organisation.field_organisation_hash
-    - field.field.taxonomy_term.organisation.field_organisation_image
+    - field.field.taxonomy_term.organisation.field_organisation_images
     - field.field.taxonomy_term.organisation.field_organisation_page
     - field.field.taxonomy_term.organisation.field_refer_to
-    - image.style.thumbnail
+    - field.field.taxonomy_term.organisation.field_site_logo
+    - field.field.taxonomy_term.organisation.field_text_color
     - taxonomy.vocabulary.organisation
   module:
+    - color_field
+    - field_group
     - link
-    - path
-    - svg_image
+    - media_library
     - textfield_counter
+third_party_settings:
+  field_group:
+    group_container:
+      children:
+        - group_program_me
+        - group_media
+        - group_theme
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Container
+    group_program_me:
+      children:
+        - name
+        - field_access
+        - description
+        - field_refer_to
+        - field_external_link
+        - field_organisation_page
+      parent_name: group_container
+      weight: 1
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: 'Program Metadata'
+    group_media:
+      children:
+        - field_organisation_images
+      parent_name: group_container
+      weight: 2
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Media
+    group_theme:
+      children:
+        - field_site_logo
+        - field_header_background_color
+        - field_icons_bg_color
+        - field_font_family
+      parent_name: group_container
+      weight: 3
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Contains the characteristics in theme set for this program.'
+        formatter: closed
+        required_fields: true
+      label: Theme
 id: taxonomy_term.organisation.default
 targetEntityType: taxonomy_term
 bundle: organisation
@@ -21,7 +94,7 @@ mode: default
 content:
   description:
     type: text_textarea_with_counter
-    weight: 1
+    weight: 4
     region: content
     settings:
       placeholder: ''
@@ -32,6 +105,12 @@ content:
       textcount_status_message: 'Maxlength: <span class="maxlength_count">@maxlength</span><br />Used: <span class="current_count">@current_length</span><br />Remaining: <span class="remaining_count">@remaining_count</span>'
       rows: 5
     third_party_settings: {  }
+  field_access:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_external_link:
     weight: 6
     settings:
@@ -40,13 +119,32 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_organisation_image:
-    type: image_image
+  field_font_family:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_header_background_color:
+    weight: 15
+    settings:
+      default_colors: "\n#AC725E,#D06B64,#F83A22,#FA573C,#FF7537,#FFAD46\n#42D692,#16A765,#7BD148,#B3DC6C,#FBE983\n#92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF\n#B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2\n#CD74E6,#A47AE2"
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_icons_bg_color:
+    weight: 16
+    settings:
+      default_colors: "\n#AC725E,#D06B64,#F83A22,#FA573C,#FF7537,#FFAD46\n#42D692,#16A765,#7BD148,#B3DC6C,#FBE983\n#92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF\n#B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2\n#CD74E6,#A47AE2"
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_organisation_images:
+    type: media_library_widget
     weight: 2
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
   field_organisation_page:
     weight: 7
@@ -64,26 +162,30 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_site_logo:
+    type: media_library_widget
+    weight: 14
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
-    weight: 0
+    weight: 2
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 1
     region: content
     third_party_settings: {  }
 hidden:
+  field_link_color: true
   field_organisation_hash: true
+  field_text_color: true
+  path: true

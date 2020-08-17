@@ -1,4 +1,4 @@
-applies_admin_routes: true
+applies_admin_routes: false
 include_home_segment: true
 home_segment_title: Home
 home_segment_keep: false
@@ -13,7 +13,7 @@ hide_single_home_item: false
 title_from_page_when_available: true
 include_invalid_paths: false
 excluded_paths: ''
-replaced_titles: ''
+replaced_titles: 'Total Control dashboard:: Admin Dashboard'
 custom_paths: ''
 segments_separator: null
 title_segment_as_link: false

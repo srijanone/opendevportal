@@ -1,11 +1,10 @@
 langcode: en
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:header_block:a7fee6f2-f8ed-428a-8d77-27dab49f02ba'
   module:
     - block_content
-    - system
   theme:
     - devportal
 id: homepagebanner
@@ -21,10 +20,5 @@ settings:
   label_display: '0'
   status: true
   info: ''
-  view_mode: full
-visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: false
-    context_mapping: {  }
+  view_mode: default
+visibility: {  }

@@ -6,7 +6,7 @@ dependencies:
 id: devportal_local_actions
 theme: devportal
 region: content
-weight: -12
+weight: -14
 provider: null
 plugin: local_actions_block
 settings:

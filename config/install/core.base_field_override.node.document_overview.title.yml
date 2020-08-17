@@ -7,7 +7,7 @@ id: node.document_overview.title
 field_name: title
 entity_type: node
 bundle: document_overview
-label: 'Document Name'
+label: 'Page Name'
 description: ''
 required: true
 translatable: true

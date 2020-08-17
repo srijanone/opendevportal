@@ -3,9 +3,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_attach_file
+    - media.type.image
     - node.type.issues
-  module:
-    - file
 id: node.issues.field_attach_file
 field_name: field_attach_file
 entity_type: node
@@ -17,10 +16,12 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'jpg jpeg png'
-  max_filesize: ''
-  description_field: false
-  handler: 'default:file'
-  handler_settings: {  }
-field_type: file
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

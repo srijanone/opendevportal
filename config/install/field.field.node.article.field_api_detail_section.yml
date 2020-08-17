@@ -11,7 +11,7 @@ id: node.article.field_api_detail_section
 field_name: field_api_detail_section
 entity_type: node
 bundle: article
-label: 'Article Section'
+label: 'Blog Section'
 description: 'Use this field to add sections in article content.'
 required: false
 translatable: true
@@ -30,8 +30,11 @@ settings:
       dashboard_listing:
         weight: 5
         enabled: false
-      menu_list:
-        weight: 6
+      features:
+        weight: 7
+        enabled: false
+      product_attributes:
+        weight: 8
         enabled: false
       slider_details:
         weight: 8

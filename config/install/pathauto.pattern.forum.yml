@@ -6,16 +6,16 @@ dependencies:
 id: forum
 label: Forum
 type: 'canonical_entities:node'
-pattern: '/topic/[node:title]'
+pattern: '/dashboard/topic/[node:title]'
 selection_criteria:
-  844446fc-a111-49e0-b159-c9eec66d25fd:
+  4f35e1c7-6207-486a-bc9a-f25b81fa7bf5:
     id: node_type
     bundles:
       forum: forum
     negate: false
     context_mapping:
       node: node
-    uuid: 844446fc-a111-49e0-b159-c9eec66d25fd
+    uuid: 4f35e1c7-6207-486a-bc9a-f25b81fa7bf5
 selection_logic: and
 weight: -5
 relationships: {  }

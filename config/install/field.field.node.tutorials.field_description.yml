@@ -13,6 +13,7 @@ third_party_settings:
     restricted_html: restricted_html
     full_html: full_html
     plain_text: plain_text
+    markdown: '0'
     code_snippet: '0'
 id: node.tutorials.field_description
 field_name: field_description
@@ -20,7 +21,7 @@ entity_type: node
 bundle: tutorials
 label: 'Tutorial Summary'
 description: 'Add a brief description of the tutorials.'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

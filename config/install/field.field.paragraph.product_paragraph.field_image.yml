@@ -10,7 +10,7 @@ field_name: field_image
 entity_type: paragraph
 bundle: product_paragraph
 label: Image
-description: 'Add Image.'
+description: 'Add Image.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
 required: false
 translatable: false
 default_value: {  }

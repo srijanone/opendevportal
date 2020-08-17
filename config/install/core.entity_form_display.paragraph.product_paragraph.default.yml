@@ -15,7 +15,6 @@ dependencies:
     - allowed_formats
     - field_group
     - file
-    - link
     - media_library
     - text
 third_party_settings:
@@ -74,14 +73,6 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  field_link:
-    weight: 3
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   field_select_file:
     weight: 5
     settings: {  }
@@ -105,4 +96,5 @@ content:
     region: content
 hidden:
   created: true
+  field_link: true
   status: true

@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 name: 'Issue Type'
 vid: issue_type
-description: ''
+description: 'Issue type is to define the category of issue, like Bug,Feature Request,etc.'
 weight: 0

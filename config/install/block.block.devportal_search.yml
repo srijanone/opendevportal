@@ -9,7 +9,7 @@ dependencies:
 id: devportal_search
 theme: devportal
 region: primary_menu
-weight: -14
+weight: -18
 provider: null
 plugin: search_form_block
 settings:

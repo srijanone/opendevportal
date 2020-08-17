@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: dashboard_menu_block
-label: 'Dashboard Menu Block'
-revision: 0
-description: 'A dashboard menu block contains menu that will be accessible to users'

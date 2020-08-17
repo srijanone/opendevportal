@@ -5,7 +5,9 @@ dependencies:
     - block_content.type.content_reference
     - field.field.block_content.content_reference.body
     - field.field.block_content.content_reference.field_contents
+    - field.field.block_content.content_reference.field_cta_link_text
   module:
+    - link
     - text
 id: block_content.content_reference.default
 targetEntityType: block_content
@@ -31,6 +33,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_cta_link_text:
+    weight: 28
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   info:
     type: string_textfield

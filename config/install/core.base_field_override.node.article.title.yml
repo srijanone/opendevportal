@@ -7,7 +7,7 @@ id: node.article.title
 field_name: title
 entity_type: node
 bundle: article
-label: 'Article Name'
+label: 'Blog Name'
 description: ''
 required: true
 translatable: true

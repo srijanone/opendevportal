@@ -11,8 +11,9 @@ dependencies:
     - field.field.node.resources.field_listing_image
     - field.field.node.resources.field_organisation
     - field.field.node.resources.field_tags
-    - field.field.node.resources.layout_builder__layout
+    - field.field.node.resources.field_upload_doc_files
     - field.field.node.resources.field_user_rating
+    - field.field.node.resources.layout_builder__layout
     - node.type.resources
   module:
     - user
@@ -35,5 +36,6 @@ hidden:
   field_listing_image: true
   field_organisation: true
   field_tags: true
+  field_upload_doc_files: true
   field_user_rating: true
   layout_builder__layout: true

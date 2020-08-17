@@ -10,7 +10,7 @@ field_name: field_listing_image
 entity_type: node
 bundle: resources
 label: 'Listing Image'
-description: 'Add Listing image to Resource content.'
+description: 'Add Listing image to Resource content.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
 required: false
 translatable: true
 default_value: {  }

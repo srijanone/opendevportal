@@ -10,7 +10,7 @@ dependencies:
 id: devportal_tools
 theme: devportal
 region: sidebar_first
-weight: 0
+weight: -15
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

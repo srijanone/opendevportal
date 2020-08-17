@@ -10,7 +10,7 @@ field_name: field_banners_image
 entity_type: node
 bundle: tutorials
 label: 'Banner Image'
-description: 'Add Banner Image'
+description: 'Add Banner Image<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
 required: false
 translatable: true
 default_value: {  }

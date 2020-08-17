@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Assets Category'
-vid: assets_category
-description: 'Assets Category'
-weight: 0

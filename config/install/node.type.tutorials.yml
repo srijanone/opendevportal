@@ -8,10 +8,10 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Tutorials
+name: Tutorial
 type: tutorials
 description: 'Use <i>Tutorials</i> to add an tutorial of any API Product.'
 help: ''
-new_revision: false
-preview_mode: 1
-display_submitted: true
+new_revision: true
+preview_mode: 0
+display_submitted: false

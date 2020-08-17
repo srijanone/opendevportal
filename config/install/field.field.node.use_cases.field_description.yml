@@ -9,18 +9,19 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
+    basic_html: basic_html
+    restricted_html: restricted_html
     full_html: full_html
-    basic_html: '0'
+    markdown: markdown
+    plain_text: plain_text
     code_snippet: '0'
-    restricted_html: '0'
-    plain_text: '0'
 id: node.use_cases.field_description
 field_name: field_description
 entity_type: node
 bundle: use_cases
 label: 'Use Case Summary'
 description: 'Use this field to add a brief description about the use case.'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

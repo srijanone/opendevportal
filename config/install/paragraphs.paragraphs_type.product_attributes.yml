@@ -5,5 +5,5 @@ id: product_attributes
 label: 'Product Attributes'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'This paragraph is used  to manage the key-value attributes on API products'
 behavior_plugins: {  }

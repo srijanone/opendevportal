@@ -4,10 +4,17 @@ dependencies:
   enforced:
     module:
       - forum
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
 name: 'Forum topic'
 type: forum
 description: 'A <em>forum topic</em> starts a new discussion thread within a forum.'
 help: ''
 new_revision: false
-preview_mode: 1
-display_submitted: true
+preview_mode: 0
+display_submitted: false

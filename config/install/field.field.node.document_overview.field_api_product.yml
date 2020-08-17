@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_api_product
-    - node.type.api_product
     - node.type.document_overview
 id: node.document_overview.field_api_product
 field_name: field_api_product
@@ -11,17 +10,15 @@ entity_type: node
 bundle: document_overview
 label: 'Api Product'
 description: 'Add a reference to API Product.'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      api_product: api_product
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: api_product
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference

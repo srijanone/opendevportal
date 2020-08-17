@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.events.comment
     - field.field.node.events.field_address_block
     - field.field.node.events.field_api_product
+    - field.field.node.events.field_banners_image
     - field.field.node.events.field_end_date
     - field.field.node.events.field_event_types
     - field.field.node.events.field_event_url
@@ -42,6 +43,7 @@ hidden:
   comment: true
   field_address_block: true
   field_api_product: true
+  field_banners_image: true
   field_end_date: true
   field_event_types: true
   field_event_url: true

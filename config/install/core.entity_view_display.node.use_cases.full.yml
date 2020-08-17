@@ -16,10 +16,12 @@ dependencies:
     - field.field.node.use_cases.layout_builder__layout
     - node.type.use_cases
   module:
+    - book
     - ds
     - entity_reference_revisions
     - layout_builder
     - social_media
+    - system
     - text
     - user
 third_party_settings:
@@ -40,87 +42,47 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          54ab9128-1d4a-49ef-a731-cad755efd0e4:
-            uuid: 54ab9128-1d4a-49ef-a731-cad755efd0e4
+          e8543888-8778-4c41-8a0c-84bc68a09670:
+            uuid: e8543888-8778-4c41-8a0c-84bc68a09670
             region: ds_content
             configuration:
-              id: 'field_block:node:use_cases:field_banners_image'
-              label: 'Listing Image'
-              provider: layout_builder
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
               label_display: '0'
-              formatter:
-                label: hidden
-                type: media_thumbnail
-                settings:
-                  image_style: ''
-                  image_link: ''
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              context_mapping: {  }
             additional: {  }
-            weight: -10
-          b58ce7f7-97e6-473b-8a8c-650695873af1:
-            uuid: b58ce7f7-97e6-473b-8a8c-650695873af1
-            region: ds_content
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_2col
+        layout_settings:
+          label: ''
+          wrappers:
+            left: div
+            right: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          433f938f-fccc-4d80-9b32-88f36baa2bb9:
+            uuid: 433f938f-fccc-4d80-9b32-88f36baa2bb9
+            region: left
             configuration:
-              id: 'field_block:node:use_cases:field_api_detail_section'
-              label: 'Use Cases Section'
-              provider: layout_builder
+              id: book_navigation
+              label: 'Book navigation'
+              provider: book
               label_display: '0'
-              formatter:
-                label: hidden
-                type: paragraph_summary
-                settings: {  }
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              block_mode: 'book pages'
+              context_mapping: {  }
             additional: {  }
-            weight: -8
-          2877ff90-18be-4cae-acb6-e2888d77b2d0:
-            uuid: 2877ff90-18be-4cae-acb6-e2888d77b2d0
-            region: ds_content
-            configuration:
-              id: 'field_block:node:use_cases:field_description'
-              label: 'Use Case Summary'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
-          4c664265-2484-4ffb-8409-c1de482404c8:
-            uuid: 4c664265-2484-4ffb-8409-c1de482404c8
-            region: ds_content
-            configuration:
-              id: 'field_block:node:use_cases:comment'
-              label: Comments
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: comment_default
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -4
-          85341960-0d09-4fb9-af0b-18d7fffaaa86:
-            uuid: 85341960-0d09-4fb9-af0b-18d7fffaaa86
-            region: ds_content
+            weight: 0
+          42216962-1dd4-40e8-846d-f8ecfb6038a4:
+            uuid: 42216962-1dd4-40e8-846d-f8ecfb6038a4
+            region: right
             configuration:
               id: 'field_block:node:use_cases:field_tags'
               label: Tags
@@ -138,10 +100,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
-          bec3fc7a-6a8d-4c3b-ba4f-2f1a0491e395:
-            uuid: bec3fc7a-6a8d-4c3b-ba4f-2f1a0491e395
-            region: ds_content
+            weight: -8
+          e0e4d28d-37a8-406c-bf93-3f1ac7c7e51e:
+            uuid: e0e4d28d-37a8-406c-bf93-3f1ac7c7e51e
+            region: right
             configuration:
               id: 'field_block:node:use_cases:field_user_rating'
               label: 'User Rating'
@@ -151,7 +113,7 @@ third_party_settings:
                 label: hidden
                 type: fivestar_stars
                 settings:
-                  fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+                  fivestar_widget: basic
                   display_format: average
                   text_format: average
                 third_party_settings: {  }
@@ -159,10 +121,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -6
-          96056925-8408-4bfd-a46c-06d94119991d:
-            uuid: 96056925-8408-4bfd-a46c-06d94119991d
-            region: ds_content
+            weight: -7
+          cef5eda3-5e88-4d72-83ee-cfbffa9d1919:
+            uuid: cef5eda3-5e88-4d72-83ee-cfbffa9d1919
+            region: right
             configuration:
               id: social_sharing_block
               label: 'Social Sharing block'
@@ -170,7 +132,66 @@ third_party_settings:
               label_display: '0'
               context_mapping: {  }
             additional: {  }
+            weight: -6
+          aaf990e9-cfe0-4765-a620-ada765c2ebcc:
+            uuid: aaf990e9-cfe0-4765-a620-ada765c2ebcc
+            region: right
+            configuration:
+              id: 'field_block:node:use_cases:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
             weight: -5
+          e46aeeb9-b955-4566-b630-9c8896c8076a:
+            uuid: e46aeeb9-b955-4566-b630-9c8896c8076a
+            region: right
+            configuration:
+              id: 'field_block:node:use_cases:body'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          2288c8a7-e508-46e5-b793-1e1186b77aa2:
+            uuid: 2288c8a7-e508-46e5-b793-1e1186b77aa2
+            region: right
+            configuration:
+              id: 'field_block:node:use_cases:field_api_detail_section'
+              label: 'Use Cases Section'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  ds:
+                    ds_limit: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
         third_party_settings: {  }
 id: node.use_cases.full
 targetEntityType: node
@@ -220,4 +241,5 @@ hidden:
   field_listing_image: true
   field_organisation: true
   field_user_rating: true
+  langcode: true
   layout_builder__layout: true

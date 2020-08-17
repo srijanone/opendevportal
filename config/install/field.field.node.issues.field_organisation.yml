@@ -9,7 +9,7 @@ id: node.issues.field_organisation
 field_name: field_organisation
 entity_type: node
 bundle: issues
-label: Organisation
+label: Program
 description: ''
 required: false
 translatable: true

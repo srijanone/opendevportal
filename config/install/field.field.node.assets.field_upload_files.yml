@@ -11,7 +11,7 @@ field_name: field_upload_files
 entity_type: node
 bundle: assets
 label: 'Upload Files'
-description: 'Use to upload files in assets content.'
+description: 'Use to upload files in assets content.<br>Supported File Types: TXT, ZIP, TAR'
 required: false
 translatable: true
 default_value: {  }

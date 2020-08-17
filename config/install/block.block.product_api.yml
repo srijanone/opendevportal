@@ -2,30 +2,30 @@ langcode: en
 status: true
 dependencies:
   module:
-    - developer_portal_block
+    - developer_portal_navigation_block
     - system
   theme:
     - devportal
 id: product_api
 theme: devportal
 region: sidebar_first
-weight: 0
+weight: -17
 provider: null
 plugin: product_navigation_block
 settings:
   id: null
-  label: 'Product API'
-  provider: developer_portal_block
+  label: 'Product Sidebar Block'
+  provider: developer_portal_navigation_block
   label_display: '0'
   dvp_sidebar_navigation:
     document_overview:
-      navigation_text: Overview
+      navigation_text: 'Getting Started'
       show: '1'
       type: Page
-    solutions:
-      navigation_text: ''
+    api_document:
+      navigation_text: 'API Reference'
       show: '1'
-      type: Solutions
+      type: 'API Document'
     tutorials:
       navigation_text: ''
       show: '1'
@@ -34,16 +34,16 @@ settings:
       navigation_text: ''
       show: '1'
       type: 'Use Cases'
-    resources:
-      navigation_text: ''
-      show: '1'
-      type: Resources
     faq:
-      navigation_text: ''
+      navigation_text: FAQs
       show: '1'
       type: FAQ
+    resources:
+      navigation_text: Downloads
+      show: '1'
+      type: Resources
     assets:
-      navigation_text: ''
+      navigation_text: Media
       show: '1'
       type: Assets
     events:
@@ -51,20 +51,20 @@ settings:
       show: '1'
       type: Events
     article:
-      navigation_text: ''
+      navigation_text: Blogs
       show: '1'
       type: Article
     issues:
       navigation_text: ''
       show: '1'
       type: Issues
-    api_document:
-      navigation_text: API
+    solutions:
+      navigation_text: ''
       show: '1'
-      type: 'API Document'
+      type: Solutions
 visibility:
   request_path:
     id: request_path
-    pages: "/faq/list\r\n/product/*\r\n/node/*\r\n/document-overview/list\r\n/issues/list\r\n/events/list\r\n/resources/list\r\n/tutorials/list\r\n/assets/list\r\n/article/list\r\n/use-cases/list\r\n/solutions/list\r\n/document/*"
+    pages: "/product/*\r\n/products/*\r\n/topic/*\r\n/node/*/apps\r\n/node/*/article\r\n/node/*/assets\r\n/node/*/document_overview\r\n/node/*/events\r\n/node/*/faq\r\n/node/*/forum\r\n/node/*/issues\r\n/node/*/solutions\r\n/node/*/use_cases\r\n/node/*/tutorials\r\n/node/*/api_document\r\n/node/*/resources\r\n/use_cases/*\r\n/solutions/*\r\n/assets/*\r\n/issues/*\r\n/document_overview/*\r\n/events/*\r\n/article/*\r\n/resources/*\r\n/page/*\r\n/tutorials/*\r\n/use-cases/*\r\n/solutions/*\r\n/assets/*\r\n/issues/*\r\n/document_overview/*"
     negate: false
     context_mapping: {  }

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.block_content.full
     - field.field.block_content.content_reference.body
     - field.field.block_content.content_reference.field_contents
+    - field.field.block_content.content_reference.field_cta_link_text
   module:
     - layout_builder
     - text
@@ -33,4 +34,5 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-hidden: {  }
+hidden:
+  field_cta_link_text: true

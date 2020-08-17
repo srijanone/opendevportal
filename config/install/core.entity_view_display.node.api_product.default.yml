@@ -8,10 +8,16 @@ dependencies:
     - field.field.node.api_product.field_api_category
     - field.field.node.api_product.field_api_specifications
     - field.field.node.api_product.field_banners_image
+    - field.field.node.api_product.field_feature_label
+    - field.field.node.api_product.field_key_features
     - field.field.node.api_product.field_organisation
+    - field.field.node.api_product.field_price
     - field.field.node.api_product.field_product_attributes
+    - field.field.node.api_product.field_product_marketing
     - field.field.node.api_product.field_products_image
     - field.field.node.api_product.field_user_rating
+    - field.field.node.api_product.field_version
+    - field.field.node.api_product.field_view_mode
     - field.field.node.api_product.layout_builder__layout
     - node.type.api_product
   module:
@@ -20,6 +26,7 @@ dependencies:
     - entity_reference_revisions
     - fivestar
     - layout_builder
+    - options
     - user
 third_party_settings:
   layout_builder:
@@ -76,6 +83,37 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 7
+          4e906dc0-1b21-4089-93f8-b4a0df5ce32d:
+            uuid: 4e906dc0-1b21-4089-93f8-b4a0df5ce32d
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_product:field_view_mode'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 8
+          b32a7e6a-b85f-4638-8401-a8adbc7b04d7:
+            uuid: b32a7e6a-b85f-4638-8401-a8adbc7b04d7
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_product:field_price'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 9
         third_party_settings: {  }
 id: node.api_product.default
 targetEntityType: node
@@ -107,6 +145,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_price:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
   field_product_attributes:
     type: entity_reference_revisions_entity_view
     weight: 20
@@ -134,6 +180,13 @@ content:
     third_party_settings: {  }
     type: fivestar_stars
     region: content
+  field_view_mode:
+    weight: 21
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
   links:
     weight: 0
     region: content
@@ -144,6 +197,11 @@ hidden:
   field_api_category: true
   field_api_specifications: true
   field_banners_image: true
+  field_feature_label: true
+  field_key_features: true
   field_organisation: true
+  field_product_marketing: true
   field_products_image: true
+  field_version: true
+  langcode: true
   layout_builder__layout: true

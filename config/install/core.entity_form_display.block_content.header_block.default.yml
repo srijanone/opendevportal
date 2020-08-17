@@ -4,13 +4,13 @@ dependencies:
   config:
     - block_content.type.header_block
     - field.field.block_content.header_block.body
+    - field.field.block_content.header_block.field_banner_images
     - field.field.block_content.header_block.field_icons
     - field.field.block_content.header_block.field_images
     - field.field.block_content.header_block.field_title
-    - image.style.thumbnail
   module:
     - allowed_formats
-    - svg_image
+    - media_library
     - textfield_counter
 id: block_content.header_block.default
 targetEntityType: block_content
@@ -37,6 +37,13 @@ content:
         hide_help: '0'
         hide_guidelines: '0'
     region: content
+  field_banner_images:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_icons:
     weight: 4
     settings:
@@ -46,14 +53,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_images:
-    weight: 3
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
     region: content
   field_title:
     weight: 1
@@ -71,4 +70,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_images: true
