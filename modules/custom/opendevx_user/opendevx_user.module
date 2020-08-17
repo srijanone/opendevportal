@@ -1,0 +1,123 @@
+<?php
+
+/**
+ * @file
+ * Module file for opendevx_user module.
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * @file
+ * Contains developer portal user module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function opendevx_user_theme() {
+  return [
+    'user_organisation' => [
+      'variables' => [
+        'orgData' => NULL,
+        'orgTitle' => NULL,
+        'orgDescription' => NULL,
+        'currentOrganisation' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function opendevx_user_user_login($account) {
+  $roles = $account->getRoles();
+  // Check product manager role for variable set.
+  if (in_array('product_manager', $roles)) {
+    $organisation = \Drupal::service('opendevx_user.organisation');
+    $org_id = array_column($organisation->getUserOrganisations(), 'orgId');
+    if (!empty($org_id)) {
+      $organisation->setOrgId($org_id[0]);
+    }
+  }
+  if (in_array('developer', $roles)) {
+    $path = \Drupal::request()->get('path');
+    $pid = \Drupal::request()->get('pid');
+    $tempstore = \Drupal::service('tempstore.private');
+    // Get the store collection.
+    $store = $tempstore->get('developer_portal_block');
+    // Set the key/value pair.
+    $store->set('store_pid', $pid);
+    $store->set('store_path', $path);
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function opendevx_user_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'organisation_users' &&
+    in_array($view->current_display, ['page_1', 'page_2'])) {
+    $role_statement = opendevx_user_get_roles_hierarchy();
+
+    if (isset($role_statement)) {
+      $query->addWhere(0, 'user__roles.roles_target_id', $role_statement, 'IN');
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function opendevx_user_form_alter(&$form,
+  FormStateInterface $form_state,
+  $form_id) {
+  $current_user_roles = \Drupal::currentUser()->getRoles(TRUE);
+  if ($form_id == 'views_exposed_form' && $current_user_roles && !in_array('administrator', $current_user_roles)) {
+    if (isset($form['role'])) {
+      $form['role']['#options'] =
+        ["All" => array_shift($form['role']['#options'])] +
+        array_intersect_key($form['role']['#options'], opendevx_user_get_roles_hierarchy());
+    }
+  }
+  if ($form_id == 'user_register_form') {
+    if ($current_user_roles && (!in_array('admin', $current_user_roles) ||
+    !in_array('administrator', $current_user_roles))) {
+      $form['field_organisation']['#access'] == FALSE;
+    }
+  }
+}
+
+/**
+ * Returns roles hierarchy for the current role.
+ */
+function opendevx_user_get_roles_hierarchy() {
+  $current_user_role = \Drupal::currentUser()->getRoles(TRUE);
+
+  // Specify the access for roles as per hierarchy.
+  $role_access[0] = ['developer'];
+  $role_access[1] = array_merge($role_access[0], ['product_manager']);
+  $role_access[2] = array_merge($role_access[1], ['admin']);
+  switch (reset($current_user_role)) {
+    case "developer":
+      $role_statement = array_combine($role_access[0], $role_access[0]);
+      break;
+
+    case "product_manager":
+      $role_statement = array_combine($role_access[1], $role_access[1]);
+      break;
+
+    case "admin":
+      $role_statement = array_combine($role_access[2], $role_access[2]);
+      break;
+
+    default:
+      $role_statement = NULL;
+      break;
+  }
+
+  return $role_statement;
+}
