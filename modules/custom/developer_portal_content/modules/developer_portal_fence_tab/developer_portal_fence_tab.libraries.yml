@@ -1,0 +1,9 @@
+global-styling:
+  js:
+    js/fence-code-tab.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

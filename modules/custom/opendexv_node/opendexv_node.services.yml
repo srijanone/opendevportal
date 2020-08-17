@@ -1,0 +1,4 @@
+services:
+  opendexv_node.node:
+   class: Drupal\opendexv_node\Node
+   arguments: ['@database', '@current_user', '@entity_type.manager']

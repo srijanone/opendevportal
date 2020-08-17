@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: header_block
+label: 'Banner Block'
+revision: 0
+description: 'Create a Banner Block for all the pages'

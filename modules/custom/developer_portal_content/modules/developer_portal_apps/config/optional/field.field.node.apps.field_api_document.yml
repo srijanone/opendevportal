@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_document
+    - node.type.api_document
+    - node.type.apps
+id: node.apps.field_api_document
+field_name: field_api_document
+entity_type: node
+bundle: apps
+label: "API Document"
+description: ""
+required: false
+translatable: false
+default_value: {}
+default_value_callback: ""
+settings:
+  handler: "default:node"
+  handler_settings:
+    target_bundles:
+      api_document: api_document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ""
+field_type: entity_reference

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_block
+label: 'Dashboard Block'
+revision: 0
+description: 'This block is used to show custom listings on any page.'

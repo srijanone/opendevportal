@@ -1,0 +1,9 @@
+name: Developer Portal Guidance Block
+description : 'Generating the guidance blocks by using guidance block types.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - developer_portal_block:developer_portal_block
+  - opendevx_paragraph:opendevx_dashboard_listing

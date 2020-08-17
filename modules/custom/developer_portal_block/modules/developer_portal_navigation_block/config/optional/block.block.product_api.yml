@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - developer_portal_navigation_block
+    - system
+  theme:
+    - devportal
+id: product_api
+theme: devportal
+region: sidebar_first
+weight: 0
+provider: null
+plugin: product_navigation_block
+settings:
+  id: null
+  label: 'Product API'
+  provider: developer_portal_block
+  label_display: '0'
+  dvp_sidebar_navigation:
+    document_overview:
+      navigation_text: Overview
+      show: '1'
+      type: Page
+    solutions:
+      navigation_text: ''
+      show: '1'
+      type: Solutions
+    tutorials:
+      navigation_text: ''
+      show: '1'
+      type: Tutorials
+    use_cases:
+      navigation_text: ''
+      show: '1'
+      type: 'Use Cases'
+    resources:
+      navigation_text: ''
+      show: '1'
+      type: Resources
+    faq:
+      navigation_text: ''
+      show: '1'
+      type: FAQ
+    assets:
+      navigation_text: ''
+      show: '1'
+      type: Assets
+    events:
+      navigation_text: ''
+      show: '1'
+      type: Events
+    article:
+      navigation_text: ''
+      show: '1'
+      type: Article
+    issues:
+      navigation_text: ''
+      show: '1'
+      type: Issues
+    api_document:
+      navigation_text: API
+      show: '1'
+      type: 'API Document'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/faq/list\r\n/product/*\r\n/node/*\r\n/document-overview/list\r\n/issues/list\r\n/events/list\r\n/resources/list\r\n/tutorials/list\r\n/assets/list\r\n/article/list\r\n/use-cases/list\r\n/solutions/list\r\n/document/*"
+    negate: false
+    context_mapping: {  }

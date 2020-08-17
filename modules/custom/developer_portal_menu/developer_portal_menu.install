@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function developer_portal_menu_install() {
+  // Set the weight of the module.
+  module_set_weight('developer_portal_menu', 2);
+}

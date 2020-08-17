@@ -1,0 +1,15 @@
+developer_portal_content.add:
+  path: '/process/{nid}/add'
+  defaults:
+    _controller: '\Drupal\developer_portal_apps\Controller\AppManagementController::addtogallery'
+    _title: ''
+  requirements:
+    _role: 'product_manager + administrator + admin'
+
+developer_portal_content.remove:
+  path: '/process/{nid}/remove'
+  defaults:
+    _controller: '\Drupal\developer_portal_apps\Controller\AppManagementController::removefromgallery'
+    _title: ''
+  requirements:
+     _role: 'product_manager + administrator + admin'

@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.api_listing_block
+    - field.field.block_content.api_listing_block.body
+    - field.field.block_content.api_listing_block.field_content_category
+    - field.field.block_content.api_listing_block.field_items_per_page
+id: block_content.api_listing_block.default
+targetEntityType: block_content
+bundle: api_listing_block
+mode: default
+content:
+  field_content_category:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_items_per_page:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true

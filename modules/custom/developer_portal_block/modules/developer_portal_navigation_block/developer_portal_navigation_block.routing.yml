@@ -1,0 +1,7 @@
+developer_portal_block.api_product_content:
+  path: '/product/check-first-content/{nid}'
+  defaults:
+    _controller: '\Drupal\developer_portal_navigation_block\Controller\ProductNavigationController::checkFirstContent'
+    _title: ''
+  requirements: 
+    _permission: 'access content' 

@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function developer_portal_navigation_block_theme() {
+  return [
+    'product_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+        'productTitle' => NULL,
+      ],
+    ],
+    'dashboard_product_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+        'productTitle' => NULL,
+      ],
+    ],
+  ];
+ }

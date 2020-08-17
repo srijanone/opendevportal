@@ -1,0 +1,15 @@
+name: Developer Portal Node
+description : 'Extend the nodes and content specific for developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+project: opendexv_node
+
+dependencies:
+  - allowed_formats:allowed_formats
+  - drupal:media_library
+  - textfield_counter:textfield_counter
+  - opendevx_taxonomy:developer_portal_organisation
+  - drupal:layout_builder
+  - drupal:content_moderation

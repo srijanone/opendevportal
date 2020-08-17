@@ -1,0 +1,116 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_paragraph.field_description
+    - field.field.paragraph.product_paragraph.field_files
+    - field.field.paragraph.product_paragraph.field_image
+    - field.field.paragraph.product_paragraph.field_image_alignment
+    - field.field.paragraph.product_paragraph.field_link
+    - field.field.paragraph.product_paragraph.field_select_file
+    - field.field.paragraph.product_paragraph.field_title
+    - field.field.paragraph.product_paragraph.field_video
+    - paragraphs.paragraphs_type.product_paragraph
+  module:
+    - field_group
+    - file
+    - link
+    - options
+    - text
+third_party_settings:
+  field_group:
+    group_image:
+      children:
+        - field_select_file
+        - field_image_alignment
+        - field_image
+        - field_video
+        - field_files
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: image-para
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Image
+id: paragraph.product_paragraph.default
+targetEntityType: paragraph
+bundle: product_paragraph
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_files:
+    weight: 10
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_image_alignment:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_select_file:
+    type: list_key
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_video:
+    type: entity_reference_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

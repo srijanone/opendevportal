@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @module file
+ */
+use Drupal\developer_portal_block\Utility\ListingBlockUtility;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Hook to alter block output before rendering.
+ */
+function developer_portal_content_reference_preprocess_block(&$var) {
+  $content = $var['content'];
+  if (isset($content['#block_content'])) {
+    // Check the block type.
+    if ($content['#block_content']->bundle() == 'content_reference') {
+      // For dynamic listing of contents.
+      if ($content['#view_mode'] == 'full' ||
+      $content['#view_mode'] == 'cards' ) {
+        $type = 'content_listing_block';
+        $display = 'block_dynamic_content';
+        $data = $content['#block_content']->toArray();
+        $list = array_map('intval',
+        array_column($data['field_contents'], 'target_id'));
+        if ($content['#block_content']->hasField('field_cta_link_text') && $content['#block_content']->field_cta_link_text->uri) {
+          $var['cta_uri'] = Url::fromUri($content['#block_content']->field_cta_link_text->uri);
+          $var['cta_title'] = $content['#block_content']->field_cta_link_text->title ?? '';
+        }
+        $pager = count($list);
+        $result = ListingBlockUtility::getViewResults($list, $type, $display);
+
+        $var['content'] = $result;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: product_paragraph
+label: 'Content Details'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph is used to manage detail section of content pages'
+behavior_plugins: {  }

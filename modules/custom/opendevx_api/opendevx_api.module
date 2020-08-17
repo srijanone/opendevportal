@@ -1,0 +1,25 @@
+<?php
+
+const opendevx_api_options = [
+  'documents' => 'document_overview',
+  'api-document' => 'api_document',
+  'faqs' => 'faq',
+  'products' => 'api_product',
+  'landing-page' => 'listing_pages',
+  'use-cases' => 'use_cases'
+];
+
+ /**
+  * Implements hook_views_query_alter().
+  */
+  function opendevx_api_views_query_alter($view, $query) {
+    if ($view->id() == 'content_listing_rest_resource' && $view->current_display == 'rest_export_1') {
+      // Get the end point of the APIs.
+      $path = \Drupal::request()->getpathInfo();
+      $arg  = explode('/', $path);
+      // Store the machine name of content types in an array of API urls.
+      if (in_array($arg[3], array_keys(opendevx_api_options))) {
+        $query->where[0]['conditions'][0]['value'] = opendevx_api_options[$arg[3]];
+      }
+    }
+  }
