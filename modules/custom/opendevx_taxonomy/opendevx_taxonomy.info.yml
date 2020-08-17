@@ -1,0 +1,10 @@
+name: Developer Portal Taxonomy
+description : 'Extend the taxonomy specific for developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:media
+  - drupal:link
+  - drupal:svg_image

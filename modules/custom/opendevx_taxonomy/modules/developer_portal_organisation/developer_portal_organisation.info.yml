@@ -1,0 +1,9 @@
+name: Developer Portal Organisation
+description : 'Extend the organisation taxonomy term for developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - opendevx_taxonomy:opendevx_taxonomy
+  - developer_portal_node:developer_portal_node

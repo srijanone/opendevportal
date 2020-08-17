@@ -1,0 +1,9 @@
+name: RapiDoc Field Formatter
+description: Provides a RapiDoc UI field formatter for file/link fields.
+dependencies:
+  - drupal:file
+  - drupal:link
+type: module
+package: DVP
+core: '8.x'
+core_version_requirement: ^8 || ^9

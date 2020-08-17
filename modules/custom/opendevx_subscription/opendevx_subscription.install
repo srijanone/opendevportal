@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the notification module module.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function opendevx_subscription_schema() {
+  $schema['opendevx_subscription'] = [
+    'description' => 'Create table used to store data of each site notifications of users',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'description' => 'Unique ID for this record.',
+      ],
+      'entity_id' => [
+        'description' => 'Entity of action performed',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'bundle' => [
+        'description' => 'Name of the entity bundle',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'nid' => [
+        'description' => 'Subscribed entity',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'subscribers' => [
+        'description' => 'The subscribers uids.',
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'big',
+      ],
+      'action' => [
+        'description' => 'Actions type Create, Update, Delete',
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'status' => [
+        'description' => 'Status of the notification.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => "Timestamp for the record insert.",
+      ],
+    ],
+    'indexes' => [
+      'opendevx_nid' => ['nid'],
+      'opendevx_entity' => ['entity_id'],
+      'opendevx_created_timestamp' => ['created'],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function opendevx_subscription_install() {
+  // Inform the user about save the newsletter configuration.
+  \Drupal::messenger()->addMessage(t('Newsletter subscription will work well once you saved the configuration from <a href=":user_settings_url">Newsletter Settings</a>.', [
+    ':user_settings_url' => Url::fromRoute('opendevx_subscription.settings')->toString(),
+  ]), 'warning');
+
+  module_set_weight('opendevx_subscription', 100);
+}
+
