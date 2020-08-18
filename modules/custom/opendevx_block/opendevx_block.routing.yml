@@ -1,5 +1,5 @@
 opendevx_block.cta_redirection:
-  path: 'data/{apikey}/{node-id},'
+  path: '/cta/redirect-url/{type}/{pid}'
   defaults:
     _controller: '\Drupal\opendevx_block\Controller\CtaController::redirectCtaUrl'
     _title: ''

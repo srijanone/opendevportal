@@ -41,7 +41,7 @@ class CtaController extends ControllerBase {
   PrivateTempStoreFactory $temp_store) {
     $this->currentPath = $request_stack;
     $this->account = $account;
-    $this->storePath = $temp_store->get('opendevx_block');
+    $this->storePath = $temp_store->get('developer_portal_block');
   }
 
   /**
@@ -58,16 +58,30 @@ class CtaController extends ControllerBase {
   /**
    * Redirect CTA Url callback.
    */
-  public function redirectCtaUrl($apikey, $node_id) {
-
-    // get the api key from config
-    $api_key1 = \Drupal::settings('api_key')->get('api_key');
-    if ($api_key1 == $apikey) {
-      if (// Check if the node is valid) {
-        // Get all field of node
-        // Convert above array to json and return
-        $result_array = json_decode($node_array);
-        return new JsonResponse($result_array, 200, []);
+  public function redirectCtaUrl($type, $pid) {
+    if ($this->account->isAnonymous() == TRUE) {
+      if ($type == 'apps') {
+        $url = "/user/login?path=/node/add/apps&pid=$pid";
+        $response = new RedirectResponse($url);
+        $response->send();
+      }
+      if ($type = 'issues') {
+        $url = "/user/login?path=/node/add/issues&pid=$pid";
+        $response = new RedirectResponse($url);
+        $response->send();
+      }
+    }
+    else {
+      $this->storePath->set('store_pid', $pid);
+      if ($type == 'apps') {
+        $url = "/node/add/apps";
+        $response = new RedirectResponse($url);
+        $response->send();
+      }
+      if ($type = 'issues') {
+        $url = "/node/add/issues";
+        $response = new RedirectResponse($url);
+        $response->send();
       }
     }
   }
