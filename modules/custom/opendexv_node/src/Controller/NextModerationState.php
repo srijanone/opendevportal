@@ -8,29 +8,34 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
+/**
+ * Provides class NextModerationState.
+ */
 class NextModerationState extends ControllerBase {
 
   /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
   /**
    * Object EntityTypeManager.
    *
-   * @var Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
   /**
    * UserDashboardController constructor.
    *
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
-   * @param mixed $entity_type_manager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   EntityTypeManagerInterface.
    */
-  public function __construct(RequestStack $request_stack, 
+  public function __construct(RequestStack $request_stack,
   EntityTypeManagerInterface $entity_type_manager) {
     $this->currentPath = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
@@ -52,18 +57,18 @@ class NextModerationState extends ControllerBase {
   public function saveNextModerationState($state, int $nid, $type) {
     if ($type == 'api_document') {
       $workflow = [
-        'draft' =>  'Design',
+        'draft' => 'Design',
         'architecture_review' => 'Architecture Review',
         'product_review' => 'Product Review',
-        'published' => 'Approved'
-      ]; 
+        'published' => 'Approved',
+      ];
       $url = "/dashboard/apimanager/proxies";
     }
     elseif ($type == 'apps') {
       $workflow = [
         'draft' => 'Draft',
         'pending_for_approval' => 'Approved for Sandbox',
-        'published' => 'Approved for Production'
+        'published' => 'Approved for Production',
       ];
       $url = "/dashboard/apimanager/apps";
     }
@@ -77,7 +82,7 @@ class NextModerationState extends ControllerBase {
         $node = $this->entityTypeManager->getStorage('node')->load($nid);
         $node->set('moderation_state', $next_state);
         $node->save();
-        // Return to the listing page
+        // Return to the listing page.
         $response = new RedirectResponse($url);
         $response->send();
       }

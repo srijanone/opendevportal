@@ -85,7 +85,7 @@ class SubscriptionConfirmForm extends ConfirmFormBase {
    */
   public function getQuestion() {
     $node = Node::load($this->id);
-    return t('Do you want to subscribe to %name?',
+    return $this->t('Do you want to subscribe to %name?',
       ['%name' => $node->getTitle()]);
   }
 

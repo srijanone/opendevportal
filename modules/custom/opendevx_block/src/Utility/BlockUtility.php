@@ -2,9 +2,9 @@
 
 namespace Drupal\opendevx_block\Utility;
 
+use Drupal\node\NodeInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
-use Drupal\opendevx_block\ApiProducts;
 
 /**
  * Class to extend and provide the features of developer portal.
@@ -16,6 +16,8 @@ class BlockUtility {
    *
    * @param array $bundles
    *   Set of bundles in system.
+   * @param int $pid
+   *   The product Id.
    *
    * @return string
    *   String value of node data.
@@ -71,7 +73,7 @@ class BlockUtility {
   public static function getIdByPath($current_path, $type = NULL) {
     $content_types = [
       'apps', 'article', 'assets', 'document_overview', 'events', 'faq',
-      'forum', 'issues', 'resources', 'solutions', 'tutorials', 'use_cases', 'api_document'
+      'forum', 'issues', 'resources', 'solutions', 'tutorials', 'use_cases', 'api_document',
     ];
     $path = $current_path->getPathInfo();
     $path_index = explode('/', $path);
@@ -95,7 +97,7 @@ class BlockUtility {
     if (!$parent) {
       // Get current node.
       $node = \Drupal::routeMatch()->getParameter('node');
-      if ($node instanceof \Drupal\node\NodeInterface) {
+      if ($node instanceof NodeInterface) {
         if ($node->hasField('field_api_product') && !empty($node->get('field_api_product')->first())) {
           $parent = $node->get('field_api_product')->first()->getValue()['target_id'];
         }
@@ -121,17 +123,17 @@ class BlockUtility {
    * @return mixed
    *   Navigation data.
    */
-  public static function prepareNavigationBlock($result, $id, $list) {
+  public static function prepareNavigationBlock($result, $id, array $list) {
     $output = [];
     $content_types = [
       'apps', 'article', 'assets', 'document_overview', 'events', 'faq',
-      'forum', 'issues', 'resources', 'solutions', 'tutorials', 'use_cases', 'api_document'
+      'forum', 'issues', 'resources', 'solutions', 'tutorials', 'use_cases', 'api_document',
     ];
     if (!empty($result)) {
       $node = \Drupal::entityTypeManager()->getStorage('node')->load($id);
       $node_view_mode = $node->get('field_view_mode')->getValue()[0]['value'];
       $current_path = \Drupal::service('path.current')->getPath();
-  		$path_index = explode('/', $current_path);
+      $path_index = explode('/', $current_path);
       $child = $result['child'];
       if (!empty($result['api'])) {
         $child = $result['child'] . ',api_document';
@@ -145,7 +147,7 @@ class BlockUtility {
         if ($node_view_mode == 'left_nav_full_view' || in_array($path_index[3], $content_types)) {
           $path = "/node/$id";
           $content_path = \Drupal::service('path.alias_manager')->getAliasByPath($path);
-          $path_alias =  "$content_path/$key";
+          $path_alias = "$content_path/$key";
         }
         else {
           $path = str_replace("_", "-", $key);

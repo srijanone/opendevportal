@@ -19,12 +19,16 @@ class ConfigPlatformKeysForm extends ConfigFormBase {
   const CONFIGURATIONS_SETTINGS = 'opendevx_connector.program_keys.settings';
 
   /**
+   * The organisation instance.
+   *
    * @var int
    *  Private member variable $orgId.
    */
   private $orgId;
 
   /**
+   * The ogranisation name instance.
+   *
    * @var string
    *  Private member variable $orgName.
    */

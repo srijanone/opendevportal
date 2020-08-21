@@ -11,6 +11,7 @@
  * to monitor content submissions and comment posts.
  */
 
+use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\opendevx_subscription\Form\SubscriptionSettings;
 use Drupal\opendevx_subscription\Utility\SubscriptionUtility;
@@ -110,7 +111,7 @@ function opendevx_subscription_token_info() {
 /**
  * Implements hook_tokens().
  */
-function  opendevx_subscription_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+function opendevx_subscription_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
   $replacements = [];
   if ($type == 'dvp_tokens' && isset($data['dvp-product'])) {
     foreach ($tokens as $name => $original) {
@@ -130,7 +131,7 @@ function  opendevx_subscription_tokens($type, $tokens, array $data, array $optio
         default:
           $replacements[$original] = $data['dvp-product']->hasField($name) ?
           $data['dvp-product']->get($name)->getString() : '';
-        break;
+          break;
       }
     }
   }

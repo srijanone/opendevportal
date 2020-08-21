@@ -4,43 +4,49 @@ namespace Drupal\opendevx_user\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\opendevx_user\Organisation;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Provides controller class UserDashboardController.
+ */
 class UserDashboardController extends ControllerBase {
 
   /**
    * UserOrganisation object.
    *
-   * @var \Drupal\opendevx_user\UserOrganisation $org
-   *
+   * @var \Drupal\opendevx_user\Organisation
    */
   private $org;
 
   /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
   /**
-   * @var AccountInterface $account
+   * The current user instance.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
 
   /**
    * UserDashboardController constructor.
    *
-   * @param mixed $organisation
+   * @param \Drupal\opendevx_user\Organisation $organisation
    *   The plugin organisation class.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
-   * @param mixed $account
-   *   The plugin account service
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   The plugin account service.
    */
-  public function __construct(Organisation $organisation, RequestStack $request_stack,
+  public function __construct(Organisation $organisation,
+  RequestStack $request_stack,
   AccountInterface $account) {
     $this->org = $organisation;
     $this->currentPath = $request_stack;
@@ -63,7 +69,7 @@ class UserDashboardController extends ControllerBase {
    */
   public function userDashboard() {
     $referer = $this->currentPath->getCurrentRequest()->headers->get('referer');
-    $regex  = '/login/';
+    $regex = '/login/';
     if (preg_match($regex, $referer) == TRUE) {
       $tempstore = \Drupal::service('tempstore.private');
       // Get the store collection.
@@ -72,7 +78,7 @@ class UserDashboardController extends ControllerBase {
       $pid = $store->get('store_pid');
       $path = $store->get('store_path');
       if (!empty($pid) && !empty($path)) {
-        $redirect_path = $path ."?pid=" . $pid;
+        $redirect_path = $path . "?pid=" . $pid;
         $response = new RedirectResponse($redirect_path);
 
         return $response;
@@ -85,7 +91,7 @@ class UserDashboardController extends ControllerBase {
   }
 
   /**
-   * redirectAfterOrganisationSave callback.
+   * RedirectAfterOrganisationSave callback.
    */
   public function redirectAfterOrganisationSave() {
     $path = $this->currentPath->getCurrentRequest()->getPathInfo();

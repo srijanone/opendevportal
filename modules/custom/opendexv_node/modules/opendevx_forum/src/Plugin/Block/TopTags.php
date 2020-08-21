@@ -5,6 +5,8 @@ namespace Drupal\opendevx_forum\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
+ * Provides a block Top Tags block.
+ *
  * @Block(
  *   id = "Top_Tags_block",
  *   admin_label = @Translation("Top Tags Block")
@@ -12,9 +14,12 @@ use Drupal\Core\Block\BlockBase;
  */
 class TopTags extends BlockBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     $forum_ids = \Drupal::entityQuery('node')
-      ->condition('type','forum')
+      ->condition('type', 'forum')
       ->execute();
     if ($forum_ids) {
       $forum_nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($forum_ids);
@@ -36,8 +41,9 @@ class TopTags extends BlockBase {
       '#theme' => 'top_tags',
       '#tags' => $top_tags,
       '#cache' => [
-          'max-age' => 0,
+        'max-age' => 0,
       ],
     ];
   }
+
 }

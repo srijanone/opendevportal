@@ -2,27 +2,28 @@
 
 namespace Drupal\opendevx_connector\Controller;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Session\AccountInterface;
 
+/**
+ * Provides controller class PlatformKeysController.
+ */
 class PlatformKeysController extends ControllerBase {
 
 
   /**
-   * @var mixed member variable $orgId.
-   */
-  protected $orgId;
-
-  /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
   /**
+   * The account instance which represents current user.
+   *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
@@ -30,10 +31,10 @@ class PlatformKeysController extends ControllerBase {
   /**
    * PlatformKeysController constructor.
    *
-   * @param mixed $product
-   *   The plugin api product class.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   The plugin account service.
    */
   public function __construct(RequestStack $request_stack,
   AccountInterface $account) {
@@ -62,7 +63,7 @@ class PlatformKeysController extends ControllerBase {
     // Return if not a valid program.
     if ($program->getVocabularyId() != 'organisation' ||
     !in_array($program->id(), array_column($user_organisations, 'orgId'))) {
-      throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
+      throw new NotFoundHttpException();
     }
     // If everything goes well, set current program id as orgId.
     $this->orgId = $program->id();
@@ -73,8 +74,8 @@ class PlatformKeysController extends ControllerBase {
     $pattern_length = strlen($pattern);
     // Filter out the required configurations.
     foreach ($get_all_config as $key => $value) {
-      if (substr($key, - $pattern_length) === $pattern) {
-        $config[substr($key, 0, - $pattern_length)] = $value;
+      if (substr($key, -$pattern_length) === $pattern) {
+        $config[substr($key, 0, -$pattern_length)] = $value;
       }
     }
 

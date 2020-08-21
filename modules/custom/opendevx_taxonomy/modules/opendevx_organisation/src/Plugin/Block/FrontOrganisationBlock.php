@@ -3,11 +3,8 @@
 namespace Drupal\opendevx_organisation\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\opendevx_organisation\Utility\OrganisationUtility;
 use Drupal\opendevx_organisation\Organisation;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -22,10 +19,21 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 class FrontOrganisationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
+  /**
+   * The Organisation instance.
+   *
+   * @var \Drupal\opendevx_organisation\Organisation
+   */
   protected $org;
+
+  /**
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
+   */
   protected $currentPath;
 
-   /**
+  /**
    * FrontOrganisationBlock constructor.
    *
    * @param array $configuration
@@ -34,9 +42,9 @@ class FrontOrganisationBlock extends BlockBase implements ContainerFactoryPlugin
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $organisation
+   * @param \Drupal\opendevx_organisation\Organisation $organisation
    *   The plugin organisation class.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, Organisation $organisation, RequestStack $request_stack) {
@@ -69,7 +77,7 @@ class FrontOrganisationBlock extends BlockBase implements ContainerFactoryPlugin
       '#data' => $data,
       '#cache' => [
         'tags' => ['Organisation-section'],
-      ]
+      ],
     ];
   }
 

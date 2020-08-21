@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Module file opendevx_forum.module.
+ */
+
+/**
  * Implements hook_theme().
  */
 function opendevx_forum_theme($existing, $type, $theme, $path) {

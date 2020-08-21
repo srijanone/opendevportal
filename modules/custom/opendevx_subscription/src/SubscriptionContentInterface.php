@@ -43,8 +43,8 @@ interface SubscriptionContentInterface {
   /**
    * Returns all subscribed contents for a user by ID.
    *
-   * @param int $url
-   *   A string containing the url of the feed.
+   * @param int $uid
+   *   A int containing the id of the user.
    *
    * @return array
    *   The array of content IDs.

@@ -22,12 +22,16 @@ use Drupal\opendevx_block\Utility\BlockUtility;
 class ProductNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var mixed $product
+   * The API product instance.
+   *
+   * @var \Drupal\opendevx_block\ApiProducts
    */
   protected $product;
 
   /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
@@ -40,9 +44,9 @@ class ProductNavigationBlock extends BlockBase implements ContainerFactoryPlugin
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $product
+   * @param \Drupal\opendevx_block\ApiProducts $product
    *   The products class service.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ApiProducts $product, RequestStack $request_stack) {

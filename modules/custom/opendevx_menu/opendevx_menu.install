@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install file opendevx_menu.
+ */
+
+/**
  * Implements hook_install().
  */
 function opendevx_menu_install() {

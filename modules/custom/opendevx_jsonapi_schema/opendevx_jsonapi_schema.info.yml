@@ -6,7 +6,7 @@ core_version_requirement: ^8 || ^9
 dependencies:
   - drupal:jsonapi_extras
   - drupal:votingapi
-  - opendevx_taxonomy
-  - opendexv_node
-  - opendevx_paragraph
-  - opendevx_block
+  - drupal:opendevx_taxonomy
+  - drupal:opendexv_node
+  - drupal:opendevx_paragraph
+  - drupal:opendevx_block

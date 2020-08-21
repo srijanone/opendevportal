@@ -3,7 +3,6 @@
 namespace Drupal\opendevx_subscription\Utility;
 
 use Drupal\user\Entity\User;
-use Drupal\Core\Utility\Token;
 use Drupal\opendevx_subscription\Form\SubscriptionSettings;
 use Drupal\Core\Mail\MailFormatHelper;
 use Drupal\node\Entity\Node;

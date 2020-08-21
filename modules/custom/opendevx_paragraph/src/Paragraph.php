@@ -2,10 +2,8 @@
 
 namespace Drupal\opendevx_paragraph;
 
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Logger\LoggerChannelTrait;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * ParagraphData class to handle node functionalities.
@@ -13,12 +11,17 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class Paragraph {
 
   use LoggerChannelTrait;
-  
+
   /**
-   * @var int $paragraphId
+   * The paragraph instance.
+   *
+   * @var int
    */
   protected $paragraphId;
+
   /**
+   * The database instance.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
@@ -32,8 +35,8 @@ class Paragraph {
   }
 
   /**
-   * Set Paragraph id
-   * 
+   * Set Paragraph id.
+   *
    * @param mixed $paragraph_id
    *   Paragraph Id.
    */
@@ -42,7 +45,7 @@ class Paragraph {
     if (is_int($paragraph_id)) {
       $this->paragraphId = [$paragraph_id];
     }
-    
+
     return $this;
   }
 
@@ -68,7 +71,7 @@ class Paragraph {
       $query->condition('pifd.type', 'product_attributes', '=');
       $query->condition('pifd.id', $this->paragraphId, 'IN');
       $result = $query->distinct()->execute()->fetchAll();
-     
+
       $product_attributes = [];
       if (!empty($result)) {
         foreach ($result as $value) {

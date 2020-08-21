@@ -22,19 +22,23 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var mixed $paragraph
+   * The paragraph instance.
+   *
+   * @var \Drupal\opendevx_paragraph\Paragraph
    */
   protected $paragraph;
 
   /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
   /**
    * Object EntityTypeManager.
    *
-   * @var Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
@@ -47,12 +51,16 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $entity_type_manager
-   *   The EntityTypeManagerInterface.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The EntityTypeManagerInterface.
+   * @param \Drupal\opendevx_paragraph\Paragraph $paragraph
+   *   The plugin paragraph service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
   RequestStack $request_stack,
   EntityTypeManagerInterface $entity_type_manager,
   Paragraph $paragraph) {
@@ -63,12 +71,7 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
   }
 
   /**
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   * @param array $configuration
-   * @param string $plugin_id
-   * @param mixed $plugin_definition
-   *
-   * @return static
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
@@ -123,7 +126,7 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
       '#productAttributes' => $key_value,
       '#cache' => [
         'max-age' => 0,
-      ]
+      ],
     ];
   }
 

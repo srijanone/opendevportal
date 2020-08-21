@@ -6,7 +6,6 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\opendevx_organisation\Utility\OrganisationUtility;
 use Drupal\opendevx_user\Organisation as UserOrganisation;
 use Drupal\opendevx_organisation\Organisation;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -25,32 +24,39 @@ use Drupal\Core\Session\AccountInterface;
 class OrganisationSiteLogo extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
   /**
    * UserOrganisation object.
    *
-   * @var \Drupal\opendevx_user\UserOrganisation $userOrg
-   *
+   * @var \Drupal\opendevx_user\UserOrganisation
    */
   protected $userOrg;
 
   /**
    * Organisation object.
    *
-   * @var \Drupal\opendevx_organisation\Organisation $org
-   *
+   * @var \Drupal\opendevx_organisation\Organisation
    */
   protected $org;
 
   /**
    * Object EntityTypeManager.
    *
-   * @var Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
+
+  /**
+   * The account interface instance that represents current user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $account;
 
   /**
    * ProductBannerBlock constructor.
@@ -61,20 +67,24 @@ class OrganisationSiteLogo extends BlockBase implements ContainerFactoryPluginIn
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
-   * @param mixed $entity_type_manager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The EntityTypeManagerInterface.
-   * @param mixed $user_organisation
+   * @param \Drupal\opendevx_user\UserOrganisation $user_organisation
    *   The plugin user organisation service.
-   * @param mixed $organisation
+   * @param \Drupal\opendevx_organisation\Organisation $organisation
    *   The plugin organisation service.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   The account instance for the current user.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
   RequestStack $request_stack,
   EntityTypeManagerInterface $entity_type_manager,
   UserOrganisation $user_organisation,
-  organisation $organisation,
+  Organisation $organisation,
   AccountInterface $account) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentPath = $request_stack;
@@ -85,15 +95,12 @@ class OrganisationSiteLogo extends BlockBase implements ContainerFactoryPluginIn
   }
 
   /**
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   * @param array $configuration
-   * @param string $plugin_id
-   * @param mixed $plugin_definition
-   *
-   * @return static
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container,
-  array $configuration, $plugin_id, $plugin_definition) {
+  array $configuration,
+  $plugin_id,
+  $plugin_definition) {
     return new static(
       $configuration,
       $plugin_id,
@@ -119,20 +126,21 @@ class OrganisationSiteLogo extends BlockBase implements ContainerFactoryPluginIn
     $id = BlockUtility::getIdByPath($current_path);
     if (!empty($id)) {
       $node = $this->entityTypeManager->getStorage('node')->load($id);
-      $parent = $current_path->get('parent');
+      // $parent = $current_path->get('parent');
       // Check if user is anonymous.
       if ($this->account->isAnonymous() == TRUE) {
-        // Check for the organisation landing pages or parent query string 
-        //if ($node->bundle() == 'listing_pages' || !empty($current_path->get('parent'))) {
-          $node_data =  $node->toArray();
-          $org_id = (int) $node_data['field_organisation'][0]['target_id'];
-       // }
+        // Check for the organisation landing pages or parent query string
+        // if ($node->bundle() == 'listing_pages' ||
+        // !empty($current_path->get('parent'))) {.
+        $node_data = $node->toArray();
+        $org_id = (int) $node_data['field_organisation'][0]['target_id'];
+        // }
       }
     }
     $org_data = $this->org->getOrganisationsData();
     $organisation_logo = $org_data[$org_id]['orgImage'];
     $organisation_title = $org_data[$org_id]['orgTitle'];
-   
+
     return [
       '#theme' => 'organisation_site_logo',
       '#orgLogo' => $organisation_logo,

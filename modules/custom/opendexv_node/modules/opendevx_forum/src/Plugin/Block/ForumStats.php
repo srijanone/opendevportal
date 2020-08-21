@@ -5,6 +5,8 @@ namespace Drupal\opendevx_forum\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
+ * Provides a block Forum Stats Block.
+ *
  * @Block(
  *   id = "Forum_stats_block",
  *   admin_label = @Translation("Forum Stats Block")
@@ -12,6 +14,9 @@ use Drupal\Core\Block\BlockBase;
  */
 class ForumStats extends BlockBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     $posts = \Drupal::entityQuery('node')
       ->condition('type', 'forum')
@@ -36,8 +41,9 @@ class ForumStats extends BlockBase {
       '#users' => $users,
       '#comments' => $comments,
       '#cache' => [
-          'max-age' => 0,
+        'max-age' => 0,
       ],
     ];
   }
+
 }

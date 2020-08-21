@@ -2,25 +2,28 @@
 
 namespace Drupal\opendevx_taxonomy\Utility;
 
+/**
+ * Provides class TaxonomyUtility.
+ */
 class TaxonomyUtility {
 
   /**
    * Function to get taxonomy list.
-   * 
-   * @param int $vid
-   *    Vocab Id or term id.
+   *
+   * @param int $id
+   *   Vocab Id or term id.
    * @param string $type
-   *    List or name.
-   * 
+   *   List or name.
+   *
    * @return array
-   *    Taxonomy data.
+   *   Taxonomy data.
    */
   public static function getTaxonomyData($id = NULL, $type = NULL) {
     $taxonomy = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     // Check if term name is needed.
     if (!empty($id) && $type == 'name') {
       $term = $taxonomy->load($id);
-      
+
       return $term->getName();
     }
     // Check if vocabulary list is needed.

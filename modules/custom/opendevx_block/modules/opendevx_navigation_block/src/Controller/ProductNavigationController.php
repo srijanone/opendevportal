@@ -4,32 +4,35 @@ namespace Drupal\opendevx_navigation_block\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Drupal\Core\Url;
 use Drupal\opendevx_block\ApiProducts;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
+/**
+ * Provides controller class ProductNavigationController.
+ */
 class ProductNavigationController extends ControllerBase {
 
   /**
    * Api product object.
    *
-   * @var mixed $product
-   *
+   * @var \Drupal\opendevx_block\ApiProducts
    */
   protected $product;
 
   /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
   /**
    * ProductNavigationController constructor.
    *
-   * @param mixed $product
+   * @param \Drupal\opendevx_block\ApiProducts $product
    *   The plugin api product class.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
    */
   public function __construct(ApiProducts $product, RequestStack $request_stack) {
@@ -48,12 +51,12 @@ class ProductNavigationController extends ControllerBase {
   }
 
   /**
-   * redirectAfterOrganisationSave callback.
+   * RedirectAfterOrganisationSave callback.
    */
   public function checkFirstContent() {
     $path = $this->currentPath->getCurrentRequest()->getPathInfo();
     $explode_path = explode('/', $path);
-    $nid = (int)$explode_path[3];
+    $nid = (int) $explode_path[3];
     $config = \Drupal::config('block.block.product_api');
     $navigation = $config->getRawData()['settings']['dvp_sidebar_navigation'];
     $list = [];
@@ -68,7 +71,7 @@ class ProductNavigationController extends ControllerBase {
     $output = !empty($index_content) ?
     $index_content : $this->currentPath->getCurrentRequest()->headers->get('referer');
     $response = new RedirectResponse($output);
-    
+
     return $response;
   }
 

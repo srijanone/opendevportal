@@ -23,28 +23,25 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
   /**
    * UserOrganisations object.
    *
-   * @var \Drupal\opendevx_user\UserOrganisations $userOrg
-   *
+   * @var \Drupal\opendevx_user\UserOrganisations
    */
   protected $userOrg;
 
   /**
    * Organisation object.
    *
-   * @var \Drupal\opendevx_organisation\Organisation $org
-   *
+   * @var \Drupal\opendevx_organisation\Organisation
    */
   protected $org;
 
   /**
    * Organisation object.
    *
-   * @var \Drupal\opendevx_organisation\Organisation $account
-   *
+   * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
 
-   /**
+  /**
    * UserOrganisationBlock constructor.
    *
    * @param array $configuration
@@ -53,15 +50,19 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $user_organisation
+   * @param \Drupal\opendevx_user\UserOrganisations $user_organisation
    *   The plugin user organisation class.
-   * @param mixed $organisation
+   * @param \Drupal\opendevx_organisation\Organisation $organisation
    *   The plugin organisation class.
-   * @param mixed $account
+   * @param Drupal\Core\Session\AccountInterface $account
    *   The plugin AccountInterface class.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, UserOrganisations $user_organisation,
-  Organisation $organisation, AccountInterface $account) {
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
+  UserOrganisations $user_organisation,
+  Organisation $organisation,
+  AccountInterface $account) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->userOrg = $user_organisation;
     $this->org = $organisation;

@@ -11,5 +11,3 @@ dependencies:
   - opendevx_api_product:opendevx_api_product
   - opendevx_taxonomy:opendevx_event_type
   - address:address
-
-project: opendevx_events

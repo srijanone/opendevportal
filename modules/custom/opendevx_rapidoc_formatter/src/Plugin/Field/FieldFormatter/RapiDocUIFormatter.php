@@ -24,24 +24,18 @@ class RapiDocUIFormatter extends FileFormatterBase {
    * {@inheritdoc}
    */
   public static function defaultSettings() {
-    return [
-
-      ] + parent::defaultSettings();
+    return [] + parent::defaultSettings();
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    return parent::settingsForm($form, $form_state);
-  }
+  public function settingsForm(array $form, FormStateInterface $form_state) {}
 
   /**
    * {@inheritdoc}
    */
-  public function settingsSummary() {
-    return parent::settingsSummary();
-  }
+  public function settingsSummary() {}
 
   /**
    * {@inheritdoc}
@@ -63,7 +57,7 @@ class RapiDocUIFormatter extends FileFormatterBase {
         '#theme' => 'rapidoc_ui_field_item',
         '#field_name' => $this->fieldDefinition->getName(),
         '#delta' => $delta,
-        '#file_url' => $rapidoc_file
+        '#file_url' => $rapidoc_file,
       ];
     }
     return $element;

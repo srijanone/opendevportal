@@ -1,10 +1,12 @@
 <?php
+
 /**
- * @module file
+ * @file
+ * Module file opendevx_api_listing_block.module.
  */
 
+use Drupal\node\NodeInterface;
 use Drupal\opendevx_block\Utility\ListingBlockUtility;
-use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_preprocess_block().
@@ -16,7 +18,7 @@ function opendevx_api_listing_block_preprocess_block(&$var) {
   if (isset($content['#block_content'])) {
     // Check the block type.
     if ($content['#block_content']->bundle() == 'api_listing_block') {
-    // Listing of contents based on content type.
+      // Listing of contents based on content type.
       if ($content['#view_mode'] == 'full') {
         $nid = FALSE;
         $type = 'content_listing_block';
@@ -25,7 +27,7 @@ function opendevx_api_listing_block_preprocess_block(&$var) {
         $list = array_column($data['field_content_category'], 'target_id');
         $pager = $content['#block_content']->get('field_items_per_page')->getValue();
         $node = \Drupal::request()->attributes->get('node');
-        if ($node && $node instanceof \Drupal\node\NodeInterface && $node->bundle() == 'api_product') {
+        if ($node && $node instanceof NodeInterface && $node->bundle() == 'api_product') {
           $nid = $node->id();
         }
         $result = ListingBlockUtility::getViewResults($list, $type, $display, $pager[0]['value'], $nid);
@@ -37,7 +39,6 @@ function opendevx_api_listing_block_preprocess_block(&$var) {
         }
       }
     }
-
 
     // Alter the featured product API block result.
     if ($content['#block_content']->bundle() == 'content_reference' && $content['#view_mode'] == 'cards') {

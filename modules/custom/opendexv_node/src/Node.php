@@ -13,17 +13,24 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class Node {
 
   use LoggerChannelTrait;
-  
+
   /**
-   * @var int $nodeId
+   * The node id instance.
+   *
+   * @var int
    */
   protected $nodeId = NULL;
+
   /**
+   * The database instance.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
 
   /**
+   * The current user instance.
+   *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
@@ -48,8 +55,8 @@ class Node {
   }
 
   /**
-   * Set Node id
-   * 
+   * Set Node id.
+   *
    * @param int $node_id
    *   Node Id.
    */

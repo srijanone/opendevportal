@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Module file opendevx_navigation_block.module.
+ */
+
+/**
  * Implements hook_theme().
  */
 function opendevx_navigation_block_theme() {
@@ -18,4 +23,4 @@ function opendevx_navigation_block_theme() {
       ],
     ],
   ];
- }
+}

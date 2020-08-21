@@ -15,17 +15,23 @@ class ApiProducts {
   use LoggerChannelTrait;
 
   /**
+   * The database connection instance.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
 
   /**
+   * The account instance that represents current user.
+   *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
 
   /**
-   * @var int $productId
+   * The product instance.
+   *
+   * @var int
    */
   protected $productId;
 
@@ -123,9 +129,9 @@ class ApiProducts {
 
   /**
    * Function to get first index sub product path.
-   * 
+   *
    * @param mixed $list
-   *   Block navigation data
+   *   Block navigation data.
    *
    * @return string
    *   title of node id.
@@ -133,7 +139,7 @@ class ApiProducts {
   public function getFirstIndexProductContents($list) {
     $get_navigation = $this->getProductReferenceType($list);
     $redirection = array_column(array_values($get_navigation)[0], 'childPath');
-    
+
     return $redirection[0];
   }
 

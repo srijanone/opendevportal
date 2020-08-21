@@ -6,7 +6,6 @@
  */
 
 use Drupal\Core\Url;
-use Drupal\Core\Database\Database;
 
 /**
  * Implements hook_schema().
@@ -88,4 +87,3 @@ function opendevx_subscription_install() {
 
   module_set_weight('opendevx_subscription', 100);
 }
-

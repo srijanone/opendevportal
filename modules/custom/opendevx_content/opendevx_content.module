@@ -4,73 +4,75 @@
  * @file
  * Developer portal content module file.
  */
- use Drupal\node\Entity\Node;
 
- /**
-  * Implements hook_entity_view_mode_alter().
-  */
- function opendevx_content_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
-   $current_user_role = \Drupal::currentUser()->getRoles();
-   if ($entity->getEntityTypeId() == 'node') {
-     // Change the node display mode of product.
-     if ($entity->bundle() == 'api_product' && $view_mode == 'full') {
-       $view_mode = $entity->get('field_view_mode')->getValue()[0]['value'];
-     }
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
 
-     // Change the node display mode of applications for anonymous user.
-     else if ($entity->bundle() == 'apps' && in_array('anonymous', $current_user_role)) {
-       $view_mode = 'anonymous_user_content';
-     }
-   }
- }
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function opendevx_content_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  $current_user_role = \Drupal::currentUser()->getRoles();
+  if ($entity->getEntityTypeId() == 'node') {
+    // Change the node display mode of product.
+    if ($entity->bundle() == 'api_product' && $view_mode == 'full') {
+      $view_mode = $entity->get('field_view_mode')->getValue()[0]['value'];
+    }
 
- /**
-  * Implements hook_entity_form_display_alter().
-  */
-  function opendevx_content_entity_form_display_alter(&$form_display, $context) {
-    $current_user_role = \Drupal::currentUser()->getRoles();
-    // Change the node form display for developer role.
-    if ($context['entity_type'] == 'node' && in_array('developer', $current_user_role)) {
-      $id = $context['entity_type'] . '.' . $context['bundle'] . '.developer';
-      $storage = \Drupal::entityManager()->getStorage('entity_form_display');
-      $change_display = $storage->load($id);
-      if ($change_display) {
-        $form_display = $change_display;
-      }
+    // Change the node display mode of applications for anonymous user.
+    elseif ($entity->bundle() == 'apps' && in_array('anonymous', $current_user_role)) {
+      $view_mode = 'anonymous_user_content';
     }
   }
+}
 
- /**
-  * Preprocess page title
-  */
- function devportal_preprocess_page_title(&$variables) {
-   // Set the content listing page title to product name.
-   $content_types = [
-     'apps' => 'Applications',
-     'article' => 'Blogs',
-     'assets' => 'Media',
-     'document_overview' => 'Pages',
-     'events' => 'Events',
-     'faq' => 'Faqs',
-     'forum' => 'Forums',
-     'issues' => 'Issues',
-     'resources' => 'Resources',
-     'solutions' => 'Solutions',
-     'tutorials' => 'Tutorials',
-     'use_cases' => 'Use Cases',
-     'api_document' => 'Documents'
-   ];
-   $current_path = \Drupal::service('path.current')->getPath();
-   $path_index = explode('/', $current_path);
-   if ((isset($path_index[3]) && in_array($path_index[3], array_keys($content_types)))) {
-     $content_type = $content_types[$path_index[3]];
-     unset($path_index[3]);
-     $new_path = implode('/', $path_index);
-     $url_alias = \Drupal::service('path.alias_manager')->getPathByAlias($new_path);
-     if (preg_match('/node\/(\d+)/', $url_alias, $matches)) {
-       $nid = $matches[1];
-       $title = Node::load($nid)->get('title')->value;
-     }
-     $variables['title'] = $title ? $title . ' ' . ':' . ' ' .  $content_type : $content_type;
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function opendevx_content_entity_form_display_alter(&$form_display, $context) {
+  $current_user_role = \Drupal::currentUser()->getRoles();
+  // Change the node form display for developer role.
+  if ($context['entity_type'] == 'node' && in_array('developer', $current_user_role)) {
+    $id = $context['entity_type'] . '.' . $context['bundle'] . '.developer';
+    $storage = \Drupal::entityManager()->getStorage('entity_form_display');
+    $change_display = $storage->load($id);
+    if ($change_display) {
+      $form_display = $change_display;
+    }
+  }
+}
+
+/**
+ * Preprocess page title.
+ */
+function devportal_preprocess_page_title(&$variables) {
+  // Set the content listing page title to product name.
+  $content_types = [
+    'apps' => 'Applications',
+    'article' => 'Blogs',
+    'assets' => 'Media',
+    'document_overview' => 'Pages',
+    'events' => 'Events',
+    'faq' => 'Faqs',
+    'forum' => 'Forums',
+    'issues' => 'Issues',
+    'resources' => 'Resources',
+    'solutions' => 'Solutions',
+    'tutorials' => 'Tutorials',
+    'use_cases' => 'Use Cases',
+    'api_document' => 'Documents',
+  ];
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_index = explode('/', $current_path);
+  if ((isset($path_index[3]) && in_array($path_index[3], array_keys($content_types)))) {
+    $content_type = $content_types[$path_index[3]];
+    unset($path_index[3]);
+    $new_path = implode('/', $path_index);
+    $url_alias = \Drupal::service('path.alias_manager')->getPathByAlias($new_path);
+    if (preg_match('/node\/(\d+)/', $url_alias, $matches)) {
+      $nid = $matches[1];
+      $title = Node::load($nid)->get('title')->value;
+    }
+    $variables['title'] = $title ? $title . ' ' . ':' . ' ' . $content_type : $content_type;
   }
 }

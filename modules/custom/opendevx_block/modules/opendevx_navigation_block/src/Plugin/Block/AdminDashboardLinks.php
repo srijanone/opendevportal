@@ -31,17 +31,10 @@ class AdminDashboardLinks extends BlockBase implements ContainerFactoryPluginInt
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-  }
+  public function __construct(array $configuration, $plugin_id, $plugin_definition) {}
 
   /**
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   * @param array $configuration
-   * @param string $plugin_id
-   * @param mixed $plugin_definition
-   *
-   * @return static
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
@@ -56,12 +49,12 @@ class AdminDashboardLinks extends BlockBase implements ContainerFactoryPluginInt
    */
   public function build() {
     $config = $this->getConfiguration();
-    $attributes =  [
+    $attributes = [
       'target' => $config['dvp_admin_links_settings']['link_target'] ? '_blank' : '_self',
     ];
     $admin_links = [];
     $map_links_values = preg_split("/[\r\n,;]+/", $config['dvp_admin_links_settings']['links']);
-    
+
     foreach ($map_links_values as $mapValue) {
       $values = explode("::", $mapValue);
       if (count($values) == 2) {
@@ -70,7 +63,7 @@ class AdminDashboardLinks extends BlockBase implements ContainerFactoryPluginInt
       }
     }
 
-    return $content = [
+    return [
       '#theme' => 'item_list',
       '#list_type' => 'ul',
       '#title' => 'Administer Settings',
@@ -90,7 +83,7 @@ class AdminDashboardLinks extends BlockBase implements ContainerFactoryPluginInt
     $form['dvp_admin_links_settings'] = [
       '#type' => 'details',
       '#title' => $this->t('Settings'),
-      '#open'=> TRUE,
+      '#open' => TRUE,
     ];
 
     $form['dvp_admin_links_settings']['link_target'] = [
@@ -106,7 +99,6 @@ class AdminDashboardLinks extends BlockBase implements ContainerFactoryPluginInt
 			For example LINK-TITLE::/admin/config. The url must starts with a forward slash /. You can enter multiple values separated by comma, new line or semi-colon.'),
       '#default_value' => $config['dvp_admin_links_settings']['links'],
     ];
-
 
     return $form;
   }

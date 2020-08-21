@@ -18,11 +18,15 @@ class ListingBlockUtility {
    *   View name.
    * @param string $display
    *   Display name.
+   * @param bool $pager
+   *   The pagination argument.
+   * @param int $nid
+   *   The node id.
    *
    * @return array
-   *    Renderable block data.
+   *   Renderable block data.
    */
-  public static function getViewResults($filters, $type, $display, $pager = FALSE, $nid = FALSE) {
+  public static function getViewResults(array $filters, $type, $display, $pager = FALSE, $nid = FALSE) {
     $arguments = [implode("+", $filters)];
     $view = Views::getView($type);
     $view->setDisplay($display);
@@ -55,10 +59,10 @@ class ListingBlockUtility {
    *   Path of view.
    *
    * @return array
-   *    Renderable footer data.
+   *   Renderable footer data.
    */
   public function getViewOption($path) {
-    $options = array(
+    $options = [
       'id' => 'area_text_custom',
       'table' => 'views',
       'field' => 'area_text_custom',
@@ -69,7 +73,7 @@ class ListingBlockUtility {
       'empty' => TRUE,
       'tokenize' => FALSE,
       'plugin_id' => 'text_custom',
-    );
+    ];
 
     return $options;
   }

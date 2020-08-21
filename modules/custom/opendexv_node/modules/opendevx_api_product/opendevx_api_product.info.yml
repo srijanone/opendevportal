@@ -5,8 +5,6 @@ package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
 
-project: opendevx_api_product
-
 dependencies:
   - fivestar:fivestar
   - opendevx_api_document:opendevx_api_document

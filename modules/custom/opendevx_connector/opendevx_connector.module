@@ -1,8 +1,12 @@
 <?php
 
 /**
+ * @file
+ * Module file opendevx_connector.module.
+ */
+
+/**
  * Implements hook_theme().
- *
  */
 function opendevx_connector_theme($existing, $type, $theme, $path) {
 
@@ -10,9 +14,11 @@ function opendevx_connector_theme($existing, $type, $theme, $path) {
     'opendevx_connector_theme_programkeys' => [
       'render element' => 'children',
       'template' => 'developer-portal-connector--program-keys',
-      // Optionally define path to Twig template files. Defaults to the module's ./templates/ directory.
+      // Optionally define path to Twig template files.
+      // Defaults to the module's ./templates/ directory.
       'path' => $path . '/templates',
-      // Optionally define variables that will be passed to the Twig template and set default values for them.
+      // Optionally define variables that will be passed to
+      // the Twig template and set default values for them.
       'variables' => [
         'details' => [0, 0, 0],
       ],

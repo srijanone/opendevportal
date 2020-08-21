@@ -3,11 +3,9 @@
 namespace Drupal\opendevx_block\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\opendevx_block\Utility\BlockUtility;
 
@@ -23,7 +21,9 @@ use Drupal\opendevx_block\Utility\BlockUtility;
 class CtaBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var mixed $currentPath
+   * The request stack instance.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
@@ -36,10 +36,12 @@ class CtaBlock extends BlockBase implements ContainerFactoryPluginInterface {
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
   RequestStack $request_stack) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentPath = $request_stack;
@@ -102,7 +104,7 @@ class CtaBlock extends BlockBase implements ContainerFactoryPluginInterface {
         '#type' => 'select',
         '#options' => ['apps' => 'Create APP', 'issues' => 'Need Help'],
         '#default_value' => !empty($config['cta_section'][$key]['cta_type']) ?
-        $value['cta_type']: 'apps',
+        $value['cta_type'] : 'apps',
       ];
       $form['cta_section'][$key]['cta_label'] = [
         '#size' => 20,
@@ -111,7 +113,7 @@ class CtaBlock extends BlockBase implements ContainerFactoryPluginInterface {
         $value['cta_label'] : '',
       ];
     }
-    
+
     return $form;
   }
 
@@ -142,7 +144,7 @@ class CtaBlock extends BlockBase implements ContainerFactoryPluginInterface {
       }
       $i++;
     }
-    
+
     return [
       '#theme' => 'cta_section_block',
       '#ctaData' => $data,

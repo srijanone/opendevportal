@@ -7,7 +7,6 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\opendevx_organisation\Organisation as Programs;
-use Drupal\opendevx_organisation\Utility\OrganisationUtility;
 
 /**
  * Class Organisation.
@@ -34,11 +33,15 @@ class Organisation extends Programs {
   protected $programs;
 
   /**
+   * The database instance.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
 
   /**
+   * The current user instance.
+   *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
@@ -97,7 +100,7 @@ class Organisation extends Programs {
           $organisation[$value->org_id] = $this->programs[$value->org_id];
         }
       }
-     
+
       return $organisation;
     }
     catch (\Exception $e) {
@@ -109,7 +112,7 @@ class Organisation extends Programs {
   /**
    * Function to get organization roles.
    *
-   * @param boolean $strict
+   * @param bool $strict
    *   Boolean param to specify strict check.
    *
    * @return array

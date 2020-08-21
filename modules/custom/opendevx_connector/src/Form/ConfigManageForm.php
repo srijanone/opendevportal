@@ -65,12 +65,13 @@ class ConfigManageForm extends ConfigFormBase {
         'oauth' => $this->t('Oauth'),
       ],
       '#states' => [
-        //show this textfield only if the 'API Gateway Platform' is selected above
+        // Show this textfield only if the 'API Gateway Platform'
+        // is selected above.
         'visible' => [
           ['select[name="field_api_platform"]' => ['value' => 'apigee']],
           ['select[name="field_api_platform"]' => ['value' => 'webmethod']],
           ['select[name="field_api_platform"]' => ['value' => 'wso2']],
-          ['select[name="field_api_platform"]' => ['value' => 'kong']]
+          ['select[name="field_api_platform"]' => ['value' => 'kong']],
         ],
       ],
       '#attributes' => [
@@ -83,7 +84,7 @@ class ConfigManageForm extends ConfigFormBase {
       '#description' => $this->t('The authorization server endpoint'),
       '#default_value' => $config->get('auth_server_value_' . $this->org_id),
       '#states' => [
-        //show this textfield only if the 'oauth' is selected above
+        // Show this textfield only if the 'oauth' is selected above.
         'visible' => [
           ':input[name="field_authentication"]' => ['value' => 'oauth'],
         ],
@@ -95,7 +96,7 @@ class ConfigManageForm extends ConfigFormBase {
       '#description' => $this->t('The client identifier issued to the client'),
       '#default_value' => $config->get('client_id_' . $this->org_id),
       '#states' => [
-        //show this textfield only if the 'oauth' is selected above
+        // Show this textfield only if the 'oauth' is selected above.
         'visible' => [
           ':input[name="field_authentication"]' => ['value' => 'oauth'],
         ],
@@ -106,7 +107,7 @@ class ConfigManageForm extends ConfigFormBase {
       '#title' => 'Client secret',
       '#description' => $this->t('A secret known only to the client and the authorization server'),
       '#states' => [
-        //show this password only if the 'oauth' is selected above
+        // Show this password only if the 'oauth' is selected above.
         'visible' => [
           ':input[name="field_authentication"]' => ['value' => 'oauth'],
         ],
@@ -119,12 +120,13 @@ class ConfigManageForm extends ConfigFormBase {
       '#description' => $this->t('Add Platform username'),
       '#required' => TRUE,
       '#states' => [
-        //show this textfield only if the 'API Gateway Platform' is selected above
+        // Show this textfield only if the 'API Gateway Platform'
+        // is selected above.
         'visible' => [
           ['select[name="field_api_platform"]' => ['value' => 'apigee']],
           ['select[name="field_api_platform"]' => ['value' => 'webmethod']],
           ['select[name="field_api_platform"]' => ['value' => 'wso2']],
-          ['select[name="field_api_platform"]' => ['value' => 'kong']]
+          ['select[name="field_api_platform"]' => ['value' => 'kong']],
         ],
       ],
     ];
@@ -134,12 +136,13 @@ class ConfigManageForm extends ConfigFormBase {
       '#description' => $this->t('Add Platform password'),
       '#required' => TRUE,
       '#states' => [
-        //show this textfield only if the 'API Gateway Platform' is selected above
+        // Show this textfield only if the 'API Gateway Platform'
+        // is selected above.
         'visible' => [
           ['select[name="field_api_platform"]' => ['value' => 'apigee']],
           ['select[name="field_api_platform"]' => ['value' => 'webmethod']],
           ['select[name="field_api_platform"]' => ['value' => 'wso2']],
-          ['select[name="field_api_platform"]' => ['value' => 'kong']]
+          ['select[name="field_api_platform"]' => ['value' => 'kong']],
         ],
       ],
     ];

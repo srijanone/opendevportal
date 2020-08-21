@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * @file
+ * Module file opendevx_organisation.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
  * Implements hook_theme().
  */
 function opendevx_organisation_theme() {
@@ -11,27 +18,27 @@ function opendevx_organisation_theme() {
       ],
     ],
   ];
- }
+}
 
 /**
  * Implements hook_form_alter().
  */
 function opendevx_organisation_form_alter(&$form,
-\Drupal\Core\Form\FormStateInterface &$form_state,
+FormStateInterface &$form_state,
 $form_id) {
   switch ($form_id) {
     case 'taxonomy_term_organisation_form':
       $form['field_external_link']['#states'] = [
         'visible' => [
           ['select[name="field_refer_to"]' => ['value' => 'external']],
-        ]
+        ],
       ];
       $form['field_organisation_page']['#states'] = [
         'invisible' => [
           ['select[name="field_refer_to"]' => ['value' => '_none']],
-        ]
+        ],
       ];
 
-    break;
+      break;
   }
 }

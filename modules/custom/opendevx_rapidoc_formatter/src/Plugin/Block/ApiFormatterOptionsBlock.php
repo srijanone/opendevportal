@@ -19,7 +19,7 @@ class ApiFormatterOptionsBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    return  \Drupal::formBuilder()->getForm('Drupal\opendevx_rapidoc_formatter\Form\ApiFormatterOptionsForm');
+    return \Drupal::formBuilder()->getForm('Drupal\opendevx_rapidoc_formatter\Form\ApiFormatterOptionsForm');
   }
 
 }

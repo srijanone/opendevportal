@@ -3,7 +3,6 @@
 namespace Drupal\opendevx_user\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -23,12 +22,11 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
   /**
    * UserOrganisation object.
    *
-   * @var \Drupal\opendevx_user\UserOrganisation $org
-   *
+   * @var \Drupal\opendevx_user\Organisation
    */
   protected $org;
 
-   /**
+  /**
    * UserOrganisationBlock constructor.
    *
    * @param array $configuration
@@ -37,7 +35,7 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $organisation
+   * @param \Drupal\opendevx_user\Organisation $organisation
    *   The plugin organisation class.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, Organisation $organisation) {
@@ -92,7 +90,7 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
     $form['organisation_description'] = [
       '#type' => 'text_format',
       '#title' => $this->t('Description'),
-      '#format'=> 'full_html',
+      '#format' => 'full_html',
       '#default_value' => $config['organisation_description'],
     ];
     return $form;

@@ -12,10 +12,10 @@ interface SubscriptionQueueInterface {
   /**
    * Sets the content to the notifications list.
    *
-   * @param string $title
-   *   The short title of the feed.
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   The entity on which operation performed.
    *
-   * @return $entity
+   * @return entity
    *   The entity on which operation performed.
    */
   public function setQueueRecords(EntityInterface $entity);

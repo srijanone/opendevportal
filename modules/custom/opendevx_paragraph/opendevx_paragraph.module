@@ -1,12 +1,11 @@
 <?php
+
 /**
  * @file
  * Paragragh Module file.
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Url;
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
@@ -45,6 +44,7 @@ function opendevx_paragraph_field_widget_entity_reference_paragraphs_form_alter(
  *   Respective field defination.
  *
  * @return object
+ *   Paragraph element object.
  */
 function opendevx_paragragh_add_conditional_logic($element, $field_definition) {
   // Get the paragraph machine name.
@@ -86,7 +86,8 @@ function opendevx_paragragh_add_conditional_logic($element, $field_definition) {
  *   Array of elements.
  */
 function opendevx_paragraph_get_paragraph_dependency($element,
-array $field, $selector) {
+array $field,
+ $selector) {
   if (empty($field)) {
     return $element;
   }

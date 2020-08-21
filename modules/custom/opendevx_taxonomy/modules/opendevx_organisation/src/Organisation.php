@@ -17,11 +17,15 @@ class Organisation {
   use LoggerChannelTrait;
 
   /**
+   * The database instance.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
 
   /**
+   * The account instance which represents current user.
+   *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
@@ -39,9 +43,8 @@ class Organisation {
   /**
    * Function to get organisation information.
    *
-   *
    * @return array
-   *    Organisation data.
+   *   Organisation data.
    */
   public function getOrganisationsData() {
     try {
@@ -82,9 +85,8 @@ class Organisation {
   /**
    * Function to get accessable organisation information.
    *
-   *
    * @return array
-   *    Organisation data.
+   *   Organisation data.
    */
   public function getOrganisationsDataByAccess() {
     $access = ['Public', 'Protected'];
@@ -138,14 +140,14 @@ class Organisation {
    * Prepare organisation path.
    *
    * @param int $id
-   *    Reference id.
+   *   Reference id.
    * @param string $refer_to
    *   Type of organisation.
    * @param string $eid
    *   External domain url.
    *
    * @return mixed
-   *    Organisation landing path.
+   *   Organisation landing path.
    */
   public function getOrganisationPath($id, $refer_to = NULL, $eid = '') {
     // Set $refer url.

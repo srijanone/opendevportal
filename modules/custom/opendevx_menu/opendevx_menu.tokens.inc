@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Inc file for menu tokens.
+ */
+
 use Drupal\Core\Render\BubbleableMetadata;
 
 /**
@@ -15,12 +20,12 @@ function opendevx_menu_token_info() {
 
   $info['tokens']['organization']['organization_id'] = [
     'name' => 'Organization',
-    'description' => t('This token will return the organization id either using the default taxonomy id, or the organization_hash_value field value on the taxonoomy. Useful for setting URL alias pattern.')
+    'description' => t('This token will return the organization id either using the default taxonomy id, or the organization_hash_value field value on the taxonoomy. Useful for setting URL alias pattern.'),
   ];
 
   $info['tokens']['organization']['organization_name'] = [
     'name' => 'Organization',
-    'description' => t('This token will return the organization title either using the default taxonomy title. Useful for setting URL alias pattern.')
+    'description' => t('This token will return the organization title either using the default taxonomy title. Useful for setting URL alias pattern.'),
   ];
 
   return $info;
