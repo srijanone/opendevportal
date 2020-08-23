@@ -19,6 +19,7 @@ install:
  - breakpoint
  - ckeditor
  - codesnippet
+ - captcha
  - color
  - comment
  - config
@@ -30,18 +31,6 @@ install:
  - ctools
  - datetime
  - dblog
- - opendevx_api
- - opendevx_api_listing_block
- - opendevx_block
- - opendevx_breadcrumb
- - opendevx_connector
- - opendevx_content
- - opendevx_content_reference
- - opendevx_menu
- - opendevx_navigation_block
- - opendevx_organisation
- - opendevx_taxonomy
- - opendevx_user
  - dynamic_page_cache
  - easy_breadcrumb
  - editor
@@ -117,17 +106,49 @@ install:
  - workflows
  - ds
  - forum
+ - backup_migrate
+ - color_field
+ - social_link_field
+ - like_and_dislike
  - menu_link_content
  - pathauto
  - views
  - paragraphs
  - login_redirect_per_role
+ - tour_ui
+ - redirects
+ - rules
+ - transaction
+ - page_manager
+ - dynamic_entity_reference
+ - userpoints_default
+ - userpoints_rules_example
+ - opendevx_api
+ - opendevx_api_listing_block
+ - opendevx_block
+ - opendevx_breadcrumb
+ - opendevx_connector
+ - opendevx_content
+ - opendevx_content_reference
+ - opendevx_menu
+ - opendevx_navigation_block
+ - opendevx_organisation
+ - opendevx_paragraph
+ - opendevx_taxonomy
+ - opendevx_subscription
+ - opendevx_notification
+ - opendevx_rapidoc_formatter
+ - opendevx_user
+ - opendexv_node
+ - opendevx_forum
+ - opendevx_apps
 # Required modules
 # Note that any dependencies of the modules listed here will be installed automatically.
 dependencies:
  - node
  - block
  - views
+ - book
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
@@ -136,6 +157,7 @@ themes:
   - classy
   - seven
   - bootstrap_barrio
+  - bootstrap_sass
   - devportal
   - adminimal_theme
   - devportal_admin
