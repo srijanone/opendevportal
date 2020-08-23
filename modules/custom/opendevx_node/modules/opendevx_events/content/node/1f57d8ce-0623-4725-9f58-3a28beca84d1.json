@@ -1,0 +1,307 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/page\/getting-started-payments-processing?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/document_overview"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/uid": [
+            {
+                "href": "http:\/\/default\/user\/46?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_detail_section": [
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/322?_format=hal_json",
+                "lang": "en"
+            },
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/355?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_product": [
+            {
+                "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_listing_image": [
+            {
+                "href": "http:\/\/default\/media\/109\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_organisation": [
+            {
+                "href": "http:\/\/default\/publicprogram?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 409
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1f57d8ce-0623-4725-9f58-3a28beca84d1"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1127
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "document_overview"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-08-20T07:42:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/46?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ce31e7f5-e3de-40c6-82a4-832d27cec9c3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_detail_section": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/322?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e1823f58-cbb5-4112-bfb9-b7830311e8c5"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "934"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/355?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "782d34ab-201c-4723-91bb-1d09caf99bcc"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "935"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_product": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bfc2f13c-f63c-4529-8dce-a996cac0c894"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_listing_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/109\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "da942a69-dd72-463b-8af2-2bfff6aecd3c"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_organisation": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/publicprogram?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisation"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "daaab89f-6e18-472c-9420-c30e11e2123c"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Getting Started with Payments Processing",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-08T08:20:49+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-08-20T07:42:16+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Getting Started with Payments Processing | Open API Exchange",
+                "canonical_url": "http:\/\/default\/page\/getting-started-payments-processing",
+                "description": "Getting Started with Payments Processing"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/page\/getting-started-payments-processing",
+            "pid": 347,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Getting Started with Payments Processing<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>Getting Started with Payments Processing<\/p>\n",
+            "summary": "Getting Started with Payments Processing",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1594199451,
+            "last_comment_name": null,
+            "last_comment_uid": 46,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_description": [
+        {
+            "value": "<p>The &nbsp;Payments Processing (VPP) APIs are available on a trial basis to gather feedback and enable future development.<\/p>\r\n\r\n<div class=\"bootstrap-tabs\" data-tab-set-title=\"Programming\">\r\n<ul class=\"nav nav-tabs\" role=\"tablist\"><!-- add tabs here -->\r\n\t<li role=\"presentation\"><a aria-controls=\"programming-tab-1-name\" class=\"tab-link\" data-toggle=\"tab\" href=\"#programming-tab-1-name\" role=\"tab\">PHP<\/a><\/li>\r\n\t<li role=\"presentation\"><a aria-controls=\"programming-tab-2-name\" class=\"tab-link\" data-toggle=\"tab\" href=\"#programming-tab-2-name\" role=\"tab\">Ruby<\/a><\/li>\r\n\t<li class=\"active\" role=\"presentation\"><a aria-controls=\"programming-tab-3-name\" class=\"tab-link\" data-toggle=\"tab\" href=\"#programming-tab-3-name\" role=\"tab\">Jaba<\/a><\/li>\r\n<\/ul>\r\n\r\n<div class=\"tab-content\"><!-- add tab panels here -->\r\n<div class=\"tab-pane\" id=\"programming-tab-1-name\" role=\"tabpanel\">\r\n<div class=\"tab-pane-content\">\r\n<p>print \"Bonjour\"<\/p>\r\n<\/div>\r\n<\/div>\r\n\r\n<div class=\"tab-pane\" id=\"programming-tab-2-name\" role=\"tabpanel\">\r\n<div class=\"tab-pane-content\">Priint \"Banjour\"<\/div>\r\n<\/div>\r\n\r\n<div class=\"tab-pane active\" id=\"programming-tab-3-name\" role=\"tabpanel\">\r\n<div class=\"tab-pane-content\">Print \"Hello\"<\/div>\r\n<\/div>\r\n<\/div>\r\n<\/div>\r\n\r\n<p>&nbsp;<\/p>\r\n",
+            "format": "markdown",
+            "processed": "<p>The \u00a0Payments Processing (VPP) APIs are available on a trial basis to gather feedback and enable future development.<\/p>\n<div class=\"bootstrap-tabs\">\n<ul class=\"nav nav-tabs\">\n\t<li><a href=\"#programming-tab-1-name\">PHP<\/a><\/li>\n\t<li><a href=\"#programming-tab-2-name\">Ruby<\/a><\/li>\n\t<li class=\"active\"><a href=\"#programming-tab-3-name\">Jaba<\/a><\/li>\n<\/ul>\n<div class=\"tab-content\">\n<div class=\"tab-pane\" id=\"programming-tab-1-name\" role=\"tabpanel\">\n<div class=\"tab-pane-content\">\nprint \"Bonjour\"\n<\/div>\n<\/div>\n<div class=\"tab-pane\" id=\"programming-tab-2-name\" role=\"tabpanel\">\n<div class=\"tab-pane-content\">Priint \"Banjour\"<\/div>\n<\/div>\n<div class=\"tab-pane active\" id=\"programming-tab-3-name\" role=\"tabpanel\">\n<div class=\"tab-pane-content\">Print \"Hello\"<\/div>\n<\/div>\n<\/div>\n<\/div>\n<p>\u00a0<\/p>\n"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 100,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}

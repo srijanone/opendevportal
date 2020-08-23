@@ -1,0 +1,20 @@
+name: Developer Portal Landing Pages
+description : 'Adds the Landing Pages content type for developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+project:
+
+dependencies:
+  - drupal:views
+  - opendevx_node:opendevx_node
+
+default_content:
+  node:
+    # Product Landing Page.
+    - 3efedfe0-aead-4240-9885-31042ab870ba
+    # Solutions Landing Page.
+    - bf6a1d86-e18c-4867-a520-defdaf58185c
+    # Use case landing page.
+    - 8fe316a0-2ab5-4fe9-aab9-18d69bc03054

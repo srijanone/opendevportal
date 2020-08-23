@@ -1,0 +1,284 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/437?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/apps"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/uid": [
+            {
+                "href": "http:\/\/default\/user\/50?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_api_product_single": [
+            {
+                "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_organisation": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/41?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_products_image": [
+            {
+                "href": "http:\/\/default\/media\/93\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_video": [
+            {
+                "href": "http:\/\/default\/media\/97\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 437
+        }
+    ],
+    "uuid": [
+        {
+            "value": "cf7c9b01-b652-45cb-8b50-5a11a8666dcb"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1124
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "apps"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-08-20T06:59:50+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/50?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ae078c9a-048d-4626-bdb7-589cada2e5ce"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_api_product_single": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bfc2f13c-f63c-4529-8dce-a996cac0c894"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_organisation": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/41?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisation"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "393698d7-7048-445a-bed2-739120ff54c3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_products_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/93\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "21bf1e08-3925-4c01-9dec-c394ebc77569"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apps\/field_video": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/97\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/remote_video"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c4860ecc-18e4-4416-a28a-e1f0a8c32766"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Improving Cloud Security with a Shared Responsibility Model",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-27T07:29:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-08-20T06:59:50+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Improving Cloud Security with a Shared Responsibility Model | Open API Exchange",
+                "canonical_url": "http:\/\/default\/node\/437",
+                "description": "HITRUST streamlines the process to determine who\u2019s responsible for what security controls among your service providers"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>HITRUST streamlines the process to determine who\u2019s responsible for what security controls among your service providers By Hector Rodriguez, Worldwide Health Chief Information Security Officer, Microsoft &amp; Matthew Datel, Manager, Assessor Program &amp; Assurance Strategy, HITRUST Protecting sensitive information is a challenge for any organization. And our brave new world of connected hybrid-heterogeneous cloud environments, while creating new opportunities, also expands the potential for cyber attacks. When organizations stand up new services or move existing applications to the cloud, IT security efforts need to be coordinated amongst business units and with multiple third-party partners; these partners can range from cloud platform providers to application providers as well as partners who oversee the operating systems on your end-user and network devices. \u201cThere are many steps to consider for IT security along the cloud path,\u201d says Matt Rathbun, who served as chief security officer-Azure Global at Microsoft from 2015 through 2018. \u201cIs it the device provider\u2019s responsibility? The cloud platform provider\u2019s responsibility? The customer who owns the data? To guarantee data is secure, you have to clearly articulate who owns what, where there are security gaps, and who will close those security gaps.\u201d<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>HITRUST streamlines the process to determine who\u2019s responsible for what security controls among your service providers By Hector Rodriguez, Worldwide Health Chief Information Security Officer, Microsoft &amp; Matthew Datel, Manager, Assessor Program &amp; Assurance Strategy, HITRUST Protecting sensitive information is a challenge for any organization. And our brave new world of connected hybrid-heterogeneous cloud environments, while creating new opportunities, also expands the potential for cyber attacks. When organizations stand up new services or move existing applications to the cloud, IT security efforts need to be coordinated amongst business units and with multiple third-party partners; these partners can range from cloud platform providers to application providers as well as partners who oversee the operating systems on your end-user and network devices. \u201cThere are many steps to consider for IT security along the cloud path,\u201d says Matt Rathbun, who served as chief security officer-Azure Global at Microsoft from 2015 through 2018. \u201cIs it the device provider\u2019s responsibility? The cloud platform provider\u2019s responsibility? The customer who owns the data? To guarantee data is secure, you have to clearly articulate who owns what, where there are security gaps, and who will close those security gaps.\u201d<\/p>\n",
+            "summary": "HITRUST streamlines the process to determine who\u2019s responsible for what security controls among your service providers",
+            "lang": "en"
+        }
+    ],
+    "field_add_to_gallery": [
+        {
+            "value": true
+        }
+    ],
+    "field_client_id": [
+        {
+            "value": "h8ofc05wa9"
+        }
+    ],
+    "field_client_secret": [
+        {
+            "value": "iohc"
+        }
+    ],
+    "field_display_name": [
+        {
+            "value": "Improving Cloud Security with a Shared Responsibility Model"
+        }
+    ]
+}

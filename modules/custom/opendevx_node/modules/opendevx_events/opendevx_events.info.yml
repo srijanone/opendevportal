@@ -1,0 +1,62 @@
+name: Events Content
+description : 'Adds the Events content type in developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - opendevx_product_page:opendevx_product_page
+  - opendevx_node:opendevx_node
+  - opendevx_api_product:opendevx_api_product
+  - opendevx_taxonomy:opendevx_event_type
+  - opendevx_taxonomy:opendevx_organisation
+  - swagger_ui_formatter:swagger_ui_formatter
+  - drupal:views
+  - address:address
+
+project: opendevx_events
+
+default_content:
+  node:
+    # Events: Run a Direct Transaction Using Python in 1 hr or Less
+    - 26004c74-fcc1-40cc-94e5-12e20b758250
+    # FAQ: What is X-CORRELATION?
+    - 13ff85ea-6b3a-4499-88fb-b1186b9acfcb
+    # Downloads(resources): Download JAVA SDK
+    - 783a556b-129e-43ae-a50e-d958b3cf16b7
+    # Solutions: Turn Your Payment On or Off
+    - d87e82d9-9e6c-420f-9b71-4a047faee1bc
+    # Use cases: Increased Security When Signing In
+    - 30acd852-0d90-4293-a8f2-e000425bfa78
+    # API: Payments Processing
+    - 89cf2aa0-e671-4efe-b6e5-4ad9aafb339e
+    # Application: Improving Cloud Security with a Shared Responsibility Model
+    - cf7c9b01-b652-45cb-8b50-5a11a8666dcb
+    # Blog: Here's what we improved based off your feedback
+    - 3fb72a6c-dc06-4ec4-a6de-4da01addd12d
+    # Forum: Problem with produt has been raised?
+    - 965e63a7-871b-45f7-ad8b-63ff4a93706d
+    # Landing Page: Home
+    - bac5c717-d8bc-41d9-964c-26aac748fd9d
+    # Media: Video API
+    - e66b7971-d86d-41bb-b301-8b0ba8ba8fcc
+    # Page: Getting Started with Payments Processing
+    - 1f57d8ce-0623-4725-9f58-3a28beca84d1
+    # Tutorials: How to Use Payments Processing
+    - 47a60067-3b62-476f-9e7a-7c6cb7c9b3bd
+  media:
+    # Listing Image of Solution and resources
+    - b8d02973-0566-4f72-8592-2d75bf24f7c4
+    # Listing Image of API
+    - 54d3cb46-61b6-46c7-9e72-b036be10814e
+    # Listing Image of Use cases
+    - 8bd2e8ad-f820-4dbc-9cbc-dc1f023b0062
+    # APP Image
+    - 21bf1e08-3925-4c01-9dec-c394ebc77569
+    # APP Video
+    - c4860ecc-18e4-4416-a28a-e1f0a8c32766
+    # Listing Image of Media
+    - 16101eac-654f-4068-aa01-05780ea4f79a
+    # Listing Image of Tutorials
+    - 6b65cf41-3b70-4db9-8a14-df7a94039916

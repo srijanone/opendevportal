@@ -51,7 +51,6 @@ install:
  - jsonapi
  - jsonapi_defaults
  - jsonapi_extras
- - kint
  - layout_builder
  - layout_discovery
  - link
@@ -107,8 +106,13 @@ install:
  - ds
  - forum
  - backup_migrate
+ - better_exposed_filters
+ - views_autocomplete_filters
+ - views_bulk_operations
+ - views_aggregator
  - color_field
  - social_link_field
+ - default_content
  - like_and_dislike
  - menu_link_content
  - pathauto
@@ -116,7 +120,7 @@ install:
  - paragraphs
  - login_redirect_per_role
  - tour_ui
- - redirects
+ - redirect
  - rules
  - transaction
  - page_manager
@@ -128,6 +132,10 @@ install:
  - opendevx_block
  - opendevx_breadcrumb
  - opendevx_connector
+ - opendevx_api_categories
+ - opendevx_api_category
+ - opendevx_api_product
+ - opendevx_api_document
  - opendevx_content
  - opendevx_content_reference
  - opendevx_menu
@@ -139,9 +147,14 @@ install:
  - opendevx_notification
  - opendevx_rapidoc_formatter
  - opendevx_user
- - opendexv_node
+ - opendevx_node
  - opendevx_forum
  - opendevx_apps
+ - opendevx_event_type
+ - opendevx_events
+ - opendevx_listing_pages
+ - opendevx_product_attributes
+ - opendevx_product_page
 # Required modules
 # Note that any dependencies of the modules listed here will be installed automatically.
 dependencies:

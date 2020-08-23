@@ -1,0 +1,100 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/73?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
+        }
+    },
+    "id": [
+        {
+            "value": 73
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d0213a8d-5df2-40bc-8169-1d49c06248ad"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 95
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "header_block"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-07-02T11:48:05+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Use case banner",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-07-02T11:48:05+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/"
+            }
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Our main focus has been&nbsp;using APIs to integrate across applications and with business partners.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Our main focus has been\u00a0using APIs to integrate across applications and with business partners.<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Gather insights on the current and future state of API management"
+        }
+    ]
+}

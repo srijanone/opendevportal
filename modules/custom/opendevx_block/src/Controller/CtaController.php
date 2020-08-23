@@ -41,7 +41,7 @@ class CtaController extends ControllerBase {
   PrivateTempStoreFactory $temp_store) {
     $this->currentPath = $request_stack;
     $this->account = $account;
-    $this->storePath = $temp_store->get('developer_portal_block');
+    $this->storePath = $temp_store->get('opendevx_block');
   }
 
   /**
