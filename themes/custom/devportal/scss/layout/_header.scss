@@ -1,0 +1,624 @@
+.header {
+  background-color: $blue !important; // sass-lint:disable-line no-important
+  position: relative;
+  z-index: 2;
+
+  > nav {
+    @include media (null, $lg) {
+      max-width: 100%;
+    }
+
+    background-color: transparent !important; // sass-lint:disable-line no-important
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 8px 15px;
+  }
+
+  .nav {
+    .nav-link {
+      color: $white;
+    }
+  }
+
+  .navbar-toggler {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .navbar-collapse {
+    @include media (null, $md - 1) {
+      margin-top: 10px;
+    }
+    position: relative;
+  }
+
+  .navbar {
+    .navbar-brand {
+      img {
+        display: block;
+        height: 42px;
+        max-width: 200px;
+      }
+    }
+  }
+
+  // User account
+  .menu--account {
+    margin-left: 30px;
+    position: relative;
+
+    .dropdown-toggle {
+      margin-left: 10px;
+
+      .user {
+        background: url('/themes/custom/devportal/images/Icon-user.png') no-repeat 3px 4px;
+        background-size: 22px;
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+      }
+
+      .arrow {
+        background: url('/themes/custom/devportal/images/Icon-chevron-down.png') no-repeat 3px 4px;
+        background-size: 15px;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .dropdown-menu {
+      left: auto;
+      padding: 0;
+      padding-bottom: 10px;
+      right: -10px;
+      top: 48px;
+
+      &.show {
+        &::before {
+          display: none;
+        }
+      }
+
+      &::after {
+        margin-left: 15px;
+      }
+
+      .nav-link--user {
+        &::before {
+          background-image: url('data:image/svg+xml,<svg class="bi bi-person-check" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM1.022 13h9.956a.274.274 0 00.014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 00.022.004zm9.974.056v-.002.002zM6 7a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0zm6.854.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-1.5-1.5a.5.5 0 01.708-.708L12.5 7.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/></svg>');
+          content: '' !important; // sass-lint:disable-line no-important
+        }
+      }
+
+      .nav-link--user-logout {
+        &::before {
+          background-image: url('data:image/svg+xml,<svg class="bi bi-lock" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.5 8h-7a1 1 0 00-1 1v5a1 1 0 001 1h7a1 1 0 001-1V9a1 1 0 00-1-1zm-7-1a2 2 0 00-2 2v5a2 2 0 002 2h7a2 2 0 002-2V9a2 2 0 00-2-2h-7zm0-3a3.5 3.5 0 117 0v3h-1V4a2.5 2.5 0 00-5 0v3h-1V4z" clip-rule="evenodd"/></svg>');
+        }
+      }
+
+      .nav-link--user-login {
+        &::before {
+          background-image: url('data:image/svg+xml,<svg class="bi bi-unlock" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.655 8H2.333c-.264 0-.398.068-.471.121a.73.73 0 00-.224.296 1.626 1.626 0 00-.138.59V14c0 .342.076.531.14.635.064.106.151.18.256.237a1.122 1.122 0 00.436.127l.013.001h7.322c.264 0 .398-.068.471-.121a.73.73 0 00.224-.296 1.627 1.627 0 00.138-.59V9c0-.342-.076-.531-.14-.635a.658.658 0 00-.255-.237A1.122 1.122 0 009.655 8zm.012-1H2.333C.5 7 .5 9 .5 9v5c0 2 1.833 2 1.833 2h7.334c1.833 0 1.833-2 1.833-2V9c0-2-1.833-2-1.833-2zM8.5 4a3.5 3.5 0 117 0v3h-1V4a2.5 2.5 0 00-5 0v3h-1V4z" clip-rule="evenodd"/></svg>');
+          content: '' !important; // sass-lint:disable-line no-important
+        }
+      }
+
+      .nav-link--dashboard-appmanager-appsmoderation-stateall {
+        &::before {
+          @extend %awsome;
+          content: '\f013';
+          display: inline-block;
+          width: 21px;
+        }
+
+        + .nav-link {
+          &::before {
+            @extend %awsome;
+            content: '\f12a';
+            display: inline-block;
+            left: 3px;
+            position: relative;
+            width: 21px;
+          }
+        }
+      }
+
+      .nav-link--dashboard-appmanager-issues {
+        &::before {
+          @extend %awsome;
+          content: '\f188';
+          display: inline-block;
+          width: 21px;
+        }
+
+        + .nav-link {
+          &::before {
+            @extend %awsome;
+            content: '\f0f6';
+            display: inline-block;
+            width: 21px;
+          }
+        }
+      }
+
+      .nav-link {
+        &::before {
+          @include media (null, $md - 1) {
+            display: none !important; // sass-lint:disable-line no-important
+          }
+
+          color: $black1;
+          font-weight: normal !important; // sass-lint:disable-line no-important
+        }
+
+        &:nth-child(1) {
+          &::before {
+            @extend %awsome;
+            content: '\f0f7';
+            display: inline-block;
+            width: 21px;
+          }
+        }
+      }
+    }
+
+    .dropdown-item {
+      color: $black;
+
+      &:focus,
+      &:active,
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+
+    @include media (null, $md - 1) {
+      margin-left: 0;
+
+      .dropdown-toggle {
+        display: none;
+      }
+
+      .dropdown-menu {
+        background-color: transparent !important;
+        border: 0;
+        box-shadow: none;
+        display: block;
+        float: none;
+        position: static;
+      }
+
+      .dropdown-item {
+        border-bottom: 1px solid $white;
+        color: $white;
+        padding: 10px 14px;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        &:focus,
+        &:active,
+        &:hover {
+          background-color: $blue;
+          color: $white;
+          outline: none;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Main menu
+  .menu--main {
+    margin: auto;
+
+    .nav-link-- {
+      &::before {
+        display: none;
+      }
+    }
+
+    .navbar-nav {
+      .nav-link {
+        color: $white;
+        padding-left: 14px;
+        padding-right: 14px;
+
+        &:hover {
+          color: $white;
+        }
+
+        + .dropdown-menu {
+          @include media (null, $md - 1) {
+            background: $white !important; // sass-lint:disable-line no-important
+            border: 0;
+            box-shadow: unset;
+          }
+
+          left: -32px;
+          top: 40px;
+
+          .active {
+            background: unset;
+          }
+        }
+      }
+    }
+
+    @include media (null, $md - 1) {
+      margin-top: 40px;
+
+      .nav-item {
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+}
+
+// Search form
+.search-block-form {
+  &.block-search-form-block {
+    @include media ($md - 1) {
+      margin-right: 20px;
+      position: relative;
+      width: 190px;
+
+      &.open {
+        > .container-inline {
+          opacity: 1;
+          visibility: visible;
+          width: 190px;
+
+          .form-type-search {
+            opacity: 1;
+            width: 190px;
+          }
+        }
+      }
+
+      > .container-inline {
+        height: 38px;
+        transition: all .5s; // sass-lint:disable-line no-transition-all
+        visibility: hidden;
+        width: 0;
+
+        i {
+          -webkit-background-size: 1rem 1rem;
+          background-image: url('data:image/svg+xml,<svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/></svg>');
+          background-position: 0 .25rem;
+          background-repeat: no-repeat;
+          background-size: 1rem 1rem;
+          cursor: pointer;
+          display: inline-block;
+          height: 1.4rem;
+          position: absolute;
+          right: 15px;
+          top: 6px;
+          visibility: visible;
+          width: 1.2rem;
+        }
+
+        .form-type-search {
+          opacity: 0;
+          transition: all .5s; // sass-lint:disable-line no-transition-all
+        }
+
+        .form-actions {
+          visibility: hidden;
+        }
+      }
+    }
+
+    .search-form {
+      padding: 0 !important; // sass-lint:disable-line no-important
+      position: relative;
+    }
+
+    .container-inline > div {
+      display: block;
+    }
+
+    .form-type-search {
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    input {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+
+      background: $blue;
+      border-radius: 20px;
+      color: $white;
+      padding-right: 35px;
+
+      &:focus {
+        background: $blue;
+        color: $white;
+      }
+    }
+
+    .form-actions {
+      padding: 0;
+    }
+
+    .form-submit {
+      background-color: $blue;
+      border-color: $blue;
+      font-size: 0;
+      padding: 0;
+      position: absolute;
+      right: 10px;
+      top: 6px;
+
+      &:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+
+    @include media (null, $md - 1) {
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      .search-form {
+        margin: 0;
+      }
+
+      .form-type-search {
+        padding: 0;
+        width: 100%;
+      }
+
+      .form-submit {
+        right: 25px;
+      }
+    }
+  }
+}
+
+.menu--main-dashboard-navigation {
+  @include media ($md - 1) {
+    width: 75%;
+  }
+
+  ~ .navbar-collapse {
+    .menu--main {
+      flex: 1;
+      margin: 0;
+    }
+  }
+}
+
+.block-block-languageswitcher {
+  margin-top: -34px;
+  position: relative;
+  width: 222px;
+
+  .links {
+    &.nav {
+      background: $white;
+      border: 1px solid $black1;
+      cursor: pointer;
+      flex-flow: column;
+      height: 34px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      transition: all .5s; // sass-lint:disable-line no-transition-all
+
+      &:hover {
+        height: fit-content;
+      }
+
+      &::before {
+        @extend %awsome;
+        @include font (22, normal);
+        color: $gray3;
+        content: '\f0ac';
+        left: 3px;
+        position: absolute;
+        top: 3px;
+      }
+
+      &::after {
+        @extend %awsome;
+        content: '\f0d7';
+        position: absolute;
+        right: 10px;
+        top: 8px;
+      }
+
+      span {
+        order: 2;
+        padding: 7px 25px;
+
+        &:hover {
+          background-color: $green;
+
+          a {
+            color: $white;
+          }
+        }
+
+        &.is-active {
+          order: 1;
+
+          &:hover {
+            background-color: $white;
+
+            a {
+              color: $black1;
+            }
+          }
+        }
+
+        a {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+// notification
+.block-block-opendevxnotificationblock-2 {
+  @extend %none;
+  @include media (null, $md - 1) {
+    display: block;
+  }
+
+  position: absolute;
+  right: 70px;
+  top: 15px;
+
+  .notify-drop {
+    &.show {
+      @include media (null, $md - 1) {
+        top: 50px;
+
+        &::after {
+          right: 51px;
+        }
+      }
+
+      &::before {
+        @extend %none;
+      }
+    }
+  }
+}
+
+.block-block-opendevxnotificationblock {
+  @include media (null, $md - 1) {
+    display: none;
+  }
+
+  display: block;
+}
+
+.block-opendevx-notification {
+  .dropdown {
+    .dropdown-toggle {
+      &::after {
+        @extend %awsome;
+        @include font (18, normal);
+        border-top: 0;
+        color: $white;
+        content: '\f0f3';
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    &::after {
+      left: initial;
+      right: 56px;
+    }
+  }
+
+  .notify-drop {
+    left: -185px;
+    right: 0 !important; // sass-lint:disable-line no-important
+    top: 50px;
+
+    .drop-content {
+      .unread {
+        border-left: 4px solid $green;
+      }
+    }
+  }
+
+  .notification-icon {
+    &::after {
+      background: $green;
+      left: 25px;
+    }
+  }
+
+  .see-all-notification {
+    color: $black1;
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+//notification for dev role
+.role-developer {
+  .block-opendevx-notification {
+    .notify-drop {
+
+      @include media (null, $xs) {
+        left: -162px;
+        top: 44px;
+      }
+
+      left: -185px;
+      top: 37px;
+    }
+  }
+
+  .notification-icon {
+    &::after {
+      left: 57px;
+    }
+  }
+}
+
+//menu css for pm role
+.role-product_manager {
+  .header {
+    .menu--main {
+      margin: 0 auto 0 0;
+    }
+
+    .dropdown-item {
+      @include media (null, $md - 1) {
+        border-bottom: 0;
+      }
+    }
+
+    .nav {
+      @include media (null, $md - 1) {
+        display: block;
+      }
+
+      .nav-item {
+        @include media (null, $md - 1) {
+          border-bottom: 0;
+        }
+      }
+
+    }
+  }
+
+  .block-opendevx-notification {
+    .notification-icon {
+      &::after {
+        left: 56px;
+      }
+    }
+  }
+}

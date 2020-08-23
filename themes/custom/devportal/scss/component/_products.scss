@@ -1,0 +1,511 @@
+.block-views-blockproduct-listing-block-1,
+.block-views-blockproduct-listing-block-homepage-product,
+.block-views-blockproduct-listing-block-product-organisation {
+  @extend %custom-container;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    border-bottom: 2px solid $green;
+    color: $blue1;
+    margin: 0 auto 20px;
+    padding-bottom: 10px;
+  }
+}
+
+.ajax-progress {
+  background: rgba(0, 0, 0, .16); // sass-lint:disable-line no-color-literals
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+
+  &::after {
+    @extend %awsome;
+    @include font (60, normal);
+    animation: fa-spin 2s infinite linear;
+    color: $black1;
+    content: '\f013';
+    display: flex;
+    height: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: fit-content;
+  }
+}
+
+.view-product-listing,
+.event-listing,
+.forum-listing,
+.use-case-listing,
+.solution-listing,
+.view-app-gallery {
+  display: flex;
+  flex-flow: row wrap;
+
+  .custom-switch,
+  .custom-radio {
+    input {
+      opacity: 0;
+    }
+  }
+
+  .view-filters {
+    background: $gray;
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, .16); // sass-lint:disable-line no-color-literals
+    height: fit-content;
+    padding: 13px;
+    width: 20%;
+
+    .form-row {
+      display: unset;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .fieldset-legend {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .fieldset-wrapper {
+      label {
+        font-weight: normal;
+        padding-left: 0;
+      }
+
+      .form-checkboxes {
+        padding-left: 12px;
+      }
+    }
+
+    .btn-primary {
+      @extend %none;
+    }
+
+    @include media (null, $xs) {
+      form {
+        .form-control {
+          width: 100%;
+        }
+      }
+
+      .form-row {
+        > fieldset {
+          padding-right: 14px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .view-content {
+    &.row {
+      @include media (null, $sm - 1) {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      margin-left: 0;
+      width: 80%;
+
+      + nav {
+        &[aria-label='Page navigation'] {
+          margin-top: 20px;
+          width: 100%;
+        }
+      }
+    }
+
+    .item-list {
+      margin-top: 0;
+    }
+  }
+
+  .view-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .view-footer {
+    margin-top: 20px;
+    text-align: center;
+
+    a {
+      @extend %shadow;
+      background-color: $blue1;
+      border-radius: 30px;
+      color: $white;
+      display: inline-block;
+      padding: 15px 50px;
+    }
+  }
+
+  .item-list {
+    width: 100%;
+
+    > h3 {
+      .list-group {
+        justify-content: center;
+        margin-bottom: 0;
+      }
+
+      .list-group-item {
+        @include font (36, normal);
+        border: 0;
+        border-bottom: 2px solid $green;
+        border-radius: 0;
+        color: $blue1;
+        display: inline-block;
+        margin: 0 0 40px;
+        padding: 0 0 10px;
+      }
+    }
+
+    > ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      margin: 0;
+
+      > li {
+        @include media (null, $sm - 1) {
+          padding: 0;
+        }
+
+        margin-bottom: 30px;
+        padding: 0 15px;
+      }
+    }
+  }
+
+  .views-field-nothing,
+  .views-field-nothing-1 {
+    @extend %shadow;
+    background-color: $gray;
+    border-radius: 4px;
+    height: 100%;
+
+    .field-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  .product-image {
+    margin-bottom: 9px;
+    width: 100%;
+
+    .image-style-product-image {
+      max-width: unset;
+      width: 100%;
+    }
+  }
+
+  .title {
+    @include font (20, normal);
+    color: $blue1;
+    margin: 15px 0;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .body {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    text-align: center;
+    width: 100%;
+    word-break: break-word;
+
+    ol,
+    ul {
+      text-align: left;
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .link-wrapper {
+    @include media (null, $sm - 1) {
+      flex-flow: column;
+      width: 100%;
+    }
+
+    display: flex;
+    justify-content: center;
+    margin: auto 0 10px;
+
+    a {
+      @extend %custom-btn;
+      @extend %custom-btn-submit;
+      @include media (null, $sm - 1) {
+        display: block;
+        text-align: center;
+      }
+
+      @include font(14, 500);
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+
+  .overview,
+  .document {
+    @include media (null, $sm - 1) {
+      width: 100%;
+    }
+
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+
+  .custom-switch {
+    padding-left: 1.3rem;
+  }
+
+  @include media (null, $sm) {
+    .view-filters {
+      float: unset;
+      margin-bottom: 25px;
+      width: 100%;
+
+      .form-row {
+        display: flex;
+      }
+    }
+  }
+}
+
+.node--type-api-product {
+  .ds-1col {
+    h2 {
+      border-bottom: 2px solid $green;
+      color: $blue1;
+      margin: 0 auto 20px;
+      padding-bottom: 10px;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .views-row {
+      .link-wrapper {
+        margin-top: 20px;
+      }
+    }
+
+    .row {
+      + .view-footer {
+        text-align: center;
+
+        a {
+          background-color: $blue1;
+          border-radius: 30px;
+          color: $white;
+          display: inline-block;
+          padding: 15px 50px;
+        }
+      }
+    }
+
+    .block {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@include media (null, $sm) {
+  .page-node-5 {
+    .ds-1col {
+      + .ds-1col {
+        .breadcrumb {
+          margin-left: 17px;
+        }
+      }
+    }
+
+    .view-product-listing,
+    .event-listing,
+    .forum-listing,
+    .use-case-listing,
+    .solution-listing {
+      .view-filters {
+        width: 100%;
+      }
+    }
+
+    .ds-1col {
+      + .layout {
+        .block-views-blockproduct-listing-block-1 {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .view-product-listing,
+    .event-listing,
+    .forum-listing,
+    .use-case-listing,
+    .solution-listing {
+      .view-content {
+        &.row {
+          margin-left: 0;
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//product page banner height
+.page-node-5 {
+  .banner-wrapper {
+    @include media (null, $sm) {
+      min-height: 218px;
+    }
+
+    min-height: 380px;
+
+    .container {
+      @include media (null, $sm) {
+        margin-top: auto;
+      }
+
+      margin-top: 60px;
+    }
+  }
+}
+
+body {
+  .ui-autocomplete {
+    &.ui-front {
+      border-radius: 0 0 5px 5px;
+
+      li {
+        padding: 5px;
+
+        a {
+          background: none;
+          border: 0;
+          color: $black;
+
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+//product listing section
+.block-views-blockproduct-listing-block-all-organisation-products {
+  .view-product-listing {
+    .view-content {
+      &.row {
+        margin-left: 11%;
+        margin-top: 3%;
+      }
+    }
+  }
+}
+
+//app gallery form
+.view-app-gallery {
+  .view-filters {
+
+    fieldset {
+
+      @include media (null, $sm) {
+        width: 100%;
+      }
+
+      width: 25%;
+    }
+  }
+
+  .view-content {
+    .row {
+      margin-left: 0;
+    }
+
+    .table {
+      td {
+        &.views-field-nothing {
+          a {
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.block-views-blockapp-gallery-block-1 {
+  .view-filters {
+    fieldset {
+
+      @include media (null, $sm) {
+        width: 100%;
+      }
+
+      width: 100%;
+    }
+  }
+
+  .view-empty {
+    padding: 0 0 0 20px;
+  }
+}
+
+.view-product-listing {
+  img {
+    border-radius: 4px 4px 0 0;
+  }
+
+  nav {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.block-views-blockproduct-listing-block-homepage-product {
+  margin-top: 36px;
+
+  .view-content {
+    &.row {
+      text-align: center;
+      width: 100%;
+
+      .item-list {
+        ul {
+          li {
+            @include media (null, $sm) {
+              flex: 100% 0 0;
+            }
+
+            flex: 28% 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  .view-footer {
+    width: 100%;
+  }
+}

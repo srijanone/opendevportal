@@ -1,0 +1,366 @@
+html {
+  font-size: $base-font-size + px;
+}
+
+body {
+  @include font(14, normal);
+  color: $black1;
+  font-family: $font-stack;
+  line-height: $line-height;
+  margin: 0;
+
+  &:not(.layout-no-sidebars) {
+    div {
+      &[id='main'] {
+        margin: 0 auto;
+        max-width: 1440px;
+        min-height: 100vh;
+        padding: 0 15px;
+
+        > div {
+          margin-top: 15px;
+          min-height: 100vh;
+        }
+      }
+    }
+
+    .main-content {
+      @include media (null, $sm - 1) {
+        padding-left: 0;
+      }
+
+      padding-right: 0;
+    }
+
+    .sidebar {
+      @include media (null, $sm - 1) {
+        flex: 0 0 100%;
+        margin-top: 15px;
+        padding-right: 0;
+      }
+
+      flex: 0 0 20%;
+      padding-left: 0;
+
+      &.sidebar_second {
+        @include media (null, $sm - 1) {
+          flex: 0 0 100%;
+          margin-top: 30px;
+          max-width: 100%;
+          padding: 0;
+        }
+
+        flex: 0 0 22%;
+        max-width: 22%;
+        padding-left: 15px;
+      }
+    }
+
+    .block-system-breadcrumb-block {
+      + .views-element-container {
+        margin-top: 65px;
+      }
+    }
+  }
+
+  div {
+    &[id='drupal-off-canvas'] {
+      tr {
+        td {
+          width: fit-content !important; // sass-lint:disable-line no-important
+        }
+      }
+
+      .ui-autocomplete {
+        li {
+          background-color: $white !important; // sass-lint:disable-line no-important
+          padding-top: 5px !important; // sass-lint:disable-line no-important
+
+          a {
+            background-color: $white !important; // sass-lint:disable-line no-important
+            line-height: 1.5em !important; // sass-lint:disable-line no-important
+          }
+        }
+      }
+    }
+  }
+
+  .nav {
+    > li {
+      > a {
+        &:hover,
+        &:focus {
+          background: unset;
+        }
+      }
+    }
+  }
+
+  .node__content {
+    @include font(14, normal);
+    margin-top: 0;
+  }
+
+  &.left-menu {
+    .sidebar_first {
+      display: block;
+      left: 30px;
+      padding: 0;
+      position: absolute;
+      top: 265px;
+      width: auto;
+
+      .product-dashboard-navigation-main {
+        .product-dashboard-header {
+          background-color: $green;
+          border-radius: 50%;
+          cursor: pointer;
+          height: 50px;
+          overflow: hidden;
+          padding: 7px 13px;
+          width: 50px;
+
+          .product-dashboard-title {
+            color: $white;
+            font-size: 0;
+
+            &::before {
+              font-size: 28px;
+            }
+          }
+        }
+
+        .product-dashboard-children {
+          border-radius: 25px 0 0;
+          height: 0;
+          margin-top: -50px;
+          overflow: hidden;
+          transition: all .5s; // sass-lint:disable-line no-transition-all
+          width: 0;
+        }
+      }
+
+      >.section {
+        .block {
+          background: unset;
+          padding: 0;
+        }
+      }
+
+      &.open {
+        width: 100%;
+
+        .product-dashboard-children {
+          background-color: $green;
+          height: calc(100vh - 200px);
+          max-width: 255px;
+          padding-top: 40px;
+          width: 100%;
+
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .ds-2col {
+      margin-top: 70px;
+    }
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ol,
+ul {
+  padding-left: 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+.h1 {
+  @include media (null, $xs) {
+    @include font(32, normal);
+  }
+
+  @include font(42, normal);
+}
+
+h2,
+.h2 {
+  @include media (null, $xs) {
+    @include font(28, normal);
+  }
+
+  @include font(32, normal);
+}
+
+h3,
+.h3 {
+  @include media (null, $xs) {
+    @include font(22, normal);
+  }
+
+  @include font(30, normal);
+}
+
+h4,
+.h4 {
+  @include media (null, $xs) {
+    @include font(18, normal);
+  }
+
+  @include font(22, normal);
+}
+
+h5,
+.h5 {
+  @include media (null, $xs) {
+    @include font(16, normal);
+  }
+
+  @include font(18, normal);
+}
+
+h6,
+.h6 {
+  @include font(18, normal);
+}
+
+// Some base CSS
+.block-page-title-block {
+  text-align: center;
+
+  h1 {
+    @include font (30, normal);
+    border-bottom: 2px solid $green;
+    color: $blue1;
+    display: inline-block;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+  }
+}
+
+.layout-no-sidebars {
+  .main-content {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0;
+  }
+}
+
+.highlighted {
+  position: relative;
+  z-index: 1;
+
+  aside {
+    padding: 0;
+  }
+}
+
+.view-content {
+  &.row {
+    @include media (null, $sm) {
+      padding: 0;
+    }
+
+    padding: 0 15px;
+  }
+}
+
+.layout-main-wrapper {
+  @include media (null, $sm - 1) {
+    margin-top: 0;
+  }
+
+  margin-top: 40px;
+  min-height: 85vh;
+}
+
+.node--type-listing-pages {
+  .block-page-title-block {
+    @extend %none;
+  }
+
+  .layout-main-wrapper {
+    margin-top: 0;
+  }
+
+  > header {
+    @extend %none;
+  }
+}
+
+.node--type-api-product {
+  > header {
+    @extend %none;
+  }
+}
+
+.toolbar-horizontal {
+  .toolbar {
+    .toolbar-bar {
+      background-color: $blue;
+      box-shadow: none;
+    }
+
+    .toolbar-menu {
+      a {
+        &:hover,
+        &.active,
+        &.is-active {
+          background-color: $blue1;
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .toolbar-tray-horizontal {
+    ul {
+      .menu-item--expanded {
+        .menu-item--expanded {
+          &.hover-intent {
+            > a {
+              background-color: $blue1;
+              background-image: url('../images/chevron-right-white.svg');
+              background-position: center right;
+              background-repeat: no-repeat;
+              color: $white;
+              transition: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}

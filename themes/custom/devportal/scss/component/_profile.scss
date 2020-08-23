@@ -1,0 +1,77 @@
+// Profile page
+.profile {
+  .layout__region--content {
+    flex-flow: column;
+
+    .block {
+      align-self: center;
+      width: 246px;
+
+      .field {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+
+        .field__label {
+          font-weight: 600;
+          width: 110px;
+
+          &::after {
+            content: ': ';
+            margin-right: 10px;
+          }
+        }
+
+        .field__item {
+          display: inline-block;
+
+          span {
+            + br {
+              @extend %none;
+            }
+
+            ~ span {
+              &::before {
+                content: ', ';
+                left: -2px;
+                position: relative;
+              }
+            }
+          }
+
+          a {
+            background: $blue1;
+            border-radius: 6px;
+            color: $white;
+            font-size: 12px;
+            padding: 5px;
+          }
+        }
+      }
+
+      &.block-field-blockuseruseruser-picture {
+        max-width: 110px;
+
+        h4 {
+          @include font (22, normal);
+        }
+
+        img {
+          border: 5px solid $blue1;
+          border-radius: 50%;
+        }
+      }
+
+      &.block-extra-field-blockuserusermember-for,
+      &.block-field-blockuseruseruser-picture {
+        left: -28px;
+        position: relative;
+      }
+
+      .js-form-type-item {
+        text-align: center;
+      }
+    }
+  }
+}
+
