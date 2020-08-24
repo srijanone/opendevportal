@@ -7,6 +7,6 @@ dependencies:
   - drupal:jsonapi_extras
   - drupal:votingapi
   - opendevx_taxonomy
-  - opendexv_node
+  - opendevx_node
   - opendevx_paragraph
   - opendevx_block

@@ -6,4 +6,8 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 dependencies:
   - opendevx_taxonomy:opendevx_taxonomy
-  - opendexv_node:opendexv_node
+  - opendevx_node:opendevx_node
+
+default_content:
+  taxonomy_term:
+    - 393698d7-7048-445a-bed2-739120ff54c3

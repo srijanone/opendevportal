@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/example.com\/admin\/structure\/menu\/item\/32\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/32\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
@@ -121,7 +121,7 @@
         {
             "value": {
                 "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/example.com\/subdir"
+                "canonical_url": "http:\/\/default\/"
             }
         }
     ]

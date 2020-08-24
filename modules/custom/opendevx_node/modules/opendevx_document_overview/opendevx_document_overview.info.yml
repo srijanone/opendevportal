@@ -1,0 +1,12 @@
+name: Developer Portal Overview(Page)
+description : 'Adds the Document Overview(Page) content type in developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - opendevx_product_page:opendevx_product_page
+  - opendevx_api_product:opendevx_api_product
+  - opendevx_taxonomy:opendevx_organisation
+  - opendevx_node:opendevx_node

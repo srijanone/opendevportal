@@ -1,0 +1,14 @@
+name: Developer Portal Api Category
+description : 'Extend the API Category taxonomy term for developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - opendevx_taxonomy:opendevx_taxonomy
+
+
+default_content:
+  taxonomy_term:
+    - f2990484-bcda-4e71-82a5-88ba53a3f124
+    - 7d1afb71-8842-4bcd-bf6c-51840f37e0bc
