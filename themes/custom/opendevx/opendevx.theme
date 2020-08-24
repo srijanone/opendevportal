@@ -1,0 +1,493 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ *
+ */
+function opendevx_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+}
+
+function opendevx_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'form' & !empty($variables['element']['#id'])) {
+    $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
+  }
+  if ($hook == 'block') {
+    if (isset($variables['elements']['content']) && isset($variables['elements']['content']['#block_content'])) {
+      $suggestions[] = $hook . '__' . $variables['elements']['content']['#entity_type'] . '_' . $variables['elements']['content']['#block_content']->bundle() . '_' . $variables['elements']['content']['#view_mode'];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_html.
+ */
+function opendevx_preprocess_html(&$variables) {
+  if (isset($variables['node_type'])) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node->hasField('field_organisation') && $node->field_organisation->target_id) {
+      $program = $node->field_organisation->first()->entity;
+      if ($program->hasField('field_link_color') && $program->field_link_color->color) {
+        $color_value = $program->field_link_color->color;
+        switch ($color_value) {
+          case '#ac725e':
+            $variables['link_color'] = "link-clr-ac725e";
+            break;
+
+          case '#d06b64':
+            $variables['link_color'] = "link-clr-d06b64";
+            break;
+
+          case '#f83a22':
+            $variables['link_color'] = "link-clr-f83a22";
+            break;
+
+          case '#fa573c':
+            $variables['link_color'] = "link-clr-fa573c";
+            break;
+
+          case '#ff7537':
+            $variables['link_color'] = "link-clr-ff7537";
+            break;
+
+          case '#ffad46':
+            $variables['link_color'] = "link-clr-ffad46";
+            break;
+
+          case '#42d692':
+            $variables['link_color'] = "link-clr-42d692";
+            break;
+
+          case '#16a765':
+            $variables['link_color'] = "link-clr-16a765";
+            break;
+
+          case '#7bd148':
+            $variables['link_color'] = "link-clr-7bd148";
+            break;
+
+          case '#b3dc6c':
+            $variables['link_color'] = "link-clr-b3dc6c";
+            break;
+
+          case '#fbe983':
+            $variables['link_color'] = "link-clr-fbe983";
+            break;
+
+          case '#92e1c0':
+            $variables['link_color'] = "link-clr-92e1c0";
+            break;
+
+          case '#9fe1e7':
+            $variables['link_color'] = "link-clr-9fe1e7";
+            break;
+
+          case '#9fc6e7':
+            $variables['link_color'] = "link-clr-9fc6e7";
+            break;
+
+          case '#4986e7':
+            $variables['link_color'] = "link-clr-4986e7";
+            break;
+
+          case '#9a9cff':
+            $variables['link_color'] = "link-clr-9a9cff";
+            break;
+
+          case '#b99aff':
+            $variables['link_color'] = "link-clr-b99aff";
+            break;
+
+          case '#c2c2c2':
+            $variables['link_color'] = "link-clr-c2c2c2";
+            break;
+
+          case '#cabdbf':
+            $variables['link_color'] = "link-clr-cabdbf";
+            break;
+
+          case '#cca6ac':
+            $variables['link_color'] = "link-clr-cca6ac";
+            break;
+
+          case '#f691b2':
+            $variables['link_color'] = "link-clr-f691b2";
+            break;
+
+          case '#cd74e6':
+            $variables['link_color'] = "link-clr-cd74e6";
+            break;
+
+          case '#a47ae2':
+            $variables['link_color'] = "link-clr-a47ae2";
+            break;
+        }
+      }
+
+      if ($program->hasField('field_text_color') && $program->field_text_color->color) {
+        $color_value = $program->field_text_color->color;
+        switch ($color_value) {
+          case '#ac725e':
+            $variables['text_color'] = "txt-clr-ac725e";
+            break;
+
+          case '#d06b64':
+            $variables['text_color'] = "txt-clr-d06b64";
+            break;
+
+          case '#f83a22':
+            $variables['text_color'] = "txt-clr-f83a22";
+            break;
+
+          case '#fa573c':
+            $variables['text_color'] = "txt-clr-fa573c";
+            break;
+
+          case '#ff7537':
+            $variables['text_color'] = "txt-clr-ff7537";
+            break;
+
+          case '#ffad46':
+            $variables['text_color'] = "txt-clr-ffad46";
+            break;
+
+          case '#42d692':
+            $variables['text_color'] = "txt-clr-42d692";
+            break;
+
+          case '#16a765':
+            $variables['text_color'] = "txt-clr-16a765";
+            break;
+
+          case '#7bd148':
+            $variables['text_color'] = "txt-clr-7bd148";
+            break;
+
+          case '#b3dc6c':
+            $variables['text_color'] = "txt-clr-b3dc6c";
+            break;
+
+          case '#fbe983':
+            $variables['text_color'] = "txt-clr-fbe983";
+            break;
+
+          case '#92e1c0':
+            $variables['text_color'] = "txt-clr-92e1c0";
+            break;
+
+          case '#9fe1e7':
+            $variables['text_color'] = "txt-clr-9fe1e7";
+            break;
+
+          case '#9fc6e7':
+            $variables['text_color'] = "txt-clr-9fc6e7";
+            break;
+
+          case '#4986e7':
+            $variables['text_color'] = "txt-clr-4986e7";
+            break;
+
+          case '#9a9cff':
+            $variables['text_color'] = "txt-clr-9a9cff";
+            break;
+
+          case '#b99aff':
+            $variables['text_color'] = "txt-clr-b99aff";
+            break;
+
+          case '#c2c2c2':
+            $variables['text_color'] = "txt-clr-c2c2c2";
+            break;
+
+          case '#cabdbf':
+            $variables['text_color'] = "txt-clr-cabdbf";
+            break;
+
+          case '#cca6ac':
+            $variables['text_color'] = "txt-clr-cca6ac";
+            break;
+
+          case '#f691b2':
+            $variables['text_color'] = "txt-clr-f691b2";
+            break;
+
+          case '#cd74e6':
+            $variables['text_color'] = "txt-clr-cd74e6";
+            break;
+
+          case '#a47ae2':
+            $variables['text_color'] = "txt-clr-a47ae2";
+            break;
+        }
+      }
+
+      if ($program->hasField('field_header_background_color') && $program->field_header_background_color->color) {
+        $color_value = $program->field_header_background_color->color;
+        switch ($color_value) {
+          case '#ac725e':
+            $variables['header_color'] = "hdr-clr-ac725e";
+            break;
+
+          case '#d06b64':
+            $variables['header_color'] = "hdr-clr-d06b64";
+            break;
+
+          case '#f83a22':
+            $variables['header_color'] = "hdr-clr-f83a22";
+            break;
+
+          case '#fa573c':
+            $variables['header_color'] = "hdr-clr-fa573c";
+            break;
+
+          case '#ff7537':
+            $variables['header_color'] = "hdr-clr-ff7537";
+            break;
+
+          case '#ffad46':
+            $variables['header_color'] = "hdr-clr-ffad46";
+            break;
+
+          case '#42d692':
+            $variables['header_color'] = "hdr-clr-42d692";
+            break;
+
+          case '#16a765':
+            $variables['header_color'] = "hdr-clr-16a765";
+            break;
+
+          case '#7bd148':
+            $variables['header_color'] = "hdr-clr-7bd148";
+            break;
+
+          case '#b3dc6c':
+            $variables['header_color'] = "hdr-clr-b3dc6c";
+            break;
+
+          case '#fbe983':
+            $variables['header_color'] = "hdr-clr-fbe983";
+            break;
+
+          case '#92e1c0':
+            $variables['header_color'] = "hdr-clr-92e1c0";
+            break;
+
+          case '#9fe1e7':
+            $variables['header_color'] = "hdr-clr-9fe1e7";
+            break;
+
+          case '#9fc6e7':
+            $variables['header_color'] = "hdr-clr-9fc6e7";
+            break;
+
+          case '#4986e7':
+            $variables['header_color'] = "hdr-clr-4986e7";
+            break;
+
+          case '#9a9cff':
+            $variables['header_color'] = "hdr-clr-9a9cff";
+            break;
+
+          case '#b99aff':
+            $variables['header_color'] = "hdr-clr-b99aff";
+            break;
+
+          case '#c2c2c2':
+            $variables['header_color'] = "hdr-clr-c2c2c2";
+            break;
+
+          case '#cabdbf':
+            $variables['header_color'] = "hdr-clr-cabdbf";
+            break;
+
+          case '#cca6ac':
+            $variables['header_color'] = "hdr-clr-cca6ac";
+            break;
+
+          case '#f691b2':
+            $variables['header_color'] = "hdr-clr-f691b2";
+            break;
+
+          case '#cd74e6':
+            $variables['header_color'] = "hdr-clr-cd74e6";
+            break;
+
+          case '#a47ae2':
+            $variables['header_color'] = "hdr-clr-a47ae2";
+            break;
+        }
+      }
+
+      if ($program->hasField('field_icons_bg_color') && $program->field_icons_bg_color->color) {
+        $color_value = $program->field_icons_bg_color->color;
+        switch ($color_value) {
+          case '#ac725e':
+            $variables['icon_color'] = "ico-clr-AC725E";
+            break;
+
+          case '#d06b64':
+            $variables['icon_color'] = "ico-clr-D06B64";
+            break;
+
+          case '#f83a22':
+            $variables['icon_color'] = "ico-clr-F83A22";
+            break;
+
+          case '#fa573c':
+            $variables['icon_color'] = "ico-clr-FA573C";
+            break;
+
+          case '#ff7537':
+            $variables['icon_color'] = "ico-clr-ff7537";
+            break;
+
+          case '#ffad46':
+            $variables['icon_color'] = "ico-clr-ffad46";
+            break;
+
+          case '#42d692':
+            $variables['icon_color'] = "ico-clr-42d692";
+            break;
+
+          case '#16a765':
+            $variables['icon_color'] = "ico-clr-16a765";
+            break;
+
+          case '#7bd148':
+            $variables['icon_color'] = "ico-clr-7bd148";
+            break;
+
+          case '#b3dc6c':
+            $variables['icon_color'] = "ico-clr-b3dc6c";
+            break;
+
+          case '#fbe983':
+            $variables['icon_color'] = "ico-clr-fbe983";
+            break;
+
+          case '#92e1c0':
+            $variables['icon_color'] = "ico-clr-92e1c0";
+            break;
+
+          case '#9fe1e7':
+            $variables['icon_color'] = "ico-clr-9fe1e7";
+            break;
+
+          case '#9fc6e7':
+            $variables['icon_color'] = "ico-clr-9fc6e7";
+            break;
+
+          case '#4986e7':
+            $variables['icon_color'] = "ico-clr-4986e7";
+            break;
+
+          case '#9a9cff':
+            $variables['icon_color'] = "ico-clr-9a9cff";
+            break;
+
+          case '#b99aff':
+            $variables['icon_color'] = "ico-clr-b99aff";
+            break;
+
+          case '#c2c2c2':
+            $variables['icon_color'] = "ico-clr-c2c2c2";
+            break;
+
+          case '#cabdbf':
+            $variables['icon_color'] = "ico-clr-cabdbf";
+            break;
+
+          case '#cca6ac':
+            $variables['icon_color'] = "ico-clr-cca6ac";
+            break;
+
+          case '#f691b2':
+            $variables['icon_color'] = "ico-clr-f691b2";
+            break;
+
+          case '#cd74e6':
+            $variables['icon_color'] = "ico-clr-cd74e6";
+            break;
+
+          case '#a47ae2':
+            $variables['icon_color'] = "ico-clr-a47ae2";
+            break;
+        }
+      }
+
+      if ($program->hasField('field_font_family') && $program->field_font_family->value) {
+        $color_value = $program->field_font_family->value;
+        switch ($color_value) {
+          case 'times':
+            $variables['font_family'] = "font-times";
+            break;
+
+          case 'georgia':
+            $variables['font_family'] = "font-georgia";
+            break;
+
+          case 'arial':
+            $variables['font_family'] = "font-arial";
+            break;
+        }
+      }
+    }
+  }
+  // Adding class to body based on role.
+  $account = \Drupal::currentUser();
+  $roles = $account->getRoles();
+  foreach ($roles as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+
+function opendevx_preprocess_block(&$variables) {
+  switch ($variables['base_plugin_id']) {
+    case 'system_branding_block':
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      if ($node->hasField('field_organisation') && $node->field_organisation->target_id) {
+        $program = $node->field_organisation->first()->entity;
+        if ($program->hasField('field_site_logo') && $program->field_site_logo->target_id) {
+          $media = $program->field_site_logo->entity;
+          if ($media && $media->hasField('field_media_image') && $media->field_media_image->entity) {
+            $variables['site_logo_custom'] = file_create_url($media->field_media_image->entity->getFileUri());
+            $cache_tags = isset($variables['elements']['#cache']) ? $variables['elements']['#cache']['tags'] : [];
+            $variables['elements']['#cache']['tags'] = array_merge($cache_tags, $node->getCacheTags(), $program->getCacheTags());
+          }
+        }
+      }
+    }
+    break;
+  }
+}

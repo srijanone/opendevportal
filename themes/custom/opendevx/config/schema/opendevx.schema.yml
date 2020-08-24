@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Bootstrap Barrio Subtheme.
+
+opendevx.settings:
+  type: theme_settings
+  label: "Developer Portal settings"
