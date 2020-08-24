@@ -64,7 +64,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-08-20T07:08:15+00:00",
+            "value": "2020-08-24T05:30:35+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -120,7 +120,7 @@
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "933"
+                "target_revision_id": "945"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_product": [
@@ -181,7 +181,7 @@
     ],
     "changed": [
         {
-            "value": "2020-08-20T07:08:15+00:00",
+            "value": "2020-08-24T05:30:35+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -229,9 +229,9 @@
     ],
     "body": [
         {
-            "value": "",
+            "value": "<p>Here's what we improved based off your feedback<\/p>\r\n",
             "format": "full_html",
-            "processed": "",
+            "processed": "<p>Here's what we improved based off your feedback<\/p>\n",
             "summary": "Here's what we improved based off your feedback",
             "lang": "en"
         }
@@ -424,80 +424,14 @@
                         "weight": 5
                     },
                     {
-                        "uuid": "f99a92d7-1550-40dd-a648-cb1a16dba71f",
+                        "uuid": "70414d76-7e56-47df-b73d-1258cb9e9a7d",
                         "region": "left",
                         "configuration": {
-                            "id": "product_navigation_block",
-                            "label": "Product Navigation Block",
-                            "provider": "opendevx_navigation_block",
+                            "id": "book_navigation",
+                            "label": "Book navigation",
+                            "provider": "book",
                             "label_display": 0,
-                            "dvp_sidebar_navigation": {
-                                "article": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Blog"
-                                },
-                                "api_document": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "API"
-                                },
-                                "apps": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Application"
-                                },
-                                "assets": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Media"
-                                },
-                                "document_overview": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Guide"
-                                },
-                                "events": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Event"
-                                },
-                                "faq": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "FAQ"
-                                },
-                                "forum": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Forum topic"
-                                },
-                                "issues": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Issue"
-                                },
-                                "resources": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Download"
-                                },
-                                "solutions": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Solution"
-                                },
-                                "tutorials": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Tutorial"
-                                },
-                                "use_cases": {
-                                    "navigation_text": "",
-                                    "show": "1",
-                                    "type": "Use case"
-                                }
-                            },
+                            "block_mode": "book pages",
                             "context_mapping": []
                         },
                         "additional": [],
