@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Issue Status'
-vid: issue_status
-description: ''
-weight: 0

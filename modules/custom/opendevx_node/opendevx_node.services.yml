@@ -1,4 +1,0 @@
-services:
-  opendevx_node.node:
-   class: Drupal\opendevx_node\Node
-   arguments: ['@database', '@current_user', '@entity_type.manager']

@@ -1,8 +1,0 @@
-name: Developer Portal Navigation Block
-description : 'Module for dashboard navigation block.'
-type: module
-package: DVP
-core: 8.x
-core_version_requirement: ^8 || ^9
-dependencies:
-  - opendevx_block:opendevx_block

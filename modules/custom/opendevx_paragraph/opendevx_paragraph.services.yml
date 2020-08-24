@@ -1,4 +1,0 @@
-services:
-  opendevx_paragraph.paragraph:
-   class: Drupal\opendevx_paragraph\Paragraph
-   arguments: ['@database']

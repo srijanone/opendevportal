@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: slider_details
-label: 'Slider Details'
-icon_uuid: null
-icon_default: null
-description: 'This paragraph is used to manage image sliders on any landing pages.'
-behavior_plugins: {  }

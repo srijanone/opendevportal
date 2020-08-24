@@ -1,4 +1,0 @@
-services:
-  opendevx_user.organisation:
-   class: Drupal\opendevx_user\Organisation
-   arguments: ['@tempstore.private', '@database', '@current_user']

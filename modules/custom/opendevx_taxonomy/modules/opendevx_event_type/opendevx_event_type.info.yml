@@ -1,8 +1,0 @@
-name: Developer Portal Event Type
-description : 'Use the event type taxonomy term for developer portal.'
-type: module
-package: DVP
-core: 8.x
-core_version_requirement: ^8 || ^9
-dependencies:
-  - opendevx_taxonomy:opendevx_taxonomy

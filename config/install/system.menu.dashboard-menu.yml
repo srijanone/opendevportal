@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: dashboard-menu
-label: 'API Management'
-description: 'The menu for managing contents around APIs'
-locked: false

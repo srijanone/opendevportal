@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: dashboard_listing
-label: 'Card Details'
-icon_uuid: null
-icon_default: null
-description: 'This paragraph is used inside cards block, used to manage card''s details'
-behavior_plugins: {  }

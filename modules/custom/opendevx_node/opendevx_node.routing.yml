@@ -1,7 +1,0 @@
-opendevx_node.next_moderation_state:
-  path: '/apimanager/next-state/{state}/{nid}/{type}'
-  defaults:
-    _controller: '\Drupal\opendevx_node\Controller\NextModerationState::saveNextModerationState'
-    _title: ''
-  requirements: 
-    _permission: 'access content' 

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Event Type'
-vid: event_type
-description: 'Event type is to define the category of event like webinar, live event...etc.'
-weight: 0

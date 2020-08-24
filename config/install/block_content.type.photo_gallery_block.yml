@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: photo_gallery_block
-label: 'Photo Gallery Block'
-revision: 0
-description: 'Block to add Photos gallery'

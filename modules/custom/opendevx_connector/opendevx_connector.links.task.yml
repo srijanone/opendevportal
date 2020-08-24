@@ -1,9 +1,0 @@
-opendevx_connector.manage_configuration_form:
-  title: Manage
-  route_name: opendevx_connector.manage_configuration_form
-  base_route: opendevx_connector.manage_configuration_form
-
-# opendevx_connector.synchronization:
-#   title: Synchronization
-#   route_name: opendevx_connector.manage_configuration_form
-#   base_route: opendevx_connector.manage_configuration_form

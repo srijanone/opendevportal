@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - node
-id: node.left_nav_full_view
-label: 'Full block view with left navigation'
-targetEntityType: node
-cache: true

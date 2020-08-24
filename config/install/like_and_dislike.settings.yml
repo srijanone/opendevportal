@@ -1,7 +1,0 @@
-allow_cancel_vote: true
-hide_vote_widget: false
-enabled_types:
-  comment:
-    - comment_forum
-  node:
-    - forum

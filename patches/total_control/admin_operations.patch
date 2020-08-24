@@ -1,0 +1,50 @@
+diff --git a/src/Plugin/Block/AdministerMenus.php b/src/Plugin/Block/AdministerMenus.php
+index b333528..e2fc061 100644
+--- a/src/Plugin/Block/AdministerMenus.php
++++ b/src/Plugin/Block/AdministerMenus.php
+@@ -139,11 +139,6 @@ class AdministerMenus extends BlockBase implements BlockPluginInterface, Contain
+           $rows[] = [
+             'data' => [
+               $menu,
+-              Link::fromTextAndUrl($this->t('Configure'),
+-                new Url('entity.menu.edit_form', [
+-                  'menu' => $menu_name,
+-                  'options' => $options,
+-                ]))->toString(),
+               Link::fromTextAndUrl($this->t('Add new link'),
+                 new Url('entity.menu.add_link_form', [
+                   'menu' => $menu_name,
+@@ -178,7 +173,7 @@ class AdministerMenus extends BlockBase implements BlockPluginInterface, Contain
+       '#footer' => $link,
+     ];
+ 
+-    $markup_data = $this->renderer->render($body_data) . $link->toString();
++    $markup_data = $this->renderer->render($body_data);
+ 
+     return [
+       '#type' => 'markup',
+diff --git a/src/Plugin/Block/AdministerTaxonomy.php b/src/Plugin/Block/AdministerTaxonomy.php
+index 9fc23c0..eeb318b 100644
+--- a/src/Plugin/Block/AdministerTaxonomy.php
++++ b/src/Plugin/Block/AdministerTaxonomy.php
+@@ -184,11 +184,6 @@ class AdministerTaxonomy extends BlockBase implements BlockPluginInterface, Cont
+             $rows[] = [
+               'data' => [
+                 $vocab->get('name') . ': ' . $terms,
+-                Link::fromTextAndUrl($this->t('Configure'),
+-                  new Url('entity.taxonomy_vocabulary.edit_form', [
+-                    'taxonomy_vocabulary' => $vocab->get('vid'),
+-                    'options' => $options,
+-                  ]))->toString(),
+                 Link::fromTextAndUrl($this->t('Manage categories'),
+                   new Url('entity.taxonomy_vocabulary.overview_form', [
+                     'taxonomy_vocabulary' => $vocab->get('vid'),
+@@ -225,7 +220,7 @@ class AdministerTaxonomy extends BlockBase implements BlockPluginInterface, Cont
+       '#rows' => $rows,
+     ];
+ 
+-    $markup_data = $this->renderer->render($body_data) . $link->toString();
++    $markup_data = $this->renderer->render($body_data);
+ 
+     return [
+       '#type' => 'markup',

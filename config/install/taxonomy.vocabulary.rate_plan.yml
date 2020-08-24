@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Rate Plan'
-vid: rate_plan
-description: 'Rate Plan'
-weight: 0

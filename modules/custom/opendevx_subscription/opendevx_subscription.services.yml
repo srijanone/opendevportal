@@ -1,4 +1,0 @@
-services:
-  opendevx_subscription.subscription:
-   class: Drupal\opendevx_subscription\Services\SubscriptionQueue
-   arguments: ['@database', '@request_stack', '@config.factory', '@logger.factory', '@datetime.time']

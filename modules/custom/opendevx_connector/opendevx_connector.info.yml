@@ -1,6 +1,0 @@
-name: Developer Portal Connector
-description : 'Manage the config of the API.'
-type: module
-package: DVP
-core: 8.x
-core_version_requirement: ^8 || ^9

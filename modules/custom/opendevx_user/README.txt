@@ -1,1 +1,0 @@
-This module uses the user features.

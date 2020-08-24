@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Access Group'
-vid: access_group
-description: 'Access control group '
-weight: 0

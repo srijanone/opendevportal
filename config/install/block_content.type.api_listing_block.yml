@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: api_listing_block
-label: 'API Listing Block'
-revision: 0
-description: 'Use to render similar types of content placed in API Product Page. Such as Overview, Use Cases, Resources, etc.'

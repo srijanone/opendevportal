@@ -1,6 +1,0 @@
-opendevx_subscription.settings:
-  title: 'Newsletter settings'
-  parent: user.admin_index
-  description: 'Configure default newsletter settings including email templates, watchdog entries and notifications.'
-  weight: -10
-  route_name: opendevx_subscription.settings
