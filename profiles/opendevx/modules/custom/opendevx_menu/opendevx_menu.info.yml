@@ -110,3 +110,13 @@ default_content:
     - 1c8a7648-85cd-4b1a-b17b-21fa6a352901
     # menu_link_content: My Issues
     - bc0064c5-5727-4f01-b9b6-9f8d398862df
+    # menu_link_content: Privacy
+    - 942c3f00-fc38-41a4-b80d-721b2d577b0c
+    # menu_link_content: About Us
+    - 35a92c37-f8a7-4439-970a-dad598b929d8
+    # menu_link_content: Terms of use
+    - f51543f8-f12b-448b-ad63-3dc42b810879
+    # menu_link_content: Use Cases
+    - 57aeca22-bbff-48d4-bea6-af56b5d37685
+    # menu_link_content: Applications Gallery
+    - bb9771e8-f752-4daa-82d6-03cf39f709e2
