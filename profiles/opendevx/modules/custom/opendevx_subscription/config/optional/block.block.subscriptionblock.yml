@@ -1,6 +1,6 @@
 uuid: c2d03c40-31c5-4659-bb39-7ed8bc110bc5
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - opendevx_subscription

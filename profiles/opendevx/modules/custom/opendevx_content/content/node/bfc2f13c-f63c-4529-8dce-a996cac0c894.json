@@ -864,7 +864,7 @@
                         "region": "ds_content",
                         "configuration": {
                             "id": "openapidevx_subscription_block",
-                            "label": "",
+                            "label": "Subscription Block",
                             "provider": "opendevx_subscription",
                             "label_display": 0,
                             "context_mapping": []
