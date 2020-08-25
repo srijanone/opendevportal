@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: events
+label: Events
+type: 'canonical_entities:node'
+pattern: 'events/[node:title]'
+selection_criteria:
+  ff67d1f6-e1b7-442b-a645-bb2156e52cb5:
+    id: node_type
+    bundles:
+      events: events
+    negate: false
+    context_mapping:
+      node: node
+    uuid: ff67d1f6-e1b7-442b-a645-bb2156e52cb5
+selection_logic: and
+weight: -5
+relationships: {  }

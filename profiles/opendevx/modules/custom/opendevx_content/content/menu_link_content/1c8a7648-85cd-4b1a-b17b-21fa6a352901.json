@@ -1,0 +1,117 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/47\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": 47
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1c8a7648-85cd-4b1a-b17b-21fa6a352901"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 47
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-06-25T12:07:40+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "My Billings",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "account"
+        }
+    ],
+    "link": [
+        {
+            "uri": "internal:\/coming-soon",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": true
+        }
+    ],
+    "weight": [
+        {
+            "value": -45
+        }
+    ],
+    "expanded": [
+        {
+            "value": false
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-06-25T12:09:26+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "menu_per_role__show_role": [
+        {
+            "target_id": "developer"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/"
+            }
+        }
+    ]
+}

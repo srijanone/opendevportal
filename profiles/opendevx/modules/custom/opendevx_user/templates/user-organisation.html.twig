@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ */
+#}
+{% if currentOrganisation is not empty %}
+<div class="select-org"> {{ currentOrganisation }}</div>
+  <div class="dashboard-user-org-header">
+    <div class='org_left'>
+      <h1 class="org_title">{{ orgTitle }}</h1>
+      <div class="org_desc">{{ orgDescription }} </div>
+    </div>
+     <div class="organisation org_right">
+        <div class="dashboard-organisation" id="dashboard-organisation">
+           {% for key, value in orgData %}
+           {% set check = 'inactive' %}
+           {% if currentOrganisation == value.orgName %}
+           {% set check = 'active' %}
+           {% endif %}
+            <a href="{{ value.orgPath }}">
+            {% if value.orgImage is empty %}
+                <div class="no-image {{ check }}"></div>
+              {% else %}
+                <div class="org-image {{ check }}"> <img class="org-image" src="{{ value.orgImage }}"></div>
+              {% endif %}
+            
+              <div class='orgname'>{{ value.orgName }}</div></a>
+           {% endfor %}
+        </div>
+      </div>
+  </div>
+{% endif %}

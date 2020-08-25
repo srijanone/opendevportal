@@ -1,0 +1,140 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.api_document.body
+    - field.field.node.api_document.field_document
+    - field.field.node.api_document.field_organisation
+    - field.field.node.api_document.field_user_rating
+    - field.field.node.api_document.layout_builder__layout
+    - node.type.api_document
+    - views.view.api_swagger_link
+  module:
+    - ds
+    - layout_builder
+    - layout_discovery
+    - swagger_ui_formatter
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Try Out Block'
+        components:
+          1c502f49-b028-42be-b403-71473ee23a3e:
+            uuid: 1c502f49-b028-42be-b403-71473ee23a3e
+            region: content
+            configuration:
+              id: 'views_block:api_swagger_link-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: '1'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          a991ef00-6445-4b6b-8178-292622d327a8:
+            uuid: a991ef00-6445-4b6b-8178-292622d327a8
+            region: ds_content
+            configuration:
+              id: 'field_block:node:api_document:body'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          86e81e22-f8da-49a5-8067-44c8623efcd9:
+            uuid: 86e81e22-f8da-49a5-8067-44c8623efcd9
+            region: ds_content
+            configuration:
+              id: 'field_block:node:api_document:field_document'
+              label: Document
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: redoc_ui
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+        third_party_settings: {  }
+id: node.api_document.full
+targetEntityType: node
+bundle: api_document
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_document:
+    weight: 2
+    label: above
+    settings:
+      validator: default
+      validator_url: ''
+      doc_expansion: list
+      show_top_bar: false
+      sort_tags_by_name: false
+      supported_submit_methods:
+        get: get
+        put: put
+        post: post
+        delete: delete
+        options: options
+        head: head
+        patch: patch
+    third_party_settings: {  }
+    type: swagger_ui_file
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_organisation: true
+  field_user_rating: true
+  layout_builder__layout: true

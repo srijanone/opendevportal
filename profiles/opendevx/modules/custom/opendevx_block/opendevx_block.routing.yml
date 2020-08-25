@@ -1,0 +1,7 @@
+opendevx_block.cta_redirection:
+  path: '/cta/redirect-url/{type}/{pid}'
+  defaults:
+    _controller: '\Drupal\opendevx_block\Controller\CtaController::redirectCtaUrl'
+    _title: ''
+  requirements:
+    _permission: 'access content'

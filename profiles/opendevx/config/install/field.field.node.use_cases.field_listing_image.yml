@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_listing_image
+    - media.type.image
+    - node.type.use_cases
+  content:
+    - 'media:image:036045f0-d94c-4b20-ba7a-0ed08dbac9be'
+id: node.use_cases.field_listing_image
+field_name: field_listing_image
+entity_type: node
+bundle: use_cases
+label: 'Listing Image'
+description: 'Use to add listing images in use case content.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
+required: false
+translatable: true
+default_value:
+  -
+    weight: '0'
+    target_uuid: 036045f0-d94c-4b20-ba7a-0ed08dbac9be
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

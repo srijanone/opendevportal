@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: features
+label: Features
+icon_uuid: null
+icon_default: null
+description: 'Use this for key features of product content type.'
+behavior_plugins: {  }

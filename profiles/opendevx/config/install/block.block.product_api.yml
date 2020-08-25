@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - opendevx_navigation_block
+    - system
+  theme:
+    - devportal
+id: product_api
+theme: devportal
+region: sidebar_first
+weight: -17
+provider: null
+plugin: product_navigation_block
+settings:
+  id: null
+  label: 'Product Sidebar Block'
+  provider: opendevx_navigation_block
+  label_display: '0'
+  dvp_sidebar_navigation:
+    document_overview:
+      navigation_text: 'Getting Started'
+      show: '1'
+      type: Page
+    api_document:
+      navigation_text: 'API Reference'
+      show: '1'
+      type: 'API Document'
+    tutorials:
+      navigation_text: ''
+      show: '1'
+      type: Tutorials
+    use_cases:
+      navigation_text: ''
+      show: '1'
+      type: 'Use Cases'
+    faq:
+      navigation_text: FAQs
+      show: '1'
+      type: FAQ
+    resources:
+      navigation_text: Downloads
+      show: '1'
+      type: Resources
+    assets:
+      navigation_text: Media
+      show: '1'
+      type: Assets
+    events:
+      navigation_text: ''
+      show: '1'
+      type: Events
+    article:
+      navigation_text: Blogs
+      show: '1'
+      type: Article
+    issues:
+      navigation_text: ''
+      show: '1'
+      type: Issues
+    solutions:
+      navigation_text: ''
+      show: '1'
+      type: Solutions
+visibility:
+  request_path:
+    id: request_path
+    pages: "/product/*\r\n/products/*\r\n/topic/*\r\n/node/*/apps\r\n/node/*/article\r\n/node/*/assets\r\n/node/*/document_overview\r\n/node/*/events\r\n/node/*/faq\r\n/node/*/forum\r\n/node/*/issues\r\n/node/*/solutions\r\n/node/*/use_cases\r\n/node/*/tutorials\r\n/node/*/api_document\r\n/node/*/resources\r\n/use_cases/*\r\n/solutions/*\r\n/assets/*\r\n/issues/*\r\n/document_overview/*\r\n/events/*\r\n/article/*\r\n/resources/*\r\n/page/*\r\n/tutorials/*\r\n/use-cases/*\r\n/solutions/*\r\n/assets/*\r\n/issues/*\r\n/document_overview/*"
+    negate: false
+    context_mapping: {  }

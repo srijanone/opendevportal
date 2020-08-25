@@ -1,0 +1,215 @@
+name: Developer Portal Block
+description : 'Block features for developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:media
+  - drupal:link
+  - allowed_formats:allowed_formats
+  - drupal:media_library
+  - textfield_counter:textfield_counter
+
+default_content:
+  block_content:
+    # header_block: Header Block Title
+    - 2ab74d9e-1556-46ed-a5a9-cd7164867801
+    # header_block: Product banner block
+    - 7d3a9a15-030f-4c64-862d-06c86afcf3d3
+    # header_block: Successstory
+    - 6e6addfa-9175-4ed3-adf8-bf6276845146
+    # header_block: Homepage Banner
+    - a7fee6f2-f8ed-428a-8d77-27dab49f02ba
+    # header_block: Homepage Header
+    - f49412c6-6ad2-400e-82c1-670cd0637505
+    # header_block: Vega Banner Block
+    - a107a60c-b5b8-414a-a036-8000664817b8
+    # header_block: Srijan Banner Block
+    - 48f998fc-ac9b-41df-8c94-245b5b292655
+    # header_block: Solution Header Block
+    - ebdfc548-73f6-434e-8084-200df292292b
+    # header_block: Banking Banner Block
+    - 292b7431-03c0-4a43-8fc8-fe4129e2e8d8
+    # header_block: Protected Banner
+    - 4342cd73-8918-47b3-8557-8c58e3da0e03
+    # header_block: Banner
+    - 6d4a0efa-1b11-4db0-a812-c7e9591b70ae
+    # header_block: Insurance
+    - fd8b2e3c-21ae-4fd8-81b2-bd981e3635f1
+    # header_block: Use case banner
+    - d0213a8d-5df2-40bc-8169-1d49c06248ad
+    # header_block: Solutions Banner
+    - ac47b818-21f6-4819-9433-6b44bf4944bc
+
+    # basic: Home Twitter
+    - c5c1f266-51f4-45c0-9832-27c8af3efb8a
+    # basic: Twitter Block
+    - 18eaf6fc-c021-4e47-9f50-8e4be9eed19d
+    # basic: Copyright Block
+    - 5beadcb9-f51a-4da6-936b-adac416912c2
+    # basic: Intro Text
+    - 9612707b-665e-4f85-aeb9-bb955e9eb285
+
+
+    # api_listing_block: Products
+    - 32f8eee7-78ee-4614-abf2-3e225f54e03f
+    # api_listing_block: products
+    - 7f01b3fc-142a-41ba-8783-3aa11301fdfb
+
+    # api_listing_block: Resources
+    - 47cd8861-15a1-42ee-a772-b5b2a7734dba
+    # api_listing_block: Resources
+    - dcaf6f24-d829-4360-8f59-558f31f8c356
+    # api_listing_block: Resources
+    - dd6017ec-e1a5-4dcc-9aff-91358e1c1b4d
+    # api_listing_block: Resources
+    - 10efe361-cee7-4f84-a66e-11fdc6a76616
+    # api_listing_block: Resources
+    - 1c2b50b1-852d-4094-9adc-731ce4ae8fe6
+    # api_listing_block: Resources
+    - c90e3b70-29a6-4eaf-b5b2-1fc0681b9c21
+    # api_listing_block: Resources
+    - c7ac01c2-bd32-414f-a67f-acdc1d5e226a
+    # api_listing_block: Resources
+    - 89070c1b-0e16-4df1-b962-78b30e9c5609
+
+    # api_listing_block: Assets
+    - 44e31d32-ebf1-4ed4-8915-1279d80d0fa8
+    # api_listing_block: Assets
+    - 52aa01ee-856f-4c68-b449-11f91d67019d
+    # api_listing_block: Assets
+    - 7f665f39-2aa8-428d-9ef1-180d94a92a5a
+    # api_listing_block: Assets
+    - 87658333-7646-48dc-b2c2-95ebe6297c02
+    # api_listing_block: Assets
+    - 17c15adc-ffad-43cf-9b21-a88e3f31b379
+    # api_listing_block: Assets
+    - 03135214-6162-4fe3-9a83-7e5282bba099
+
+    # api_listing_block: Tutorials
+    - 060e1739-d4f2-48b0-85f0-3f9ef54d20a5
+    # api_listing_block: Tutorials
+    - e5d583ee-a94b-4d61-8be1-b57deb08cde9
+    # api_listing_block: Tutorials
+    - e7a4e28d-8d82-4490-9f3f-5ed06814f287
+    # api_listing_block: Tutorials
+    - 18873950-5993-4d9c-8bb7-611ed267fee0
+    # api_listing_block: Tutorials
+    - 4156fa79-f2bc-4cd4-bf43-720ef8598621
+    # api_listing_block: Tutorials
+    - 95a21ead-219c-4257-a54d-2fa51d8d1c5f
+    # api_listing_block: Tutorials
+    - 9e8aa5e6-cd6a-474b-bd39-4ce4bb200a80
+
+    # api_listing_block: Use Cases
+    - 0ab22fe5-7cba-4ca9-9a09-db4008485230
+    # api_listing_block: Use Cases
+    - d6396c83-f415-40cf-b938-2efbfa4852c2
+    # api_listing_block: Use Cases
+    - ad229569-b0d7-42af-ab07-9768c8199ce3
+    # api_listing_block: Use Cases
+    - ef8dc62a-0b83-4a36-895b-1074ba53c0d6
+    # api_listing_block: Use Cases
+    - 42b4b2cf-d0b4-4adf-abe8-065215ec4c99
+    # api_listing_block: Use Cases
+    - 9a2b6c34-3e90-42b6-80a6-edafe846af3a
+    # api_listing_block: Use Cases
+    - 396acca5-942c-4aeb-95b1-1d09739a66e3
+
+    # api_listing_block: Events
+    - 14b6d303-56da-427b-893a-7de4b700b347
+    # api_listing_block: Events
+    - 15058b87-2e09-46da-9fb3-baf0594bb704
+    # api_listing_block: Events
+    - eada696c-c421-4af7-94d7-71f479d56955
+    # api_listing_block: Events
+    - 7cbf2795-d32f-4458-a36c-b253e6bd2b85
+    # api_listing_block: Events
+    - 2516aca5-865c-40e6-ae93-c34499e1e0df
+    # api_listing_block: Events
+    - 5bdf76b5-5a46-421f-98ac-4e8d06ada45b
+    # api_listing_block: Events
+    - 7428f40f-8abe-4d2c-ab50-635b1b251aa1
+
+    # api_listing_block: Blogs
+    - 0d1c0656-e2f1-4882-9f96-d76932eaf434
+    # api_listing_block: Blogs
+    - 3ad4497c-dc94-4556-af39-8124d1facc67
+    # api_listing_block: Blogs
+    - ae5a4ecf-157b-453e-ba63-1b58246f6a6a
+    # api_listing_block: Blogs
+    - 66ec966f-55bb-4339-88c1-3b1c082a68dc
+    # api_listing_block: Blogs
+    - 7d79a6cf-ddde-47bb-99c5-22a86ec5f51c
+    # api_listing_block: Blogs
+    - 8b74d847-4e7c-4580-9a18-9b1d719b1558
+    # api_listing_block: Blogs
+    - a25f2f84-2402-4605-a491-47b7853c663b
+
+    # api_listing_block: Overview
+    - c940b6f9-7834-4c79-bd0d-cb996c86238e
+    # api_listing_block: Overview
+    - edd76ca3-745d-4764-9296-9ed3bf94e6a0
+    # api_listing_block: Overview
+    - fdcf60f4-dcba-4643-8362-a8aa41b3c697
+    # api_listing_block: Overview
+    - b8eadf55-3029-4418-a7bc-61a549719268
+    # api_listing_block: Overview
+    - 208202d5-2aeb-4421-97b6-a1126680d3b5
+
+    # api_listing_block: Solutions
+    - e6ca1b14-0cb0-4d0f-a933-58fb5249f774
+    # api_listing_block: Solutions
+    - 9b61998d-65e5-40b1-9014-2baa7ea65f02
+
+    # api_listing_block: Getting Started
+    - c9f3729b-0e93-4d2f-ab24-f3596541d994
+
+    # api_listing_block: APIs
+    - ce20971f-1648-46a7-b7ba-d33aba1a2c32
+    # api_listing_block: APIs
+    - 8363b2e8-4932-40db-ae5d-4b021e78cbfc
+
+    # photo_gallery_block: hackathons
+    - 9d6eaaf6-49d7-4f42-b079-b43123e6c412
+    # photo_gallery_block: meetupsImage
+    - 708f84e8-36e3-4eba-8fe4-a9496bf5b157
+    # photo_gallery_block: BlockCustomImage
+    - 7234dbf4-ae99-417c-8490-ee06f62b1db1
+    # photo_gallery_block: BlogsImage
+    - b71d411a-8436-4cd7-a1a1-6509fb2ddd09
+    # photo_gallery_block: Photo Gallery
+    - fac03655-50a8-46ca-9c6d-b83ba3fcb051
+
+    # dashboard_block: Support Block
+    - 30a007f2-6ee9-4791-9351-283376b88fb2
+    # dashboard_block: Developer Dashboard Listing
+    - 7f805e33-c0c8-4511-9c4a-196d7c3c8297
+    # dashboard_block: Product Manager Dashboard Card Block
+    - 8cb4c451-2deb-4873-8555-09b3717fa445
+    # dashboard_block: Blogs1
+    - d27d2efb-0894-431e-8f12-1a71e983219e
+
+    # home_page_slider: Home Page Slider
+    - 28423c09-f10d-4923-bb58-509a045fd830
+
+    # guidance_block: Developer Guidance
+    - 18403a4d-04d0-4a8c-ab0d-2e74822807be
+    # guidance_block: Guidance
+    - ce5222d0-41ee-4f1e-bf9c-49569aa07974
+    # guidance_block: How To
+    - f6a38061-01b8-420e-bfea-8d6eba2c80e3
+
+    # content_reference: Featured API Products
+    - 328ae668-b542-4f65-baeb-7bab6e7caa8b
+    # content_reference: API Products
+    - edbbb3e0-f169-48de-b215-3aabbe2f41fc
+    # content_reference: Featured Content
+    - bd469e5c-2215-42bd-85e9-03af10328d5d
+    # content_reference: Featured Products
+    - 7bbe5e6f-3a99-462d-8d3e-b315aeeb164e
+    # content_reference: Featured Products
+    - 551249b6-d784-490f-80f7-850369a8ed43
+    # content_reference: Featured Content
+    - a762c0f8-6cdb-473b-9e34-879da3245cfb

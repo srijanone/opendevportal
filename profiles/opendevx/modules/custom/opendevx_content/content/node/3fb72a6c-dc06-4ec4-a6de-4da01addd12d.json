@@ -1,0 +1,511 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/article\/heres-what-we-improved-based-your-feedback?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+            {
+                "href": "http:\/\/default\/user\/46?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_detail_section": [
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/324?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_product": [
+            {
+                "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_organisation": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/41?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 412
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3fb72a6c-dc06-4ec4-a6de-4da01addd12d"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1125
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "article"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-08-20T07:08:15+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/46?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ce31e7f5-e3de-40c6-82a4-832d27cec9c3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_detail_section": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/324?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "22ce58e2-3588-4d06-8e93-1b94e7009442"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "933"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_product": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bfc2f13c-f63c-4529-8dce-a996cac0c894"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_organisation": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/41?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisation"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "393698d7-7048-445a-bed2-739120ff54c3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Here's what we improved based off your feedback",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-08T10:28:31+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-08-20T07:08:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Here's what we improved based off your feedback | Open API Exchange",
+                "canonical_url": "http:\/\/default\/article\/heres-what-we-improved-based-your-feedback",
+                "description": "Here's what we improved based off your feedback"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/article\/heres-what-we-improved-based-your-feedback",
+            "pid": 349,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "",
+            "format": "full_html",
+            "processed": "",
+            "summary": "Here's what we improved based off your feedback",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1594204370,
+            "last_comment_name": null,
+            "last_comment_uid": 46,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_description": [
+        {
+            "value": "<p><span><span><span><span><span><span>Each year we conduct a&nbsp; Developer User Survey to learn what we can do as a developer platform team to improve your experience.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p><span><span><span><span><span><span>Each year we conduct a\u00a0 Developer User Survey to learn what we can do as a developer platform team to improve your experience.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>",
+            "lang": "en"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "ds_2col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "left": "div",
+                        "right": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "f5a7bf33-0a9c-4860-9cc3-55d89210f24c",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:article:field_description",
+                            "label": "Article Summary",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 0
+                    },
+                    {
+                        "uuid": "26f6f68a-d733-4e5e-9ffd-cddafdbbf44e",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:article:field_api_detail_section",
+                            "label": "Article Section",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "entity_reference_revisions_entity_view",
+                                "settings": {
+                                    "view_mode": "default"
+                                },
+                                "third_party_settings": {
+                                    "ds": {
+                                        "ds_limit": ""
+                                    }
+                                }
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 1
+                    },
+                    {
+                        "uuid": "220c82bb-a8b1-45fd-95e5-6d343a2b7149",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:article:field_tags",
+                            "label": "Tags",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "entity_reference_label",
+                                "settings": {
+                                    "link": true
+                                },
+                                "third_party_settings": {
+                                    "ds": {
+                                        "ds_limit": ""
+                                    }
+                                }
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 2
+                    },
+                    {
+                        "uuid": "e6fc3035-fc9f-48f3-bea7-6cb532f988d0",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:article:field_user_rating",
+                            "label": "User Rating",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "fivestar_stars",
+                                "settings": {
+                                    "fivestar_widget": "modules\/contrib\/fivestar\/widgets\/basic\/basic.css",
+                                    "display_format": "average",
+                                    "text_format": "average"
+                                },
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 3
+                    },
+                    {
+                        "uuid": "1229760c-887d-4643-8731-d1c17e8f6f5f",
+                        "region": "right",
+                        "configuration": {
+                            "id": "social_sharing_block",
+                            "label": "Social Sharing block",
+                            "provider": "social_media",
+                            "label_display": "0",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 4
+                    },
+                    {
+                        "uuid": "b7e45b10-447b-4c8f-9013-96d452933cfe",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:article:comment",
+                            "label": "Comments",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "comment_default",
+                                "settings": {
+                                    "view_mode": "default",
+                                    "pager_id": 0
+                                },
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 5
+                    },
+                    {
+                        "uuid": "f99a92d7-1550-40dd-a648-cb1a16dba71f",
+                        "region": "left",
+                        "configuration": {
+                            "id": "product_navigation_block",
+                            "label": "Product Navigation Block",
+                            "provider": "opendevx_navigation_block",
+                            "label_display": 0,
+                            "dvp_sidebar_navigation": {
+                                "article": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Blog"
+                                },
+                                "api_document": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "API"
+                                },
+                                "apps": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Application"
+                                },
+                                "assets": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Media"
+                                },
+                                "document_overview": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Guide"
+                                },
+                                "events": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Event"
+                                },
+                                "faq": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "FAQ"
+                                },
+                                "forum": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Forum topic"
+                                },
+                                "issues": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Issue"
+                                },
+                                "resources": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Download"
+                                },
+                                "solutions": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Solution"
+                                },
+                                "tutorials": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Tutorial"
+                                },
+                                "use_cases": {
+                                    "navigation_text": "",
+                                    "show": "1",
+                                    "type": "Use case"
+                                }
+                            },
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
+    ]
+}

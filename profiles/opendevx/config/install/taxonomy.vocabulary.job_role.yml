@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Job Role'
+vid: job_role
+description: 'Job Role of the User'
+weight: 0

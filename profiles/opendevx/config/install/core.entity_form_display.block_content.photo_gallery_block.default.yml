@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.photo_gallery_block
+    - field.field.block_content.photo_gallery_block.body
+    - field.field.block_content.photo_gallery_block.field_images
+    - field.field.block_content.photo_gallery_block.field_link_to_images
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+id: block_content.photo_gallery_block.default
+targetEntityType: block_content
+bundle: photo_gallery_block
+mode: default
+content:
+  field_images:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_link_to_images:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true

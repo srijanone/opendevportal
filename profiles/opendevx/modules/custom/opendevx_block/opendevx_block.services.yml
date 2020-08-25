@@ -1,0 +1,4 @@
+services:
+  opendevx_block.products:
+   class: Drupal\opendevx_block\ApiProducts
+   arguments: ['@database', '@current_user']

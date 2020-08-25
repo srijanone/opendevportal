@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-dashboard-navigation
+  module:
+    - system
+    - user
+  theme:
+    - devportal
+id: maindashboardnavigation
+theme: devportal
+region: header
+weight: -10
+provider: null
+plugin: 'system_menu_block:main-dashboard-navigation'
+settings:
+  id: 'system_menu_block:main-dashboard-navigation'
+  label: 'Main Dashboard Navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      product_manager: product_manager
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: /set-organisation
+    negate: true
+    context_mapping: {  }

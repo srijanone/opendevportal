@@ -1,0 +1,342 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.apps.title
+    - core.entity_view_mode.node.anonymous_user_content
+    - field.field.node.apps.body
+    - field.field.node.apps.field_add_to_gallery
+    - field.field.node.apps.field_api_document
+    - field.field.node.apps.field_app_ref_id
+    - field.field.node.apps.field_app_url
+    - field.field.node.apps.field_client_id
+    - field.field.node.apps.field_client_secret
+    - field.field.node.apps.field_display_name
+    - field.field.node.apps.field_expected_call_volume
+    - field.field.node.apps.field_expiry
+    - field.field.node.apps.field_issued
+    - field.field.node.apps.field_organisation
+    - field.field.node.apps.field_products_image
+    - field.field.node.apps.field_version
+    - field.field.node.apps.field_video
+    - field.field.node.apps.layout_builder__layout
+    - node.type.apps
+  module:
+    - datetime
+    - ds
+    - field_group
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_app_info:
+      children:
+        - field_display_name
+        - field_products_image
+        - body
+        - field_organisation
+        - field_app_url
+      parent_name: ''
+      weight: 0
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: apps-info
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        open: false
+        required_fields: false
+      label: 'App Info'
+    group_app_details:
+      children:
+        - field_client_id
+        - field_client_secret
+        - field_api_document
+        - field_issued
+        - field_expiry
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        open: true
+        weight: '0'
+        id: ''
+        classes: app-details
+        effect: none
+        direction: vertical
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        speed: fast
+        attributes: ''
+        required_fields: false
+      label: 'App Details'
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: ds_2col_stacked
+        layout_settings:
+          label: ''
+          wrappers:
+            header: div
+            left: div
+            right: div
+            footer: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          045855a3-1ce6-4120-96a9-bbbbf531aa8c:
+            uuid: 045855a3-1ce6-4120-96a9-bbbbf531aa8c
+            region: header
+            configuration:
+              id: 'field_block:node:apps:field_products_image'
+              label: 'App Image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: media_thumbnail
+                settings:
+                  image_style: thumbnail
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          9bc72925-702b-446d-935c-277705ea150c:
+            uuid: 9bc72925-702b-446d-935c-277705ea150c
+            region: header
+            configuration:
+              id: 'field_block:node:apps:title'
+              label: 'APP Name'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          4a866ede-574d-4d40-a60a-14afb3c95e0b:
+            uuid: 4a866ede-574d-4d40-a60a-14afb3c95e0b
+            region: left
+            configuration:
+              id: 'field_block:node:apps:body'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          fbd8b901-3f78-4ddc-b378-077a55d1ddc9:
+            uuid: fbd8b901-3f78-4ddc-b378-077a55d1ddc9
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_app_url'
+              label: 'App URL'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: link
+                settings:
+                  trim_length: 80
+                  url_only: true
+                  url_plain: true
+                  rel: nofollow
+                  target: '0'
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          07f4f839-4ee4-498b-bca6-234a6d4a173c:
+            uuid: 07f4f839-4ee4-498b-bca6-234a6d4a173c
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_api_document'
+              label: API
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          66113178-5d93-445a-b9b1-ec4c51859f0c:
+            uuid: 66113178-5d93-445a-b9b1-ec4c51859f0c
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_issued'
+              label: Issued
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: datetime_default
+                settings:
+                  timezone_override: ''
+                  format_type: short
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          a73c4ceb-40f6-4251-afb9-444416d81957:
+            uuid: a73c4ceb-40f6-4251-afb9-444416d81957
+            region: left
+            configuration:
+              id: 'field_block:node:apps:field_video'
+              label: Video
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: full
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+id: node.apps.anonymous_user_content
+targetEntityType: node
+bundle: apps
+mode: anonymous_user_content
+content:
+  body:
+    type: text_default
+    weight: 8
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_api_document:
+    type: entity_reference_label
+    weight: 11
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_app_url:
+    type: link
+    weight: 10
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_client_id:
+    type: string
+    weight: 9
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_client_secret:
+    type: string
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_display_name:
+    type: string
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_expiry:
+    type: string
+    weight: 13
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_issued:
+    type: datetime_default
+    weight: 12
+    region: content
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_organisation:
+    type: entity_reference_label
+    weight: 9
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_products_image:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_add_to_gallery: true
+  field_app_ref_id: true
+  field_expected_call_volume: true
+  field_version: true
+  field_video: true
+  langcode: true
+  layout_builder__layout: true
+  links: true

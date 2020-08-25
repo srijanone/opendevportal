@@ -1,0 +1,31 @@
+name: Developer Portal API Product
+description : 'Adds the API Product content type in developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+project: opendevx_api_product
+
+dependencies:
+  - fivestar:fivestar
+  - opendevx_node:opendevx_node
+  - opendevx_node:opendevx_api_document
+  - opendevx_node:opendevx_listing_pages
+  - opendevx_user:opendevx_user
+  - opendevx_taxonomy:opendevx_api_category
+  - opendevx_taxonomy:opendevx_api_categories
+  - opendevx_product_attributes:opendevx_product_attributes
+
+default_content:
+  node:
+    # API Product: Banking App Design
+    - bfc2f13c-f63c-4529-8dce-a996cac0c894
+  media:
+    # Media for Product image and Banner image.
+    - 234e1afb-bac6-473d-8781-ec629e325c78
+    - 815ca2d4-6843-428d-b683-75052333abc0
+    # Key feature media
+    - 4f673515-73dc-480a-9147-abb9621a3aef
+    - da942a69-dd72-463b-8af2-2bfff6aecd3c
+    - adc58a9f-0d59-4f54-b218-c133b35b05fc

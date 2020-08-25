@@ -1,0 +1,343 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/home?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/listing_pages"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 31
+        }
+    ],
+    "uuid": [
+        {
+            "value": "bac5c717-d8bc-41d9-964c-26aac748fd9d"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1016
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "listing_pages"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-07-28T12:28:46+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Home",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-05-13T10:35:21+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-07-28T12:28:46+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Home | Open API Exchange",
+                "canonical_url": "http:\/\/default\/home",
+                "description": "Welcome to the Open Source Developer Portal!\n\nLearn about how to use our API, get support, find out what we're up to on the product development side of the house, and give us feedback on what we should be doing.a\n\n\u00a0"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/home",
+            "pid": 7,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><strong>Welcome to the Open Source Developer Portal!<\/strong><\/p>\r\n\r\n<p>Learn about how to use our API, get support, find out what we're up to on the product development side of the house, and give us feedback on what we should be doing.a<\/p>\r\n\r\n<p>&nbsp;<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p><strong>Welcome to the Open Source Developer Portal!<\/strong><\/p>\n\n<p>Learn about how to use our API, get support, find out what we're up to on the product development side of the house, and give us feedback on what we should be doing.a<\/p>\n\n<p>\u00a0<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "abfaf67f-ad22-4514-971d-eea0c0b75a77",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "inline_block:header_block",
+                            "label": "Banner",
+                            "provider": "layout_builder",
+                            "label_display": 0,
+                            "view_mode": "default",
+                            "block_revision_id": "155",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_twocol_section",
+                "layout_settings": {
+                    "label": "",
+                    "column_widths": "50-50"
+                },
+                "components": [],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "9190963b-54bc-4c03-a3d4-2a40885baf26",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "inline_block:content_reference",
+                            "label": "Featured API Products",
+                            "provider": "layout_builder",
+                            "label_display": "visible",
+                            "view_mode": "cards",
+                            "block_revision_id": "133",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-8"
+                    },
+                    {
+                        "uuid": "65954532-5bcd-40a6-b4ad-10675ed58ef8",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "block_content:d27d2efb-0894-431e-8f12-1a71e983219e",
+                            "label": "Blogs",
+                            "provider": "block_content",
+                            "label_display": 0,
+                            "status": true,
+                            "info": "",
+                            "view_mode": "cards",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-6"
+                    },
+                    {
+                        "uuid": "1c2f534f-1e63-4c1e-900a-e5c9b6173b6f",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "front_organisation_block",
+                            "label": "API Programs",
+                            "provider": "opendevx_organisation",
+                            "label_display": "visible",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-9"
+                    },
+                    {
+                        "uuid": "e635f461-ae8c-4873-ac81-1421b841c996",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "inline_block:content_reference",
+                            "label": "Featured Content",
+                            "provider": "layout_builder",
+                            "label_display": "visible",
+                            "view_mode": "cards",
+                            "block_revision_id": "143",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-7"
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "be6adb94-70b7-4dc5-b925-b643c6ee45ad",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "views_block:events-upcoming_events",
+                            "label": "Upcoming Events",
+                            "provider": "views",
+                            "label_display": "visible",
+                            "views_label": "Upcoming Events",
+                            "items_per_page": "none",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    },
+                    {
+                        "uuid": "fb0130ab-9f56-483b-aaea-cd225122287a",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "views_block:forum-latest_qna",
+                            "label": "Latest Q&A",
+                            "provider": "views",
+                            "label_display": "visible",
+                            "views_label": "Latest Q&A",
+                            "items_per_page": "none",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 1
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
+    ]
+}

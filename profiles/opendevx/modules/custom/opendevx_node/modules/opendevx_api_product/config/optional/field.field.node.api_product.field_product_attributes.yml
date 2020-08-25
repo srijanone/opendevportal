@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_attributes
+    - node.type.api_product
+    - paragraphs.paragraphs_type.product_attributes
+  module:
+    - entity_reference_revisions
+id: node.api_product.field_product_attributes
+field_name: field_product_attributes
+entity_type: node
+bundle: api_product
+label: 'Product Attributes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      product_attributes: product_attributes
+    target_bundles_drag_drop:
+      dashboard_listing:
+        weight: 6
+        enabled: false
+      menu_list:
+        weight: 7
+        enabled: false
+      product_attributes:
+        enabled: true
+        weight: 8
+      product_paragraph:
+        weight: 9
+        enabled: false
+      slider_details:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,207 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.api_product.body
+    - field.field.node.api_product.comment
+    - field.field.node.api_product.field_api_category
+    - field.field.node.api_product.field_api_specifications
+    - field.field.node.api_product.field_banners_image
+    - field.field.node.api_product.field_feature_label
+    - field.field.node.api_product.field_key_features
+    - field.field.node.api_product.field_organisation
+    - field.field.node.api_product.field_price
+    - field.field.node.api_product.field_product_attributes
+    - field.field.node.api_product.field_product_marketing
+    - field.field.node.api_product.field_products_image
+    - field.field.node.api_product.field_user_rating
+    - field.field.node.api_product.field_version
+    - field.field.node.api_product.field_view_mode
+    - field.field.node.api_product.layout_builder__layout
+    - node.type.api_product
+  module:
+    - comment
+    - ds
+    - entity_reference_revisions
+    - fivestar
+    - layout_builder
+    - options
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          ebdbba2b-214c-411b-a172-f0536f2a5ac6:
+            uuid: ebdbba2b-214c-411b-a172-f0536f2a5ac6
+            region: ds_content
+            configuration:
+              id: 'field_block:node:api_product:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          bd9b7b24-ed37-4789-acd2-325f663b533f:
+            uuid: bd9b7b24-ed37-4789-acd2-325f663b533f
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_product:field_product_attributes'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 7
+          4e906dc0-1b21-4089-93f8-b4a0df5ce32d:
+            uuid: 4e906dc0-1b21-4089-93f8-b4a0df5ce32d
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_product:field_view_mode'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 8
+          b32a7e6a-b85f-4638-8401-a8adbc7b04d7:
+            uuid: b32a7e6a-b85f-4638-8401-a8adbc7b04d7
+            region: ds_content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_product:field_price'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 9
+        third_party_settings: {  }
+id: node.api_product.default
+targetEntityType: node
+bundle: api_product
+mode: default
+content:
+  comment:
+    weight: 13
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_api_document:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_price:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_product_attributes:
+    type: entity_reference_revisions_entity_view
+    weight: 20
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: ds_content
+  field_resource:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_rating:
+    weight: 14
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  field_view_mode:
+    weight: 21
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_api_category: true
+  field_api_specifications: true
+  field_banners_image: true
+  field_feature_label: true
+  field_key_features: true
+  field_organisation: true
+  field_product_marketing: true
+  field_products_image: true
+  field_version: true
+  langcode: true
+  layout_builder__layout: true

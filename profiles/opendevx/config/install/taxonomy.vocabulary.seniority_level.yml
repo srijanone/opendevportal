@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Seniority Level'
+vid: seniority_level
+description: 'Seniority Level of the users'
+weight: 0

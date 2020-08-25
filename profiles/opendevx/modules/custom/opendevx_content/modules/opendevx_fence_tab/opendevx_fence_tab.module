@@ -1,0 +1,10 @@
+<?php
+
+/**
+* Implements hook_page_attachments_alter().
+*
+* Alter attachments (typically assets) to a page before it is rendered.
+*/
+function opendevx_fence_tab_page_attachments_alter(array &$attachments) {
+  $attachments['#attached']['library'][] = 'opendevx_fence_tab/global-styling';
+}

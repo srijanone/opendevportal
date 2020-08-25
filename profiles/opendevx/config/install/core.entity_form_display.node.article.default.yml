@@ -1,0 +1,215 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.field_api_detail_section
+    - field.field.node.article.field_api_product
+    - field.field.node.article.field_banners_image
+    - field.field.node.article.field_description
+    - field.field.node.article.field_listing_image
+    - field.field.node.article.field_organisation
+    - field.field.node.article.field_products_image
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_user_rating
+    - field.field.node.article.layout_builder__layout
+    - node.type.article
+  module:
+    - field_group
+    - media_library
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_media_items:
+      children:
+        - group_references
+        - group_general
+        - group_media
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Media Items'
+    group_general:
+      children:
+        - field_api_detail_section
+      parent_name: group_media_items
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Content
+    group_references:
+      children:
+        - title
+        - body
+        - field_api_product
+        - field_organisation
+        - field_tags
+      parent_name: group_media_items
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Metadata
+    group_media:
+      children:
+        - field_listing_image
+        - field_banners_image
+      parent_name: group_media_items
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Blog Media'
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 22
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_api_detail_section:
+    weight: 4
+    settings:
+      title: Blog
+      title_plural: Blogs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: product_paragraph
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_api_product:
+    weight: 24
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_banners_image:
+    weight: 16
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_listing_image:
+    weight: 15
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_organisation:
+    type: entity_reference_autocomplete
+    weight: 25
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  comment: true
+  field_description: true
+  field_products_image: true
+  field_user_rating: true
+  layout_builder__layout: true
+  moderation_state: true
+  promote: true
+  sticky: true

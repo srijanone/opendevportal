@@ -1,0 +1,190 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.issues
+id: node--issues
+disabled: false
+path: api/issues
+resourceType: node--issues
+resourceFields:
+  nid:
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  vid:
+    disabled: true
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  revision_timestamp:
+    disabled: true
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+  revision_uid:
+    disabled: true
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  title:
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  changed:
+    fieldName: changed
+    publicName: updated
+    enhancer:
+      id: ''
+    disabled: false
+  promote:
+    disabled: true
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+  sticky:
+    disabled: true
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  moderation_state:
+    disabled: true
+    fieldName: moderation_state
+    publicName: moderation_state
+    enhancer:
+      id: ''
+  path:
+    disabled: true
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: true
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+  body:
+    fieldName: body
+    publicName: body
+    enhancer:
+      id: ''
+    disabled: false
+  comment:
+    fieldName: comment
+    publicName: comment
+    enhancer:
+      id: ''
+    disabled: false
+  field_api_product:
+    fieldName: field_api_product
+    publicName: apiProduct
+    enhancer:
+      id: ''
+    disabled: false
+  field_attach_file:
+    fieldName: field_attach_file
+    publicName: attachFile
+    enhancer:
+      id: ''
+    disabled: false
+  field_organisation:
+    fieldName: field_organisation
+    publicName: organisation
+    enhancer:
+      id: ''
+    disabled: false
+  field_status:
+    fieldName: field_status
+    publicName: status
+    enhancer:
+      id: ''
+    disabled: false
+  field_type:
+    fieldName: field_type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  field_user_rating:
+    fieldName: field_user_rating
+    publicName: rating
+    enhancer:
+      id: ''
+    disabled: false
+  layout_builder__layout:
+    disabled: true
+    fieldName: layout_builder__layout
+    publicName: layout_builder__layout
+    enhancer:
+      id: ''

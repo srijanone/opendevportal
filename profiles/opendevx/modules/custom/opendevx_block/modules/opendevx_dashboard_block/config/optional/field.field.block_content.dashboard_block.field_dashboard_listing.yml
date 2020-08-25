@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dashboard_block
+    - field.storage.block_content.field_dashboard_listing
+    - paragraphs.paragraphs_type.dashboard_listing
+  module:
+    - entity_reference_revisions
+id: block_content.dashboard_block.field_dashboard_listing
+field_name: field_dashboard_listing
+entity_type: block_content
+bundle: dashboard_block
+label: 'Dashboard Listing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      dashboard_listing: dashboard_listing
+    target_bundles_drag_drop:
+      dashboard_listing:
+        enabled: true
+        weight: 4
+      menu_list:
+        weight: 5
+        enabled: false
+      product_paragraph:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

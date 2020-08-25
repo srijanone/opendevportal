@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.apps.body
+    - field.field.node.apps.field_api_document
+    - field.field.node.apps.field_app_ref_id
+    - field.field.node.apps.field_app_url
+    - field.field.node.apps.field_client_id
+    - field.field.node.apps.field_client_secret
+    - field.field.node.apps.field_display_name
+    - node.type.apps
+  module:
+    - text
+    - user
+id: node.apps.teaser
+targetEntityType: node
+bundle: apps
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {}
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {}
+    third_party_settings: {}
+    region: content
+  links:
+    weight: 100
+    settings: {}
+    third_party_settings: {}
+    region: content
+hidden:
+  field_api_document: true
+  field_app_ref_id: true
+  field_app_url: true
+  field_client_id: true
+  field_client_secret: true
+  field_display_name: true

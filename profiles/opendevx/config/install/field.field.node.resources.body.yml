@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.resources
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    markdown: markdown
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+    code_snippet: '0'
+id: node.resources.body
+field_name: body
+entity_type: node
+bundle: resources
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: true
+field_type: text_with_summary

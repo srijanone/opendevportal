@@ -1,0 +1,16 @@
+ignored_config_entities:
+  - smtp.settings
+  - social_auth_github.settings
+  - social_auth_google.settings
+  - opendevx_connector.settings
+  - block.block.product_api
+  - 'core.entity_view_display.node.api_product*'
+  - notifications_widget.settings
+  - disqus.settings
+  - recaptcha.settings
+  - captcha.settings
+  - 'captcha.captcha_point.*'
+  - opendevx_notification.settings
+  - 'tour.tour.*'
+  - stripe.settings
+  - opendevx_subscription.settings

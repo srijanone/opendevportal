@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - opendevx_notification
+    - user
+  theme:
+    - devportal
+id: opendevxnotificationblock
+theme: devportal
+region: primary_menu
+weight: -16
+provider: null
+plugin: opendevx_notification_widget_block
+settings:
+  id: opendevx_notification_widget_block
+  label: 'Opendevx Notification block'
+  provider: opendevx_notification
+  label_display: '0'
+  block_notification_type: '1'
+  block_notification_logs_display: 1
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      product_manager: product_manager
+      developer: developer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

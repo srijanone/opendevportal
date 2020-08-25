@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+    - field.storage.block_content.field_icons
+    - taxonomy.vocabulary.icons
+id: block_content.header_block.field_icons
+field_name: field_icons
+entity_type: block_content
+bundle: header_block
+label: Icons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      icons: icons
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,300 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/products?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/listing_pages"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 5
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3efedfe0-aead-4240-9885-31042ab870ba"
+        }
+    ],
+    "vid": [
+        {
+            "value": 664
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "listing_pages"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-06-27T10:23:55+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Products",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-05-11T10:59:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-06-27T10:23:55+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Products | Open API Exchange",
+                "canonical_url": "http:\/\/default\/products"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/products",
+            "pid": 2,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "540f1981-ce61-4a20-982d-877e7185133b",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "block_content:7d3a9a15-030f-4c64-862d-06c86afcf3d3",
+                            "label": "Product Banner Block",
+                            "provider": "block_content",
+                            "label_display": 0,
+                            "status": true,
+                            "info": "",
+                            "view_mode": "full",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "1d39e960-c654-4080-a898-1be86f83cf1b",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "system_breadcrumb_block",
+                            "label": "Breadcrumbs",
+                            "provider": "system",
+                            "label_display": 0,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": ""
+                },
+                "components": [
+                    {
+                        "uuid": "c736d339-9582-4260-82bd-8122411e5de8",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "extra_field_block:node:listing_pages:links"
+                        },
+                        "additional": [],
+                        "weight": 0
+                    },
+                    {
+                        "uuid": "c64392f6-d568-4089-abb7-eaf8402defd0",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "extra_field_block:node:listing_pages:links"
+                        },
+                        "additional": [],
+                        "weight": 4
+                    },
+                    {
+                        "uuid": "6ffee79b-ed70-4acb-9406-07da5ad5d25b",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "field_block:node:listing_pages:body",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            }
+                        },
+                        "additional": [],
+                        "weight": 5
+                    },
+                    {
+                        "uuid": "6e55eb0e-9394-49d7-af23-fa99fdc69bd3",
+                        "region": "content",
+                        "configuration": {
+                            "id": "views_block:product_listing-block_1",
+                            "label": "",
+                            "provider": "views",
+                            "label_display": 0,
+                            "views_label": "",
+                            "items_per_page": "none",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 7
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
+    ]
+}

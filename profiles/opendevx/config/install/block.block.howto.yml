@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:guidance_block:f6a38061-01b8-420e-bfea-8d6eba2c80e3'
+  module:
+    - block_content
+    - ctools
+    - system
+  theme:
+    - devportal
+id: howto
+theme: devportal
+region: content
+weight: -13
+provider: null
+plugin: 'block_content:f6a38061-01b8-420e-bfea-8d6eba2c80e3'
+settings:
+  id: 'block_content:f6a38061-01b8-420e-bfea-8d6eba2c80e3'
+  label: 'How To'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      assets: assets
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

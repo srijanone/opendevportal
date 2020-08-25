@@ -1,0 +1,39 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resources.comment
+    - field.field.node.resources.field_api_detail_section
+    - field.field.node.resources.field_api_product
+    - field.field.node.resources.field_banners_image
+    - field.field.node.resources.field_description
+    - field.field.node.resources.field_listing_image
+    - field.field.node.resources.field_organisation
+    - field.field.node.resources.field_tags
+    - field.field.node.resources.layout_builder__layout
+    - field.field.node.resources.field_user_rating
+    - node.type.resources
+  module:
+    - user
+id: node.resources.teaser
+targetEntityType: node
+bundle: resources
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment: true
+  field_api_detail_section: true
+  field_api_product: true
+  field_banners_image: true
+  field_description: true
+  field_listing_image: true
+  field_organisation: true
+  field_tags: true
+  field_user_rating: true
+  layout_builder__layout: true

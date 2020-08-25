@@ -1,0 +1,16 @@
+opendevx_subscription.confirm:
+  path: '/subscribe/{id}/confirm'
+  defaults:
+    _form: '\Drupal\opendevx_subscription\Form\SubscriptionConfirmForm'
+    _title: 'Subscribe to product'
+  requirements:
+    _permission: 'access content'
+    id: ^\d+$
+
+opendevx_subscription.settings:
+  path: '/admin/config/people/email-subscription'
+  defaults:
+    _form: '\Drupal\opendevx_subscription\Form\SubscriptionSettings'
+    _title: 'Newsletter Settings'
+  requirements:
+    _permission: 'administer site configuration'

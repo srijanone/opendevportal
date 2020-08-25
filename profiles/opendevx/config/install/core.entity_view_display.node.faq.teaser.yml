@@ -1,0 +1,39 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.faq.body
+    - field.field.node.faq.field_answer
+    - field.field.node.faq.field_api_product
+    - field.field.node.faq.field_organisation
+    - field.field.node.faq.field_user_rating
+    - field.field.node.faq.layout_builder__layout
+    - node.type.faq
+  module:
+    - text
+    - user
+id: node.faq.teaser
+targetEntityType: node
+bundle: faq
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_answer: true
+  field_api_product: true
+  field_organisation: true
+  field_user_rating: true
+  layout_builder__layout: true

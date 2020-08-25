@@ -1,0 +1,19 @@
+{
+  "name": "dia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "lint": "sass-lint -v",
+    "lint:fix": "sass-lint-auto-fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-sass-lint": "^1.4.0",
+    "sass-lint-auto-fix": "^0.21.0"
+  }
+}

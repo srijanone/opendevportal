@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content_reference
+    - field.storage.block_content.field_contents
+    - node.type.api_document
+    - node.type.api_product
+    - node.type.article
+    - node.type.assets
+    - node.type.document_overview
+    - node.type.events
+    - node.type.faq
+    - node.type.issues
+    - node.type.resources
+    - node.type.solutions
+    - node.type.tutorials
+    - node.type.use_cases
+id: block_content.content_reference.field_contents
+field_name: field_contents
+entity_type: block_content
+bundle: content_reference
+label: Contents
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      api_document: api_document
+      api_product: api_product
+      article: article
+      assets: assets
+      events: events
+      faq: faq
+      issues: issues
+      document_overview: document_overview
+      resources: resources
+      solutions: solutions
+      tutorials: tutorials
+      use_cases: use_cases
+    sort:
+      field: changed
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: api_document
+field_type: entity_reference
