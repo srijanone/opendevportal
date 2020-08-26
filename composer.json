@@ -152,6 +152,9 @@
           },
           "drupal/core": {
             "Layout Builder" : "patches/core/layout_builder.patch"
+          },
+          "drupal/icon_select": {
+            "SvgSpriteGenerator" : "patches/icon_select/icon_select.patch"
           }
         },
         "drupal-core-project-message": {

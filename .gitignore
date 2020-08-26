@@ -39,3 +39,4 @@ sites/simpletest
 /robots.txt
 /update.php
 /web.config
+/autoload.php
