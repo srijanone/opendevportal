@@ -1,0 +1,6 @@
+name: Developer Portal APIs
+description: Customizing the APIs in Developer Portal 
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,24 @@
+<h3>Program configurations:</h3>
+
+{% if details is empty %}
+  <div>
+    <em>No configurations found!!</em>
+  </div>
+{% else %}
+  <table>
+    <tr>
+      <th>Config</th>
+      <th>Values</th>
+    </tr>
+    {% for key, item in details %}
+      <tr>
+        <td>
+        {{ key|upper }}
+        </td>
+        <td>
+          {{ item|upper }}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}

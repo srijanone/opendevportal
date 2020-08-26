@@ -1,0 +1,8 @@
+name: Developer Portal Issue Status
+description : 'Extend the Issue status taxonomy term for developer portal.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - opendevx_taxonomy:opendevx_taxonomy

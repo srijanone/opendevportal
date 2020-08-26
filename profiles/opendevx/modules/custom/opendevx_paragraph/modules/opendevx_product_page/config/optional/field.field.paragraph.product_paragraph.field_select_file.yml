@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_select_file
+    - paragraphs.paragraphs_type.product_paragraph
+  module:
+    - options
+id: paragraph.product_paragraph.field_select_file
+field_name: field_select_file
+entity_type: paragraph
+bundle: product_paragraph
+label: 'File Option'
+description: 'Select the type of file that needs to be shown in this section. Default Image'
+required: false
+translatable: false
+default_value:
+  -
+    value: image
+default_value_callback: ''
+settings: {  }
+field_type: list_string

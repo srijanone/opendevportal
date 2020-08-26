@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: solutions
+label: Solutions
+type: 'canonical_entities:node'
+pattern: 'solutions/[node:title]'
+selection_criteria:
+  e043499a-9153-4eb5-9219-96b23a773a6c:
+    id: node_type
+    bundles:
+      solutions: solutions
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e043499a-9153-4eb5-9219-96b23a773a6c
+selection_logic: and
+weight: -5
+relationships: {  }

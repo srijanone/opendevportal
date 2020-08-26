@@ -1,0 +1,6 @@
+name: Developer Portal Subscription
+description : 'Extend the Subscription functionality.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9

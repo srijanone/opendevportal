@@ -1,0 +1,561 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/tutorials\/how-use-payments-processing?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/tutorials"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/uid": [
+            {
+                "href": "http:\/\/default\/user\/46?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_api_detail_section": [
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/326?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/327?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/328?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/329?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/330?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_api_product": [
+            {
+                "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_listing_image": [
+            {
+                "href": "http:\/\/default\/media\/76\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_organisation": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/41?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 415
+        }
+    ],
+    "uuid": [
+        {
+            "value": "47a60067-3b62-476f-9e7a-7c6cb7c9b3bd"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1128
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "tutorials"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-08-20T07:43:07+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/46?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ce31e7f5-e3de-40c6-82a4-832d27cec9c3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_api_detail_section": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/326?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f06b2823-04e6-493e-8297-a1eded997f33"
+                    }
+                ],
+                "target_revision_id": "936"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/327?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b6516451-34d0-4c86-b7ef-2a4bdbe2133d"
+                    }
+                ],
+                "target_revision_id": "937"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/328?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "395b24af-1724-42ed-be23-0e32fe0980b2"
+                    }
+                ],
+                "target_revision_id": "938"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/329?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "509ccc6b-97ba-4d4e-a1d1-1b4540758155"
+                    }
+                ],
+                "target_revision_id": "939"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/330?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5c9155fb-f8c2-4521-a0c9-6f67f7481232"
+                    }
+                ],
+                "target_revision_id": "940"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_api_product": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/banking-app-design?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bfc2f13c-f63c-4529-8dce-a996cac0c894"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_listing_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/76\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6b65cf41-3b70-4db9-8a14-df7a94039916"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_organisation": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/41?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisation"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "393698d7-7048-445a-bed2-739120ff54c3"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "How to Use Payments Processing",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-08T11:05:31+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-08-20T07:43:07+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "How to Use Payments Processing | Open API Exchange",
+                "canonical_url": "http:\/\/default\/tutorials\/how-use-payments-processing",
+                "description": "How to Use Payments Processing"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/tutorials\/how-use-payments-processing",
+            "pid": 350,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>How to Use Payments Processing<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>How to Use Payments Processing<\/p>\n",
+            "summary": "How to Use Payments Processing",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 7,
+            "last_comment_timestamp": 1594882464,
+            "last_comment_name": "",
+            "last_comment_uid": 3,
+            "comment_count": 1,
+            "lang": "en"
+        }
+    ],
+    "field_description": [
+        {
+            "value": "<p>The VPP APIs offer direct access to the payment processing systems.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>The VPP APIs offer direct access to the payment processing systems.<\/p>\n",
+            "lang": "en"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "31f8aea1-06cb-4c22-a701-acaa0cf06afd",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "system_breadcrumb_block",
+                            "label": "Breadcrumbs",
+                            "provider": "system",
+                            "label_display": 0,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "ds_2col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "left": "div",
+                        "right": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "afcc8f25-df35-4a78-91c4-a164ca41ec49",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:tutorials:field_description",
+                            "label": "Tutorial Summary",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 0
+                    },
+                    {
+                        "uuid": "cc7f4a9e-43f8-4a65-9f51-e482eeb3e8d2",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:tutorials:field_api_detail_section",
+                            "label": "Tutorial Section",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "entity_reference_revisions_entity_view",
+                                "settings": {
+                                    "view_mode": "default"
+                                },
+                                "third_party_settings": {
+                                    "ds": {
+                                        "ds_limit": ""
+                                    }
+                                }
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 1
+                    },
+                    {
+                        "uuid": "dffa3932-fd52-48dd-926e-2ab86f51ec7d",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:tutorials:field_tags",
+                            "label": "Tags",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "entity_reference_label",
+                                "settings": {
+                                    "link": true
+                                },
+                                "third_party_settings": {
+                                    "ds": {
+                                        "ds_limit": ""
+                                    }
+                                }
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 2
+                    },
+                    {
+                        "uuid": "3cf50500-06d6-4dc9-ab0c-99a6fb0037c2",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:tutorials:field_user_rating",
+                            "label": "User Rating",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "fivestar_stars",
+                                "settings": {
+                                    "fivestar_widget": "modules\/contrib\/fivestar\/widgets\/basic\/basic.css",
+                                    "display_format": "average",
+                                    "text_format": "average"
+                                },
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 3
+                    },
+                    {
+                        "uuid": "91fba2ec-b404-4386-b4c7-b325f570dad4",
+                        "region": "right",
+                        "configuration": {
+                            "id": "social_sharing_block",
+                            "label": "Social Sharing block",
+                            "provider": "social_media",
+                            "label_display": "0",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 4
+                    },
+                    {
+                        "uuid": "ddddb34d-5f5f-4717-a5d6-11916fac3ec6",
+                        "region": "right",
+                        "configuration": {
+                            "id": "field_block:node:tutorials:comment",
+                            "label": "Comments",
+                            "provider": "layout_builder",
+                            "label_display": "0",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "comment_default",
+                                "settings": {
+                                    "view_mode": "default",
+                                    "pager_id": 0
+                                },
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 5
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: tutorials
+label: Tutorials
+type: 'canonical_entities:node'
+pattern: 'tutorials/[node:title]'
+selection_criteria:
+  223d3d35-7d70-4893-9a03-8c0b225ffab7:
+    id: node_type
+    bundles:
+      tutorials: tutorials
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 223d3d35-7d70-4893-9a03-8c0b225ffab7
+selection_logic: and
+weight: -5
+relationships: {  }

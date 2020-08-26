@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_access
+    - taxonomy.vocabulary.organisation
+  module:
+    - options
+id: taxonomy_term.organisation.field_access
+field_name: field_access
+entity_type: taxonomy_term
+bundle: organisation
+label: Visibility
+description: "Choose one from the listing:\r\n<ol>\r\n<li><strong>Public</strong>: Choose this to make this content visible to both anonymous and authenticated users.</li>\r\n<li><strong>Protected</strong>: Choose this to hide content from  Anonymous users.</li>\r\n<li><strong>Private</strong>: Choose this to restrict content to users who have this program assigned. </li>\r\n</ol>"
+required: true
+translatable: false
+default_value:
+  -
+    value: Public
+default_value_callback: ''
+settings: {  }
+field_type: list_string

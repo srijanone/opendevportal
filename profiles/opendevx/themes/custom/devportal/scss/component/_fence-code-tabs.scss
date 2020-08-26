@@ -1,0 +1,45 @@
+.fenced-code-tabs,
+.fenced-code-tabs-para {
+  border-radius: .2rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12); // sass-lint:disable-line no-color-literals
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input {
+    opacity: 0;
+    position: absolute;
+
+    &:checked + label {
+      border-bottom: 2px solid $blue1;
+      color: $blue1;
+    }
+
+    &:checked + label + pre {
+      display: block;
+    }
+  }
+
+  label {
+    @include font (16, normal);
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 10px 15px;
+    text-transform: capitalize;
+    width: auto;
+  }
+
+  pre {
+    display: none;
+    margin: 0;
+    order: 99;
+    width: 100%;
+  }
+}

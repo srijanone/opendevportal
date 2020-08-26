@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.product_paragraph
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    markdown: markdown
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+    code_snippet: '0'
+id: paragraph.product_paragraph.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: product_paragraph
+label: Description
+description: 'Add a description about this section.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

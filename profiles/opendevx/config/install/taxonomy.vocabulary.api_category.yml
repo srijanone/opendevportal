@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'API Product Category'
+vid: api_category
+description: 'API Product Category enables the Product Managers define the categories and group the API Products.'
+weight: 0

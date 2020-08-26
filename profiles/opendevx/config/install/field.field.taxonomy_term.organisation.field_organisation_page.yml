@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_organisation_page
+    - node.type.listing_pages
+    - taxonomy.vocabulary.organisation
+id: taxonomy_term.organisation.field_organisation_page
+field_name: field_organisation_page
+entity_type: taxonomy_term
+bundle: organisation
+label: 'Organisation Page'
+description: 'Use this for reference to the landing page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      listing_pages: listing_pages
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

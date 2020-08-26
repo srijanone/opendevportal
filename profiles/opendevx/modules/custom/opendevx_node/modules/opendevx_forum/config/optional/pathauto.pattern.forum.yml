@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: forum
+label: Forum
+type: 'canonical_entities:node'
+pattern: '/topic/[node:title]'
+selection_criteria:
+  844446fc-a111-49e0-b159-c9eec66d25fd:
+    id: node_type
+    bundles:
+      forum: forum
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 844446fc-a111-49e0-b159-c9eec66d25fd
+selection_logic: and
+weight: -5
+relationships: {  }

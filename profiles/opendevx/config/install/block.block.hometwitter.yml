@@ -1,0 +1,30 @@
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:c5c1f266-51f4-45c0-9832-27c8af3efb8a'
+  module:
+    - block_content
+    - system
+  theme:
+    - devportal
+id: hometwitter
+theme: devportal
+region: content
+weight: -4
+provider: null
+plugin: 'block_content:c5c1f266-51f4-45c0-9832-27c8af3efb8a'
+settings:
+  id: 'block_content:c5c1f266-51f4-45c0-9832-27c8af3efb8a'
+  label: 'Latest Tweets'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

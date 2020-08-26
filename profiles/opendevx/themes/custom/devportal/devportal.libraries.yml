@@ -1,0 +1,28 @@
+global-styling:
+  js:
+    lib/js/swiper.min.js: {}
+    js/common-blocks.js: {}
+  css:
+    base:
+      css/style.css: {}
+    component:
+      lib/css/swiper.min.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+bootstrap:
+  js:
+    /libraries/bootstrap/js/bootstrap.min.js: {}
+  css:
+    component:
+      /libraries/bootstrap/css/bootstrap.min.css: {}
+
+bootstrap_cdn:
+  js:
+    //stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js: {}
+  css:
+    component:
+      //stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css: {}

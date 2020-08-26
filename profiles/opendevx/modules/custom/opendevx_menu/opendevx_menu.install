@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function opendevx_menu_install() {
+  // Set the weight of the module.
+  module_set_weight('opendevx_menu', 2);
+}

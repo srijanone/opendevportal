@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content_reference
+    - core.entity_view_mode.block_content.full
+    - field.field.block_content.content_reference.body
+    - field.field.block_content.content_reference.field_contents
+    - field.field.block_content.content_reference.field_cta_link_text
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: block_content.content_reference.full
+targetEntityType: block_content
+bundle: content_reference
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_contents:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_cta_link_text: true

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file opendevx_taxonomy module
+ */
+
+ use Drupal\Core\Form\FormStateInterface;
+
+ /**
+  * Implements hook_form_alter().
+  */
+ function opendevx_taxonomy_form_alter(&$form,
+  FormStateInterface $form_state,
+  $form_id) {
+   if ($form_id == 'taxonomy_term_organisation_form') {
+     $type = empty($form['tid']['#value']) ? 'Add' : 'Edit';
+     $vocab = $form_state->getStorage()['taxonomy']['vocabulary']->get('name');
+     $form['#title'] = t('<em>@type</em> @name', ['@type' => $type,
+       '@name' => $vocab,
+     ]);
+   }
+ }

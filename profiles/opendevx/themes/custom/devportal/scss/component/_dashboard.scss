@@ -1,0 +1,633 @@
+.layout {
+  @extend %custom-container;
+
+  .layout__region {
+    @extend %custom-row;
+    width: auto;
+
+    > .block-block-content {
+      @include media ($sm, null) {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+      }
+
+      margin-bottom: 30px;
+      padding: 0 15px;
+      width: 100%;
+
+      > .content {
+        @extend %shadow;
+        background-color: $gray;
+        border-radius: 4px;
+        height: 100%;
+      }
+    }
+
+    .block {
+      width: 100%;
+    }
+  }
+
+  &.layout--onecol {
+    .layout__region {
+      > .block-block-content {
+        flex: 1;
+        max-width: unset;
+      }
+    }
+  }
+}
+
+.field--name-field-menu-item {
+  padding: 20px;
+
+  > .field__label {
+    @include font (24, normal);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);  // sass-lint:disable-line no-color-literals
+    padding-bottom: 15px;
+  }
+
+  > .field__items > .field__item,
+  > .field__item {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);  // sass-lint:disable-line no-color-literals
+    padding: 15px 0;
+
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .field--name-field-title {
+    @include font (18, 500);
+    color: $blue1;
+    margin-bottom: 5px;
+  }
+
+  .field--name-field-link {
+    margin-top: 20px;
+
+    .field__item {
+      display: inline-block;
+      margin-right: 5px;
+
+      a {
+        @extend %custom-btn;
+        @extend %custom-btn-submit;
+        display: inline-block;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Developer Dashboard
+.block-views-blockdeveloper-dashboard-block-apps,
+.block-views-blockdeveloper-dashboard-block-issues,
+.block-views-blockdeveloper-dashboard-block-forums {
+  @include media (null, $sm - 1) {
+    width: 100%;
+  }
+
+  background-color: $gray;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0 $gray5 !important; // sass-lint:disable-line no-important
+  float: left;
+  height: 100%;
+  margin-bottom: 30px;
+  padding: 20px;
+  width: 31%;
+
+  h2 {
+    @include font (24, normal);
+    border-bottom: 2px solid $green;
+    color: $blue1;
+    display: inline-block;
+    margin: 0 auto 20px;
+    margin-left: 35px;
+    padding: 10px 0;
+    position: relative;
+    width: fit-content;
+
+    &::before {
+      @extend %awsome;
+      @include font (24, normal);
+      content: '\f085';
+      left: -30px;
+      position: absolute;
+      top: 12px;
+    }
+  }
+
+  .view-content {
+    &.row {
+      display: block;
+    }
+  }
+
+  .views-row {
+    border-bottom: 1px solid $gray2;
+    display: flex;
+    padding: 15px 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .views-field-field-products-image {
+      margin-right: 15px;
+    }
+  }
+
+  .views-field-title,
+  .other-details {
+    @include media (null, $sm - 1) {
+      max-width: 85%;
+    }
+
+    padding-bottom: 5px;
+  }
+
+  .view-footer {
+    margin: 20px 0;
+    text-align: center;
+
+    a {
+      background-color: $blue1;
+      border-radius: 30px;
+      color: $white;
+      display: inline-block;
+      padding: 10px 30px;
+    }
+  }
+}
+
+.block-views-blockdeveloper-dashboard-block-apps {
+  .views-field-edit-node {
+    @extend %none;
+  }
+}
+
+.block-views-blockdeveloper-dashboard-block-issues {
+  h2 {
+    &::before {
+      content: '\f590';
+      font-weight: bold;
+    }
+  }
+}
+
+.block-views-blockdeveloper-dashboard-block-forums {
+  h2 {
+    &::before {
+      content: '\f086';
+      top: 8px;
+    }
+  }
+}
+
+.block-views-blockdeveloper-dashboard-block-issues,
+.block-views-blockdeveloper-dashboard-block-forums {
+  @include media (null, $sm - 1) {
+    margin-left: 0;
+  }
+
+  margin-left: 40px;
+}
+
+.view-developer-dashboard {
+
+  @include media (null, $sm) {
+    height: auto;
+  }
+
+  height: 415px;
+  padding-bottom: 60px;
+  position: relative;
+
+  .view-header {
+    margin-bottom: 10px;
+    margin-top: -80px;
+    text-align: right;
+
+    a {
+      @include font(14, 500);
+      background-color: $green;
+      border: 1px solid transparent;
+      border-radius: 20px;
+      color: $white;
+      display: inline-block;
+      margin-top: 20px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 40px;
+      padding-top: 9px;
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        @extend %awsome;
+        content: '\f055';
+        font-size: 28px;
+        position: absolute;
+        right: 5px;
+        top: 1px;
+      }
+
+      &:hover {
+        background-color: $white;
+        border: 1px solid $green;
+        color: $green;
+      }
+    }
+  }
+
+  .views-row {
+    flex-flow: column;
+
+    > div {
+      line-height: 1.5em;
+
+      .field-content {
+        display: inline-block;
+      }
+
+      .views-label {
+        + .field-content {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    // Edit Delete buttons
+    .views-field-delete-node,
+    .views-field-edit-node {
+      position: absolute;
+
+      a {
+        font-size: 0;
+
+        &::before {
+          @extend %awsome;
+          content: '';
+          font-size: 14px;
+        }
+      }
+    }
+
+    .views-field-edit-node {
+      right: 25px;
+
+      a {
+        &::before {
+          @extend %awsome;
+          content: '\f304';
+        }
+      }
+    }
+
+    .views-field-delete-node {
+      right: 0;
+
+      a {
+        &::before {
+          @extend %awsome;
+          content: '\f2ed';
+        }
+      }
+    }
+  }
+
+  .view-footer {
+    @include media (null, $sm - 1) {
+      left: 30%;
+      right: 30%;
+    }
+
+    bottom: -10px;
+    left: 34%;
+    position: absolute;
+    right: 34%;
+  }
+}
+
+//dashboard manage product
+.view-display-id-page_product_management {
+  .view-filters {
+    .form-row {
+      fieldset {
+        @include media (null, $sm) {
+          width: 100%;
+        }
+        width: 25%;
+      }
+    }
+  }
+
+  .view-content {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+
+      float: left;
+
+      label {
+        display: block;
+      }
+    }
+
+    button {
+      margin-left: 1%;
+      margin-top: 2.5%;
+    }
+  }
+}
+
+//dashboard app manager
+.view-display-id-page_dev_apps_listing {
+  .views-form {
+    @include media (null, $sm) {
+      width: 100%;
+    }
+  }
+
+  .view-content {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+
+      float: left;
+
+      label {
+        display: block;
+      }
+    }
+
+    button {
+      margin-left: 1%;
+      margin-top: 3%;
+    }
+  }
+}
+
+//dashboard app issues
+.view-display-id-page_issue_dashboard {
+  .view-filters {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  .view-content {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+
+      float: left;
+
+      label {
+        display: block;
+      }
+    }
+
+    .button {
+      margin-left: 1%;
+      margin-top: 2.5%;
+    }
+  }
+}
+
+//dashboard topic
+.view-display-id-page_1 {
+  .view-filters {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  .view-content {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+      float: left;
+
+      .custom-select {
+        @include media (null, $sm) {
+          width: 100%;
+        }
+      }
+
+      label {
+        display: block;
+      }
+    }
+
+    .button {
+      margin-left: 1%;
+      margin-top: 4.8%;
+    }
+  }
+}
+
+.view-display-id-page_2 {
+  .view-filters {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  .view-content {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+      float: left;
+
+      .custom-select {
+        @include media (null, $sm) {
+          width: 100%;
+        }
+        border: 1px solid $green;
+      }
+
+      label {
+        display: block;
+      }
+    }
+
+    .button {
+      margin-left: 1%;
+      margin-top: 4.8%;
+    }
+  }
+}
+
+
+
+//dashboard apimanager users
+.view-display-id-page_dashboard_users {
+  .view-content {
+    fieldset {
+      float: left;
+
+      label {
+        display: block;
+      }
+    }
+
+    .button {
+      margin-left: 1%;
+      margin-top: 2.5%;
+    }
+  }
+
+  .views-form {
+    table {
+      tr {
+        .views-field-operations {
+          .dropbutton-single {
+            .dropbutton-widget {
+              @include media (null, $sm) {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//dashboard program
+.view-organisations {
+  .view-content {
+    .views-form {
+      width: 100%;
+
+      fieldset {
+        float: left;
+
+        label {
+          display: block;
+        }
+      }
+
+      .button {
+        margin-left: 1%;
+        margin-top: 2.5%;
+      }
+    }
+  }
+
+  table {
+    td {
+      text-align: center;
+    }
+  }
+}
+
+//dashboard api app list
+.view-display-id-page_apps_listing {
+  .view-filters {
+    fieldset {
+      @include media (null, $sm) {
+        width: 100%;
+      }
+      width: 25%;
+    }
+  }
+}
+
+ol {
+  &[id='tour'] {
+    @extend %none;
+  }
+}
+
+body {
+  .joyride-tip-guide {
+    background-color: rgba(0, 0, 0, .85); // sass-lint:disable-line no-color-literals
+    border-radius: 20px;
+    color: $white;
+    padding: 0;
+    position: absolute;
+    visibility: hidden;
+
+    .joyride-close-tip {
+      @include font (30, normal);
+      padding: 0 6px;
+      right: 5px;
+      top: 5px;
+    }
+
+    a {
+      background: $white;
+      border-radius: 20px;
+      color: $black1;
+      padding: 6px 10px;
+    }
+  }
+
+  .joyride-modal-bg {
+    background: rgba(0, 0, 0, .6); // sass-lint:disable-line no-color-literals
+  }
+}
+
+.tour-btn {
+  background: $green;
+  border: 1px solid $green;
+  border-radius: 20px;
+  color: $white;
+  display: none;
+  float: right;
+  margin-left: 15px;
+  padding: 7px 10px 7px 30px;
+  position: relative;
+  top: -45px;
+
+  &:hover {
+    background: $white;
+    border: 1px solid $green;
+    color: $green;
+  }
+
+  &::before {
+    @extend %awsome;
+    @include font (20, normal);
+    content: '\f059';
+    left: 8px;
+    position: absolute;
+    top: 3px;
+  }
+
+  .tourenable & {
+    display: block;
+  }
+}
+
+//dashboard products table btn
+.view-dashboard-listing {
+  .views-field-nothing {
+    .edit-content {
+      display: contents;
+      font-size: .85714rem;
+    }
+  }
+}
+
+//alert
+.toast-wrapper {
+  left: 600px !important;// sass-lint:disable-line no-important
+  right: unset !important;// sass-lint:disable-line no-important
+  top: 90px !important;// sass-lint:disable-line no-important
+}

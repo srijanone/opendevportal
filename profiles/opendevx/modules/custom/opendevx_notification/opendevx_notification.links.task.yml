@@ -1,0 +1,4 @@
+opendevx_notification.notifications_widget_settings:
+  title: 'Moderate Notification Settings'
+  route_name: opendevx_notification.notification_moderation_settings
+  parent_id: notifications_widget.admin_settings_tab

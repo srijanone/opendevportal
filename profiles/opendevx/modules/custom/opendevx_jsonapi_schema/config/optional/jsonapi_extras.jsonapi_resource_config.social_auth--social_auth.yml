@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_auth
+id: social_auth--social_auth
+disabled: true
+path: social_auth/social_auth
+resourceType: social_auth--social_auth
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  user_id:
+    fieldName: user_id
+    publicName: user_id
+    enhancer:
+      id: ''
+    disabled: false
+  plugin_id:
+    fieldName: plugin_id
+    publicName: plugin_id
+    enhancer:
+      id: ''
+    disabled: false
+  provider_user_id:
+    fieldName: provider_user_id
+    publicName: provider_user_id
+    enhancer:
+      id: ''
+    disabled: false
+  token:
+    fieldName: token
+    publicName: token
+    enhancer:
+      id: ''
+    disabled: false
+  additional_data:
+    fieldName: additional_data
+    publicName: additional_data
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  changed:
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+    disabled: false

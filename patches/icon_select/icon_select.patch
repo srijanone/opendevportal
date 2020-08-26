@@ -1,0 +1,23 @@
+diff --git a/modules/contrib/icon_select/src/Helper/SvgSpriteGenerator.php b/modules/contrib/icon_select/src/Helper/SvgSpriteGenerator.php
+index 9c78587a..9cd64eb7 100644
+--- a/modules/contrib/icon_select/src/Helper/SvgSpriteGenerator.php
++++ b/modules/contrib/icon_select/src/Helper/SvgSpriteGenerator.php
+@@ -36,10 +36,15 @@ public static function generateSprites($vocabulary_id) {
+         $symbol_viewbox = '0 0 88 88';
+
+         $symbol_id = $term->field_symbol_id->value;
++        $svg_file_content = NULL;
++        try {
++          $uri = $term->field_svg_file->entity->getFileUri();
++          $svg_file_content = file_exists($uri) ? file_get_contents($uri) : NULL;
++        }
++        catch (\Exception $e) {
++          \Drupal::logger('icon_select')->error($e->getMessage());
++        }
+
+-        $uri = $term->field_svg_file->entity->getFileUri();
+-
+-        $svg_file_content = file_exists($uri) ? file_get_contents($uri) : NULL;
+
+         $symbol_xml = simplexml_load_string($svg_file_content);
+

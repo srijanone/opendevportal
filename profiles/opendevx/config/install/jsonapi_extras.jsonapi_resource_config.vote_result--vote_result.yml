@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - votingapi
+id: vote_result--vote_result
+disabled: true
+path: api/vote-result
+resourceType: vote_result--vote_result
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  entity_type:
+    fieldName: entity_type
+    publicName: entityType
+    enhancer:
+      id: ''
+    disabled: false
+  entity_id:
+    fieldName: entity_id
+    publicName: nid
+    enhancer:
+      id: ''
+    disabled: false
+  value:
+    fieldName: value
+    publicName: value
+    enhancer:
+      id: ''
+    disabled: false
+  value_type:
+    disabled: true
+    fieldName: value_type
+    publicName: value_type
+    enhancer:
+      id: ''
+  function:
+    disabled: true
+    fieldName: function
+    publicName: function
+    enhancer:
+      id: ''
+  timestamp:
+    fieldName: timestamp
+    publicName: timestamp
+    enhancer:
+      id: ''
+    disabled: false

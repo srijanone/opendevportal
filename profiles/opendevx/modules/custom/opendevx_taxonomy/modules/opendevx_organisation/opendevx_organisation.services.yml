@@ -1,0 +1,4 @@
+services:
+  opendevx_organisation.organisation:
+   class: Drupal\opendevx_organisation\Organisation
+   arguments: ['@database', '@current_user']

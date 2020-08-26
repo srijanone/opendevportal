@@ -1,0 +1,25 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - opendevx_block
+    - system
+  theme:
+    - devportal
+id: product_banner
+theme: devportal
+region: highlighted
+weight: -7
+provider: null
+plugin: product_banner_block
+settings:
+  id: null
+  label: 'Product Banner'
+  provider: opendevx_block
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/use-cases/*\r\n/page/*\r\n/events/*\r\n/tutorials/*\r\n/solutions/*\r\n/article/*\r\n/resources/*\r\n/api-document/*\r\n/node/*/events\r\n/node/*/resources\r\n/node/*/use_cases\r\n/node/*/tutorials\r\n/node/*/solutions\r\n/node/*/article\r\n/node/*/api_document\r\n/node/*/document_overview"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,10 @@
+/* Import the webfont from Google CDN */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap'); */
+
+body.adminimal {
+  font: normal 81.3%/1.538em 'Montserrat', sans-serif;
+}
+
+.adminimal .toolbar {
+  font-family: 'Montserrat', sans-serif;
+}

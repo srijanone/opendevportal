@@ -1,0 +1,10 @@
+name: Opendevx Notification
+description : 'Extend the Notification feature.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+project: opendevx_notification
+
+dependencies:
+  - drupal:notifications_widget

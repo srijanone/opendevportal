@@ -1,0 +1,182 @@
+{
+    "name": "drupal/opendevx",
+    "description": "Opendevx API Exchange",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-project-message": "^8.8",
+        "drupal/core-recommended": "^8.8",
+        "drupal/core-vendor-hardening": "^8.8",
+        "cweagans/composer-patches": "~1.0",
+        "drupal/address": "^1.8",
+        "drupal/admin_toolbar": "^2.2",
+        "drupal/adminimal_theme": "^1.5",
+        "drupal/advagg": "^4.1",
+        "drupal/allowed_formats": "1.2",
+        "drupal/backup_migrate": "^4.1",
+        "drupal/better_exposed_filters": "4.0-beta1",
+        "drupal/block_type_templates": "^1.0",
+        "drupal/bootstrap_barrio": "^4.27",
+        "drupal/bootstrap_sass": "^1.11",
+        "drupal/captcha": "^1.1",
+        "drupal/cdn": "^3.5",
+        "drupal/ckeditor_bootstrap_tabs": "^1.1",
+        "drupal/codesnippet": "1.6",
+        "drupal/color_field": "^2.3",
+        "drupal/config_ignore": "^2.2",
+        "drupal/default_content": "1.0-alpha9",
+        "drupal/devel": "^2.1",
+        "drupal/disqus": "^1.0@RC",
+        "drupal/ds": "^3.6",
+        "drupal/easy_breadcrumb": "^1.12",
+        "drupal/email_registration": "^1.1",
+        "drupal/field_group": "3.0",
+        "drupal/field_permissions": "1.0",
+        "drupal/fivestar": "^1.0",
+        "drupal/formtips": "^1.3",
+        "drupal/google_analytics": "^3.1",
+        "drupal/icon_select": "^1.4",
+        "drupal/jsonapi_extras": "^3.14",
+        "drupal/lazy": "^3.4",
+        "drupal/like_and_dislike": "^1.0",
+        "drupal/login_redirect_per_role": "1.7",
+        "drupal/markdown": "^1.3",
+        "drupal/memcache": "^2.0",
+        "drupal/menu_per_role": "^1.2",
+        "drupal/menu_token": "^1.0",
+        "drupal/metatag": "^1.13",
+        "drupal/notificationswidget": "^1.5",
+        "drupal/openapi": "^2.0@RC",
+        "drupal/openapi_jsonapi": "^2.0@RC",
+        "drupal/openapi_ui": "^1.0@RC",
+        "drupal/openapi_ui_redoc": "^1.0",
+        "drupal/openapi_ui_swagger": "^1.0@RC",
+        "drupal/paragraphs": "1.11",
+        "drupal/pathauto": "^1.8",
+        "drupal/permissions_by_term": "^2.20",
+        "drupal/recaptcha": "3.0",
+        "drupal/redirect": "^1.6",
+        "drupal/redis": "^1.4",
+        "drupal/redoc_field_formatter": "^1.0",
+        "drupal/restui": "^1.18",
+        "drupal/rules": "^3.0@alpha",
+        "drupal/s3fs": "^3.0",
+        "drupal/samlauth": "^3.0",
+        "drupal/simplesamlphp_auth": "^3.2",
+        "drupal/smtp": "^1.0@RC",
+        "drupal/social_api": "2.0-rc2",
+        "drupal/social_auth_github": "^2.0",
+        "drupal/social_auth_google": "^2.0",
+        "drupal/social_link_field": "^1.1",
+        "drupal/social_media": "^1.8",
+        "drupal/social_media_links": "^2.6",
+        "drupal/subpathauto": "^1.1",
+        "drupal/svg_image": "^1.13",
+        "drupal/swagger_ui_formatter": "^2.4",
+        "drupal/textfield_counter": "^1.11",
+        "drupal/token": "^1.7",
+        "drupal/total_control": "2.0",
+        "drupal/tour_ui": "^1.0",
+        "drupal/twitter_block": "^2.1",
+        "drupal/userpoints": "^1.0@alpha",
+        "drupal/video_embed_field": "2.4",
+        "drupal/views_aggregator": "^1.0@beta",
+        "drupal/views_autocomplete_filters": "1.3",
+        "drupal/views_bulk_operations": "^3.8",
+        "drush/drush": "^9.2",
+        "league/oauth2-client": "^2.0",
+        "oomphinc/composer-installers-extender": "^1.1"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./"
+            }
+        },
+        "installer-paths": {
+            "core": [
+                "type:drupal-core"
+            ],
+            "libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "patches": {
+          "drupal/codesnippet": {
+            "code snippet library" : "https://www.drupal.org/files/issues/2020-05-04/2931474-29.patch"
+          },
+          "drupal/total_control": {
+            "Admin Operations" : "patches/total_control/admin_operations.patch"
+          },
+          "drupal/rules": {
+            "Rule Block Configurations" : "patches/rules/rules_block_configurations.patch"
+          },
+          "drupal/core": {
+            "Layout Builder" : "patches/core/layout_builder.patch"
+          },
+          "drupal/icon_select": {
+            "SvgSpriteGenerator" : "patches/icon_select/icon_select.patch"
+          }
+        },
+        "drupal-core-project-message": {
+            "include-keys": [
+                "homepage",
+                "support"
+            ],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  from the drupal/legacy-project template!               </>",
+                "<bg=blue;fg=white>                                                         </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+                "  * Get support: https://www.drupal.org/support",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        }
+    }
+}

@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - notifications_widget
+    - serialization
+    - user
+id: notifications_update_widget
+plugin_id: notifications_update_widget
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - json
+  authentication:
+    - cookie
