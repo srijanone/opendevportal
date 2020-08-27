@@ -12,6 +12,7 @@ install:
  - admin_toolbar
  - allowed_formats
  - automated_cron
+ - advagg
  - big_pipe
  - block
  - block_content
@@ -42,6 +43,7 @@ install:
  - file
  - filter
  - fivestar
+ - google_analytics
  - formtips
  - help
  - history
@@ -53,6 +55,7 @@ install:
  - jsonapi_extras
  - layout_builder
  - layout_discovery
+ - lazy
  - link
  - markdown
  - media
@@ -74,6 +77,7 @@ install:
  - permissions_by_term
  - quickedit
  - rdf
+ - recaptcha
  - redoc_field_formatter
  - rest
  - restui
@@ -121,6 +125,7 @@ install:
  - tour_ui
  - redirect
  - rules
+ - subpathauto
  - transaction
  - page_manager
  - dynamic_entity_reference
