@@ -14,13 +14,13 @@
         margin: 0 16px;
         padding: 8px 0;
 
-        &:hover {
+        &:hover { // sass-lint:disable-line nesting-depth
           border-color: transparent;
         }
       }
 
       &.active {
-        a {
+        a { // sass-lint:disable-line nesting-depth
           border-bottom: 2px solid $green !important; // sass-lint:disable-line no-important
           border-color: transparent;
           color: $blue1;
@@ -28,7 +28,7 @@
       }
 
       &:first-child {
-        a {
+        a { // sass-lint:disable-line nesting-depth
           margin-left: 0;
         }
       }
@@ -47,15 +47,6 @@
       padding: 25px 0;
       width: 100%;
 
-      .views-field-user-picture {
-        width: 100px;
-
-        img {
-          border: 1px solid $gray2;
-          border-radius: 50%;
-        }
-      }
-
       .views-field-title {
         width: calc(100% - 220px);
       }
@@ -63,6 +54,15 @@
       .views-field-comment-count {
         text-align: right;
         width: 120px;
+      }
+    }
+
+    .views-field-user-picture {
+      width: 100px;
+
+      img {
+        border: 1px solid $gray2;
+        border-radius: 50%;
       }
     }
 
@@ -89,8 +89,8 @@
       &.row {
         .views-form {
           form {
-            .form-control {
-              + div {
+            .form-control { // sass-lint:disable-line nesting-depth
+              + div { // sass-lint:disable-line nesting-depth
                 &[id='edit-actions--2'] { // sass-lint:disable-line nesting-depth
                   @extend %none;
                 }

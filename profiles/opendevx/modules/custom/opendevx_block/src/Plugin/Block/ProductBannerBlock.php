@@ -105,12 +105,14 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
       if (!empty($banner)) {
         $banner_img = BlockUtility::generateMediaImage((int) $banner[0], 'banner');
       }
-      $title = $node->getTitle();
-      $description = $node_data['body'][0]['value'];
-      $max_description_length = 130;
-      if (strlen($description) > $max_description_length) {
-        $offset = ($max_description_length - 3) - strlen($description);
-        $description = substr($description, 0, strrpos($description, ' ', $offset)) . '...';
+      if ($node) {
+        $title = $node->getTitle();
+        $description = $node_data['body'][0]['value'];
+        $max_description_length = 130;
+        if (strlen($description) > $max_description_length) {
+          $offset = ($max_description_length - 3) - strlen($description);
+          $description = substr($description, 0, strrpos($description, ' ', $offset)) . '...';
+        }
       }
     }
 

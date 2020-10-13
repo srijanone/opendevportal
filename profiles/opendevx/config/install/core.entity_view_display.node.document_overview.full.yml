@@ -80,27 +80,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          5b0fe52c-341e-4f8c-80bf-93f4eeb04731:
-            uuid: 5b0fe52c-341e-4f8c-80bf-93f4eeb04731
-            region: right
-            configuration:
-              id: 'field_block:node:document_overview:field_api_detail_section'
-              label: 'Overview Section'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
           ca4a15fc-7a93-47a8-8b67-8eb0050c04ad:
             uuid: ca4a15fc-7a93-47a8-8b67-8eb0050c04ad
             region: right

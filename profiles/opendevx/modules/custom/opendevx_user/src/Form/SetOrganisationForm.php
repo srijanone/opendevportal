@@ -64,7 +64,7 @@ class SetOrganisationForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     if ($orgId = $form_state->getValue('organisation')) {
       // Set value.
-      $this->org->setOrgId($orgId);
+      $this->org->setProgramId($orgId);
       $roles = \Drupal::service('entity_type.manager')->getStorage('user_role')->loadMultiple();
 
       foreach ($roles as $role) {

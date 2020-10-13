@@ -1,3 +1,4 @@
+uuid: f0363b5e-f01c-410e-af17-8f026d32c80d
 langcode: en
 status: true
 dependencies:
@@ -9,9 +10,9 @@ id: node.api_product.field_api_specifications
 field_name: field_api_specifications
 entity_type: node
 bundle: api_product
-label: 'API Specifications'
-description: 'Reference field to <i>API Document</i>.'
-required: false
+label: APIs
+description: 'Reference field to <i>API</i>.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

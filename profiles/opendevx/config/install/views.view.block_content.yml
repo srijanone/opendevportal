@@ -555,6 +555,7 @@ display:
         header: false
         pager: false
         access: false
+        css_class: false
       path: dashboard/manage/blocks
       header:
         area:
@@ -596,6 +597,7 @@ display:
         options:
           role:
             admin: admin
+      css_class: view-organisations
     cache_metadata:
       max-age: -1
       contexts:

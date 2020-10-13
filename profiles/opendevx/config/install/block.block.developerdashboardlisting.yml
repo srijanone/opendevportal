@@ -12,7 +12,7 @@ dependencies:
 id: developerdashboardlisting
 theme: devportal
 region: content
-weight: -9
+weight: -6
 provider: null
 plugin: 'block_content:7f805e33-c0c8-4511-9c4a-196d7c3c8297'
 settings:

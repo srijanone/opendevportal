@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - domain
     - search
     - user
   theme:
@@ -23,8 +24,12 @@ visibility:
     id: user_role
     roles:
       anonymous: anonymous
-      administrator: administrator
-      admin: admin
+      authenticated: authenticated
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

@@ -10,15 +10,14 @@ dependencies:
     - image.style.product_image
     - image.style.profile_image
     - node.type.events
-    - taxonomy.vocabulary.organisation
   module:
     - address
     - better_exposed_filters
     - datetime
+    - group
     - link
     - media
     - node
-    - taxonomy
     - user
     - views_autocomplete_filters
 id: events
@@ -835,26 +834,29 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: views_autocomplete_filters_string
-        field_organisation_target_id:
-          id: field_organisation_target_id
-          table: node__field_organisation
-          field: field_organisation_target_id
-          relationship: none
+        gid:
+          id: gid
+          table: group_content_field_data
+          field: gid
+          relationship: group_content
           group_type: group
           admin_label: ''
-          operator: or
-          value: {  }
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: field_organisation_target_id_op
+            operator_id: gid_op
             label: Program
             description: ''
             use_operator: false
-            operator: field_organisation_target_id_op
+            operator: gid_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_organisation_target_id
+            identifier: gid
             required: false
             remember: false
             multiple: false
@@ -865,8 +867,9 @@ display:
               product_manager: '0'
               admin: '0'
               developer: '0'
-              organisation_admin: '0'
-            reduce: false
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -879,13 +882,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: organisation
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
+          entity_type: group_content
+          entity_field: gid
+          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:
@@ -1459,6 +1458,34 @@ display:
           admin_label: 'field_api_product: Content'
           required: false
           plugin_id: standard
+        group_content:
+          id: group_content
+          table: node_field_data
+          field: group_content
+          relationship: none
+          group_type: group
+          admin_label: 'Content group content'
+          required: false
+          group_content_plugins:
+            'group_node:events': 'group_node:events'
+            'group_node:api_document': '0'
+            'group_node:api_product': '0'
+            'group_node:apps': '0'
+            'group_node:article': '0'
+            'group_node:assets': '0'
+            'group_node:document_overview': '0'
+            'group_node:faq': '0'
+            'group_node:forum': '0'
+            'group_node:gateway': '0'
+            'group_node:issues': '0'
+            'group_node:listing_pages': '0'
+            'group_node:page': '0'
+            'group_node:resources': '0'
+            'group_node:solutions': '0'
+            'group_node:tutorials': '0'
+            'group_node:use_cases': '0'
+          entity_type: node
+          plugin_id: group_content_to_entity_reverse
       empty: {  }
     cache_metadata:
       max-age: -1
@@ -1469,7 +1496,6 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: protected
+label: 'Protected Program'
+description: 'Add a protected program.'
+creator_membership: false
+creator_wizard: false
+creator_roles: {  }

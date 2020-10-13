@@ -1,0 +1,25 @@
+uuid: 266e917e-8929-4b6a-88b5-9000cad87d12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_product
+    - node.type.faq
+id: node.faq.field_api_product
+field_name: field_api_product
+entity_type: node
+bundle: faq
+label: 'Api Product'
+description: 'Use this field to add a reference of API product to this content.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: api_product
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

@@ -1,10 +1,11 @@
 services:
+ opendevx_breadcrumb.breadcrumb_utility:
+   class: Drupal\opendevx_breadcrumb\Utility\BreadcrumbUtility
+   arguments: ['@path.current', '@request_stack', '@entity_type.manager', '@current_route_match', '@current_user', '@opendevx_user.organisation', '@entity.repository']
+
  opendevx_breadcrumb.breadcrumb:
-   class: Drupal\opendevx_breadcrumb\Breadcrumb\DevportalBreadcrumbBuilder
-   arguments: ['@path.current', '@request_stack', '@devportal.breadcrumb_utility']
+   class: Drupal\opendevx_breadcrumb\Breadcrumb\BreadcrumbBuilder
+   arguments: ['@path.current', '@request_stack', '@opendevx_breadcrumb.breadcrumb_utility']
    tags:
     - { name: breadcrumb_builder, priority: 1005 }
 
- devportal.breadcrumb_utility:
-   class: Drupal\opendevx_breadcrumb\Utility\BreadcrumbUtility
-   arguments: ['@path.current', '@request_stack', '@entity_type.manager', '@current_route_match']

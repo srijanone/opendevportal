@@ -313,9 +313,11 @@
       align-items: center;
       background-color: $gray;
       border-radius: 4px;
+      color: $black;
       display: flex;
       flex-direction: column;
       height: 100%;
+      padding-top: 0;
     }
 
     .field--name-field-image {
@@ -354,6 +356,8 @@
         @extend %custom-btn-submit;
         @include font(14, 500);
         background: none;
+        border: 1px solid $green;
+        color: $green;
         display: inline-block;
         text-decoration: none;
       }
@@ -378,7 +382,7 @@
 }
 
 //API programs section
-.block-developer-portal-organisation, .block-opendevx-organisation{
+.block-developer-portal-organisation {
   background-color: $blue;
   display: flex;
   flex-direction: column;

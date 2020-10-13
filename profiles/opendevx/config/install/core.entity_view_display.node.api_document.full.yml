@@ -5,6 +5,9 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.api_document.body
     - field.field.node.api_document.field_api_categories
+    - field.field.node.api_document.field_api_display
+    - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_apigwid
     - field.field.node.api_document.field_banners_image
     - field.field.node.api_document.field_document
     - field.field.node.api_document.field_format
@@ -66,8 +69,8 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          592cc518-2459-4cc2-a0bd-d352e01588c9:
-            uuid: 592cc518-2459-4cc2-a0bd-d352e01588c9
+          fff75577-2c82-4635-a1f9-251d4f50249c:
+            uuid: fff75577-2c82-4635-a1f9-251d4f50249c
             region: ds_content
             configuration:
               id: api_formatter_option_block
@@ -149,6 +152,9 @@ content:
     third_party_settings: {  }
 hidden:
   field_api_categories: true
+  field_api_display: true
+  field_api_type: true
+  field_apigwid: true
   field_banners_image: true
   field_format: true
   field_listing_image: true

@@ -171,27 +171,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -10
-          2288c8a7-e508-46e5-b793-1e1186b77aa2:
-            uuid: 2288c8a7-e508-46e5-b793-1e1186b77aa2
-            region: right
-            configuration:
-              id: 'field_block:node:use_cases:field_api_detail_section'
-              label: 'Use Cases Section'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
         third_party_settings: {  }
 id: node.use_cases.full
 targetEntityType: node

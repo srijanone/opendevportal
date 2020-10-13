@@ -9,8 +9,8 @@ dependencies:
     - devportal_admin
 id: devportal_admin_main_menu
 theme: devportal_admin
-region: header
-weight: -10
+region: primary_menu
+weight: -5
 provider: null
 plugin: 'system_menu_block:main'
 settings:

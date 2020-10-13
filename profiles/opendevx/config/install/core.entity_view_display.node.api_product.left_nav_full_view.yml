@@ -21,9 +21,13 @@ dependencies:
     - field.field.node.api_product.field_view_mode
     - field.field.node.api_product.layout_builder__layout
     - node.type.api_product
+  content:
+    - 'block_content:header_block:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
   module:
+    - block_content
     - comment
     - opendevx_block
+    - opendevx_navigation_block
     - opendevx_subscription
     - ds
     - entity_reference_revisions
@@ -51,23 +55,18 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          ad5d45b9-b585-42bd-be5c-a1cd51577573:
-            uuid: ad5d45b9-b585-42bd-be5c-a1cd51577573
+          bcd22625-9bb0-4996-be61-a71c06c02e73:
+            uuid: bcd22625-9bb0-4996-be61-a71c06c02e73
             region: ds_content
             configuration:
-              id: 'field_block:node:api_product:field_banners_image'
-              label: 'Banner Image'
-              provider: layout_builder
+              id: 'block_content:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
+              label: 'Product Banner Block'
+              provider: block_content
               label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              status: true
+              info: ''
+              view_mode: default
+              context_mapping: {  }
             additional: {  }
             weight: 0
         third_party_settings: {  }
@@ -170,8 +169,8 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -10
-          c31e6eb0-0417-4871-8627-e1cb90f131cd:
-            uuid: c31e6eb0-0417-4871-8627-e1cb90f131cd
+          d189cdd8-0fc9-4e34-a6b8-c3bb86f582e8:
+            uuid: d189cdd8-0fc9-4e34-a6b8-c3bb86f582e8
             region: left
             configuration:
               id: openapidevx_subscription_block
@@ -227,6 +226,70 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
+          738f05cc-7e00-40a0-89fa-5b36ac46c4d9:
+            uuid: 738f05cc-7e00-40a0-89fa-5b36ac46c4d9
+            region: left
+            configuration:
+              id: product_navigation_block
+              label: 'Product Navigation Block'
+              provider: opendevx_navigation_block
+              label_display: '0'
+              dvp_sidebar_navigation:
+                document_overview:
+                  navigation_text: 'Getting Started'
+                  show: '1'
+                  type: Page
+                api_document:
+                  navigation_text: 'API Reference'
+                  show: '1'
+                  type: API
+                tutorials:
+                  navigation_text: Tutorials
+                  show: '1'
+                  type: Tutorial
+                use_cases:
+                  navigation_text: 'Use Cases'
+                  show: '1'
+                  type: 'Use case'
+                faq:
+                  navigation_text: FAQs
+                  show: '1'
+                  type: FAQ
+                resources:
+                  navigation_text: Downloads
+                  show: '1'
+                  type: Resource
+                assets:
+                  navigation_text: Media
+                  show: '1'
+                  type: Assets
+                events:
+                  navigation_text: Events
+                  show: '1'
+                  type: Event
+                article:
+                  navigation_text: Blogs
+                  show: '1'
+                  type: Blog
+                issues:
+                  navigation_text: Issues
+                  show: '1'
+                  type: Issue
+                solutions:
+                  navigation_text: Solutions
+                  show: '1'
+                  type: Solution
+                forum:
+                  navigation_text: ''
+                  show: '0'
+                  type: 'Forum topic'
+                apps:
+                  navigation_text: Application
+                  show: '0'
+                  type: Application
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
           8246f825-5ace-4e88-bef4-27235fa75d3a:
             uuid: 8246f825-5ace-4e88-bef4-27235fa75d3a
             region: right

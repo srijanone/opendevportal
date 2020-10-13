@@ -10,12 +10,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\opendevx_user\Organisation;
 
 /**
- * Provides a 'User Organisation' Block.
+ * Provides a 'User Program' Block.
  *
  * @Block(
  *   id = "user_organisation_block",
- *   admin_label = @Translation("User Organisation Block"),
- *   category = @Translation("User Organisation Block"),
+ *   admin_label = @Translation("User Program Block"),
+ *   category = @Translation("User Program Block"),
  * )
  */
 class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginInterface {
@@ -53,7 +53,7 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('opendevx_user.organisation')
+      $container->get('opendevx_user.organisation'),
     );
   }
 
@@ -61,20 +61,27 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
    * {@inheritdoc}
    */
   public function build() {
-    $org_id = $current_organisation = $title = $description = '';
+    $current_program = $title = $description = '';
     $config = $this->getConfiguration();
     $data = $this->org->getUserOrganisations();
-    $title = $config['organisation_title'];
-    $description = strip_tags($config['organisation_description']);
-    $org_id = $this->org->getOrgId();
-    $current_organisation = $data[$org_id]['orgName'];
+    $title = $config['program_title'];
+    $description = strip_tags($config['program_description']);
+    $program_service = \Drupal::service('opendevx_user.organisation');
+    $program_id = $program_service->getOrgId() ?: 0;
+    $user_roles = \Drupal::service('tempstore.private')->get('opendevx_user')->get('user_programs');
+    $program_ids = array_keys($user_roles);
+    $non_member = array_diff(array_keys($data), $program_ids);
+    foreach ($non_member as $value) {
+      unset($data[$value]);
+    }
+    $current_program = $data[$program_id]['orgName'];
 
     return [
       '#theme' => 'user_organisation',
       '#orgData' => $data,
       '#orgTitle' => $title,
       '#orgDescription' => $description,
-      '#currentOrganisation' => $current_organisation,
+      '#currentOrganisation' => $current_program,
     ];
   }
 
@@ -84,16 +91,16 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
   public function blockForm($form, FormStateInterface $form_state) {
     $form = parent::blockForm($form, $form_state);
     $config = $this->getConfiguration();
-    $form['organisation_title'] = [
+    $form['program_title'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Display Title'),
-      '#default_value' => $config['organisation_title'],
+      '#default_value' => $config['program_title'],
     ];
-    $form['organisation_description'] = [
+    $form['program_description'] = [
       '#type' => 'text_format',
       '#title' => $this->t('Description'),
       '#format'=> 'full_html',
-      '#default_value' => $config['organisation_description'],
+      '#default_value' => $config['program_description'],
     ];
     return $form;
   }
@@ -102,9 +109,9 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    // Setting value for organisations fields.
-    $this->setConfigurationValue('organisation_title', $form_state->getValue('organisation_title'));
-    $this->setConfigurationValue('organisation_description', $form_state->getValue('organisation_description')['value']);
+    // Setting value for Program fields.
+    $this->setConfigurationValue('program_title', $form_state->getValue('program_title'));
+    $this->setConfigurationValue('program_description', $form_state->getValue('program_description')['value']);
   }
 
   /**

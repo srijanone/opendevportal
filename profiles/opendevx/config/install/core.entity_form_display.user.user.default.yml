@@ -9,7 +9,6 @@ dependencies:
     - field.field.user.user.field_job_role
     - field.field.user.user.field_job_title
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_organisation
     - field.field.user.user.field_phone_no_
     - field.field.user.user.field_seniority_level
     - field.field.user.user.field_social_profile
@@ -82,16 +81,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_organisation:
-    type: entity_reference_autocomplete
-    weight: 12
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_phone_no_:
     weight: 10
     settings:

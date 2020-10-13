@@ -4,6 +4,9 @@ dependencies:
   config:
     - field.field.node.api_document.body
     - field.field.node.api_document.field_api_categories
+    - field.field.node.api_document.field_api_display
+    - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_apigwid
     - field.field.node.api_document.field_banners_image
     - field.field.node.api_document.field_document
     - field.field.node.api_document.field_format
@@ -156,6 +159,52 @@ third_party_settings:
                 type: entity_reference_label
             additional: {  }
             weight: 7
+          853bccd2-f323-4ecd-ac5d-85dc8445e435:
+            uuid: 853bccd2-f323-4ecd-ac5d-85dc8445e435
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_document:field_apigwid'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 8
+          815c0d8a-a9dd-4456-826f-a4bc2acac596:
+            uuid: 815c0d8a-a9dd-4456-826f-a4bc2acac596
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_document:field_api_type'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 9
+          554c9258-92ff-433d-b02d-c11691c41f0d:
+            uuid: 554c9258-92ff-433d-b02d-c11691c41f0d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_document:field_api_display'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 10
         third_party_settings: {  }
 id: node.api_document.default
 targetEntityType: node
@@ -181,6 +230,28 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_api_display:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_api_type:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_apigwid:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_banners_image:
     weight: 7

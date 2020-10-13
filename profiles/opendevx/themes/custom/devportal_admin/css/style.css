@@ -16,7 +16,7 @@
 .adminimal .page-title,
 .adminimal .heading-a {
   color: #333;
-  font-size: 2.35em;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.2em;
   margin-bottom: 1rem;
@@ -160,7 +160,7 @@
 }
 
 .adminimal .is-horizontal .tabs.primary .tabs__tab:first-child.is-active {
-  box-shadow: -0.5rem 0px 0 #fff;
+  box-shadow: -0.5rem 0 0 #fff;
 }
 
 .adminimal .is-horizontal ul.tabs.secondary li:first-of-type {
@@ -1249,7 +1249,7 @@ input[type=radio]:disabled:hover {
 .node-forum-form.developer-form .layout-region-node-secondary,
 .node-forum-form.developer-form .layout-region-node-footer,
 .center-form .block-block-devportal-admin-page-title {
-    margin: 0 auto;
+  margin: 0 auto;
   max-width: 60%;
   width: 60%;
   padding-right: 0;
@@ -1303,7 +1303,7 @@ input[type=radio]:disabled:hover {
 
 .adminimal div aside { 
   flex: 0 0 20%;
-  order: 2;
+  order: 1;
 }
 
 .adminimal .layout-main-wrapper aside {
@@ -1316,7 +1316,7 @@ input[type=radio]:disabled:hover {
 }
 
 .adminimal .layout-main-wrapper aside h2 {
-  font-size: 1.57143rem;
+  font-size: 1.2rem;
   font-weight: bold;
   border: 0;
   color: #333;
@@ -1327,6 +1327,10 @@ input[type=radio]:disabled:hover {
   content: '\f0c9';
   font-family: 'FontAwesome', 'Font Awesome 5 Free';
   margin-right: 15px;
+}
+
+.adminimal .layout-main-wrapper aside .menu-item--expanded>a {
+  pointer-events: none;
 }
 
 .adminimal .layout-main-wrapper aside .menu-item--expanded>a::after {
@@ -1353,21 +1357,57 @@ input[type=radio]:disabled:hover {
   font-size: 14px;
 }
 
+/*edit form*/
+.adminimal .button--danger {
+  font-weight: bold;
+}
+
+.adminimal .button--primary + .button--danger {
+  margin: 10px 0;
+}
+
+.adminimal .button--danger:hover { 
+  padding: 6px 10px !important;
+  text-decoration: none;
+}
+
+.adminimal .layout-main-wrapper aside .menu li {
+  margin-bottom: 3%;
+}
+
+.adminimal .layout-main-wrapper aside .menu .menu-item--collapsed a {
+  color:#333;
+  font-size: 14px;
+  margin-left: 6%;
+}
+
+.adminimal .layout-main-wrapper aside .menu-item--active-trail .is-active {
+  font-weight: bold;
+}
+
+.adminimal .layout-main-wrapper aside .menu-item--active-trail .is-active::before {
+  background: #384e86;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 6px;
+}
+
 @media only screen and (max-width: 768px) {
   .adminimal .layout-main-wrapper div {
     width: 100%;
   }
   .adminimal .layout-main-wrapper aside {
     height: 100%;
+    position: unset;
+    min-width: 100%;
   }
-}
-
-/*edit form*/
-.adminimal .button--danger {
-  font-weight: bold;
-}
-
-.adminimal .button--danger:hover { 
-  padding: 6px 10px !important;
-  text-decoration: none;
+  .adminimal .layout-main-wrapper aside .menu-item--active-trail .is-active::before {
+    display: none;
+  }
+  .adminimal .form-wrapper input[type="submit"] {
+    width: auto;
+  }
 }

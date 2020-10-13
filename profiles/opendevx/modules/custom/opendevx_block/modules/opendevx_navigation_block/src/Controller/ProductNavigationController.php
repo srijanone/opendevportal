@@ -68,7 +68,7 @@ class ProductNavigationController extends ControllerBase {
     $output = !empty($index_content) ?
     $index_content : $this->currentPath->getCurrentRequest()->headers->get('referer');
     $response = new RedirectResponse($output);
-    
+
     return $response;
   }
 

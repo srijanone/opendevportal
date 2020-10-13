@@ -111,7 +111,7 @@ class CtaBlock extends BlockBase implements ContainerFactoryPluginInterface {
         $value['cta_label'] : '',
       ];
     }
-    
+
     return $form;
   }
 
@@ -142,7 +142,7 @@ class CtaBlock extends BlockBase implements ContainerFactoryPluginInterface {
       }
       $i++;
     }
-    
+
     return [
       '#theme' => 'cta_section_block',
       '#ctaData' => $data,

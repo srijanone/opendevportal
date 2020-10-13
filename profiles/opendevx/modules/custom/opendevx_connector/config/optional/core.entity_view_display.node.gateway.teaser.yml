@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gateway.field_hub_content_id
+    - node.type.gateway
+  module:
+    - text
+id: node.gateway.teaser
+targetEntityType: node
+bundle: gateway
+mode: teaser
+hidden:
+  field_hub_content_id: true

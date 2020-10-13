@@ -40,12 +40,10 @@ class ListingBlockUtility {
       $view->setHandler('content_listing_block_display', 'footer', 'area_text_custom', $options);
     }
     $view->execute();
-    $view_result = $view->result;
-    if ($view_result) {
+    if ($view->result) {
       $content = $view->buildRenderable($display);
+      return [$content];
     }
-
-    return [$content];
   }
 
   /**

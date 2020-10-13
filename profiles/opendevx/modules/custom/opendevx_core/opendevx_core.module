@@ -1,0 +1,61 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Database\Query\AlterableInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function opendevx_core_views_data_alter(&$data) {
+  // Base data and other field definitions.
+  $data['node']['domain_filter'] = [
+    'title' => t('Program Domain'),
+    'filter' => [
+      'title' => t('Program Domain'),
+      'help' => 'filters nodes on current domain',
+      'field' => 'nid',
+      'id' => 'program_domain_filter',
+    ],
+  ];
+  $data['groups_field_data']['program_id'] = [
+    'title' => t('Program id filter'),
+    'filter' => [
+      'title' => t('Program id filter'),
+      'help' => 'Program filter on current domain',
+      'field' => 'nid',
+      'id' => 'program_id_filter',
+    ],
+  ];
+  return $data;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function opendevx_core_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $view = $form_state->getStorage('view');
+  $views_id = [
+    'product_listing',
+    'use_cases_listing',
+    'app_gallery',
+  ];
+  if (in_array($view['view']->id(), $views_id) && \Drupal::service('opendevx_core.program_domain')->getProgramDomainId()) {
+    $form['gid']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_query_TAG_alter(): tag search_$type with $type node_search.
+ */
+function opendevx_core_query_search_node_search_alter(AlterableInterface $query) {
+  $program_id = \Drupal::service('opendevx_user.organisation')->getOrgId();
+ if (\Drupal::service('opendevx_core.program_domain')->getProgramDomainId()) {
+    $program_id = \Drupal::service('opendevx_core.program_domain')->getProgramDomainId();
+  }
+
+  if ($program_id) {
+    $query->join('group_content_field_data', 'gcfd', 'n.nid = gcfd.entity_id');
+    $query->condition('gcfd.gid', $program_id);
+  }
+
+}

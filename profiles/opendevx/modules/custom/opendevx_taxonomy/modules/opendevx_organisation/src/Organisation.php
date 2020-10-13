@@ -2,8 +2,9 @@
 
 namespace Drupal\opendevx_organisation;
 
-use Drupal\Core\Session\AccountInterface;
+use Drupal\views\Views;
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\opendevx_organisation\Utility\OrganisationUtility;
 
@@ -45,36 +46,43 @@ class Organisation {
    */
   public function getOrganisationsData() {
     try {
-      $query = $this->connection->select('taxonomy_term_field_data', 'ttfd');
-      $query->fields('ttfd', ['tid', 'name']);
-      $query->addJoin('left', 'taxonomy_term__field_organisation_images',
-      'ttfi', 'ttfi.entity_id = ttfd.tid');
-      $query->addJoin('left', 'media__field_media_image', 'mfm',
-      'mfm.entity_id = ttfi.field_organisation_images_target_id');
-      $query->addJoin('left', 'file_managed', 'fm',
-      'fm.fid = mfm.field_media_image_target_id');
-      $query->addJoin('left', 'taxonomy_term__field_organisation_page', 'ttfp',
-      'ttfp.entity_id = ttfd.tid');
-      $query->addField('fm', 'uri', 'image_uri');
-      $query->addField('ttfp', 'field_organisation_page_target_id', 'pid');
-      $query->condition('ttfd.vid', 'organisation', '=');
-      $result = $query->distinct()->execute()->fetchAll();
-      if (!empty($result)) {
+      $view = Views::getView("programs");
+      if ($view) {
+        $view->setDisplay("featured_program");
+        $view->execute();
         $organisation = [];
-        foreach ($result as $value) {
-          $organisation[$value->tid]['orgId'] = $value->tid;
-          $organisation[$value->tid]['orgImage'] = !empty($value->image_uri) ?
-          OrganisationUtility::generateOrganisationImage($value->image_uri) : "";
-          $organisation[$value->tid]['orgName'] = $value->name;
-          $organisation[$value->tid]['orgPath'] = !empty($value->tid) ?
-          "/dashboard/save-organisation/$value->tid" : "#";
+        foreach ($view->result as $key => $value) {
+          $group_node = $value->_entity;
+          $gid = $group_node->get('id')->value;
+          $organisation[$gid]['orgId'] = $gid;
+          $organisation[$gid]['orgName'] = $group_node->get('label')->value;
+          if (!empty($group_node->get('field_program_image'))) {
+            $image = $group_node->get('field_program_image')->getValue();
+            if ($image[0]) {
+              $data = !empty($image[0]['target_id']) ? OrganisationUtility::getImageUri($image[0]['target_id']) : "";
+            }
+            $organisation[$gid]['orgImage'] = !empty($data) ?
+            OrganisationUtility::generateOrganisationImage($data) : "";
+          }
+          $organisation[$gid]['orgPath'] = !empty($gid) ?
+          "/dashboard/save-program/$gid" : "#";
+
+          $organisation[$gid]['programUrl'] = \Drupal::service('path.alias_manager')->getAliasByPath("/group/$gid");
+          $group_domain = \Drupal::entityTypeManager()->getStorage('domain')->load('group_' . $gid);
+          if ($group_domain) {
+            $organisation[$gid]['programUrl'] = $group_domain->getPath();
+          }
         }
 
+        if ($program_id = \Drupal::service('opendevx_core.program_domain')->getProgramDomainId()) {
+            $program[$program_id]  = $organisation[$program_id];
+           return $program;
+        }
         return $organisation;
       }
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-organisation');
+      $logger = $this->getLogger('opendevx_organisation');
       $logger->error($e->getMessage());
     }
   }
@@ -129,7 +137,7 @@ class Organisation {
       }
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-organisation');
+      $logger = $this->getLogger('opendevx_organisation');
       $logger->error($e->getMessage());
     }
   }

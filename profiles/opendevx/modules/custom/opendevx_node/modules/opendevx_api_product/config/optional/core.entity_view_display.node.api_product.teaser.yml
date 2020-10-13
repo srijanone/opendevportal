@@ -1,3 +1,4 @@
+uuid: 02827c2e-0179-4405-bf01-08218538fbe0
 langcode: en
 status: false
 dependencies:
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.api_product.field_organisation
     - field.field.node.api_product.field_products_image
     - field.field.node.api_product.field_user_rating
+    - field.field.node.api_product.field_view_mode
     - field.field.node.api_product.layout_builder__layout
     - node.type.api_product
   module:
@@ -43,7 +45,9 @@ hidden:
   field_banners_image: true
   field_event: true
   field_organisation: true
+  field_product_attributes: true
   field_products_image: true
   field_resource: true
   field_user_rating: true
+  field_view_mode: true
   layout_builder__layout: true

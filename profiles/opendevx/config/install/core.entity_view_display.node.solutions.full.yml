@@ -81,27 +81,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          71ed34c2-7555-41b4-abb7-7a391d394aba:
-            uuid: 71ed34c2-7555-41b4-abb7-7a391d394aba
-            region: right
-            configuration:
-              id: 'field_block:node:solutions:field_api_detail_section'
-              label: 'Solutions Section'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
           a439cabc-9375-47cf-b083-d11e74048d66:
             uuid: a439cabc-9375-47cf-b083-d11e74048d66
             region: right

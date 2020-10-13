@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for Login And Logout Redirect Per Role module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function opendevx_login_redirect_install() {
+  opendevx_login_redirect_update_8001();
+}
+
+/**
+ * Set big weight to be sure that module hooks will be called the last.
+ */
+function opendevx_login_redirect_update_8001() {
+  module_set_weight('opendevx_login_redirect', 1000);
+}

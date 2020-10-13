@@ -1,0 +1,11 @@
+opendevx_login_redirect.login_redirect_settings:
+  title: 'Login Redirect Settings'
+  route_name: opendevx_login_redirect.login_redirect_settings
+  description: 'Redirect user as per role menu after login'
+  parent: opendevx_node.admin_index
+
+opendevx_login_redirect.logout_redirect_settings:
+  title: 'Logout Redirect Settings'
+  route_name: opendevx_login_redirect.logout_redirect_settings
+  description: 'Redirect user as per role menu after logout'
+  parent: opendevx_node.admin_index

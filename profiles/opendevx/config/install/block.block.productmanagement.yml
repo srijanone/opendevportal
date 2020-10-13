@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.product-management
+  module:
+    - domain
+    - system
+  theme:
+    - devportal
+id: productmanagement
+theme: devportal
+region: primary_menu
+weight: -19
+provider: null
+plugin: 'system_menu_block:product-management'
+settings:
+  id: 'system_menu_block:product-management'
+  label: 'Product Management'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/dashboard/*/products\r\n/dashboard/*/apimanager/apps\r\n/dashboard/*/apimanager/proxies\r\n/dashboard/*/apimanager/users\r\n/dashboard/*/program\r\n/dashboard/*/contents/*"
+    negate: false
+    context_mapping: {  }

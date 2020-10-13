@@ -1,0 +1,10 @@
+services:
+  opendevx_core.program_domain_subscriber:
+    class: Drupal\opendevx_core\EventSubscriber\Program\ProgramDomainSubscriber
+    arguments: ['@tempstore.private', '@domain.negotiator', '@entity_type.manager', '@opendevx_core.program_domain']
+    tags:
+      - { name: event_subscriber }
+
+  opendevx_core.program_domain:
+    class: Drupal\opendevx_core\Program\ProgramDomain
+    arguments: ['@tempstore.private']

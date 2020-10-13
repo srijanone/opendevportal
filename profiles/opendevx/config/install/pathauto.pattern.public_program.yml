@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - group
+id: public_program
+label: 'Public Program'
+type: 'canonical_entities:group'
+pattern: 'program/[group:title]'
+selection_criteria:
+  87f93ef6-e8cf-4543-b6ba-a16005d2efd4:
+    id: 'entity_bundle:group'
+    bundles:
+      public: public
+    negate: false
+    context_mapping:
+      group: group
+    uuid: 87f93ef6-e8cf-4543-b6ba-a16005d2efd4
+selection_logic: and
+weight: -5
+relationships: {  }

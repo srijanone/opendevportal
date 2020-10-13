@@ -7,15 +7,18 @@ use Drupal\views\Views;
 use Drupal\Core\Url;
 use Drupal\Core\Path\CurrentPathStack;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
+use Drupal\opendevx_breadcrumb\BreadcrumbInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\opendevx_user\Organisation as Program;
+use Drupal\Core\Entity\EntityRepositoryInterface;
 
 /**
  * Class to extend and provide the features of customizing breadcrumbs.
  */
-class BreadcrumbUtility implements ContainerInjectionInterface {
+class BreadcrumbUtility {
+
   /**
    * The entity type manager.
    *
@@ -28,13 +31,15 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
    *
    * @var \Drupal\Core\Path\CurrentPathStack
    */
-  protected $pathCurrent;
+  protected $currentPath;
+
   /**
    * The request stack.
    *
    * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $requestStack;
+
   /**
    * The access manager service.
    *
@@ -47,7 +52,28 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
    *
    * @var node
    */
-  protected $node = '';
+  protected $node = NULL;
+
+  /**
+   * The current user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $currentUser;
+
+  /**
+   * Program Service.
+   *
+   * @var Drupal\opendevx_user\Organisation
+   */
+  protected $programService;
+
+  /**
+   * The entity repository.
+   *
+   * @var \Drupal\Core\Entity\EntityRepositoryInterface
+   */
+  protected $entityRepository;
 
   /**
    * Constructor function.
@@ -60,27 +86,27 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
    *   The Entity object.
    * @param \Drupal\Core\Routing\CurrentRouteMatch $route_match
    *   The crruent route match stack.
+   * @param \Drupal\Core\Session\AccountInterface $current_user
+   *   The current user.
+   * @param Drupal\opendevx_user\Organisation $program_service
+   *   Program service.
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository.
    */
   public function __construct(CurrentPathStack $current_path,
    RequestStack $request_stack,
    EntityTypeManagerInterface $entity_type_manager,
-   CurrentRouteMatch $route_match) {
-    $this->pathCurrent = $current_path;
+   CurrentRouteMatch $route_match,
+   AccountInterface $current_user,
+   Program $program_service,
+   EntityRepositoryInterface $entity_repository) {
+    $this->currentPath = $current_path;
     $this->requestStack = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
     $this->routeMatch = $route_match;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('request_stack'),
-      $container->get('path.current'),
-      $container->get('entity_type.manager'),
-      $container->get('current_route_match')
-    );
+    $this->currentUser = $current_user;
+    $this->programService = $program_service;
+    $this->entityRepository = $entity_repository;
   }
 
   /**
@@ -104,15 +130,12 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
    * Set node by path.
    */
   public function setNodeByPath() {
-    $current_path = $this->pathCurrent->getPath();
-    $index = explode('/', $current_path);
+    $index = explode('/', $this->currentPath->getPath());
     if (!isset($index[2])) {
       $this->setNode('');
       return;
     }
-    $nid = $index[2];
-    $node_storage = $this->entityTypeManager->getStorage('node');
-    $node = $node_storage->load($nid);
+    $node = $this->entityTypeManager->getStorage('node')->load($index[2]);
     $this->setNode($node);
   }
 
@@ -167,15 +190,32 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
     // Add cache context for view.
     $breadcrumb->addCacheContexts(["url"]);
     $breadcrumb->addCacheTags(["view_id:{$parameters['view_id']}"]);
-    $view_id = $parameters['view_id'];
-    $displayName = $this->getViewTitle($view_id, $parameters['display_id']);
-    if ($view_id == 'proxies_listing') {
-      $breadcrumb->addLink(Link::createFromRoute('APIs Platform', '<nolink>'));
+    // Check view for breadcrumb.
+    if (in_array($parameters['view_id'], BreadcrumbInterface::BREADCRUMB_VIEW_ID)) {
+      $path_info = $this->requestStack->getCurrentRequest()->getPathInfo();
+      if (in_array('admin', $this->currentUser->getRoles(TRUE))) {
+        $menu_breadcrumb = $this->getParentMenuInfo(BreadcrumbInterface::SITEADMIN_MENU_NAME, $path_info);
+      }
+      elseif ($this->programService->checkAccess(TRUE)) {
+        $path_info_data = explode('/', $path_info);
+        $path_info_data[2] = '[program:program_id]';
+        $path_info = implode($path_info_data, '/');
+        $menu_breadcrumb = $this->getParentMenuInfo(BreadcrumbInterface::PRODUCT_MANAGER_MENU_NAME, $path_info);
+      }
+      else {
+        $menu_breadcrumb = $this->getParentMenuInfo(BreadcrumbInterface::DEVELOPER_MENU_NAME, $path_info);
+      }
+      if ($menu_breadcrumb && !empty($menu_breadcrumb['parent_name'])) {
+        $breadcrumb->addLink(Link::createFromRoute($menu_breadcrumb['parent_name'], '<nolink>'));
+      }
     }
-    elseif ($view_id == 'organisation_users') {
-      $breadcrumb->addLink(Link::createFromRoute('Programs Operations', '<nolink>'));
+
+    $breadcrumb->addLink(Link::createFromRoute($this->getViewTitle($parameters['view_id'], $parameters['display_id']), '<nolink>'));
+    if ($this->programService->checkAccess(TRUE) && $path_info_data[3] == 'contents' &&
+      !empty($path_info_data[4])) {
+      $breadcrumb->addLink(Link::createFromRoute(BreadcrumbInterface::CONTENT_TYPE_NAME_MAPPING[$path_info_data[4]], '<nolink>'));
     }
-    $breadcrumb->addLink(Link::createFromRoute($displayName, '<nolink>'));
+
     return $breadcrumb;
   }
 
@@ -191,25 +231,9 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
    *   Return breadcrumb object.
    */
   public function getNodeBreadcrumb($breadcrumb, array $parameters) {
-    $content_types = [
-      'apps' => 'Applications',
-      'article' => 'Blogs',
-      'assets' => 'Media',
-      'document_overview' => 'Page',
-      'events' => 'Events',
-      'faq' => 'Faqs',
-      'forum' => 'Forums',
-      'issues' => 'Issues',
-      'resources' => 'Resources',
-      'solutions' => 'Solutions',
-      'tutorials' => 'Tutorials',
-      'use_cases' => 'Use Cases',
-      'api_document' => 'API',
-    ];
     $node = isset($parameters['node']) ? $parameters['node'] : $this->getNode();
     $node_type = $node->bundle();
-    $current_path = $this->pathCurrent->getPath();
-    $path_index = explode('/', $current_path);
+    $path_index = explode('/', $this->currentPath->getPath());
     $breadcrumb->addLink(Link::fromTextAndUrl('Products', Url::fromUri('base:products')));
     // Check if the bundle is not a Landing Page.
     if ($node_type != 'listing_pages') {
@@ -218,11 +242,11 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
         $node_storage = $this->entityTypeManager->getStorage('node');
         $product_node = $node_storage->load($params);
         $breadcrumb->addLink(Link::fromTextAndUrl($product_node->getTitle(), Url::fromRoute('entity.node.canonical', ['node' => (int) $params])));
-        $breadcrumb->addLink(Link::fromTextAndUrl($content_types[$node_type], Url::fromUri('base:/node/' . $params . '/' . $node_type)));
+        $breadcrumb->addLink(Link::fromTextAndUrl(BreadcrumbInterface::CONTENT_TYPE_NAME_MAPPING[$node_type], Url::fromUri('base:/node/' . $params . '/' . $node_type)));
       }
       if (!empty($path_index[3])) {
         $breadcrumb->addLink(Link::fromTextAndUrl($node->getTitle(), Url::fromRoute('entity.node.canonical', ['node' => (int) $path_index[2]])));
-        $breadcrumb->addLink(Link::createFromRoute($content_types[$path_index[3]], '<nolink>'));
+        $breadcrumb->addLink(Link::createFromRoute(BreadcrumbInterface::CONTENT_TYPE_NAME_MAPPING[$path_index[3]], '<nolink>'));
       }
       else {
         $breadcrumb->addLink(Link::createFromRoute($node->getTitle(), '<nolink>'));
@@ -231,6 +255,31 @@ class BreadcrumbUtility implements ContainerInjectionInterface {
     $breadcrumb->addCacheContexts(['route']);
 
     return $breadcrumb;
+  }
+
+  /**
+   * Get the breadcrumb for node.
+   *
+   * @param string $menu_name
+   *   Menu name.
+   * @param string $path_info
+   *   Path info.
+   *
+   * @return array
+   *   Return menu parent name
+   */
+  public function getParentMenuInfo($menu_name, $path_info) {
+    $menu_links = $this->entityTypeManager->getStorage('menu_link_content')->loadByProperties(['menu_name' => $menu_name]);
+    foreach ($menu_links as $mlid => $menu_link) {
+      if ('internal:' . $path_info == $menu_link->link->uri && $menu_link->parent->value) {
+        $parent_menu_info = $this->entityRepository->loadEntityByUuid('menu_link_content', explode(':', $menu_link->parent->value)[1]);
+        if ($parent_menu_info) {
+          $link['parent_name'] = $parent_menu_info->getTitle();
+        }
+      }
+    }
+
+    return $link ?? [];
   }
 
 }

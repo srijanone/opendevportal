@@ -1,0 +1,9 @@
+opendevx_login_redirect.login_redirect_settings:
+  route_name: opendevx_login_redirect.login_redirect_settings
+  title: 'Login Redirect Settings'
+  base_route: opendevx_login_redirect.login_redirect_settings
+
+opendevx_login_redirect.logout_redirect_settings:
+  route_name: opendevx_login_redirect.logout_redirect_settings
+  title: 'Logout Redirect Settings'
+  base_route: opendevx_login_redirect.login_redirect_settings

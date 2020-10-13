@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public
+id: public-anonymous
+label: Anonymous
+weight: -102
+internal: true
+audience: anonymous
+group_type: public
+permissions_ui: true
+permissions:
+  - 'view group'
+  - 'view group_node:api_document content'
+  - 'view group_node:api_document entity'
+  - 'view group_node:api_product content'
+  - 'view group_node:api_product entity'
+  - 'view group_node:article content'
+  - 'view group_node:article entity'
+  - 'view group_node:assets content'
+  - 'view group_node:assets entity'
+  - 'view group_node:events content'
+  - 'view group_node:events entity'
+  - 'view group_node:faq content'
+  - 'view group_node:faq entity'
+  - 'view group_node:forum content'
+  - 'view group_node:forum entity'
+  - 'view group_node:issues content'
+  - 'view group_node:issues entity'
+  - 'view group_node:listing_pages content'
+  - 'view group_node:listing_pages entity'
+  - 'view group_node:resources content'
+  - 'view group_node:resources entity'
+  - 'view group_node:solutions content'
+  - 'view group_node:solutions entity'
+  - 'view group_node:tutorials content'
+  - 'view group_node:tutorials entity'
+  - 'view group_node:use_cases content'
+  - 'view group_node:use_cases entity'

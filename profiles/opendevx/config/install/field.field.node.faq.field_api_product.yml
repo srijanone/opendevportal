@@ -18,7 +18,7 @@ settings:
   handler: views
   handler_settings:
     view:
-      view_name: api_product
-      display_name: entity_reference_1
+      view_name: api_doc_entityreference
+      display_name: entity_reference_2
       arguments: {  }
 field_type: entity_reference

@@ -63,7 +63,7 @@ class FrontOrganisationBlock extends BlockBase implements ContainerFactoryPlugin
    * {@inheritdoc}
    */
   public function build() {
-    $data = $this->org->getOrganisationsDataByAccess();
+    $data = $this->org->getOrganisationsData();
     return [
       '#theme' => 'front_organisation',
       '#data' => $data,

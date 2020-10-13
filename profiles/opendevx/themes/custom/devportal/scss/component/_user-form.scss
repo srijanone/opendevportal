@@ -319,13 +319,17 @@
         position: unset !important; // sass-lint:disable-line no-important
         top: unset; // sass-lint:disable-line no-important
       }
-      left: 118px !important; // sass-lint:disable-line no-important
+      left: 121px !important; // sass-lint:disable-line no-important
       position: absolute !important; // sass-lint:disable-line no-important
-      top: 237px; // sass-lint:disable-line no-important
+      top: 383px; // sass-lint:disable-line no-important
     }
 
     .field {
       padding-bottom: 5px !important; // sass-lint:disable-line no-important
+
+      a {
+        background: transparent !important; // sass-lint:disable-line no-important
+      }
 
       .field__item {
         display: block !important; // sass-lint:disable-line no-important
@@ -337,14 +341,6 @@
           padding: 0 !important; // sass-lint:disable-line no-important
         }
       }
-    }
-  }
-}
-
-.role-developer {
-  .profile {
-    .block-extra-field-blockuserusermember-for {
-      top: 360px;
     }
   }
 }

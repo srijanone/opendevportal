@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_application
+    - node.type.apps
     - node.type.issues
 id: node.issues.field_application
 field_name: field_application
@@ -15,10 +16,12 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: views
+  handler: 'default:node'
   handler_settings:
-    view:
-      view_name: api_doc_entityreference
-      display_name: entity_reference_1
-      arguments: {  }
+    target_bundles:
+      apps: apps
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

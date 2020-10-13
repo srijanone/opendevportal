@@ -1,0 +1,60 @@
+login:
+  system_roles:
+    administrator:
+      redirect_url: ''
+      weight: '-10'
+      allow_destination: 0
+      replace_pattern: 0
+    admin:
+      redirect_url: /dashboard/manage/program
+      weight: '-9'
+      allow_destination: 0
+      replace_pattern: 0
+    authenticated:
+      redirect_url: ''
+      weight: '-8'
+      allow_destination: 0
+      replace_pattern: 0
+    product_manager:
+      redirect_url: ''
+      weight: '-7'
+      allow_destination: 0
+      replace_pattern: 0
+    developer:
+      redirect_url: ''
+      weight: '-6'
+      allow_destination: 0
+      replace_pattern: 0
+  private:
+    private-product_manager:
+      redirect_url: /dashboard/%group/products
+      replace_pattern: '1'
+      weight: '-10'
+      allow_destination: 0
+    private-developer:
+      redirect_url: /dashboard
+      weight: '-9'
+      allow_destination: 0
+      replace_pattern: 0
+  protected:
+    protected-product_manager:
+      redirect_url: /dashboard/%group/products
+      replace_pattern: '1'
+      weight: '-10'
+      allow_destination: 0
+    protected-developer:
+      redirect_url: /dashboard/
+      weight: '-9'
+      allow_destination: 0
+      replace_pattern: 0
+  public:
+    public-product_manager:
+      redirect_url: /dashboard/%group/products
+      replace_pattern: '1'
+      weight: '-10'
+      allow_destination: 0
+    public-developer:
+      redirect_url: /dashboard
+      weight: '-9'
+      allow_destination: 0
+      replace_pattern: 0

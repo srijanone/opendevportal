@@ -6,8 +6,8 @@
  */
 
 use Drupal\views\ViewExecutable;
-use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
 
 /**
  * @file
@@ -28,31 +28,6 @@ function opendevx_user_theme() {
       ],
     ],
   ];
-}
-
-/**
- * Implements hook_user_login().
- */
-function opendevx_user_user_login($account) {
-  $roles = $account->getRoles();
-  // Check product manager role for variable set.
-  if (in_array('product_manager', $roles)) {
-    $organisation = \Drupal::service('opendevx_user.organisation');
-    $org_id = array_column($organisation->getUserOrganisations(), 'orgId');
-    if (!empty($org_id)) {
-      $organisation->setOrgId($org_id[0]);
-    }
-  }
-  if (in_array('developer', $roles)) {
-    $path = \Drupal::request()->get('path');
-    $pid = \Drupal::request()->get('pid');
-    $tempstore = \Drupal::service('tempstore.private');
-    // Get the store collection.
-    $store = $tempstore->get('opendevx_block');
-    // Set the key/value pair.
-    $store->set('store_pid', $pid);
-    $store->set('store_path', $path);
-  }
 }
 
 /**
@@ -83,12 +58,14 @@ function opendevx_user_form_alter(&$form,
         array_intersect_key($form['role']['#options'], opendevx_user_get_roles_hierarchy());
     }
   }
-  if ($form_id == 'user_register_form') {
-    if ($current_user_roles && (!in_array('admin', $current_user_roles) ||
-    !in_array('administrator', $current_user_roles))) {
-      $form['field_organisation']['#access'] == FALSE;
-    }
+  $user_form_ids = [
+    'user_form',
+    'user_register_form',
+  ];
+  if (in_array($form_id, $user_form_ids) && !in_array('administrator', $current_user_roles)) {
+    unset($form['account']['roles']['#options']['administrator']);
   }
+
 }
 
 /**

@@ -18,7 +18,6 @@ dependencies:
   module:
     - field_group
     - media_library
-    - paragraphs
     - path
     - text
 third_party_settings:
@@ -26,7 +25,6 @@ third_party_settings:
     group_media_items:
       children:
         - group_references
-        - group_general
         - group_media
       parent_name: ''
       weight: 0
@@ -40,10 +38,10 @@ third_party_settings:
     group_general:
       children:
         - field_api_detail_section
-      parent_name: group_media_items
-      weight: 22
+      parent_name: ''
+      weight: 11
       format_type: tab
-      region: content
+      region: hidden
       format_settings:
         description: ''
         formatter: closed
@@ -56,7 +54,6 @@ third_party_settings:
         - title
         - body
         - field_api_product
-        - field_organisation
         - field_tags
       parent_name: group_media_items
       weight: 21
@@ -72,7 +69,6 @@ third_party_settings:
     group_media:
       children:
         - field_listing_image
-        - field_banners_image
       parent_name: group_media_items
       weight: 23
       format_type: tab
@@ -105,25 +101,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_api_detail_section:
-    weight: 4
-    settings:
-      title: Blog
-      title_plural: Blogs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      closed_mode_threshold: 0
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: product_paragraph
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-        add_above: '0'
-    third_party_settings: {  }
-    type: paragraphs
-    region: content
   field_api_product:
     weight: 24
     settings:
@@ -134,13 +111,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_banners_image:
-    weight: 16
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_listing_image:
     weight: 15
     settings:
@@ -148,16 +118,6 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
-  field_organisation:
-    type: entity_reference_autocomplete
-    weight: 25
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
     weight: 26
@@ -206,7 +166,10 @@ content:
     third_party_settings: {  }
 hidden:
   comment: true
+  field_api_detail_section: true
+  field_banners_image: true
   field_description: true
+  field_organisation: true
   field_products_image: true
   field_user_rating: true
   layout_builder__layout: true

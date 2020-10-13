@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_font_family
+    - group.type.protected
+  module:
+    - options
+id: group.protected.field_font_family
+field_name: field_font_family
+entity_type: group
+bundle: protected
+label: 'Font Family'
+description: 'A field to set font family of page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

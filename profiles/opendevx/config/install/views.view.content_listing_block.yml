@@ -1991,7 +1991,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if body %}\r\n  <div class=\"body\">{{ body }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }} \">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }} \">Read More</a>\r\n  {% endif %}\r\n</div>"
+            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if body %}\r\n  <div class=\"body\">{{ body }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }} \" target=\"_blank\">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }} \" target=\"_blank\">Read More</a>\r\n  {% endif %}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -3365,7 +3365,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if field_description %}\r\n  <div class=\"body\">{{ field_description }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }} \">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }} \">Read More</a>\r\n  {% endif %}\r\n</div>"
+            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if field_description %}\r\n  <div class=\"body\">{{ field_description }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }}\" target=\"_blank\">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }}\" target=\"_blank\">Read More</a>\r\n  {% endif %}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -3873,7 +3873,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n  <div class=\"body\">{{ body }} </div>\r\n<div class=\"link-wrapper\">\r\n  <a href=\"{{ view_node }}?parent={{ raw_arguments.nid }}\">View Reference</a>\r\n</div>"
+            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n  <div class=\"body\">{{ body }} </div>\r\n<div class=\"link-wrapper\">\r\n  <a href=\"{{ view_node }}?parent={{ raw_arguments.nid }}\" target=\"_blank\">View Reference</a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

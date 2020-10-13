@@ -1,6 +1,6 @@
 uuid: c2d03c40-31c5-4659-bb39-7ed8bc110bc5
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - opendevx_subscription
@@ -16,5 +16,5 @@ settings:
   id: openapidevx_subscription_block
   label: 'Subscription Block'
   provider: opendevx_subscription
-  label_display: 0
+  label_display: visible
 visibility: {  }

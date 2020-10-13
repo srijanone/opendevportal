@@ -73,7 +73,7 @@ class OpendevxNotificationBlock extends BlockBase implements ContainerFactoryPlu
       $plugin_definition,
       $container->get('current_user'),
       $container->get('database'),
-      $container->get('opendevx_notification.notification')
+      $container->get('opendevx_notification.notification'),
     );
   }
 

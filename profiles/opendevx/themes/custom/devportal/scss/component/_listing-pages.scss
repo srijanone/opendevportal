@@ -310,6 +310,7 @@
       border: 1px solid $green;
 
       &.views-field-nothing {
+
         a {
           @include media (null, $md - 1) {
             margin-bottom: 10px;
@@ -320,19 +321,14 @@
           border-radius: 20px;
           color: $green;
           display: inline-block;
+          margin-bottom: 2%;
           padding: 5px 8px;
           text-align: center;
-          width: 32%;
+          width: 100%;
 
           &:hover {
             background: $green;
             color: $white;
-          }
-
-          &:nth-child(1),
-          &:nth-child(2),
-          &:nth-child(3) {
-            margin-bottom: 10px;
           }
 
           ~ br {
@@ -352,20 +348,21 @@
 
 .view-organisations {
   .table-responsive {
-    table {
-      tr {
-        td {
-          &.views-field-nothing {
-            width: 40%;
+    td {
+      &.views-field-nothing {
+        @include media (null, $md - 1) {
+          width: 50%;
+        }
+        text-align: center;
+        width: 30%;
 
-            a { // sass-lint:disable-line nesting-depth
-              width: 48%;
-
-              + a { // sass-lint:disable-line nesting-depth
-                margin-left: 5px;
-              }
-            }
+        a { // sass-lint:disable-line nesting-depth
+          @include media (null, $md - 1) {
+            width: 100%;
           }
+
+          width: 100%;
+
         }
       }
     }
@@ -606,7 +603,7 @@
 
     button {
       margin-left: 1%;
-      margin-top: 2.1%;
+      margin-top: 2.5%;
     }
 
     .item-list {
@@ -767,14 +764,6 @@
         right: 5px;
         top: 1px;
       }
-
-      + a {
-        padding: 10px 20px;
-
-        &::after {
-          @extend %none;
-        }
-      }
     }
 
     span {
@@ -800,31 +789,34 @@
   .view-content {
     &.row {
       .views-form {
-        margin-top: 20px;
         width: 100%;
+      }
 
-        form {
-          .custom-control-input {
-            opacity: 1;
-          }
+      form {
+        .custom-control-input {
+          opacity: 1;
+        }
 
-          .checkbox {
-            &.custom-switch {
-              margin: 0 auto;
-              padding-left: 0;
-              width: 15px;
-            }
-          }
-
-          .form-control {
-            + div {
-              &[id='edit-actions--2'] {
-                @extend %none;
-              }
-            }
+        .checkbox {
+          &.custom-switch {
+            margin: 0 auto;
+            padding-left: 0;
+            width: 15px;
           }
         }
       }
+
+      .form-control {
+        + div {
+          &[id='edit-actions--2'] {
+            @extend %none;
+          }
+        }
+      }
+    }
+
+    .list-group-item {
+      border: 0;
     }
   }
 
@@ -865,82 +857,85 @@
         background: none;
         border-bottom: 1px solid $gray;
 
-        td {
-          @include font(14, 500);
-          vertical-align: middle;
-
-          &.views-field-nothing {
-            @include font(12, 500);
-
-            > a {
-              @extend %custom-btn;
-              @extend %custom-btn-submit;
-              @include font(12, 500);
-              background: none;
-              display: inline-block;
-              text-decoration: none;
-            }
-
-            .dropbutton-multiple {
-              .dropbutton-widget {
-                background: $green;
-
-                .dropbutton-action {
-                  &:hover { // sass-lint:disable-line nesting-depth
-                    background: unset;
-                  }
-                }
-
-                a {
-                  color: $white;
-                  margin-bottom: 0;
-
-                  &:hover { // sass-lint:disable-line nesting-depth
-                    background: unset;
-                  }
-                }
-              }
-
-              + a {
-                margin-top: 5px;
-              }
-
-              .dropbutton-toggle {
-                button {
-                  background: $green;
-
-                  .dropbutton-arrow {
-                    border-top-color: $white;
-
-                    &:hover { // sass-lint:disable-line nesting-depth
-                      background: unset;
-                    }
-                  }
-                }
-              }
-
-              &.open {
-                .dropbutton-toggle {
-                  button {
-                    .dropbutton-arrow { // sass-lint:disable-line nesting-depth
-                      border-bottom-color: $white;
-                      border-top-color: transparent;
-                    }
-                  }
-                }
-              }
-            }
-          }
-
-          &.views-field-operations {
-            width: 120px;
-          }
-        }
-
         .dropbutton-widget {
           position: absolute;
           width: 100px;
         }
+      }
+    }
+
+    td {
+      @include font(14, 500);
+      vertical-align: middle;
+
+      &.views-field-nothing {
+        @include font(12, 500);
+
+        > a {
+          @extend %custom-btn;
+          @extend %custom-btn-submit;
+          @include font(12, 500);
+          background: none;
+          display: grid;
+          margin-bottom: 2%;
+          text-align: center;
+          text-decoration: none;
+          width: 100%;
+        }
+
+        .dropbutton-multiple {
+          .dropbutton-widget {
+            background: $green;
+          }
+
+          .dropbutton-action {
+            &:hover { // sass-lint:disable-line nesting-depth
+              background: unset;
+            }
+          }
+
+          a {
+            color: $white;
+            margin-bottom: 0;
+
+            &:hover { // sass-lint:disable-line nesting-depth
+              background: unset;
+            }
+          }
+
+          + a {
+            margin-top: 5px;
+          }
+
+          .dropbutton-toggle {
+            button {
+              background: $green;
+
+              .dropbutton-arrow {
+                border-top-color: $white;
+
+                &:hover { // sass-lint:disable-line nesting-depth
+                  background: unset;
+                }
+              }
+            }
+          }
+
+          &.open {
+            .dropbutton-toggle {
+              button {
+                .dropbutton-arrow { // sass-lint:disable-line nesting-depth
+                  border-bottom-color: $white;
+                  border-top-color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.views-field-operations {
+        width: 120px;
       }
     }
   }
@@ -970,18 +965,16 @@
     .view-content {
       &.row {
         width: 100%;
+      }
 
-        .item-list {
-          ul {
-            li { // sass-lint:disable-line nesting-depth
-              max-width: 27.333333%;
-            }
-          }
+      .item-list {
+        li {
+          max-width: 27.333333%;
         }
+      }
 
-        .link-wrapper {
-          text-align: center;
-        }
+      .link-wrapper {
+        text-align: center;
       }
     }
 
@@ -997,6 +990,30 @@
       @include media (null, $sm) {
         padding: 0 15px;
       }
+    }
+  }
+}
+
+.view-display-id-page_admin_content {
+  .views-form {
+
+    .row {
+      @include media (null, $md) {
+        padding: 0 15px;
+      }
+    }
+
+    fieldset {
+      float: left;
+      margin: 0 1% 0 0;
+
+      .custom-select {
+        width: 100%;
+      }
+    }
+
+    .button {
+      margin-top: 2.4%;
     }
   }
 }

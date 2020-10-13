@@ -5,19 +5,21 @@ opendevx_user.set_organisation_form:
     _title: 'My Programs'
   requirements:
     _role: product_manager
+
 opendevx_user.user_dashboard:
   path: '/dashboard'
   defaults:
     _controller: '\Drupal\opendevx_user\Controller\UserDashboardController::userDashboard'
     _title: ''
   requirements:
-    _role: developer
+    _role: authenticated
   options:
     no_cache: 'TRUE'
+
 opendevx_user.redirect_after_organisation_save:
-  path: '/dashboard/save-organisation/{orgid}'
+  path: '/dashboard/save-program/{program_id}'
   defaults:
-    _controller: '\Drupal\opendevx_user\Controller\UserDashboardController::redirectAfterOrganisationSave'
+    _controller: '\Drupal\opendevx_user\Controller\UserDashboardController::redirectAfterProgramSave'
     _title: ''
   requirements:
-    _role: product_manager + developer
+    _role: authenticated

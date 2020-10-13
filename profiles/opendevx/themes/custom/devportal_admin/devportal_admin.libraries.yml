@@ -5,7 +5,6 @@ global-styling:
   css:
     base:
       css/style.css: {}
-      css/font-awesome.min.css: {}
   dependencies:
     - core/jquery
     - core/jquery.once

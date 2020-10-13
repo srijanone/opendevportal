@@ -4,7 +4,7 @@ opendevx_content.add:
     _controller: '\Drupal\opendevx_apps\Controller\AppManagementController::addtogallery'
     _title: ''
   requirements:
-    _role: 'product_manager + administrator + admin'
+    _role: 'authenticated'
 
 opendevx_content.remove:
   path: '/process/{nid}/remove'
@@ -12,4 +12,4 @@ opendevx_content.remove:
     _controller: '\Drupal\opendevx_apps\Controller\AppManagementController::removefromgallery'
     _title: ''
   requirements:
-     _role: 'product_manager + administrator + admin'
+    _role: 'authenticated'

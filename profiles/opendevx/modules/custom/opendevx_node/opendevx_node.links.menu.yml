@@ -1,0 +1,5 @@
+opendevx_node.admin_index:
+  title: Opendevx
+  description: 'Opendevx Configurations.'
+  parent: system.admin_config
+  route_name: opendevx_node.admin_index

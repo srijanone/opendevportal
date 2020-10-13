@@ -1,5 +1,5 @@
 .site-footer {
-  background: url('/profiles/opendevx/themes/custom/devportal/images/footer.png');
+  background: url('/themes/custom/devportal/images/footer.png');
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 60px;
@@ -42,30 +42,30 @@
           margin: 0 8px 8px 0;
           padding: 0;
 
-          a {
-            align-items: center;
-            background-color: $green;
-            border-radius: 50%;
-            color: $white;
-            display: flex;
-            height: 60px;
-            justify-content: center;
-            padding: 0;
-            text-indent: 0;
-            width: 60px;
-
-            &:focus,
-            &:hover {
-              background-color: $green;
-            }
-
-            .fa {
-              font-weight: normal;
-            }
-          }
-
           span {
             font-size: 35px;
+          }
+        }
+
+        a {
+          align-items: center;
+          background-color: $green;
+          border-radius: 50%;
+          color: $white;
+          display: flex;
+          height: 60px;
+          justify-content: center;
+          padding: 0;
+          text-indent: 0;
+          width: 60px;
+
+          &:focus,
+          &:hover {
+            background-color: $green;
+          }
+
+          .fa {
+            font-weight: normal;
           }
         }
       }
@@ -110,22 +110,22 @@
 
       flex-direction: row;
       justify-content: flex-start;
+    }
 
-      li {
-        padding-right: 10px;
+    li {
+      padding-right: 10px;
 
-        + li {
-          margin-left: 15px;
-        }
+      + li {
+        margin-left: 15px;
       }
+    }
 
-      a {
-        @include font (16, normal);
-        color: $white;
+    a {
+      @include font (16, normal);
+      color: $white;
 
-        &::before {
-          display: none;
-        }
+      &::before {
+        display: none;
       }
     }
   }

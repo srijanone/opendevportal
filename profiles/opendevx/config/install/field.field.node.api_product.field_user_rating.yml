@@ -14,18 +14,15 @@ label: 'User Rating'
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    rating: '80'
-    target: null
+default_value: {  }
 default_value_callback: ''
 settings:
-  stars: '5'
-  allow_clear: 0
-  allow_revote: 1
-  allow_ownvote: 1
+  stars: 5
+  allow_clear: false
+  allow_revote: true
+  allow_ownvote: true
   rated_while: viewing
-  enable_voting_target: 0
+  enable_voting_target: false
   target_bridge_field: ''
   target_fivestar_field: ''
 field_type: fivestar

@@ -5,6 +5,7 @@
  * Developer portal content module file.
  */
  use Drupal\node\Entity\Node;
+ use Drupal\Core\Form\FormStateInterface;
 
  /**
   * Implements hook_entity_view_mode_alter().
@@ -20,6 +21,11 @@
      // Change the node display mode of applications for anonymous user.
      else if ($entity->bundle() == 'apps' && in_array('anonymous', $current_user_role)) {
        $view_mode = 'anonymous_user_content';
+     }
+
+     // Change the node display mode of api for type Graphql.
+     else if ($entity->bundle() == 'api_document' && $entity->get('field_api_type')->getValue()[0]['value'] == 'graphql') {
+       $view_mode = 'graphql_view';
      }
    }
  }

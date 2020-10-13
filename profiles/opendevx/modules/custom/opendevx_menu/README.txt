@@ -1,4 +1,26 @@
-Developer Portal Menu
-=======
+INTRODUCTION
+------------
+This module provides the customisation and new features related to menus.
 
-This module provides a customization of the dashboard menu.
+REQUIREMENTS
+-------------
+
+RECOMMENDED MODULES
+--------------------
+
+INSTALLATION
+-------------
+Go to extend page and enable module.
+
+CONFIGURATION
+---------------
+
+TROUBLESHOOTING
+----------------
+
+FAQs
+-----
+
+MAINTAINERS
+------------
+Srijan Technologies.

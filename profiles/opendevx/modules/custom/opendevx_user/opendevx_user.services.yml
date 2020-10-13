@@ -1,4 +1,8 @@
 services:
   opendevx_user.organisation:
    class: Drupal\opendevx_user\Organisation
-   arguments: ['@tempstore.private', '@database', '@current_user']
+   arguments: ['@tempstore.private', '@database', '@current_user', '@entity_type.manager']
+
+  opendevx_user.logger:
+   class: Drupal\opendevx_user\Logger\Logger
+   arguments: ['@tempstore.private', '@database', '@current_user', '@entity_type.manager']

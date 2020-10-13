@@ -73,7 +73,6 @@ function opendevx_subscription_entity_update(EntityInterface $entity) {
   if ($entity->getEntityTypeId() == 'node'
     && $dvp_subscription->get('include_updates')) {
     \Drupal::service('opendevx_subscription.subscription')->setQueueRecords($entity);
-
   }
 }
 

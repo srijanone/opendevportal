@@ -10,7 +10,7 @@ field_name: field_attach_file
 entity_type: node
 bundle: issues
 label: 'Attach File'
-description: ''
+description: 'Add Listing image to Issue content.<br>Supported File Types: JPG, JPEG, GIF, SVG, and PNG'
 required: false
 translatable: false
 default_value: {  }

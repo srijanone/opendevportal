@@ -141,11 +141,11 @@
                 </section>
               </main>
             {% if page.sidebar_first %}
-              <div{{ sidebar_first_attributes }}>
+              {#<div{{ sidebar_first_attributes }}> This code is not working so it is commented#}
                 <aside class="section" role="complementary">
                   {{ page.sidebar_first }}
                 </aside>
-              </div>
+              {#</div>#}
             {% endif %}
             {% if page.sidebar_second %}
               <div{{ sidebar_second_attributes }}>

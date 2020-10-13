@@ -199,22 +199,20 @@
       list-style: none;
       padding-left: 0;
 
-      li {
-        a {
-          border: 1px solid $green;
-          border-radius: 20px;
-          color: $green;
-          display: block;
-          font-weight: bold;
-          margin-bottom: 5px;
-          padding: 5px 8px;
-          text-align: center;
-          width: 100%;
+      a {
+        border: 1px solid $green;
+        border-radius: 20px;
+        color: $green;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding: 5px 8px;
+        text-align: center;
+        width: 100%;
 
-          &:hover {
-            background: $green;
-            color: $white;
-          }
+        &:hover { // sass-lint:disable-line nesting-depth
+          background: $green;
+          color: $white;
         }
       }
     }

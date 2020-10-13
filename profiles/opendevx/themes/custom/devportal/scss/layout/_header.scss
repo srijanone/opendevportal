@@ -52,7 +52,7 @@
       margin-left: 10px;
 
       .user {
-        background: url('/profiles/opendevx/themes/custom/devportal/images/Icon-user.png') no-repeat 3px 4px;
+        background: url('/themes/custom/devportal/images/Icon-user.png') no-repeat 3px 4px;
         background-size: 22px;
         display: inline-block;
         height: 30px;
@@ -60,7 +60,7 @@
       }
 
       .arrow {
-        background: url('/profiles/opendevx/themes/custom/devportal/images/Icon-chevron-down.png') no-repeat 3px 4px;
+        background: url('/themes/custom/devportal/images/Icon-chevron-down.png') no-repeat 3px 4px;
         background-size: 15px;
         display: inline-block;
         height: 20px;
@@ -79,7 +79,6 @@
     .dropdown-menu {
       left: auto;
       padding: 0;
-      padding-bottom: 10px;
       right: -10px;
       top: 48px;
 
@@ -236,11 +235,16 @@
     .navbar-nav {
       .nav-link {
         color: $white;
+        font-weight: 300;
         padding-left: 14px;
         padding-right: 14px;
 
         &:hover {
           color: $white;
+        }
+
+        &.is-active {
+          font-weight: 500;
         }
 
         + .dropdown-menu {
@@ -265,6 +269,10 @@
 
       .nav-item {
         border-bottom: 1px solid $white;
+      }
+
+      .menu {
+        flex-flow: column;
       }
     }
   }
@@ -394,7 +402,7 @@
   }
 }
 
-.menu--main-dashboard-navigation {
+.menu--dashboard-menu {
   @include media ($md - 1) {
     width: 75%;
   }
@@ -403,6 +411,14 @@
     .menu--main {
       flex: 1;
       margin: 0;
+    }
+  }
+
+  .nav-link {
+    font-weight: 300;
+
+    &.is-active {
+      font-weight: 500;
     }
   }
 }
@@ -539,6 +555,10 @@
   }
 
   .notify-drop {
+    @include media (null, $xs) {
+      left: -162px;
+    }
+
     left: -185px;
     right: 0 !important; // sass-lint:disable-line no-important
     top: 50px;
@@ -547,6 +567,10 @@
       .unread {
         border-left: 4px solid $green;
       }
+    }
+
+    &::before {
+      display: none !important; // sass-lint:disable-line no-important
     }
   }
 
@@ -621,4 +645,10 @@
       }
     }
   }
+}
+
+//common css for active classes
+.menu-item--active-trail,
+.active {
+  font-weight: bold;
 }

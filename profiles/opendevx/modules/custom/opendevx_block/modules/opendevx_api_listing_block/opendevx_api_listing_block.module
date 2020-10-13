@@ -4,7 +4,6 @@
  */
 
 use Drupal\opendevx_block\Utility\ListingBlockUtility;
-use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_preprocess_block().
@@ -16,7 +15,7 @@ function opendevx_api_listing_block_preprocess_block(&$var) {
   if (isset($content['#block_content'])) {
     // Check the block type.
     if ($content['#block_content']->bundle() == 'api_listing_block') {
-    // Listing of contents based on content type.
+      // Listing of contents based on content type.
       if ($content['#view_mode'] == 'full') {
         $nid = FALSE;
         $type = 'content_listing_block';
@@ -37,7 +36,6 @@ function opendevx_api_listing_block_preprocess_block(&$var) {
         }
       }
     }
-
 
     // Alter the featured product API block result.
     if ($content['#block_content']->bundle() == 'content_reference' && $content['#view_mode'] == 'cards') {

@@ -1,7 +1,11 @@
-name: Developer Portal API Document
+name: Opendevx - API Document
 description : 'Ads the API Document content type for developer portal.'
 type: module
-package: DVP
+package: Opendevx
 core: 8.x
 core_version_requirement: ^8 || ^9
-project: opendevx_api_document
+
+dependencies:
+  - swagger_ui_formatter:swagger_ui_formatter
+  - drupal:views
+  - opendevx_node:opendevx_node

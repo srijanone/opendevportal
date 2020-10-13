@@ -9,5 +9,5 @@ api_document_formatter:
   dependencies:
     - core/jquery
     - core/jquery.once
-       
-      
+
+

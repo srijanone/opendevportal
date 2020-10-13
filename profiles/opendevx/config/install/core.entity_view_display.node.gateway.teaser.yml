@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gateway.body
+    - field.field.node.gateway.field_client_id
+    - field.field.node.gateway.field_client_secret
+    - field.field.node.gateway.field_gateway
+    - field.field.node.gateway.field_region
+    - node.type.gateway
+  module:
+    - text
+    - user
+id: node.gateway.teaser
+targetEntityType: node
+bundle: gateway
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_client_id: true
+  field_client_secret: true
+  field_gateway: true
+  field_region: true

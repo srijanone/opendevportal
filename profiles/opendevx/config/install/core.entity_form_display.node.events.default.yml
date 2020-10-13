@@ -64,7 +64,6 @@ third_party_settings:
         - title
         - field_event_types
         - field_api_product
-        - field_organisation
         - field_tags
       parent_name: group_media_items
       weight: 9
@@ -80,7 +79,6 @@ third_party_settings:
     group_media:
       children:
         - field_listing_image
-        - field_banners_image
       parent_name: group_media_items
       weight: 11
       format_type: tab
@@ -109,12 +107,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address_block:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: address_default
@@ -129,15 +127,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_banners_image:
-    weight: 12
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_end_date:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -153,7 +144,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_event_url:
-    weight: 6
+    weight: 7
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -167,16 +158,6 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
-  field_organisation:
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_products_image:
     weight: 13
     settings:
@@ -185,7 +166,7 @@ content:
     type: media_library_widget
     region: content
   field_start_date:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -202,7 +183,7 @@ content:
     region: content
   path:
     type: path
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -210,7 +191,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
@@ -232,12 +213,14 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   comment: true
+  field_banners_image: true
+  field_organisation: true
   field_user_rating: true
   layout_builder__layout: true
   moderation_state: true

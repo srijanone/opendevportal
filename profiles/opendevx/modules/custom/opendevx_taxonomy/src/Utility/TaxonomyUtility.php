@@ -6,12 +6,12 @@ class TaxonomyUtility {
 
   /**
    * Function to get taxonomy list.
-   * 
+   *
    * @param int $vid
    *    Vocab Id or term id.
    * @param string $type
    *    List or name.
-   * 
+   *
    * @return array
    *    Taxonomy data.
    */
@@ -20,7 +20,7 @@ class TaxonomyUtility {
     // Check if term name is needed.
     if (!empty($id) && $type == 'name') {
       $term = $taxonomy->load($id);
-      
+
       return $term->getName();
     }
     // Check if vocabulary list is needed.

@@ -1,3 +1,4 @@
+uuid: 20657883-9c5c-49c2-b310-7a9f62cfee09
 langcode: en
 status: true
 dependencies:
@@ -28,5 +29,5 @@ settings:
   per_page: 50
   anonymous: 0
   form_location: true
-  preview: 1
+  preview: 0
 field_type: comment

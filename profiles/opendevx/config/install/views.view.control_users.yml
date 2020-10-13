@@ -1,8 +1,13 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.group_content.group_roles
   module:
+    - better_exposed_filters
+    - group
     - user
+    - views_autocomplete_filters
 id: control_users
 label: 'control_users (User)'
 module: views
