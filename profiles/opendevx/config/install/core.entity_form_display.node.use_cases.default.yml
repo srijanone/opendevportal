@@ -18,7 +18,6 @@ dependencies:
     - comment
     - field_group
     - media_library
-    - paragraphs
     - path
     - text
 third_party_settings:
@@ -26,7 +25,6 @@ third_party_settings:
     group_media_items:
       children:
         - group_references
-        - group_general
         - group_media
       parent_name: ''
       weight: 0
@@ -38,12 +36,11 @@ third_party_settings:
         direction: vertical
       label: 'Media Items'
     group_general:
-      children:
-        - field_api_detail_section
-      parent_name: group_media_items
-      weight: 24
+      children: {  }
+      parent_name: ''
+      weight: 13
       format_type: tab
-      region: content
+      region: hidden
       format_settings:
         description: ''
         formatter: closed
@@ -54,7 +51,6 @@ third_party_settings:
     group_media:
       children:
         - field_listing_image
-        - field_banners_image
       parent_name: group_media_items
       weight: 26
       format_type: tab
@@ -72,7 +68,6 @@ third_party_settings:
         - body
         - field_api_product
         - field_tags
-        - field_organisation
       parent_name: group_media_items
       weight: 23
       format_type: tab
@@ -111,25 +106,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_api_detail_section:
-    weight: 3
-    settings:
-      title: 'Use Case'
-      title_plural: 'Use Cases'
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      closed_mode_threshold: 0
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: product_paragraph
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-        add_above: '0'
-    third_party_settings: {  }
-    type: paragraphs
-    region: content
   field_api_product:
     weight: 13
     settings:
@@ -140,13 +116,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_banners_image:
-    type: media_library_widget
-    weight: 11
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   field_listing_image:
     weight: 10
     settings:
@@ -154,16 +123,6 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
-  field_organisation:
-    type: entity_reference_autocomplete
-    weight: 15
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_tags:
     weight: 14
     settings:
@@ -211,7 +170,10 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_api_detail_section: true
+  field_banners_image: true
   field_description: true
+  field_organisation: true
   field_user_rating: true
   layout_builder__layout: true
   moderation_state: true

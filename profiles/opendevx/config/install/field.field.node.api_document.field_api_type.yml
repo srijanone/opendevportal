@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_type
+    - node.type.api_document
+  module:
+    - options
+id: node.api_document.field_api_type
+field_name: field_api_type
+entity_type: node
+bundle: api_document
+label: 'API Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: rest
+default_value_callback: ''
+settings: {  }
+field_type: list_string

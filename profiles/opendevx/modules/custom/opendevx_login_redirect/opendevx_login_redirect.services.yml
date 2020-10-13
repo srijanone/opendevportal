@@ -1,0 +1,4 @@
+services:
+  opendevx_login_redirect.redirect_service:
+    class: Drupal\opendevx_login_redirect\Redirect
+    arguments: ['@current_route_match', '@request_stack', '@config.factory', '@current_user', '@database', '@opendevx_user.organisation', '@tempstore.private', '@opendevx_user.logger']

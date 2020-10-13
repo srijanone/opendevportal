@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - group
+id: protected_program
+label: 'Protected Program'
+type: 'canonical_entities:group'
+pattern: 'program/[group:title]'
+selection_criteria:
+  19fc1907-f0e4-46b2-9240-74a520cedcc9:
+    id: 'entity_bundle:group'
+    bundles:
+      protected: protected
+    negate: false
+    context_mapping:
+      group: group
+    uuid: 19fc1907-f0e4-46b2-9240-74a520cedcc9
+selection_logic: and
+weight: -5
+relationships: {  }

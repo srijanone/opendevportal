@@ -188,13 +188,11 @@
     .block-social-sharing-block {
       float: right;
       margin-top: -92px;
+    }
 
-      .social-media-sharing {
-        ul {
-          li {
-            width: 30px;
-          }
-        }
+    .social-media-sharing {
+      li {
+        width: 30px;
       }
     }
   }
@@ -251,35 +249,75 @@
       margin-right: 30px;
       width: 46%;
 
+      &.block-field-blocknodeappsfield-products-image {
+        width: 100px;
+      }
+    }
+
+    .block-field-blocknodeappsbody {
+      margin-right: 0;
+      margin-top: 20px;
+      width: 100%;
+
       h2 {
-        @include media (null, $sm) {
-          width: 52%;
-        }
-
-        @include font (14, 500);
-        width: 130px;
-
         + .content {
-          width: 47%;
+          @include media (null, $sm) {
+            width: 70%;
+          }
 
-          .field--name-field-client-id,
-          .field--name-field-client-secret {
-            font-size: 0;
+          width: 80%;
+        }
+      }
+    }
+
+    h2 {
+      @include media (null, $sm) {
+        width: 52%;
+      }
+
+      @include font (14, 500);
+      width: 130px;
+
+      + .content {
+        width: 47%;
+
+        .field--name-field-client-id,
+        .field--name-field-client-secret {
+          font-size: 0;
+
+          &::before {
+            content: '**********';
+            font-size: initial;
+          }
+
+          i {
+            cursor: pointer;
+            display: inline-block;
+            font-style: normal;
+            margin-left: 10px;
 
             &::before {
-              content: '**********';
+              @extend %awsome;
+              content: '\f06e';
               font-size: initial;
             }
 
-            i {
-              cursor: pointer;
-              display: inline-block;
-              font-style: normal;
-              margin-left: 10px;
+            ~ i {
+              @extend %none;
+            }
+          }
 
+          &.show-keys {
+            font-size: initial;
+
+            &::before {
+              @extend %none;
+            }
+
+            i {
               &::before {
                 @extend %awsome;
-                content: '\f06e';
+                content: '\f070';
                 font-size: initial;
               }
 
@@ -287,52 +325,12 @@
                 @extend %none;
               }
             }
-
-            &.show-keys {
-              font-size: initial;
-
-              &::before {
-                @extend %none;
-              }
-
-              i {
-                &::before {
-                  @extend %awsome;
-                  content: '\f070';
-                  font-size: initial;
-                }
-
-                ~ i {
-                  @extend %none;
-                }
-              }
-            }
-          }
-        }
-
-        &::after {
-          content: ' :';
-        }
-      }
-
-      &.block-field-blocknodeappsbody {
-        margin-right: 0;
-        margin-top: 20px;
-        width: 100%;
-
-        h2 {
-          + .content {
-            @include media (null, $sm) {
-              width: 70%;
-            }
-
-            width: 80%;
           }
         }
       }
 
-      &.block-field-blocknodeappsfield-products-image {
-        width: 100px;
+      &::after {
+        content: ' :';
       }
     }
 
@@ -463,19 +461,19 @@ article {
 
       flex: 0 0 20%;
       margin-right: 0;
+    }
 
-      .block-book-navigation {
-        .content {
-          background: $gray;
-          border: 0;
-          height: 100%;
-          margin: 0;
-          padding: 25px 15px 30px;
-        }
+    .block-book-navigation {
+      .content {
+        background: $gray;
+        border: 0;
+        height: 100%;
+        margin: 0;
+        padding: 25px 15px 30px;
+      }
 
-        .book-block-menu {
-          padding-left: 0;
-        }
+      .book-block-menu {
+        padding-left: 0;
       }
     }
 
@@ -487,6 +485,33 @@ article {
 
       flex: 0 0 78%;
       margin-left: 15px;
+    }
+  }
+
+  .layout--twocol-section--50-50 > .layout__region {
+    @include media (null, $sm) {
+      flex: 0 1 100%;
+    }
+
+    &.layout__region--first {
+      flex: 0 1 40%;
+    }
+
+    flex: 0 1 60%;
+
+    h2 {
+      @include media (null, $sm) {
+        text-align: left;
+      }
+      @include font (22, 600);
+    }
+
+    form {
+      @include media (null, $sm) {
+        max-width: 100%;
+      }
+
+      position: relative;
     }
   }
 }
@@ -523,7 +548,7 @@ article {
         padding: 0;
         text-transform: unset;
 
-        &::before {
+        &::before { // sass-lint:disable-line nesting-depth
           @extend %none;
         }
       }

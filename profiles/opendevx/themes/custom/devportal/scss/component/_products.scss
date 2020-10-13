@@ -105,10 +105,19 @@
     }
   }
 
+  .view-empty {
+    @include media (null, $sm - 1) {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    margin-left: 20px;
+    width: 78%;
+  }
+
   .view-content {
     &.row {
       @include media (null, $sm - 1) {
-        margin-left: 0;
         width: 100%;
       }
 
@@ -396,15 +405,15 @@ body {
 
       li {
         padding: 5px;
+      }
 
-        a {
+      a {
+        background: none;
+        border: 0;
+        color: $black;
+
+        &:hover {
           background: none;
-          border: 0;
-          color: $black;
-
-          &:hover {
-            background: none;
-          }
         }
       }
     }
@@ -490,17 +499,17 @@ body {
     &.row {
       text-align: center;
       width: 100%;
+    }
+  }
 
-      .item-list {
-        ul {
-          li {
-            @include media (null, $sm) {
-              flex: 100% 0 0;
-            }
-
-            flex: 28% 0 0;
-          }
+  .item-list {
+    ul {
+      li {
+        @include media (null, $sm) {
+          flex: 100% 0 0;
         }
+
+        flex: 28% 0 0;
       }
     }
   }

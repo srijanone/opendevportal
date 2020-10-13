@@ -27,7 +27,9 @@ class BlockUtility {
     $product_title = $product->setProductId($pid)->getTitle();
     foreach ($bundles as $key => $value) {
       // Refer content type linked to the product.
-      $path = "/dashboard/contents/$key/$pid";
+      $program_service = \Drupal::service('opendevx_user.organisation');
+      $program_id = $program_service->getOrgId();
+      $path = "/dashboard/$program_id/contents/$key/$pid";
       $description = $value['description'];
       $label = $value['label'];
       $description = strip_tags($description);
@@ -77,7 +79,7 @@ class BlockUtility {
     $path_index = explode('/', $path);
     if (!empty($type)) {
       $index = explode('/', $path);
-      return $index[4];
+      return $index[5];
     }
     $url_alias = \Drupal::service('path.alias_manager')->getPathByAlias($path);
     if (preg_match('/node\/(\d+)/', $url_alias, $matches)) {

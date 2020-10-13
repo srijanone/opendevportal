@@ -5,6 +5,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.api_document.body
     - field.field.node.api_document.field_api_categories
+    - field.field.node.api_document.field_api_display
+    - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_apigwid
     - field.field.node.api_document.field_banners_image
     - field.field.node.api_document.field_document
     - field.field.node.api_document.field_format
@@ -41,6 +44,9 @@ content:
     region: content
 hidden:
   field_api_categories: true
+  field_api_display: true
+  field_api_type: true
+  field_apigwid: true
   field_banners_image: true
   field_document: true
   field_format: true

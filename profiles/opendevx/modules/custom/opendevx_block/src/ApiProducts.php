@@ -93,7 +93,7 @@ class ApiProducts {
       return $output;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-block');
+      $logger = $this->getLogger('opendevx_block');
       $logger->error($e->getMessage());
     }
   }
@@ -116,14 +116,14 @@ class ApiProducts {
       return $result;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-block');
+      $logger = $this->getLogger('opendevx_block');
       $logger->error($e->getMessage());
     }
   }
 
   /**
    * Function to get first index sub product path.
-   * 
+   *
    * @param mixed $list
    *   Block navigation data
    *
@@ -133,7 +133,7 @@ class ApiProducts {
   public function getFirstIndexProductContents($list) {
     $get_navigation = $this->getProductReferenceType($list);
     $redirection = array_column(array_values($get_navigation)[0], 'childPath');
-    
+
     return $redirection[0];
   }
 

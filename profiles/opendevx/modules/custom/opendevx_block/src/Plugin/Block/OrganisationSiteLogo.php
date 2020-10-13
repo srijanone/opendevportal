@@ -122,7 +122,7 @@ class OrganisationSiteLogo extends BlockBase implements ContainerFactoryPluginIn
       $parent = $current_path->get('parent');
       // Check if user is anonymous.
       if ($this->account->isAnonymous() == TRUE) {
-        // Check for the organisation landing pages or parent query string 
+        // Check for the organisation landing pages or parent query string
         //if ($node->bundle() == 'listing_pages' || !empty($current_path->get('parent'))) {
           $node_data =  $node->toArray();
           $org_id = (int) $node_data['field_organisation'][0]['target_id'];
@@ -132,7 +132,7 @@ class OrganisationSiteLogo extends BlockBase implements ContainerFactoryPluginIn
     $org_data = $this->org->getOrganisationsData();
     $organisation_logo = $org_data[$org_id]['orgImage'];
     $organisation_title = $org_data[$org_id]['orgTitle'];
-   
+
     return [
       '#theme' => 'organisation_site_logo',
       '#orgLogo' => $organisation_logo,

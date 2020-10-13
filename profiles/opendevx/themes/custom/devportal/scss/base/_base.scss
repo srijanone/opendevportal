@@ -16,12 +16,12 @@ body {
         max-width: 1440px;
         min-height: 100vh;
         padding: 0 15px;
-
-        > div {
-          margin-top: 15px;
-          min-height: 100vh;
-        }
       }
+    }
+
+    .row-offcanvas {
+      margin-top: 15px;
+      min-height: 100vh;
     }
 
     .main-content {
@@ -119,14 +119,14 @@ body {
           overflow: hidden;
           padding: 7px 13px;
           width: 50px;
+        }
 
-          .product-dashboard-title {
-            color: $white;
-            font-size: 0;
+        .product-dashboard-title {
+          color: $white;
+          font-size: 0;
 
-            &::before {
-              font-size: 28px;
-            }
+          &::before {
+            font-size: 28px;
           }
         }
 
@@ -168,91 +168,91 @@ body {
       margin-top: 70px;
     }
   }
+
+  img {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: 20px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  .h1 {
+    @include media (null, $xs) {
+      @include font(32, normal);
+    }
+
+    @include font(42, normal);
+  }
+
+  h2,
+  .h2 {
+    @include media (null, $xs) {
+      @include font(28, normal);
+    }
+
+    @include font(32, normal);
+  }
+
+  h3,
+  .h3 {
+    @include media (null, $xs) {
+      @include font(22, normal);
+    }
+
+    @include font(30, normal);
+  }
+
+  h4,
+  .h4 {
+    @include media (null, $xs) {
+      @include font(18, normal);
+    }
+
+    @include font(22, normal);
+  }
+
+  h5,
+  .h5 {
+    @include media (null, $xs) {
+      @include font(16, normal);
+    }
+
+    @include font(18, normal);
+  }
+
+  h6,
+  .h6 {
+    @include font(18, normal);
+  }
 }
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-  width: auto;
-}
-
-a {
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
-
-ol,
-ul {
-  padding-left: 20px;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-.h1 {
-  @include media (null, $xs) {
-    @include font(32, normal);
-  }
-
-  @include font(42, normal);
-}
-
-h2,
-.h2 {
-  @include media (null, $xs) {
-    @include font(28, normal);
-  }
-
-  @include font(32, normal);
-}
-
-h3,
-.h3 {
-  @include media (null, $xs) {
-    @include font(22, normal);
-  }
-
-  @include font(30, normal);
-}
-
-h4,
-.h4 {
-  @include media (null, $xs) {
-    @include font(18, normal);
-  }
-
-  @include font(22, normal);
-}
-
-h5,
-.h5 {
-  @include media (null, $xs) {
-    @include font(16, normal);
-  }
-
-  @include font(18, normal);
-}
-
-h6,
-.h6 {
-  @include font(18, normal);
 }
 
 // Some base CSS
@@ -299,6 +299,7 @@ h6,
 .layout-main-wrapper {
   @include media (null, $sm - 1) {
     margin-top: 0;
+    overflow: hidden;
   }
 
   margin-top: 40px;
@@ -316,6 +317,10 @@ h6,
 
   > header {
     @extend %none;
+  }
+
+  .use-case-title {
+    text-align: center;
   }
 }
 
@@ -346,19 +351,15 @@ h6,
   }
 
   .toolbar-tray-horizontal {
-    ul {
-      .menu-item--expanded {
-        .menu-item--expanded {
-          &.hover-intent {
-            > a {
-              background-color: $blue1;
-              background-image: url('../images/chevron-right-white.svg');
-              background-position: center right;
-              background-repeat: no-repeat;
-              color: $white;
-              transition: unset;
-            }
-          }
+    .menu-item--expanded {
+      &.hover-intent {
+        > a {
+          background-color: $blue1;
+          background-image: url('../images/chevron-right-white.svg');
+          background-position: center right;
+          background-repeat: no-repeat;
+          color: $white;
+          transition: unset;
         }
       }
     }

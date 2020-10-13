@@ -1,0 +1,4 @@
+services:
+  opendevx_connector.gateway_service:
+    class: Drupal\opendevx_connector\Service\GatewayService
+    arguments: ['@http_client', '@config.factory']

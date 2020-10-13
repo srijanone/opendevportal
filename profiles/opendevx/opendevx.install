@@ -22,19 +22,15 @@ function openapix_portal_install() {
   // Can add code in here to make nodes, terms, etc.
 
   // Uninstall the modules
-  $modules = [
-    'opendevx_events',
-    'opendevx_api_product',
-    'opendevx_block',
-    'opendevx_menu',
-    'opendevx_listing_pages',
-    'opendevx_api_product',
-    'opendevx_block',
-    'opendevx_menu',
-    'opendevx_listing_pages',
-    'opendevx_api_listing_block'
-  ];
+  // $modules = [
+  //   'opendevx_events',
+  //   'opendevx_api_product',
+  //   'opendevx_block',
+  //   'opendevx_menu',
+  //   'opendevx_listing_pages',
+  //   'opendevx_api_listing_block'
+  // ];
 
-  \Drupal::service('module_installer')->uninstall($modules);
-  \Drupal::service('module_installer')->install($modules);
+  // \Drupal::service('module_installer')->uninstall($modules);
+  // \Drupal::service('module_installer')->install($modules);
 }

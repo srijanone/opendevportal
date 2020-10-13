@@ -11,8 +11,8 @@ field_name: field_document
 entity_type: node
 bundle: api_document
 label: Document
-description: 'Please upload your .yml file'
-required: false
+description: "Upload the file in the correct format. Please follow the below <br />\r\nRestAPI<br />\r\n      - Standard : OpenAPI<br />\r\n      - File Extension : .json, .yml<br />\r\nGraphQL<br />\r\n      - Standard : GraphQL schema (<a href = '[default-domain:path]modules/custom/opendevx_voyager/assets/schema.json' target='_blank'>schema.json</a>)<br />\r\n      - File Extension : .json<br />"
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

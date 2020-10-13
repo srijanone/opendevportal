@@ -1,6 +1,6 @@
-name: Developer Portal User
-description : 'Extend the users functionality.'
+name: Opendevx - User
+description : 'Extend the users functionality for opendevx.'
 type: module
-package: DVP
+package: Opendevx
 core: 8.x
 core_version_requirement: ^8 || ^9

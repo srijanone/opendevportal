@@ -18,6 +18,7 @@
       padding: 25px 15px 30px;
       position: sticky;
       top: 35px;
+      width: 100%;
 
       &::before {
         @extend %awsome;
@@ -43,10 +44,11 @@
       margin-bottom: 0;
       padding-left: 15px;
 
-      a {
+      li a {
         @include font (14, normal);
         color: $black1;
 
+        &.is-active,
         &.active {
           font-weight: bold;
 
@@ -94,8 +96,9 @@
             font-size: initial;
             font-weight: bold;
             position: relative;
+            pointer-events: none;
 
-            &::after {
+            &::after {  // sass-lint:disable-line nesting-depth 
               @extend %awsome;
               content: '\f078';
               float: right;
@@ -103,7 +106,7 @@
               right: 5px;
             }
 
-            &.active {
+            &.active { // sass-lint:disable-line nesting-depth 
               &::before {
                 display: none;
               }
@@ -118,10 +121,10 @@
           a {
             color: $black1;
 
-            &.active {
+            &.active { // sass-lint:disable-line nesting-depth 
               font-weight: bold;
 
-              &::before {
+              &::before { // sass-lint:disable-line nesting-depth 
                 background: $green;
                 content: '';
                 display: block;
@@ -330,7 +333,7 @@
             overflow: hidden;
             width: 110px;
 
-            &.active {
+            &.active { // sass-lint:disable-line nesting-depth 
               border: 5px solid $green;
             }
           }
@@ -393,10 +396,8 @@
 
       td {
         .item-list {
-          ul {
-            .list-group-item {
-              background-color: transparent;
-            }
+          .list-group-item {
+            background-color: transparent;
           }
         }
 
@@ -421,6 +422,12 @@
   .views-field-roles-target-id {
     .list-group-item {
       border: 0;
+    }
+  }
+
+  .view-content {
+    .button {
+      margin-top: 2.3% !important;// sass-lint:disable-line no-important 
     }
   }
 }
@@ -473,7 +480,7 @@
         text-decoration: none;
         width: 120px;
 
-        &::before {
+        &::before { // sass-lint:disable-line nesting-depth 
           @extend %awsome;
           background: none;
           content: '\f00c';
@@ -517,7 +524,7 @@
     text-align: center;
     vertical-align: super;
 
-    &:hover {
+    &:hover { // sass-lint:disable-line nesting-depth
       background: $black1;
 
       + span {
@@ -831,11 +838,28 @@ div {
       padding: 0;
 
       a {
-        &:first-child {
-          &::before {
+        &:first-child { // sass-lint:disable-line nesting-depth 
+          &::before { // sass-lint:disable-line nesting-depth 
             @extend %none;
           }
         }
+      }
+    }
+  }
+
+  &[id='drupal-off-canvas'] {
+    .ui-corner-all { // sass-lint:disable-line nesting-depth
+      .form-control { // sass-lint:disable-line nesting-depth
+        width: 100%;
+      }
+
+      .field-multiple-drag { // sass-lint:disable-line nesting-depth
+        padding-left: 6px;
+      }
+
+      .tabledrag-handle { // sass-lint:disable-line nesting-depth
+        margin-right: 0;
+        width: auto;
       }
     }
   }
@@ -882,33 +906,6 @@ div {
   }
 }
 
-.ui-dialog-off-canvas {
-  div {
-    &[id='drupal-off-canvas'] {
-      .ui-dialog-position-side {
-        &.ui-corner-all {
-          .layout-builder-add-block {
-            .form-control { // sass-lint:disable-line nesting-depth
-              width: 100%;
-            }
-
-            .field-multiple-table { // sass-lint:disable-line nesting-depth
-              .field-multiple-drag { // sass-lint:disable-line nesting-depth
-                padding-left: 6px;
-
-                .tabledrag-handle { // sass-lint:disable-line nesting-depth
-                  margin-right: 0;
-                  width: auto;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 // Sections and cards.
 .dialog-off-canvas-main-canvas {
   .block-block-dashboard-block {
@@ -940,7 +937,7 @@ div {
         position: relative;
 
         + .field__item {
-          &::before {
+          &::before { // sass-lint:disable-line nesting-depth 
             @include media (null, $sm - 1) {
               height: 1px;
               left: auto;
@@ -958,37 +955,41 @@ div {
             width: 1px;
           }
         }
+      }
+    }
+  }
 
-        .paragraph {
-          @include font (20, normal);
-          background: none;
-          box-shadow: none;
-          color: $white;
-          padding-top: 30px;
+  .paragraph {
+    @include font (20, normal);
+    background: none;
+    box-shadow: none;
+    color: $white;
+    padding-top: 30px;
 
-          .field--name-field-title {
-            color: $white;
-          }
+    .field--name-field-title {
+      color: $white;
+    }
 
-          .field--type-link {
-            a {
-              @extend %custom-btn;
-              @extend %custom-btn-submit;
-              @include font(14, 500);
-              background: none;
-              border: 1px solid $white;
-              color: $white;
-              display: inline-block;
-              text-decoration: none;
+    .field--type-link {
+      a {
+        @extend %custom-btn;
+        @extend %custom-btn-submit;
+        @include font(14, 500);
+        background: none;
+        border: 1px solid $white;
+        color: $white;
+        display: inline-block;
+        text-decoration: none;
 
-              &:hover {
-                border: 1px solid $gray3;
-              }
-            }
-          }
+        &:hover {
+          border: 1px solid $gray3;
         }
       }
     }
+  }
+
+  .paragraph--type--features {
+    color: $black;
   }
 }
 
@@ -1155,7 +1156,6 @@ div {
 
 .manage-config {
   .custom-select {
-    // width: auto;
     display: block;
   }
 
@@ -1291,35 +1291,35 @@ div {
       flex-flow: row wrap;
       justify-content: flex-start;
 
-      h3 {
-        @include font (16, normal);
-        margin-bottom: 6px;
+      &:first-child {
+        border-top: 1px solid $black1;
+      }
+    }
+
+    h3 {
+      @include font (16, normal);
+      margin-bottom: 6px;
+      width: 65%;
+
+      + p {
         width: 65%;
 
         + p {
-          width: 65%;
+          margin-top: -20px;
+          position: relative;
+          text-align: right;
+          width: 35%;
 
-          + p {
-            margin-top: -20px;
-            position: relative;
-            text-align: right;
-            width: 35%;
-
-            &::before {
-              background: $black1;
-              content: '';
-              display: block;
-              height: 40px;
-              left: 40px;
-              position: absolute;
-              width: 1px;
-            }
+          &::before { // sass-lint:disable-line nesting-depth 
+            background: $black1;
+            content: '';
+            display: block;
+            height: 40px;
+            left: 40px;
+            position: absolute;
+            width: 1px;
           }
         }
-      }
-
-      &:first-child {
-        border-top: 1px solid $black1;
       }
     }
   }
@@ -1332,6 +1332,7 @@ div {
   }
   float: right;
   margin: 15px 38px 15px 15px;
+  padding-right: 38px;
   width: 250px;
 
   .custom-select {
@@ -1349,19 +1350,25 @@ div {
     font-size: 32px;
     font-weight: normal;
     line-height: normal;
-    margin-left: -38px;
     position: absolute;
     right: 0;
   }
 }
 
-.block-developer-portal-rapidoc-formatter {
-  h2 {
-    @include media (null, $sm) {
-      text-align: left;
+// SDK generator
+.block-opendevx-sdk {
+  form {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 35px;
+    padding-top: 28px;
+
+    button {
+      align-self: center;
+      height: fit-content;
+      margin-left: 15px;
+      margin-top: 14px;
     }
-    @include font (22, 600);
-    text-align: center;
   }
 }
 
@@ -1587,5 +1594,167 @@ form {
     .views-field-nothing-1 {
       padding: 5px;
     }
+  }
+}
+
+.block-field-blocknodearticlefield-tags {
+  float: left;
+  width: 100%;
+}
+
+//admin list
+.admin-list-div {
+  @include media (null, $md) {
+    padding-left: 0;
+  }
+  list-style: none;
+  padding-left: 14px;
+  
+  li {
+    @include media (null, $md) {
+      display: block;
+      margin: 2% 0 0 0;
+      width: unset;
+    }
+    border: 1px solid $green;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2% 2% 0 0;
+    padding: 2%;
+    width: 31%;
+
+    .label {
+      @include media (null, $md) {
+        @include font (20, bold);
+      }
+      @include font (22, bold);
+      color: $green;
+
+      &::after {
+        @extend %awsome;
+        content: '\f055';
+        float: right;
+        font-size: 28px;
+      }
+    }
+
+    .description {
+      color: $gray3;
+    }
+  }
+}
+
+.user-msg {
+  margin-top: 2%;
+}
+
+.js {
+  td {
+    .dropbutton-multiple {
+      margin-right: 0 !important;// sass-lint:disable-line no-important
+      padding-right: 0 !important;// sass-lint:disable-line no-important
+    }
+  }
+}
+
+.views-field-dropbutton {
+  .dropbutton-multiple {
+    .dropbutton-widget {
+      background: $green;
+    }
+  
+    .dropbutton-action {
+      &:hover { // sass-lint:disable-line nesting-depth
+        background: $green;
+      }
+    }
+
+    .dropbutton-action {
+      a {
+        color: $white;
+        margin-bottom: 0;
+    
+        &:hover { // sass-lint:disable-line nesting-depth
+          background: $green;
+        }
+      }
+  
+      + a {
+        margin-top: 5px;
+      }
+    }
+  
+    .dropbutton-toggle {
+      button {
+        background: $green;
+  
+        .dropbutton-arrow {
+          border-top-color: $white;
+  
+          &:hover { // sass-lint:disable-line nesting-depth
+            background: $green;
+          }
+        }
+      }
+    }
+  
+    &.open {
+      .dropbutton-toggle {
+        button {
+          .dropbutton-arrow { // sass-lint:disable-line nesting-depth
+            border-bottom-color: $white;
+            border-top-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.view-display-id-page_proxies_listing {
+  td {
+    .dropbutton-wrapper {
+      .dropbutton-widget {
+        width: 100% !important;// sass-lint:disable-line no-important
+      }
+    }
+  }
+}
+
+.page-view-content {
+  .views-form {
+    table {
+      background: $white;
+      border: 1px solid $green;
+
+      th,
+      td {
+        border: 1px solid $green;
+      }
+      
+      tr:nth-of-type(odd) {
+        background-color: $white;
+      }
+
+      .dropbutton {
+        background: $green;
+
+        a,
+        .dropbutton-arrow {
+          background: $green;
+          color: $white;
+        }
+
+        button {
+          background: $green;
+        }
+      }
+    }
+  }
+}
+
+.view-developer-products {
+  .view-content {
+    width: 100%;
   }
 }

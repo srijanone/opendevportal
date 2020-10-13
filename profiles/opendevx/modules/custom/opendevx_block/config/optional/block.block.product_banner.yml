@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - opendevx_block
@@ -20,6 +20,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/use-cases/*\r\n/page/*\r\n/events/*\r\n/tutorials/*\r\n/solutions/*\r\n/article/*\r\n/resources/*\r\n/api-document/*\r\n/node/*/events\r\n/node/*/resources\r\n/node/*/use_cases\r\n/node/*/tutorials\r\n/node/*/solutions\r\n/node/*/article\r\n/node/*/api_document\r\n/node/*/document_overview"
+    pages: "/faq/list\r\n/product/*\r\n/node/*\r\n/document-overview/list\r\n/issues/list\r\n/events/list\r\n/resources/list\r\n/tutorials/list\r\n/assets/list\r\n/article/list\r\n/use-cases/list\r\n/solutions/list\r\n/document/*"
     negate: false
     context_mapping: {  }

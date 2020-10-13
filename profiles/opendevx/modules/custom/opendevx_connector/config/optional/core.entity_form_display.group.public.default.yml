@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.public.field_hub_content_id
+    - group.type.public
+  module:
+    - text
+id: group.public.default
+targetEntityType: group
+bundle: public
+mode: default
+hidden:
+  field_hub_content_id: true

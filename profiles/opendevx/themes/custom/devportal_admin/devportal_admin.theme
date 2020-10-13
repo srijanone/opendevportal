@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
+use Drupal\group\Entity\GroupInterface;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -27,6 +28,32 @@ function devportal_admin_preprocess_html(&$variables) {
   // Add Open Sans font styles based on the theme setting.
   if (!theme_get_setting('disable_google_fonts')) {
     $variables['#attached']['library'][] = 'devportal_admin/google-fonts';
+  }
+
+   if ($program_id = \Drupal::service('opendevx_core.program_domain')->getProgramDomainId()) {
+    $program = \Drupal::entityTypeManager()->getStorage('group')->load($program_id);
+    if ($program instanceof GroupInterface) {
+      if ($program->hasField('field_header_background_color') && $program->field_header_background_color->color) {
+        $color_value = ltrim($program->field_header_background_color->color, "#");
+        $variables['header_color'] = "hdr-clr-" . $color_value;
+      }
+
+      if ($program->hasField('field_icons_bg_color') && $program->field_icons_bg_color->color) {
+        $color_value = ltrim($program->field_icons_bg_color->color, "#");
+        $variables['icon_color'] = "ico-clr-" . $color_value;
+      }
+
+      if ($program->hasField('field_font_family') && $program->field_font_family->value) {
+        $variables['font_family'] = "font-" . $program->field_font_family->value;
+      }
+    }
+  }
+
+  // Adding class to body based on role.
+  $account = \Drupal::currentUser();
+  $roles = $account->getRoles();
+  foreach ($roles as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
   }
 }
 
@@ -126,4 +153,26 @@ function devportal_admin_form_system_theme_settings_alter(&$form, \Drupal\Core\F
     '#default_value' => theme_get_setting('disable_google_fonts'),
     '#description' => t('Useful for languages that are not well supported by the "Open sans" font. Like Japanese for example.'),
   ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+
+function devportal_admin_preprocess_block(&$variables) {
+  if ($program_id = \Drupal::service('opendevx_core.program_domain')->getProgramDomainId()) {
+    $program = \Drupal::entityTypeManager()->getStorage('group')->load($program_id);
+    if ($program instanceof GroupInterface) {
+      if ($program->hasField('field_site_logo') && $program->field_site_logo->target_id) {
+        $media = $program->field_site_logo->entity;
+        if ($media && $media->hasField('field_media_image') && $media->field_media_image->entity) {
+          $variables['site_logo'] = file_create_url($media->field_media_image->entity->getFileUri());
+          if ($variables['base_plugin_id'] == 'system_branding_block') {
+            $variables['#cache']['max-age'] = 0;
+            $variables['elements']['#cache']['max-age'] = 0;
+          }
+        }
+      }
+    }
+  }
 }

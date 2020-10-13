@@ -4,6 +4,7 @@ dependencies:
   config:
     - system.menu.dashboard-menu
   module:
+    - domain
     - system
     - user
   theme:
@@ -26,12 +27,17 @@ visibility:
   user_role:
     id: user_role
     roles:
-      product_manager: product_manager
+      admin: admin
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
   request_path:
     id: request_path
-    pages: '/apimanager/*'
+    pages: "/apimanager/*\r\n/admin/config/workflow/workflows\r\n/admin/config/social-api/social-auth\r\n/admin/config/social-api/social-auth/*\r\n/admin/structure/taxonomy\r\n/admin/structure/taxonomy/*\r\n/taxonomy/term/*/edit\r\n/group/*/domain-settings\r\n/group/add\r\n/group/add/*\r\n/group/*/edit\r\n/group/*/layout\r\n/group/*/content/create/*\r\n/node/*/edit\r\n/node/*/layout\r\n/group/*/content/add/group_membership\r\n/admin/people/create"
     negate: false
+    context_mapping: {  }
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
     context_mapping: {  }

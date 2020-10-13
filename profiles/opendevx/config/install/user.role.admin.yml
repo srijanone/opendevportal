@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: admin
-label: Admin
+label: 'Site Admin'
 weight: 4
 is_admin: null
 permissions:
@@ -31,6 +31,7 @@ permissions:
   - 'administer vote types'
   - 'administer voting api'
   - 'administer workflows'
+  - 'bypass group access'
   - 'configure any layout'
   - 'create and edit custom blocks'
   - 'create api_document content'
@@ -42,8 +43,11 @@ permissions:
   - 'create events content'
   - 'create faq content'
   - 'create field_access'
+  - 'create field_client_id'
+  - 'create field_client_secret'
   - 'create field_organisation'
   - 'create forum content'
+  - 'create gateway content'
   - 'create issues content'
   - 'create listing_pages content'
   - 'create page content'
@@ -61,6 +65,7 @@ permissions:
   - 'delete any events content'
   - 'delete any faq content'
   - 'delete any forum content'
+  - 'delete any gateway content'
   - 'delete any issues content'
   - 'delete any listing_pages content'
   - 'delete any page content'
@@ -68,6 +73,7 @@ permissions:
   - 'delete any solutions content'
   - 'delete any tutorials content'
   - 'delete any use_cases content'
+  - 'delete own gateway content'
   - 'edit any api_document content'
   - 'edit any api_product content'
   - 'edit any apps content'
@@ -77,6 +83,7 @@ permissions:
   - 'edit any events content'
   - 'edit any faq content'
   - 'edit any forum content'
+  - 'edit any gateway content'
   - 'edit any issues content'
   - 'edit any listing_pages content'
   - 'edit any page content'
@@ -85,9 +92,14 @@ permissions:
   - 'edit any tutorials content'
   - 'edit any use_cases content'
   - 'edit field_access'
+  - 'edit field_client_id'
+  - 'edit field_client_secret'
   - 'edit field_organisation'
   - 'edit own field_access'
+  - 'edit own field_client_id'
+  - 'edit own field_client_secret'
   - 'edit own field_organisation'
+  - 'edit own gateway content'
   - 'edit terms in organisation'
   - 'have total control'
   - 'search content'
@@ -109,8 +121,10 @@ permissions:
   - 'use text format full_html'
   - 'view any unpublished content'
   - 'view field_client_id'
+  - 'view field_client_secret'
   - 'view field_organisation'
   - 'view own field_client_id'
+  - 'view own field_client_secret'
   - 'view own field_organisation'
   - 'view own unpublished content'
   - 'view the administration theme'

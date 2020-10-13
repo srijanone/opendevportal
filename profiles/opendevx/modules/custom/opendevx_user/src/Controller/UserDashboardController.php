@@ -2,12 +2,13 @@
 
 namespace Drupal\opendevx_user\Controller;
 
-use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\opendevx_user\Organisation;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\opendevx_user\ProgramInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\opendevx_user\Organisation as Program;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class UserDashboardController extends ControllerBase {
@@ -15,10 +16,10 @@ class UserDashboardController extends ControllerBase {
   /**
    * UserOrganisation object.
    *
-   * @var \Drupal\opendevx_user\UserOrganisation $org
+   * @var \Drupal\opendevx_user\Organisation
    *
    */
-  private $org;
+  private $programService;
 
   /**
    * @var mixed $currentPath
@@ -33,16 +34,16 @@ class UserDashboardController extends ControllerBase {
   /**
    * UserDashboardController constructor.
    *
-   * @param mixed $organisation
+   * @param Program $program
    *   The plugin organisation class.
-   * @param mixed $request_stack
+   * @param Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
-   * @param mixed $account
+   * @param Drupal\Core\Session\AccountInterface $account
    *   The plugin account service
    */
-  public function __construct(Organisation $organisation, RequestStack $request_stack,
+  public function __construct(Program $program, RequestStack $request_stack,
   AccountInterface $account) {
-    $this->org = $organisation;
+    $this->programService = $program;
     $this->currentPath = $request_stack;
     $this->account = $account;
   }
@@ -85,22 +86,27 @@ class UserDashboardController extends ControllerBase {
   }
 
   /**
-   * redirectAfterOrganisationSave callback.
+   * Redirect user after changing program from program switcher.
    */
-  public function redirectAfterOrganisationSave() {
+  public function redirectAfterProgramSave() {
     $path = $this->currentPath->getCurrentRequest()->getPathInfo();
-    $referer = $this->currentPath->getCurrentRequest()->headers->get('referer');
+    $referrer = $this->currentPath->getCurrentRequest()->headers->get('referer');
+
+    // Get program id from URL.
     $explode_path = explode('/', $path);
-    $org_id = $explode_path[3];
-    $this->org->setOrgId($org_id);
-    if (in_array('product_manager', $this->account->getRoles())) {
-      $response = new RedirectResponse('/dashboard/products');
-    }
-    else {
-      $response = new RedirectResponse($referer);
+    $program_id = $explode_path[3];
+    $this->programService->setProgramId($program_id);
+    $group_roles = $this->programService->getUserGroupRole($program_id);
+    if (!empty($group_roles)) {
+      if (in_array($group_roles[0], ProgramInterface::PM_ROLES)) {
+        $referrer = '/dashboard/'. $program_id .'/products';
+      }
+      else if (in_array($group_roles[0], ProgramInterface::DEV_ROLES)) {
+        $referrer = '/dashboard';
+      }
     }
 
-    return $response;
+    return new RedirectResponse($referrer);
   }
 
 }

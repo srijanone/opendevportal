@@ -61,7 +61,7 @@
     "nesting-depth": [
       1,
       {
-        "max-depth": 5
+        "max-depth": 3
       }
     ]
   }

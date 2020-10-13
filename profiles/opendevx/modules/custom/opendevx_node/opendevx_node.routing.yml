@@ -3,5 +3,13 @@ opendevx_node.next_moderation_state:
   defaults:
     _controller: '\Drupal\opendevx_node\Controller\NextModerationState::saveNextModerationState'
     _title: ''
-  requirements: 
-    _permission: 'access content' 
+  requirements:
+    _permission: 'access content'
+
+opendevx_node.admin_index:
+  path: '/admin/config/opendevx'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Opendevx Configurations'
+  requirements:
+    _permission: 'access administration pages'

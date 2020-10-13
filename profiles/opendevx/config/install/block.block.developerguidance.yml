@@ -1,10 +1,7 @@
 langcode: en
 status: false
 dependencies:
-  content:
-    - 'block_content:guidance_block:18403a4d-04d0-4a8c-ab0d-2e74822807be'
   module:
-    - block_content
     - system
     - user
   theme:

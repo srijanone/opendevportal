@@ -83,27 +83,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          413c93fd-3079-46d0-9cf5-861639d71ed0:
-            uuid: 413c93fd-3079-46d0-9cf5-861639d71ed0
-            region: right
-            configuration:
-              id: 'field_block:node:article:field_api_detail_section'
-              label: 'Blog Section'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
           d4bbe0ed-5c13-4dec-98e3-714fb64f1a5c:
             uuid: d4bbe0ed-5c13-4dec-98e3-714fb64f1a5c
             region: right

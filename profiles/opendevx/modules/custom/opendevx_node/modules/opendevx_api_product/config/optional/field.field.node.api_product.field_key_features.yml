@@ -1,0 +1,43 @@
+uuid: 1e592601-437d-415f-8db9-da1dd6b66fb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_key_features
+    - node.type.api_product
+    - paragraphs.paragraphs_type.features
+  module:
+    - entity_reference_revisions
+id: node.api_product.field_key_features
+field_name: field_key_features
+entity_type: node
+bundle: api_product
+label: 'Key Features'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      features: features
+    target_bundles_drag_drop:
+      dashboard_listing:
+        weight: 6
+        enabled: false
+      features:
+        enabled: true
+        weight: 7
+      product_attributes:
+        weight: 8
+        enabled: false
+      product_paragraph:
+        weight: 9
+        enabled: false
+      slider_details:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

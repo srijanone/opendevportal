@@ -2,7 +2,6 @@ ignored_config_entities:
   - smtp.settings
   - social_auth_github.settings
   - social_auth_google.settings
-  - opendevx_connector.settings
   - block.block.product_api
   - 'core.entity_view_display.node.api_product*'
   - notifications_widget.settings
@@ -14,3 +13,8 @@ ignored_config_entities:
   - 'tour.tour.*'
   - stripe.settings
   - opendevx_subscription.settings
+  - opendevx_sdk_generator.settings
+  - opendevx_sdk.settings
+  - domain_site_settings.domainconfigsettings
+  - 'domain.record.*'
+  - 'menu_token.link_configuration_storage.*'

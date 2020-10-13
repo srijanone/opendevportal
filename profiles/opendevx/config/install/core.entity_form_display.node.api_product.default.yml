@@ -63,7 +63,6 @@ third_party_settings:
       children:
         - field_api_category
         - field_api_specifications
-        - field_organisation
       parent_name: group_media_items
       weight: 7
       format_type: tab
@@ -234,16 +233,6 @@ content:
         add_above: '0'
     third_party_settings: {  }
     region: content
-  field_organisation:
-    type: entity_reference_autocomplete
-    weight: 10
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_price:
     weight: 8
     settings:
@@ -295,20 +284,20 @@ content:
     type: string_textfield
     region: content
   field_view_mode:
-    weight: 7
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   path:
     type: path
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 4
     region: content
     settings:
       display_label: true
@@ -323,7 +312,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -332,7 +321,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 4
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -340,6 +329,7 @@ hidden:
   comment: true
   created: true
   field_api_document: true
+  field_organisation: true
   field_resource: true
   field_user_rating: true
   layout_builder__layout: true

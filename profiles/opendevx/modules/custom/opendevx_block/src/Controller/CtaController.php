@@ -9,7 +9,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Drupal\Core\Database\Connection;
+use Drupal\opendevx_user\Logger\Logger;
 
 class CtaController extends ControllerBase {
 
@@ -29,6 +30,18 @@ class CtaController extends ControllerBase {
   protected $storePath;
 
   /**
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $connection;
+
+  /**
+   * Opendevx Logger Service.
+   *
+   * @var Drupal\opendevx_user\Logger\Logger
+   */
+  protected $logger;
+
+  /**
    * CtaController constructor.
    *
    * @param mixed $product
@@ -38,10 +51,14 @@ class CtaController extends ControllerBase {
    */
   public function __construct(RequestStack $request_stack,
   AccountInterface $account,
-  PrivateTempStoreFactory $temp_store) {
+  PrivateTempStoreFactory $temp_store,
+  Connection $connection,
+  Logger $logger) {
     $this->currentPath = $request_stack;
     $this->account = $account;
     $this->storePath = $temp_store->get('opendevx_block');
+    $this->connection = $connection;
+    $this->logger = $logger;
   }
 
   /**
@@ -51,7 +68,10 @@ class CtaController extends ControllerBase {
     return new static(
       $container->get('request_stack'),
       $container->get('current_user'),
-      $container->get('tempstore.private')
+      $container->get('tempstore.private'),
+      $container->get('database'),
+      $container->get('opendevx_user.logger')
+
     );
   }
 
@@ -59,14 +79,15 @@ class CtaController extends ControllerBase {
    * Redirect CTA Url callback.
    */
   public function redirectCtaUrl($type, $pid) {
+    $gid = $this->getGroupIdByNodeId($pid);
     if ($this->account->isAnonymous() == TRUE) {
       if ($type == 'apps') {
-        $url = "/user/login?path=/node/add/apps&pid=$pid";
+        $url = "/user/login?path=/group/$gid/content/create/group_node:apps";
         $response = new RedirectResponse($url);
         $response->send();
       }
       if ($type = 'issues') {
-        $url = "/user/login?path=/node/add/issues&pid=$pid";
+        $url = "/user/login?path=/group/$gid/content/create/group_node:issues";
         $response = new RedirectResponse($url);
         $response->send();
       }
@@ -74,15 +95,34 @@ class CtaController extends ControllerBase {
     else {
       $this->storePath->set('store_pid', $pid);
       if ($type == 'apps') {
-        $url = "/node/add/apps";
+        $url = "/group/$gid/content/create/group_node:apps";
         $response = new RedirectResponse($url);
         $response->send();
       }
       if ($type = 'issues') {
-        $url = "/node/add/issues";
+        $url = "/group/$gid/content/create/group_node:issues";
         $response = new RedirectResponse($url);
         $response->send();
       }
+    }
+  }
+
+  /**
+   * Return the Group Id from the Node Id.
+   */
+  protected function getGroupIdByNodeId($nid) {
+    try {
+      $query = $this->connection->select('group_content_field_data', 'g');
+      $query->addField('g', 'gid');
+      $query->condition('g.entity_id', $nid);
+      $groups = $query->execute()->fetchAssoc();
+
+      return $groups['gid'];
+    }
+    catch (\Exception $e) {
+      $this->logger->log(
+        ['module' => 'opendevx_block', 'message' => $e->getMessage()]
+      );
     }
   }
 

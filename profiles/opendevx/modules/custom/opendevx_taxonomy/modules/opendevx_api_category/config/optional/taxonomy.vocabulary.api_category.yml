@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'API Category'
+name: 'API Product Category'
 vid: api_category
 description: ''
 weight: 0

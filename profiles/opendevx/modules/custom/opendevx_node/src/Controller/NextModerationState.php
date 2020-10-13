@@ -3,10 +3,10 @@
 namespace Drupal\opendevx_node\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class NextModerationState extends ControllerBase {
 
@@ -30,7 +30,7 @@ class NextModerationState extends ControllerBase {
    * @param mixed $entity_type_manager
    *   EntityTypeManagerInterface.
    */
-  public function __construct(RequestStack $request_stack, 
+  public function __construct(RequestStack $request_stack,
   EntityTypeManagerInterface $entity_type_manager) {
     $this->currentPath = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
@@ -56,8 +56,7 @@ class NextModerationState extends ControllerBase {
         'architecture_review' => 'Architecture Review',
         'product_review' => 'Product Review',
         'published' => 'Approved'
-      ]; 
-      $url = "/dashboard/apimanager/proxies";
+      ];
     }
     elseif ($type == 'apps') {
       $workflow = [
@@ -65,7 +64,6 @@ class NextModerationState extends ControllerBase {
         'pending_for_approval' => 'Approved for Sandbox',
         'published' => 'Approved for Production'
       ];
-      $url = "/dashboard/apimanager/apps";
     }
     if (!empty($nid)) {
       $search = $next = $key = $next_state = '';
@@ -78,6 +76,7 @@ class NextModerationState extends ControllerBase {
         $node->set('moderation_state', $next_state);
         $node->save();
         // Return to the listing page
+        $url = $this->currentPath->getCurrentRequest()->headers->get('referer');
         $response = new RedirectResponse($url);
         $response->send();
       }
@@ -86,4 +85,7 @@ class NextModerationState extends ControllerBase {
     }
   }
 
+  public function getAddProgramTitle() {
+    return 'Add Program';
+  }
 }

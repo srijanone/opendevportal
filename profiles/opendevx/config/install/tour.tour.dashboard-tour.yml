@@ -1,11 +1,9 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - opendevx_connector
+dependencies: {  }
 id: dashboard-tour
 label: 'Dashboard API Tour'
-module: opendevx_connector
+module: null
 routes:
   -
     route_name: view.proxies_listing.page_proxies_listing

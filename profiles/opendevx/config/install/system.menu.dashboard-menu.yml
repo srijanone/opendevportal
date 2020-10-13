@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: dashboard-menu
-label: 'API Management'
+label: 'Admin Menu'
 description: 'The menu for managing contents around APIs'
 locked: false

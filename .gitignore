@@ -40,3 +40,7 @@ sites/simpletest
 /update.php
 /web.config
 /autoload.php
+/INSTALL.txt
+/README.txt
+/example.gitignore
+/index.php

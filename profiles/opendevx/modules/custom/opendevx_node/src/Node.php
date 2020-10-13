@@ -13,7 +13,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class Node {
 
   use LoggerChannelTrait;
-  
+
   /**
    * @var int $nodeId
    */
@@ -49,7 +49,7 @@ class Node {
 
   /**
    * Set Node id
-   * 
+   *
    * @param int $node_id
    *   Node Id.
    */
@@ -82,7 +82,7 @@ class Node {
       return TRUE;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-node-exists');
+      $logger = $this->getLogger('opendevx_node-exists');
       $logger->error($e->getMessage());
     }
   }
@@ -102,7 +102,7 @@ class Node {
       }
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-node-title');
+      $logger = $this->getLogger('opendevx_node-title');
       $logger->error($e->getMessage());
     }
   }

@@ -2,9 +2,9 @@
 
 namespace Drupal\opendevx_notification\Services;
 
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Config\ConfigFactory;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\opendevx_user\Organisation;
 use Drupal\notifications_widget\Services\NotificationsWidgetService;
 
@@ -68,41 +68,33 @@ class OpendevxNotificationService {
    * Callback to log notification.
    */
   public function sendNotification($entity) {
-    // Return if empty bundle or not node type.
+
     if (empty($entity->bundle()) || $entity->getEntityTypeId() != 'node') {
       return;
     }
-    // Notification Logger service.
-    $notificationService = $this->notificationLogger;
-    // Opendevx configuration.
+
     $opendevxConfig = $this->config->get('opendevx_notification.settings');
+
     // Get the workflow as per bundle.
-    $content_type = $opendevxConfig->get('workflow_type');
     $bundle = $entity->bundle();
     $workflow = $opendevxConfig->get($bundle);
+
     // Return if notification not enable for bundle.
-    if (!in_array($bundle, $content_type) || empty($workflow)) {
+    if (!in_array($bundle, $opendevxConfig->get('workflow_type')) || empty($workflow)) {
       return;
     }
+
     // Get the moderation state.
     $moderation_state = $entity->hasField('moderation_state') ? $entity->moderation_state->getValue()[0]['value'] : NULL;
-    // Prepare message key.
-    $messageConfigField = $workflow . '_' . $moderation_state;
-    // Prepare link key.
-    $routeConfigField = $moderation_state . '_redirect_link';
-    // Get the message.
-    $configMessage = $opendevxConfig->get($messageConfigField);
-    // Get rout link.
-    $routeLink = $opendevxConfig->get($routeConfigField);
 
     // Prepare message link data.
     $message                 = [];
     $message['id']           = $entity->id();
     $message['bundle']       = $bundle;
-    $message['content']      = $configMessage;
-    $message['content_link'] = $routeLink;
-    // Log the notification.
-    $notificationService->logNotification($message, 'content_moderated', $entity);
+    $message['content']      = $opendevxConfig->get($workflow . '_' . $moderation_state);
+    $message['content_link'] = $opendevxConfig->get($moderation_state . '_redirect_link');
+
+    $this->notificationLogger->logNotification($message, 'content_moderated', $entity);
   }
 
   /**
@@ -111,31 +103,28 @@ class OpendevxNotificationService {
   public function getNotification() {
     $uid = $this->currentUser->id();
     $roles = $this->currentUser->getRoles(TRUE);
-    $config = $this->config->get('block.block.opendevxnotificationblock');
     $notification = [
       'notificationList' => [],
       'id' => [],
       'unreadCount' => '0',
       'totalCount' => '0',
     ];
+
     if (empty($roles)) {
       return $notification;
     }
-    $states = $this->getContentStateByRole($roles[0]);
+
     // Get the nids which are not as per role.
-    $nid = $this->getNotificationNode($uid, $roles[0], $states);
+    $nid = $this->getNotificationNode($uid, $roles[0], $this->getContentStateByRole($roles[0]));
     if (empty($nid)) {
       return $notification;
     }
-    $query = $this->connection->select('notifications', 'n');
-    $query->fields('n', [
-      'id',
-      'entity_id',
-      'message',
-      'status',
-    ]);
-    $query->condition('n.entity_id', $nid, 'IN');
 
+    $config = $this->config->get('block.block.opendevxnotificationblock');
+
+    $query = $this->connection->select('notifications', 'n');
+    $query->fields('n', ['id', 'entity_id', 'message', 'status']);
+    $query->condition('n.entity_id', $nid, 'IN');
     if ($config->get('block_notification_type') != NULL
      && $config->get('block_notification_type') == 1) {
       // Skip current user updated content notification.
@@ -166,7 +155,6 @@ class OpendevxNotificationService {
     }
 
     return $notification;
-
   }
 
   /**
@@ -187,11 +175,7 @@ class OpendevxNotificationService {
     $nid = [''];
     $query = $this->connection->select('content_moderation_state_field_revision',
      'cmsf');
-    $query->fields('cmsf', [
-      'content_entity_id',
-      'revision_id',
-      'moderation_state',
-    ]);
+    $query->fields('cmsf', ['content_entity_id', 'revision_id', 'moderation_state']);
     if ($role == 'product_manager') {
       $orgid = $this->org->getOrgId();
       $query->addJoin('left', 'node__field_organisation',
@@ -263,7 +247,7 @@ class OpendevxNotificationService {
         ->condition('action', 'content_moderated')
         ->execute();
     }
-    catch (Exception $e) {
+    catch (\Exception $e) {
       // Exception handling if something else gets thrown.
       $this->loggerFactory->error($e->getMessage());
     }

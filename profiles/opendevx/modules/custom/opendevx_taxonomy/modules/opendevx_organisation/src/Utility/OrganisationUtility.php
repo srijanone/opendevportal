@@ -3,6 +3,8 @@
 namespace Drupal\opendevx_organisation\Utility;
 
 use Drupal\opendevx_taxonomy\Utility\TaxonomyUtility;
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
 
 class OrganisationUtility {
 
@@ -48,5 +50,27 @@ class OrganisationUtility {
 
       return $current_org;
     }
+  }
+
+  /**
+   * Fetch Image URI.
+   *
+   * @param integer $mid
+   *    Media Id.
+   *
+   * @return string
+   *    File Uri.
+   */
+  public static function getImageUri($mid) {
+    $media = Media::load($mid);
+    $fid = $media->field_media_image->target_id;
+    $file = File::load($fid);
+    if ($file) {
+      $file_uri = $file->getFileUri();
+
+      return $file_uri;
+    }
+
+    return FALSE;
   }
 }

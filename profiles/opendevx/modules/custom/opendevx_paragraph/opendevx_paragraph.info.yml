@@ -1,7 +1,7 @@
-name: Developer Portal Paragrph
+name: Opendevx - Paragrph
 description : 'Developer Portal paragraphs.'
 type: module
-package: DVP
+package: Opendevx
 core: 8.x
 core_version_requirement: ^8 || ^9
 

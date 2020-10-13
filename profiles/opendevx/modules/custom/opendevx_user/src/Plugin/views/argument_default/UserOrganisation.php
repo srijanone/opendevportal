@@ -15,7 +15,7 @@ use Drupal\Core\Session\AccountInterface;
  *
  * @ViewsArgumentDefault(
  *   id = "current_user_organisation",
- *   title = @Translation("Organisation ID from logged in user")
+ *   title = @Translation("Program ID from logged in user")
  * )
  */
 class UserOrganisation extends ArgumentDefaultPluginBase {
@@ -78,7 +78,7 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
       $plugin_definition,
       $container->get('opendevx_user.organisation'),
       $container->get('opendevx_organisation.organisation'),
-      $container->get('current_user')
+      $container->get('current_user'),
     );
   }
 
@@ -86,14 +86,11 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
    * {@inheritdoc}
    */
   public function getArgument() {
-    if (!empty($this->userOrg->getOrgId())) {
+    if (!in_array('administrator', $this->account->getRoles()) && $this->userOrg->getOrgId() > 0) {
       return $this->userOrg->getOrgId();
     }
     else {
-      $organisation_data = $this->org->getOrganisationsData();
-      $org_id = implode("+", array_keys($organisation_data));
-
-      return $org_id;
+      return implode("+", array_keys($this->org->getOrganisationsData()));
     }
   }
 

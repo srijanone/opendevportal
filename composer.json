@@ -4,28 +4,26 @@
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
-    "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
-    },
     "repositories": [
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
+        "bower-asset/swagger-ui": "^3.25",
         "composer/installers": "^1.2",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8",
-        "drupal/core-vendor-hardening": "^8.8",
         "cweagans/composer-patches": "~1.0",
         "drupal/address": "^1.8",
         "drupal/admin_toolbar": "^2.2",
         "drupal/adminimal_theme": "^1.5",
         "drupal/advagg": "^4.1",
         "drupal/allowed_formats": "1.2",
+        "drupal/autologout": "^1.3",
         "drupal/backup_migrate": "^4.1",
         "drupal/better_exposed_filters": "4.0-beta1",
         "drupal/block_type_templates": "^1.0",
@@ -37,9 +35,13 @@
         "drupal/codesnippet": "1.6",
         "drupal/color_field": "^2.3",
         "drupal/config_ignore": "^2.2",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-project-message": "^8.8",
+        "drupal/core-recommended": "^8.8",
         "drupal/default_content": "1.0-alpha9",
         "drupal/devel": "^2.1",
         "drupal/disqus": "^1.0@RC",
+        "drupal/domain_group": "^1.2",
         "drupal/ds": "^3.6",
         "drupal/easy_breadcrumb": "^1.12",
         "drupal/email_registration": "^1.1",
@@ -48,11 +50,12 @@
         "drupal/fivestar": "^1.0",
         "drupal/formtips": "^1.3",
         "drupal/google_analytics": "^3.1",
+        "drupal/group": "^1.2",
+        "drupal/hook_event_dispatcher": "^2.2",
         "drupal/icon_select": "^1.4",
         "drupal/jsonapi_extras": "^3.14",
         "drupal/lazy": "^3.4",
         "drupal/like_and_dislike": "^1.0",
-        "drupal/login_redirect_per_role": "1.7",
         "drupal/markdown": "^1.3",
         "drupal/memcache": "^2.0",
         "drupal/menu_per_role": "^1.2",
@@ -65,6 +68,7 @@
         "drupal/openapi_ui_redoc": "^1.0",
         "drupal/openapi_ui_swagger": "^1.0@RC",
         "drupal/paragraphs": "1.11",
+        "drupal/password_policy": "^3.0",
         "drupal/pathauto": "^1.8",
         "drupal/permissions_by_term": "^2.20",
         "drupal/recaptcha": "3.0",
@@ -100,6 +104,8 @@
         "league/oauth2-client": "^2.0",
         "oomphinc/composer-installers-extender": "^1.1"
     },
+    "require-dev": {
+    },
     "conflict": {
         "drupal/drupal": "*"
     },
@@ -118,9 +124,6 @@
             "core": [
                 "type:drupal-core"
             ],
-            "libraries/{$name}": [
-                "type:drupal-library"
-            ],
             "modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
@@ -138,6 +141,14 @@
             ],
             "themes/custom/{$name}": [
                 "type:drupal-custom-theme"
+            ],
+            "libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "libraries/swagger_ui": [
+                "bower-asset/swagger-ui"
             ]
         },
         "patches": {
@@ -145,16 +156,21 @@
             "code snippet library" : "https://www.drupal.org/files/issues/2020-05-04/2931474-29.patch"
           },
           "drupal/total_control": {
-            "Admin Operations" : "patches/total_control/admin_operations.patch"
+            "Admin Operations" : "https://github.com/srijanone/opendevx/blob/master/patches/total_control/admin_operations.patch"
           },
           "drupal/rules": {
-            "Rule Block Configurations" : "patches/rules/rules_block_configurations.patch"
+            "Rule Block Configurations" : "https://github.com/srijanone/opendevx/blob/master/patches/rules/rules_block_configurations.patch"
           },
           "drupal/core": {
-            "Layout Builder" : "patches/core/layout_builder.patch"
+            "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch",
+            "Layout Builder" : "https://github.com/srijanone/opendevx/blob/master/patches/core/layout_builder.patch"
+          },
+          "drupal/group": {
+            "check create access": "https://www.drupal.org/files/issues/2020-09-10/2872645-45.patch",
+            "Views block filter on ajax": "https://www.drupal.org/files/issues/2019-06-27/group_route_ajax_route-2942657-18.patch"
           },
           "drupal/icon_select": {
-            "SvgSpriteGenerator" : "patches/icon_select/icon_select.patch"
+            "SvgSpriteGenerator" : "https://github.com/srijanone/opendevx/blob/master/patches/icon_select/icon_select.patch"
           }
         },
         "drupal-core-project-message": {
@@ -165,10 +181,11 @@
             "post-create-project-cmd-message": [
                 "<bg=blue;fg=white>                                                         </>",
                 "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/legacy-project template!               </>",
+                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
                 "<bg=blue;fg=white>                                                         </>",
                 "",
                 "<bg=yellow;fg=black>Next steps</>:",
+
                 "  * Install the site: https://www.drupal.org/docs/8/install",
                 "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
                 "  * Get support: https://www.drupal.org/support",

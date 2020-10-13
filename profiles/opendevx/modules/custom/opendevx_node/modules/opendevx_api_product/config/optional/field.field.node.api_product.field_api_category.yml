@@ -1,3 +1,4 @@
+uuid: 9272b991-cbeb-4ac0-afc6-fc4e22b5bac0
 langcode: en
 status: true
 dependencies:
@@ -9,8 +10,8 @@ id: node.api_product.field_api_category
 field_name: field_api_category
 entity_type: node
 bundle: api_product
-label: 'API Category'
-description: 'Select one api category to link this content type.'
+label: 'Product Category'
+description: 'Select one product category to link this content type.'
 required: false
 translatable: false
 default_value: {  }

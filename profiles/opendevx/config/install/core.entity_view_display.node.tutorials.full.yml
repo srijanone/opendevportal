@@ -80,27 +80,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          c94d8fae-f82b-4ae4-8217-d529ae771a40:
-            uuid: c94d8fae-f82b-4ae4-8217-d529ae771a40
-            region: right
-            configuration:
-              id: 'field_block:node:tutorials:field_api_detail_section'
-              label: 'Tutorial Section'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
           9e310152-102b-49cd-9be6-91eeac2300ed:
             uuid: 9e310152-102b-49cd-9be6-91eeac2300ed
             region: right

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.protected
+    - node.type.use_cases
+  module:
+    - gnode
+    - node
+id: protected-group_node-use_cases
+label: 'Protected: Group node (Use case)'
+description: 'Adds <em class="placeholder">Use case</em> content to groups both publicly and privately.'
+group_type: protected
+content_plugin: 'group_node:use_cases'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

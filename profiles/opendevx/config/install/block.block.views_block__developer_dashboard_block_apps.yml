@@ -4,6 +4,7 @@ dependencies:
   config:
     - views.view.developer_dashboard
   module:
+    - domain
     - system
     - user
     - views
@@ -12,7 +13,7 @@ dependencies:
 id: views_block__developer_dashboard_block_apps
 theme: devportal
 region: content
-weight: -8
+weight: -9
 provider: null
 plugin: 'views_block:developer_dashboard-block_apps'
 settings:
@@ -32,7 +33,12 @@ visibility:
   user_role:
     id: user_role
     roles:
-      developer: developer
+      authenticated: authenticated
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

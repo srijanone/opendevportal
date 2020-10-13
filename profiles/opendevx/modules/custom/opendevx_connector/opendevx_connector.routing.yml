@@ -1,33 +1,7 @@
-opendevx_connector.manage_configuration_form:
-  path: '/apimanager/manage-config'
+opendevx_connector.gatewayhub_config:
+  path: '/admin/config/system/gatewayhub-config'
   defaults:
-    _form: '\Drupal\opendevx_connector\Form\ConfigManageForm'
-    _title: 'Platform connection settings'
+    _form: '\Drupal\opendevx_connector\Form\GatewayHubConfigForm'
+    _title: 'Gateway hub configuration'
   requirements:
-    _permission: 'access content'
-
-opendevx_connector.config_program_keys_form:
-  path: '/apimanager/manage/program/{program}'
-  defaults:
-    _form: '\Drupal\opendevx_connector\Form\ConfigPlatformKeysForm'
-    _title: 'Configure Program Platform Keys'
-    program: 0
-  requirements:
-    _permission: 'access content'
-  options:
-    parameters:
-      program:
-        type: entity:taxonomy_term
-
-opendevx_connector.program_keys_view:
-  path: '/apimanager/program/{program}'
-  defaults:
-    _controller: '\Drupal\opendevx_connector\Controller\PlatformKeysController::content'
-    _title: 'Program Keys'
-    program: 0
-  requirements:
-    _permission: 'access content'
-  options:
-    parameters:
-      program:
-        type: entity:taxonomy_term
+    _permission: 'administer site configuration'

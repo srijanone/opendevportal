@@ -61,7 +61,7 @@ class AdminDashboardLinks extends BlockBase implements ContainerFactoryPluginInt
     ];
     $admin_links = [];
     $map_links_values = preg_split("/[\r\n,;]+/", $config['dvp_admin_links_settings']['links']);
-    
+
     foreach ($map_links_values as $mapValue) {
       $values = explode("::", $mapValue);
       if (count($values) == 2) {

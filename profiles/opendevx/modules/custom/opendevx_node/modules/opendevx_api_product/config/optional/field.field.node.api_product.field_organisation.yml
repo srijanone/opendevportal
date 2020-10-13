@@ -1,3 +1,4 @@
+uuid: 02649dbd-a2cd-435f-af85-d3b86e7a184a
 langcode: en
 status: true
 dependencies:
@@ -9,7 +10,7 @@ id: node.api_product.field_organisation
 field_name: field_organisation
 entity_type: node
 bundle: api_product
-label: Organisation
+label: Program
 description: ''
 required: false
 translatable: true

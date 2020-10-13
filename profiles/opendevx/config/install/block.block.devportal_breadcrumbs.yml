@@ -8,7 +8,7 @@ dependencies:
 id: devportal_breadcrumbs
 theme: devportal
 region: content
-weight: -18
+weight: -19
 provider: null
 plugin: system_breadcrumb_block
 settings:

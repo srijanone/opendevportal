@@ -4,6 +4,7 @@ dependencies:
   config:
     - system.menu.dashboard-menu
   module:
+    - domain
     - system
     - user
   theme:
@@ -34,6 +35,11 @@ visibility:
       user: '@user.current_user_context:current_user'
   request_path:
     id: request_path
-    pages: "/dashboard/apimanager/*\r\n/dashboard/appmanager/*\r\n/dashboard/topic\r\n/dashboard/topic/my\r\n/apimanager/*\r\n/dashboard/admin/manage/people\r\n/dashboard/program\r\n/dashboard/products\r\n/dashboard/manage/*"
+    pages: "/dashboard/apimanager/*\r\n/dashboard/appmanager/*\r\n/dashboard/topic\r\n/dashboard/topic/my\r\n/apimanager/*\r\n/dashboard/admin/manage/people\r\n/dashboard/program\r\n/dashboard/products\r\n/dashboard/manage/*\r\n/program/users\r\n/group/add\r\n/group/add/*\r\n/coming-soon\r\n/group/*/edit\r\n/group/*/layout"
     negate: false
+    context_mapping: {  }
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
     context_mapping: {  }

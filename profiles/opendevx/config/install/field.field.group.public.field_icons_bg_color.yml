@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_icons_bg_color
+    - group.type.public
+  module:
+    - color_field
+id: group.public.field_icons_bg_color
+field_name: field_icons_bg_color
+entity_type: group
+bundle: public
+label: 'Icons BG Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

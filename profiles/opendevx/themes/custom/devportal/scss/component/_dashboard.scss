@@ -403,76 +403,97 @@
 }
 
 //dashboard topic
-.view-display-id-page_1 {
-  .view-filters {
-    fieldset {
-      @include media (null, $sm) {
-        width: 100%;
-      }
-    }
-  }
-
-  .view-content {
-    fieldset {
-      @include media (null, $sm) {
-        width: 100%;
-      }
-      float: left;
-
-      .custom-select {
+.view-forum {
+  .view-display-id-page_1 {
+    .view-filters {
+      fieldset {
         @include media (null, $sm) {
           width: 100%;
         }
       }
-
-      label {
-        display: block;
-      }
     }
 
-    .button {
-      margin-left: 1%;
-      margin-top: 4.8%;
-    }
-  }
-}
-
-.view-display-id-page_2 {
-  .view-filters {
-    fieldset {
-      @include media (null, $sm) {
-        width: 100%;
+    .view-content {
+      &.row {
+        @include media (null, $sm) {
+          display: unset;
+        }
       }
-    }
-  }
 
-  .view-content {
-    fieldset {
-      @include media (null, $sm) {
-        width: 100%;
-      }
-      float: left;
-
-      .custom-select {
+      fieldset {
         @include media (null, $sm) {
           width: 100%;
         }
-        border: 1px solid $green;
+        float: left;
+  
+        .custom-select {
+          @include media (null, $sm) {
+            width: 100%;
+          }
+          border: 1px solid $green;
+        }
+  
+        label {
+          display: block;
+        }
       }
-
-      label {
-        display: block;
+  
+      .button {
+        @include media (null, $sm) {
+          margin-left: unset;
+          margin-top: unset;
+        }
+        margin-left: 1%;
+        margin-top: 5.3%;
       }
     }
+  }
+  
+  .view-display-id-page_2 {
+    .view-filters {
+      fieldset {
+        @include media (null, $sm) {
+          width: 100%;
+        }
+      }
+    }
+  
+    .view-content {
+      &.row {
+        @include media (null, $sm) {
+          display: unset;
+        }
+      }
+  
+      fieldset {
+        @include media (null, $sm) {
+          width: 100%;
+        }
+        float: left;
+  
+        .custom-select {
+          @include media (null, $sm) {
+            width: 100%;
+          }
+          border: 1px solid $green;
+        }
+  
+        label {
+          display: block;
+        }
+      }
 
-    .button {
-      margin-left: 1%;
-      margin-top: 4.8%;
+      .button {
+        @include media (null, $sm) {
+          margin-left: unset;
+          margin-top: unset;
+        }
+        margin-left: 1%;
+        margin-top: 5.3%;
+      }
     }
   }
 }
-
-
 
 //dashboard apimanager users
 .view-display-id-page_dashboard_users {
@@ -492,15 +513,11 @@
   }
 
   .views-form {
-    table {
-      tr {
-        .views-field-operations {
-          .dropbutton-single {
-            .dropbutton-widget {
-              @include media (null, $sm) {
-                width: auto;
-              }
-            }
+    tr {
+      .views-field-operations {
+        .dropbutton-widget {
+          @include media (null, $sm) {
+            width: auto;
           }
         }
       }
@@ -516,10 +533,10 @@
 
       fieldset {
         float: left;
+      }
 
-        label {
-          display: block;
-        }
+      label {
+        display: block;
       }
 
       .button {
@@ -630,4 +647,10 @@ body {
   left: 600px !important;// sass-lint:disable-line no-important
   right: unset !important;// sass-lint:disable-line no-important
   top: 90px !important;// sass-lint:disable-line no-important
+}
+
+.role-administrator {
+  .toast-wrapper {
+    top: 158px !important;// sass-lint:disable-line no-important
+  }
 }

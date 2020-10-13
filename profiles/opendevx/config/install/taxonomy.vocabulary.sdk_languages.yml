@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'SDK Languages'
+vid: sdk_languages
+description: 'Add SDK Languages.'
+weight: 0

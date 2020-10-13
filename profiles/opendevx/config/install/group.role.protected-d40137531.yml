@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.protected
+  enforced:
+    config:
+      - user.role.product_manager
+id: protected-d40137531
+label: 'Product Manager'
+weight: 3
+internal: true
+audience: outsider
+group_type: protected
+permissions_ui: false
+permissions: {  }

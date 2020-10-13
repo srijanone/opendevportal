@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_header_background_color
+    - group.type.private
+  module:
+    - color_field
+id: group.private.field_header_background_color
+field_name: field_header_background_color
+entity_type: group
+bundle: private
+label: 'Header Background Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

@@ -40,7 +40,6 @@ third_party_settings:
     group_media:
       children:
         - field_listing_image
-        - field_banners_image
       parent_name: group_media_items
       weight: 3
       format_type: tab
@@ -72,7 +71,6 @@ third_party_settings:
         - body
         - field_api_product
         - field_tags
-        - field_organisation
       parent_name: group_media_items
       weight: 0
       format_type: tab
@@ -115,13 +113,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_banners_image:
-    type: media_library_widget
-    weight: 9
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   field_listing_image:
     weight: 8
     settings:
@@ -129,16 +120,6 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
-  field_organisation:
-    type: entity_reference_autocomplete
-    weight: 6
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_tags:
     weight: 5
     settings:
@@ -195,7 +176,9 @@ content:
 hidden:
   comment: true
   field_api_detail_section: true
+  field_banners_image: true
   field_description: true
+  field_organisation: true
   field_upload_files: true
   field_user_rating: true
   layout_builder__layout: true
