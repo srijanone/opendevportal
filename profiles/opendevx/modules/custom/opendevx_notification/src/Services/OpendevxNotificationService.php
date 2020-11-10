@@ -110,10 +110,6 @@ class OpendevxNotificationService {
       'totalCount' => '0',
     ];
 
-    if (empty($roles)) {
-      return $notification;
-    }
-
     // Get the nids which are not as per role.
     $nid = $this->getNotificationNode($uid, $roles[0], $this->getContentStateByRole($roles[0]));
     if (empty($nid)) {
@@ -176,11 +172,14 @@ class OpendevxNotificationService {
     $query = $this->connection->select('content_moderation_state_field_revision',
      'cmsf');
     $query->fields('cmsf', ['content_entity_id', 'revision_id', 'moderation_state']);
-    if ($role == 'product_manager') {
+    $query->addJoin('inner', 'node', 'n',
+       'cmsf.content_entity_id = n.nid');
+     $query->fields('n', ['type']);
+    if (\Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
       $orgid = $this->org->getOrgId();
-      $query->addJoin('left', 'node__field_organisation',
-        'nfo', 'nfo.entity_id = cmsf.content_entity_id');
-      $query->condition('nfo.field_organisation_target_id', $orgid);
+      $query->addJoin('left', 'group_content_field_data',
+        'gcfd', 'gcfd.entity_id = cmsf.content_entity_id');
+      $query->condition('gcfd.gid', $orgid);
     }
     else {
       $query->addJoin('left', 'node_field_data', 'nfd',
@@ -193,7 +192,7 @@ class OpendevxNotificationService {
     // Prepare array of nid which are not in pending for approval state.
     while ($result = $res->fetchObject()) {
       if (!in_array($result->content_entity_id, $latest)
-        && in_array($result->moderation_state, $state)) {
+        && in_array($result->moderation_state, $state[$result->type])) {
         $nid[] = $result->content_entity_id;
       }
       $latest[] = $result->content_entity_id;
@@ -210,17 +209,22 @@ class OpendevxNotificationService {
    */
   protected function getContentStateByRole($role) {
     $states = [];
-    switch ($role) {
-      case 'product_manager':
-        $states = [
+    switch (\Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
+      case true:
+        $states['api_document'] = [
           'architecture_review',
           'product_review',
-          'pending_for_approval',
+          'draft',
+          'published'
         ];
+        $states['apps'] = [
+          'draft'
+        ];
+
         break;
 
-      case 'developer':
-        $states = ['draft', 'published'];
+      case false:
+        $states['apps'] = ['published', 'pending_for_approval'];
         break;
     }
 

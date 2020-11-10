@@ -113,17 +113,16 @@ function prepare_program($entity, $operation) {
         ],
       ],
     ];
-    $gateway = $entity->get('field_gateway')->referencedEntities()[0];
-    if ($gateway && $gateway->field_hub_content_id->value) {
-      $value['value']['data']['relationships']['field_gatewayid']['data'] = [
-        'type' => 'node--gateway',
-        'id' => $entity->get('field_gateway')->referencedEntities()[0]->field_hub_content_id->value,
-      ];
+    $gateway = $entity->get('field_gateway')->referencedEntities();
+    $gwrelation = $value['value']['data']['relationships']['field_gatewayid']['data'];
+    if ($gateway) {
+      $gwrelation = get_gateway_info($gateway, $gwrelation);
     }
     else {
-      $value['value']['data']['relationships']['field_gatewayid']['data'] = NULL;
+      $gwrelation = NULL;
     }
   }
+  $value['value']['data']['relationships']['field_gatewayid']['data'] = array_filter($gwrelation);
   if ($entity->field_hub_content_id->value) {
     $value['value']['data']['id'] = $entity->field_hub_content_id->value;
   }
@@ -131,4 +130,24 @@ function prepare_program($entity, $operation) {
   $response = $entity_op->sendEntity($value);
 
   return $response;
+}
+
+/**
+ * Get Gateway information.
+ */
+function get_gateway_info($gateway, $gwrelation) {
+  $gwrelation = NULL;
+  foreach ($gateway as $key => $gwdata) {
+    if ($gwdata->field_hub_content_id->value) {
+      $gwrelation[$key] = [
+        'type' => 'node--gateway',
+        'id' => $gwdata->field_hub_content_id->value,
+      ];
+    }
+    else {
+      $gwrelation[$key] = NULL;
+    }
+  }
+
+  return $gwrelation;
 }

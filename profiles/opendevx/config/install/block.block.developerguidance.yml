@@ -5,11 +5,11 @@ dependencies:
     - system
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: developerguidance
-theme: devportal
+theme: opendevx_theme
 region: content
-weight: -5
+weight: -6
 provider: null
 plugin: 'block_content:18403a4d-04d0-4a8c-ab0d-2e74822807be'
 settings:

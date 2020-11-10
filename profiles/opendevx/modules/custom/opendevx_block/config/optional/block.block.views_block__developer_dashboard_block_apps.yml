@@ -8,9 +8,9 @@ dependencies:
     - user
     - views
   theme:
-    - devportal
+    - opendevx_theme
 id: views_block__developer_dashboard_block_apps
-theme: devportal
+theme: opendevx_theme
 region: content
 weight: -8
 provider: null

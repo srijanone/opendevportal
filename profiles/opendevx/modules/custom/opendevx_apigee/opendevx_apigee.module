@@ -1,0 +1,122 @@
+<?php
+
+/**
+ * @file
+ * To perform sync operation between portal to hub.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_entity_save().
+ */
+function opendevx_apigee_entity_presave(EntityInterface $entity) {
+  switch ($entity->getEntityTypeId()) {
+    case 'node':
+      if ($entity->bundle() == 'apps') {
+        $current_uri = \Drupal::request()->getRequestUri();
+        $current_uri = explode('/', $current_uri);
+        if(FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess()) {
+        if ($current_uri[1] == 'group') {
+          \Drupal::service('opendevx_user.organisation')->setProgramId($current_uri[2]);
+        }
+      }
+        $response = create_app($entity);
+        if ( $response) {
+            $entity->set('field_client_id',$response['credentials'][0]['consumerKey']);
+            $entity->set('field_client_secret', $response['credentials'][0]['consumerSecret']);
+        }
+      }
+      break;
+
+    case 'group_content':
+        if ($entity->hasField('group_roles')) {
+          $user_id = $entity->get('entity_id')->target_id;
+          $user = \Drupal::entityTypeManager()->getStorage('user')->load($user_id);
+          if ($user) {
+            $result = create_developer_account($user);
+          }
+        }
+      break;
+  }
+
+}
+
+/**
+ * Create Gateway data.
+ */
+function create_developer_account($entity) {
+  $apigee_credentials = getApigeeCredentials($entity);
+  if ($apigee_credentials) {
+    $data = [
+      'method' => 'POST',
+      'credentials' => $apigee_credentials,
+      'data' => [
+      'email' => $entity->getEmail(),
+      'firstName' => $entity->get('field_first_name')->value,
+      'lastName' => $entity->get('field_last_name')->value,
+      'userName' =>$entity->getEmail(),
+    ],
+  ];
+    $entity_op = \Drupal::service('opendevx_apigee.apigee_service');
+    $developer_info = $entity_op->getDeveloper($data);
+    if (empty( $developer_info )) {
+      $response = $entity_op->createDeveloper($data);
+    }
+  }
+  return $response ?? [];
+}
+
+/**
+ * Create Gateway data.
+ */
+function create_app($entity) {
+  $apigee_credentials = getApigeeCredentials($entity);
+  if ($apigee_credentials) {
+    $data = [
+      'method' => 'POST',
+      'credentials' => $apigee_credentials,
+      'data' => [
+        'name' => $entity->getTitle(),
+      ],
+    ];
+    $entity_op = \Drupal::service('opendevx_apigee.apigee_service');
+    $app_info = $entity_op->getApp($data);
+    if (!empty( $app_info )) {
+      return $app_info;
+    } else {
+      $response = $entity_op->createApp($data);
+      }
+    }
+  return $response ?? [];
+}
+
+/**
+ * Get Apigee Credentials.
+ */
+function getApigeeCredentials($entity) {
+  $program_id = \Drupal::service('opendevx_user.organisation')->getOrgId();
+  $program = \Drupal::entityTypeManager()->getStorage('group')->load($program_id);
+  if ($program) {
+    $gateway = $program->get('field_gateway')->referencedEntities()[0];
+  }
+  if ($gateway) {
+    $user = \Drupal::currentUser();
+    $user_email = $user->getEmail();
+    $credentials['org_id'] = $gateway->get('field_region')->value;
+    $credentials['user_name'] = $gateway->get('field_client_id')->value;
+    $credentials['password'] = $gateway->get('field_client_secret')->value;
+    $credentials['email'] = $user_email;
+  }
+  return $credentials ?? [];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function opendevx_apigee_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['node_gateway_form', 'node_gateway_edit_form'])) {
+    $form['#attached']['library'][] = 'opendevx_apigee/opendevx_apigee';
+  }
+}

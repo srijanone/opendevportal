@@ -333,10 +333,11 @@ content:
 hidden:
   content_moderation_control: true
   field_add_to_gallery: true
+  field_api_product_single: true
   field_app_ref_id: true
   field_expected_call_volume: true
   field_version: true
-  field_video: true
   langcode: true
+  field_video: true
   layout_builder__layout: true
   links: true

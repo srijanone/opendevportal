@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - devportal
-id: devportal_local_actions
-theme: devportal
+    - opendevx_theme
+id: opendevx_theme_local_actions
+theme: opendevx_theme
 region: content
 weight: -14
 provider: null

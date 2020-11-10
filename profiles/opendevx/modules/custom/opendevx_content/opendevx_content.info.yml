@@ -1,6 +1,7 @@
-name: Opendevx - Content
-description : 'Extend the nodes and content specific for developer portal.'
+name: opendevx Content
+description : 'Extend the nodes and content specific for opendevx.'
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
+project: opendevx_content

@@ -5,10 +5,8 @@
  */
 
 use Drupal\block\Entity\Block;
-use Drupal\node\NodeInterface;
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\opendevx_user\ProgramInterface;
+use Drupal\opendevx_block\Utility\BlockUtility;
 
 /**
  * Implements hook_block_access().
@@ -16,78 +14,10 @@ use Drupal\opendevx_user\ProgramInterface;
  * Visibility of the block.
  */
 function opendevx_block_block_access(Block $block, $operation, AccountInterface $account) {
-	if ($operation == 'view' && ($block->id() == 'product_api' || $block->id() == 'product_banner')) {
-		$content_types = [
-      'apps', 'article', 'assets', 'document_overview', 'events', 'faq',
-      'forum', 'issues', 'resources', 'solutions', 'tutorials', 'use_cases', 'api_document'
-    ];
-    //Now based on Node Pages, Hide the block
-    if (!empty(\Drupal::request()->get('parent'))) {
-      return AccessResult::neutral();
-    }
-    $node = \Drupal::routeMatch()->getParameter('node');
-    if (($node instanceof NodeInterface) && ($node->gettype() == 'api_product')) {
-      return AccessResult::neutral();
-    }
-		$current_path = \Drupal::service('path.current')->getPath();
-		$path_index = explode('/', $current_path);
-		if ($block->id() == 'product_banner' && $path_index[1] == 'product') {
-			return AccessResult::neutral();
-		}
-		if (($block->id() == 'product_api' || $block->id() == 'product_banner') && (isset($path_index[3]) && in_array($path_index[3], $content_types))) {
-			return AccessResult::neutral();
-		}
-    else {
-      //Hiding the block if the node is not 'api_product' type
-      return AccessResult::forbiddenIf(true)->addCacheableDependency($block);
-    }
-	}
-	// Access the menu block and switcher block to the user who have PM role in any program.
 	if ($operation == 'view') {
-		switch ($block->id()) {
-			case 'pm_dashboard':
-      case 'user_organisation_block':
-      case 'opendevxnotificationblock':
-			case 'productmanagement_2':
-				if (checkPmRole() < 1) {
-					return AccessResult::forbiddenIf(true)->addCacheableDependency($block);
-				}
-        break;
-			case 'developermenu':
-				if (checkPmRole() < 1) {
-					return AccessResult::neutral();
-				}
-				break;
-			case 'devportal_main_menu':
-			case 'devportal_admin_main_menu':
-				if (checkPmRole() > 0) {
-					return AccessResult::forbiddenIf(true)->addCacheableDependency($block);
-				}
-				break;
-		}
+    return BlockUtility::checkBlockAccess($block);
   }
-
-  // Hide blocks if user is not an Administrator/Admin/Group-PM.
-  if (FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess()) {
-    $blocks = ['devportal_local_tasks'];
-    if ($operation == 'view' && in_array($block->id(), $blocks)) {
-      return AccessResult::forbiddenIf(true)->addCacheableDependency($block);
-    }
-  }
-
 }
-
-/**
- * Check if user is a PM or not.
- *
- * return int.
- */
- function checkPmRole() {
-	 $user_roles = \Drupal::service('tempstore.private')->get('opendevx_user')->get('user_programs');
-	 $roles = array_unique(array_intersect($user_roles, ProgramInterface::PM_ROLES));
-
-	 return count($roles);
- }
 
 /**
  * Implements hook_theme().

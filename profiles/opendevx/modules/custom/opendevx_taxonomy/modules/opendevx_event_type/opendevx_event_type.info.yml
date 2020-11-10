@@ -1,7 +1,7 @@
-name: Opendevx - Event Type
-description : 'Use the event type taxonomy term for developer portal.'
+name: opendevx Event Type
+description : 'Use the event type taxonomy term for opendevx.'
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
 dependencies:

@@ -89,6 +89,7 @@ content:
     third_party_settings: {  }
 hidden:
   contact: true
+  field_domain_admin: true
   field_gender: true
   field_social_profile: true
   field_subscribed_products: true

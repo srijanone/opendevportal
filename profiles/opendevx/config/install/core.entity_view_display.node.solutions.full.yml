@@ -22,7 +22,6 @@ dependencies:
     - entity_reference_revisions
     - layout_builder
     - social_media
-    - system
     - text
     - user
 third_party_settings:
@@ -42,18 +41,7 @@ third_party_settings:
           link_custom: ''
           classes:
             layout_class: {  }
-        components:
-          761538d3-90fe-40bf-8a59-71972ab28f67:
-            uuid: 761538d3-90fe-40bf-8a59-71972ab28f67
-            region: ds_content
-            configuration:
-              id: system_breadcrumb_block
-              label: Breadcrumbs
-              provider: system
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
+        components: {  }
         third_party_settings: {  }
       -
         layout_id: ds_2col
@@ -209,5 +197,4 @@ hidden:
   field_organisation: true
   field_tags: true
   field_user_rating: true
-  langcode: true
   layout_builder__layout: true

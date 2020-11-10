@@ -24,7 +24,6 @@ dependencies:
     - entity_reference_revisions
     - layout_builder
     - social_media
-    - system
     - text
     - user
 third_party_settings:
@@ -44,18 +43,7 @@ third_party_settings:
           link_custom: ''
           classes:
             layout_class: {  }
-        components:
-          82cf2474-3187-4d00-a9dd-c288f338cc04:
-            uuid: 82cf2474-3187-4d00-a9dd-c288f338cc04
-            region: ds_content
-            configuration:
-              id: system_breadcrumb_block
-              label: Breadcrumbs
-              provider: system
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
+        components: {  }
         third_party_settings: {  }
       -
         layout_id: ds_2col_fluid

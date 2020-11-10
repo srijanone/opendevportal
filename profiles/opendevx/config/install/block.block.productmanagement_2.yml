@@ -28,8 +28,3 @@ visibility:
     domains: {  }
     negate: null
     context_mapping: {  }
-  request_path:
-    id: request_path
-    pages: '/group/*/content/create/*'
-    negate: false
-    context_mapping: {  }

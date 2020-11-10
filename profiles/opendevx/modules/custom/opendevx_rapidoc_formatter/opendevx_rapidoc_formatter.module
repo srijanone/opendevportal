@@ -5,6 +5,7 @@
  * Main module file for RapiDoc UI Field Formatter.
  */
 
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\views\ViewExecutable;
 
 /**

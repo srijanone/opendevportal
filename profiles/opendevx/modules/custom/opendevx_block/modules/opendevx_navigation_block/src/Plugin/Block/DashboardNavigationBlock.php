@@ -21,7 +21,9 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var mixed $currentPath
+   * The current path.
+   *
+   * @var mixed
    */
   protected $currentPath;
 
@@ -34,7 +36,7 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $request_stack
+   * @param Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, RequestStack $request_stack) {
@@ -53,6 +55,7 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
       $container->get('request_stack')
     );
   }
+
   /**
    * {@inheritdoc}
    */
@@ -149,15 +152,23 @@ class DashboardNavigationBlock extends BlockBase implements ContainerFactoryPlug
         unset($bundles['listing_pages']);
       }
       // Prepare the list of menu and navigation for the dashboard.
-      $result = BlockUtility::prepareDashboardNavBlock($bundles, $product_id);
-      $product_title = ucwords(str_replace("_", " ", array_keys($result)[0]));
+      if (!empty($bundles)) {
+        $result = BlockUtility::prepareDashboardNavBlock($bundles, $product_id);
+
+        return [
+          '#theme' => 'dashboard_product_navigation',
+          '#navigationData' => array_values($result)[0],
+          '#productTitle' => ucwords(str_replace("_", " ", array_keys($result)[0])),
+        ];
+      }
     }
 
     return [
       '#theme' => 'dashboard_product_navigation',
-      '#navigationData' => array_values($result)[0],
-      '#productTitle' => $product_title,
+      '#navigationData' => NULL,
+      '#productTitle' => $this->t('There is no navigation item is added.'),
     ];
+
   }
 
   /**

@@ -4,9 +4,9 @@ dependencies:
   module:
     - social_media_links
   theme:
-    - devportal
+    - opendevx_theme
 id: socialmedialinks
-theme: devportal
+theme: opendevx_theme
 region: footer_first
 weight: -17
 provider: null

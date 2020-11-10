@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.base_field_override.node.api_product.title
     - core.entity_view_display.comment.comment.default
     - core.entity_view_mode.node.left_nav_full_view
     - field.field.node.api_product.body
@@ -127,12 +128,12 @@ third_party_settings:
               cta_section:
                 id:
                   cta_title: 'Getting Started'
-                  cta_description: 'Lorem ipsum'
+                  cta_description: 'This is description.'
                   cta_type: apps
                   cta_label: 'Get Started'
                 label:
                   cta_title: 'Need help'
-                  cta_description: 'Lorem Ipsum'
+                  cta_description: 'Need support for this block.'
                   cta_type: issues
                   cta_label: Support
                 provider:
@@ -180,6 +181,46 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -7
+        third_party_settings: {  }
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          5d0bc133-8c36-4c41-88aa-fc684fb0e575:
+            uuid: 5d0bc133-8c36-4c41-88aa-fc684fb0e575
+            region: ds_content
+            configuration:
+              id: product_header_navigation_block
+              label: 'Product Header Navigation Block'
+              provider: opendevx_navigation_block
+              label_display: '0'
+              dvp_header_navigation:
+                api_product:
+                  navigation_text: ''
+                  show: '1'
+                  type: Product
+                api_document:
+                  navigation_text: ''
+                  show: '1'
+                  type: 'API Reference'
+                document_overview:
+                  navigation_text: ''
+                  show: '1'
+                  type: Documentation
+              context_mapping: {  }
+            additional:
+              visibility: {  }
+              visibility_operator: and
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: ds_1col

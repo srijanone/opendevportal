@@ -5,9 +5,9 @@ dependencies:
     - opendevx_organisation
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: frontorganisationblock
-theme: devportal
+theme: opendevx_theme
 region: primary_menu
 weight: -13
 provider: null

@@ -27,8 +27,8 @@ settings:
       sort:
         field: _none
       auto_create: false
-  app:
-    handler: 'default:app'
+  app:	
+    handler: 'default:app'	
     handler_settings: {  }
   comment:
     handler: 'default:comment'
@@ -77,5 +77,14 @@ settings:
     handler_settings: {  }
   vote_result:
     handler: 'default:vote_result'
+    handler_settings: {  }
+  group:
+    handler: 'default:group'
+    handler_settings: {  }
+  group_content:
+    handler: 'default:group_content'
+    handler_settings: {  }
+  redirect:
+    handler: 'default:redirect'
     handler_settings: {  }
 field_type: dynamic_entity_reference

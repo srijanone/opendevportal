@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - devportal
-id: devportal_account_menu
-theme: devportal
+    - opendevx_theme
+id: opendevx_theme_account_menu
+theme: opendevx_theme
 region: primary_menu
 weight: -15
 provider: null

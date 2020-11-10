@@ -2,11 +2,12 @@
 
 namespace Drupal\opendevx_node\EventSubscriber;
 
+use Drupal\opendevx_user\Organisation;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\core_event_dispatcher\Event\Form\FormAlterEvent;
 use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Form alter event subscriber class.
@@ -26,6 +27,13 @@ class FormAlterSubscriber implements EventSubscriberInterface {
   protected $entityTypeManager;
 
   /**
+   * User program service.
+   *
+   * @var  Drupal\opendevx_user\Organisation
+   */
+  protected $program;
+
+  /**
    * Form Alter constructor.
    *
    * @param mixed $entity_type_manager
@@ -33,9 +41,10 @@ class FormAlterSubscriber implements EventSubscriberInterface {
    * @param mixed $request_stack
    *   The plugin request stack service.
    */
-  public function __construct(RequestStack $request_stack, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(RequestStack $request_stack, EntityTypeManagerInterface $entity_type_manager, Organisation $program) {
     $this->currentPath = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
+    $this->program = $program;
   }
 
 
@@ -61,7 +70,10 @@ class FormAlterSubscriber implements EventSubscriberInterface {
     $group_forms = [
       'group_private_add_form',
       'group_protected_add_form',
-      'group_public_add_form'
+      'group_public_add_form',
+      'group_private_edit_form',
+      'group_protected_edit_form',
+      'group_public_edit_form',
     ];
     $group_member_forms = [
       'group_content_public-group_membership_add_form', 'group_content_public-group_membership_edit_form',
@@ -69,6 +81,9 @@ class FormAlterSubscriber implements EventSubscriberInterface {
       'group_content_protected-group_membership_add_form', 'group_content_protected-group_membership_edit_form'
     ];
     if (in_array($form['#form_id'], $group_forms)) {
+      if (FALSE == $this->program->checkAccess()) {
+        $form['field_gateway']['#access'] = FALSE;
+      }
       $form['actions']['submit']['#value'] = t('Save');
     }
     else if (in_array($form['#form_id'], $group_member_forms)) {

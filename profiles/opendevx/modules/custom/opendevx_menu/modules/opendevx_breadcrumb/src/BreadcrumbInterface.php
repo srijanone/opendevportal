@@ -44,16 +44,16 @@ interface BreadcrumbInterface {
     'apps' => 'Applications',
     'article' => 'Blogs',
     'assets' => 'Media',
-    'document_overview' => 'Page',
+    'document_overview' => 'Pages',
     'events' => 'Events',
-    'faq' => 'Faqs',
+    'faq' => 'FAQs',
     'forum' => 'Forum',
     'issues' => 'Issues',
-    'resources' => 'Resources',
+    'resources' => 'Downloads',
     'solutions' => 'Solutions',
     'tutorials' => 'Tutorials',
     'use_cases' => 'Use Cases',
-    'api_document' => 'API',
+    'api_document' => 'API References',
   ];
 
 }

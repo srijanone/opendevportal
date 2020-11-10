@@ -21,13 +21,13 @@ dependencies:
     - field.field.node.api_product.field_view_mode
     - field.field.node.api_product.layout_builder__layout
     - node.type.api_product
-    - views.view.api_product
     - views.view.content_listing_block
   module:
     - opendevx_block
     - opendevx_subscription
     - ds
     - layout_builder
+    - layout_discovery
     - social_media
     - system
     - user
@@ -38,21 +38,13 @@ third_party_settings:
     enabled: true
     sections:
       -
-        layout_id: ds_1col
+        layout_id: layout_onecol
         layout_settings:
-          label: ''
-          wrappers:
-            ds_content: div
-          outer_wrapper: div
-          attributes: ''
-          link_attribute: ''
-          link_custom: ''
-          classes:
-            layout_class: {  }
+          label: 'Banner Block '
         components:
-          6f5fd7b1-59f5-4732-be63-897af41d476a:
-            uuid: 6f5fd7b1-59f5-4732-be63-897af41d476a
-            region: ds_content
+          22e66673-1078-430f-a841-d70ddb6f3f25:
+            uuid: 22e66673-1078-430f-a841-d70ddb6f3f25
+            region: content
             configuration:
               id: product_banner_block
               label: 'Product Banner Block'
@@ -76,29 +68,19 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          a27d3c3d-1af1-46a6-8a64-a5e6e227a009:
-            uuid: a27d3c3d-1af1-46a6-8a64-a5e6e227a009
+          2874b388-c4c6-461b-a99c-cfa16f3e123b:
+            uuid: 2874b388-c4c6-461b-a99c-cfa16f3e123b
             region: left
             configuration:
-              id: 'field_block:node:api_product:field_product_attributes'
-              label: 'Product Attributes'
-              provider: layout_builder
+              id: social_sharing_block
+              label: 'Social Sharing block'
+              provider: social_media
               label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              context_mapping: {  }
             additional: {  }
-            weight: 0
-          5bdee5c9-4f26-4a9f-953a-24a401158018:
-            uuid: 5bdee5c9-4f26-4a9f-953a-24a401158018
+            weight: -8
+          96634616-13b7-4527-a1f3-d53755c0497f:
+            uuid: 96634616-13b7-4527-a1f3-d53755c0497f
             region: left
             configuration:
               id: 'field_block:node:api_product:field_user_rating'
@@ -117,9 +99,9 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
-          cde226df-a80c-466b-b73c-4551408d722f:
-            uuid: cde226df-a80c-466b-b73c-4551408d722f
+            weight: -9
+          48e0c86f-c50d-45b5-8a79-38b83cb33d45:
+            uuid: 48e0c86f-c50d-45b5-8a79-38b83cb33d45
             region: right
             configuration:
               id: cta_block
@@ -135,7 +117,7 @@ third_party_settings:
                 label:
                   cta_title: 'Need help'
                   cta_description: 'Need support for this content'
-                  cta_type: apps
+                  cta_type: issues
                   cta_label: Support
                 provider:
                   cta_title: ''
@@ -149,21 +131,31 @@ third_party_settings:
                   cta_label: ''
               context_mapping: {  }
             additional: {  }
-            weight: 0
-          ca7a3354-7bd6-4837-a584-3ac8df960cc1:
-            uuid: ca7a3354-7bd6-4837-a584-3ac8df960cc1
+            weight: -9
+          552b6e74-465f-4f3f-ab1c-bf52659c230e:
+            uuid: 552b6e74-465f-4f3f-ab1c-bf52659c230e
             region: left
             configuration:
-              id: social_sharing_block
-              label: 'Social Sharing block'
-              provider: social_media
+              id: 'field_block:node:api_product:field_product_attributes'
+              label: 'Product Attributes'
+              provider: layout_builder
               label_display: '0'
-              context_mapping: {  }
+              formatter:
+                label: hidden
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  ds:
+                    ds_limit: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
             additional: {  }
-            weight: 2
-          3a3a41eb-ef92-42eb-876d-9d2a3f875de7:
-            uuid: 3a3a41eb-ef92-42eb-876d-9d2a3f875de7
-            region: left
+            weight: -10
+          499cb290-3431-46eb-9f3a-55dd668e49e4:
+            uuid: 499cb290-3431-46eb-9f3a-55dd668e49e4
+            region: right
             configuration:
               id: openapidevx_subscription_block
               label: 'Subscription Block'
@@ -171,7 +163,7 @@ third_party_settings:
               label_display: '0'
               context_mapping: {  }
             additional: {  }
-            weight: 3
+            weight: -10
         third_party_settings: {  }
       -
         layout_id: ds_1col
@@ -186,38 +178,8 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          848828b3-8c08-43cf-8706-0238385acaee:
-            uuid: 848828b3-8c08-43cf-8706-0238385acaee
-            region: ds_content
-            configuration:
-              id: system_breadcrumb_block
-              label: Breadcrumbs
-              provider: system
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: -10
-          980ea4ef-af1c-45fe-90bd-69df94ddc92f:
-            uuid: 980ea4ef-af1c-45fe-90bd-69df94ddc92f
-            region: ds_content
-            configuration:
-              id: 'field_block:node:api_product:field_feature_label'
-              label: 'Feature Label'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -8
-          7473cd6b-50c6-4c64-b6e6-80ead95d9f36:
-            uuid: 7473cd6b-50c6-4c64-b6e6-80ead95d9f36
+          a2335eb2-74e6-4d9d-90d1-da1361ef4196:
+            uuid: a2335eb2-74e6-4d9d-90d1-da1361ef4196
             region: ds_content
             configuration:
               id: 'field_block:node:api_product:field_key_features'
@@ -237,8 +199,38 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -7
-          dfa5ebb9-9b43-4034-9bfe-b95f3c460d69:
-            uuid: dfa5ebb9-9b43-4034-9bfe-b95f3c460d69
+          6be5905f-f229-48a3-bc28-e80626ef1f05:
+            uuid: 6be5905f-f229-48a3-bc28-e80626ef1f05
+            region: ds_content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: -10
+          a29fcb23-92c2-499b-9ddf-3bb24731a180:
+            uuid: a29fcb23-92c2-499b-9ddf-3bb24731a180
+            region: ds_content
+            configuration:
+              id: 'field_block:node:api_product:field_feature_label'
+              label: 'Feature Label'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          14af3686-8ef1-4fcf-a305-1a8eb345a65a:
+            uuid: 14af3686-8ef1-4fcf-a305-1a8eb345a65a
             region: ds_content
             configuration:
               id: 'field_block:node:api_product:body'
@@ -269,77 +261,8 @@ third_party_settings:
           classes:
             layout_class: {  }
         components:
-          b67f92d7-5800-4777-8bc8-51ee5c03c243:
-            uuid: b67f92d7-5800-4777-8bc8-51ee5c03c243
-            region: ds_content
-            configuration:
-              id: 'inline_block:api_listing_block'
-              label: Assets
-              provider: layout_builder
-              label_display: visible
-              view_mode: full
-              block_revision_id: 68
-              block_serialized: null
-              context_mapping: {  }
-            additional: {  }
-            weight: 4
-          7e06f1d8-30be-4ecb-a763-e8419989eafe:
-            uuid: 7e06f1d8-30be-4ecb-a763-e8419989eafe
-            region: ds_content
-            configuration:
-              id: 'inline_block:api_listing_block'
-              label: Tutorials
-              provider: layout_builder
-              label_display: visible
-              view_mode: full
-              block_revision_id: 69
-              block_serialized: null
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
-          c50d3a20-b4a3-4e64-8ed1-0819695bfed3:
-            uuid: c50d3a20-b4a3-4e64-8ed1-0819695bfed3
-            region: ds_content
-            configuration:
-              id: 'inline_block:api_listing_block'
-              label: Blogs
-              provider: layout_builder
-              label_display: visible
-              view_mode: full
-              block_revision_id: 70
-              block_serialized: null
-              context_mapping: {  }
-            additional: {  }
-            weight: 5
-          b4b28d37-ef5a-4b26-a500-f8c747086a16:
-            uuid: b4b28d37-ef5a-4b26-a500-f8c747086a16
-            region: ds_content
-            configuration:
-              id: 'inline_block:api_listing_block'
-              label: Resources
-              provider: layout_builder
-              label_display: visible
-              view_mode: full
-              block_revision_id: 72
-              block_serialized: null
-              context_mapping: {  }
-            additional: {  }
-            weight: 6
-          9c67c849-7cf3-4711-94eb-ddd9ba3eb48d:
-            uuid: 9c67c849-7cf3-4711-94eb-ddd9ba3eb48d
-            region: ds_content
-            configuration:
-              id: 'views_block:content_listing_block-faq_block'
-              label: FAQs
-              provider: views
-              label_display: visible
-              views_label: FAQs
-              items_per_page: '3'
-              context_mapping: {  }
-            additional: {  }
-            weight: 2
-          df66fc3a-4415-4ab8-960d-dffc6bb63f71:
-            uuid: df66fc3a-4415-4ab8-960d-dffc6bb63f71
+          787af936-c218-457f-a112-f378d52e40e8:
+            uuid: 787af936-c218-457f-a112-f378d52e40e8
             region: ds_content
             configuration:
               id: 'inline_block:api_listing_block'
@@ -347,52 +270,135 @@ third_party_settings:
               provider: layout_builder
               label_display: visible
               view_mode: full
-              block_revision_id: 67
+              block_revision_id: 54
               block_serialized: null
               context_mapping: {  }
             additional: {  }
-            weight: 7
-          99b8c9c9-a9f5-4a09-bc77-b2ad7c2b9f82:
-            uuid: 99b8c9c9-a9f5-4a09-bc77-b2ad7c2b9f82
+            weight: -10
+          fc206512-da53-4497-850a-c6ae88c2e553:
+            uuid: fc206512-da53-4497-850a-c6ae88c2e553
             region: ds_content
             configuration:
               id: 'inline_block:api_listing_block'
-              label: 'Use Cases'
+              label: 'Assets '
               provider: layout_builder
               label_display: visible
               view_mode: full
-              block_revision_id: 71
+              block_revision_id: 55
               block_serialized: null
               context_mapping: {  }
             additional: {  }
-            weight: 3
-          4c6f0801-954b-4691-b3ab-e719dbd76681:
-            uuid: 4c6f0801-954b-4691-b3ab-e719dbd76681
+            weight: -9
+          422b20d2-6915-4e12-a127-c32986a167ea:
+            uuid: 422b20d2-6915-4e12-a127-c32986a167ea
             region: ds_content
             configuration:
               id: 'inline_block:api_listing_block'
-              label: Overview
+              label: Tutorial
               provider: layout_builder
               label_display: visible
               view_mode: full
-              block_revision_id: 97
+              block_revision_id: 56
               block_serialized: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -8
+          c5ffbfc3-6e02-41e6-a9b4-84f493c94e5d:
+            uuid: c5ffbfc3-6e02-41e6-a9b4-84f493c94e5d
+            region: ds_content
+            configuration:
+              id: 'inline_block:api_listing_block'
+              label: Blog
+              provider: layout_builder
+              label_display: visible
+              view_mode: full
+              block_revision_id: 57
+              block_serialized: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -7
+          9a8f84bd-db9a-4467-8537-1eeba5c1a33f:
+            uuid: 9a8f84bd-db9a-4467-8537-1eeba5c1a33f
+            region: ds_content
+            configuration:
+              id: 'inline_block:api_listing_block'
+              label: Page
+              provider: layout_builder
+              label_display: visible
+              view_mode: full
+              block_revision_id: 58
+              block_serialized: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -6
+          c37b69cd-64bc-4f1e-b561-1be8e7203e99:
+            uuid: c37b69cd-64bc-4f1e-b561-1be8e7203e99
+            region: ds_content
+            configuration:
+              id: 'inline_block:api_listing_block'
+              label: 'Use Case'
+              provider: layout_builder
+              label_display: visible
+              view_mode: full
+              block_revision_id: 59
+              block_serialized: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -5
+          a7bd79c6-ce64-4151-bf7d-f0000e084b02:
+            uuid: a7bd79c6-ce64-4151-bf7d-f0000e084b02
+            region: ds_content
+            configuration:
+              id: 'inline_block:api_listing_block'
+              label: Resource
+              provider: layout_builder
+              label_display: visible
+              view_mode: full
+              block_revision_id: 60
+              block_serialized: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -4
+          deadffb5-9ff2-46c5-9bed-94d213f0abb4:
+            uuid: deadffb5-9ff2-46c5-9bed-94d213f0abb4
+            region: ds_content
+            configuration:
+              id: 'inline_block:api_listing_block'
+              label: Solutions
+              provider: layout_builder
+              label_display: visible
+              view_mode: full
+              block_revision_id: 61
+              block_serialized: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -3
+          15509c4b-c64e-4241-8b09-d504164f5604:
+            uuid: 15509c4b-c64e-4241-8b09-d504164f5604
+            region: ds_content
+            configuration:
+              id: 'views_block:content_listing_block-faq_block'
+              label: FAQ
+              provider: views
+              label_display: visible
+              views_label: FAQ
+              items_per_page: '3'
+              context_mapping: {  }
+            additional: {  }
+            weight: -2
+          50ebe332-7aa8-4a76-9295-921e1a44e34b:
+            uuid: 50ebe332-7aa8-4a76-9295-921e1a44e34b
+            region: ds_content
+            configuration:
+              id: 'views_block:content_listing_block-block_1'
+              label: 'API Documents'
+              provider: views
+              label_display: visible
+              views_label: 'API Documents'
+              items_per_page: '3'
               context_mapping: {  }
             additional: {  }
             weight: 0
-          b0845202-9172-44fe-8887-ff730efdfd0f:
-            uuid: b0845202-9172-44fe-8887-ff730efdfd0f
-            region: ds_content
-            configuration:
-              id: 'views_block:api_product-block_pay_via_stripe'
-              label: ''
-              provider: views
-              label_display: visible
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 8
         third_party_settings: {  }
 id: node.api_product.full
 targetEntityType: node
@@ -444,5 +450,4 @@ hidden:
   field_user_rating: true
   field_version: true
   field_view_mode: true
-  langcode: true
   layout_builder__layout: true

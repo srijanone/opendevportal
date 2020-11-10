@@ -2,22 +2,32 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.base_field_override.group.private.label
     - field.field.group.private.field_description
     - field.field.group.private.field_font_family
     - field.field.group.private.field_gateway
     - field.field.group.private.field_header_background_color
+    - field.field.group.private.field_hub_content_id
     - field.field.group.private.field_icons_bg_color
     - field.field.group.private.field_program_image
     - field.field.group.private.field_site_logo
     - field.field.group.private.layout_builder__layout
     - group.type.private
+    - views.view.events
+    - views.view.forum
+    - views.view.product_listing
+  content:
+    - 'block_content:dashboard_block:752347b4-d1cb-412e-a321-8d697f3a2a59'
+    - 'block_content:header_block:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
   module:
+    - block_content
     - color_field
+    - ds
     - layout_builder
     - layout_discovery
     - options
+    - system
     - text
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: true
@@ -26,71 +36,131 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: ''
+          label: 'Product Banner'
         components:
-          81c1e5ea-d66c-4f6d-b533-66418dba927a:
-            uuid: 81c1e5ea-d66c-4f6d-b533-66418dba927a
+          43463faa-7612-4fa7-ba2a-a7b81583b26a:
+            uuid: 43463faa-7612-4fa7-ba2a-a7b81583b26a
             region: content
             configuration:
+              id: 'block_content:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
+              label: 'Product Banner Block'
+              provider: block_content
               label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:group:private:label'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
+              status: true
+              info: ''
+              view_mode: default
+              context_mapping: {  }
             additional: {  }
             weight: 0
-          eba21b70-d3f1-443c-bb78-a56f81413958:
-            uuid: eba21b70-d3f1-443c-bb78-a56f81413958
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Breadcrumb
+        components:
+          f9d072d8-d7b3-4125-b5b6-0f72f59fea77:
+            uuid: f9d072d8-d7b3-4125-b5b6-0f72f59fea77
             region: content
             configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
               label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          a7748016-06bb-42d6-83f7-43c69effcd63:
+            uuid: a7748016-06bb-42d6-83f7-43c69effcd63
+            region: ds_content
+            configuration:
               id: 'field_block:group:private:field_description'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
               formatter:
-                label: above
+                label: hidden
+                type: text_default
                 settings: {  }
                 third_party_settings: {  }
-                type: text_default
-            additional: {  }
-            weight: 1
-          bd42eb9a-a203-4025-901c-38ab1885d01a:
-            uuid: bd42eb9a-a203-4025-901c-38ab1885d01a
-            region: content
-            configuration:
-              label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:group:private:field_program_image'
-              formatter:
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-                type: entity_reference_label
+                view_mode: view_mode
             additional: {  }
-            weight: 4
-          ca4948d1-5531-4417-8b27-b5d41c18fac8:
-            uuid: ca4948d1-5531-4417-8b27-b5d41c18fac8
-            region: content
+            weight: -10
+          2ab892fb-f4c6-478b-be5c-b33515fe996d:
+            uuid: 2ab892fb-f4c6-478b-be5c-b33515fe996d
+            region: ds_content
             configuration:
+              id: 'block_content:752347b4-d1cb-412e-a321-8d697f3a2a59'
+              label: 'Blog front page'
+              provider: block_content
               label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:group:private:field_gateway'
-              formatter:
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-                type: entity_reference_label
+              status: true
+              info: ''
+              view_mode: cards
+              context_mapping: {  }
             additional: {  }
-            weight: 5
+            weight: -8
+          1cc866cb-5e0a-4186-aa40-8e472cf85485:
+            uuid: 1cc866cb-5e0a-4186-aa40-8e472cf85485
+            region: ds_content
+            configuration:
+              id: 'views_block:product_listing-block_homepage_product'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Events and Forum'
+          column_widths: 50-50
+        components:
+          351d6986-7eb7-4093-b40d-87a3875da13f:
+            uuid: 351d6986-7eb7-4093-b40d-87a3875da13f
+            region: first
+            configuration:
+              id: 'views_block:events-upcoming_events'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          50a24d0e-d7db-4c45-8aec-303c485152f3:
+            uuid: 50a24d0e-d7db-4c45-8aec-303c485152f3
+            region: second
+            configuration:
+              id: 'views_block:forum-latest_qna'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: group.private.default
 targetEntityType: group
@@ -164,5 +234,6 @@ content:
 hidden:
   changed: true
   created: true
+  field_hub_content_id: true
   layout_builder__layout: true
   uid: true

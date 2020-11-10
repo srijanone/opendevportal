@@ -8,10 +8,15 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Class NextModerationState.
+ */
 class NextModerationState extends ControllerBase {
 
   /**
-   * @var mixed $currentPath
+   * Current path instance.
+   *
+   * @var Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
@@ -25,9 +30,9 @@ class NextModerationState extends ControllerBase {
   /**
    * UserDashboardController constructor.
    *
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
-   * @param mixed $entity_type_manager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   EntityTypeManagerInterface.
    */
   public function __construct(RequestStack $request_stack,
@@ -52,17 +57,17 @@ class NextModerationState extends ControllerBase {
   public function saveNextModerationState($state, int $nid, $type) {
     if ($type == 'api_document') {
       $workflow = [
-        'draft' =>  'Design',
+        'draft' => 'Design',
         'architecture_review' => 'Architecture Review',
         'product_review' => 'Product Review',
-        'published' => 'Approved'
+        'published' => 'Approved',
       ];
     }
     elseif ($type == 'apps') {
       $workflow = [
         'draft' => 'Draft',
         'pending_for_approval' => 'Approved for Sandbox',
-        'published' => 'Approved for Production'
+        'published' => 'Approved for Production',
       ];
     }
     if (!empty($nid)) {
@@ -75,7 +80,7 @@ class NextModerationState extends ControllerBase {
         $node = $this->entityTypeManager->getStorage('node')->load($nid);
         $node->set('moderation_state', $next_state);
         $node->save();
-        // Return to the listing page
+        // Return to the listing page.
         $url = $this->currentPath->getCurrentRequest()->headers->get('referer');
         $response = new RedirectResponse($url);
         $response->send();
@@ -85,7 +90,27 @@ class NextModerationState extends ControllerBase {
     }
   }
 
+  /**
+   * Change the program title.
+   */
   public function getAddProgramTitle() {
-    return 'Add Program';
+    return $this->t('Add Program');
   }
+
+  /**
+   * Change the member page title.
+   */
+  public function getMemberPageTitle() {
+    $program_id = \Drupal::service('opendevx_user.organisation')->getOrgId();
+    $program_type = \Drupal::service('opendevx_core.program_utility')->getProgramType($program_id);
+    return $this->t('Add @program_type : Member membership', ['@program_type' => $program_type]);
+  }
+
+  /**
+   * Change the doamin settings page title.
+   */
+  public function getDomainSettingTitle() {
+    return $this->t('Domain Member Settings');
+  }
+
 }

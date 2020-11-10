@@ -1,0 +1,121 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/example.com\/block\/12?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
+            {
+                "href": "http:\/\/example.com\/subdir\/sites\/default\/files\/2020-05\/fuel-innovation_2x_0.png",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 12
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f49412c6-6ad2-400e-82c1-670cd0637505"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 13
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "header_block"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-05-13T10:35:10+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Homepage Header",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-05-26T10:30:59+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/example.com\/subdir"
+            }
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>This is homepage description.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>This is homepage description.<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/example.com\/subdir\/sites\/default\/files\/2020-05\/fuel-innovation_2x_0.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "dfdb5910-fd22-4383-a471-af05e06b8bfa"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    }
+}

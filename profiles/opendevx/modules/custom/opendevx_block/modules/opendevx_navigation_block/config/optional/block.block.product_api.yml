@@ -5,9 +5,9 @@ dependencies:
     - opendevx_navigation_block
     - system
   theme:
-    - devportal
+    - opendevx_theme
 id: product_api
-theme: devportal
+theme: opendevx_theme
 region: sidebar_first
 weight: 0
 provider: null

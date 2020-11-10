@@ -11,7 +11,7 @@ use Drupal\opendevx_subscription\Services\SubscriptionQueue;
 use Drupal\opendevx_subscription\SubscriptionContent;
 
 /**
- * Class to extend and provide the features of developer portal.
+ * Class to extend and provide the features of opendevx.
  */
 class SubscriptionUtility {
 

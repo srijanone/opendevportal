@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.api_document.field_api_categories
     - field.field.node.api_document.field_api_display
     - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_apigee_proxy
     - field.field.node.api_document.field_apigwid
     - field.field.node.api_document.field_banners_image
     - field.field.node.api_document.field_document
@@ -55,7 +56,7 @@ third_party_settings:
         required_fields: true
         id: ''
         classes: ''
-      label: APIs
+      label: Interface
     group_general:
       children:
         - field_api_categories
@@ -188,6 +189,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_apigee_proxy: true
   field_apigwid: true
   field_banners_image: true
   field_organisation: true

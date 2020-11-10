@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - opendevx_user
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+id: userprogramsblock
+theme: opendevx_theme
+region: content
+weight: -8
+provider: null
+plugin: user_programs_block
+settings:
+  id: user_programs_block
+  label: Programs
+  provider: opendevx_user
+  label_display: visible
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

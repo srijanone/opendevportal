@@ -20,6 +20,18 @@ settings:
     -
       value: graphql
       label: GraphQL
+    -
+      value: async
+      label: 'Async API 2.0'
+    -
+      value: soap
+      label: 'SOAP (Coming Soon)'
+    -
+      value: cloud
+      label: 'Cloud Events (Coming Soon)'
+    -
+      value: grpc
+      label: 'gRPC (Coming Soon)'
   allowed_values_function: ''
 module: options
 locked: false

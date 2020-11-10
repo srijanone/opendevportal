@@ -36,6 +36,7 @@ content:
 hidden:
   field_company: true
   field_country: true
+  field_domain_admin: true
   field_first_name: true
   field_gender: true
   field_job_role: true
@@ -44,5 +45,6 @@ hidden:
   field_phone_no_: true
   field_seniority_level: true
   field_social_profile: true
+  field_subscribed_products: true
   field_userpoints_default_points: true
   member_for: true

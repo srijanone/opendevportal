@@ -1863,7 +1863,7 @@ display:
           empty: true
           tokenize: true
           content:
-            value: "Manage your Products.\r\n\r\n<span><a class= \"create-button\" href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_product?destination=/dashboard/{{ raw_arguments.gid }}/products\">Create Product</a></span>"
+            value: "<h4>Manage your Products.</h4>\r\n\r\n<span><a class= \"create-button create plus\" href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_product?destination=/dashboard/{{ raw_arguments.gid }}/products\">Create Product</a></span>"
             format: full_html
           plugin_id: text
       defaults:
@@ -1880,6 +1880,7 @@ display:
         relationships: false
         use_ajax: false
         exposed_form: false
+        css_class: false
       arguments:
         gid:
           id: gid
@@ -1920,7 +1921,7 @@ display:
       cache:
         type: none
         options: {  }
-      title: 'API Program Operations'
+      title: Products
       fields:
         node_bulk_form:
           id: node_bulk_form
@@ -1974,8 +1975,8 @@ display:
           include_exclude: include
           selected_actions:
             - node_delete_action
-            - node_publish_action
-            - node_unpublish_action
+            - opendevx_vbo_published_action
+            - opendevx_vbo_unpublished_action
           entity_type: node
           plugin_id: node_bulk_form
         title:
@@ -2863,7 +2864,7 @@ display:
             'group_node:use_cases': '0'
           entity_type: node
           plugin_id: group_content_to_entity_reverse
-      use_ajax: true
+      use_ajax: false
       exposed_form:
         type: bef
         options:
@@ -2878,7 +2879,7 @@ display:
           text_input_required_format: basic_html
           bef:
             general:
-              autosubmit: true
+              autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
               autosubmit_hide: true
@@ -2917,6 +2918,7 @@ display:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
+      css_class: programs-view
     cache_metadata:
       max-age: 0
       contexts:

@@ -13,7 +13,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class Paragraph {
 
   use LoggerChannelTrait;
-
+  
   /**
    * @var int $paragraphId
    */
@@ -33,7 +33,7 @@ class Paragraph {
 
   /**
    * Set Paragraph id
-   *
+   * 
    * @param mixed $paragraph_id
    *   Paragraph Id.
    */
@@ -42,7 +42,7 @@ class Paragraph {
     if (is_int($paragraph_id)) {
       $this->paragraphId = [$paragraph_id];
     }
-
+    
     return $this;
   }
 
@@ -68,7 +68,7 @@ class Paragraph {
       $query->condition('pifd.type', 'product_attributes', '=');
       $query->condition('pifd.id', $this->paragraphId, 'IN');
       $result = $query->distinct()->execute()->fetchAll();
-
+     
       $product_attributes = [];
       if (!empty($result)) {
         foreach ($result as $value) {
@@ -79,7 +79,7 @@ class Paragraph {
       return $product_attributes;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('opendevx_paragraph');
+      $logger = $this->getLogger('developer-portal-paragraph');
       $logger->error($e->getMessage());
     }
   }

@@ -1,9 +1,6 @@
 name: OpendevX - SDK Generator
 description : 'Generate the SDK for API.'
 type: module
-package: Opendevx
+package: OpendevX
 core: 8.x
 core_version_requirement: ^8 || ^9
-
-dependencies:
-  - opendevx_user:opendevx_user

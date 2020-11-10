@@ -45,19 +45,18 @@ class Organisation {
    *    Organisation data.
    */
   public function getOrganisationsData() {
+    $organisation = [];
     try {
       $view = Views::getView("programs");
+      $view->setDisplay("featured_program");
+      $view->execute();
       if ($view) {
-        $view->setDisplay("featured_program");
-        $view->execute();
-        $organisation = [];
         foreach ($view->result as $key => $value) {
-          $group_node = $value->_entity;
-          $gid = $group_node->get('id')->value;
+          $gid = $value->_entity->get('id')->value;
           $organisation[$gid]['orgId'] = $gid;
-          $organisation[$gid]['orgName'] = $group_node->get('label')->value;
-          if (!empty($group_node->get('field_program_image'))) {
-            $image = $group_node->get('field_program_image')->getValue();
+          $organisation[$gid]['orgName'] = $value->_entity->get('label')->value;
+          if (!empty($value->_entity->get('field_program_image'))) {
+            $image = $value->_entity->get('field_program_image')->getValue();
             if ($image[0]) {
               $data = !empty($image[0]['target_id']) ? OrganisationUtility::getImageUri($image[0]['target_id']) : "";
             }
@@ -68,9 +67,11 @@ class Organisation {
           "/dashboard/save-program/$gid" : "#";
 
           $organisation[$gid]['programUrl'] = \Drupal::service('path.alias_manager')->getAliasByPath("/group/$gid");
+          $organisation[$gid]['target'] = "_self";
           $group_domain = \Drupal::entityTypeManager()->getStorage('domain')->load('group_' . $gid);
           if ($group_domain) {
             $organisation[$gid]['programUrl'] = $group_domain->getPath();
+            $organisation[$gid]['target'] = "_blank";
           }
         }
 
@@ -82,7 +83,7 @@ class Organisation {
       }
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('opendevx_organisation');
+      $logger = $this->getLogger('developer-portal-organisation');
       $logger->error($e->getMessage());
     }
   }
@@ -137,7 +138,7 @@ class Organisation {
       }
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('opendevx_organisation');
+      $logger = $this->getLogger('developer-portal-organisation');
       $logger->error($e->getMessage());
     }
   }

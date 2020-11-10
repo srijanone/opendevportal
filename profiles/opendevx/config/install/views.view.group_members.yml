@@ -808,9 +808,9 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "<span><a class='create-button' href=\"/group/{{ raw_arguments.gid }}/content/add/group_membership?destination=/program/users\">Assign Member</a>   <a  class='create-button'  href=\"/admin/people/create?destination=/program/users\">Create Member</a></span>\r\n <span class=\"user-msg\">If member is not exist please create a new member  then assign into program.</span>"
+          content: "<span><a class='create-button create' href=\"/group/{{ raw_arguments.gid }}/content/add/group_membership?destination=/program/users\">Assign Member</a>   <a  class='create-button create plus'  href=\"/admin/people/create?destination=/program/users/{{ raw_arguments.gid }}\">Create Member</a></span>\r\n <span class=\"user-msg\">If member doesn't exist in the system then please add a new member and assign it to the program.</span>"
           plugin_id: text_custom
-      css_class: view-organisations
+      css_class: programs-view
       fields:
         name:
           id: name
@@ -1360,9 +1360,9 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<span><a href = "/group/[program:program_id]/content/add/group_membership?destination=/dashboard/[program:program_id]/apimanager/users">Add Member </a></span>'
+          content: '<span><a href = "/group/[program:program_id]/content/add/group_membership?destination=/dashboard/[program:program_id]/apimanager/users" class=''create plus''>Add Member </a></span>'
           plugin_id: text_custom
-      css_class: view-organisations
+      css_class: programs-view
       filters:
         mail:
           id: mail
@@ -1394,7 +1394,7 @@ display:
               product_manager: '0'
               admin: '0'
               developer: '0'
-            placeholder: ''
+            placeholder: 'Search by Email'
             autocomplete_filter: 1
             autocomplete_min_chars: '0'
             autocomplete_items: '10'
@@ -1467,7 +1467,7 @@ display:
         operator: AND
         groups:
           1: AND
-      use_ajax: true
+      use_ajax: false
       exposed_form:
         type: bef
         options:
@@ -1482,7 +1482,7 @@ display:
           text_input_required_format: basic_html
           bef:
             general:
-              autosubmit: true
+              autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
               autosubmit_hide: true

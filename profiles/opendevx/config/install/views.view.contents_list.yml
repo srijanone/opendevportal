@@ -564,9 +564,10 @@ display:
           empty: true
           tokenize: true
           content:
-            value: "Take a look here and manage your products with ease.\r\n\r\n<span><a href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:{{ raw_arguments.type }}?destination=/dashboard/{{ raw_arguments.gid }}/contents/{{ raw_arguments.type }}/{{ raw_arguments.nid }}\">Create</a></span>"
-            format: basic_html
+            value: "<h4>Take a look here and manage your products with ease.</h4>\r\n\r\n<span><a href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:{{ raw_arguments.type }}?destination=/dashboard/{{ raw_arguments.gid }}/contents/{{ raw_arguments.type }}/{{ raw_arguments.nid }}\" class='create plus'>Create</a></span>"
+            format: full_html
           plugin_id: text
+      css_class: programs-view
     display_plugin: default
     display_title: Master
     id: default

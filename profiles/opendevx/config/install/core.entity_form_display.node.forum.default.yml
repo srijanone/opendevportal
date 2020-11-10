@@ -86,7 +86,7 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
+      size: 45
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
@@ -96,7 +96,7 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
+      size: 45
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete

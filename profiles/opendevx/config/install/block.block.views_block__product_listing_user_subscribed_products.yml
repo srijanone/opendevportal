@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.product_listing
+  module:
+    - domain
+    - system
+    - views
+  theme:
+    - opendevx_theme
+id: views_block__product_listing_user_subscribed_products
+theme: opendevx_theme
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:product_listing-user_subscribed_products'
+settings:
+  id: 'views_block:product_listing-user_subscribed_products'
+  label: 'Subscribed Product'
+  provider: views
+  label_display: visible
+  views_label: 'Subscribed Product'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

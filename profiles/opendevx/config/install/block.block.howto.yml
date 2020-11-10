@@ -8,11 +8,11 @@ dependencies:
     - ctools
     - system
   theme:
-    - devportal
+    - opendevx_theme
 id: howto
-theme: devportal
+theme: opendevx_theme
 region: content
-weight: -13
+weight: -14
 provider: null
 plugin: 'block_content:f6a38061-01b8-420e-bfea-8d6eba2c80e3'
 settings:

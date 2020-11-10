@@ -5,7 +5,5 @@ package: Opendevx
 core: 8.x
 core_version_requirement: ^8 || ^9
 configure: opendevx_login_redirect.login_redirect_settings
-
 dependencies:
   - drupal:user
-  - opendevx_user:opendevx_user

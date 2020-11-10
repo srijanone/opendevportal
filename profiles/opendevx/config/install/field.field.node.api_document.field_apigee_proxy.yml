@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apigee_proxy
+    - node.type.api_document
+id: node.api_document.field_apigee_proxy
+field_name: field_apigee_proxy
+entity_type: node
+bundle: api_document
+label: 'Apigee Proxy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

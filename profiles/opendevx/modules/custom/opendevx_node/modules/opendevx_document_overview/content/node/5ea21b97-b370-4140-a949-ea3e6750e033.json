@@ -1,0 +1,304 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/page\/ko-brain-page?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/document_overview"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/uid": [
+            {
+                "href": "http:\/\/default\/user\/55?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_detail_section": [
+            {
+                "href": "http:\/\/default\/entity\/paragraph\/378?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_product": [
+            {
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_banners_image": [
+            {
+                "href": "http:\/\/default\/media\/56\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_listing_image": [
+            {
+                "href": "http:\/\/default\/media\/79\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_organisation": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/19?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_tags": [
+            {
+                "href": "http:\/\/default\/tags\/developer?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 506
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5ea21b97-b370-4140-a949-ea3e6750e033"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1234
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "document_overview"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-07-13T07:28:49+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/55?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "52166979-bdd3-4285-a89f-b5868e533455"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_detail_section": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/entity\/paragraph\/378?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f81e817f-401b-4a8a-ad22-52b2d8f0740b"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "785"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_product": [
+            {
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_banners_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/56\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4e58e6ee-9d87-45b2-a15e-7c356319c472"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_listing_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/79\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ed9bdca5-1a30-4112-98be-8e016144dc21"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_organisation": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/19?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisation"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "30ab1815-ba50-43ff-a1bf-acb79652229f"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_tags": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/tags\/developer?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/tags"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2f1fc13d-b217-4708-9857-9d2a99668810"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "ko Brain Page",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-10T05:26:18+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-07-13T07:28:49+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "ko Brain Page | Open API Exchange",
+                "canonical_url": "http:\/\/default\/page\/ko-brain-page"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/page\/ko-brain-page",
+            "pid": 413,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1594358953,
+            "last_comment_name": null,
+            "last_comment_uid": 55,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_description": [
+        {
+            "value": "<main id=\"kong-main\" tabindex=\"-1\">\r\n<section>\r\n<p>As organizations shift towards microservices, they face new challenges with efficiency, governance and reliability.&nbsp;<\/p>\r\n<\/section>\r\n<\/main>\r\n",
+            "format": "full_html",
+            "processed": "<main id=\"kong-main\" tabindex=\"-1\"><section><p>As organizations shift towards microservices, they face new challenges with efficiency, governance and reliability.\u00a0<\/p>\n<\/section><\/main>"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}

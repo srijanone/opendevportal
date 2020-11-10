@@ -1,0 +1,6 @@
+name: Async API
+description: 'Async Api 2.0 Specification.'
+type: module
+package: Opendevx
+core: 8.x
+core_version_requirement: ^8 || ^9

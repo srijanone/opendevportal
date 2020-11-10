@@ -7,9 +7,9 @@ dependencies:
     - system
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: dashboardnavigationblock
-theme: devportal
+theme: opendevx_theme
 region: sidebar_first
 weight: -18
 provider: null
@@ -70,6 +70,11 @@ settings:
       navigation_description: 'Add Solutions for your API Product'
       show: '1'
       label: Solutions
+    forum:
+      navigation_text: Forum
+      navigation_description: 'Add forum for your API Product'
+      show: '1'
+      label: 'Forum topic'
 visibility:
   request_path:
     id: request_path

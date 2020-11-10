@@ -5,9 +5,9 @@ dependencies:
   module:
     - opendevx_subscription
   theme:
-    - devportal
+    - opendevx_theme
 id: subscriptionblock
-theme: devportal
+theme: opendevx_theme
 region: footer_first
 weight: 0
 provider: null

@@ -1,9 +1,11 @@
-name: Opendevx - Details
-description : 'Developer Portal Details paragraph.'
+name: opendevx Details
+description : 'opendevx Details paragraph.'
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
 
 dependencies:
   - opendevx_paragraph:opendevx_paragraph
+
+project: opendevx_product_page

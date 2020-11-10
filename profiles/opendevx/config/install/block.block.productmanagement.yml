@@ -7,11 +7,11 @@ dependencies:
     - domain
     - system
   theme:
-    - devportal
+    - opendevx_theme
 id: productmanagement
-theme: devportal
+theme: opendevx_theme
 region: primary_menu
-weight: -19
+weight: -23
 provider: null
 plugin: 'system_menu_block:product-management'
 settings:
@@ -27,9 +27,4 @@ visibility:
     id: domain
     domains: {  }
     negate: null
-    context_mapping: {  }
-  request_path:
-    id: request_path
-    pages: "/dashboard/*/products\r\n/dashboard/*/apimanager/apps\r\n/dashboard/*/apimanager/proxies\r\n/dashboard/*/apimanager/users\r\n/dashboard/*/program\r\n/dashboard/*/contents/*"
-    negate: false
     context_mapping: {  }

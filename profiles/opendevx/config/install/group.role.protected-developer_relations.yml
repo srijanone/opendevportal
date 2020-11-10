@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.protected
+id: protected-developer_relations
+label: 'Developer Relations'
+weight: 17
+internal: false
+audience: member
+group_type: protected
+permissions_ui: true
+permissions: {  }

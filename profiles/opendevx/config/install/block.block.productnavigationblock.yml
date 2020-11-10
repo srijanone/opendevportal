@@ -6,9 +6,9 @@ dependencies:
     - domain
     - system
   theme:
-    - devportal
+    - opendevx_theme
 id: productnavigationblock
-theme: devportal
+theme: opendevx_theme
 region: sidebar_first
 weight: -18
 provider: null
@@ -24,7 +24,7 @@ settings:
       show: '1'
       type: Page
     api_document:
-      navigation_text: 'API Reference'
+      navigation_text: 'API References'
       show: '1'
       type: API
     tutorials:
@@ -74,7 +74,7 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/product/*\r\n/products/*\r\n/topic/*\r\n/node/*/apps\r\n/node/*/article\r\n/node/*/assets\r\n/node/*/document_overview\r\n/node/*/events\r\n/node/*/faq\r\n/node/*/forum\r\n/node/*/issues\r\n/node/*/solutions\r\n/node/*/use_cases\r\n/node/*/tutorials\r\n/node/*/api_document\r\n/node/*/resources\r\n/tutorials/*\r\n/use_cases/*\r\n/use-cases/*\r\n/solutions/*\r\n/assets/*\r\n/issues/*\r\n/document_overview/*\r\n/events/*\r\n/article/*\r\n/resources/*"
+    pages: "/product/*\r\n/products/*\r\n/topic/*\r\n/node/*/apps\r\n/node/*/article\r\n/node/*/assets\r\n/node/*/document_overview\r\n/node/*/events\r\n/node/*/faq\r\n/node/*/forum\r\n/node/*/issues\r\n/node/*/solutions\r\n/node/*/use_cases\r\n/node/*/tutorials\r\n/node/*/api_document\r\n/node/*/resources\r\n/tutorials/*\r\n/use_cases/*\r\n/use-cases/*\r\n/solutions/*\r\n/assets/*\r\n/issues/*\r\n/document_overview/*\r\n/events/*\r\n/article/*\r\n/resources/*\r\n/page/*"
     negate: false
     context_mapping: {  }
   domain:

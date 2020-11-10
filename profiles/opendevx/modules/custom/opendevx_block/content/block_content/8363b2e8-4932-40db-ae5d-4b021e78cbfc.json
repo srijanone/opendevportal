@@ -1,0 +1,137 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/example.com\/block\/76?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/content_reference"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/content_reference\/field_contents": [
+            {
+                "href": "http:\/\/example.com\/api-product\/sign-program?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/example.com\/api-product\/payment-request?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 76
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8363b2e8-4932-40db-ae5d-4b021e78cbfc"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 98
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "content_reference"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-07-03T10:37:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Featured Products",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-07-03T10:37:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/example.com\/subdir"
+            }
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Featured Products<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Featured Products<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/content_reference\/field_contents": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/example.com\/api-product\/sign-program?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0172d738-cffb-4e98-9bba-ec5aad821f56"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/example.com\/api-product\/payment-request?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2da45f42-6c34-46a2-a360-2ac252b78d81"
+                    }
+                ]
+            }
+        ]
+    }
+}

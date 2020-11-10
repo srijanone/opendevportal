@@ -21,7 +21,7 @@ use Drupal\opendevx_subscription\Utility\SubscriptionUtility;
 function opendevx_subscription_cron() {
   $utility = new SubscriptionUtility();
 
-  // Developer Portal Subscription Configuration.
+  // opendevx Subscription Configuration.
   $config = \Drupal::config(SubscriptionSettings::MODULE_KEY . '.settings');
   if ($config->get('enable') != 1) {
     return FALSE;
@@ -68,7 +68,7 @@ function opendevx_subscription_entity_insert(EntityInterface $entity) {
  * Implements hook_node_update().
  */
 function opendevx_subscription_entity_update(EntityInterface $entity) {
-  // Developer Portal Subscription Configuration.
+  // opendevx Subscription Configuration.
   $dvp_subscription = \Drupal::config(SubscriptionSettings::MODULE_KEY . '.settings');
   if ($entity->getEntityTypeId() == 'node'
     && $dvp_subscription->get('include_updates')) {

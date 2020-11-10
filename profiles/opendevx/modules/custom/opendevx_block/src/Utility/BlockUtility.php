@@ -4,10 +4,13 @@ namespace Drupal\opendevx_block\Utility;
 
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
-use Drupal\opendevx_block\ApiProducts;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\opendevx_node\ContentInterface;
+use Drupal\opendevx_user\ProgramInterface;
 
 /**
- * Class to extend and provide the features of developer portal.
+ * Class to extend and provide the features of opendevx.
  */
 class BlockUtility {
 
@@ -16,6 +19,8 @@ class BlockUtility {
    *
    * @param array $bundles
    *   Set of bundles in system.
+   * @param int $pid
+   *   The product ID.
    *
    * @return string
    *   String value of node data.
@@ -23,19 +28,14 @@ class BlockUtility {
   public static function prepareDashboardNavBlock(array $bundles, $pid) {
     $output = [];
     // API Product service.
-    $product = \Drupal::service('opendevx_block.products');
-    $product_title = $product->setProductId($pid)->getTitle();
+    $product_title = \Drupal::service('opendevx_block.products')->setProductId($pid)->getTitle();
     foreach ($bundles as $key => $value) {
-      // Refer content type linked to the product.
-      $program_service = \Drupal::service('opendevx_user.organisation');
-      $program_id = $program_service->getOrgId();
-      $path = "/dashboard/$program_id/contents/$key/$pid";
-      $description = $value['description'];
+      $program_id = \Drupal::service('opendevx_user.organisation')->getOrgId();
       $label = $value['label'];
-      $description = strip_tags($description);
-      $output[$product_title['title']][$label]['childPath'] = $path;
-      $output[$product_title['title']][$label]['childDescription'] = $description;
+      $output[$product_title['title']][$label]['childPath'] = "/dashboard/$program_id/contents/$key/$pid";
+      $output[$product_title['title']][$label]['childDescription'] = strip_tags($value['description']);
     }
+
     return $output;
   }
 
@@ -71,21 +71,18 @@ class BlockUtility {
    *   Id.
    */
   public static function getIdByPath($current_path, $type = NULL) {
-    $content_types = [
-      'apps', 'article', 'assets', 'document_overview', 'events', 'faq',
-      'forum', 'issues', 'resources', 'solutions', 'tutorials', 'use_cases', 'api_document'
-    ];
+    $nid = 0;
     $path = $current_path->getPathInfo();
-    $path_index = explode('/', $path);
     if (!empty($type)) {
       $index = explode('/', $path);
       return $index[5];
     }
+    $path_index = explode('/', $path);
     $url_alias = \Drupal::service('path.alias_manager')->getPathByAlias($path);
     if (preg_match('/node\/(\d+)/', $url_alias, $matches)) {
       $nid = $matches[1];
     }
-    if (isset($path_index[3]) && in_array($path_index[3], $content_types)) {
+    if (isset($path_index[3]) && in_array($path_index[3], ContentInterface::CONTENT_TYPES)) {
       unset($path_index[3]);
       $new_path = implode('/', $path_index);
       $url_alias = \Drupal::service('path.alias_manager')->getPathByAlias($new_path);
@@ -97,7 +94,7 @@ class BlockUtility {
     if (!$parent) {
       // Get current node.
       $node = \Drupal::routeMatch()->getParameter('node');
-      if ($node instanceof \Drupal\node\NodeInterface) {
+      if ($node instanceof NodeInterface) {
         if ($node->hasField('field_api_product') && !empty($node->get('field_api_product')->first())) {
           $parent = $node->get('field_api_product')->first()->getValue()['target_id'];
         }
@@ -113,7 +110,7 @@ class BlockUtility {
   /**
    * Function to prepare sidebar navigation block.
    *
-   * @param mixed $result
+   * @param array $result
    *   Result set.
    * @param int $id
    *   Node Id.
@@ -123,31 +120,25 @@ class BlockUtility {
    * @return mixed
    *   Navigation data.
    */
-  public static function prepareNavigationBlock($result, $id, $list) {
+  public static function prepareNavigationBlock(array $result, $id, array $list) {
     $output = [];
-    $content_types = [
-      'apps', 'article', 'assets', 'document_overview', 'events', 'faq',
-      'forum', 'issues', 'resources', 'solutions', 'tutorials', 'use_cases', 'api_document'
-    ];
     if (!empty($result)) {
       $node = \Drupal::entityTypeManager()->getStorage('node')->load($id);
       $node_view_mode = $node->get('field_view_mode')->getValue()[0]['value'];
-      $current_path = \Drupal::service('path.current')->getPath();
-  		$path_index = explode('/', $current_path);
+      $path_index = explode('/', \Drupal::service('path.current')->getPath());
       $child = $result['child'];
       if (!empty($result['api'])) {
-        $child = $result['child'] . ',api_document';
+        $child = $result['child'] . ',api_document,resources';
       }
       $childs = explode(",", $child);
       $iterate = array_intersect(array_keys($list), $childs);
-      // Root of the sidebar.
-      // Title of the product.
+      // Root of the sidebar. Title of the product.
       foreach (array_flip($iterate) as $key => $value) {
         $branch = ucwords($list[$key]);
-        if ($node_view_mode == 'left_nav_full_view' || in_array($path_index[3], $content_types)) {
+        if ($node_view_mode == 'left_nav_full_view' || in_array($path_index[3], ContentInterface::CONTENT_TYPES)) {
           $path = "/node/$id";
           $content_path = \Drupal::service('path.alias_manager')->getAliasByPath($path);
-          $path_alias =  "$content_path/$key";
+          $path_alias = "$content_path/$key";
         }
         else {
           $path = str_replace("_", "-", $key);
@@ -187,6 +178,148 @@ class BlockUtility {
     }
 
     return $image;
+  }
+
+  /**
+   * Check block access.
+   *
+   * @param \Drupal\block\Entity\Block $block
+   *   Block object.
+   *
+   * @return void
+   */
+  public static function checkBlockAccess($block) {
+    switch ($block->id()) {
+      // Visible to PM only.
+      case 'pm_dashboard':
+      case 'productmanagement':
+      case 'productmanagement_2':
+        if (self::checkPmRole() == FALSE) {
+          return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+        }
+        break;
+
+      case 'user_organisation_block':
+        $user_roles = \Drupal::service('tempstore.private')->get('opendevx_user')->get('user_programs');
+        $roles = array_unique(array_intersect($user_roles, ProgramInterface::PM_ROLES));
+        if (count($roles) < 1) {
+          return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+        }
+        break;
+
+      // Visible to Dev only.
+      case 'developermenu':
+        if (self::checkPmRole() == FALSE) {
+          return AccessResult::neutral();
+        }
+        break;
+
+      case 'breadcrumbs':
+        $path = \Drupal::service('path.current')->getPath();
+        $path_index = explode('/', $path);
+        if ($path_index[1] == 'dashboard' || (isset($path_index[3]) && !empty($path_index[3]))) {
+          return;
+        }
+        if ($group = \Drupal::routeMatch()->getParameter('group')) {
+          if (is_object($group) && method_exists($group, 'bundle')) {
+            if (in_array($group->bundle(), ['private', 'public', 'protected'])) {
+              return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+            }
+          }
+        }
+        break;
+
+      // Visible to Dev only.
+      case 'opendevx_theme_main_menu':
+      case 'main_menu':
+      case 'devportal_admin_main_menu':
+      case 'main_menu':
+        if (self::checkPmRole() == TRUE) {
+          return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+        }
+        break;
+
+      case 'local_tasks':
+        if (\Drupal::currentUser()->isAnonymous()) {
+          return AccessResult::neutral();
+        }
+        if (FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
+          $path = \Drupal::service('path.current')->getPath();
+          $path_index = explode('/', $path);
+          if ($path_index[1] == 'dashboard' && (isset($path_index[2]) && $path_index[2] == 'topic')) {
+           return AccessResult::neutral();
+          }
+        }
+
+        $exclude_routes = ['entity.user.canonical'];
+        if (in_array(\Drupal::request()->attributes->get('_route'), $exclude_routes)) {
+          return AccessResult::neutral();
+        }
+        elseif (FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess()) {
+          return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+        }
+        break;
+
+      case 'account_menu':
+      case 'devportal_admin_account_menu':
+        if (\Drupal::currentUser()->isAnonymous()) {
+          return AccessResult::neutral();
+        }
+        elseif (TRUE == \Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
+          return AccessResult::neutral();
+        }
+        else {
+          return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+        }
+        break;
+
+      case 'developerusermenu':
+      case 'developerusermenu_2':
+        if (TRUE == \Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
+          return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+        }
+        else {
+          return AccessResult::neutral();
+        }
+        break;
+
+      case 'product_api':
+      case 'product_banner':
+        if (!empty(\Drupal::request()->get('parent'))) {
+          return AccessResult::neutral();
+        }
+        $node = \Drupal::routeMatch()->getParameter('node');
+        if (($node instanceof NodeInterface) && ($node->gettype() == 'api_product')) {
+          return AccessResult::neutral();
+        }
+        $path_index = explode('/', \Drupal::service('path.current')->getPath());
+        if ($block->id() == 'product_banner' && $path_index[1] == 'product') {
+          return AccessResult::neutral();
+        }
+        if ((isset($path_index[3]) && in_array($path_index[3], ContentInterface::CONTENT_TYPES))) {
+          return AccessResult::neutral();
+        }
+        else {
+          // Hiding the block if the node is not 'api_product' type.
+          return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
+        }
+        break;
+    }
+  }
+
+  /**
+   * Check if user is a PM or not.
+   *
+   * Return int.
+   */
+  public static function checkPmRole() {
+    $user_roles = \Drupal::service('opendevx_user.organisation')->getUserGroupRole();
+    if (count(array_intersect($user_roles, ProgramInterface::PM_ROLES)) > 0) {
+      return TRUE;
+    }
+    else {
+      return FALSE;
+    }
   }
 
 }

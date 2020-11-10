@@ -191,6 +191,7 @@ display:
           entity_field: nid
           plugin_id: node_nid
       display_extenders: {  }
+      css_class: block-asyncapi
     cache_metadata:
       max-age: -1
       contexts:

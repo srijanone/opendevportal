@@ -9,11 +9,18 @@ use_page_title_as_menu_title_fallback: false
 remove_repeated_segments: true
 term_hierarchy: true
 absolute_paths: true
-hide_single_home_item: false
+hide_single_home_item: true
 title_from_page_when_available: true
 include_invalid_paths: false
 excluded_paths: ''
 replaced_titles: 'Total Control dashboard:: Admin Dashboard'
-custom_paths: ''
+custom_paths: '/search/content::Search'
 segments_separator: null
 title_segment_as_link: false
+use_site_title: false
+add_structured_data_json_ld: 0
+capitalizator_mode: none
+capitalizator_ignored_words: ''
+capitalizator_forced_words: ''
+capitalizator_forced_words_case_sensitivity: 0
+capitalizator_forced_words_first_letter: 0

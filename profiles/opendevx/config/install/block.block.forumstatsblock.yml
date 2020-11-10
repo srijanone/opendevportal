@@ -5,9 +5,9 @@ dependencies:
     - opendevx_forum
     - system
   theme:
-    - devportal
+    - opendevx_theme
 id: forumstatsblock
-theme: devportal
+theme: opendevx_theme
 region: sidebar_second
 weight: -16
 provider: null

@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_api_product_single
-    - node.type.api_product
     - node.type.apps
 id: node.apps.field_api_product_single
 field_name: field_api_product_single
@@ -16,12 +15,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      api_product: api_product
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: api_doc_entityreference
+      display_name: entity_reference_2
+      arguments: {  }
 field_type: entity_reference

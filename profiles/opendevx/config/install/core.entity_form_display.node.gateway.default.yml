@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.gateway.field_client_id
     - field.field.node.gateway.field_client_secret
     - field.field.node.gateway.field_gateway
+    - field.field.node.gateway.field_hub_content_id
     - field.field.node.gateway.field_region
     - node.type.gateway
   module:
@@ -96,6 +97,7 @@ content:
 hidden:
   body: true
   created: true
+  field_hub_content_id: true
   moderation_state: true
   path: true
   promote: true

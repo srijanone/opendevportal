@@ -14,6 +14,10 @@ use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\opendevx_user\ProgramInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\opendevx_user\Organisation as Program;
+use Drupal\autologout\AutologoutManagerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Messenger\MessengerInterface;
+
 
 /**
  * Class definition of redirect service.
@@ -82,6 +86,20 @@ class Redirect implements RedirectInterface {
   protected $programDomain;
 
   /**
+   * The autologout manager service.
+   *
+   * @var \Drupal\autologout\AutologoutManagerInterface
+   */
+  protected $autoLogoutManager;
+
+  /**
+   * Drupal\Core\Messenger\MessengerInterface definition.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
    * Constructs a new Login And Logout Redirect Per Role service object.
    *
    * @param \Drupal\Core\Routing\RouteMatchInterface $current_route_match
@@ -110,7 +128,9 @@ class Redirect implements RedirectInterface {
   Connection $connection,
   Program $program_service,
   PrivateTempStoreFactory $temp_store,
-  Logger $logger) {
+  Logger $logger, 
+  AutologoutManagerInterface $autologout,
+  MessengerInterface $messenger) {
     $this->currentRouteMatch = $current_route_match;
     $this->currentRequest = $request_stack->getCurrentRequest();
     $this->config = $config_factory->get('opendevx_login_redirect.settings');
@@ -119,6 +139,8 @@ class Redirect implements RedirectInterface {
     $this->programService = $program_service;
     $this->tempStore = $temp_store->get('opendevx_user');
     $this->logger = $logger;
+    $this->autoLogoutManager = $autologout;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -298,8 +320,10 @@ class Redirect implements RedirectInterface {
       if (in_array('administrator', $account->getRoles())) {
         return $group_roles;
       }
-
-      $program_id = \Drupal::service('opendevx_core.program_domain')->getProgramDomainId();
+      
+      if ($program_id = \Drupal::service('opendevx_core.program_domain_subscriber')->getProgramDomain()) {
+        \Drupal::service('opendevx_core.program_domain')->setProgramDomainId($program_id);
+      }
       try {
         $query = $this->connection->select('group_content_field_data', 'g');
         $query->addField('g', 'gid');
@@ -333,6 +357,11 @@ class Redirect implements RedirectInterface {
         }
       }
       if ($program_id) {
+        if (empty($groups) && !in_array('admin', $account->getRoles())) {
+          $this->autoLogoutManager->logout();
+          $response = new RedirectResponse('/user/login?unauthorized=true');
+          $response->send();
+        }
         $this->programService->setProgramId($program_id);
       }
 

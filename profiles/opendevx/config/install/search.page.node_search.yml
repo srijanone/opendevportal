@@ -5,7 +5,7 @@ dependencies:
     - node
 id: node_search
 label: Content
-path: node
+path: content
 weight: -10
 plugin: node_search
 configuration:

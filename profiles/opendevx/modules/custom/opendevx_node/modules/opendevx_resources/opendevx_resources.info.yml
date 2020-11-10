@@ -1,0 +1,11 @@
+name: opendevx Resources
+description : 'Adds resources configuraton.'
+type: module
+package: DVP
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - opendevx_node:opendevx_node
+  - opendevx_product_page:opendevx_product_page
+  - opendevx_api_product:opendevx_api_product

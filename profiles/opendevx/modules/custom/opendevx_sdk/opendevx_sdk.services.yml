@@ -1,4 +1,0 @@
-services:
-  opendevx_sdk.generator:
-    class: Drupal\opendevx_sdk\Services\GenerateSdk
-    arguments: ['@current_user', '@database', '@config.factory', '@opendevx_user.organisation', '@notifications_widget.logger']

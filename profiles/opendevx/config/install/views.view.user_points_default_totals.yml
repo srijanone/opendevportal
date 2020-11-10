@@ -7,6 +7,7 @@ dependencies:
     - field.storage.transaction.field_userpoints_default_reason
     - field.storage.user.field_userpoints_default_points
     - transaction.type.userpoints_default_points
+    - user.role.authenticated
   enforced:
     module:
       - userpoints_default
@@ -427,6 +428,7 @@ display:
         group_by: false
         arguments: false
         header: false
+        access: false
       group_by: true
       arguments:
         uid:
@@ -479,6 +481,11 @@ display:
             value: 'User Points'
             format: basic_html
           plugin_id: text
+      access:
+        type: role
+        options:
+          role:
+            authenticated: authenticated
     cache_metadata:
       max-age: -1
       contexts:
@@ -487,7 +494,7 @@ display:
         - url
         - url.query_args
         - user
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.user.field_userpoints_default_points'
   page_userpoints_default_pendinguserpointstab:

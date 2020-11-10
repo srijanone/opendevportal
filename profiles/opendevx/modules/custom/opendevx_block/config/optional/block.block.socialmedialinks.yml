@@ -4,9 +4,9 @@ dependencies:
   module:
     - social_media_links
   theme:
-    - devportal
+    - opendevx_theme
 id: socialmedialinks
-theme: devportal
+theme: opendevx_theme
 region: footer_first
 weight: -17
 provider: null
@@ -30,7 +30,7 @@ settings:
       description: ''
       weight: '-8'
     instagram:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '-7'
     vimeo:
@@ -38,15 +38,15 @@ settings:
       description: ''
       weight: '-6'
     github:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '-5'
     bitbucket:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '-4'
     drupal:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '-3'
     tumblr:
@@ -66,15 +66,15 @@ settings:
       description: ''
       weight: '1'
     linkedin:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '2'
     twitter:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '3'
     youtube:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '4'
     pinterest:
@@ -86,7 +86,7 @@ settings:
       description: ''
       weight: '6'
     facebook:
-      value: devportal
+      value: opendevx_theme
       description: ''
       weight: '7'
     googleplus:
