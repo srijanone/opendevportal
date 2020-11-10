@@ -1,0 +1,411 @@
+// Regions
+//
+// We have split up the layout of the interface into regions. In Drupal
+// we can assign blocks to these regions. Each region can contain different
+// views/blocks/elements, based on the context of the node or page.
+//
+// `<i>`The complementary_bottom region will be hidden on small screens.`</i>`
+//
+// Markup: regions.twig
+//
+// Weight: 1
+//
+// Style guide: templates.regions
+
+// Layout default
+//
+// The default layout consists of the content in a 2/3 column with a complementary region
+// in the sidebar with a width of 1/3.
+//
+// Markup: layout-default.twig
+//
+// Weight: 2
+//
+// Style guide: templates.layout-default
+
+// Layout 2 columns
+//
+// As mentioned above we have a default layout for Open Social. You also choose a 2 columns layout.
+// We do not use a module for that, but as a site manager make sure blocks
+// are placed in the correct region. To use the 2 columns layout,
+// you must place you blocks in the region "Sidebar First".
+// The other argument that must be true is that the complementary regions are empty. To prevent
+// a site manager from showing blocks in both the complementary region and the sidebar
+// first region, we add this argument for the display of the latter.
+//
+// `{% if page.sidebar_first and not page.complementary_top and not page.complementary_bottom %}`
+//
+// Markup: layout-2columns.twig
+//
+// Weight: 3
+//
+// Style guide: templates.layout-2cols
+
+// Layout 3 columns
+//
+// Besides a two column layout, you can also get 3 columns. For this you can fill the region
+// sidebar second with blocks. When you use sidebar second and sidebar first
+// the columns will take up an equal share of the row.
+//
+// Markup: layout-3columns.twig
+//
+// Weight: 4
+//
+// Style guide: templates.layout-3cols
+
+@import "settings";
+
+body .node__content {
+  margin-top: 0;
+}
+
+// Added header css here.
+.header {
+  background-color: $blue-1;
+  left: 50%;
+  margin-left: -50vw;
+  max-height: 70px;
+  position: relative;
+  width: 100vw;
+
+  .container {
+    align-items: center;
+    display: flex;
+    max-width: 1440px;
+
+    @include for-tablet-landscape-down {
+      display: block;
+    }
+  }
+}
+
+.footer {
+  background: url("#{$theme-path}footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  position: relative;
+  padding: 35px 0 30px;
+  margin-top: 2rem;
+  width: 100vw;
+  z-index: 1;
+
+  .container {
+    max-width: 1440px;
+  }
+
+  .fa {
+    @extend %awsome;
+    background-color: $blue-dark;
+    padding: 0.8rem;
+    border-radius: 50%;
+    height: 56px;
+    width: 56px;
+    font-weight: normal;
+  }
+
+  .social-media-links--platforms a {
+    color: $white;
+  }
+
+  .social-media-links--platforms {
+    @include for-tablet-landscape-down {
+      text-align: center;
+    }
+  }
+}
+
+.footer-inner {
+  .region {
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+
+    @include for-tablet-landscape-down {
+      align-items: center;
+      flex-flow: column;
+    }
+  }
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+
+    .content {
+      @include font(12, normal);
+      color: $white;
+    }
+
+    img {
+      max-width: 200px;
+      height: 42px;
+    }
+  }
+}
+
+.menu--footer {
+  .navbar-nav {
+    @include for-tablet-landscape-down {
+      display: flex;
+      flex-flow: row wrap;
+      margin-bottom: 1rem;
+      justify-content: center;
+    }
+  }
+
+  li {
+    padding: 0 10px;
+  }
+}
+
+div[id="main"] {
+  @extend %max-width;
+  min-height: calc(100vh - 18rem);
+
+  .row-offcanvas {
+    margin: 0;
+
+    .path-dashboard & {
+      margin: 0 -15px;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include for-tablet-landscape-up {
+    padding: 0 1rem;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.main-container {
+  min-height: 100%;
+  min-height: calc(100vh - 50px);
+  padding-top: 50px;
+  padding-bottom: 100px;
+  position: relative;
+  width: 100%;
+}
+
+.region--title {
+  flex-basis: 100%;
+  max-width: 100%;
+
+  @include for-tablet-landscape-up {
+    margin-top: 1rem;
+  }
+}
+
+.region--content-top,
+.region--content-bottom,
+.region--hero,
+.region--secondary-navigation {
+  @extend .container;
+}
+
+.region--content,
+.region--content-bottom,
+.region--sidebar-first,
+.region--sidebar-second {
+  margin-top: 1rem;
+}
+
+// The direct child selector solves the problem in the style guide
+.layout--with-complementary> {
+  .region--content {
+    padding-left: 1em;
+    padding-right: 1em;
+    flex-basis: 100%;
+    max-width: 100%;
+
+    @include for-tablet-landscape-up {
+      flex: 0 0 (100%/1.5);
+      max-width: (100%/1.5);
+      order: 1;
+    }
+
+    @include for-desktop-up {
+      padding-left: 0;
+    }
+  }
+}
+
+.region--complementary {
+  padding-left: 1em;
+  padding-right: 1em;
+  flex-basis: 100%;
+  max-width: 100%;
+
+  @include for-tablet-landscape-up {
+    margin-top: 1rem;
+    flex: 0 1 (100%/3);
+    order: 2;
+    max-width: (100%/3);
+  }
+
+  @include for-desktop-up {
+    padding-right: 0;
+  }
+}
+
+.layout--with-two-columns {
+
+  .region--content,
+  .region--sidebar-first,
+  .region--sidebar-second {
+    flex-basis: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    @include for-tablet-landscape-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  @include for-desktop-up {
+    .region--content {
+      padding-left: 0;
+    }
+
+    .region--sidebar-first,
+    .region--sidebar-second {
+      padding-right: 0;
+    }
+  }
+}
+
+.layout--with-three-columns {
+
+  .region--content,
+  .region--sidebar-first,
+  .region--sidebar-second {
+    padding-left: 1em;
+    padding-right: 1em;
+    flex-basis: 100%;
+
+    @include for-tablet-landscape-up {
+      flex: 0 0 (100%/3);
+      max-width: (100%/3);
+    }
+  }
+
+  @include for-desktop-up {
+    .region--content {
+      padding-left: 0;
+    }
+
+    .region--sidebar-second {
+      padding-right: 0;
+    }
+  }
+}
+
+// hide region on mobile
+.region--complementary-bottom {
+  display: none;
+
+  // Show region on bigger screens
+  @include for-tablet-landscape-up {
+    display: block;
+  }
+}
+
+.region--complementary-top {
+  margin-top: 1rem;
+
+  @include for-tablet-landscape-up {
+    margin-top: 0;
+  }
+}
+
+// layout--twocol-section
+.layout--twocol-section {
+  @include for-tablet-landscape-down {
+    flex-flow: column;
+  }
+
+  .layout__region {
+    margin-bottom: 2rem;
+  }
+}
+
+// added to remove horizontal scroll.
+div[id="page"] {
+  overflow: hidden;
+}
+
+// view-empty
+.view-empty {
+  text-align: center;
+}
+
+// For full layout.
+.full {
+  div.row {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+// Program page.
+.admin-list-div {
+  padding: 0;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  list-style: none;
+
+  li {
+    width: 32%;
+    margin-bottom: 1.5rem;
+
+    @include for-tablet-landscape-down {
+      width: 48%;
+    }
+
+    @include for-phone-down {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @extend %btn-create;
+    border-radius: 6px;
+    height: 100%;
+    text-align: left;
+    position: relative;
+
+    &::after {
+      @extend %awsome;
+      content: '\f055';
+      font-size: 30px;
+      position: absolute;
+      right: 4px;
+      top: 3px;
+    }
+  }
+
+  .label {
+    @include font(24, normal);
+    font-family: $headings-font-family;
+  }
+
+  .description {
+    margin-top: .5rem;
+  }
+}

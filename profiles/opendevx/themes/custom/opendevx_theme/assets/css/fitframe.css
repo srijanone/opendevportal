@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+.iframe-container {
+  max-width: 100% !important;
+}
+
+.iframe-container .twitter-tweet,
+.iframe-container .fb_iframe_widget,
+.iframe-container iframe {
+  max-width: 100% !important;
+  width: 100% !important;
+}

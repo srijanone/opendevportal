@@ -1,0 +1,75 @@
+@import "settings";
+
+.dropdown-menu .nav-link--coming-soon::before,
+.nav-link--dashboard-appmanager-appsmoderation-stateall::before,
+.nav-link--dashboard-appmanager-issues::before,
+.nav-link--dashboard-appmanager-issues + .nav-link--coming-soon::before,
+.nav-link--user::before,
+.nav-link--user-login::before,
+.nav-link--user-logout::before,
+.nav-link--user-register::before,
+.form-type-email label::before,
+.form-type-password label::before {
+	@extend %awsome;
+	display: inline-block;
+  font-weight: normal;
+	padding-right: 5px;
+	text-align: center;
+	width: 26px;
+}
+
+.nav-link {
+	&[class*="-edit"]::before {
+		@extend %awsome;
+		content: "\f044";
+		display: inline-block;
+		font-weight: normal;
+		padding-right: 5px;
+		text-align: center;
+		width: 26px;
+	}
+}
+
+.nav-tabs .nav-link[class*="-edit"]::before {
+	display: none;
+}
+
+.dropdown-menu .nav-link--coming-soon::before {
+	content: "\f0f7";
+}
+
+.nav-link--dashboard-appmanager-appsmoderation-stateall::before {
+	content: "\f013";
+}
+
+.nav-link--dashboard-appmanager-issues::before {
+	content: "\f12a";
+}
+
+.nav-link--dashboard-appmanager-issues + .nav-link--coming-soon::before {
+	content: "\f0f6";
+}
+
+.nav-link--user::before {
+	content: "\f007";
+}
+
+.nav-link--user-login::before {
+	content: "\f09c";
+}
+
+.nav-link--user-logout::before {
+	content: "\f023";
+}
+
+.nav-link--user-register::before {
+  content: "\f234";
+}
+
+.form-type-email label::before {
+  content: "\f0e0";
+}
+
+.form-type-password label::before {
+  content: "\f023";
+}

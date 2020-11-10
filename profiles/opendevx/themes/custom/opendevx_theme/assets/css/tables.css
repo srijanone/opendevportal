@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+body table .views-field-nothing a,
+body .table .views-field-nothing a {
+  background-color: transparent;
+  border: 1px solid #384e86;
+  border-radius: 25px;
+  color: #384e86;
+  display: block;
+  padding: 10px 15px;
+  font-size: 0.875rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1;
+  margin: 0;
+}
+
+body table .views-field-nothing a:hover,
+body .table .views-field-nothing a:hover {
+  background-color: #384e86;
+  color: #fff;
+  text-decoration: none;
+}
+
+body .table-responsive ~ .form-actions {
+  display: none;
+}
+
+body table,
+body .table {
+  border-collapse: unset;
+}
+
+body table thead tr th,
+body .table thead tr th {
+  background: #1d76ee;
+  border-bottom-color: #384e86;
+  border-top: 1px solid #384e86;
+  text-align: center;
+}
+
+body table tr,
+body .table tr {
+  background-color: #fff;
+}
+
+body table tr .list-group-item,
+body .table tr .list-group-item {
+  border: 0;
+}
+
+body table th,
+body table td,
+body .table th,
+body .table td {
+  border-color: #384e86;
+  vertical-align: middle;
+}
+
+body table th:not(:first-child),
+body table td:not(:first-child),
+body .table th:not(:first-child),
+body .table td:not(:first-child) {
+  text-align: center;
+}
+
+body table .views-field-nothing,
+body .table .views-field-nothing {
+  max-width: 15rem;
+}
+
+body table .views-field-nothing ul,
+body .table .views-field-nothing ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body table .views-field-nothing a,
+body .table .views-field-nothing a {
+  display: inline-block;
+  width: 12rem;
+  padding: .5rem 1rem;
+}
+
+body table .views-field-nothing a:first-child,
+body .table .views-field-nothing a:first-child {
+  margin-left: .6rem;
+}
+
+body table .views-field-nothing div.edit-content a:first-child,
+body .table .views-field-nothing div.edit-content a:first-child {
+  padding: .5rem 1rem;
+}
+
+body table .views-field-nothing div,
+body table .views-field-nothing li,
+body .table .views-field-nothing div,
+body .table .views-field-nothing li {
+  margin-left: .6rem;
+  display: inline-block;
+}
+
+body table .views-field-nothing div a:first-child,
+body table .views-field-nothing li a:first-child,
+body .table .views-field-nothing div a:first-child,
+body .table .views-field-nothing li a:first-child {
+  margin-left: 0;
+  margin-top: .3rem;
+}
+
+body table .views-field-nothing div > a,
+body table .views-field-nothing li > a,
+body .table .views-field-nothing div > a,
+body .table .views-field-nothing li > a {
+  margin-top: .6rem;
+}
+
+body table .views-field-nothing a + a,
+body table .views-field-nothing div + a,
+body .table .views-field-nothing a + a,
+body .table .views-field-nothing div + a {
+  margin-left: .6rem;
+  margin-top: .6rem;
+}
+
+body table .views-field-nothing .dropbutton-widget a,
+body .table .views-field-nothing .dropbutton-widget a {
+  background-color: transparent;
+  border: 0;
+  color: #333;
+}
+
+body table .views-field-nothing .dropbutton-widget a:hover,
+body .table .views-field-nothing .dropbutton-widget a:hover {
+  color: #333;
+}
+
+body table .views-field-nothing .dropbutton-widget,
+body .table .views-field-nothing .dropbutton-widget {
+  width: 100%;
+}
+
+body table .views-field-operations,
+body table .views-field-dropbutton,
+body .table .views-field-operations,
+body .table .views-field-dropbutton {
+  min-width: 8rem;
+}
+
+.js body table .dropbutton-widget, .js
+body .table .dropbutton-widget {
+  position: absolute;
+  width: 6rem;
+}
+
+.js .views-field-operations .dropbutton-multiple {
+  margin: 0;
+  padding: 0;
+}
+
+.js .dropbutton-multiple .dropbutton-widget .dropbutton-action a {
+  padding: 0;
+}

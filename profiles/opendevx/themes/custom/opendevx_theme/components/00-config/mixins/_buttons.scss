@@ -1,0 +1,64 @@
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// Common buttons eg.: readmore etc.
+%btn-main {
+  background-color: transparent;
+  border: 1px solid $blue-dark;
+  border-radius: 25px;
+  color: $blue-dark;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $button-font-size;
+  text-decoration: none;
+  transition: all .2s;
+
+  &:hover {
+    background-color: $blue-dark;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// Common buttons eg.: create, sync etc.
+%btn-create {
+  background-color: transparent;
+  border: 1px solid $blue-dark;
+  border-radius: 25px;
+  color: $blue-dark;
+  display: block;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  transition: all .2s;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1;
+  margin: 0;
+
+  &:hover {
+    background-color: $blue-dark;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// Check icon.
+%icon-tick {
+  &::before {
+    @extend %awsome;
+    content: '\f00c';
+    color: $blue-dark;
+    font-size: 18px;
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    transition: all .2s;
+  }
+
+  &:hover::before {
+    color: $white;
+  }
+}

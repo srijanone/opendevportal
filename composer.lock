@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a66d962a83e227aaf584e9cf5a0fb49f",
+    "content-hash": "9649c46e859ff8ec25744a88e64c5e4c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2374,6 +2374,55 @@
             }
         },
         {
+            "name": "drupal/block_classes",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/block_classes.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/block_classes-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "4160546abb399a86057d4c0d8b2f7c12ae628cfd"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1601556875",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Allows assigning the classes to title, content of the Blocks.",
+            "homepage": "https://www.drupal.org/project/block_classes",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/block_classes",
+                "issues": "https://www.drupal.org/project/issues/block_classes"
+            }
+        },
+        {
             "name": "drupal/block_type_templates",
             "version": "1.0.0-alpha2",
             "source": {
@@ -3131,7 +3180,8 @@
                     }
                 },
                 "patches_applied": {
-                    "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch"
+                    "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch",
+                    "Layout Builder getlavel": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch"
                 }
             },
             "autoload": {

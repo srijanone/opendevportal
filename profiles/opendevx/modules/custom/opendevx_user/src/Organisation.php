@@ -185,9 +185,9 @@ class Organisation extends Programs {
   public function getUserProgramsData() {
     try {
       $view = Views::getView("programs");
-      $view->setDisplay("user_programs");
-      $view->execute();
       if ($view) {
+        $view->setDisplay("user_programs");
+        $view->execute();
         $programs = [];
         foreach ($view->result as $key => $value) {
           $gid = $value->_entity->get('id')->value;

@@ -14,7 +14,9 @@ use Drupal\user\Entity\User;
  *
  * @see system_install()
  */
-function openapix_portal_install() {
+function opendevx_install() {
+  ini_set('max_execution_time', 0); 
+  ini_set('memory_limit', -1);
 	// Assign user 1 the "administrator" role.
   $user = User::load(1);
   $user->roles[] = 'administrator';

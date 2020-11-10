@@ -1,0 +1,38 @@
+@import "settings";
+
+.quick-tabs {
+	display: flex;
+	justify-content: center;
+	margin: 40px auto 20px;
+
+	span {
+		border: 2px solid $blue;
+		border-right: 0 none;
+
+		&:first-child {
+			border-bottom-left-radius: 3px;
+			border-top-left-radius: 3px;
+		}
+
+		&:last-child {
+			border-bottom-right-radius: 3px;
+			border-top-right-radius: 3px;
+			border-right: 2px solid $blue;
+		}
+
+		a {
+			color: $blue;
+			padding: 10px 50px;
+			text-align: center;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&.active {
+				background: $blue;
+				color: $white;
+			}
+		}
+	}
+}

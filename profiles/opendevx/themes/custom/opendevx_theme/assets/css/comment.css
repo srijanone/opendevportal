@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+.comment__content .comment-delete:before,
+.comment__content .comment-edit:before,
+.comment__content .comment-reply:before {
+  font-family: "FontAwesome", "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.comment {
+  display: block;
+  background: 3px solid #f4f4f4;
+}
+
+.comment__content {
+  background: #f4f4f4;
+  border-radius: 10px;
+  margin-left: 40px;
+  padding: 0;
+  position: relative;
+  border: 0 none;
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.comment__content:after {
+  display: none;
+}
+
+.comment__content:before {
+  background: #f4f4f4;
+  border: 0 none;
+  content: '';
+  height: 40px;
+  left: -20px;
+  position: absolute;
+  top: 20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 40px;
+}
+
+.comment__content .nav {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.comment__content h3 {
+  margin-top: 0;
+}
+
+.comment__content .card-block {
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.comment__content .user-picture {
+  float: left;
+}
+
+.comment__content .user-info {
+  margin-left: 130px;
+}
+
+.comment__content .nav {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding: .5rem 0;
+}
+
+.comment__content .comment-delete,
+.comment__content .comment-edit,
+.comment__content .comment-reply {
+  font-size: 1rem;
+}
+
+.comment__content .comment-delete:before,
+.comment__content .comment-edit:before,
+.comment__content .comment-reply:before {
+  color: #adadad;
+  padding-right: 5px;
+}
+
+.comment__content .comment-delete:before {
+  content: "\f014";
+}
+
+.comment__content .comment-edit:before {
+  content: "\f040";
+}
+
+.comment__content .comment-reply:before {
+  content: "\f112";
+}
+
+body .main-content .comment-wrapper .comment-form__title {
+  margin-bottom: 0.5em;
+  border: 0;
+  font-size: 20px;
+  margin-top: 3rem;
+  font-weight: bold;
+}
