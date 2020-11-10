@@ -146,9 +146,13 @@ content:
     region: content
   field_api_product_single:
     weight: 5
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 50
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
     region: content
   field_app_ref_id:
     weight: 4
@@ -212,13 +216,6 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  langcode:
-    type: language_select
-    weight: 1
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   field_products_image:
     weight: 8
     settings:

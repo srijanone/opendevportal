@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.protected
+id: protected-platform_operator
+label: 'Platform Operator'
+weight: 19
+internal: false
+audience: member
+group_type: protected
+permissions_ui: true
+permissions: {  }

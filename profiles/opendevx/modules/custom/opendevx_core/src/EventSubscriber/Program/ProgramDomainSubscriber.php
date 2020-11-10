@@ -9,6 +9,11 @@ use Drupal\domain\DomainNegotiatorInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Drupal\opendevx_core\Program\ProgramDomainInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Path\CurrentPathStack;
+use Drupal\opendevx_core\Utility\Program\ProgramUtility;
 
 /**
  * Access Denied node page.
@@ -45,34 +50,67 @@ class ProgramDomainSubscriber implements EventSubscriberInterface {
   protected $programDomain;
 
   /**
+   * Program utility instance.
+   *
+   * @var \Drupal\opendevx_core\Utility\Program\ProgramUtility
+   */
+  protected $programUtility;
+
+  /**
+   * Current path instance.
+   *
+   * @var Drupal\Core\Path\CurrentPathStack
+   */
+  protected $currentPath;
+
+  /**
+   * The current user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $currentUser;
+
+  /**
    * Pass the dependency to the object constructor.
    */
   public function __construct(
     PrivateTempStoreFactory $temp_store,
     DomainNegotiatorInterface $negotiator,
     EntityTypeManagerInterface $entity_type_manager,
-    ProgramDomainInterface $program_domain
+    ProgramDomainInterface $program_domain,
+    CurrentPathStack $current_path,
+    AccountInterface $current_user,
+    ProgramUtility $program_utility
     ) {
     $this->tempstore = $temp_store;
     $this->domainNegotiator = $negotiator;
     $this->entityTypeManager = $entity_type_manager;
     $this->programDomain = $program_domain;
+    $this->currentPath = $current_path;
+    $this->currentUser = $current_user;
+    $this->programUtility = $program_utility;
   }
 
   /**
    * Entity add page check.
    *
-   * @param GetResponseEvent $event
+   * @param Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+   *   Event instance.
    */
   public function setProgramDomain(GetResponseEvent $event) {
-    $domain_storage = $this->entityTypeManager->getStorage('domain');
     $this->programDomain->deleteProgramDomainId();
     $active = $this->domainNegotiator->getActiveDomain();
     if ($active) {
-      $group_domain = $domain_storage->load($active->id());
-      $domainid = explode('_', $group_domain->id());
+      $domainid = explode('_', $this->entityTypeManager->getStorage('domain')->load($active->id())->id());
       if ($domainid[0] == 'group') {
         $this->programDomain->setProgramDomainId($domainid[1]);
+
+        if (in_array($this->programUtility->getProgramType($domainid[1]), ['private', 'protected']) &&
+         $this->currentUser->isAnonymous() &&
+         !in_array($this->currentPath->getPath(), ['/user/login', '/user/password'])) {
+          $response = new RedirectResponse(Url::fromRoute('user.login')->toString(), 301);
+          $response->send();
+        }
       }
     }
 
@@ -86,4 +124,22 @@ class ProgramDomainSubscriber implements EventSubscriberInterface {
     return $events;
   }
 
+  /**
+   * Get program domain.
+   *
+   * @param Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+   *   Event instance.
+   */
+  public function getProgramDomain() {
+    $active = $this->domainNegotiator->getActiveDomain();
+    if ($active) {
+      $domainid = explode('_', $this->entityTypeManager->getStorage('domain')->load($active->id())->id());
+      if ($domainid[0] == 'group') {
+        return $domainid[1];
+      }
+    }
+
+  }
+
 }
+

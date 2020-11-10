@@ -1,7 +1,7 @@
-name: Opendevx - Guidance Block
+name: opendevx Guidance Block
 description : 'Generating the guidance blocks by using guidance block types.'
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
 dependencies:

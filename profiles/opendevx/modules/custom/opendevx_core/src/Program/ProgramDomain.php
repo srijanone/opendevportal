@@ -49,4 +49,19 @@ class ProgramDomain implements ProgramDomainInterface {
     return $this->tempstore->get('program_domain_collection')->delete(ProgramDomainInterface::STORAGE_PROGRAM_KEY);
   }
 
+  /**
+   * Get Program by sub domian.
+   */
+  public function getDomainProgramInfo() {
+    $program = [];
+    if ($this->getProgramDomainId() > 0){
+      $program = \Drupal::entityTypeManager()->getStorage('group')->load($this->getProgramDomainId());
+    }
+    if (empty($program)) {
+      $program = \Drupal::routeMatch()->getParameter('group');
+    }
+    return $program;
+
+  }
+
 }

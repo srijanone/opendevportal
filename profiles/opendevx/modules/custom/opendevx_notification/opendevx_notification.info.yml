@@ -4,6 +4,7 @@ type: module
 package: Opendevx
 core: 8.x
 core_version_requirement: ^8 || ^9
+project: opendevx_notification
 
 dependencies:
   - drupal:notifications_widget

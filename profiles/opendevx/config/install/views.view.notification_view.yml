@@ -2,8 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - user.role.developer
-    - user.role.product_manager
+    - user.role.authenticated
   module:
     - node
     - notifications_widget
@@ -27,8 +26,7 @@ display:
         type: role
         options:
           role:
-            product_manager: product_manager
-            developer: developer
+            authenticated: authenticated
       cache:
         type: none
         options: {  }
@@ -491,6 +489,7 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      css_class: programs-view
     cache_metadata:
       max-age: 0
       contexts:

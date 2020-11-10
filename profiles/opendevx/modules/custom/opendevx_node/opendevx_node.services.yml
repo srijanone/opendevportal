@@ -5,7 +5,7 @@ services:
 
   opendevx_node.form_alter_subscriber:
     class: Drupal\opendevx_node\EventSubscriber\FormAlterSubscriber
-    arguments: ['@request_stack', '@entity_type.manager']
+    arguments: ['@request_stack', '@entity_type.manager', '@opendevx_user.organisation']
     tags:
       - { name: event_subscriber }
 

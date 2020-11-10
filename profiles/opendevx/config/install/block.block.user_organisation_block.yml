@@ -2,15 +2,19 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
     - opendevx_user
     - domain
     - user
   theme:
-    - devportal
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    block_class: popover_program
 id: user_organisation_block
-theme: devportal
+theme: opendevx_theme
 region: primary_menu
-weight: -15
+weight: -20
 provider: null
 plugin: user_organisation_block
 settings:

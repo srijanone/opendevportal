@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.assets.body
     - field.field.node.assets.comment
     - field.field.node.assets.field_api_product
     - field.field.node.assets.field_banners_image
@@ -21,7 +22,6 @@ dependencies:
     - file
     - layout_builder
     - social_media
-    - system
     - text
     - user
 third_party_settings:
@@ -41,18 +41,7 @@ third_party_settings:
           link_custom: ''
           classes:
             layout_class: {  }
-        components:
-          ea5cf39b-84b3-4756-87ca-71d556fe95bb:
-            uuid: ea5cf39b-84b3-4756-87ca-71d556fe95bb
-            region: ds_content
-            configuration:
-              id: system_breadcrumb_block
-              label: Breadcrumbs
-              provider: system
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
+        components: {  }
         third_party_settings: {  }
       -
         layout_id: ds_2col
@@ -98,7 +87,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 0
+            weight: -9
           95a18fcc-c703-42ab-8709-3bd2b360ae4a:
             uuid: 95a18fcc-c703-42ab-8709-3bd2b360ae4a
             region: right
@@ -119,7 +108,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
+            weight: -8
           46d53e17-3b54-47a3-beba-25151c70d26d:
             uuid: 46d53e17-3b54-47a3-beba-25151c70d26d
             region: right
@@ -140,7 +129,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -7
           769a4721-676d-4e59-a5a6-6fcaee6e2a65:
             uuid: 769a4721-676d-4e59-a5a6-6fcaee6e2a65
             region: right
@@ -151,7 +140,7 @@ third_party_settings:
               label_display: '0'
               context_mapping: {  }
             additional: {  }
-            weight: 3
+            weight: -6
           1be15d6b-54c5-401d-b185-facf91dbf42c:
             uuid: 1be15d6b-54c5-401d-b185-facf91dbf42c
             region: right
@@ -171,7 +160,26 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 4
+            weight: -5
+          0adafd49-53ba-4431-bd3a-3e3c76604e8e:
+            uuid: 0adafd49-53ba-4431-bd3a-3e3c76604e8e
+            region: right
+            configuration:
+              id: 'field_block:node:assets:field_video'
+              label: Youtube/Vimeo
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.assets.full
 targetEntityType: node
@@ -222,5 +230,4 @@ hidden:
   field_tags: true
   field_user_rating: true
   field_video: true
-  langcode: true
   layout_builder__layout: true

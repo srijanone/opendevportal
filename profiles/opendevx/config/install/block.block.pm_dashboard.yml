@@ -4,12 +4,16 @@ dependencies:
   config:
     - system.menu.product-management
   module:
+    - block_classes
     - domain
     - system
   theme:
-    - devportal
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    block_class: left-navigation
 id: pm_dashboard
-theme: devportal
+theme: opendevx_theme
 region: sidebar_first
 weight: 0
 provider: null

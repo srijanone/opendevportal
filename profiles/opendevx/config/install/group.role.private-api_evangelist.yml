@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private
+id: private-api_evangelist
+label: 'API Evangelist'
+weight: 14
+internal: false
+audience: member
+group_type: private
+permissions_ui: true
+permissions: {  }

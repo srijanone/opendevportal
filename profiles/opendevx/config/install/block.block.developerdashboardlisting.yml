@@ -8,11 +8,11 @@ dependencies:
     - system
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: developerdashboardlisting
-theme: devportal
+theme: opendevx_theme
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: 'block_content:7f805e33-c0c8-4511-9c4a-196d7c3c8297'
 settings:

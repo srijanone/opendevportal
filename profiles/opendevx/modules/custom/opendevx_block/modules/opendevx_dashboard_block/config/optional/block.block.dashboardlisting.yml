@@ -8,9 +8,9 @@ dependencies:
     - system
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: dashboardlisting
-theme: devportal
+theme: opendevx_theme
 region: content
 weight: -11
 provider: null

@@ -4,16 +4,21 @@ dependencies:
   config:
     - views.view.developer_dashboard
   module:
+    - block_classes
     - domain
     - system
     - user
     - views
   theme:
-    - devportal
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    title_class: apps
+    block_class: dashboard-block
 id: views_block__developer_dashboard_block_apps
-theme: devportal
+theme: opendevx_theme
 region: content
-weight: -9
+weight: -13
 provider: null
 plugin: 'views_block:developer_dashboard-block_apps'
 settings:

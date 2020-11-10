@@ -8,9 +8,9 @@ dependencies:
     - system
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: developerguidance
-theme: devportal
+theme: opendevx_theme
 region: content
 weight: -5
 provider: null

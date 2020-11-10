@@ -96,8 +96,10 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_domain_admin: true
   field_gender: true
   field_job_role: true
   field_seniority_level: true
   field_social_profile: true
+  field_subscribed_products: true
   field_userpoints_default_points: true

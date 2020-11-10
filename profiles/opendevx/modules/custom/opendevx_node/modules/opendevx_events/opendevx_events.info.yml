@@ -1,7 +1,7 @@
-name: Opendevx -Events Content
-description : 'Adds the Events content type in developer portal.'
+name: Events Content
+description : 'Adds the Events content type in opendevx.'
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
 
@@ -12,3 +12,10 @@ dependencies:
   - opendevx_taxonomy:opendevx_event_type
   - opendevx_taxonomy:opendevx_organisation
   - address:address
+
+project: opendevx_events
+
+default_content:
+  node:
+    # Event node demo Events
+    - 5d39d17a-63cc-4f83-b62d-62abd1f85db3

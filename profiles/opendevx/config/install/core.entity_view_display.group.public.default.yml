@@ -6,17 +6,28 @@ dependencies:
     - field.field.group.public.field_font_family
     - field.field.group.public.field_gateway
     - field.field.group.public.field_header_background_color
+    - field.field.group.public.field_hub_content_id
     - field.field.group.public.field_icons_bg_color
     - field.field.group.public.field_program_image
     - field.field.group.public.field_site_logo
     - field.field.group.public.layout_builder__layout
     - group.type.public
+    - views.view.events
+    - views.view.forum
+    - views.view.product_listing
+  content:
+    - 'block_content:dashboard_block:752347b4-d1cb-412e-a321-8d697f3a2a59'
+    - 'block_content:header_block:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
   module:
+    - block_content
     - color_field
+    - ds
     - layout_builder
     - layout_discovery
     - options
+    - system
     - text
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: true
@@ -25,41 +36,131 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: ''
+          label: 'Product banner'
         components:
-          379f64c9-661c-4894-ade1-b02e1cf33bcb:
-            uuid: 379f64c9-661c-4894-ade1-b02e1cf33bcb
+          f1787785-9d10-4d95-9683-23cc58f9852a:
+            uuid: f1787785-9d10-4d95-9683-23cc58f9852a
             region: content
             configuration:
+              id: 'block_content:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
+              label: 'Product Banner Block'
+              provider: block_content
               label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:group:public:field_program_image'
-              formatter:
-                type: entity_reference_entity_view
-                label: above
-                settings:
-                  view_mode: default
-                  link: false
-                third_party_settings: {  }
+              status: true
+              info: ''
+              view_mode: default
+              context_mapping: {  }
             additional: {  }
-            weight: 1
-          84aa352b-0872-4c8c-959c-799945b76d93:
-            uuid: 84aa352b-0872-4c8c-959c-799945b76d93
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: breadcrumb
+        components:
+          28b5aa19-4335-459a-a17e-7b50418c17bf:
+            uuid: 28b5aa19-4335-459a-a17e-7b50418c17bf
             region: content
             configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
               label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          1e7ba5f0-3f79-4630-a19d-e1cea95367b6:
+            uuid: 1e7ba5f0-3f79-4630-a19d-e1cea95367b6
+            region: ds_content
+            configuration:
+              id: 'field_block:group:public:field_description'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:group:public:field_gateway'
-              formatter:
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-                type: entity_reference_label
+                view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -10
+          d86d67e9-93e4-4a94-a761-68405eb6c3e5:
+            uuid: d86d67e9-93e4-4a94-a761-68405eb6c3e5
+            region: ds_content
+            configuration:
+              id: 'views_block:product_listing-block_homepage_product'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          d52b677b-6e09-4197-ba42-2dbdeb5de260:
+            uuid: d52b677b-6e09-4197-ba42-2dbdeb5de260
+            region: ds_content
+            configuration:
+              id: 'block_content:752347b4-d1cb-412e-a321-8d697f3a2a59'
+              label: 'Blog front page'
+              provider: block_content
+              label_display: '0'
+              status: true
+              info: ''
+              view_mode: cards
+              context_mapping: {  }
+            additional: {  }
+            weight: -8
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Events and Forum'
+          column_widths: 50-50
+        components:
+          488361d3-711b-4afc-9816-38f8b34524b9:
+            uuid: 488361d3-711b-4afc-9816-38f8b34524b9
+            region: first
+            configuration:
+              id: 'views_block:events-upcoming_events'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          f5fcc4c3-4033-4c06-9117-c6f8979ceb9a:
+            uuid: f5fcc4c3-4033-4c06-9117-c6f8979ceb9a
+            region: second
+            configuration:
+              id: 'views_block:forum-latest_qna'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: group.public.default
 targetEntityType: group
@@ -135,5 +236,6 @@ content:
 hidden:
   changed: true
   created: true
+  field_hub_content_id: true
   layout_builder__layout: true
   uid: true

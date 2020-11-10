@@ -7,9 +7,9 @@ dependencies:
     - system
     - views
   theme:
-    - devportal
+    - opendevx_theme
 id: views_block__user_points_default_totals_block_1
-theme: devportal
+theme: opendevx_theme
 region: sidebar_second
 weight: -18
 provider: null

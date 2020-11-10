@@ -568,7 +568,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<span><a class="create-button" href="/block/add?destination==/dashboard/manage/blocks">Create Block</a></span>'
+            value: '<span><a class="create-button create plus" href="/block/add?destination==/dashboard/manage/blocks">Create Block</a></span>'
             format: full_html
           plugin_id: text
       pager:
@@ -597,7 +597,7 @@ display:
         options:
           role:
             admin: admin
-      css_class: view-organisations
+      css_class: programs-view
     cache_metadata:
       max-age: -1
       contexts:

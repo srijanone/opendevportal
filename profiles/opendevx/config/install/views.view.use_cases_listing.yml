@@ -15,7 +15,6 @@ dependencies:
     - group
     - media
     - node
-    - opendevx_core
     - taxonomy
     - text
     - user
@@ -188,11 +187,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: 'col-md-4 col-sm-6 col-xs-12'
+          row_class: card__item
           default_row_class: true
           type: ul
           wrapper_class: item-list
-          class: ''
+          class: card-field
       row:
         type: fields
         options:
@@ -466,7 +465,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"use-case-image\">{{ field_listing_image }}</div>\r\n<div class=\"use-case-title\">{{ title }}</div>\r\n<div class=\"use-case-desc\">{{ body }}</div>\r\n{% if field_api_product %}\r\n<div class=\"use-case-prod\">Product: {{ field_api_product }}</div>\r\n{% endif %}"
+            text: "<div class=\"use-case-image\">{{ field_listing_image }}</div>\r\n<h3 class=\"title\">{{ title }}</h3>\r\n<div class=\"use-case-desc\">{{ body }}</div>\r\n{% if field_api_product %}\r\n<div class=\"use-case-prod\">Product: {{ field_api_product }}</div>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -491,14 +490,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -559,7 +558,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
+          operator: contains
           value: ''
           group: 1
           exposed: true
@@ -582,7 +581,6 @@ display:
               product_manager: '0'
               admin: '0'
               developer: '0'
-              organisation_admin: '0'
             placeholder: ''
             autocomplete_filter: 1
             autocomplete_min_chars: '0'
@@ -664,7 +662,7 @@ display:
           id: field_api_category_target_id
           table: node__field_api_category
           field: field_api_category_target_id
-          relationship: none
+          relationship: field_api_product
           group_type: group
           admin_label: ''
           operator: or
@@ -690,7 +688,6 @@ display:
               product_manager: '0'
               admin: '0'
               developer: '0'
-              organisation_admin: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -975,7 +972,7 @@ display:
                 select_all_none_nested: false
                 display_inline: 0
       use_ajax: true
-      css_class: use-case-listing
+      css_class: 'listing-grid cards-block justify-content-between'
       group_by: true
       empty:
         area:
@@ -1093,7 +1090,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
+          operator: contains
           value: ''
           group: 1
           exposed: true
@@ -1116,7 +1113,6 @@ display:
               product_manager: '0'
               admin: '0'
               developer: '0'
-              organisation_admin: '0'
             placeholder: ''
             autocomplete_filter: 1
             autocomplete_min_chars: '0'
@@ -1198,7 +1194,7 @@ display:
           id: field_api_category_target_id
           table: node__field_api_category
           field: field_api_category_target_id
-          relationship: none
+          relationship: field_api_product
           group_type: group
           admin_label: ''
           operator: or
@@ -1224,7 +1220,6 @@ display:
               product_manager: '0'
               admin: '0'
               developer: '0'
-              organisation_admin: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1383,11 +1378,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: 'col-md-4 col-sm-6 col-xs-12'
+          row_class: card__item
           default_row_class: true
           type: ul
           wrapper_class: item-list
-          class: ''
+          class: card-field
       row:
         type: fields
         options:
@@ -1395,7 +1390,7 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
-      css_class: solution-listing
+      css_class: 'listing-grid cards-block justify-content-between'
       fields:
         title:
           id: title
@@ -1662,7 +1657,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"solution-image\">{{ field_listing_image }}</div>\r\n<div class=\"solution-title\">{{ title }}</div>\r\n<div class=\"solution-desc\">{{ field_description }}</div>\r\n{% if field_api_product %}\r\n<div class=\"solution-prod\">Product: {{ field_api_product }}</div>\r\n{% endif %}"
+            text: "<div class=\"solution-image\">{{ field_listing_image }}</div>\r\n<h3 class=\"title\">{{ title }}</h3>\r\n<div class=\"solution-desc\">{{ field_description }}</div>\r\n{% if field_api_product %}\r\n<div class=\"solution-prod\">Product: {{ field_api_product }}</div>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -1687,14 +1682,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false

@@ -6,9 +6,9 @@ dependencies:
     - system
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: socialauthlogin
-theme: devportal
+theme: opendevx_theme
 region: content
 weight: -10
 provider: null

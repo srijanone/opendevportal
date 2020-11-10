@@ -4,7 +4,7 @@ dependencies:
   config:
     - group.type.protected
 id: protected-product_manager
-label: 'Product manager'
+label: 'Product Manager'
 weight: 11
 internal: false
 audience: member

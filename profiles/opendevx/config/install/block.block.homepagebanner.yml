@@ -6,11 +6,11 @@ dependencies:
   module:
     - block_content
   theme:
-    - devportal
+    - opendevx_theme
 id: homepagebanner
-theme: devportal
+theme: opendevx_theme
 region: highlighted
-weight: 0
+weight: -19
 provider: null
 plugin: 'block_content:a7fee6f2-f8ed-428a-8d77-27dab49f02ba'
 settings:

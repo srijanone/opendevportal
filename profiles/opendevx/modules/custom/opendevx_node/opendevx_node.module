@@ -131,7 +131,7 @@ function opendevx_node_form_alter(&$form, FormStateInterface $form_state, $form_
   }
 
   // Create app developer flow. Hide moderation state field for app.
-  if (FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess()) {
+  if (FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
     $node = NULL;
     if (!empty(\Drupal::request()->get('pid'))) {
       $product_id = (int) \Drupal::request()->get('pid');
@@ -196,15 +196,21 @@ function opendevx_node_form_alter(&$form, FormStateInterface $form_state, $form_
       'entity.node.edit_form',
       'layout_builder.overrides.node.view',
       'entity.group.edit_form',
-      'entity.group_content.add_form'
+      'entity.group_content.add_form',
     ];
 
     if (in_array($request->attributes->get('_route'), $goto_destination_forms)) {
+      if (substr($request->query->get('destination'), 0, 1) == '/') {
+        $redirect = $request->query->get('destination');
+      }
+      else {
+        $redirect = '/' . $request->query->get('destination');
+      }
       $form['actions']['goto_destination'] = [
         '#markup' => "<a id='goto-destination' class='button button--danger js-form-submit form-submit btn btn-primary'
-          href='" . $request->query->get('destination') . "'>" . t('Cancel') .
+          href='" . $redirect . "'>" . t('Cancel') .
         "</a>",
-        '#weight' => 100
+        '#weight' => 100,
       ];
     }
   }
@@ -219,19 +225,16 @@ FormStateInterface $form_state) {
   // Get the key/value pair.
   $store->set('store_pid', '');
   $store->set('store_path', '');
-  $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
   $entity = $form_state->getFormObject()->getEntity();
-  $entity->set('field_client_id', substr(str_shuffle($permitted_chars), 0, 10));
-  $entity->set('field_client_secret', substr(str_shuffle($permitted_chars), 0, 4));
   $entity->save();
 
-  if (FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess()) {
+  if (FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
     $url = "/dashboard/appmanager/apps?moderation_state=All";
   }
-  else if (in_array('admin', \Drupal::currentUser()->getRoles())) {
+  elseif (in_array('admin', \Drupal::currentUser()->getRoles())) {
     $url = "/dashboard/manage/apps";
   }
-  else if (!empty(\Drupal::request()->query->get('destination'))) {
+  elseif (!empty(\Drupal::request()->query->get('destination'))) {
     $url = \Drupal::request()->query->get('destination');
   }
   else {
@@ -257,4 +260,11 @@ function opendevx_node_local_tasks_alter(&$local_tasks) {
   if (in_array('admin', \Drupal::currentUser()->getRoles())) {
     unset($local_tasks['group.content']);
   }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function opendevx_node_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'opendevx_node/opendevx_node';
 }

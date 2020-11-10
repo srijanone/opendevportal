@@ -613,6 +613,9 @@ display:
         menu_name: admin
         weight: -10
       display_extenders: {  }
+      css_class: programs-view
+      defaults:
+        css_class: false
     display_plugin: page
     display_title: Page
     id: page_1
@@ -988,10 +991,10 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: '<span><a class=''create-button'' href="/node/add/gateway?destination=/dashboard/manage/gateway">Create</a></span>'
+          content: '<span><a class=''create-button create plus'' href="/node/add/gateway?destination=/dashboard/manage/gateway">Create</a></span>'
           plugin_id: text_custom
       title: 'Manage Gateway'
-      css_class: view-organisations
+      css_class: programs-view
     display_plugin: page
     display_title: 'Manage Gateway'
     id: page_2
@@ -1220,6 +1223,7 @@ display:
         arguments: false
         header: false
         use_ajax: false
+        css_class: false
       filter_groups:
         operator: AND
         groups:
@@ -1328,9 +1332,10 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: '<span><a href="/group/[current-page:url:args:last]/content/create?destination=/dashboard/manage/content">Create</a></span>'
+          content: '<span><a href="/program/[current-page:url:args:last]/content/create?destination=/dashboard/manage/content" class=''create plus''>Create</a></span>'
           plugin_id: text_custom
       use_ajax: true
+      css_class: programs-view
     display_plugin: page
     display_title: 'Manage Content'
     id: page_admin_content

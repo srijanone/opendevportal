@@ -6,6 +6,7 @@ dependencies:
     - field.field.group.private.field_font_family
     - field.field.group.private.field_gateway
     - field.field.group.private.field_header_background_color
+    - field.field.group.private.field_hub_content_id
     - field.field.group.private.field_icons_bg_color
     - field.field.group.private.field_program_image
     - field.field.group.private.field_site_logo
@@ -38,7 +39,6 @@ third_party_settings:
       children:
         - label
         - field_description
-        - field_program_page
         - path
       parent_name: group_container
       weight: 20
@@ -85,8 +85,6 @@ third_party_settings:
     group_api_:
       children:
         - field_gateway
-        - field_access_key
-        - field_secret
       parent_name: group_container
       weight: 23
       format_type: tab
@@ -119,13 +117,9 @@ content:
     region: content
   field_gateway:
     weight: 28
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_header_background_color:
     weight: 25
@@ -170,5 +164,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_hub_content_id: true
   layout_builder__layout: true
   uid: true

@@ -8,10 +8,12 @@
 use Drupal\views\ViewExecutable;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * @file
- * Contains developer portal user module file.
+ * Contains opendevx user module file.
  */
 
 /**
@@ -25,6 +27,11 @@ function opendevx_user_theme() {
         'orgTitle' => NULL,
         'orgDescription' => NULL,
         'currentOrganisation' => NULL,
+      ],
+    ],
+    'user_programs' => [
+      'variables' => [
+        'data' => NULL,
       ],
     ],
   ];
@@ -42,6 +49,13 @@ function opendevx_user_views_query_alter(ViewExecutable $view, QueryPluginBase $
       $query->addWhere(0, 'user__roles.roles_target_id', $role_statement, 'IN');
     }
   }
+
+  if ($view->id() == 'media_library' &&
+  in_array($view->current_display, ['widget', 'widget_table']) &&
+  FALSE == \Drupal::service('opendevx_user.organisation')->checkAccess(TRUE)) {
+    $query->addWhere(0, 'media_field_data.uid', \Drupal::currentUser()->id());
+  }
+
 }
 
 /**
@@ -58,14 +72,54 @@ function opendevx_user_form_alter(&$form,
         array_intersect_key($form['role']['#options'], opendevx_user_get_roles_hierarchy());
     }
   }
+
   $user_form_ids = [
     'user_form',
     'user_register_form',
+    'group_content_public-group_membership_add_form',
+    'group_content_public-group_membership_edit_form',
+    'group_content_private-group_membership_add_form',
+    'group_content_private-group_membership_edit_form',
+    'group_content_protected-group_membership_add_form',
+    'group_content_protected-group_membership_edit_form',
   ];
-  if (in_array($form_id, $user_form_ids) && !in_array('administrator', $current_user_roles)) {
-    unset($form['account']['roles']['#options']['administrator']);
+  if (in_array($form_id, $user_form_ids)) {
+    if (!in_array('administrator', $current_user_roles)) {
+      unset($form['path']);
+    }
+    if (in_array('admin', $current_user_roles)) {
+      if (!empty(\Drupal::request()->query->get('uid'))) {
+        $form['entity_id']['widget'][0]['target_id']['#default_value'] = \Drupal::entityTypeManager()->getStorage('user')->load(\Drupal::request()->query->get('uid'));
+      }
+      $form['account']['mail']['#required'] = TRUE;
+      $form['account']['roles']['#access'] = FALSE;
+      $form['account']['name']['#type'] = 'hidden';
+      $form['account']['name']['#value'] = 'email_registration_' . user_password();
+      $form['actions']['submit']['#submit'][] = 'opendevx_user_redirect_new_registered_user';
+      unset($form['path']);
+    }
+
   }
 
+}
+
+/**
+ * Callback function opendevx_user_redirect_new_registered_user().
+ */
+function opendevx_user_redirect_new_registered_user(&$form, FormStateInterface $form_state) {
+  $query_params = explode('/', \Drupal::request()->query->get('destination'));
+  $options = [
+    'query' => ['destination' => '/program/users', 'uid' => $form_state->getValue('uid')],
+  ];
+  if (isset($query_params[3]) && !empty($query_params[3])) {
+    $url = Url::fromUri('internal:/group/' . $query_params[3] . '/content/add/group_membership', $options);
+  }
+  else {
+    $url = Url::fromUri('internal:/program/users');
+  }
+
+  $response = new RedirectResponse($url->toString());
+  $response->send();
 }
 
 /**

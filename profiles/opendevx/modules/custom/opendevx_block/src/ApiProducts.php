@@ -88,12 +88,12 @@ class ApiProducts {
       if (empty($list)) {
         return $result;
       }
-      $output = BlockUtility::prepareNavigationBlock($result, $this->productId, $list);
+      $output = !is_bool($result) ? BlockUtility::prepareNavigationBlock($result, $this->productId, $list) : [];
 
       return $output;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('opendevx_block');
+      $logger = $this->getLogger('developer-portal-block');
       $logger->error($e->getMessage());
     }
   }
@@ -116,7 +116,7 @@ class ApiProducts {
       return $result;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('opendevx_block');
+      $logger = $this->getLogger('developer-portal-block');
       $logger->error($e->getMessage());
     }
   }

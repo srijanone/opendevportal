@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.developer-user-menu
+  module:
+    - block_classes
+    - domain
+    - system
+  theme:
+    - devportal_admin
+third_party_settings:
+  block_classes:
+    block_class: menu--account
+id: developerusermenu_2
+theme: devportal_admin
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:developer-user-menu'
+settings:
+  id: 'system_menu_block:developer-user-menu'
+  label: 'Developer User Menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /set-organisation
+    negate: true
+    context_mapping: {  }

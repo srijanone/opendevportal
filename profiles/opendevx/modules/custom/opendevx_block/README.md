@@ -1,6 +1,14 @@
+CONTENTS OF THIS FILE
+---------------------
+ * Introduction
+ * Requirements
+ * Installation
+ * Maintainers
+
+
 INTRODUCTION
 ------------
-This module is used to extend block customisation for opendevx.
+This module is used to extend opendevx functionality.
 
 
 REQUIREMENTS
@@ -14,4 +22,6 @@ INSTALLATION
 
 MAINTAINERS
 -----------
-
+Current maintainers:
+ * Shrikant Dubey - https://www.drupal.org/u/itdevshri
+ * Ankit Pathak - https://www.drupal.org/u/ankitv18

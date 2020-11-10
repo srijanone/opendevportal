@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * OpenDevx portal navigation block module file.
+ */
+
+/**
  * Implements hook_theme().
  */
 function opendevx_navigation_block_theme() {
@@ -17,5 +22,10 @@ function opendevx_navigation_block_theme() {
         'productTitle' => NULL,
       ],
     ],
+    'product_header_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+      ],
+    ],
   ];
- }
+}

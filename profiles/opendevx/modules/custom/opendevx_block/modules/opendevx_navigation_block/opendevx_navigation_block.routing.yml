@@ -3,5 +3,5 @@ opendevx_block.api_product_content:
   defaults:
     _controller: '\Drupal\opendevx_navigation_block\Controller\ProductNavigationController::checkFirstContent'
     _title: ''
-  requirements:
-    _permission: 'access content'
+  requirements: 
+    _permission: 'access content' 

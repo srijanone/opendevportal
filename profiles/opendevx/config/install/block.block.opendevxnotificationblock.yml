@@ -2,14 +2,18 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
     - domain
     - opendevx_notification
   theme:
-    - devportal
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    block_class: d-notification
 id: opendevxnotificationblock
-theme: devportal
+theme: opendevx_theme
 region: primary_menu
-weight: -16
+weight: -19
 provider: null
 plugin: opendevx_notification_widget_block
 settings:

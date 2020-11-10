@@ -50,7 +50,7 @@ class UserGroupService {
    * Method to Get user group.
    */
   public function getUserGroups() {
-
+  
     $user = $this->entityTypeManager->getStorage('user')->load($this->account->id());
     $group_storage = $this->entityTypeManager->getStorage('group');
     $gids = $this->groupStorage->getQuery()->condition('type','Public')->execute();
@@ -62,7 +62,7 @@ class UserGroupService {
         $groups[$group->id()] = $group;
       }
     }
-
+    
     foreach($groups as $gid => $group) {
       $value = $group->label();
 

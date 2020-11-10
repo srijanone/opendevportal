@@ -138,7 +138,7 @@ class OpendevxNotificationForm extends ConfigFormBase {
       $title = $transition['label'];
       $message_key = $workflow . '_' . $key;
       $messageValue = empty($notification->get($message_key)) ?
-        '[node:title] has been moved to ' . $title : $notification->get($message_key);
+        '[node:title] has been ' . $title : $notification->get($message_key);
       $redirectValue = empty($notification->get($message_key)) ?
        '[entity:url]' : $notification->get($key . '_redirect_link');
       $form[$workflow][$message_key] = [

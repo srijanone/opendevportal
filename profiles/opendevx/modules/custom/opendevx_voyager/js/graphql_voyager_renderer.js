@@ -12,7 +12,7 @@
           introspection: data
         });
       }).fail(function () {
-          console.log("An error has occurred.");
+        $('#voyager').html('Something went wrong. Please check logs or validate the schema.');
       });
     }
   };

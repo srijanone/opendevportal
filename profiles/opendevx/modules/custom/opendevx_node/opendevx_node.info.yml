@@ -1,9 +1,10 @@
-name: Opendevx - Node
-description : 'Extend the nodes and content specific for developer portal.'
+name: opendevx Node
+description : 'Extend the nodes and content specific for opendevx.'
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
+project: opendevx_node
 
 dependencies:
   - allowed_formats:allowed_formats
@@ -13,4 +14,7 @@ dependencies:
   - drupal:layout_builder
   - drupal:content_moderation
   - drupal:hook_event_dispatcher
+  - opendevx_user:opendevx_user
   - group:group
+
+

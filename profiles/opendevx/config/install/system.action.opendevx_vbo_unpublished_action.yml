@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - opendevx_core
+id: opendevx_vbo_unpublished_action
+label: 'Unpublish latest node'
+type: node
+plugin: opendevx_vbo_unpublished_action
+configuration: {  }

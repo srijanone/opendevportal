@@ -6,17 +6,28 @@ dependencies:
     - field.field.group.protected.field_font_family
     - field.field.group.protected.field_gateway
     - field.field.group.protected.field_header_background_color
+    - field.field.group.protected.field_hub_content_id
     - field.field.group.protected.field_icons_bg_color
     - field.field.group.protected.field_program_image
     - field.field.group.protected.field_site_logo
     - field.field.group.protected.layout_builder__layout
     - group.type.protected
+    - views.view.events
+    - views.view.forum
+    - views.view.product_listing
+  content:
+    - 'block_content:dashboard_block:752347b4-d1cb-412e-a321-8d697f3a2a59'
+    - 'block_content:header_block:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
   module:
+    - block_content
     - color_field
+    - ds
     - layout_builder
     - layout_discovery
     - options
+    - system
     - text
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: true
@@ -25,39 +36,131 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: ''
+          label: 'Product Banner'
         components:
-          a10db4d0-476a-4bb1-b933-631938ecd645:
-            uuid: a10db4d0-476a-4bb1-b933-631938ecd645
+          76b4097f-4d93-4e4c-8c96-c8a503d64c2b:
+            uuid: 76b4097f-4d93-4e4c-8c96-c8a503d64c2b
             region: content
             configuration:
+              id: 'block_content:7d3a9a15-030f-4c64-862d-06c86afcf3d3'
+              label: 'Product Banner Block'
+              provider: block_content
               label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
+              status: true
+              info: ''
+              view_mode: default
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Breadcrum
+        components:
+          696a8cde-1479-4f01-b225-33b87cffb566:
+            uuid: 696a8cde-1479-4f01-b225-33b87cffb566
+            region: content
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          6d1a032a-4355-46d5-ae26-0dfc91b47810:
+            uuid: 6d1a032a-4355-46d5-ae26-0dfc91b47810
+            region: ds_content
+            configuration:
               id: 'field_block:group:protected:field_description'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
               formatter:
-                label: above
+                label: hidden
+                type: text_default
                 settings: {  }
                 third_party_settings: {  }
-                type: text_default
-            additional: {  }
-            weight: 8
-          862b0175-1c8d-44a5-a1ac-1fceb46f1d12:
-            uuid: 862b0175-1c8d-44a5-a1ac-1fceb46f1d12
-            region: content
-            configuration:
-              label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:group:protected:field_gateway'
-              formatter:
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-                type: entity_reference_label
+                view_mode: view_mode
             additional: {  }
-            weight: 9
+            weight: -10
+          c6eb94ba-4346-47f9-9e84-bfa37c64f112:
+            uuid: c6eb94ba-4346-47f9-9e84-bfa37c64f112
+            region: ds_content
+            configuration:
+              id: 'views_block:product_listing-block_homepage_product'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          21acd81b-df87-46c1-b9c1-97ea73e85ea8:
+            uuid: 21acd81b-df87-46c1-b9c1-97ea73e85ea8
+            region: ds_content
+            configuration:
+              id: 'block_content:752347b4-d1cb-412e-a321-8d697f3a2a59'
+              label: 'Blog front page'
+              provider: block_content
+              label_display: '0'
+              status: true
+              info: ''
+              view_mode: cards
+              context_mapping: {  }
+            additional: {  }
+            weight: -8
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Events and Forum section'
+          column_widths: 50-50
+        components:
+          72bf0026-4e36-48be-9b23-5bc6c384fa41:
+            uuid: 72bf0026-4e36-48be-9b23-5bc6c384fa41
+            region: first
+            configuration:
+              id: 'views_block:events-upcoming_events'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          50b30532-1b73-4ad7-a882-44e711cb62b7:
+            uuid: 50b30532-1b73-4ad7-a882-44e711cb62b7
+            region: second
+            configuration:
+              id: 'views_block:forum-latest_qna'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: group.protected.default
 targetEntityType: group
@@ -131,5 +234,6 @@ content:
 hidden:
   changed: true
   created: true
+  field_hub_content_id: true
   layout_builder__layout: true
   uid: true

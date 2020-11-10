@@ -5,11 +5,11 @@ dependencies:
     - opendevx_organisation
     - user
   theme:
-    - devportal
+    - opendevx_theme
 id: frontorganisationblock
-theme: devportal
+theme: opendevx_theme
 region: primary_menu
-weight: -14
+weight: -16
 provider: null
 plugin: front_organisation_block
 settings:

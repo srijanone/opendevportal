@@ -1,9 +1,11 @@
-name: Opendevx - Fence Tab
+name: opendevx Fence Tab
 description: "Adds fence code tab to content when written in markdown format with fence code syntax."
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
+
+project: opendevx_fence_tab
 
 libraries:
   - opendevx_fence_tab/global-styling

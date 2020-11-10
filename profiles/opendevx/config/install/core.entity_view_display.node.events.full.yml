@@ -28,7 +28,6 @@ dependencies:
     - layout_builder
     - link
     - social_media
-    - system
     - text
     - user
 third_party_settings:
@@ -109,18 +108,7 @@ third_party_settings:
           link_custom: ''
           classes:
             layout_class: {  }
-        components:
-          42d321e8-cf09-4e99-a599-645711a10783:
-            uuid: 42d321e8-cf09-4e99-a599-645711a10783
-            region: ds_content
-            configuration:
-              id: system_breadcrumb_block
-              label: Breadcrumbs
-              provider: system
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
+        components: {  }
         third_party_settings: {  }
       -
         layout_id: ds_2col

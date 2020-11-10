@@ -10,6 +10,8 @@ use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\opendevx_organisation\Organisation as Programs;
+use Drupal\opendevx_organisation\Utility\OrganisationUtility;
+use Drupal\views\Views;
 
 /**
  * Class Organisation.
@@ -63,7 +65,6 @@ class Organisation extends Programs {
     $this->account = $account;
     $this->organisation = $temp_store->get('opendevx_user');
     $this->connection = $connection;
-    $this->programs = $this->getOrganisationsData();
     $this->entityTypeManager = $entity_type_manager;
   }
 
@@ -95,21 +96,8 @@ class Organisation extends Programs {
    *   User organisation.
    */
   public function getUserOrganisations() {
-    // $uid = (int) $this->account->id();
     try {
-      // TODO: Once codebase is stable will remove this.
-      // $query = $this->connection->select('user__field_organisation', 'ufa');
-      // $query->addField('ufa', 'field_organisation_target_id', 'org_id');
-      // $query->addJoin('left', 'taxonomy_term_field_data',
-      // 'ttfd', 'ttfd.tid = ufa.field_organisation_target_id');
-      // $query->condition('ufa.entity_id', $uid, '=');
-      // $result = $query->distinct()->execute()->fetchAll();
-      // if (!empty($result)) {
-      // foreach ($result as $value) {
-      // $organisation = $this->programs;
-      // }
-      // }.
-      return $this->programs;
+      return $this->getOrganisationsData();
     }
     catch (\Exception $e) {
       $logger = $this->getLogger('devportal-user-block');
@@ -147,9 +135,12 @@ class Organisation extends Programs {
    * @return array
    *   Return array of roles in a group.
    */
-  public function getUserGroupRole($group_id) {
+  public function getUserGroupRole($group_id = NULL) {
     $group_roles = [];
 
+    if (!$group_id) {
+      $group_id = $this->getOrgId();
+    }
     $group = $this->entityTypeManager->getStorage('group')->load($group_id);
     if ($group instanceof GroupInterface) {
       $member = $group->getMember($this->account);
@@ -182,6 +173,59 @@ class Organisation extends Programs {
     }
 
     return FALSE;
+  }
+
+  /**
+   * Function to get organisation information.
+   *
+   *
+   * @return array
+   *    Organisation data.
+   */
+  public function getUserProgramsData() {
+    try {
+      $view = Views::getView("programs");
+      $view->setDisplay("user_programs");
+      $view->execute();
+      if ($view) {
+        $programs = [];
+        foreach ($view->result as $key => $value) {
+          $gid = $value->_entity->get('id')->value;
+          $programs[$gid]['programId'] = $gid;
+          $programs[$gid]['programName'] = $value->_entity->get('label')->value;
+          if (!empty($value->_entity->get('field_program_image'))) {
+            $image = $value->_entity->get('field_program_image')->getValue();
+            if ($image[0]) {
+              $data = !empty($image[0]['target_id']) ? OrganisationUtility::getImageUri($image[0]['target_id']) : "";
+            }
+            $programs[$gid]['programImage'] = !empty($data) ?
+            OrganisationUtility::generateOrganisationImage($data) : "";
+          }
+          $programs[$gid]['orgPath'] = !empty($gid) ?
+          "/dashboard/save-program/$gid" : "#";
+
+          $programs[$gid]['programUrl'] = \Drupal::service('path.alias_manager')->getAliasByPath("/group/$gid");
+          $programs[$gid]['target'] = "_self";
+          $group_domain = \Drupal::entityTypeManager()->getStorage('domain')->load('group_' . $gid);
+          if ($group_domain) {
+            $programs[$gid]['programUrl'] = $group_domain->getPath();
+            $programs[$gid]['target'] = "_blank";
+          }
+        }
+
+        if ($program_id = \Drupal::service('opendevx_core.program_domain')->getProgramDomainId()) {
+          if ($programs[$program_id]) {
+            $program[$program_id]  = $programs[$program_id];
+            return $program;
+          }
+        }
+        return $programs;
+      }
+    }
+    catch (\Exception $e) {
+      $logger = $this->getLogger('developer-portal-user');
+      $logger->error($e->getMessage());
+    }
   }
 
 }

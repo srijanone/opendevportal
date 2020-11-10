@@ -3,5 +3,5 @@ opendevx_block.cta_redirection:
   defaults:
     _controller: '\Drupal\opendevx_block\Controller\CtaController::redirectCtaUrl'
     _title: ''
-  requirements:
-    _permission: 'access content'
+  requirements: 
+    _permission: 'access content' 

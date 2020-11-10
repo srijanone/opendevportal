@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\YOUR_CUSTOM_MODULE\Routing\RouteSubscriber.
- */
 
 namespace Drupal\opendevx_node\Routing;
 
@@ -19,7 +15,22 @@ class RouteSubscriber extends RouteSubscriberBase {
    */
   public function alterRoutes(RouteCollection $collection) {
     if ($route = $collection->get('entity.group.add_page')) {
-     $route->setDefault('_title_callback','Drupal\opendevx_node\Controller\NextModerationState::getAddProgramTitle');
+      $route->setDefault(
+        '_title_callback',
+        'Drupal\opendevx_node\Controller\NextModerationState::getAddProgramTitle'
+      );
+    }
+    if ($route = $collection->get('entity.group_content.add_form')) {
+      $route->setDefault(
+        '_title_callback',
+        'Drupal\opendevx_node\Controller\NextModerationState::getMemberPageTitle'
+      );
+    }
+    if ($route = $collection->get('domain_group.domain_group_settings_form')) {
+      $route->setDefault(
+        '_title_callback',
+        'Drupal\opendevx_node\Controller\NextModerationState::getDomainSettingTitle'
+      );
     }
   }
 

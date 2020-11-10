@@ -1,6 +1,8 @@
-name: Opendevx - Apps
-description: "Adds the Apps content type in developer portal."
+name: opendevx Apps
+description: "Adds the Apps content type in opendevx."
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
+
+project: opendevx_apps

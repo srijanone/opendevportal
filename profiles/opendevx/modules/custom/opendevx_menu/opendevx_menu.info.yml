@@ -1,9 +1,61 @@
-name: Opendevx - Menu
-description: 'Allows users to configure organization and apply them to content.'
+name: opendevx Menu
 type: module
-package: Opendevx
+description: 'Allows users to configure organization and apply them to content.'
 version: VERSION
 core: 8.x
 
-dependencies:
-  - opendevx_user:opendevx_user
+default_content:
+
+  menu_link_content:
+    - 58635267-cb17-4066-83db-816ca9b1783f
+    - 1add6abb-493d-4c01-b0e0-510fbbdfad85
+    - e4590cfc-3dfa-4d8d-9134-4f2eb1ad905b
+    - c9f4b8c3-0969-4e4c-b0ab-52735045bf6d
+    - e0f67923-0ad0-4e88-8427-2ca2947e64f5
+    - 4ced87fb-b01d-4be0-9e07-47e94b8438a5
+    - 685cb07b-6130-4eea-a516-b724560d6077
+    - 5b08ae4a-b675-49eb-ad10-2b84e3049ca8
+    - 4049bc39-e392-45be-b6e5-c553cbc23b31
+    - 77e603ca-c9ad-4ab6-9c4f-e11c77692bb6
+    - bd36ca85-4327-4b7c-ae7a-4e22638384bb
+    - 4e049e90-ddcd-4408-b6b9-d51a781ad0ea
+    - 40426eab-ab61-4309-82f6-18f69354bfe3
+    - 38d15d8a-6bc9-486d-adc5-2635c6a92436
+    - 2dff4f69-6078-4cf4-a588-17352405abee
+    - 418ee74e-ffaa-40bc-8188-76c8bea7169e
+    - c25425fc-1798-43ea-a6a7-d9ccd1cd6d55
+    - f6c849db-3b00-4048-b551-73aaca2f86bd
+    - 61574f7e-d8f6-4ccf-aa14-91b927a13542
+    - 6b4d1069-7104-4efb-b6f7-0001ea060f2c
+    - 8a8019a4-61bd-4353-8253-22580cc2de51
+    - c9ad3371-01b9-4998-8be9-cab89695d19d
+    - 18bff6e0-03fd-4025-9b3c-e35cb5fa07be
+    - dad56a77-94e8-42f2-8ac1-79934a4d83cf
+    - 968f97a9-6a45-407c-bf0a-6f8c9807b30b
+    - 3d84c603-3822-4778-af40-833895568aa8
+    - 3060ca37-ea78-45b2-8048-b906b615e5d3
+    - 67ec4fde-c266-4703-9470-cd76b53111d8
+    - 5c2cca2f-99e8-45b1-93aa-43219d846be3
+    - c5a64aaa-bd7f-43dc-afd2-ed6299f51141
+    - 2d415a65-9ab2-43a0-b790-8e15866446b8
+    - 6c18826a-2223-445d-88d1-178127ee1cbf
+    - 0b113e29-92f3-41b6-988f-d006f6a1ca47
+    - 82827b5f-5f44-4f25-9b78-fb0103bc8fea
+    - 814777ef-c564-47d3-b4ce-d071e6a9f34f
+    - 578ea752-1f14-4f2e-bb46-c5c5c089d77c
+    - 11cba3ee-fc68-4d01-870e-358a68fef7ca
+    - 74feff46-5fe5-43dc-8ff9-f6748e4d3968
+    - 8310bcc2-e6e4-427b-a70b-082f5a349b2f
+    - 0e3fb17e-7ccd-494b-93cf-feb839f1c4a3
+    - fcb18ed0-de13-4ddf-8845-b8efd61084b1
+    - 50437c82-4f64-4964-a82b-6348cac90c44
+    - 81ff9998-b492-4804-9ce5-46868d7101a1
+    - 002da22d-98a9-4b7c-8054-d8967aa76a72
+    - 955d1815-b219-45ca-8d28-b3e5fbe28020
+    - e55bec66-be4b-4c46-8355-8ce47caaa68c
+    - 45e27fc4-ed88-45e8-a905-ee53ce703662
+    - baf14120-7a35-48c6-9eb2-86260fd1e6a4
+    - a19192ee-0d88-4cc7-a564-43046c06cae5
+    - 731c427d-0145-4c06-b132-8c0534a4d8d4
+    - 1c8a7648-85cd-4b1a-b17b-21fa6a352901
+    - bc0064c5-5727-4f01-b9b6-9f8d398862df

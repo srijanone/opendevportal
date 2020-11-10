@@ -2,12 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
+    - domain
     - opendevx_notification
-    - user
   theme:
-    - devportal
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    block_class: m-notification
 id: opendevxnotificationblock_2
-theme: devportal
+theme: opendevx_theme
 region: header
 weight: 0
 provider: null
@@ -20,11 +24,8 @@ settings:
   block_notification_type: '1'
   block_notification_logs_display: 1
 visibility:
-  user_role:
-    id: user_role
-    roles:
-      product_manager: product_manager
-      developer: developer
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

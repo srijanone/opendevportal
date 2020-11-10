@@ -7,9 +7,9 @@ dependencies:
     - block_content
     - system
   theme:
-    - devportal
+    - opendevx_theme
 id: productbannerblock_2
-theme: devportal
+theme: opendevx_theme
 region: highlighted
 weight: 0
 provider: null

@@ -12,7 +12,7 @@
         {% if value.referTo is same as('external') %}
           <a class="external-url" target="_blank" rel="nofollow" href="{{ value.programUrl }}">
         {% else %}
-          <a class="internal-url" href="{{ value.programUrl }}">
+          <a class="internal-url" target="{{  value.target }}" href="{{ value.programUrl }}">
         {% endif %}
         {% if value.orgImage is empty %}
           <div class="no-image"></div>

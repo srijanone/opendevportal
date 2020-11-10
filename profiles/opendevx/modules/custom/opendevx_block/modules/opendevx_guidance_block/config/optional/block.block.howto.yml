@@ -8,9 +8,9 @@ dependencies:
     - ctools
     - system
   theme:
-    - devportal
+    - opendevx_theme
 id: howto
-theme: devportal
+theme: opendevx_theme
 region: content
 weight: -13
 provider: null

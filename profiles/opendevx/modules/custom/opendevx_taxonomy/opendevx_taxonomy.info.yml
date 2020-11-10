@@ -1,7 +1,7 @@
-name: Opendevx - Taxonomy
-description : 'Extend the taxonomy specific for developer portal.'
+name: opendevx Taxonomy
+description : 'Extend the taxonomy specific for opendevx.'
 type: module
-package: Opendevx
+package: DVP
 core: 8.x
 core_version_requirement: ^8 || ^9
 dependencies:

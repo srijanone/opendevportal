@@ -711,6 +711,7 @@ display:
         operator: AND
         groups:
           1: AND
+      css_class: programs-view
     cache_metadata:
       max-age: -1
       contexts:
@@ -741,7 +742,7 @@ display:
           empty: true
           tokenize: true
           content:
-            value: '<span><a class = ''create-button'' href="/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/manage/api">Create</a></span>'
+            value: '<span><a class = ''create-button create plus'' href="/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/manage/api">Create</a></span>'
             format: full_html
           plugin_id: text
       defaults:
@@ -942,8 +943,6 @@ display:
           include_exclude: include
           selected_actions:
             - node_delete_action
-            - node_publish_action
-            - node_unpublish_action
           entity_type: node
           plugin_id: node_bulk_form
         title:
@@ -1504,8 +1503,6 @@ display:
           include_exclude: include
           selected_actions:
             - node_delete_action
-            - node_publish_action
-            - node_unpublish_action
           entity_type: node
           plugin_id: node_bulk_form
         title:
@@ -2313,6 +2310,72 @@ display:
         use_ajax: false
         exposed_form: false
       fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ID
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
         node_bulk_form:
           id: node_bulk_form
           table: node
@@ -2572,8 +2635,8 @@ display:
           label: 'Add to gallery'
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{{ field_add_to_gallery }} <br/>\r\n{% if field_add_to_gallery == 'Yes'  %}\r\n   <a href=\"/process/{{ nid }}/remove\"> Remove from gallery</a>\r\n{% endif %}\r\n{% if field_add_to_gallery == 'No'  %}\r\n    <a href=\"/process/{{ nid }}/add\"> Add to gallery</a>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -2599,7 +2662,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: views-field-nothing
           element_label_type: ''
           element_label_class: ''
           element_label_colon: true
@@ -2626,135 +2689,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-        moderation_state:
-          id: moderation_state
-          table: node_field_data
-          field: moderation_state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Status
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: content_moderation_state
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          plugin_id: moderation_state_field
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ID
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          entity_field: nid
           plugin_id: field
         moderation_state_1:
           id: moderation_state_1
@@ -2820,14 +2754,14 @@ display:
           field_api_classes: false
           entity_type: node
           plugin_id: moderation_state_field
-        delete_node:
-          id: delete_node
-          table: node
-          field: delete_node
+        moderation_state:
+          id: moderation_state
+          table: node_field_data
+          field: moderation_state
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Link to delete Content'
+          label: Status
           exclude: true
           alter:
             alter_text: false
@@ -2868,64 +2802,21 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: delete
-          output_url_as_text: false
-          absolute: false
+          click_sort_column: value
+          type: content_moderation_state
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
           entity_type: node
-          plugin_id: entity_link_delete
-        edit_node:
-          id: edit_node
-          table: node
-          field: edit_node
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Link to edit Content'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          text: edit
-          output_url_as_text: false
-          absolute: false
-          entity_type: node
-          plugin_id: entity_link_edit
+          plugin_id: moderation_state_field
         nothing:
           id: nothing
           table: views
@@ -2933,11 +2824,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Status
           exclude: false
           alter:
             alter_text: true
-            text: "\r\n{{ edit_node }}\r\n{{ delete_node }}\r\n{% if moderation_state_1 == 'draft'  %}\r\n   <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/apps\"> Approve for Sandbox</a>\r\n{% endif %}\r\n{% if moderation_state_1 == 'pending_for_approval'  %}\r\n   <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/apps\"> Approve for Production</a>\r\n{% endif %}\r\n{% if field_add_to_gallery == 'Yes'  %}\r\n   <a href=\"/process/{{ nid }}/remove\"> Remove from gallery</a>\r\n{% endif %}\r\n{% if field_add_to_gallery == 'No'  %}\r\n    <a href=\"/process/{{ nid }}/add\"> Add to gallery</a>\r\n{% endif %}"
+            text: "{{ moderation_state }} <br/>\r\n{% if moderation_state_1 == 'draft'  %}\r\n   <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/apps\"> Approve for Sandbox</a>\r\n{% endif %}\r\n{% if moderation_state_1 == 'pending_for_approval'  %}\r\n   <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/apps\"> Approve for Production</a>\r\n{% endif %}\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -2975,6 +2866,57 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        operations:
+          id: operations
+          table: node
+          field: operations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Operations
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          destination: false
+          entity_type: node
+          plugin_id: entity_operations
       filters:
         type:
           id: type
@@ -3283,9 +3225,9 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "Manage your Applications.\r\n\r\n<span><a class='create-button' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:apps?destination=/dashboard/{{ raw_arguments.gid }}/apimanager/apps\">Create</a> <a class='sync-button' href=\"/coming-soon\">Sync</a></span>"
+          content: "<h4>Manage your Applications.</h4>\r\n\r\n<span><a class='create-button create plus' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:apps?destination=/dashboard/{{ raw_arguments.gid }}/apimanager/apps\">Create</a> <a class='sync-button create' href=\"/coming-soon\">Sync</a></span>"
           plugin_id: text_custom
-      use_ajax: true
+      use_ajax: false
       exposed_form:
         type: bef
         options:
@@ -3300,7 +3242,7 @@ display:
           text_input_required_format: basic_html
           bef:
             general:
-              autosubmit: true
+              autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
               autosubmit_hide: true
@@ -3370,7 +3312,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "Manage your APIs \r\n\r\n<span><a class = 'create-button' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/{{ raw_arguments.gid }}/apimanager/proxies\">Create</a> <a class = 'sync-button' href=\"/dashboard/apimanager/proxies\">Sync</a></span>"
+          content: "<h4>Manage your APIs </h4>\r\n\r\n<span><a class = 'create-button create plus' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/{{ raw_arguments.gid }}/apimanager/proxies\">Create</a> <a class = 'sync-button create' href=\"/process/api-data?pid={{ raw_arguments.gid }}&destination=/dashboard/{{ raw_arguments.gid }}/apimanager/proxies\">Sync</a></span>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -3702,69 +3644,6 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-        moderation_state:
-          id: moderation_state
-          table: node_field_data
-          field: moderation_state
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Status
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: content_moderation_state
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          plugin_id: moderation_state_field
         changed:
           id: changed
           table: node_field_data
@@ -3832,57 +3711,6 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: field
-        operations:
-          id: operations
-          table: node
-          field: operations
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Operations
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          destination: false
-          entity_type: node
-          plugin_id: entity_operations
         nid:
           id: nid
           table: node_field_data
@@ -4013,6 +3841,69 @@ display:
           field_api_classes: false
           entity_type: node
           plugin_id: moderation_state_field
+        moderation_state:
+          id: moderation_state
+          table: node_field_data
+          field: moderation_state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Status
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: content_moderation_state
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          plugin_id: moderation_state_field
         nothing:
           id: nothing
           table: views
@@ -4020,11 +3911,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Status
           exclude: false
           alter:
             alter_text: true
-            text: "{{ operations }}\r\n{% if moderation_state_1 != 'published'  %}\r\n  {% if moderation_state_1 == 'draft'  %}\r\n     <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/api_document\"> Architecture Review</a>\r\n  {% endif %}\r\n  {% if moderation_state_1 == 'architecture_review'  %}\r\n     <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/api_document\"> Product Review</a>\r\n  {% endif %}\r\n  {% if moderation_state_1 == 'product_review'  %}\r\n     <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/api_document\"> Approved</a>\r\n  {% endif %}\r\n{% endif %}"
+            text: "{{ moderation_state }} <br/>\r\n{% if moderation_state_1 != 'published'  %}\r\n  {% if moderation_state_1 == 'draft'  %}\r\n     <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/api_document\"> Architecture Review</a>\r\n  {% endif %}\r\n  {% if moderation_state_1 == 'architecture_review'  %}\r\n     <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/api_document\"> Product Review</a>\r\n  {% endif %}\r\n  {% if moderation_state_1 == 'product_review'  %}\r\n     <a href=\"/apimanager/next-state/{{ moderation_state_1 }}/{{ nid }}/api_document\"> Approved</a>\r\n  {% endif %}\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -4062,6 +3953,57 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        operations:
+          id: operations
+          table: node
+          field: operations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Operations
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          destination: false
+          entity_type: node
+          plugin_id: entity_operations
       arguments:
         gid:
           id: gid
@@ -4152,7 +4094,7 @@ display:
           text_input_required_format: basic_html
           bef:
             general:
-              autosubmit: true
+              autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
               autosubmit_hide: true
@@ -4175,7 +4117,7 @@ display:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
-      use_ajax: true
+      use_ajax: false
     cache_metadata:
       max-age: 0
       contexts:
@@ -4302,8 +4244,6 @@ display:
           include_exclude: include
           selected_actions:
             - node_delete_action
-            - node_publish_action
-            - node_unpublish_action
           entity_type: node
           plugin_id: node_bulk_form
         field_display_name:
@@ -5287,7 +5227,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "Manage your Applications.\r\n\r\n<span><a class='create-button' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:apps?destination=/dashboard/apimanager/apps\">Create</a> <a class='sync-button' href=\"/coming-soon\">Sync</a></span>"
+          content: "<h4>Manage your Applications.</h4\r\n\r\n<span><a class='create-button create plus' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:apps?destination=/dashboard/apimanager/apps\">Create</a> <a class='sync-button create' href=\"/coming-soon\">Sync</a></span>"
           plugin_id: text_custom
       use_ajax: true
       exposed_form:
@@ -5414,6 +5354,7 @@ display:
         row: false
         exposed_form: false
         use_ajax: false
+        css_class: false
       display_description: 'Developers Apps Dashboard'
       fields:
         nid:
@@ -6156,7 +6097,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "Manage your Applications\r\n\r\n<span><a class = 'create-button' href=\"/select-product/apps\">Create</a></span>"
+          content: "<h4>Manage your Applications</h4>\r\n\r\n<span><a class = 'create-button create plus' href=\"/select-product/apps\">Create</a></span>"
           plugin_id: text_custom
       relationships:
         uid:
@@ -6224,7 +6165,7 @@ display:
           default_row_class: true
           uses_fields: true
           type: ul
-          wrapper_class: item-list
+          wrapper_class: card-paragraph
           class: ''
       row:
         type: fields
@@ -6273,6 +6214,7 @@ display:
                   collapsible: false
                   is_secondary: false
       use_ajax: true
+      css_class: 'programs-view cards-block'
     cache_metadata:
       max-age: -1
       contexts:
@@ -7079,7 +7021,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "Manage your ISSUES\r\n\r\n<span><a href=\"/select-product/issues\">Create</a></span>"
+          content: "<h4>Manage your ISSUES</h4>\r\n\r\n<span><a href=\"/select-product/issues\" class='create plus'>Create</a></span>"
           plugin_id: text_custom
       relationships:
         uid:
@@ -7238,7 +7180,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "Manage your APIs \r\n\r\n<span><a class = 'create-button' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/apimanager/proxies\">Create</a> <a class = 'sync-button' href=\"/dashboard/apimanager/proxies\">Sync</a></span>"
+          content: "<h4>Manage your APIs </h4>\r\n\r\n<span><a class = 'create-button create plus' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/apimanager/proxies\">Create</a> <a class = 'sync-button create' href=\"/dashboard/apimanager/proxies\">Sync</a></span>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -7440,8 +7382,6 @@ display:
           include_exclude: include
           selected_actions:
             - node_delete_action
-            - node_publish_action
-            - node_unpublish_action
           entity_type: node
           plugin_id: node_bulk_form
         title:

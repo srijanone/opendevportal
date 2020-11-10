@@ -435,6 +435,9 @@ display:
         filters: false
         filter_groups: false
         header: false
+        style: false
+        row: false
+        css_class: false
       display_description: ''
       fields:
         title:
@@ -787,14 +790,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -940,6 +943,19 @@ display:
         groups:
           1: AND
       header: {  }
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: card__item
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: card-field
+      row:
+        type: fields
+        options: {  }
+      css_class: 'cards-block justify-content-between'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1002,6 +1018,9 @@ display:
         fields: false
         relationships: false
         cache: false
+        css_class: false
+        style: false
+        row: false
       fields:
         field_media_image:
           id: field_media_image
@@ -1352,14 +1371,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1377,6 +1396,19 @@ display:
           plugin_id: standard
       cache:
         type: none
+        options: {  }
+      css_class: 'cards-block justify-content-start'
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: card__item
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: card-field
+      row:
+        type: fields
         options: {  }
     cache_metadata:
       max-age: -1
@@ -1410,6 +1442,9 @@ display:
         use_more_text: false
         arguments: false
         cache: false
+        css_class: false
+        style: false
+        row: false
       display_description: ''
       fields:
         field_media_image:
@@ -1777,7 +1812,7 @@ display:
             url_only: false
             url_plain: false
             rel: '0'
-            target: '0'
+            target: _blank
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1991,7 +2026,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if body %}\r\n  <div class=\"body\">{{ body }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }} \" target=\"_blank\">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }} \" target=\"_blank\">Read More</a>\r\n  {% endif %}\r\n</div>"
+            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if body %}\r\n  <div class=\"body\">{{ body }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }} \" target=\"_blank\">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }} \">Read More</a>\r\n  {% endif %}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2016,14 +2051,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -2146,6 +2181,19 @@ display:
       cache:
         type: none
         options: {  }
+      css_class: 'cards-block justify-content-between'
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: card__item
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: card-field
+      row:
+        type: fields
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -2182,6 +2230,9 @@ display:
         cache: false
         filters: false
         filter_groups: false
+        style: false
+        row: false
+        css_class: false
       display_description: ''
       fields:
         body:
@@ -2192,7 +2243,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -2254,7 +2305,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -2308,6 +2359,55 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"body\">{{ body }}</div>\r\n<div class=\"answer\">{{ field_answer }}</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: card-paragraph
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       relationships: {  }
       footer:
         display_link:
@@ -2428,6 +2528,19 @@ display:
         groups:
           1: AND
       block_hide_empty: true
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: card__item
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: card-field
+      row:
+        type: fields
+        options: {  }
+      css_class: 'cards-block justify-content-between'
     cache_metadata:
       max-age: -1
       contexts:
@@ -2460,6 +2573,9 @@ display:
         cache: false
         filters: false
         filter_groups: false
+        style: false
+        row: false
+        css_class: false
       display_description: ''
       fields:
         body:
@@ -2470,7 +2586,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -2534,8 +2650,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<div class='body'>{{ body }}</div>\r\n<div class='answer'>{{ field_answer }}</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2560,14 +2676,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -2694,6 +2810,19 @@ display:
         groups:
           1: AND
       path: node/%/faq
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: card__item
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: card-field
+      row:
+        type: fields
+        options: {  }
+      css_class: 'cards-block justify-content-start'
     cache_metadata:
       max-age: -1
       contexts:
@@ -2722,6 +2851,9 @@ display:
         pager: false
         cache: false
         header: false
+        style: false
+        row: false
+        css_class: false
       display_description: ''
       fields:
         field_media_image:
@@ -3089,7 +3221,7 @@ display:
             url_only: false
             url_plain: false
             rel: '0'
-            target: '0'
+            target: _blank
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -3365,7 +3497,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if field_description %}\r\n  <div class=\"body\">{{ field_description }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }}\" target=\"_blank\">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }}\" target=\"_blank\">Read More</a>\r\n  {% endif %}\r\n</div>"
+            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n{% if field_description %}\r\n  <div class=\"body\">{{ field_description }} </div>\r\n{% endif %}\r\n{% if field_start_date %}\r\n  <div class=\"end-date\">{{ field_start_date }} </div>\r\n{% endif %}\r\n{% if field_event_url %}\r\n  <div class=\"event-url\">{{ field_event_url }} </div>\r\n{% endif %}\r\n{% if field_address_block %}\r\n  <div class=\"address-block\">{{ field_address_block }} </div>\r\n{% endif %}\r\n<div class=\"link-wrapper\">\r\n  {% if type == \"Download\" %}\r\n     <a href=\"{{ field_media_document }}?parent={{ raw_arguments.field_api_product_target_id }}\" target=\"_blank\">Download</a>\r\n  {% else %}\r\n     <a href=\"{{ view_node }}?parent={{ raw_arguments.field_api_product_target_id }}\">Read More</a>\r\n  {% endif %}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -3390,14 +3522,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -3509,6 +3641,19 @@ display:
         type: none
         options: {  }
       header: {  }
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: card__item
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: card-field
+      row:
+        type: fields
+        options: {  }
+      css_class: 'cards-block justify-content-start'
     cache_metadata:
       max-age: -1
       contexts:
@@ -3546,6 +3691,9 @@ display:
         cache: false
         filters: false
         filter_groups: false
+        style: false
+        row: false
+        css_class: false
       display_description: ''
       fields:
         title:
@@ -3873,7 +4021,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n  <div class=\"body\">{{ body }} </div>\r\n<div class=\"link-wrapper\">\r\n  <a href=\"{{ view_node }}?parent={{ raw_arguments.nid }}\" target=\"_blank\">View Reference</a>\r\n</div>"
+            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<div class=\"title\">{{ title }} </div>\r\n  <div class=\"body\">{{ body }} </div>\r\n<div class=\"link-wrapper\">\r\n  <a href=\"{{ view_node }}?parent={{ raw_arguments.nid }}\">View Reference</a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -3898,14 +4046,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-paragraph
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -4039,6 +4187,19 @@ display:
         groups:
           1: AND
       path: node/%/api_document
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: card__item
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: card-field
+      row:
+        type: fields
+        options: {  }
+      css_class: 'cards-block justify-content-start'
     cache_metadata:
       max-age: -1
       contexts:

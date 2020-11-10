@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - devportal
-id: devportal_page_title
-theme: devportal
+    - opendevx_theme
+id: opendevx_theme_page_title
+theme: opendevx_theme
 region: content
 weight: -17
 provider: null
