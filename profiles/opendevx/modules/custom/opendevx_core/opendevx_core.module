@@ -64,7 +64,7 @@ function opendevx_core_form_views_exposed_form_alter(array &$form, FormStateInte
  * Implements hook_query_search_node_search_alter().
  */
 function opendevx_core_query_search_node_search_alter(AlterableInterface $query) {
-  $program_id = \Drupal::service('developer_portal_user.organisation')->getOrgId();
+  $program_id = \Drupal::service('opendevx_user.organisation')->getOrgId();
   if (\Drupal::service('opendevx_core.program_domain')->getProgramDomainId()) {
     $program_id = \Drupal::service('opendevx_core.program_domain')->getProgramDomainId();
   }
@@ -116,7 +116,7 @@ function opendevx_core_preprocess_page(&$variables) {
       $entity_id = $query->execute()->fetchField();
     }
     catch (\Exception $e) {
-      \Drupal::service('developer_portal_user.logger')->log(
+      \Drupal::service('opendevx_user.logger')->log(
         ['module' => 'opendevx_core', 'message' => $e->getMessage()]
       );
     }
@@ -125,7 +125,7 @@ function opendevx_core_preprocess_page(&$variables) {
   if (empty($entity_id)) {
     unset($variables['page']['content']['otherresources']);
   }
-  $data = \Drupal::service('developer_portal_user.organisation')->getUserProgramsData();
+  $data = \Drupal::service('opendevx_user.organisation')->getUserProgramsData();
   if (empty($data)) {
     unset($variables['page']['content']['userprogramsblock']);
   }

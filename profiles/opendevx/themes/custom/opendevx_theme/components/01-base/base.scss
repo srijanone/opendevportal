@@ -1,0 +1,30 @@
+@import "settings";
+
+@import "normalize";
+@import "root/root";
+@import "headings/headings";
+@import "embedded/embedded";
+@import "links/links";
+@import "lists/lists";
+@import "tables/tables";
+@import "text/text";
+@import "utilities/utilities";
+@import "utilities/icons";
+@import "utilities/close-icon";
+
+/**
+ * @file
+ * Visual styles for Bartik's main-content component.
+ */
+
+@media all and (min-width: 851px) {
+  .main-content {
+    position: relative;
+    float: left;
+    /* LTR */
+  }
+
+  [dir="rtl"] .main-content {
+    float: right;
+  }
+}

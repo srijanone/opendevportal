@@ -1,0 +1,140 @@
+@import "settings";
+
+// Used on a hero block that can hold a background image.
+// Banner
+.banner {
+  &__block {
+    @include for-phone-up {
+      padding: 20px 0;
+    }
+
+    background: url("#{$theme-path}banner-bg.svg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 50%;
+    margin-left: -50vw;
+    min-height: 380px;
+    padding: 30px 0;
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  // Title
+  &__title {
+    color: $white;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  // Body
+  &__body {
+    @include font(18, normal);
+    color: $white;
+    margin: 0 !important; // sass-lint:disable-line no-important
+
+    &:empty {
+      @extend %none;
+    }
+  }
+
+  // Image
+  &__image {
+    @include for-tablet-landscape-up {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  // Icons
+  &__icons {
+    @include for-tablet-landscape-down {
+      margin: auto;
+    }
+
+    display: flex;
+    flex-flow: row wrap;
+    margin: 20px 0 -60px;
+  }
+}
+
+@include for-tablet-landscape-down {
+  .banner__icons {
+    .icons__item {
+      margin-bottom: 20px;
+    }
+
+    .icons__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icons__item {
+  @include for-tablet-landscape-up {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  padding: 0 15px;
+  width: 100%;
+
+  &-block {
+    @extend %shadow;
+
+    @include font(20, normal);
+    background: $white;
+    border-radius: 12px;
+    color: $blue;
+    display: block;
+    overflow: hidden;
+    padding: 20px 0 20px 36px;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      background: $blue;
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 15px;
+    }
+
+    &::after {
+      height: 54px;
+      left: 32px;
+      position: absolute;
+      top: 8px;
+    }
+  }
+
+  &:nth-child(1) {
+    .icons__item-block:after {
+      background: url("#{$theme-path}Icon-feather-user.png");
+      content: "";
+      width: 48px;
+    }
+  }
+
+  &:nth-child(2) {
+    .icons__item-block:after {
+      background: url("#{$theme-path}Icon-metro-cog.png");
+      content: "";
+      width: 52px;
+    }
+  }
+
+  &:nth-child(3) {
+    .icons__item-block:after {
+      background: url("#{$theme-path}Icon-feather-users.png");
+      content: "";
+      width: 69px;
+    }
+  }
+}

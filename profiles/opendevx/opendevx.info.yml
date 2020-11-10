@@ -24,6 +24,7 @@ install:
  - block
  - block_content
  - block_type_templates
+ - block_classes
  - book
  - breakpoint
  - captcha
@@ -200,3 +201,4 @@ themes:
   - devportal
   - adminimal_theme
   - devportal_admin
+  - opendevx_theme

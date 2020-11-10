@@ -48,9 +48,10 @@ class Organisation {
     $organisation = [];
     try {
       $view = Views::getView("programs");
-      $view->setDisplay("featured_program");
-      $view->execute();
       if ($view) {
+        $view->setDisplay("featured_program");
+        $view->execute();
+     
         foreach ($view->result as $key => $value) {
           $gid = $value->_entity->get('id')->value;
           $organisation[$gid]['orgId'] = $gid;

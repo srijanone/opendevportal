@@ -1,0 +1,89 @@
+@import "settings";
+
+// Star Rating
+.fivestar-form-1,
+.fivestar-form-2 {
+
+  .js-form-type-fivestar,
+  .js-form-item-vote {
+    margin-bottom: 0;
+  }
+
+  .fivestar-widget {
+    margin-bottom: 5px;
+  }
+
+  .fivestar-widget .star {
+    background: none !important; //overide other css.;
+    height: 30px;
+    margin: 0 10px;
+    overflow: unset;
+    width: 30px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    a {
+      background: none !important; //overide other css.
+      border-bottom: 16px solid $gray-light-1;
+      border-left: 24px solid transparent;
+      border-right: 15px solid transparent;
+      color: $gray-light-1;
+      display: block;
+      height: 0;
+      margin: 5px 0;
+      overflow: unset;
+      position: relative;
+      transform: rotate(35deg);
+      width: 0;
+    }
+
+    a::before {
+      border-bottom: 20px solid $gray-light-1;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      content: '';
+      display: block;
+      height: 0;
+      left: -16px;
+      position: absolute;
+      top: -9px;
+      transform: rotate(-35deg);
+      width: 0;
+    }
+
+    a::after {
+      border-bottom: 15px solid $gray-light-1;
+      border-left: 15px solid transparent;
+      border-right: 23px solid transparent;
+      color: $gray-light-1;
+      content: '';
+      display: block;
+      height: 0;
+      left: -24px;
+      position: absolute;
+      top: 1px;
+      transform: rotate(-70deg);
+      width: 0;
+    }
+  }
+
+
+  .star.hover,
+  .star.on {
+    a {
+      border-bottom-color: $blue;
+      color: $blue;
+    }
+
+    a::before {
+      border-bottom-color: $blue;
+    }
+
+    a::after {
+      border-bottom-color: $blue;
+      color: $blue;
+    }
+  }
+}

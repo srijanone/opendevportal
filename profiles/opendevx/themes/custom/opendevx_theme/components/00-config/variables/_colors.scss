@@ -1,0 +1,26 @@
+$default-color: #333;
+
+$white: #fff;
+$gray-base: #000000;
+$gray-darker: lighten($gray-base, 13.5%); // #222
+$gray-dark: lighten($gray-base, 20%); // #333
+$gray: lighten($gray-base, 33.5%); // #555
+$gray-light: #777777;
+$gray-light-1: #adadad;
+$gray-lighter: #e6e6e6;
+$gray-lighter-1: #f4f4f4;
+$gray-lightest: #f3f3f3;
+$blue: #1d76ee;
+$blue-1: #416ad9;
+$blue-dark-hover: #015ad2;
+$blue-dark: #384e86;
+$red: #f00;
+$red-danger: #7f231c;
+$red-light: #fdd9d7;
+$green-success: #285b2a;
+$green-light: #dbefdc;
+$text-color: $default-color;
+
+// shadow colors.
+$alpha1: 0.16;
+$shadow-color: rgba($gray-base, $alpha1);

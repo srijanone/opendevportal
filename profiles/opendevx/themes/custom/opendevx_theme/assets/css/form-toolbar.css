@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+.form-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.form-toolbar .btn {
+  margin-left: 0;
+}
+
+.form-toolbar .form-group {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .form-toolbar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-toolbar.form-toolbar--sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 5;
+    top: 10px;
+    -webkit-box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+            box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  }
+  .toolbar-fixed.toolbar-horizontal .form-toolbar.form-toolbar--sticky {
+    top: 50px;
+  }
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open .form-toolbar.form-toolbar--sticky {
+    top: 90px;
+  }
+  .form-toolbar.form-toolbar--fixed-bottom {
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  .form-toolbar .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+}

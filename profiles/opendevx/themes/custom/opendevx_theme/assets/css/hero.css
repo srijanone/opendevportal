@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+.banner__body:empty {
+  display: none;
+}
+
+.icons__item-block {
+  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.16);
+}
+
+.banner__block {
+  background: url("/themes/custom/opendevx_theme/assets/images/banner-bg.svg");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 50%;
+  margin-left: -50vw;
+  min-height: 380px;
+  padding: 30px 0;
+  position: relative;
+  width: 100vw;
+  z-index: 1;
+}
+
+.banner__title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.banner__body {
+  font-size: 1.28571rem;
+  font-weight: normal;
+  color: #fff;
+  margin: 0 !important;
+}
+
+.banner__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 20px 0 -60px;
+}
+
+.icons__item {
+  padding: 0 15px;
+  width: 100%;
+}
+
+.icons__item-block {
+  font-size: 1.42857rem;
+  font-weight: normal;
+  background: #fff;
+  border-radius: 12px;
+  color: #1d76ee;
+  display: block;
+  overflow: hidden;
+  padding: 20px 0 20px 36px;
+  position: relative;
+  text-align: center;
+}
+
+.icons__item-block::before {
+  background: #1d76ee;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 15px;
+}
+
+.icons__item-block::after {
+  height: 54px;
+  left: 32px;
+  position: absolute;
+  top: 8px;
+}
+
+.icons__item:nth-child(1) .icons__item-block:after {
+  background: url("/themes/custom/opendevx_theme/assets/images/Icon-feather-user.png");
+  content: "";
+  width: 48px;
+}
+
+.icons__item:nth-child(2) .icons__item-block:after {
+  background: url("/themes/custom/opendevx_theme/assets/images/Icon-metro-cog.png");
+  content: "";
+  width: 52px;
+}
+
+.icons__item:nth-child(3) .icons__item-block:after {
+  background: url("/themes/custom/opendevx_theme/assets/images/Icon-feather-users.png");
+  content: "";
+  width: 69px;
+}
+
+@media (min-width: 576px) {
+  .banner__block {
+    padding: 20px 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .banner__image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .icons__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+@media (max-width: 899px) {
+  .banner__icons {
+    margin: auto;
+  }
+  .banner__icons .icons__item {
+    margin-bottom: 20px;
+  }
+  .banner__icons .icons__item:last-child {
+    margin-bottom: 0;
+  }
+}
