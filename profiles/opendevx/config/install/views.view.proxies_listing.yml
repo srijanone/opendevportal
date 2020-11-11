@@ -12,7 +12,7 @@ dependencies:
     - field.storage.node.field_status
     - field.storage.node.field_type
     - field.storage.node.field_version
-    - image.style.thumbnail
+    - image.style.product_image
     - node.type.api_document
     - node.type.apps
     - node.type.issues
@@ -2081,7 +2081,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: '<span><a class = ''create-button'' href="/group/{{ raw_arguments.gid }}/content/create/group_node:apps?destination=/dashboard/manage/apps">Create</a></span>'
+          content: '<span><a class = ''create-button create plus'' href="/group/{{ raw_arguments.gid }}/content/create/group_node:apps?destination=/dashboard/manage/apps">Create</a></span>'
           plugin_id: text_custom
       relationships:
         uid:
@@ -5539,7 +5539,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: thumbnail
+            image_style: product_image
             image_link: ''
           group_column: target_id
           group_columns: {  }
@@ -5563,7 +5563,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<p><a class="use-ajax app-in-modal" data-dialog-options="{&quot;width&quot;:&quot;80%&quot;}" data-dialog-type="modal" href="/node/{{ nid }}">{{ field_display_name }}</a></p>'
+            text: '<a class="use-ajax app-in-modal" data-dialog-options="{&quot;width&quot;:&quot;80%&quot;}" data-dialog-type="modal" href="/node/{{ nid }}">{{ field_display_name }}</a>'
             make_link: false
             path: 'node/{{ nid }}?destination=/appmanager/apps&field_display_name_value=&moderation_state=All'
             absolute: false
@@ -5593,9 +5593,9 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
+          element_wrapper_type: h3
+          element_wrapper_class: title
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -6156,24 +6156,18 @@ display:
       style:
         type: html_list
         options:
-          grouping:
-            -
-              field: field_display_name
-              rendered: true
-              rendered_strip: false
-          row_class: ''
+          grouping: {  }
+          row_class: 'card-paragraph devapp'
           default_row_class: true
           uses_fields: true
           type: ul
-          wrapper_class: 'card-paragraph devapp'
+          wrapper_class: ''
           class: ''
       row:
         type: fields
         options:
           default_field_elements: true
-          inline:
-            title: title
-            body: body
+          inline: {  }
           separator: ''
           hide_empty: false
       exposed_form:
@@ -6214,7 +6208,7 @@ display:
                   collapsible: false
                   is_secondary: false
       use_ajax: true
-      css_class: 'programs-view cards-block justify-content-center'
+      css_class: 'programs-view cards-block mya'
     cache_metadata:
       max-age: -1
       contexts:

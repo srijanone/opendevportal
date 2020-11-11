@@ -3,18 +3,18 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_environment
-    - node.type.api_document
+    - node.type.api_product
     - taxonomy.vocabulary.environment
   content:
     - 'taxonomy_term:environment:a25998ec-3819-4de7-ac25-2f3d9a0fc3cd'
-id: node.api_document.field_environment
+id: node.api_product.field_environment
 field_name: field_environment
 entity_type: node
-bundle: api_document
+bundle: api_product
 label: Environment
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     target_uuid: a25998ec-3819-4de7-ac25-2f3d9a0fc3cd

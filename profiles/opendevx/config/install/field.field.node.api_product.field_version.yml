@@ -9,10 +9,12 @@ field_name: field_version
 entity_type: node
 bundle: api_product
 label: 'Product Version'
-description: ''
-required: false
+description: 'Enter version like 1.0, 2.0 etc.'
+required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: '1.0'
 default_value_callback: ''
 settings: {  }
 field_type: string

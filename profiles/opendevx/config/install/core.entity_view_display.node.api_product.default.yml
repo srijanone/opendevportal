@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.api_product.field_api_category
     - field.field.node.api_product.field_api_specifications
     - field.field.node.api_product.field_banners_image
+    - field.field.node.api_product.field_environment
     - field.field.node.api_product.field_feature_label
     - field.field.node.api_product.field_gatewayid
     - field.field.node.api_product.field_key_features
@@ -132,6 +133,14 @@ content:
     region: content
   field_api_document:
     weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_environment:
+    weight: 13
     label: above
     settings:
       link: true
