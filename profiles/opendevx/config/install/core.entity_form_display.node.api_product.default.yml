@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.api_product.field_api_category
     - field.field.node.api_product.field_api_specifications
     - field.field.node.api_product.field_banners_image
+    - field.field.node.api_product.field_environment
     - field.field.node.api_product.field_feature_label
     - field.field.node.api_product.field_gatewayid
     - field.field.node.api_product.field_key_features
@@ -33,6 +34,7 @@ third_party_settings:
         - title
         - body
         - field_version
+        - field_environment
         - group_key
       parent_name: group_media_items
       weight: 6
@@ -139,7 +141,7 @@ third_party_settings:
       children:
         - field_price
       parent_name: group_media_items
-      weight: 10
+      weight: 11
       format_type: tab
       region: content
       format_settings:
@@ -154,7 +156,7 @@ third_party_settings:
       children:
         - field_gatewayid
       parent_name: group_media_items
-      weight: 11
+      weight: 12
       format_type: tab
       region: content
       format_settings:
@@ -207,10 +209,16 @@ content:
     region: content
   field_banners_image:
     type: media_library_widget
-    weight: 9
+    weight: 10
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_environment:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_event:
     weight: 19

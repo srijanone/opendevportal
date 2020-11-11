@@ -1351,7 +1351,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<span><a class=''create-button create plus'' href="/group/add">Create</a></span>'
+          content: "<div class=\"dropdown\">\r\n  <span><a class='dropbtn create-button create plus' href=\"#\">Create</a></span>\r\n  <div class=\"dropdown-content\">\r\n    <a href=\"/group/add/public\">Public</a>\r\n    <a href=\"/group/add/private\">Private</a>\r\n    <a href=\"/group/add/protected\">Protected</a>\r\n  </div>\r\n</div>"
           plugin_id: text_custom
       css_class: programs-view
       pager:

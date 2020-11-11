@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.api_product.field_api_category
     - field.field.node.api_product.field_api_specifications
     - field.field.node.api_product.field_banners_image
+    - field.field.node.api_product.field_environment
     - field.field.node.api_product.field_feature_label
     - field.field.node.api_product.field_gatewayid
     - field.field.node.api_product.field_key_features
@@ -49,6 +50,7 @@ hidden:
   field_api_specifications: true
   field_article: true
   field_banners_image: true
+  field_environment: true
   field_event: true
   field_feature_label: true
   field_gatewayid: true

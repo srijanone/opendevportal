@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2020-11\/dbaas_0_1.yaml"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/89?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 1112
+        }
+    ],
+    "uuid": [
+        {
+            "value": "03059116-f5ba-46d8-9ec3-dc970e9b1ec8"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/89?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8c3d18ea-43e8-4234-80ee-5a6c9c312509"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "dbaas_0_1.yaml"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-11\/dbaas_0_1.yaml",
+            "url": "\/sites\/default\/files\/2020-11\/dbaas_0_1.yaml"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 21451
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-11T08:24:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-11T08:25:20+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

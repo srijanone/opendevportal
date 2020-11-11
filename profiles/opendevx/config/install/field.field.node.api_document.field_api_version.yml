@@ -5,6 +5,8 @@ dependencies:
     - field.storage.node.field_api_version
     - node.type.api_document
     - taxonomy.vocabulary.version
+  content:
+    - 'taxonomy_term:version:6ea2aa12-520c-4fdd-9a35-ebb5d1b22f85'
 id: node.api_document.field_api_version
 field_name: field_api_version
 entity_type: node
@@ -13,7 +15,9 @@ label: 'API Version'
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 6ea2aa12-520c-4fdd-9a35-ebb5d1b22f85
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

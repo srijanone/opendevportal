@@ -14,12 +14,12 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_gateway": [
             {
-                "href": "http:\/\/default\/node\/689?_format=hal_json"
+                "href": "http:\/\/default\/node\/1423?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_program_image": [
             {
-                "href": "http:\/\/default\/media\/206\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/244\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_site_logo": [
@@ -72,7 +72,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/node\/689?_format=hal_json"
+                        "href": "http:\/\/default\/node\/1423?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/gateway"
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "87e0856b-fab9-45a4-82c1-04d82d1e2d9d"
+                        "value": "6e467bfb-47db-47f4-b675-4cd402d1cd21"
                     }
                 ]
             }
@@ -89,7 +89,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/206\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/244\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -97,7 +97,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ce5945f2-5367-4a28-a1f8-f45ce3537ac6"
+                        "value": "b7403696-1068-4430-8fc3-8d763b43e87f"
                     }
                 ]
             }
@@ -135,7 +135,7 @@
     ],
     "changed": [
         {
-            "value": "2020-11-09T10:21:46+00:00",
+            "value": "2020-11-11T08:22:07+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
