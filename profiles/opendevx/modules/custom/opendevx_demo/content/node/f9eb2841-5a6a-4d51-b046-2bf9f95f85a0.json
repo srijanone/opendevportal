@@ -1,0 +1,204 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/article\/question?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/faq"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/faq\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/108?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/faq\/uid": [
+            {
+                "href": "http:\/\/default\/user\/108?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/faq\/field_api_product": [
+            {
+                "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1430
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f9eb2841-5a6a-4d51-b046-2bf9f95f85a0"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3890
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "faq"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-11-11T08:39:10+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/faq\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/108?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a20653b4-068c-4af5-a83e-e9686eff7572"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/faq\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/108?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a20653b4-068c-4af5-a83e-e9686eff7572"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/faq\/field_api_product": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8377293e-f405-49eb-91be-956741de28f4"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Question",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-11T08:39:10+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-11T08:39:10+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Question | Open API Exchange",
+                "canonical_url": "http:\/\/default\/article\/question",
+                "description": "Question"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/article\/question",
+            "pid": 1503,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Question<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Question<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_answer": [
+        {
+            "value": "<p>Answar<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Answar<\/p>"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}
