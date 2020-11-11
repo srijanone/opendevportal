@@ -25,7 +25,7 @@ class ProgramIdFilterPlugin extends FilterPluginBase {
   /**
    * Pass the dependency to the object constructor.
    */
-  public function __construct($plugin_id, $plugin_definition, ProgramDomainInterface $program_domain) {
+  public function __construct(ProgramDomainInterface $program_domain) {
     $this->programDomain = $program_domain;
   }
 
@@ -34,8 +34,6 @@ class ProgramIdFilterPlugin extends FilterPluginBase {
    */
   public static function create(ContainerInterface $container, array $configuration, $pluginId, $pluginDefinition) {
     return new static(
-      $plugin_id,
-      $plugin_definition,
       $container->get('opendevx_core.program_domain'),
     
     );
