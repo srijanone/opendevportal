@@ -19,4 +19,3 @@ ignored_config_entities:
   - 'domain.record.*'
   - 'menu_token.link_configuration_storage.*'
   - opendevx_connector.settings
-  - redirect_domain.domains

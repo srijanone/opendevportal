@@ -10,8 +10,3 @@ dependencies:
   - opendevx_api_product:opendevx_api_product
   - opendevx_taxonomy:opendevx_organisation
   - opendevx_node:opendevx_node
-
-default_content:
-  node:
-    # document_overview node demo Page
-    - 5ea21b97-b370-4140-a949-ea3e6750e033

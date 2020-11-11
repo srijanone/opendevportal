@@ -7,10 +7,10 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: main_menu
+id: opendevx_theme_main_menu
 theme: opendevx_theme
 region: primary_menu
-weight: -19
+weight: -22
 provider: null
 plugin: 'system_menu_block:main'
 settings:

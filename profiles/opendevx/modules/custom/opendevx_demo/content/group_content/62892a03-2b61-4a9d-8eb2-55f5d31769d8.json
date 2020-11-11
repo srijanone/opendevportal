@@ -1,0 +1,143 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/program\/banking\/content\/810?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group_content\/public-group_node-article"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/uid": [
+            {
+                "href": "http:\/\/default\/user\/62?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/gid": [
+            {
+                "href": "http:\/\/default\/program\/banking?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/entity_id": [
+            {
+                "href": "http:\/\/default\/article\/banking-blog?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 810
+        }
+    ],
+    "uuid": [
+        {
+            "value": "62892a03-2b61-4a9d-8eb2-55f5d31769d8"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "public-group_node-article"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/62?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8708f080-d05a-4f85-a2c0-9934302ff7e3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/gid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/program\/banking?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/group\/public"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b6644c53-0ba2-48d0-9210-5ccced37c021"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/entity_id": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/article\/banking-blog?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "49e62c18-d333-4efb-9d8a-26a9e50cb221"
+                    }
+                ]
+            }
+        ]
+    },
+    "label": [
+        {
+            "value": "Banking Blog ",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-05T08:31:20+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-05T08:31:20+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home"
+            }
+        }
+    ]
+}

@@ -1,0 +1,232 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/article\/bank-blog?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/162?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+            {
+                "href": "http:\/\/default\/user\/162?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_product": [
+            {
+                "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_listing_image": [
+            {
+                "href": "http:\/\/default\/media\/232\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1366
+        }
+    ],
+    "uuid": [
+        {
+            "value": "07726ce1-1618-44d0-83be-669e425e6082"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3765
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "article"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-11-05T11:15:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/162?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8b056396-afd7-460c-a7ac-b49477d52cc8"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/162?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8b056396-afd7-460c-a7ac-b49477d52cc8"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_product": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1bbbfbdf-9263-4c87-b8f9-49ba74708023"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_listing_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/232\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a9f1fb9d-5ae5-4c18-a666-acb2a36b5c45"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Bank Blog",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-05T08:00:47+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-05T11:15:00+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Bank Blog | Open API Exchange",
+                "canonical_url": "http:\/\/default\/article\/bank-blog",
+                "description": "A bank is a financial institution licensed to receive deposits and make loans. Banks may also provide financial services such as wealth management, currency exchange, and safe deposit boxes."
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/article\/bank-blog",
+            "pid": 1441,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<div style=\"display: none;\">&nbsp;<\/div>\r\n\r\n<div style=\"display: none;\">&nbsp;<\/div>\r\n\r\n<div style=\"display: none;\">&nbsp;<\/div>\r\n\r\n<p>The insured receives a&nbsp;<a href=\"https:\/\/en.wikipedia.org\/wiki\/Contract\" title=\"Contract\">contract<\/a>, called the&nbsp;<a href=\"https:\/\/en.wikipedia.org\/wiki\/Insurance_policy\" title=\"Insurance policy\">insurance policy<\/a>, which details the conditions and circumstances under which the insurer will compensate the insured. The amount of money charged by the insurer to the policyholder for the coverage set forth in the insurance policy is called the&nbsp;<b>premium<\/b>. If the insured experiences a loss which is potentially covered by the insurance policy, the insured submits a claim to the insurer for processing by a&nbsp;<a href=\"https:\/\/en.wikipedia.org\/wiki\/Claims_adjuster\" title=\"Claims adjuster\">claims adjuster<\/a>. The insurer may&nbsp;<a href=\"https:\/\/en.wikipedia.org\/wiki\/Hedge_(finance)\" title=\"Hedge (finance)\">hedge<\/a>&nbsp;its own risk by taking out&nbsp;<a href=\"https:\/\/en.wikipedia.org\/wiki\/Reinsurance\" title=\"Reinsurance\">reinsurance<\/a>, whereby another insurance company agrees to carry some of the risks, especially if the primary insurer deems the risk too large for it to carry.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<div style=\"display: none;\">\u00a0<\/div>\n\n<div style=\"display: none;\">\u00a0<\/div>\n\n<div style=\"display: none;\">\u00a0<\/div>\n\n<p>The insured receives a\u00a0<a href=\"https:\/\/en.wikipedia.org\/wiki\/Contract\" title=\"Contract\">contract<\/a>, called the\u00a0<a href=\"https:\/\/en.wikipedia.org\/wiki\/Insurance_policy\" title=\"Insurance policy\">insurance policy<\/a>, which details the conditions and circumstances under which the insurer will compensate the insured. The amount of money charged by the insurer to the policyholder for the coverage set forth in the insurance policy is called the\u00a0<b>premium<\/b>. If the insured experiences a loss which is potentially covered by the insurance policy, the insured submits a claim to the insurer for processing by a\u00a0<a href=\"https:\/\/en.wikipedia.org\/wiki\/Claims_adjuster\" title=\"Claims adjuster\">claims adjuster<\/a>. The insurer may\u00a0<a href=\"https:\/\/en.wikipedia.org\/wiki\/Hedge_(finance)\" title=\"Hedge (finance)\">hedge<\/a>\u00a0its own risk by taking out\u00a0<a href=\"https:\/\/en.wikipedia.org\/wiki\/Reinsurance\" title=\"Reinsurance\">reinsurance<\/a>, whereby another insurance company agrees to carry some of the risks, especially if the primary insurer deems the risk too large for it to carry.<\/p>\n",
+            "summary": "A bank is a financial institution licensed to receive deposits and make loans. Banks may also provide financial services such as wealth management, currency exchange, and safe deposit boxes.",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1604563255,
+            "last_comment_name": null,
+            "last_comment_uid": 162,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}

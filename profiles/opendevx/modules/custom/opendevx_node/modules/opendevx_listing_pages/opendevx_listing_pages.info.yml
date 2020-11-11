@@ -9,7 +9,3 @@ project:
 dependencies:
   - drupal:views
   - opendevx_node:opendevx_node
-
-default_content:
-  node:
-    - 3efedfe0-aead-4240-9885-31042ab870ba

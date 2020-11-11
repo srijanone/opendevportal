@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_version
+    - node.type.api_document
+    - taxonomy.vocabulary.version
+id: node.api_document.field_api_version
+field_name: field_api_version
+entity_type: node
+bundle: api_document
+label: 'API Version'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      version: version
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

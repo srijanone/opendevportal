@@ -6165,7 +6165,7 @@ display:
           default_row_class: true
           uses_fields: true
           type: ul
-          wrapper_class: card-paragraph
+          wrapper_class: 'card-paragraph devapp'
           class: ''
       row:
         type: fields
@@ -6214,7 +6214,7 @@ display:
                   collapsible: false
                   is_secondary: false
       use_ajax: true
-      css_class: 'programs-view cards-block'
+      css_class: 'programs-view cards-block justify-content-center'
     cache_metadata:
       max-age: -1
       contexts:

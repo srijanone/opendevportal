@@ -1,0 +1,310 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/assets\/media?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/assets"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/62?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/uid": [
+            {
+                "href": "http:\/\/default\/user\/62?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_api_product": [
+            {
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_listing_image": [
+            {
+                "href": "http:\/\/default\/media\/233\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_tags": [
+            {
+                "href": "http:\/\/default\/tags\/developer?_format=hal_json",
+                "lang": "en"
+            },
+            {
+                "href": "http:\/\/default\/tags\/solutions?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_upload_files": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2020-11\/sample.txt",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_video": [
+            {
+                "href": "http:\/\/default\/media\/229\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1370
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5a128347-8576-4862-b0e5-34738116e242"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3699
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "assets"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-11-05T08:05:31+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/62?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8708f080-d05a-4f85-a2c0-9934302ff7e3"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/62?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8708f080-d05a-4f85-a2c0-9934302ff7e3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_api_product": [
+            {
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_listing_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/233\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b26080a9-c887-47be-b5ce-050cb065c89f"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_tags": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/tags\/developer?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/tags"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2f1fc13d-b217-4708-9857-9d2a99668810"
+                    }
+                ],
+                "lang": "en"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/tags\/solutions?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/tags"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a7b7a8d8-45dc-4c84-9298-355e8eea83c7"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_upload_files": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2020-11\/sample.txt"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9ea206e0-a858-4027-9695-b9604d6659eb"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_video": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/229\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/remote_video"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b7fc49e3-5027-4da4-81fc-05202cf949dc"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Media ",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-05T08:02:11+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-05T08:05:31+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Media  | Open API Exchange",
+                "canonical_url": "http:\/\/default\/assets\/media",
+                "description": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services."
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/assets\/media",
+            "pid": 1445,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>A well-functioning financial system is fundamental to a modern economy, and&nbsp;<b>banks<\/b>&nbsp;perform&nbsp;<b>important<\/b>&nbsp;functions for society. ...&nbsp;<b>Banks<\/b>&nbsp;should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>A well-functioning financial system is fundamental to a modern economy, and\u00a0<b>banks<\/b>\u00a0perform\u00a0<b>important<\/b>\u00a0functions for society. ...\u00a0<b>Banks<\/b>\u00a0should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\n",
+            "summary": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services.",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1604563531,
+            "last_comment_name": null,
+            "last_comment_uid": 62,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}

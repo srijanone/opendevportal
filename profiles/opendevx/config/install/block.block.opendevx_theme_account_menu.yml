@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: account_menu
+id: opendevx_theme_account_menu
 theme: opendevx_theme
 region: primary_menu
 weight: -14

@@ -1,0 +1,126 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/18?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/png-transparent-application-programming-interface-cloud-computing-cloud-api-cloud-computing-angle-text-service-thumbnail.png",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 18
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7d3a9a15-030f-4c64-862d-06c86afcf3d3"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 19
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "header_block"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-05-14T05:00:37+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Product Banner Block",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-09T08:24:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home"
+            }
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Build trust and engagement with secure assets in your API program \u2014 at all points of engagement from users, apps, developers, API teams, and backend systems.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>Build trust and engagement with secure assets in your API program \u2014 at all points of engagement from users, apps, developers, API teams, and backend systems.<\/p>\n",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/png-transparent-application-programming-interface-cloud-computing-cloud-api-cloud-computing-angle-text-service-thumbnail.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "dbff9aec-da91-43c1-877d-9282d3301e7c"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "field_title": [
+        {
+            "value": "Products"
+        }
+    ]
+}

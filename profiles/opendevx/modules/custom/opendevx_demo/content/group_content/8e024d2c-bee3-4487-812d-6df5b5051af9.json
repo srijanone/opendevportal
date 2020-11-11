@@ -1,0 +1,143 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/program\/banking\/content\/790?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group_content\/public-group_node-tutorials"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-tutorials\/uid": [
+            {
+                "href": "http:\/\/default\/user\/62?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-tutorials\/gid": [
+            {
+                "href": "http:\/\/default\/program\/banking?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-tutorials\/entity_id": [
+            {
+                "href": "http:\/\/default\/tutorials\/banking-tutorial?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 790
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8e024d2c-bee3-4487-812d-6df5b5051af9"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "public-group_node-tutorials"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-tutorials\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/62?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8708f080-d05a-4f85-a2c0-9934302ff7e3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-tutorials\/gid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/program\/banking?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/group\/public"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b6644c53-0ba2-48d0-9210-5ccced37c021"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-tutorials\/entity_id": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/tutorials\/banking-tutorial?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/tutorials"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "54a49d06-58dc-472c-8e5c-8ed35623baea"
+                    }
+                ]
+            }
+        ]
+    },
+    "label": [
+        {
+            "value": "Banking Tutorial",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-05T07:36:14+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-05T07:36:14+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home"
+            }
+        }
+    ]
+}

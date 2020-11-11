@@ -11,10 +11,10 @@ dependencies:
 third_party_settings:
   block_classes:
     block_class: navbar-search
-id: search
+id: opendevx_theme_search
 theme: opendevx_theme
 region: primary_menu
-weight: -17
+weight: -21
 provider: null
 plugin: search_form_block
 settings:

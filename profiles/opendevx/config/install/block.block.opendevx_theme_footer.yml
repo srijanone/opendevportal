@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: footer
+id: opendevx_theme_footer
 theme: opendevx_theme
 region: footer_first
 weight: -18

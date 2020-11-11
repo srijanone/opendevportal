@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.api_document.field_api_categories
     - field.field.node.api_document.field_api_display
     - field.field.node.api_document.field_api_type
+    - field.field.node.api_document.field_api_version
     - field.field.node.api_document.field_apigee_proxy
     - field.field.node.api_document.field_apigwid
     - field.field.node.api_document.field_banners_image
     - field.field.node.api_document.field_document
+    - field.field.node.api_document.field_environment
     - field.field.node.api_document.field_format
     - field.field.node.api_document.field_listing_image
     - field.field.node.api_document.field_organisation
@@ -222,6 +224,38 @@ third_party_settings:
                 type: string
             additional: {  }
             weight: 11
+          3ef44e21-9fbb-4916-a2c2-ce1418f8fc27:
+            uuid: 3ef44e21-9fbb-4916-a2c2-ce1418f8fc27
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_document:field_environment'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 12
+          05e8066b-75d4-468d-a5ad-c9b8e87f55c0:
+            uuid: 05e8066b-75d4-468d-a5ad-c9b8e87f55c0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:api_document:field_api_version'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 13
         third_party_settings: {  }
 id: node.api_document.default
 targetEntityType: node
@@ -261,6 +295,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_api_version:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_apigee_proxy:
     weight: 11
@@ -306,6 +348,14 @@ content:
     third_party_settings: {  }
     type: swagger_ui_file
     region: content
+  field_environment:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_format:
     weight: 4
     label: above
@@ -337,5 +387,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_gatewayid: true
   field_organisation: true
   layout_builder__layout: true

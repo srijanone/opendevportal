@@ -1,0 +1,143 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/program\/banking\/content\/803?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group_content\/public-group_node-events"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-events\/uid": [
+            {
+                "href": "http:\/\/default\/user\/162?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-events\/gid": [
+            {
+                "href": "http:\/\/default\/program\/banking?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-events\/entity_id": [
+            {
+                "href": "http:\/\/default\/events\/bank-event?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 803
+        }
+    ],
+    "uuid": [
+        {
+            "value": "af7f444a-654b-49e2-a3a6-6d684a2f3de4"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "public-group_node-events"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-events\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/162?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8b056396-afd7-460c-a7ac-b49477d52cc8"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-events\/gid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/program\/banking?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/group\/public"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b6644c53-0ba2-48d0-9210-5ccced37c021"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-events\/entity_id": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/events\/bank-event?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/events"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5e67c63a-5879-453c-b4d7-57b2a699c02d"
+                    }
+                ]
+            }
+        ]
+    },
+    "label": [
+        {
+            "value": "Insurance Event",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-05T07:59:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-05T07:59:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home"
+            }
+        }
+    ]
+}

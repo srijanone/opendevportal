@@ -14,8 +14,3 @@ dependencies:
   - address:address
 
 project: opendevx_events
-
-default_content:
-  node:
-    # Event node demo Events
-    - 5d39d17a-63cc-4f83-b62d-62abd1f85db3

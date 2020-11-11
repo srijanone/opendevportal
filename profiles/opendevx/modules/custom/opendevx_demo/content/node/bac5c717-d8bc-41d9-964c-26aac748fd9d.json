@@ -1,0 +1,166 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/landing-page\/home?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/listing_pages"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/92?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 31
+        }
+    ],
+    "uuid": [
+        {
+            "value": "bac5c717-d8bc-41d9-964c-26aac748fd9d"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3108
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "listing_pages"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-10-21T14:05:55+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/92?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a9c7dabe-4ad5-4e74-b66b-ab5087dc348b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Home",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-05-13T10:35:21+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-10-21T14:05:55+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Home | Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "description": "Welcome to the Open Source Developer Portal!\n\nLearn about how to use our API, get support, find out what we're up to on the product development side of the house, and give us feedback on what we should be doing.a\n\n\u00a0"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/landing-page\/home",
+            "pid": 7,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><strong>Welcome to the Open Source Developer Portal!<\/strong><\/p>\r\n\r\n<p>Learn about how to use our API, get support, find out what we're up to on the product development side of the house, and give us feedback on what we should be doing.a<\/p>\r\n\r\n<p>&nbsp;<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p><strong>Welcome to the Open Source Developer Portal!<\/strong><\/p>\n\n<p>Learn about how to use our API, get support, find out what we're up to on the product development side of the house, and give us feedback on what we should be doing.a<\/p>\n\n<p>\u00a0<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

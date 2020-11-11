@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.api_product.field_api_specifications
     - field.field.node.api_product.field_banners_image
     - field.field.node.api_product.field_feature_label
+    - field.field.node.api_product.field_gatewayid
     - field.field.node.api_product.field_key_features
     - field.field.node.api_product.field_organisation
     - field.field.node.api_product.field_price
@@ -95,6 +96,7 @@ third_party_settings:
         - group_media
         - group_paragraphs
         - group_pricing
+        - group_gateway
         - group_marketing
       parent_name: ''
       weight: 0
@@ -148,6 +150,20 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Pricing
+    group_gateway:
+      children:
+        - field_gatewayid
+      parent_name: group_media_items
+      weight: 11
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'API Gateway'
 id: node.api_product.default
 targetEntityType: node
 bundle: api_product
@@ -213,6 +229,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_gatewayid:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_key_features:
     type: paragraphs
@@ -284,20 +306,20 @@ content:
     type: string_textfield
     region: content
   field_view_mode:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   path:
     type: path
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -312,7 +334,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -321,7 +343,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }

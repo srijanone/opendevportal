@@ -1,0 +1,166 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/manage-billing-providers-coming-soon?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/listing_pages"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/164?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "href": "http:\/\/default\/user\/164?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1398
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f439ac8b-b5af-4c36-8e0e-a11b0e949857"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3792
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "listing_pages"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-11-06T10:24:53+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/164?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0a3b279e-8891-4f5a-a6fe-9273dec02a76"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/164?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0a3b279e-8891-4f5a-a6fe-9273dec02a76"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Manage Billing Providers Coming Soon",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-06T08:12:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-06T10:24:53+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Manage Billing Providers Coming Soon | Open API Exchange",
+                "canonical_url": "http:\/\/default\/manage-billing-providers-coming-soon",
+                "description": "Hello\n\u00a0"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/manage-billing-providers-coming-soon",
+            "pid": 1476,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Hello<\/p>\r\n<img alt=\"coming soon\" data-align=\"center\" data-entity-type=\"file\" data-entity-uuid=\"d3122ad7-9475-4113-851f-eb7242727206\" src=\"\/sites\/default\/files\/inline-images\/comingsoon_0.png\" \/>\r\n<p>&nbsp;<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Hello<\/p>\n<img alt=\"coming soon\" data-entity-type=\"file\" data-entity-uuid=\"d3122ad7-9475-4113-851f-eb7242727206\" src=\"\/sites\/default\/files\/inline-images\/comingsoon_0.png\" class=\"align-center\" \/><p>\u00a0<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}
