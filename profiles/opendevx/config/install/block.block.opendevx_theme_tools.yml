@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: tools
+id: opendevx_theme_tools
 theme: opendevx_theme
 region: sidebar_first
 weight: -15

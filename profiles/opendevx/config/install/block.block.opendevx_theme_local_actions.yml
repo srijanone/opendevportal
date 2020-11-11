@@ -3,7 +3,7 @@ status: true
 dependencies:
   theme:
     - opendevx_theme
-id: local_actions
+id: opendevx_theme_local_actions
 theme: opendevx_theme
 region: content
 weight: -15

@@ -1,0 +1,127 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/84\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": 84
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9e86ae8b-b93f-4009-bcc5-c95b4cb32ae4"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 84
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-09-30T06:31:34+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "APIs",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "product-management"
+        }
+    ],
+    "link": [
+        {
+            "uri": "internal:\/dashboard\/[program:program_id]\/apimanager\/proxies",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": true
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "expanded": [
+        {
+            "value": false
+        }
+    ],
+    "parent": [
+        {
+            "value": "menu_link_content:083c4b6f-ede2-4a1e-8eca-a075799941c7"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-10-01T05:20:35+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "menu_per_role__show_role": [
+        {
+            "target_id": "authenticated"
+        }
+    ],
+    "menu_per_role__hide_role": [
+        {
+            "target_id": "admin"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home"
+            }
+        }
+    ]
+}

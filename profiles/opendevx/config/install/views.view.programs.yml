@@ -15,6 +15,7 @@ dependencies:
     - group
     - image
     - media
+    - opendevx_core
     - svg_image
     - text
     - user
@@ -2069,20 +2070,20 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        nothing_1:
-          id: nothing_1
+        program_domain_host:
+          id: program_domain_host
           table: views
-          field: nothing
+          field: program_domain_host
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: Explore
-            make_link: true
-            path: 'group/{{ id }}'
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
             absolute: false
             external: false
             replace_spaces: false
@@ -2116,8 +2117,8 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
+          hide_alter_empty: true
+          plugin_id: program_domain_host
         nothing:
           id: nothing
           table: views
@@ -2129,7 +2130,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"product-image\">{{ field_media_image }}</div>\r\n<h3 class=\"title\">{{ label }} </h3>\r\n<div class=\"body\">{{ field_description }}</div>\r\n<div class=\"link-wrapper\">\r\n  <div class=\"overview\">{{ nothing_1 }}</div>\r\n</div>"
+            text: "<div class=\"product-image\" >{{ field_media_image }}</div>\r\n<h3 class=\"title\">{{ label }} </h3>\r\n<div class=\"body\">{{ field_description }}</div>\r\n<div class=\"link-wrapper\">\r\n  <div class=\"overview\">{{ program_domain_host }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

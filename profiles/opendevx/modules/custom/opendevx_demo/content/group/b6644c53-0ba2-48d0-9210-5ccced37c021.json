@@ -1,0 +1,177 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/program\/banking?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group\/public"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/uid": [
+            {
+                "href": "http:\/\/default\/user\/96?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_gateway": [
+            {
+                "href": "http:\/\/default\/node\/689?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_program_image": [
+            {
+                "href": "http:\/\/default\/media\/206\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_site_logo": [
+            {
+                "href": "http:\/\/default\/media\/202\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b6644c53-0ba2-48d0-9210-5ccced37c021"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "public"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/96?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e4c06332-a826-492a-8f4f-b080d30a6cad"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_gateway": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/node\/689?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/gateway"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "87e0856b-fab9-45a4-82c1-04d82d1e2d9d"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_program_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/206\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ce5945f2-5367-4a28-a1f8-f45ce3537ac6"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_site_logo": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/202\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0db99100-6591-40af-9ec6-42471ba4e19b"
+                    }
+                ]
+            }
+        ]
+    },
+    "label": [
+        {
+            "value": "Banking",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-10-06T08:54:05+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-09T10:21:46+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/program\/banking",
+            "pid": 873,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home"
+            }
+        }
+    ],
+    "field_header_background_color": [
+        {
+            "color": "#B99AFF",
+            "opacity": null
+        }
+    ],
+    "field_hub_content_id": [
+        {
+            "value": "2248cded-4e42-48dd-94df-146d282a44d2",
+            "lang": "en"
+        }
+    ]
+}

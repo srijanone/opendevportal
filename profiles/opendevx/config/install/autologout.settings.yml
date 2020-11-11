@@ -12,7 +12,7 @@ inactivity_message_type: status
 enforce_admin: false
 jstimer_format: '%hours%:%mins%:%secs%'
 jstimer_js_load_option: false
-use_alt_logout_method: false
+use_alt_logout_method: true
 use_watchdog: true
 dialog_title: 'Open API Exchange Alert'
 disable_buttons: false

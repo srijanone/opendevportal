@@ -1,0 +1,117 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/16?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/photo_gallery_block"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/twitter.png"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "708f84e8-36e3-4eba-8fe4-a9496bf5b157"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 17
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "photo_gallery_block"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-05-13T11:45:38+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "meetupsImage",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-05-13T11:46:13+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Open API Exchange",
+                "canonical_url": "http:\/\/default\/landing-page\/home"
+            }
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/twitter.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4ec07d27-f721-4246-b4be-2987750e52fe"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_link_to_images": [
+        {
+            "uri": "internal:\/meetups\/Image",
+            "title": "",
+            "options": []
+        }
+    ]
+}

@@ -5,7 +5,7 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: branding
+id: opendevx_theme_branding
 theme: opendevx_theme
 region: header
 weight: -11

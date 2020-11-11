@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.api_product.field_api_specifications
     - field.field.node.api_product.field_banners_image
     - field.field.node.api_product.field_feature_label
+    - field.field.node.api_product.field_gatewayid
     - field.field.node.api_product.field_key_features
     - field.field.node.api_product.field_organisation
     - field.field.node.api_product.field_price
@@ -50,6 +51,7 @@ hidden:
   field_banners_image: true
   field_event: true
   field_feature_label: true
+  field_gatewayid: true
   field_key_features: true
   field_organisation: true
   field_price: true

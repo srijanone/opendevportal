@@ -1,0 +1,318 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/events\/banking-event?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/events"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/62?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/uid": [
+            {
+                "href": "http:\/\/default\/user\/62?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_api_product": [
+            {
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_event_types": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/30?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_listing_image": [
+            {
+                "href": "http:\/\/default\/media\/234\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_tags": [
+            {
+                "href": "http:\/\/default\/tags\/developer?_format=hal_json",
+                "lang": "en"
+            },
+            {
+                "href": "http:\/\/default\/tags\/solutions?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1371
+        }
+    ],
+    "uuid": [
+        {
+            "value": "083ba19a-57df-404a-8e4f-2259b398dd00"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3700
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "events"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-11-05T08:09:24+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/62?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8708f080-d05a-4f85-a2c0-9934302ff7e3"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/62?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8708f080-d05a-4f85-a2c0-9934302ff7e3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_api_product": [
+            {
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_event_types": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/30?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e1c239c4-6d7b-47e0-a3fd-62e3bf57b11d"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_listing_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/234\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c609dc5f-5eb3-4adb-9b17-ec197f1693a4"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/events\/field_tags": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/tags\/developer?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/tags"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2f1fc13d-b217-4708-9857-9d2a99668810"
+                    }
+                ],
+                "lang": "en"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/tags\/solutions?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/tags"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a7b7a8d8-45dc-4c84-9298-355e8eea83c7"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Banking Event",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-05T08:06:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-05T08:09:24+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Banking Event | Open API Exchange",
+                "canonical_url": "http:\/\/default\/events\/banking-event",
+                "description": "Money math involves many of the math skills you learn in school, such as addition, subtraction, multiplication, division, fractions, decimals, and percentages. ... Handling money can help you learn how to count it. Making purchases in a store can help you become comfortable counting money."
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/events\/banking-event",
+            "pid": 1446,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>&nbsp;<\/p>\r\n\r\n<p>Due to the open nature of the&nbsp;<b>Internet<\/b>, all web-based services such as YAB's&nbsp;<b>Online Banking<\/b>&nbsp;are inherently subject to risks such as&nbsp;<b>online<\/b>&nbsp;theft of your User ID\/UserName, Password, virus attacks, hacking, unauthorized access and fraudulent transactions.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>\u00a0<\/p>\n\n<p>Due to the open nature of the\u00a0<b>Internet<\/b>, all web-based services such as YAB's\u00a0<b>Online Banking<\/b>\u00a0are inherently subject to risks such as\u00a0<b>online<\/b>\u00a0theft of your User ID\/UserName, Password, virus attacks, hacking, unauthorized access and fraudulent transactions.<\/p>\n",
+            "summary": "Money math involves many of the math skills you learn in school, such as addition, subtraction, multiplication, division, fractions, decimals, and percentages. ... Handling money can help you learn how to count it. Making purchases in a store can help you become comfortable counting money.",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1604563764,
+            "last_comment_name": null,
+            "last_comment_uid": 62,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_address_block": [
+        {
+            "langcode": "",
+            "country_code": "AU",
+            "administrative_area": "QLD",
+            "locality": "",
+            "dependent_locality": null,
+            "postal_code": "",
+            "sorting_code": null,
+            "address_line1": "Street address",
+            "address_line2": "abc..xyz",
+            "organization": null,
+            "given_name": null,
+            "additional_name": null,
+            "family_name": null
+        }
+    ],
+    "field_end_date": [
+        {
+            "value": "2020-11-26T13:37:33+00:00"
+        }
+    ],
+    "field_event_url": [
+        {
+            "uri": "http:\/\/example.com",
+            "title": "Click here to REGISTER",
+            "options": []
+        }
+    ],
+    "field_start_date": [
+        {
+            "value": "2020-11-05T02:38:26+00:00"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}

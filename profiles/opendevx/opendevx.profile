@@ -11,16 +11,16 @@
 function opendevx_install_tasks(&$install_state) {
   $tasks = [];
 
-  // if (empty($install_state['config_install_path'])) {
-  //   $tasks['opendevx_module_configure_form'] = [
-  //     'display_name' => t('Select demo content'),
-  //     'type' => 'form',
-  //     'function' => 'Drupal\opendevx\Installer\Form\ModuleConfigureForm',
-  //   ];
-  //   $tasks['opendevx_module_install'] = [
-  //     'display_name' => t('Install demo content'),
-  //   ];
-  // }
+  if (empty($install_state['config_install_path'])) {
+    $tasks['opendevx_module_configure_form'] = [
+      'display_name' => t('Select demo content'),
+      'type' => 'form',
+      'function' => 'Drupal\opendevx\Installer\Form\ModuleConfigureForm',
+    ];
+    $tasks['opendevx_module_install'] = [
+      'display_name' => t('Install demo content'),
+    ];
+  }
   return $tasks;
 }
 
