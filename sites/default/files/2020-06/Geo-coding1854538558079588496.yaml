@@ -1,0 +1,296 @@
+---
+swagger: "2.0"
+info:
+  description: "The Geo-coding API provides geographical co-ordinates for one or more\
+    \ addresses. Geo-coding can be used for departure, stop-off and arrival points\
+    \ as well as it facilitates the positioning of your points of interest on a map\
+    \ and many other digital mapping requirements leading to a better user experience.\r\
+    \n\r\n<strong>The geo-coding API has 4 different resources to fetch GPS coordinates\
+    \ for given address: </strong>\r\n\r\n\r\n<strong>• /geocode1f.{output}</strong>\r\
+    \n\r\nMandatory parameters are four.\r\n\r\nAn API KEY embedded in header\r\n\
+    output (e.g: format of output expected XML/JSON)\r\nQuery (e.g: “Eiffel Tower”\
+    \ or any Country, Zip code, City name and Address (with number)\r\nLg (e.g. eng\
+    \ or Language code (fra, deu, spa, ita, eng, ces, dan, nld, fin, int, nor, pol,\
+    \ por, swe)\r\n\r\n<strong>• /geocode4f.{output}</strong>\r\n\r\nMandatory parameters\
+    \ are five.\r\n\r\nAn API KEY embedded in header\r\noutput (e.g: format of output\
+    \ expected XML/JSON)\r\ncountry (e.g: “fra” or Country ISO 3166-1 alpha-3 code.)\r\
+    \ncity (e.g. paris or city name)\r\nfilterHTLang (e.g. false)\r\nshowHT (e.g.\
+    \ false)\r\n\r\n<strong>• /location.{output}/{locid}</strong>\r\n\r\nMandatory\
+    \ parameters are four.\r\n\r\nAn API KEY embedded in header\r\nLocid (e.g. any\
+    \ unique location identifier or 32NDJ2dGg1NzUwMTIxMGNORGd1T0RReE1ERT1jTWk0ek9EZzVOZz09)\r\
+    \noutput (e.g: format of output expected XML/JSON)\r\nlg (e.g: “eng” or “fra”\
+    )\r\n\r\n<strong>• /geocode3f.{output}</strong>\r\n\r\nMandatory parameters are\
+    \ five.\r\n\r\nAn API KEY embedded in header\r\noutput (e.g: format of output\
+    \ expected XML/JSON)\r\ncountry (e.g: “fra” or Country ISO 3166-1 alpha-3 code.)\r\
+    \ncity (e.g. paris or city name)\r\nfilterHTLang (e.g. false)\r\nshowHT (e.g.\
+    \ false)\r\n\r\n<strong>* Values are indicative</strong>"
+  version: "1.0"
+  title: "Geo-coding"
+host: "eu-west.apigateway.michelingroup.com"
+basePath: "/gateway/geocoding/1.0"
+schemes:
+- "https"
+paths:
+  /geocode4f.{output}:
+    get:
+      summary: ""
+      description: ""
+      parameters: []
+      responses:
+        200:
+          description: "Placeholder description"
+    parameters:
+    - name: "filterHTLang"
+      in: "query"
+      description: ""
+      required: false
+      type: "boolean"
+    - name: "nb"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "ie"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "charset"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "address"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "city"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "country"
+      in: "query"
+      description: ""
+      required: true
+      type: "string"
+    - name: "zip"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "lg"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "showHT"
+      in: "query"
+      description: ""
+      required: false
+      type: "boolean"
+    - name: "callback"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "output"
+      in: "path"
+      description: ""
+      required: true
+      type: "string"
+  /geocode1f.{output}:
+    get:
+      summary: ""
+      description: ""
+      parameters: []
+      responses:
+        200:
+          description: "Placeholder description"
+    parameters:
+    - name: "ie"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "output"
+      in: "path"
+      description: ""
+      required: true
+      type: "string"
+    - name: "nb"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "callback"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "query"
+      in: "query"
+      description: ""
+      required: true
+      type: "string"
+    - name: "charset"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "favc"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "country"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "lg"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "filterHTLang"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "showHT"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+  /geocode3f.{output}:
+    get:
+      summary: ""
+      description: ""
+      parameters: []
+      responses:
+        200:
+          description: "Placeholder description"
+    parameters:
+    - name: "filterHTLang"
+      in: "query"
+      description: ""
+      required: false
+      type: "boolean"
+    - name: "favc"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "zip"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "lg"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "charset"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "address"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "output"
+      in: "path"
+      description: ""
+      required: true
+      type: "string"
+    - name: "country"
+      in: "query"
+      description: ""
+      required: true
+      type: "string"
+    - name: "nb"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "showHT"
+      in: "query"
+      description: ""
+      required: false
+      type: "boolean"
+    - name: "city"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "ie"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "callback"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+  /location.{output}/{locid}:
+    get:
+      summary: ""
+      description: ""
+      produces:
+      - "application/xml"
+      parameters: []
+      responses:
+        200:
+          description: "Placeholder description"
+    parameters:
+    - name: "showHT"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "charset"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "ie"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "callback"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "locid"
+      in: "path"
+      description: ""
+      required: true
+      type: "string"
+    - name: "filterHTLang"
+      in: "query"
+      description: ""
+      required: false
+      type: "string"
+    - name: "lg"
+      in: "query"
+      description: ""
+      required: true
+      type: "string"
+    - name: "output"
+      in: "path"
+      description: ""
+      required: true
+      type: "string"
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "x-Gateway-APIKey"
+    in: "header"

@@ -1,0 +1,86 @@
+swagger: '2.0'
+info:
+  title: Fixer.io
+  description: Foreign Exchange Rates and Currency Conversion API (http://fixer.io/)
+  version: '1.0'
+host: 'api.fixer.io'
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+paths:
+  /latest:
+    get:
+      summary: Get the latest foreign exchange reference rates
+      description: Returns the latest foreign exchange reference rates. Rates are quoted against the Euro by default. Specify the symbols returned (default = all)
+      operationId: getLatest
+      tags: 
+        - Rates
+      parameters:
+        - name: base
+          in: query
+          description: The base currency
+          type: string
+          required: false
+          default: EUR
+        - name: symbols
+          in: query
+          description: The exchange rates symbols returned
+          type: array
+          items:
+            type: string
+          collectionFormat: csv
+          required: false
+      responses:
+        200:
+          description: The foreign exchange reference rates
+          schema:
+            $ref: '#/definitions/Rates'
+  /{date}:
+    get:
+      summary: Get historical rates from a gived date
+      description: Returns the foreign exchange reference rates for an historical date. Rates are quoted against the Euro by default. Specify the symbols returned (default = all)
+      operationId: getByDate
+      tags: 
+        - Rates
+      parameters:
+        - name: date
+          in: path
+          description: The given date
+          type: string
+          format: date
+          required: true
+        - name: base
+          in: query
+          description: The base currency
+          type: string
+          required: false
+          default: EUR
+        - name: symbols
+          in: query
+          description: The exchange rates symbols returned
+          type: array
+          items:
+            type: string
+          collectionFormat: csv
+          required: false
+      responses:
+        200:
+          description: The foreign exchange reference rates
+          schema:
+            $ref: '#/definitions/Rates'
+definitions:
+  Rates:
+    type: object
+    properties:
+      base:
+        type: string
+      date:
+        type: string
+        format: string
+      rates:
+        type: object
+        additionalProperties:
+          type: number
+          format: double
