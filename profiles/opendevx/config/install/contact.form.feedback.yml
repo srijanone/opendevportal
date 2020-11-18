@@ -4,7 +4,7 @@ dependencies: {  }
 id: feedback
 label: 'Website feedback'
 recipients:
-  - vijay.singh@srijan.net
+  - opendevx@srijan.net
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

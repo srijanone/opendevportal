@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2020-10\/test_0.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/162?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 983
+        }
+    ],
+    "uuid": [
+        {
+            "value": "30c97985-5752-4e98-b849-bf44d1f6e39d"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/162?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8b056396-afd7-460c-a7ac-b49477d52cc8"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "test.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-10\/test_0.jpg",
+            "url": "\/sites\/default\/files\/2020-10\/test_0.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 177399
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-10-27T07:09:40+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-10-27T07:09:52+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

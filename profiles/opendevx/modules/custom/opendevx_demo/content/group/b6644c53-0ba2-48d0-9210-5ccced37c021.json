@@ -173,5 +173,102 @@
             "value": "2248cded-4e42-48dd-94df-146d282a44d2",
             "lang": "en"
         }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": ""
+                },
+                "components": [
+                    {
+                        "uuid": "379f64c9-661c-4894-ade1-b02e1cf33bcb",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "field_block:group:public:field_program_image",
+                            "formatter": {
+                                "type": "entity_reference_entity_view",
+                                "label": "above",
+                                "settings": {
+                                    "view_mode": "default",
+                                    "link": false
+                                },
+                                "third_party_settings": []
+                            }
+                        },
+                        "additional": [],
+                        "weight": 6
+                    },
+                    {
+                        "uuid": "84aa352b-0872-4c8c-959c-799945b76d93",
+                        "region": "content",
+                        "configuration": {
+                            "id": "field_block:group:public:field_gateway",
+                            "label": "Gateway",
+                            "provider": "layout_builder",
+                            "label_display": 0,
+                            "formatter": {
+                                "label": "above",
+                                "type": "entity_reference_label",
+                                "settings": {
+                                    "link": 0
+                                },
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 2
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": "blog"
+                },
+                "components": [
+                    {
+                        "uuid": "85c3af28-9d5c-4de6-9071-969802f3e16a",
+                        "region": "content",
+                        "configuration": {
+                            "id": "block_content:752347b4-d1cb-412e-a321-8d697f3a2a59",
+                            "label": "Blog front page",
+                            "provider": "block_content",
+                            "label_display": 0,
+                            "status": true,
+                            "info": "",
+                            "view_mode": "default",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_twocol_section",
+                "layout_settings": {
+                    "label": "",
+                    "column_widths": "50-50"
+                },
+                "components": [],
+                "third_party_settings": []
+            }
+        }
     ]
 }

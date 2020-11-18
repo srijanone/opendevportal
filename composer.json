@@ -165,7 +165,8 @@
           "drupal/core": {
             "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch",
             "Layout Builder" : "https://github.com/srijanone/opendevx/blob/master/patches/core/layout_builder.patch",
-            "Layout Builder getlavel" : "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch"
+            "Layout Builder getlavel" : "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
+            "export layout builder configuration":"https://www.drupal.org/files/issues/2020-11-18/export-layout-builder-configuration-2942975-132.patch"
           },
           "drupal/group": {
             "check create access": "https://www.drupal.org/files/issues/2020-09-10/2872645-45.patch",

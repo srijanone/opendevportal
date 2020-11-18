@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2020-11\/images%20%281%29_0.jpeg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/89?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 1111
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b30fb494-10c6-4989-b3c7-cf5b33b00c21"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/89?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8c3d18ea-43e8-4234-80ee-5a6c9c312509"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "images (1).jpeg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-11\/images (1)_0.jpeg",
+            "url": "\/sites\/default\/files\/2020-11\/images%20%281%29_0.jpeg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 10955
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-11T08:21:55+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-11T08:22:01+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}
