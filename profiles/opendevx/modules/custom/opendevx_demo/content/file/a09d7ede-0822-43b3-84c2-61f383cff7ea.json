@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2020-11\/e-banking-text-concept-on-green-digital-world-map-background-picture_csp28961417.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/93?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 1064
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a09d7ede-0822-43b3-84c2-61f383cff7ea"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/93?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6cdc9fc8-a095-4bb1-ba1f-d86843e9affe"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "e-banking-text-concept-on-green-digital-world-map-background-picture_csp28961417.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-11\/e-banking-text-concept-on-green-digital-world-map-background-picture_csp28961417.jpg",
+            "url": "\/sites\/default\/files\/2020-11\/e-banking-text-concept-on-green-digital-world-map-background-picture_csp28961417.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 20745
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-05T09:01:49+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-05T09:01:53+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

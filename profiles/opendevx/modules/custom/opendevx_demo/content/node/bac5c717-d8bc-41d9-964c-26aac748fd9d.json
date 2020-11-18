@@ -162,5 +162,152 @@
             "summary": "",
             "lang": "en"
         }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "bf603082-4685-4043-a6d3-4ac71a6ef8d7",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "inline_block:header_block",
+                            "label": "OpenDevX",
+                            "provider": "layout_builder",
+                            "label_display": 0,
+                            "view_mode": "default",
+                            "block_revision_id": "144",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "4d76c453-1dd1-47e2-be08-170b868d8970",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "front_organisation_block",
+                            "label": "Programs",
+                            "provider": "developer_portal_organisation",
+                            "label_display": "visible",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-10"
+                    },
+                    {
+                        "uuid": "54b11fbb-7eac-4f49-89b2-d0e71ca9dc11",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "inline_block:content_reference",
+                            "label": "API Featured Product",
+                            "provider": "layout_builder",
+                            "label_display": "visible",
+                            "view_mode": "cards",
+                            "block_revision_id": "136",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-8"
+                    },
+                    {
+                        "uuid": "35051558-332c-454c-b593-b58429be68c1",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "block_content:752347b4-d1cb-412e-a321-8d697f3a2a59",
+                            "label": "Blog front page",
+                            "provider": "block_content",
+                            "label_display": 0,
+                            "status": true,
+                            "info": "",
+                            "view_mode": "cards",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-9"
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_twocol_section",
+                "layout_settings": {
+                    "label": "",
+                    "column_widths": "50-50"
+                },
+                "components": [
+                    {
+                        "uuid": "9876c248-4174-4398-86d2-d6ee10337a11",
+                        "region": "second",
+                        "configuration": {
+                            "id": "views_block:forum-latest_qna",
+                            "label": "",
+                            "provider": "views",
+                            "label_display": "visible",
+                            "views_label": "",
+                            "items_per_page": "none",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": -6
+                    },
+                    {
+                        "uuid": "7b1b5313-0c81-486d-a0df-0dce1bcb2cd6",
+                        "region": "first",
+                        "configuration": {
+                            "id": "views_block:events-upcoming_events",
+                            "label": "",
+                            "provider": "views",
+                            "label_display": "visible",
+                            "views_label": "",
+                            "items_per_page": "none",
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": "-6"
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
     ]
 }

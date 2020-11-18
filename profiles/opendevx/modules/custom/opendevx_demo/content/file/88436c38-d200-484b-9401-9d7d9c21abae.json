@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2020-09\/banner-2.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/82?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 520
+        }
+    ],
+    "uuid": [
+        {
+            "value": "88436c38-d200-484b-9401-9d7d9c21abae"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/82?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "43d36d2d-1792-4f5e-b93d-d3adddb9d42c"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "banner-2.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-09\/banner-2.jpg",
+            "url": "\/sites\/default\/files\/2020-09\/banner-2.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 92140
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-09-25T09:12:52+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-09-25T09:13:01+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

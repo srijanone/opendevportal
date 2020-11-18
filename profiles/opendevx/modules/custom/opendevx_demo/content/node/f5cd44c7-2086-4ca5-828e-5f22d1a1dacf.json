@@ -152,5 +152,98 @@
             "langcode": "en",
             "lang": "en"
         }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": "product"
+                },
+                "components": [
+                    {
+                        "uuid": "107c3d5e-9ab1-4fe0-ac12-1a2ab60ba325",
+                        "region": "content",
+                        "configuration": {
+                            "id": "inline_block:api_listing_block",
+                            "label": "products",
+                            "provider": "layout_builder",
+                            "label_display": "visible",
+                            "view_mode": "full",
+                            "block_revision_id": "31",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        },
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": ""
+                },
+                "components": [
+                    {
+                        "uuid": "c736d339-9582-4260-82bd-8122411e5de8",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "extra_field_block:node:listing_pages:links"
+                        },
+                        "additional": [],
+                        "weight": 0
+                    },
+                    {
+                        "uuid": "3f94a768-9ac5-4a66-a13d-ccb358111a1a",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "field_block:node:listing_pages:body",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            }
+                        },
+                        "additional": [],
+                        "weight": 1
+                    },
+                    {
+                        "uuid": "1c0d75b5-f4fe-4a21-9cdd-4c2cf254841f",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "field_block:node:listing_pages:field_organisation",
+                            "formatter": {
+                                "label": "above",
+                                "settings": {
+                                    "link": true
+                                },
+                                "third_party_settings": [],
+                                "type": "entity_reference_label"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 4
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
     ]
 }

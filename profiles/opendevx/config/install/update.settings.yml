@@ -7,5 +7,5 @@ fetch:
   timeout: 30
 notification:
   emails:
-    - vijay.singh@srijan.net
+    - opendevx@srijan.net
   threshold: all
