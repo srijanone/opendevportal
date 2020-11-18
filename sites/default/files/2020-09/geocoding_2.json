@@ -1,0 +1,433 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "geocoding",
+    "description" : "Converts addresses into geographic coordinate.",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://us-west.dev1.apigateway.michelingroup.com/gateway/geocoding/1.0"
+  } ],
+  "security" : [ {
+    "apiKey" : [ ]
+  } ],
+  "paths" : {
+    "/geocode4f.{output}" : {
+      "summary" : "/geocode4f.{output}",
+      "description" : "This feature enables the conversion of one or multiple addresses into latitude and longitude coordinates.This feature is used for departure, stop-off and arrival points as well as the positioning of your points of interest on a map and many other digital mapping requirements.",
+      "get" : {
+        "parameters" : [ ],
+        "responses" : { }
+      },
+      "parameters" : [ {
+        "name" : "filterHTLang",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "boolean"
+        }
+      }, {
+        "name" : "showHT",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "boolean"
+        }
+      }, {
+        "name" : "lg",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "ie",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "charset",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "callback",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "nb",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "address",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "city",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "zip",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "country",
+        "in" : "query",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "output",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/geocode1f.{output}" : {
+      "summary" : "/geocode1f.{output}",
+      "get" : {
+        "parameters" : [ ],
+        "responses" : { }
+      },
+      "parameters" : [ {
+        "name" : "filterHTLang",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "showHT",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "ie",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "charset",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "callback",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "nb",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "query",
+        "in" : "query",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "favc",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "country",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "lg",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "output",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/geocode3f.{output}" : {
+      "summary" : "/geocode3f.{output}",
+      "get" : {
+        "parameters" : [ ],
+        "responses" : { }
+      },
+      "parameters" : [ {
+        "name" : "zip",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "lg",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "filterHTLang",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "boolean"
+        }
+      }, {
+        "name" : "showHT",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "boolean"
+        }
+      }, {
+        "name" : "ie",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "charset",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "callback",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "nb",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "address",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "city",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "favc",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "country",
+        "in" : "query",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "output",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/location.{output}/{locid}" : {
+      "summary" : "/location.{output}/{locid}",
+      "description" : "Access to a location resource providing its unique identifier (locid). This location can be an administrative area (country, city, etc), an adress with strret number or a POI (cityhall, etc)",
+      "get" : {
+        "parameters" : [ ],
+        "responses" : {
+          "2XX" : {
+            "description" : "",
+            "headers" : { },
+            "content" : {
+              "application/xml" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "examples" : { }
+              }
+            },
+            "links" : { }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "lg",
+        "in" : "query",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "filterHTLang",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "showHT",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "callback",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "charset",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "ie",
+        "in" : "query",
+        "required" : false,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "locid",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "output",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    }
+  },
+  "components" : {
+    "schemas" : { },
+    "responses" : { },
+    "parameters" : { },
+    "examples" : { },
+    "requestBodies" : { },
+    "headers" : { },
+    "securitySchemes" : {
+      "apiKey" : {
+        "type" : "apiKey",
+        "name" : "x-Gateway-APIKey",
+        "in" : "header"
+      }
+    },
+    "links" : { },
+    "callbacks" : { }
+  }
+}

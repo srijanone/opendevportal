@@ -1,0 +1,114 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "tyredetailsapi",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://eu-west.apigateway.michelingroup.com/gateway/tyredetailsapi/1.0"
+  } ],
+  "security" : [ {
+    "apiKey" : [ ]
+  } ],
+  "paths" : {
+    "/{locale}/{type}/{tyreid}/{filename}" : {
+      "summary" : "specific tyre details",
+      "get" : {
+        "parameters" : [ ],
+        "responses" : { }
+      },
+      "parameters" : [ {
+        "name" : "APIKey",
+        "in" : "query",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "locale",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "type",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "tyreid",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "filename",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    },
+    "/{locale}/{type}/{tyreid}" : {
+      "summary" : "tyre details",
+      "get" : {
+        "parameters" : [ ],
+        "responses" : { }
+      },
+      "parameters" : [ {
+        "name" : "tyreid",
+        "in" : "path",
+        "description" : "",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "type",
+        "in" : "path",
+        "description" : "",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }, {
+        "name" : "locale",
+        "in" : "path",
+        "required" : true,
+        "allowEmptyValue" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    }
+  },
+  "components" : {
+    "schemas" : { },
+    "responses" : { },
+    "parameters" : { },
+    "examples" : { },
+    "requestBodies" : { },
+    "headers" : { },
+    "securitySchemes" : {
+      "apiKey" : {
+        "type" : "apiKey",
+        "name" : "x-Gateway-APIKey",
+        "in" : "header"
+      }
+    },
+    "links" : { },
+    "callbacks" : { }
+  }
+}
