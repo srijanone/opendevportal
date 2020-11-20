@@ -160,7 +160,7 @@
             "Admin Operations" : "https://github.com/srijanone/opendevx/blob/master/patches/total_control/admin_operations.patch"
           },
           "drupal/rules": {
-            "Rule Block Configurations" : "https://github.com/srijanone/opendevx/blob/master/patches/rules/rules_block_configurations.patch"
+            "Rule Block Configurations" : "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch"
           },
           "drupal/core": {
             "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch",
