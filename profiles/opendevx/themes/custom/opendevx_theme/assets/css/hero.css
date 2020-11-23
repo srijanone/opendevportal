@@ -23,7 +23,7 @@
 }
 
 .banner__block {
-  background: url("/profiles/opendevx/themes/custom/opendevx_theme/assets/images/banner-bg.svg");
+  background: url("../../assets/images/banner-bg.svg");
   background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,19 +99,19 @@
 }
 
 .icons__item:nth-child(1) .icons__item-block:after {
-  background: url("/themes/custom/opendevx_theme/assets/images/Icon-feather-user.png");
+  background: url("../../assets/images/Icon-feather-user.png");
   content: "";
   width: 48px;
 }
 
 .icons__item:nth-child(2) .icons__item-block:after {
-  background: url("/themes/custom/opendevx_theme/assets/images/Icon-metro-cog.png");
+  background: url("../../assets/images/Icon-metro-cog.png");
   content: "";
   width: 52px;
 }
 
 .icons__item:nth-child(3) .icons__item-block:after {
-  background: url("/themes/custom/opendevx_theme/assets/images/Icon-feather-users.png");
+  background: url("../../assets/images/Icon-feather-users.png");
   content: "";
   width: 69px;
 }

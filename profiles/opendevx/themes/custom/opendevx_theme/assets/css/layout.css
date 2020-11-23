@@ -73,7 +73,7 @@ body .node__content {
 }
 
 .footer {
-  background: url("/themes/custom/opendevx_theme/assets/images/footer.png");
+  background: url("../../assets/images/footer.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
