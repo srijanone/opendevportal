@@ -112,6 +112,7 @@ Coming soon. We are in process of building composer command.
   - Rapidoc
   - Swagger
   - Redoc
+- Async API Support
 - GraphQL Support
 - SDK download Support
 - User registration with email/Github id/Gmail id
