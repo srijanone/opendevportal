@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app
+    - node.type.apps
+    - paragraphs.paragraphs_type.app_privacy
+  module:
+    - entity_reference_revisions
+id: node.apps.field_app
+field_name: field_app
+entity_type: node
+bundle: apps
+label: Apps
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      app_privacy: app_privacy
+    target_bundles_drag_drop:
+      app_privacy:
+        enabled: true
+        weight: 7
+      dashboard_listing:
+        weight: 8
+        enabled: false
+      features:
+        weight: 9
+        enabled: false
+      product_attributes:
+        weight: 10
+        enabled: false
+      product_paragraph:
+        weight: 11
+        enabled: false
+      slider_details:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

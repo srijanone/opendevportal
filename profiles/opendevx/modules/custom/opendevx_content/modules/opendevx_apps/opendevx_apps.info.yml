@@ -1,8 +1,0 @@
-name: opendevx Apps
-description: "Adds the Apps content type in opendevx."
-type: module
-package: DVP
-core: 8.x
-core_version_requirement: ^8 || ^9
-
-project: opendevx_apps

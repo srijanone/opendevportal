@@ -1,0 +1,138 @@
+<?php
+
+/**
+ * @file
+ * Notify module sends e-mail digests of new content and comments.
+ *
+ * The notification module allows users to subscribe to periodic e-mails which
+ * include all new or revised content and/or comments much like the daily news
+ * letters sent by some websites.  Even if this feature is not configured for
+ * normal site users, it can be a useful feature for an administrator of a site
+ * to monitor content submissions and comment posts.
+ */
+
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\odp_subscription\Form\SubscriptionSettings;
+use Drupal\odp_subscription\Utility\SubscriptionUtility;
+
+/**
+ * Implements hook_cron().
+ */
+function odp_subscription_cron() {
+  $utility = new SubscriptionUtility();
+
+  // Developer Portal Subscription Configuration.
+  $config = \Drupal::config(SubscriptionSettings::MODULE_KEY . '.settings');
+  if ($config->get('enable') != 1) {
+    return FALSE;
+  }
+
+  list($num_sent, $num_fail) = $utility->prepareDataForCron();
+  $num_sent += $config->get('num_sent');
+  $num_fail += $config->get('num_failed');
+  // Update config.
+  \Drupal::configFactory()
+    ->getEditable(SubscriptionSettings::MODULE_KEY . '.settings')
+    ->set('num_sent', $num_sent)
+    ->set('num_failed', $num_fail)
+    ->save();
+}
+
+/**
+ * Implements hook_mail().
+ */
+function odp_subscription_mail($key, &$message, $params) {
+  $options = [
+    'langcode' => $message['langcode'],
+  ];
+
+  switch ($key) {
+    case 'devportal_portal_subscribe_newsletter':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('@title', ['@title' => $params['subject']], $options);
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function odp_subscription_entity_insert(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node') {
+    \Drupal::service('odp_subscription.subscription')->setQueueRecords($entity);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function odp_subscription_entity_update(EntityInterface $entity) {
+  // Developer Portal Subscription Configuration.
+  $dvp_subscription = \Drupal::config(SubscriptionSettings::MODULE_KEY . '.settings');
+  if ($entity->getEntityTypeId() == 'node'
+    && $dvp_subscription->get('include_updates')) {
+    \Drupal::service('odp_subscription.subscription')->setQueueRecords($entity);
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ *
+ * Delete any unpublished contents in the queue associated with the
+ * node being deleted.
+ */
+function odp_subscription_entity_delete(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node') {
+    \Drupal::service('odp_subscription.subscription')->deleteQueueRecord($entity->id());
+  }
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function odp_subscription_token_info() {
+  $info = [];
+  $info['types']['dvp_tokens'] = [
+    'name' => t('Subscribed Product'),
+    'description' => t('Custom Subscribed Product'),
+    'type' => 'node',
+  ];
+  $info['tokens']['dvp_tokens']['title'][] = [
+    'name' => t('Product title'),
+    'description' => t('Custom Subscribed Product title.'),
+  ];
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function odp_subscription_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+  if ($type == 'dvp_tokens' && isset($data['dvp-product'])) {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'title':
+          $replacements[$original] = $data['dvp-product']->getTitle() ?: '';
+          break;
+
+        case 'body':
+          $replacements[$original] = $data['dvp-product']->get('body')->value ?: '';
+          break;
+
+        case 'id':
+          $replacements[$original] = $data['dvp-product']->id() ?: '';
+          break;
+
+        default:
+          $replacements[$original] = $data['dvp-product']->hasField($name) ?
+          $data['dvp-product']->get($name)->getString() : '';
+          break;
+      }
+    }
+  }
+  return $replacements;
+}

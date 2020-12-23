@@ -1,0 +1,7 @@
+odp_notification.notification_moderation_settings:
+  path: '/admin/config/system/notification_moderate_widget'
+  defaults:
+    _form: '\Drupal\odp_notification\Form\OpendevxNotificationForm'
+    _title: 'Moderate Content Notification'
+  requirements:
+    _permission: 'administer site configuration'

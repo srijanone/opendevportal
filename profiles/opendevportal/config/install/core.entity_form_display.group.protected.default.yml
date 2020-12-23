@@ -1,0 +1,169 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.protected.field_description
+    - field.field.group.protected.field_font_family
+    - field.field.group.protected.field_gateway
+    - field.field.group.protected.field_header_background_color
+    - field.field.group.protected.field_hub_content_id
+    - field.field.group.protected.field_icons_bg_color
+    - field.field.group.protected.field_program_image
+    - field.field.group.protected.field_site_logo
+    - field.field.group.protected.layout_builder__layout
+    - group.type.protected
+  module:
+    - color_field
+    - field_group
+    - media_library
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_container:
+      children:
+        - group_program_metadata
+        - group_media
+        - group_theme
+        - group_api_gateway
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Container
+    group_program_metadata:
+      children:
+        - label
+        - field_description
+        - path
+      parent_name: group_container
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: 'Program Metadata'
+    group_media:
+      children:
+        - field_program_image
+      parent_name: group_container
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Media
+    group_theme:
+      children:
+        - field_site_logo
+        - field_header_background_color
+        - field_icons_bg_color
+        - field_font_family
+      parent_name: group_container
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Theme
+    group_api_gateway:
+      children:
+        - field_gateway
+      parent_name: group_container
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'API Gateway'
+id: group.protected.default
+targetEntityType: group
+bundle: protected
+mode: default
+content:
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_font_family:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_gateway:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_header_background_color:
+    weight: 9
+    settings:
+      default_colors: "\n#ac725e,#d06b64,#f83a22,#fa573c,#ff7537,#ffad46\n#42d692,#16a765,#7bd148,#b3dc6c,#fbe983\n#92e1c0,#9fe1e7,#9fc6e7,#4986e7,#9a9cff\n#b99aff,#c2c2c2,#cabdbf,#cca6ac,#f691b2\n#cd74e6,#a47ae2"
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_icons_bg_color:
+    weight: 10
+    settings:
+      default_colors: "\n#ac725e,#d06b64,#f83a22,#fa573c,#ff7537,#ffad46\n#42d692,#16a765,#7bd148,#b3dc6c,#fbe983\n#92e1c0,#9fe1e7,#9fc6e7,#4986e7,#9a9cff\n#b99aff,#c2c2c2,#cabdbf,#cca6ac,#f691b2\n#cd74e6,#a47ae2"
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_program_image:
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_site_logo:
+    weight: 8
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_hub_content_id: true
+  layout_builder__layout: true
+  uid: true

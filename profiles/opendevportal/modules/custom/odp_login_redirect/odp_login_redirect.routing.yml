@@ -1,0 +1,19 @@
+odp_login_redirect.login_redirect_settings:
+  path: '/admin/people/opendevx/login-redirect-settings'
+  defaults:
+    _form: '\Drupal\odp_login_redirect\Form\LoginRedirectSettings'
+    _title: 'Login Redirect Settings'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+
+odp_login_redirect.logout_redirect_settings:
+  path: '/admin/people/opendevx/logout-redirect-settings'
+  defaults:
+    _form: '\Drupal\odp_login_redirect\Form\LogoutRedirectSettings'
+    _title: 'Logout Redirect Settings'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

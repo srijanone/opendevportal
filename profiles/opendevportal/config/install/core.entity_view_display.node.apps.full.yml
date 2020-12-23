@@ -1,0 +1,441 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.apps.body
+    - field.field.node.apps.field_add_to_gallery
+    - field.field.node.apps.field_api_document
+    - field.field.node.apps.field_api_product_single
+    - field.field.node.apps.field_api_version
+    - field.field.node.apps.field_app
+    - field.field.node.apps.field_app_ref_id
+    - field.field.node.apps.field_app_url
+    - field.field.node.apps.field_client_id
+    - field.field.node.apps.field_client_secret
+    - field.field.node.apps.field_display_name
+    - field.field.node.apps.field_expected_call_volume
+    - field.field.node.apps.field_expiry
+    - field.field.node.apps.field_issued
+    - field.field.node.apps.field_organisation
+    - field.field.node.apps.field_products_image
+    - field.field.node.apps.field_video
+    - field.field.node.apps.layout_builder__layout
+    - node.type.apps
+  module:
+    - datetime
+    - ds
+    - field_group
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_app_info:
+      children:
+        - field_display_name
+        - field_products_image
+        - body
+        - field_organisation
+        - field_app_url
+      parent_name: ''
+      weight: 0
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: apps-info
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        open: false
+        required_fields: false
+      label: 'App Info'
+    group_app_details:
+      children:
+        - field_client_id
+        - field_client_secret
+        - field_api_document
+        - field_issued
+        - field_expiry
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        open: true
+        weight: '0'
+        id: ''
+        classes: app-details
+        effect: none
+        direction: vertical
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        speed: fast
+        attributes: ''
+        required_fields: false
+      label: 'App Details'
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: ds_2col_stacked_fluid
+        layout_settings:
+          label: ''
+          wrappers:
+            header: div
+            left: div
+            right: div
+            footer: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          70078f0e-fe69-4e91-b7ee-c2d0a6ae8860:
+            uuid: 70078f0e-fe69-4e91-b7ee-c2d0a6ae8860
+            region: header
+            configuration:
+              id: 'field_block:node:apps:field_display_name'
+              label: 'App Name'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+          05d094d3-d71c-44b9-b7ad-cf60f9624218:
+            uuid: 05d094d3-d71c-44b9-b7ad-cf60f9624218
+            region: header
+            configuration:
+              id: 'field_block:node:apps:uid'
+              label: Developer
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: inline
+                type: author
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          19f46307-2d48-4b18-8f46-a4be40383536:
+            uuid: 19f46307-2d48-4b18-8f46-a4be40383536
+            region: header
+            configuration:
+              id: 'field_block:node:apps:field_products_image'
+              label: 'App Image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: media_thumbnail
+                settings:
+                  image_style: thumbnail
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          f0b48f5d-ac9b-4f1e-b1b4-53bc447922b9:
+            uuid: f0b48f5d-ac9b-4f1e-b1b4-53bc447922b9
+            region: left
+            configuration:
+              id: 'field_block:node:apps:body'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          d9c8e777-6db2-445f-8a1a-0f390542ce5a:
+            uuid: d9c8e777-6db2-445f-8a1a-0f390542ce5a
+            region: left
+            configuration:
+              id: 'field_block:node:apps:field_video'
+              label: Video
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: full
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+          0e7fe211-8ad9-4096-b3e5-9bfb18a4d85d:
+            uuid: 0e7fe211-8ad9-4096-b3e5-9bfb18a4d85d
+            region: right
+            configuration:
+              id: 'field_block:node:apps:created'
+              label: Registered
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: timestamp
+                settings:
+                  date_format: short
+                  custom_date_format: ''
+                  timezone: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -5
+          3e064e68-ad33-4f50-b378-70c7d1dc4add:
+            uuid: 3e064e68-ad33-4f50-b378-70c7d1dc4add
+            region: right
+            configuration:
+              id: 'field_block:node:apps:moderation_state'
+              label: 'App Status'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -6
+          a59bee3e-a7b0-4bd1-bdd4-8a0f71554563:
+            uuid: a59bee3e-a7b0-4bd1-bdd4-8a0f71554563
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_app_url'
+              label: 'App URL'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: link
+                settings:
+                  trim_length: 80
+                  url_only: true
+                  url_plain: true
+                  rel: nofollow
+                  target: '0'
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          b3b2d1ad-577c-44a1-8848-169099a4c109:
+            uuid: b3b2d1ad-577c-44a1-8848-169099a4c109
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_api_document'
+              label: API
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -4
+          cef55a0d-59b4-4250-aeb5-4e8ac1aa22fd:
+            uuid: cef55a0d-59b4-4250-aeb5-4e8ac1aa22fd
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_issued'
+              label: Issued
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: datetime_default
+                settings:
+                  timezone_override: ''
+                  format_type: short
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -3
+          68873533-6c56-4b3a-8615-e73ed2de6ff3:
+            uuid: 68873533-6c56-4b3a-8615-e73ed2de6ff3
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_expiry'
+              label: Expiry
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -2
+          6de313bd-adee-4bdf-a111-b2b16fd21fda:
+            uuid: 6de313bd-adee-4bdf-a111-b2b16fd21fda
+            region: right
+            configuration:
+              id: 'field_block:node:apps:field_app'
+              label: Apps
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+        third_party_settings: {  }
+id: node.apps.full
+targetEntityType: node
+bundle: apps
+mode: full
+content:
+  body:
+    type: text_default
+    weight: 8
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_api_document:
+    type: entity_reference_label
+    weight: 11
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_app_url:
+    type: link
+    weight: 10
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_client_id:
+    type: string
+    weight: 9
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_client_secret:
+    type: string
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_display_name:
+    type: string
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_expiry:
+    type: string
+    weight: 13
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_issued:
+    type: datetime_default
+    weight: 12
+    region: content
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_organisation:
+    type: entity_reference_label
+    weight: 9
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_products_image:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_add_to_gallery: true
+  field_api_product_single: true
+  field_api_version: true
+  field_app: true
+  field_app_ref_id: true
+  field_expected_call_volume: true
+  field_video: true
+  langcode: true
+  layout_builder__layout: true
+  links: true

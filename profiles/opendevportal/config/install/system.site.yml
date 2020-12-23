@@ -1,0 +1,11 @@
+name: 'Open API Exchange'
+mail: opendevportal@srijan.net
+slogan: ''
+page:
+  403: /access-denied
+  404: ''
+  front: /landing-page/home
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en

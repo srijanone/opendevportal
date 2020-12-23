@@ -1,7 +1,0 @@
-opendevx_connector.gatewayhub_config:
-  path: '/admin/config/system/gatewayhub-config'
-  defaults:
-    _form: '\Drupal\opendevx_connector\Form\GatewayHubConfigForm'
-    _title: 'Gateway hub configuration'
-  requirements:
-    _permission: 'administer site configuration'

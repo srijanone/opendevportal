@@ -1,4 +1,0 @@
-services:
-  opendevx_apigee.apigee_service:
-    class: Drupal\opendevx_apigee\Service\ApigeeService
-    arguments: ['@http_client', '@config.factory']

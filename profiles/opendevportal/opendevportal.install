@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the opendevx installation profile.
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function opendevportal_install() {
+ //  ini_set('max_execution_time', 0);
+ //  ini_set('memory_limit', -1);
+	// // Assign user 1 the "administrator" role.
+ //  $user = User::load(1);
+ //  $user->roles[] = 'administrator';
+ //  $user->save();
+  // Can add code in here to make nodes, terms, etc.
+
+  // Uninstall the modules
+  // $modules = [
+  //   'opendevx_events',
+  //   'opendevx_api_product',
+  //   'opendevx_block',
+  //   'opendevx_menu',
+  //   'opendevx_listing_pages',
+  //   'opendevx_api_listing_block'
+  // ];
+
+  // \Drupal::service('module_installer')->uninstall($modules);
+  // \Drupal::service('module_installer')->install($modules);
+}

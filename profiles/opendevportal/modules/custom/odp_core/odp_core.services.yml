@@ -1,0 +1,14 @@
+services:
+  odp_core.program_domain_subscriber:
+    class: Drupal\odp_core\EventSubscriber\Program\ProgramDomainSubscriber
+    arguments: ['@tempstore.private', '@domain.negotiator', '@entity_type.manager', '@odp_core.program_domain', '@path.current', '@current_user', '@odp_core.program_utility']
+    tags:
+      - { name: event_subscriber }
+
+  odp_core.program_domain:
+    class: Drupal\odp_core\Program\ProgramDomain
+    arguments: ['@tempstore.private', '@entity_type.manager', '@current_route_match']
+
+  odp_core.program_utility:
+    class: Drupal\odp_core\Utility\Program\ProgramUtility
+    arguments: ['@database']

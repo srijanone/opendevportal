@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.api_revision_reference_entitybrowser
+  module:
+    - views
+name: api
+label: API
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Add API'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  d661c88d-ad4a-4649-9715-701112b58501:
+    settings:
+      view: api_revision_reference_entitybrowser
+      view_display: entity_browser_1
+      submit_text: 'Insert selected'
+      auto_select: false
+    uuid: d661c88d-ad4a-4649-9715-701112b58501
+    weight: 1
+    label: ''
+    id: view

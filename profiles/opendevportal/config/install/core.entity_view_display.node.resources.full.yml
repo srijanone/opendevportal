@@ -1,0 +1,215 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.resources.body
+    - field.field.node.resources.comment
+    - field.field.node.resources.field_api_product
+    - field.field.node.resources.field_banners_image
+    - field.field.node.resources.field_description
+    - field.field.node.resources.field_listing_image
+    - field.field.node.resources.field_organisation
+    - field.field.node.resources.field_tags
+    - field.field.node.resources.field_upload_doc_files
+    - field.field.node.resources.field_upload_files
+    - field.field.node.resources.field_user_rating
+    - field.field.node.resources.layout_builder__layout
+    - node.type.resources
+  module:
+    - book
+    - ds
+    - layout_builder
+    - social_media
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: ds_1col
+        layout_settings:
+          label: ''
+          wrappers:
+            ds_content: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: ds_2col
+        layout_settings:
+          label: ''
+          wrappers:
+            left: div
+            right: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          0ecec8e1-f197-4cfa-aae3-f79329fc3890:
+            uuid: 0ecec8e1-f197-4cfa-aae3-f79329fc3890
+            region: left
+            configuration:
+              id: book_navigation
+              label: 'Book navigation'
+              provider: book
+              label_display: '0'
+              block_mode: 'book pages'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          a7142830-128a-476f-9579-5d41405919c0:
+            uuid: a7142830-128a-476f-9579-5d41405919c0
+            region: right
+            configuration:
+              id: 'field_block:node:resources:field_upload_doc_files'
+              label: 'Upload Files'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          afa01aa9-8235-495b-873e-535ef5845126:
+            uuid: afa01aa9-8235-495b-873e-535ef5845126
+            region: right
+            configuration:
+              id: 'field_block:node:resources:field_tags'
+              label: Tags
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings:
+                  ds:
+                    ds_limit: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 3
+          6d8012c7-b368-483d-888e-e7617d239a15:
+            uuid: 6d8012c7-b368-483d-888e-e7617d239a15
+            region: right
+            configuration:
+              id: 'field_block:node:resources:field_user_rating'
+              label: 'User Rating'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: fivestar_stars
+                settings:
+                  fivestar_widget: basic
+                  display_format: average
+                  text_format: average
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 4
+          232a4cc9-3a06-4033-bc8c-6618c1d5329a:
+            uuid: 232a4cc9-3a06-4033-bc8c-6618c1d5329a
+            region: right
+            configuration:
+              id: social_sharing_block
+              label: 'Social Sharing block'
+              provider: social_media
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 5
+          d86bc487-77e7-4288-bf9f-e6b70d18b4f3:
+            uuid: d86bc487-77e7-4288-bf9f-e6b70d18b4f3
+            region: right
+            configuration:
+              id: 'field_block:node:resources:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 6
+        third_party_settings: {  }
+id: node.resources.full
+targetEntityType: node
+bundle: resources
+mode: full
+content:
+  field_banners_image:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_listing_image:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_tags:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  comment: true
+  field_api_product: true
+  field_organisation: true
+  field_upload_doc_files: true
+  field_upload_files: true
+  field_user_rating: true
+  layout_builder__layout: true

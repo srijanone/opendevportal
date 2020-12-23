@@ -1,0 +1,5 @@
+odp_taxonomy.api_default_value:
+  title: 'API Default Value'
+  description: 'Set the Default value of API'
+  route_name: odp_taxonomy.api_default_value
+  parent: odp_node.admin_index

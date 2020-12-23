@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Units
+vid: product_attrib_units
+description: ''
+weight: 0

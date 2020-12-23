@@ -1,7 +1,0 @@
-opendev_sdk.settings:
-  path: '/admin/config/system/sdk-generator'
-  defaults:
-    _form: '\Drupal\opendevx_sdk\Form\SdkGeneratorSettings'
-    _title: 'SDK Generator Settings'
-  requirements:
-    _permission: 'administer site configuration'

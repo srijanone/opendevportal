@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.app_privacy.field_client_id
+    - field.field.paragraph.app_privacy.field_client_secret
+    - field.field.paragraph.app_privacy.field_gateway
+    - paragraphs.paragraphs_type.app_privacy
+id: paragraph.app_privacy.default
+targetEntityType: paragraph
+bundle: app_privacy
+mode: default
+content:
+  field_client_id:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_client_secret:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_gateway:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apigwid
+    - node.type.api_document
+id: node.api_document.field_apigwid
+field_name: field_apigwid
+entity_type: node
+bundle: api_document
+label: 'Gateway API ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

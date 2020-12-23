@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Forum module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function odp_forum_theme($existing, $type, $theme, $path) {
+
+  return [
+    'top_tags' => [
+      'variables' => [
+        'tags' => NULL,
+      ],
+    ],
+    'forum_stats' => [
+      'variables' => [
+        'posts' => NULL,
+        'users' => NULL,
+        'comments' => NULL,
+      ],
+    ],
+  ];
+}

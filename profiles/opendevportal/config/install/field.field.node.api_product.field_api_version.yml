@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_api_version
+    - node.type.api_product
+    - taxonomy.vocabulary.version
+  content:
+    - 'taxonomy_term:version:6be284d7-a58b-4580-96f0-87524186e927'
+id: node.api_product.field_api_version
+field_name: field_api_version
+entity_type: node
+bundle: api_product
+label: 'Product Version'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: 6be284d7-a58b-4580-96f0-87524186e927
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      version: version
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

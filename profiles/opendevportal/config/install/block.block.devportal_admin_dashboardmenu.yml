@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dashboard-menu
+  module:
+    - domain
+    - system
+    - user
+  theme:
+    - devportal_admin
+id: devportal_admin_dashboardmenu
+theme: devportal_admin
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:dashboard-menu'
+settings:
+  id: 'system_menu_block:dashboard-menu'
+  label: Dashboard
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      admin: admin
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: "/apimanager/*\r\n/admin/config/workflow/workflows\r\n/admin/config/social-api/social-auth\r\n/admin/config/social-api/social-auth/*\r\n/admin/structure/taxonomy\r\n/admin/structure/taxonomy/*\r\n/taxonomy/term/*/edit\r\n/group/*/domain-settings\r\n/group/add\r\n/group/add/*\r\n/group/*/edit\r\n/group/*/layout\r\n/group/*/content/create/*\r\n/node/*/edit\r\n/node/*/layout\r\n/group/*/content/add/group_membership\r\n/admin/people/create\r\n/admin/structure/menu/manage/main"
+    negate: false
+    context_mapping: {  }
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

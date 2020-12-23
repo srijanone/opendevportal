@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: opendevx_vbo_unpublished_action
-label: 'Unpublish latest node'
-type: node
-plugin: "opendevx_vbo_unpublished_action"
-configuration: {  }

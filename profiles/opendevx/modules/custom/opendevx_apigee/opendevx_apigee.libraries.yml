@@ -1,7 +1,0 @@
-opendevx_apigee:
-  version: 1.x
-  js:
-    js/script.js: {}
-  dependencies:
-    - core/jquery
-    - core/jquery.once

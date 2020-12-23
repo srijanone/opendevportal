@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: Organisation
-vid: organisation
-description: ''
-weight: 0

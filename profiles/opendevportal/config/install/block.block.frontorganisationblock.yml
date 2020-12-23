@@ -1,0 +1,29 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - odp_organisation
+    - user
+  theme:
+    - opendevx_theme
+id: frontorganisationblock
+theme: opendevx_theme
+region: primary_menu
+weight: -13
+provider: null
+plugin: front_organisation_block
+settings:
+  id: front_organisation_block
+  label: 'Front Organisation Block'
+  provider: odp_organisation
+  label_display: '0'
+  organisation_title: 'Select your organisation'
+  organisation_description: "<p>By default, the dashboard displays content that is available for your default Organisation. However, the dashboard may show content for an organisation different from the one selected by default. Please select the Organisation for which you want to view the content.</p>\r\n"
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

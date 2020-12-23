@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+id: page_title
+theme: opendevx_theme
+region: content
+weight: -22
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/api-product/*\r\n/products\r\n/home"
+    negate: true
+    context_mapping: {  }
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
