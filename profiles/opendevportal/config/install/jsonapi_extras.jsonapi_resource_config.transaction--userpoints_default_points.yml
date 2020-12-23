@@ -1,0 +1,141 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - transaction.type.userpoints_default_points
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: transaction--userpoints_default_points
+disabled: true
+path: transaction/userpoints_default_points
+resourceType: transaction--userpoints_default_points
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  uid:
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+    disabled: false
+  target_entity:
+    fieldName: target_entity
+    publicName: target_entity
+    enhancer:
+      id: ''
+    disabled: false
+  operation:
+    fieldName: operation
+    publicName: operation
+    enhancer:
+      id: ''
+    disabled: false
+  executed:
+    fieldName: executed
+    publicName: executed
+    enhancer:
+      id: ''
+    disabled: false
+  execution_sequence:
+    fieldName: execution_sequence
+    publicName: execution_sequence
+    enhancer:
+      id: ''
+    disabled: false
+  result_code:
+    fieldName: result_code
+    publicName: result_code
+    enhancer:
+      id: ''
+    disabled: false
+  result_message:
+    fieldName: result_message
+    publicName: result_message
+    enhancer:
+      id: ''
+    disabled: false
+  executor:
+    fieldName: executor
+    publicName: executor
+    enhancer:
+      id: ''
+    disabled: false
+  properties:
+    fieldName: properties
+    publicName: properties
+    enhancer:
+      id: ''
+    disabled: false
+  description:
+    fieldName: description
+    publicName: description
+    enhancer:
+      id: ''
+    disabled: false
+  details:
+    fieldName: details
+    publicName: details
+    enhancer:
+      id: ''
+    disabled: false
+  metatag:
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+    disabled: false
+  field_userpoints_default_amount:
+    fieldName: field_userpoints_default_amount
+    publicName: field_userpoints_default_amount
+    enhancer:
+      id: ''
+    disabled: false
+  field_userpoints_default_balance:
+    fieldName: field_userpoints_default_balance
+    publicName: field_userpoints_default_balance
+    enhancer:
+      id: ''
+    disabled: false
+  field_userpoints_default_coderef:
+    fieldName: field_userpoints_default_coderef
+    publicName: field_userpoints_default_coderef
+    enhancer:
+      id: ''
+    disabled: false
+  field_userpoints_default_linkref:
+    fieldName: field_userpoints_default_linkref
+    publicName: field_userpoints_default_linkref
+    enhancer:
+      id: ''
+    disabled: false
+  field_userpoints_default_reason:
+    fieldName: field_userpoints_default_reason
+    publicName: field_userpoints_default_reason
+    enhancer:
+      id: ''
+    disabled: false

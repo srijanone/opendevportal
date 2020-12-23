@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_navigation_block
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+id: apifilterblock
+theme: opendevx_theme
+region: highlighted
+weight: -21
+provider: null
+plugin: api_filter_block
+settings:
+  id: api_filter_block
+  label: 'Api Filter block'
+  provider: odp_navigation_block
+  label_display: '0'
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/api-document/*\r\n/node/*/revisions/*/view"
+    negate: false
+    context_mapping: {  }

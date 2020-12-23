@@ -1,0 +1,47 @@
+<?php
+/**
+ * @file
+ * Module file.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\odp_block\Utility\BlockUtility;
+
+/**
+ * Implements hook_block_access().
+ *
+ * Visibility of the block.
+ */
+function odp_block_block_access(Block $block, $operation, AccountInterface $account) {
+	if ($operation == 'view') {
+    return BlockUtility::checkBlockAccess($block);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function odp_block_theme() {
+  return [
+    'product_banner' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+        'banner' => NULL,
+        'productAttributes' => NULL,
+      ],
+    ],
+    'organisation_site_logo' => [
+      'variables' => [
+        'orgLogo' => NULL,
+        'orgTitle' => NULL,
+      ],
+    ],
+    'cta_section_block' => [
+      'variables' => [
+        'ctaData' => NULL,
+      ],
+    ],
+  ];
+}

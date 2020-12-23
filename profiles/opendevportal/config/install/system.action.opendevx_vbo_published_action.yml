@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_core
+id: odp_vbo_published_action
+label: 'Publish latest node'
+type: node
+plugin: odp_vbo_published_action
+configuration: {  }

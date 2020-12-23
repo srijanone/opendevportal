@@ -1,0 +1,39 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.solutions.comment
+    - field.field.node.solutions.field_access_group
+    - field.field.node.solutions.field_api_product
+    - field.field.node.solutions.field_banners_image
+    - field.field.node.solutions.field_description
+    - field.field.node.solutions.field_listing_image
+    - field.field.node.solutions.field_organisation
+    - field.field.node.solutions.field_tags
+    - field.field.node.solutions.field_user_rating
+    - field.field.node.solutions.layout_builder__layout
+    - node.type.solutions
+  module:
+    - user
+id: node.solutions.teaser
+targetEntityType: node
+bundle: solutions
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  comment: true
+  field_access_group: true
+  field_api_product: true
+  field_banners_image: true
+  field_description: true
+  field_listing_image: true
+  field_organisation: true
+  field_tags: true
+  field_user_rating: true
+  layout_builder__layout: true

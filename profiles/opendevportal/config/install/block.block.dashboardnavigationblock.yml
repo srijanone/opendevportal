@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_navigation_block
+    - domain
+    - system
+    - user
+  theme:
+    - opendevx_theme
+id: dashboardnavigationblock
+theme: opendevx_theme
+region: sidebar_first
+weight: -18
+provider: null
+plugin: dashboard_navigation_block
+settings:
+  id: dashboard_navigation_block
+  label: 'Product Dashboard Navigation Block'
+  provider: odp_navigation_block
+  label_display: '0'
+  dvp_product_sidebar_navigation:
+    document_overview:
+      navigation_text: Pages
+      navigation_description: 'Add Getting started and Overview documents'
+      show: '1'
+      label: Page
+    tutorials:
+      navigation_text: Tutorials
+      navigation_description: 'Add Tutorials for the developers, how to use the API Product'
+      show: '1'
+      label: Tutorials
+    use_cases:
+      navigation_text: 'Use Cases'
+      navigation_description: 'Add Use Case or Case study to add introduction to more specific, implementation scenario for your API Product'
+      show: '1'
+      label: 'Use Cases'
+    faq:
+      navigation_text: FAQs
+      navigation_description: 'Add the frequently asked questions  by developer conmmunity and answers related to your API product '
+      show: '1'
+      label: FAQ
+    resources:
+      navigation_text: Downloads
+      navigation_description: 'Add all kind of resources those are relevant to the API Product'
+      show: '1'
+      label: Resources
+    assets:
+      navigation_text: Media
+      navigation_description: 'Add relevant Assets related to the API Product'
+      show: '1'
+      label: Assets
+    events:
+      navigation_text: Events
+      navigation_description: 'Add Events, Webinar related to the API Product to increases the collaboration'
+      show: '1'
+      label: Events
+    article:
+      navigation_text: Blogs
+      navigation_description: 'Add Blogs to promote and add more info related to your API Product'
+      show: '1'
+      label: Article
+    issues:
+      navigation_text: Issues
+      navigation_description: 'Add issue raised to related to the API Product'
+      show: '1'
+      label: Issues
+    solutions:
+      navigation_text: Solutions
+      navigation_description: 'Add Solutions for your API Product'
+      show: '1'
+      label: Solutions
+    forum:
+      navigation_text: Forum
+      navigation_description: 'Add forum for your API Product'
+      show: '1'
+      label: 'Forum topic'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/dashboard/*/contents/*'
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

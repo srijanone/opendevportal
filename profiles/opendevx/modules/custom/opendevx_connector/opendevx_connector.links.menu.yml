@@ -1,6 +1,0 @@
-opendevx_connector.gatewayhub_config:
-  title: 'Gateway Hub Config'
-  description: 'Stores configurations to sync'
-  route_name: opendevx_connector.gatewayhub_config
-  parent: opendevx_node.admin_index
-

@@ -1,9 +1,0 @@
-name: Opendevx - Breadcrumb
-description: 'Module for custom configuration of the breadcrumb.'
-type: module
-package: Opendevx
-version: VERSION
-core: 8.x
-
-dependencies:
-  - opendevx_user:opendevx_user

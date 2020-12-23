@@ -1,6 +1,0 @@
-product_header_navigation:
-  version: 1.x
-  js:
-    js/product_header_navigation.js: {}
-  dependencies:
-    - core/jquery

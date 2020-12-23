@@ -1,0 +1,9 @@
+name: Developer Portal Content Reference
+description : 'Generating the dynamic blocks by using content reference block type.'
+type: module
+package: ODP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - odp_block:odp_block
+  - odp_node:odp_node

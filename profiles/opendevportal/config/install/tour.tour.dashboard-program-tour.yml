@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_content
+id: dashboard-program-tour
+label: 'Dashboard Program Tour'
+module: odp_content
+routes:
+  -
+    route_name: view.organisations.page_3
+  -
+    route_name: view.organisations.page_2
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: -100
+    attributes: {  }
+    body: 'Manage the program.'
+    location: top
+  create-program:
+    id: create-program
+    plugin: text
+    label: 'Create Program'
+    weight: -99
+    attributes:
+      data-class: create-button
+    body: 'This button is used to create new program'
+    location: top
+  manage-program:
+    id: manage-program
+    plugin: text
+    label: 'Manage Program'
+    weight: -98
+    attributes:
+      data-class: edit-taxonomy
+    body: 'Manage the programs'
+    location: top
+  platform-keys:
+    id: platform-keys
+    plugin: text
+    label: 'Platform Keys'
+    weight: -97
+    attributes:
+      data-class: views-field-nothing
+    body: 'View Platform Keys'
+    location: top
+  manage-layout:
+    id: manage-layout
+    plugin: text
+    label: 'Manage Layout'
+    weight: -96
+    attributes:
+      data-class: manage-layout
+    body: 'Manage the layout'
+    location: top
+  view-program:
+    id: view-program
+    plugin: text
+    label: 'View Program'
+    weight: -95
+    attributes:
+      data-class: view-program
+    body: 'View the Program'
+    location: bottom

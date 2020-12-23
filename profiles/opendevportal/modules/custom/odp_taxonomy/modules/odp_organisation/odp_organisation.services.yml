@@ -1,0 +1,4 @@
+services:
+  odp_organisation.organisation:
+   class: Drupal\odp_organisation\Organisation
+   arguments: ['@database', '@current_user']

@@ -1,7 +1,0 @@
-opendevx_apigee.sync_api_gatways:
-  path: '/process/api-data'
-  defaults:
-    _controller: '\Drupal\opendevx_apigee\Controller\SyncApiDataController::processApiData'
-    _title: 'Process Batch API'
-  requirements:
-    _role: 'authenticated'

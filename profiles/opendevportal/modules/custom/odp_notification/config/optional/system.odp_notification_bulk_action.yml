@@ -1,0 +1,7 @@
+langcode: en
+status: true
+id: odp_notification_bulk_action
+label: 'Mark Notification'
+type: node
+plugin: "odp_notification_bulk_action"
+configuration: {  }

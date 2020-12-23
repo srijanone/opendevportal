@@ -1,0 +1,35 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - opendevx_theme
+id: developerguidance
+theme: opendevx_theme
+region: content
+weight: -5
+provider: null
+plugin: 'block_content:18403a4d-04d0-4a8c-ab0d-2e74822807be'
+settings:
+  id: 'block_content:18403a4d-04d0-4a8c-ab0d-2e74822807be'
+  label: 'Developer Guidance'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /dashboard
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      developer: developer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

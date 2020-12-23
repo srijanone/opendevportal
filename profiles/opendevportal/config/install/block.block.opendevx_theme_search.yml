@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - domain
+    - search
+    - user
+  theme:
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    block_class: navbar-search
+id: search
+theme: opendevx_theme
+region: primary_menu
+weight: -21
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+  page_id: node_search
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

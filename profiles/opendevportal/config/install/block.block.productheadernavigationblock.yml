@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_navigation_block
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+id: productheadernavigationblock
+theme: opendevx_theme
+region: highlighted
+weight: -22
+provider: null
+plugin: product_header_navigation_block
+settings:
+  id: product_header_navigation_block
+  label: 'Product Header Navigation Block'
+  provider: odp_navigation_block
+  label_display: '0'
+  dvp_header_navigation:
+    api_product:
+      navigation_text: ''
+      show: '1'
+      type: Product
+    api_document:
+      navigation_text: ''
+      show: '1'
+      type: 'API Reference'
+    document_overview:
+      navigation_text: ''
+      show: '1'
+      type: Documentation
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/use-cases/*\r\n/page/*\r\n/events/*\r\n/tutorials/*\r\n/solutions/*\r\n/article/*\r\n/resources/*\r\n/api-document/*\r\n/assets/*\r\n/events/*\r\n/issues/*\r\n/node/*/*\r\n/node/*/revisions/*/view"
+    negate: false
+    context_mapping: {  }

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: guidance_block
-label: 'Guidance block'
-revision: 0
-description: 'This block used to add guidance link blocks.'

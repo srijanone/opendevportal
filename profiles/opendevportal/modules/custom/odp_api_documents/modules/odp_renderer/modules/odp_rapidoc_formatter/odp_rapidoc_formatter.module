@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Main module file for RapiDoc UI Field Formatter.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function odp_rapidoc_formatter_theme($existing, $type, $theme, $path) {
+  return [
+    'rapidoc_ui_field_item' => [
+      'variables' => [
+        'field_name' => NULL,
+        'delta' => NULL,
+        'file_url' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function odp_rapidoc_formatter_views_pre_render(ViewExecutable $view) {
+  // Change the value of the API formatter dynamically.
+  // Use can switch to different formatters to change the display of API.
+  if ($view->storage->id() == 'api_document_formatter' && isset($view->field['field_document'])) {
+    // Get the query parameter that holds value of API formatter option.
+    $formatter_option = \Drupal::request()->query->get('view');
+    if (!empty($formatter_option)) {
+      if ($formatter_option == 'swagger_ui_file') {
+        $view->element['#attached']['library'][] =
+        'odp_rapidoc_formatter/api_document_formatter';
+      }
+      $view->field['field_document']->options['type'] = $formatter_option;
+    }
+  }
+}

@@ -1,8 +1,0 @@
-name: opendevx Photo Gallery Block
-description : 'Generating the photo gallery blocks by using photo gallery block types.'
-type: module
-package: DVP
-core: 8.x
-core_version_requirement: ^8 || ^9
-dependencies:
-  - opendevx_block:opendevx_block

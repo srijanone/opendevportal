@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * OpenDevx portal navigation block module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function odp_navigation_block_theme() {
+  return [
+    'product_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+        'productTitle' => NULL,
+      ],
+    ],
+    'dashboard_product_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+        'productTitle' => NULL,
+      ],
+    ],
+    'product_header_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+      ],
+    ],
+  ];
+}

@@ -1,7 +1,0 @@
-opendevx_rapidoc_formatter.form:
-  path: '/example-form'
-  defaults:
-    _title: 'API Formatter form'
-    _form: 'Drupal\opendevx_rapidoc_formatter\Form\ApiFormatterOptionsForm'
-  requirements:
-    _permission: 'access content'

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.api_document
+  module:
+    - file
+id: node.api_document.field_document
+field_name: field_document
+entity_type: node
+bundle: api_document
+label: Spec
+description: "Upload the file in the correct format. Please follow the below <br />\r\nRestAPI<br />\r\n      - Standard : OpenAPI<br />\r\n      - File Extension : .json, .yml<br />\r\nGraphQL<br />\r\n      - Standard : GraphQL schema (<a href = '/modules/custom/odp_api_documents/modules/odp_renderer/modules/odp_voyager/assets/schema.json' target='_blank'>schema.json</a>)<br />\r\n      - File Extension : .json<br />\r\nAsyncAPI<br />\r\n      - Standard: AsyncAPI 2.0 spec (<a href = '/modules/custom/odp_api_documents/modules/odp_renderer/modules/odp_asyncapi/assets/asyncapi.json' target='_blank'>asyncapi.json</a>)<br /> \r\n      - File Extension: .json, .yaml<br />"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'json yml yaml'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

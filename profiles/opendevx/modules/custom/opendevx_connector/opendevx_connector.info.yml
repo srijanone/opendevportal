@@ -1,6 +1,0 @@
-name: OpenDevX - Connector
-description : 'This module provides the connector feature for syncing of API proxies.'
-type: module
-package: Opendevx
-core: 8.x
-core_version_requirement: ^8 || ^9

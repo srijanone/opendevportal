@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: Program
-vid: organisation
-description: 'Program is used to support multi-tenancy by adding departments or organisation.'
-weight: 0

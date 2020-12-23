@@ -1,0 +1,12 @@
+name: Developer Portal JSON API Schema
+type: module
+description: 'Listing of the APIs.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:jsonapi_extras
+  - drupal:votingapi
+  - odp_taxonomy
+  - odp_node
+  - odp_paragraph
+  - odp_block

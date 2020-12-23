@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: content_reference
-label: 'Content Reference'
-revision: 0
-description: 'Use this block type to create a dynamic block based on contents.'

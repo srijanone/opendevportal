@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_product_units
+    - paragraphs.paragraphs_type.product_attributes
+    - taxonomy.vocabulary.product_attrib_units
+id: paragraph.product_attributes.field_product_units
+field_name: field_product_units
+entity_type: paragraph
+bundle: product_attributes
+label: Units
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_attrib_units: product_attrib_units
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

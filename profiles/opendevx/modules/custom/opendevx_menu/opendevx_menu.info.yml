@@ -1,5 +1,0 @@
-name: opendevx Menu
-type: module
-description: 'Allows users to configure organization and apply them to content.'
-version: VERSION
-core: 8.x

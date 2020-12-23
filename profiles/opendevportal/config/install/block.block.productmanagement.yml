@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.product-management
+  module:
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+id: productmanagement
+theme: opendevx_theme
+region: primary_menu
+weight: -24
+provider: null
+plugin: 'system_menu_block:product-management'
+settings:
+  id: 'system_menu_block:product-management'
+  label: 'Product Management'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
