@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.comment.comment.default
+    - field.field.node.solutions.body
     - field.field.node.solutions.comment
     - field.field.node.solutions.field_access_group
     - field.field.node.solutions.field_api_product
@@ -274,5 +275,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_access_group: true
   layout_builder__layout: true

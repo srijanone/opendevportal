@@ -5,7 +5,7 @@ dependencies:
     - help
   theme:
     - opendevx_theme
-id: help
+id: opendevx_theme_help
 theme: opendevx_theme
 region: content
 weight: -17

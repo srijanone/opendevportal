@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.comment.comment.default
+    - field.field.node.tutorials.body
     - field.field.node.tutorials.comment
     - field.field.node.tutorials.field_api_product
     - field.field.node.tutorials.field_banners_image
@@ -169,6 +170,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_api_product: true
   field_organisation: true
   layout_builder__layout: true
