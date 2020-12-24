@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/photo_gallery_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/twitter.png"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -83,30 +78,11 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/twitter.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "4ec07d27-f721-4246-b4be-2987750e52fe"
-                    }
-                ]
-            }
-        ]
-    },
     "field_link_to_images": [
         {
             "uri": "internal:\/meetups\/Image",

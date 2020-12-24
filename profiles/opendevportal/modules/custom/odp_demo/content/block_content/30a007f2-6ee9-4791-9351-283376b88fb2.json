@@ -5,15 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/dashboard_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/dashboard_block\/field_dashboard_listing": [
-            {
-                "href": "http:\/\/default\/entity\/paragraph\/164?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/entity\/paragraph\/165?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -86,45 +78,9 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/dashboard_block\/field_dashboard_listing": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/entity\/paragraph\/164?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/dashboard_listing"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "b6f8b2b1-52b2-492f-b532-d16695345aed"
-                    }
-                ],
-                "target_revision_id": "177"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/entity\/paragraph\/165?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/dashboard_listing"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "5c5d7caf-ca5a-4051-a40b-e98b82f55e1a"
-                    }
-                ],
-                "target_revision_id": "178"
-            }
-        ]
-    }
+    ]
 }

@@ -86,8 +86,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Dev | Open API Exchange",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/72"
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/72",
+                "title": "Dev | Profiling"
             }
         }
     ],

@@ -86,8 +86,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Apigee Enterprise | Open API Exchange",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/62"
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/62",
+                "title": "Apigee Enterprise | Profiling"
             }
         }
     ],

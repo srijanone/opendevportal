@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/82?_format=hal_json"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
@@ -55,7 +55,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/82?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -63,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "43d36d2d-1792-4f5e-b93d-d3adddb9d42c"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ]
             }
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ],
                 "lang": "en"
@@ -131,18 +131,24 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "metatag": [
         {
             "value": {
-                "title": "Use cases | Open API Exchange",
-                "canonical_url": "http:\/\/default\/usecases"
+                "canonical_url": "http:\/\/default\/usecases",
+                "title": "Use cases | Profiling"
             }
         }
     ],
     "path": [
         {
             "alias": "\/usecases",
-            "pid": 350,
+            "pid": 13,
             "langcode": "en",
             "lang": "en"
         }

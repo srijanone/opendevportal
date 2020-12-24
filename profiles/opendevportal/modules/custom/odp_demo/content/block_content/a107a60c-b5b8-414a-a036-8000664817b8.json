@@ -5,13 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-06\/NG7gddmm_400x400.png",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -84,8 +78,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
@@ -98,26 +92,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-06\/NG7gddmm_400x400.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "46cd7803-c0e4-47f6-83d7-e50b691c3f53"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "field_title": [
         {
             "value": "Vega Banner Block"

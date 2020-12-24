@@ -5,10 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/content_reference"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/content_reference\/field_contents": [
-            null
-        ]
+        }
     },
     "id": [
         {
@@ -81,16 +78,11 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/content_reference\/field_contents": [
-            null
-        ]
-    },
     "field_cta_link_text": [
         {
             "uri": "internal:\/",

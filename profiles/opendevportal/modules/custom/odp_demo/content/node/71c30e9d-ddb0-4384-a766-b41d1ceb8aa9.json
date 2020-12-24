@@ -63,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ]
             }
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ],
                 "lang": "en"
@@ -140,15 +140,15 @@
     "metatag": [
         {
             "value": {
-                "title": "Dashboard | Open API Exchange",
-                "canonical_url": "http:\/\/default\/dashboard-list"
+                "canonical_url": "http:\/\/default\/dashboard-list",
+                "title": "Dashboard | Profiling"
             }
         }
     ],
     "path": [
         {
             "alias": "\/dashboard-list",
-            "pid": 10,
+            "pid": 9,
             "langcode": "en",
             "lang": "en"
         }
