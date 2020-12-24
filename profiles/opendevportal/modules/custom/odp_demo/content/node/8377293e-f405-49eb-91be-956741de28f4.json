@@ -242,12 +242,6 @@
             "lang": "en"
         }
     ],
-    "field_version": [
-        {
-            "value": "1.0",
-            "lang": "en"
-        }
-    ],
     "field_view_mode": [
         {
             "value": "left_nav_full_view"
