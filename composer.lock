@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca109195feeba1c8ac73c067e1336761",
+    "content-hash": "ed6bc0f090f23aef269c67758f823ed4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2371,6 +2371,67 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/better_exposed_filters",
                 "issues": "https://www.drupal.org/project/issues/better_exposed_filters"
+            }
+        },
+        {
+            "name": "drupal/better_normalizers",
+            "version": "1.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/better_normalizers.git",
+                "reference": "8.x-1.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/better_normalizers-8.x-1.0-beta4.zip",
+                "reference": "8.x-1.0-beta4",
+                "shasum": "19e63328ca9ab77aaa328d87efd7429f4adb386e"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1576069085",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Fritsch (chr.fritsch)",
+                    "homepage": "https://www.drupal.org/u/chrfritsch",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Andrey Postnikov (andypost)",
+                    "homepage": "https://www.drupal.org/u/andypost",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Sam Becker (Sam152)",
+                    "homepage": "https://www.drupal.org/u/sam152",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Lee Rowlands (larowlan)",
+                    "homepage": "https://www.drupal.org/u/larowlan",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Improve the normalizers in core.",
+            "homepage": "https://www.drupal.org/project/better_normalizers",
+            "support": {
+                "source": "https://git.drupal.org/project/better_normalizers.git",
+                "issues": "https://www.drupal.org/project/issues/better_normalizers"
             }
         },
         {
@@ -15402,6 +15463,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/better_normalizers": 10,
         "drupal/disqus": 5,
         "drupal/openapi": 5,
         "drupal/openapi_jsonapi": 5,
