@@ -3,6 +3,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.solutions.body
     - field.field.node.solutions.comment
     - field.field.node.solutions.field_access_group
     - field.field.node.solutions.field_api_product
@@ -27,6 +28,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   comment: true
   field_access_group: true
   field_api_product: true

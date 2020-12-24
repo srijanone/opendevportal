@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.document_overview.body
     - core.entity_view_display.comment.comment.default
     - field.field.node.document_overview.comment
     - field.field.node.document_overview.field_api_product
@@ -174,6 +175,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_api_product: true
   field_listing_image: true
   field_organisation: true

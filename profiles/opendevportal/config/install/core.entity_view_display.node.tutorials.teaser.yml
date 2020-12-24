@@ -3,6 +3,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.tutorials.body
     - field.field.node.tutorials.comment
     - field.field.node.tutorials.field_api_product
     - field.field.node.tutorials.field_banners_image
@@ -26,6 +27,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  body: true
   comment: true
   field_api_product: true
   field_banners_image: true

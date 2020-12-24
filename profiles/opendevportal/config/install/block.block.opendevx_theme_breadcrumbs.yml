@@ -6,7 +6,7 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: breadcrumbs
+id: opendevx_theme_breadcrumbs
 theme: opendevx_theme
 region: highlighted
 weight: -20

@@ -6,7 +6,7 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: page_title
+id: opendevx_theme_page_title
 theme: opendevx_theme
 region: content
 weight: -22

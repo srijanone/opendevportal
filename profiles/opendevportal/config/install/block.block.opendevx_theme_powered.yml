@@ -5,7 +5,7 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: powered
+id: opendevx_theme_powered
 theme: opendevx_theme
 region: footer_first
 weight: -15
