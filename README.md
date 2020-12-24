@@ -1,11 +1,11 @@
-# OpenDevX
+# OpenDevPortal
 
-OpenDevX is a product framework to build custom developer portals.
+OpenDevPortal is a product framework to build custom developer portals.
 Whether you're a SaaS company looking to publish APIs for App developers or a
 Financial institution with a sprawling OpenBanking API program,
-you can use OpenDevX to engineer a bespoke developer experience.
+you can use OpenDevPortal to engineer a bespoke developer experience.
 
-Some of OpenDevX's most unique features:
+Some of OpenDevPortal's most unique features:
 - API Program & Product Management with access control
 - Fully Customizable Developer Experience & Program Branding
 - Connector based architecture (to API gateways & integration systems)
@@ -64,13 +64,13 @@ Some of OpenDevX's most unique features:
 - MySQL >= 5.7
 ```
 
-OpenDevx utilizes composer to manage its dependencies. So, before using OpenDevX,
+OpenDevPortal utilizes composer to manage its dependencies. So, before using OpenDevPortal,
 make sure you have Composer installed on your machine.
 
 ## Installation from source ##
 ```
-git clone git@github.com:srijanone/opendevx.git
-cd opendevx
+git clone git@github.com:srijanone/opendevportal.git
+cd opendevportal
 composer install
 ```
 
@@ -139,12 +139,12 @@ Coming soon. We are in process of building composer command.
 
 ---
 
-[Request for Demo](https://www.opendevx.io/)
+[Request for Demo](https://www.opendevportal.io/)
 
 ## Contribution
 
-- Explore various features of opendevx.
-- In case of bug please create issue [here](https://github.com/srijanone/opendevx/issues)
+- Explore various features of OpenDevPortal.
+- In case of bug please create issue [here](https://github.com/srijanone/opendevportal/issues)
 
 ---
 
