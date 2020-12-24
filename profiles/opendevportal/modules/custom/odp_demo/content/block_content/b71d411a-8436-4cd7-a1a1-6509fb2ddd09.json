@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/photo_gallery_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/jmeter_square.png"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -83,30 +78,11 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/jmeter_square.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e76044ea-718c-4bcb-bc1d-1c88026897e3"
-                    }
-                ]
-            }
-        ]
-    },
     "field_link_to_images": [
         {
             "uri": "internal:\/Blogs\/Image",

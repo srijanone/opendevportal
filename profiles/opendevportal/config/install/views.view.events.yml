@@ -604,7 +604,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<div class="view-all-event"><a href="/landing-page/home">View All Event</a></div>'
+            value: '<div class="view-all-event"><a href="/home">View All Event</a></div>'
             format: full_html
           plugin_id: text
       empty: {  }

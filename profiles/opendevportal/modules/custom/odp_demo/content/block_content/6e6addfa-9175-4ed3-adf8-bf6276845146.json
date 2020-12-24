@@ -5,18 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_icons": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/16?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/mstile-144x144.png",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -89,8 +78,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
@@ -102,42 +91,5 @@
             "summary": "",
             "lang": "en"
         }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_icons": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/16?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/icons"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "42fcc472-2882-40d0-aaf6-ae0fac7d59a4"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/mstile-144x144.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "f3b9e914-2ff8-4bfc-876c-70ce212e5864"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    }
+    ]
 }

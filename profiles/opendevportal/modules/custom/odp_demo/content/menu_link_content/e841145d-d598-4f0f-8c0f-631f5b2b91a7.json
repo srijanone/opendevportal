@@ -5,7 +5,12 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_parent_entity": [
+            {
+                "href": "http:\/\/default\/admin\/structure\/menu\/item\/56\/edit?_format=hal_json"
+            }
+        ]
     },
     "id": [
         {
@@ -114,9 +119,28 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_parent_entity": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/admin\/structure\/menu\/item\/56\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c94412af-0afc-4117-9def-b2d3ee2e2c46"
+                    }
+                ]
+            }
+        ]
+    }
 }

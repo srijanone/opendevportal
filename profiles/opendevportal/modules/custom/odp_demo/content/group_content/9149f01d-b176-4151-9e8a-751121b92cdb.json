@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-faq\/uid": [
             {
-                "href": "http:\/\/default\/user\/108?_format=hal_json",
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
@@ -49,7 +49,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/108?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -57,7 +57,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a20653b4-068c-4af5-a83e-e9686eff7572"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ],
                 "lang": "en"
@@ -135,8 +135,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ]

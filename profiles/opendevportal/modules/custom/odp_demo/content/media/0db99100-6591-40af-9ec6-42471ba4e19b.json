@@ -8,19 +8,19 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
-                "href": "http:\/\/default\/user\/97?_format=hal_json",
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-10\/index.png",
+                "href": "",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-10\/index.png",
+                "href": "",
                 "lang": "en"
             }
         ]
@@ -53,7 +53,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-10-09T20:05:35+00:00",
+            "value": "2020-12-23T13:59:24+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -68,7 +68,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/97?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -76,7 +76,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "03919fc0-7815-48c9-9a48-6dee873bf6b4"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ],
                 "lang": "en"
@@ -86,7 +86,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-10\/index.png"
+                        "href": ""
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -97,14 +97,18 @@
                         "value": "2f6705e5-c428-407a-adb9-294075338b3b"
                     }
                 ],
-                "lang": "en"
+                "lang": "en",
+                "alt": null,
+                "title": null,
+                "width": "225",
+                "height": "225"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-10\/index.png"
+                        "href": ""
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -115,7 +119,11 @@
                         "value": "2f6705e5-c428-407a-adb9-294075338b3b"
                     }
                 ],
-                "lang": "en"
+                "lang": "en",
+                "alt": null,
+                "title": null,
+                "width": "225",
+                "height": "225"
             }
         ]
     },
@@ -154,8 +162,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],

@@ -76,20 +76,16 @@ default_content:
   group_content:
     - 4d114383-883e-4776-ade0-20ac9cae7c92
     - f66a569d-b330-4018-8fa4-47c8ddbc0fc9
-    - e71e4010-72ca-49db-87d1-ad81b23a276e
-    - 36acac59-ccea-4520-ab91-6a6d6dce3f56
     - 8932b79e-fa4e-48a0-8279-7a70aa4d7c09
     - f9309f19-995d-47ab-8e03-7cbc0b5fb264
     - 9149f01d-b176-4151-9e8a-751121b92cdb
     - 8cb82595-108a-44ad-8a3d-2261c167969d
     - a3e2d65f-7c75-46bd-8c5c-e83028a25e43
-    - dbdacbbb-2f8b-480b-8875-a50292a12cc0
 
   node:
     - 00b01f64-258c-4fdf-9c1f-e2b92f0adaa1
     - 10a857c7-90b2-4620-9167-8c92c5a4376c
     - 3efedfe0-aead-4240-9885-31042ab870ba
-    - 3f939b9f-9962-488b-8a5b-87d59c0e29fa
     - 6e467bfb-47db-47f4-b675-4cd402d1cd21
     - 71c30e9d-ddb0-4384-a766-b41d1ceb8aa9
     - 71ebc8c4-ba5d-4d79-b8af-39655e79ea03
@@ -107,7 +103,6 @@ default_content:
     - c0744688-0a20-40bc-9afb-a530f0ce11ea
     - c38886b7-40d4-41fd-87b4-a16b90da9c46
     - d346809a-12e3-4980-bc4c-f68d0ae4eb1f
-    - d59c4f5a-e62f-458c-a56b-645cad907eea
     - f0113c45-3647-4059-a1cf-ceb6b08b82ef
     - f439ac8b-b5af-4c36-8e0e-a11b0e949857
     - f5cd44c7-2086-4ca5-828e-5f22d1a1dacf

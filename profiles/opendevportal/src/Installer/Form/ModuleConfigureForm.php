@@ -31,7 +31,7 @@ class ModuleConfigureForm extends ConfigFormBase {
     // List of optional modules.
     $modules = [
       [
-        'id' => 'opendevportal_demo',
+        'id' => 'odp_demo',
         'label' => $this->t('OpenDevPortal Demo Content'),
         'description' => $this->t('Installs content which allows you to explore features.'),
       ]

@@ -5,13 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/png-transparent-application-programming-interface-cloud-computing-cloud-api-cloud-computing-angle-text-service-thumbnail.png",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -84,8 +78,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
@@ -98,26 +92,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/png-transparent-application-programming-interface-cloud-computing-cloud-api-cloud-computing-angle-text-service-thumbnail.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "dbff9aec-da91-43c1-877d-9282d3301e7c"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "field_title": [
         {
             "value": "Products"

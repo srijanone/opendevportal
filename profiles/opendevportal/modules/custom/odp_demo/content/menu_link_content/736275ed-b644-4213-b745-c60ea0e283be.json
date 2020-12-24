@@ -5,7 +5,12 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_target_entity": [
+            {
+                "href": "http:\/\/default\/products?_format=hal_json"
+            }
+        ]
     },
     "id": [
         {
@@ -59,7 +64,8 @@
         {
             "uri": "entity:node\/5",
             "title": "",
-            "options": []
+            "options": [],
+            "target_uuid": "3efedfe0-aead-4240-9885-31042ab870ba"
         }
     ],
     "external": [
@@ -109,9 +115,28 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_target_entity": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/products?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/listing_pages"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3efedfe0-aead-4240-9885-31042ab870ba"
+                    }
+                ]
+            }
+        ]
+    }
 }

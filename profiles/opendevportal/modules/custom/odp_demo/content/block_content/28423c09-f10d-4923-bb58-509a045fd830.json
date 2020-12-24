@@ -5,18 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/home_page_slider"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_page_slider\/field_slider_details": [
-            {
-                "href": "http:\/\/default\/entity\/paragraph\/94?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/entity\/paragraph\/95?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/entity\/paragraph\/96?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -89,61 +78,9 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_page_slider\/field_slider_details": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/entity\/paragraph\/94?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/slider_details"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "430f9e7c-44df-4c9d-8c0d-6dc91d413b41"
-                    }
-                ],
-                "target_revision_id": "99"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/entity\/paragraph\/95?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/slider_details"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "67822018-97d5-4e63-9f52-2d3a65969225"
-                    }
-                ],
-                "target_revision_id": "100"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/entity\/paragraph\/96?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/slider_details"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0c1b5919-5ddb-4f18-b9ee-cb6c6e525050"
-                    }
-                ],
-                "target_revision_id": "101"
-            }
-        ]
-    }
+    ]
 }

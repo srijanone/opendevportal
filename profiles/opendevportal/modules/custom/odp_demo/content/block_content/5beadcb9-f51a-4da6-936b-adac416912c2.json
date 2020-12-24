@@ -78,8 +78,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
@@ -87,7 +87,7 @@
         {
             "value": "<p>\u00a9 &amp; <span>Powered by<\/span> <img alt=\"developer portal\" src=\"\/themes\/custom\/devportal\/logo.svg\" \/><\/p>\r\n",
             "format": "full_html",
-            "processed": "<p>\u00a9 &amp; <span>Powered by<\/span> <img alt=\"developer portal\" src=\"../profiles\/opendevx\/themes\/custom\/opendevx_theme\/logo.svg\" \/><\/p>\n",
+            "processed": "<p>\u00a9 &amp; <span>Powered by<\/span> <img alt=\"developer portal\" src=\"\/themes\/custom\/devportal\/logo.svg\" \/><\/p>\n",
             "summary": "",
             "lang": "en"
         }

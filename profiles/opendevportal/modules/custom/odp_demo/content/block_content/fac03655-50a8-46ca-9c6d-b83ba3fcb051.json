@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/photo_gallery_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/photo-1503803548695-c2a7b4a5b875_0.jpeg"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -83,30 +78,11 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/photo_gallery_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/photo-1503803548695-c2a7b4a5b875_0.jpeg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "f669e968-a0ee-4d4f-a77f-0e23787f2c84"
-                    }
-                ]
-            }
-        ]
-    },
     "field_link_to_images": [
         {
             "uri": "http:\/\/developersportal-dev.srijan.net\/sites\/default\/files\/2020-05\/photo-1503803548695-c2a7b4a5b875_0.jpeg",

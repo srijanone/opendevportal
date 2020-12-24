@@ -16,12 +16,6 @@
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/field_organisation": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/19?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "nid": [
@@ -69,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ]
             }
@@ -86,25 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/field_organisation": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/19?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisation"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "30ab1815-ba50-43ff-a1bf-acb79652229f"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ],
                 "lang": "en"
@@ -164,8 +140,8 @@
     "metatag": [
         {
             "value": {
-                "title": "New page | Open API Exchange",
                 "canonical_url": "http:\/\/default\/landing-page\/new-page",
+                "title": "New page | Profiling",
                 "description": "New page"
             }
         }
@@ -173,7 +149,7 @@
     "path": [
         {
             "alias": "\/landing-page\/new-page",
-            "pid": 319,
+            "pid": 8,
             "langcode": "en",
             "lang": "en"
         }

@@ -5,13 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-05\/lifestyle-1660837-1409368.png",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -84,8 +78,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
@@ -98,26 +92,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-05\/lifestyle-1660837-1409368.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c9c63655-68e8-4ec0-b743-8c06cef92bc1"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "field_title": [
         {
             "value": "We Design, Build and Run Digital Banks"

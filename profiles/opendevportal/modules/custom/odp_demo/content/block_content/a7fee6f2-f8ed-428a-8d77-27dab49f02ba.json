@@ -5,24 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_icons": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/16?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/14?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2020-06\/Untitled-2-01.png",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -95,8 +78,8 @@
     "metatag": [
         {
             "value": {
-                "title": "| Open API Exchange",
-                "canonical_url": "http:\/\/default\/landing-page\/home"
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
             }
         }
     ],
@@ -109,73 +92,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_icons": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/icons"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "9c272066-c3b2-4784-b66d-98229b682904"
-                    }
-                ]
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/16?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/icons"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "42fcc472-2882-40d0-aaf6-ae0fac7d59a4"
-                    }
-                ]
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/14?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/icons"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "79108bf5-631d-4383-9fe5-2702d28788ff"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_images": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2020-06\/Untitled-2-01.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "7820eabd-54a6-49d3-9726-61e7da9bf1f8"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "field_title": [
         {
             "value": "OPENAPIX"

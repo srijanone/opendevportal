@@ -16,12 +16,6 @@
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/field_organisation": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/21?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "nid": [
@@ -69,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ]
             }
@@ -86,25 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5f075cdc-dacd-4650-8daf-8f6f7d86c00b"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/field_organisation": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/21?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisation"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "6bf23208-b2a2-4a68-95fe-e9b491a656d1"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ],
                 "lang": "en"
@@ -164,15 +140,15 @@
     "metatag": [
         {
             "value": {
-                "title": "Vega Landing page | Open API Exchange",
-                "canonical_url": "http:\/\/default\/vega-landing-page"
+                "canonical_url": "http:\/\/default\/vega-landing-page",
+                "title": "Vega Landing page | Profiling"
             }
         }
     ],
     "path": [
         {
             "alias": "\/vega-landing-page",
-            "pid": 119,
+            "pid": 4,
             "langcode": "en",
             "lang": "en"
         }

@@ -20,6 +20,7 @@ install:
  - backup_migrate
  - basic_auth
  - better_exposed_filters
+ - better_normalizers
  - big_pipe
  - block
  - block_content

@@ -86,8 +86,8 @@
     "metatag": [
         {
             "value": {
-                "title": "1.0 | Open API Exchange",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/73"
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/73",
+                "title": "1.0 | Profiling"
             }
         }
     ],

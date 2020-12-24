@@ -8,12 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/node\/apps\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/89?_format=hal_json"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/apps\/uid": [
             {
-                "href": "http:\/\/default\/user\/89?_format=hal_json",
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
@@ -36,7 +36,7 @@
     ],
     "vid": [
         {
-            "value": 3885
+            "value": 3893
         }
     ],
     "langcode": [
@@ -61,7 +61,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/89?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "8c3d18ea-43e8-4234-80ee-5a6c9c312509"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ]
             }
@@ -78,7 +78,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/89?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -86,7 +86,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "8c3d18ea-43e8-4234-80ee-5a6c9c312509"
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
                     }
                 ],
                 "lang": "en"
@@ -164,8 +164,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Banking Application | Open API Exchange",
                 "canonical_url": "http:\/\/default\/node\/1425",
+                "title": "Banking Application | Profiling",
                 "description": "Banking Application Summary"
             }
         }
