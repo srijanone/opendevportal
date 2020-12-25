@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: 4675e8ff-159f-4dc5-a508-63c4210d1501
+label: 'Menu token link configuration'
+linkid: 'internal:/dashboard/[program:program_id]/apimanager/users'
+configurationSerialized: 'a:2:{s:18:"menu_token_enabled";i:1;s:36:"remove_if_replacement_is_not_present";i:0;}'
