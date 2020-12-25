@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: 6cdfe795-5931-4a28-8227-f3bd599741e3
+label: 'Menu token link configuration'
+linkid: 'internal:/dashboard/[program:program_id]/products'
+configurationSerialized: 'a:2:{s:18:"menu_token_enabled";i:1;s:36:"remove_if_replacement_is_not_present";i:0;}'

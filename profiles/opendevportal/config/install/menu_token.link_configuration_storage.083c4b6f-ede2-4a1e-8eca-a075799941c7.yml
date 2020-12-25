@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: 083c4b6f-ede2-4a1e-8eca-a075799941c7
+label: 'Menu token link configuration'
+linkid: 'internal:/dashboard/[program:program_id]/apimanager/proxies'
+configurationSerialized: 'a:2:{s:18:"menu_token_enabled";i:1;s:36:"remove_if_replacement_is_not_present";i:0;}'
