@@ -75,7 +75,7 @@ body .table {
     a+a,
     div+a {
       margin-left: .6rem;
-      margin-top: .6rem;
+      margin-top: .3rem;
     }
 
     .dropbutton-widget a {
@@ -90,18 +90,6 @@ body .table {
 
     .dropbutton-widget {
       width: 100%;
-    }
-  }
-
-  .views-field-operations,
-  .views-field-dropbutton {
-    min-width: 8rem;
-  }
-
-  .dropbutton-widget {
-    .js & {
-      position: absolute;
-      width: 6rem;
     }
   }
 }
@@ -124,4 +112,10 @@ body .table-responsive {
   .dropbutton-widget .dropbutton-action a {
     padding: 0;
   }
+}
+
+
+.js td .dropbutton-multiple {
+  margin: 0 !important;
+  padding: 0 !important;
 }

@@ -15,7 +15,7 @@
 
 body table .views-field-nothing a,
 body .table .views-field-nothing a {
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #384e86;
   border-radius: 25px;
   color: #384e86;
@@ -28,6 +28,7 @@ body .table .views-field-nothing a {
   text-align: center;
   line-height: 1;
   margin: 0;
+  z-index: 2;
 }
 
 body table .views-field-nothing a:hover,
@@ -334,15 +335,16 @@ h2,
 .block h2, .block
 .h2, .block
 .block-field-blocknodeapi-producttitle {
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
   font-size: 1.5rem;
 }
 
 .block-field-blocknodeapi-producttitle {
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
 }
 
-.block-developer-portal-rapidoc-formatter h2 {
+.block-developer-portal-rapidoc-formatter h2,
+.block-opendevx-rapidoc-formatter h2 {
   margin: 0;
   border: 0;
   color: #333;
@@ -650,7 +652,7 @@ body table .views-field-nothing div + a,
 body .table .views-field-nothing a + a,
 body .table .views-field-nothing div + a {
   margin-left: .6rem;
-  margin-top: .6rem;
+  margin-top: .3rem;
 }
 
 body table .views-field-nothing .dropbutton-widget a,
@@ -670,19 +672,6 @@ body .table .views-field-nothing .dropbutton-widget {
   width: 100%;
 }
 
-body table .views-field-operations,
-body table .views-field-dropbutton,
-body .table .views-field-operations,
-body .table .views-field-dropbutton {
-  min-width: 8rem;
-}
-
-.js body table .dropbutton-widget, .js
-body .table .dropbutton-widget {
-  position: absolute;
-  width: 6rem;
-}
-
 .js .views-field-operations .dropbutton-multiple {
   margin: 0;
   padding: 0;
@@ -690,6 +679,11 @@ body .table .dropbutton-widget {
 
 .js .dropbutton-multiple .dropbutton-widget .dropbutton-action a {
   padding: 0;
+}
+
+.js td .dropbutton-multiple {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 b,
@@ -1316,6 +1310,33 @@ button.close {
  * @file
  * Visual styles for Bartik's main-content component.
  */
+
+.ui-widget.ui-widget-content {
+  font-family: "ProximaNovaRegular";
+}
+
+.ui-menu .ui-menu-item-wrapper {
+  display: block;
+  padding: 3px 1em 3px 0.75em;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  color: #fff !important;
+}
+
+.navbar-search fieldset input[type="search"].form-control:-webkit-autofill,
+.navbar-search fieldset input[type="search"].form-control:-webkit-autofill:hover,
+.navbar-search fieldset input[type="search"].form-control:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 1000px #0000 inset !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
 
 @media (min-width: 600px) {
   body {

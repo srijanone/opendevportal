@@ -64,9 +64,12 @@ body .node__content {
   background-color: $blue-1;
   left: 50%;
   margin-left: -50vw;
-  max-height: 70px;
   position: relative;
   width: 100vw;
+
+  @include for-tablet-landscape-up {
+    max-height: 70px;
+  }
 
   .container {
     align-items: center;
@@ -333,11 +336,20 @@ div[id="main"] {
 
 // layout--twocol-section
 .layout--twocol-section {
+  @extend %custom-container;
+  clear: both;
+
   @include for-tablet-landscape-down {
     flex-flow: column;
   }
 
   .layout__region {
+    @include for-tablet-landscape-down {
+      margin-bottom: 1rem;
+    }
+
+    display: flex;
+    flex-flow: column;
     margin-bottom: 2rem;
   }
 }

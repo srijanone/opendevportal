@@ -20,7 +20,7 @@ div[id="main"] {
 }
 
 .admin-list-div a {
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #384e86;
   border-radius: 25px;
   color: #384e86;
@@ -33,12 +33,19 @@ div[id="main"] {
   text-align: center;
   line-height: 1;
   margin: 0;
+  z-index: 2;
 }
 
 .admin-list-div a:hover {
   background-color: #384e86;
   color: #fff;
   text-decoration: none;
+}
+
+.layout--twocol-section {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
 }
 
 .footer .fa, .admin-list-div a::after {
@@ -54,7 +61,6 @@ body .node__content {
   background-color: #416ad9;
   left: 50%;
   margin-left: -50vw;
-  max-height: 70px;
   position: relative;
   width: 100vw;
 }
@@ -73,7 +79,7 @@ body .node__content {
 }
 
 .footer {
-  background: url("../../assets/images/footer.png");
+  background: url("/themes/custom/opendevx_theme/assets/images/footer.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -229,7 +235,18 @@ div[id="main"] .row-offcanvas {
   margin-top: 1rem;
 }
 
+.layout--twocol-section {
+  clear: both;
+}
+
 .layout--twocol-section .layout__region {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   margin-bottom: 2rem;
 }
 
@@ -292,7 +309,25 @@ div[id="page"] {
   margin-top: .5rem;
 }
 
+@media (min-width: 576px) {
+  .layout--twocol-section {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 600px) {
+  .layout--twocol-section {
+    max-width: 720px;
+  }
+}
+
 @media (min-width: 900px) {
+  .layout--twocol-section {
+    max-width: 960px;
+  }
+  .header {
+    max-height: 70px;
+  }
   .container, .region--content-top,
   .region--content-bottom,
   .region--hero,
@@ -346,6 +381,9 @@ div[id="page"] {
 }
 
 @media (min-width: 1200px) {
+  .layout--twocol-section {
+    max-width: 1140px;
+  }
   .layout--with-complementary > .region--content {
     padding-left: 0;
   }
@@ -404,6 +442,9 @@ div[id="page"] {
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
             flex-flow: column;
+  }
+  .layout--twocol-section .layout__region {
+    margin-bottom: 1rem;
   }
   .admin-list-div li {
     width: 48%;

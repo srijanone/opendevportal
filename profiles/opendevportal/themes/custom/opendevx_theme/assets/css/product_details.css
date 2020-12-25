@@ -13,6 +13,14 @@
   src: url("../fonts/ProximaNova-Bold.woff2");
 }
 
+.block-field-blockgroupprotectedfield-description,
+.block-field-blockgrouppublicfield-description,
+.block-field-blockgroupprivatefield-description {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
 .support-block .group-left .field--type-fivestar .field__label {
   display: none;
 }
@@ -209,6 +217,7 @@
 
 .cta-wrapper .cta-inner .cta-description {
   margin: 15px 0;
+  min-height: 1px;
 }
 
 .cta-wrapper .cta-inner:last-child::before {
@@ -263,6 +272,49 @@
           flex: 0 0 72%;
   float: none;
   width: auto;
+}
+
+.block-field-blockgroupprotectedfield-description .field--name-field-description,
+.block-field-blockgrouppublicfield-description .field--name-field-description,
+.block-field-blockgroupprivatefield-description .field--name-field-description {
+  background: #f4f4f4;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.16);
+  padding: 1rem 1rem 0.25rem;
+  margin: 3rem auto;
+}
+
+@media (min-width: 576px) {
+  .block-field-blockgroupprotectedfield-description,
+  .block-field-blockgrouppublicfield-description,
+  .block-field-blockgroupprivatefield-description {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 600px) {
+  .block-field-blockgroupprotectedfield-description,
+  .block-field-blockgrouppublicfield-description,
+  .block-field-blockgroupprivatefield-description {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 900px) {
+  .block-field-blockgroupprotectedfield-description,
+  .block-field-blockgrouppublicfield-description,
+  .block-field-blockgroupprivatefield-description {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .block-field-blockgroupprotectedfield-description,
+  .block-field-blockgrouppublicfield-description,
+  .block-field-blockgroupprivatefield-description {
+    max-width: 1140px;
+  }
 }
 
 @media (max-width: 899px) {
@@ -334,5 +386,13 @@
             flex: 0 0 100% !important;
     margin-bottom: 1rem;
     width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .block-field-blockgroupprotectedfield-description,
+  .block-field-blockgrouppublicfield-description,
+  .block-field-blockgroupprivatefield-description {
+    padding: 0;
   }
 }

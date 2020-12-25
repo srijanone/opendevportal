@@ -437,4 +437,12 @@ html:not(.js) .dropdown .dropdown-toggle {
   .navbar .navbar-collapse .d-notification {
     display: none;
   }
+  .m-notification .notify-drop,
+  .d-notification .notify-drop {
+    top: 15px !important;
+  }
+  .m-notification .notify-drop:after,
+  .d-notification .notify-drop:after {
+    right: 62px;
+  }
 }

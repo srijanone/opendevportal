@@ -54,7 +54,11 @@
           {% if paragraph.field_key is not empty %}
             <div class='para-body'>
               <span> {{ paragraph.field_key.value }} </span>
-              <span>  {{ paragraph.field_value.value}} </span>
+              <span> {{ paragraph.field_value.value }}
+                {% if paragraph.field_product_units.target_id is not empty %}
+                  {{ paragraph.field_product_units.entity.label }}
+                {% endif %}
+              </span>
             </div>
           {% endif %}
         </div>

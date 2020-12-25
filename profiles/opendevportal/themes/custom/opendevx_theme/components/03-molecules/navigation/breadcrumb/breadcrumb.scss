@@ -50,3 +50,19 @@
     }
   }
 }
+
+// path-programs
+@include for-tablet-landscape-up {
+  .path-programs {
+    .region--breadcrumb {
+      margin-top: 50px;
+    }
+  }
+}
+
+// path-group
+.path-group {
+  .region--breadcrumb {
+    margin-bottom: 0;
+  }
+}
