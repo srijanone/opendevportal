@@ -30,8 +30,23 @@
 	}
 }
 
+.nav-link {
+	&[class*="--user-"]::before {
+		@extend %awsome;
+		display: inline-block;
+		font-weight: normal;
+		padding-right: 5px;
+		text-align: center;
+		width: 26px;
+	}
+}
+
 .nav-tabs .nav-link[class*="-edit"]::before {
 	display: none;
+}
+
+.nav-link[class*="-user-"]::before {
+	content: "\f007";
 }
 
 .dropdown-menu .nav-link--coming-soon::before {
@@ -51,19 +66,19 @@
 }
 
 .nav-link--user::before {
-	content: "\f007";
+	content: "\f007" !important;
 }
 
 .nav-link--user-login::before {
-	content: "\f09c";
+	content: "\f09c" !important;
 }
 
 .nav-link--user-logout::before {
-	content: "\f023";
+	content: "\f023" !important;
 }
 
 .nav-link--user-register::before {
-  content: "\f234";
+  content: "\f234" !important;
 }
 
 .form-type-email label::before {
@@ -72,4 +87,10 @@
 
 .form-type-password label::before {
   content: "\f023";
+}
+
+.dropdown-item.active, .dropdown-item.is-active {
+	color: $white;
+	text-decoration: none;
+	background-color: $blue;
 }
