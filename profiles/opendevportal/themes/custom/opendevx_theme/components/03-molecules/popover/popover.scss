@@ -9,7 +9,7 @@
   padding: 0 .75rem;
 
   @include for-tablet-landscape-down {
-    order: 4;
+    order: 6;
   }
 
   .select-program {
@@ -52,11 +52,19 @@
     width: 100%;
     z-index: 2;
 
+    @include for-tablet-landscape-down {
+      top: 326px;
+    }
+
     &.show,
     &.collapsing {
       display: flex;
       opacity: 1;
       visibility: visible;
+
+      @include for-tablet-landscape-down {
+        flex-flow: column;
+      }
 
       &::before {
         background: $gray-lighter;
@@ -74,11 +82,19 @@
   .program_left {
     padding: 20px;
     width: 40%;
+
+    @include for-tablet-landscape-down {
+      width: 100%;
+    }
   }
 
   .program_right {
     padding: 20px;
     width: 55%;
+
+    @include for-tablet-landscape-down {
+      width: 100%;
+    }
   }
 
   .dashboard-program {
@@ -113,9 +129,14 @@
 
     .slick-slide {
       width: 193px !important; //added because inline css giving 0.
+
+      // @include for-tablet-landscape-up {
+      //   width: 335px !important;
+      // }
     }
 
     .slick-track {
+      display: flex;
       width: 100vw !important; //added because inline css giving 0.
     }
   }

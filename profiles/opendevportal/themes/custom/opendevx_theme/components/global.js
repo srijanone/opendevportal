@@ -25,12 +25,6 @@
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 2
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
                 slidesToShow: 1
               }
             }
@@ -79,12 +73,45 @@
   Drupal.behaviors.AppGalleryPopUp = {
     attach: function (context, settings) {
       $(function () {
-        $('.node--type-apps .ds-2col-stacked-fluid .block h2+.content .field--name-field-client-id, .node--type-apps .ds-2col-stacked-fluid .block h2+.content .field--name-field-client-secret').append('<i/>');
-        $('.node--type-apps .ds-2col-stacked-fluid .block h2+.content .field__item i').click (
+        $('.node--type-apps .ds-2col-stacked-fluid .block h2+.content .field--name-field-client-id, .node--type-apps .ds-2col-stacked-fluid .block h2+.content .field--name-field-client-secret, .paragraph--type--app-privacy .field--name-field-client-secret .field__item, .paragraph--type--app-privacy .field--name-field-client-id .field__item', context).once().append('<i/>')
+        $('.node--type-apps .ds-2col-stacked-fluid .block h2+.content .field__item i, .paragraph--type--app-privacy .field--name-field-client-secret .field__item i, .paragraph--type--app-privacy .field--name-field-client-id .field__item i', context).click(
           function () {
             $(this).parent('.field__item').toggleClass('show-keys')
           }
         )
+      }
+      )
+    }
+  }
+
+  // Added JS to validate comment field.
+  Drupal.behaviors.commentValidation = {
+    attach: function (context, settings) {
+      $(function () {
+        $('#comment-form').bind('submit',
+          function () {
+            var comment_text = $('#edit-comment-body-0-value').val();
+            if (typeof comment_text !== 'undefined'
+              && typeof comment_text === "string"
+              && !comment_text) {
+              alert(Drupal.t('Please add your comment!'));
+              return false;
+            }
+          }
+        )
+      }
+      )
+    }
+  }
+
+  // Added JS to Faq Toggle.
+  Drupal.behaviors.faqListing = {
+    attach: function (context, settings) {
+      $(function () {
+        $('.view-display-id-page-faq-listing .views-row .views-field-body').unbind().on('click', function() {
+          $(this).parent().find('.views-field-field-answer').toggle();
+          $(this).find('.field-content').toggleClass("icon--minus");
+        });
       }
       )
     }

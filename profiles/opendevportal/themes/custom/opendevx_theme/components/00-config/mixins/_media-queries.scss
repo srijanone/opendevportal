@@ -37,7 +37,7 @@
   }
 }
 
-@mixin for-ipad-landscape-down {
+@mixin for-ipad-portrait-down {
   @media (max-width: 767px) {
     @content;
   }

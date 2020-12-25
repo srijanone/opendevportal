@@ -488,13 +488,21 @@ html:not(.js) {
     right: -78px !important;
     top: 45px;
 
+    @include for-tablet-landscape-down {
+      top: 15px !important;
+    }
+
     &:after {
       right: 78px;
+
+      @include for-tablet-landscape-down {
+        right: 62px;
+      }
     }
   }
 
   li.dropdown {
-    > a {
+    >a {
       padding: 0;
     }
   }

@@ -18,6 +18,10 @@
   font-weight: 900;
 }
 
+.block-block-dashboard-block {
+  margin-top: 60px;
+}
+
 .block-api-programs {
   background-color: #1d76ee;
   display: -webkit-box;
@@ -80,6 +84,10 @@
   outline: 0;
 }
 
+.block-api-programs .slick-slider .internal-url:hover {
+  text-decoration: none;
+}
+
 .block-api-programs .org-image {
   background: #fff;
   -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.16);
@@ -125,7 +133,7 @@
   height: 100%;
   padding: 20px;
   position: relative;
-  width: 78.5%;
+  width: 100%;
 }
 
 .block-upcoming-events h2::after, .block-latest-qna h2::after {
@@ -190,6 +198,17 @@
   margin-left: 0.9rem;
 }
 
+.layout-builder__section .block-upcoming-events, .layout-builder__section .block-latest-qna,
+.layout-builder__section .block-latest-qna {
+  height: auto;
+}
+
+.layout-builder__section .banner__block {
+  left: auto;
+  margin-left: auto;
+  width: auto;
+}
+
 @media (min-width: 600px) {
   .block-api-programs .no-image {
     display: inline-block;
@@ -199,6 +218,7 @@
 @media (min-width: 900px) {
   .block-upcoming-events, .block-latest-qna {
     margin-bottom: 20px;
+    width: calc(100% - 0.9rem);
   }
 }
 
@@ -222,5 +242,17 @@
   .block-upcoming-events .view-empty, .block-latest-qna .view-empty {
     min-height: auto;
     padding: 20px 0;
+  }
+  .layout__region--first .block-upcoming-events, .layout__region--first .block-latest-qna {
+    margin: 0 0 20px;
+  }
+  .layout__region--first .block-latest-qna {
+    margin: 0 0 20px;
+  }
+  .layout__region--second .block-upcoming-events, .layout__region--second .block-latest-qna {
+    margin: 0 0 20px;
+  }
+  .layout__region--second .block-latest-qna {
+    margin: 0 0 20px;
   }
 }

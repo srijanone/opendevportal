@@ -34,7 +34,7 @@
 .programs-view .views-form form .form-group .form-group .button, .programs-view .view-filters .form-actions .button, .programs-view .card-paragraph .views-field-edit-node .field-content a,
 .programs-view .card-paragraph .views-field-nothing .field-content a,
 .programs-view .card-paragraph .views-field-delete-node .field-content a {
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #384e86;
   border-radius: 25px;
   color: #384e86;
@@ -47,6 +47,7 @@
   text-align: center;
   line-height: 1;
   margin: 0;
+  z-index: 2;
 }
 
 .programs-view .views-form form .form-group .form-group .button:hover, .programs-view .view-filters .form-actions .button:hover, .programs-view .card-paragraph .views-field-edit-node .field-content a:hover,
@@ -88,10 +89,19 @@
 .node--type-article .ds-2col .group-right + .book-navigation li.book-pager__item--center,
 .node--type-resources .ds-2col .group-right + .book-navigation li.book-pager__item--center,
 .node--type-tutorials .ds-2col .group-right + .book-navigation li.book-pager__item--center,
-.node--type-assets .ds-2col .group-right + .book-navigation li.book-pager__item--center, .apps-full-custom h2 + .content .field--name-field-client-id i ~ i,
-.apps-full-custom h2 + .content .field--name-field-client-secret i ~ i, .apps-full-custom h2 + .content .field--name-field-client-id.show-keys::before,
-.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys::before, .apps-full-custom h2 + .content .field--name-field-client-id.show-keys i ~ i,
-.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys i ~ i {
+.node--type-assets .ds-2col .group-right + .book-navigation li.book-pager__item--center, .apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item i ~ i,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item i ~ i, .apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item.show-keys::before,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item.show-keys::before, .apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item.show-keys i ~ i,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item.show-keys i ~ i, .apps-full-custom h2 + .content .field--name-field-client-id i ~ i,
+.apps-full-custom h2 + .content .field--name-field-client-secret i ~ i,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id i ~ i,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret i ~ i, .apps-full-custom h2 + .content .field--name-field-client-id.show-keys::before,
+.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id.show-keys::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret.show-keys::before, .apps-full-custom h2 + .content .field--name-field-client-id.show-keys i ~ i,
+.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys i ~ i,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id.show-keys i ~ i,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret.show-keys i ~ i {
   display: none;
 }
 
@@ -105,9 +115,15 @@
   border-radius: 4px;
 }
 
-.programs-view .views-form form .form-group .form-group .button::before, .apps-full-custom h2 + .content .field--name-field-client-id i::before,
-.apps-full-custom h2 + .content .field--name-field-client-secret i::before, .apps-full-custom h2 + .content .field--name-field-client-id.show-keys i::before,
-.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys i::before {
+.programs-view .views-form form .form-group .form-group .button::before, .apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item i::before,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item i::before, .apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item.show-keys i::before,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item.show-keys i::before, .apps-full-custom h2 + .content .field--name-field-client-id i::before,
+.apps-full-custom h2 + .content .field--name-field-client-secret i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret i::before, .apps-full-custom h2 + .content .field--name-field-client-id.show-keys i::before,
+.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id.show-keys i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret.show-keys i::before, .view-display-id-page-faq-listing .views-field-body .field-content:before, .view-display-id-page-faq-listing .views-field-body .field-content.icon--minus:before {
   font-family: "FontAwesome", "Font Awesome 5 Free";
   font-weight: 900;
 }
@@ -254,15 +270,15 @@
 }
 
 .programs-view.cards-block .card-paragraph {
-  width: 32%;
+  width: 30%;
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
 .programs-view.cards-block .view-content.row {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 1rem;
 }
 
@@ -559,7 +575,36 @@
 }
 
 .confirm-subscription-form {
+  line-height: 50px;
   text-align: center;
+}
+
+.confirm-subscription-form .form-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.confirm-subscription-form .form-actions button {
+  margin-right: 15px;
+}
+
+.confirm-subscription-form .form-actions a.button {
+  padding: 6px 12px;
+  background: #777777;
+  line-height: 21px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.875rem;
+  height: 35px;
+}
+
+.confirm-subscription-form .form-actions a.button:hover {
+  text-decoration: none;
 }
 
 .opendevx-download-sdk {
@@ -576,16 +621,22 @@
   display: inline-block;
 }
 
-.block-download-other-resources {
-  margin-bottom: -40px;
-}
-
 .block-asyncapi .view-content.row {
   margin: 0;
 }
 
 .block-asyncapi .view-content.row .views-row {
   width: 100%;
+}
+
+.page-view-notification-view .view-notification-view .select-all input[type="checkbox"] {
+  position: relative;
+  left: 0;
+  opacity: 1;
+}
+
+.page-view-notification-view .view-notification-view .views-field-views-bulk-operations-bulk-form {
+  text-align: center;
 }
 
 .page-view-notification-view .view-notification-view .views-field-views-bulk-operations-bulk-form label,
@@ -614,6 +665,15 @@
   border-left: 4px solid #54bbba;
 }
 
+.block-opendevx-notification .contextual {
+  right: 0;
+  top: -5px;
+}
+
+.block-opendevx-notification .contextual .trigger {
+  right: 0;
+}
+
 .node--type-apps .node__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -631,7 +691,60 @@
   width: 100%;
 }
 
-.apps-full-custom h2 {
+.apps-full-custom .field--name-field-app > .field__item {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  margin: 0 0 25px -21px;
+  padding: 20px;
+}
+
+.apps-full-custom .field--name-field-app > .field__item:last-child {
+  margin-bottom: 10px;
+}
+
+.apps-full-custom .paragraph--type--app-privacy .field {
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item {
+  font-size: 0;
+}
+
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item::before,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item::before {
+  content: '**********';
+  font-size: initial;
+}
+
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item i,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item i {
+  cursor: pointer;
+  display: inline-block;
+  font-style: normal;
+  margin-left: 10px;
+}
+
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item i::before,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item i::before {
+  content: '\f06e';
+  font-size: initial;
+}
+
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item.show-keys,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item.show-keys {
+  font-size: initial;
+}
+
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-secret .field__item.show-keys i::before,
+.apps-full-custom .paragraph--type--app-privacy .field--name-field-client-id .field__item.show-keys i::before {
+  content: '\f070';
+  font-size: initial;
+}
+
+.apps-full-custom h2,
+.apps-full-custom .paragraph--type--app-privacy .field__label {
   font-size: 1rem;
   font-weight: 700;
   border-bottom: 1px solid #384e86;
@@ -641,18 +754,24 @@
 }
 
 .apps-full-custom h2 + .content .field--name-field-client-id,
-.apps-full-custom h2 + .content .field--name-field-client-secret {
+.apps-full-custom h2 + .content .field--name-field-client-secret,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret {
   font-size: 0;
 }
 
 .apps-full-custom h2 + .content .field--name-field-client-id::before,
-.apps-full-custom h2 + .content .field--name-field-client-secret::before {
+.apps-full-custom h2 + .content .field--name-field-client-secret::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret::before {
   content: '**********';
   font-size: initial;
 }
 
 .apps-full-custom h2 + .content .field--name-field-client-id i,
-.apps-full-custom h2 + .content .field--name-field-client-secret i {
+.apps-full-custom h2 + .content .field--name-field-client-secret i,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id i,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret i {
   cursor: pointer;
   display: inline-block;
   font-style: normal;
@@ -660,23 +779,30 @@
 }
 
 .apps-full-custom h2 + .content .field--name-field-client-id i::before,
-.apps-full-custom h2 + .content .field--name-field-client-secret i::before {
+.apps-full-custom h2 + .content .field--name-field-client-secret i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret i::before {
   content: '\f06e';
   font-size: initial;
 }
 
 .apps-full-custom h2 + .content .field--name-field-client-id.show-keys,
-.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys {
+.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id.show-keys,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret.show-keys {
   font-size: initial;
 }
 
 .apps-full-custom h2 + .content .field--name-field-client-id.show-keys i::before,
-.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys i::before {
+.apps-full-custom h2 + .content .field--name-field-client-secret.show-keys i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-id.show-keys i::before,
+.apps-full-custom .paragraph--type--app-privacy .field__label + .content .field--name-field-client-secret.show-keys i::before {
   content: '\f070';
   font-size: initial;
 }
 
-.apps-full-custom h2::after {
+.apps-full-custom h2::after,
+.apps-full-custom .paragraph--type--app-privacy .field__label::after {
   content: ' :';
 }
 
@@ -738,10 +864,6 @@
   padding-bottom: 15px;
 }
 
-.apps-full-custom .group-right .block-layout-builder:last-child {
-  padding-bottom: 0;
-}
-
 .ui-widget.ui-widget-content {
   z-index: 11111;
 }
@@ -765,6 +887,164 @@
   margin: 0;
   padding: 0;
   line-height: 16px;
+}
+
+.programs-view .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.programs-view .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.programs-view .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f4f4f4;
+  min-width: 200px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: -50%;
+  top: 20px;
+  border: 1px solid #384e86;
+  border-radius: 4px;
+  padding-top: 22px;
+  text-align: center;
+}
+
+.programs-view .dropdown-content a {
+  color: #000000;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.programs-view .dropdown-content a:hover {
+  background-color: #384e86;
+  color: #fff;
+}
+
+.programs-view .dropdown-content a + a {
+  margin: 0;
+}
+
+.view-app-gallery .card-paragraph .product-image {
+  min-height: 142px;
+}
+
+.graphql-voyager .header {
+  background: none;
+  left: 0;
+  margin-left: 0;
+  position: relative;
+  width: auto;
+}
+
+.node-type-revision .block-page-title-block {
+  display: none;
+}
+
+.node--access-denied .block-system-breadcrumb-block {
+  display: none;
+}
+
+.node--access-denied .block-page-title-block {
+  margin-top: 85px;
+  margin-bottom: 15px;
+}
+
+.node--access-denied .block-system-main-block {
+  text-align: center;
+}
+
+.node--access-denied.path-dashboard.layout-no-sidebars .main-content > .section {
+  display: block;
+}
+
+.node--access-denied .access__denied {
+  min-height: 300px;
+}
+
+.view-display-id-page-faq-listing {
+  padding: 0 15px;
+}
+
+.view-display-id-page-faq-listing .view-content {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.view-display-id-page-faq-listing ul {
+  padding: 0;
+}
+
+.view-display-id-page-faq-listing .views-row {
+  list-style: none;
+  margin-bottom: 40px;
+  padding: 0 15px;
+}
+
+.view-display-id-page-faq-listing .views-row:last-child {
+  margin-bottom: 0;
+}
+
+.view-display-id-page-faq-listing .views-row p:last-child {
+  margin-bottom: 0;
+}
+
+.view-display-id-page-faq-listing .views-field-body {
+  border-bottom: 2px solid #1d76ee;
+  color: #1d76ee;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding: 0 0 10px 25px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.view-display-id-page-faq-listing .views-field-body .field-content:before {
+  content: '\f067';
+  color: #1d76ee;
+  font-size: 16px;
+  font-weight: 100;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.view-display-id-page-faq-listing .views-field-body .field-content.icon--minus:before {
+  content: '\f068';
+}
+
+.view-display-id-page-faq-listing .views-field-field-answer {
+  display: none;
+}
+
+.node--type-api-document .api-filter form,
+.node-type-revision .api-filter form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.node--type-api-document .api-filter form fieldset,
+.node-type-revision .api-filter form fieldset {
+  padding: 20px;
+  width: 33.333333%;
+}
+
+.node--type-api-document .api-filter form fieldset select,
+.node-type-revision .api-filter form fieldset select {
+  max-width: none;
 }
 
 @media (min-width: 900px) {
@@ -794,6 +1074,9 @@
         -ms-flex: 100%;
             flex: 100%;
     margin: 0;
+  }
+  .programs-view.cards-block .card-paragraph {
+    width: 90%;
   }
   .node--type-use-cases .ds-2col .group-left,
   .node--type-document-overview .ds-2col .group-left,
@@ -893,6 +1176,9 @@
     margin-left: auto;
     width: 100%;
   }
+  .apps-full-custom .field--name-field-app > .field__item {
+    margin-left: 0;
+  }
   .apps-full-custom .group-left {
     padding: 20px 0 0;
     width: 100% !important;
@@ -920,5 +1206,23 @@
   .apps-full-custom .group-header > div:first-child.block-field-blocknodeappsfield-products-image {
     text-align: center;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 1199px) {
+  .view-app-gallery .card-paragraph .product-image {
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 767px) {
+  .node--type-api-document .api-filter form,
+  .node-type-revision .api-filter form {
+    display: block;
+  }
+  .node--type-api-document .api-filter form fieldset,
+  .node-type-revision .api-filter form fieldset {
+    padding: 5px;
+    width: 100%;
   }
 }
