@@ -11,6 +11,7 @@ use Drupal\odp_block\ApiProducts;
 use Drupal\odp_block\Utility\BlockUtility;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
+use Drupal\Core\Path\CurrentPathStack;
 
 /**
  * Provides a 'Product header Navigation' Block.
@@ -52,6 +53,13 @@ class ProductHeaderNavigationBlock extends BlockBase implements ContainerFactory
   protected $aliasManager;
 
   /**
+   * The Current Path Stack.
+   *
+   * @var \Drupal\Core\Path\CurrentPathStack
+   */
+  protected $path;
+
+  /**
    * ProductHeaderNavigationBlock constructor.
    *
    * @param array $configuration
@@ -68,14 +76,18 @@ class ProductHeaderNavigationBlock extends BlockBase implements ContainerFactory
    *   The Entity Manager.
    * @param \Drupal\Core\Path\AliasManagerInterface $alias_manager
    *   The path alias manager.
+   * @param \Drupal\Core\Path\CurrentPathStack $current_path
+   *   The path alias manager.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ApiProducts $product,
-   RequestStack $request_stack, EntityTypeManagerInterface $entity_type_manager, AliasManagerInterface $alias_manager) {
+   RequestStack $request_stack, EntityTypeManagerInterface $entity_type_manager, AliasManagerInterface $alias_manager,
+   CurrentPathStack $current_path) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->product = $product;
     $this->currentPath = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
     $this->aliasManager = $alias_manager;
+    $this->path = $current_path;
   }
 
   /**
@@ -89,7 +101,8 @@ class ProductHeaderNavigationBlock extends BlockBase implements ContainerFactory
       $container->get('odp_block.products'),
       $container->get('request_stack'),
       $container->get('entity_type.manager'),
-      $container->get('path.alias_manager')
+      $container->get('path.alias_manager'),
+      $container->get('path.current')
     );
   }
 
@@ -193,16 +206,28 @@ class ProductHeaderNavigationBlock extends BlockBase implements ContainerFactory
         $product_pos,
         $insert_value
       );
+
+      $url_alias = $this->path->getPath();
+      $explode_path = explode('/', $url_alias);
       if ($current_path->query->get('parent') == NULL) {
-        $path = $current_path->getPathInfo();
-        $url_alias = $this->aliasManager->getPathByAlias($path);
-        $explode_path = explode('/', $url_alias);
         $id = $explode_path[2];
       }
       $node = $this->entityTypeManager->getStorage('node')->load($id);
       if ($node && $node->get('type')->getValue()[0]['target_id'] == 'api_product') {
         $api_path = $this->aliasManager->getAliasByPath('/node/' . $node->get('field_api_specifications')->getValue()[0]['target_id']) . '?parent=' . $id;
         $navigation_data[array_keys($navigation_data)[0]][$api_name]['childPath'] = $api_path;
+      }
+      $node_type = $this->entityTypeManager->getStorage('node')->load($explode_path[2]);
+      if ($node_type && $explode_path[3] != 'document_overview') {
+        if ($node_type->bundle() == 'api_product') {
+          $navigation_data[array_keys($navigation_data)[0]][$list['api_product']]['childClass'] = 'active';
+        }
+        if ($node_type->bundle() == 'api_document') {
+          $navigation_data[array_keys($navigation_data)[0]][$list['api_document']]['childClass'] = 'active';
+        }
+      }
+      if ($explode_path[3] == 'document_overview') {
+        $navigation_data[array_keys($navigation_data)[0]][$list['document_overview']]['childClass'] = 'active';
       }
     }
     return [
