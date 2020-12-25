@@ -152,43 +152,5 @@
             "langcode": "en",
             "lang": "en"
         }
-    ],
-    "layout_builder__layout": [
-        {
-            "section": {
-                "layout_id": "ds_1col",
-                "layout_settings": {
-                    "label": "",
-                    "wrappers": {
-                        "ds_content": "div"
-                    },
-                    "outer_wrapper": "div",
-                    "attributes": "",
-                    "link_attribute": "",
-                    "link_custom": "",
-                    "classes": {
-                        "layout_class": []
-                    }
-                },
-                "components": [
-                    {
-                        "uuid": "9c1d2f7e-bd30-42fd-8cda-c4baebdd3d20",
-                        "region": "ds_content",
-                        "configuration": {
-                            "id": "views_block:events-block_1",
-                            "label": "",
-                            "provider": "views",
-                            "label_display": 0,
-                            "views_label": "",
-                            "items_per_page": "none",
-                            "context_mapping": []
-                        },
-                        "additional": [],
-                        "weight": 0
-                    }
-                ],
-                "third_party_settings": []
-            }
-        }
     ]
 }
