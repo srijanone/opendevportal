@@ -35,11 +35,12 @@
 }
 
 .left-navigation a.active, .left-navigation a.is-active {
+  color: #1d76ee;
   font-weight: bold;
 }
 
 .left-navigation a.active::before, .left-navigation a.is-active::before {
-  background: #384e86;
+  background: #1d76ee;
   content: '';
   display: block;
   height: 20px;
@@ -73,6 +74,8 @@
 .left-navigation ul.nav > li > a {
   font-weight: bold;
   padding-left: 2rem;
+  pointer-events: none;
+  color: #000000;
 }
 
 .left-navigation ul.nav > li > a::after {

@@ -136,6 +136,11 @@
   background-color: unset;
 }
 
+.menu--account .dropdown-menu a.active:hover,
+.menu--account .dropdown-menu a.is-active:hover {
+  background: #015ad2;
+}
+
 .navbar-collapse {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -283,6 +288,16 @@
   display: block;
 }
 
+.navbar-search .contextual {
+  right: 0;
+  top: -5px;
+}
+
+.navbar-search .contextual .trigger {
+  right: 0;
+  top: 0;
+}
+
 .search-icon {
   background: url("../images/icons/icon-search-white.svg") 0 0 no-repeat transparent;
   border: unset;
@@ -414,6 +429,10 @@
         -ms-flex-order: 5;
             order: 5;
     width: 100%;
+    padding-left: 0;
+  }
+  .navbar-collapse .menu--account div a {
+    padding-left: 0;
   }
   .navbar .dropdown-menu {
     background-color: #fff;

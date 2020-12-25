@@ -15,7 +15,7 @@
 
 body table .views-field-nothing a,
 body .table .views-field-nothing a {
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #384e86;
   border-radius: 25px;
   color: #384e86;
@@ -28,6 +28,7 @@ body .table .views-field-nothing a {
   text-align: center;
   line-height: 1;
   margin: 0;
+  z-index: 2;
 }
 
 body table .views-field-nothing a:hover,
@@ -136,7 +137,7 @@ body table .views-field-nothing div + a,
 body .table .views-field-nothing a + a,
 body .table .views-field-nothing div + a {
   margin-left: .6rem;
-  margin-top: .6rem;
+  margin-top: .3rem;
 }
 
 body table .views-field-nothing .dropbutton-widget a,
@@ -156,19 +157,6 @@ body .table .views-field-nothing .dropbutton-widget {
   width: 100%;
 }
 
-body table .views-field-operations,
-body table .views-field-dropbutton,
-body .table .views-field-operations,
-body .table .views-field-dropbutton {
-  min-width: 8rem;
-}
-
-.js body table .dropbutton-widget, .js
-body .table .dropbutton-widget {
-  position: absolute;
-  width: 6rem;
-}
-
 .js .views-field-operations .dropbutton-multiple {
   margin: 0;
   padding: 0;
@@ -176,4 +164,9 @@ body .table .dropbutton-widget {
 
 .js .dropbutton-multiple .dropbutton-widget .dropbutton-action a {
   padding: 0;
+}
+
+.js td .dropbutton-multiple {
+  margin: 0 !important;
+  padding: 0 !important;
 }
