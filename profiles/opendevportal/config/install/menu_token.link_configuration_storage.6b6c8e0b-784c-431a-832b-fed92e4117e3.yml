@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: 6b6c8e0b-784c-431a-832b-fed92e4117e3
+label: 'Menu token link configuration'
+linkid: 'internal:/dashboard/[program:program_id]/apimanager/apps'
+configurationSerialized: 'a:2:{s:18:"menu_token_enabled";i:1;s:36:"remove_if_replacement_is_not_present";i:0;}'
