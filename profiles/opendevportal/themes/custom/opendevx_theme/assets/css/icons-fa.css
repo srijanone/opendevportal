@@ -22,7 +22,7 @@
 .nav-link--user-logout::before,
 .nav-link--user-register::before,
 .form-type-email label::before,
-.form-type-password label::before, .nav-link[class*="-edit"]::before {
+.form-type-password label::before, .nav-link[class*="-edit"]::before, .nav-link[class*="--user-"]::before {
   font-family: "FontAwesome", "Font Awesome 5 Free";
   font-weight: 900;
 }
@@ -53,8 +53,20 @@
   width: 26px;
 }
 
+.nav-link[class*="--user-"]::before {
+  display: inline-block;
+  font-weight: normal;
+  padding-right: 5px;
+  text-align: center;
+  width: 26px;
+}
+
 .nav-tabs .nav-link[class*="-edit"]::before {
   display: none;
+}
+
+.nav-link[class*="-user-"]::before {
+  content: "\f007";
 }
 
 .dropdown-menu .nav-link--coming-soon::before {
@@ -74,19 +86,19 @@
 }
 
 .nav-link--user::before {
-  content: "\f007";
+  content: "\f007" !important;
 }
 
 .nav-link--user-login::before {
-  content: "\f09c";
+  content: "\f09c" !important;
 }
 
 .nav-link--user-logout::before {
-  content: "\f023";
+  content: "\f023" !important;
 }
 
 .nav-link--user-register::before {
-  content: "\f234";
+  content: "\f234" !important;
 }
 
 .form-type-email label::before {
@@ -95,4 +107,10 @@
 
 .form-type-password label::before {
   content: "\f023";
+}
+
+.dropdown-item.active, .dropdown-item.is-active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #1d76ee;
 }

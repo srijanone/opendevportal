@@ -32,7 +32,7 @@
 }
 
 .comment-wrapper .form-actions .button, .create {
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #384e86;
   border-radius: 25px;
   color: #384e86;
@@ -45,6 +45,7 @@
   text-align: center;
   line-height: 1;
   margin: 0;
+  z-index: 2;
 }
 
 .comment-wrapper .form-actions .button:hover, .create:hover {

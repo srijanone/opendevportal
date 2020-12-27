@@ -97,16 +97,17 @@ h2,
       font-size: 1.8rem;
     }
 
-    margin: 1rem auto;
+    margin: 0 auto 1rem auto;
     font-size: 1.5rem;
   }
 }
 
 .block-field-blocknodeapi-producttitle {
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
 }
 
-.block-developer-portal-rapidoc-formatter {
+.block-developer-portal-rapidoc-formatter,
+.block-opendevx-rapidoc-formatter {
   h2 {
     margin: 0;
     border: 0;

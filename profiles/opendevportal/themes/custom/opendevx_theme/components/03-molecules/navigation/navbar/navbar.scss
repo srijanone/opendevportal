@@ -169,6 +169,11 @@
     a:hover {
       background-color: unset;
     }
+
+    a.active:hover,
+    a.is-active:hover {
+      background: $blue-dark-hover;
+    }
   }
 
   .dropdown-toggle {
@@ -266,6 +271,11 @@
     @include for-tablet-landscape-down {
       order: 5;
       width: 100%;
+      padding-left: 0;
+
+      div a {
+        padding-left: 0;
+      }
     }
   }
 }
@@ -462,6 +472,16 @@
 
   &.collapse:not(.show) {
     display: block;
+  }
+
+  .contextual {
+    right: 0;
+    top: -5px;
+
+    .trigger {
+      right: 0;
+      top: 0;
+    }
   }
 }
 

@@ -17,12 +17,13 @@
 
     &.active,
     &.is-active {
+      color: $blue;
       font-weight: bold;
     }
 
     &.active::before,
     &.is-active::before {
-      background: #384e86;
+      background: $blue;
       content: '';
       display: block;
       height: 20px;
@@ -58,6 +59,8 @@
       >li>a {
         font-weight: bold;
         padding-left: 2rem;
+        pointer-events: none;
+        color: $gray-base;
       }
 
       >li>a::after {

@@ -150,6 +150,9 @@
 }
 
 .popover_program .dashboard-program .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100vw !important;
 }
 
@@ -171,8 +174,23 @@
 
 @media (max-width: 899px) {
   .popover_program {
-    -webkit-box-ordinal-group: 5;
-        -ms-flex-order: 4;
-            order: 4;
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  .popover_program .dashboard-user-program-header {
+    top: 326px;
+  }
+  .popover_program .dashboard-user-program-header.show, .popover_program .dashboard-user-program-header.collapsing {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .popover_program .program_left {
+    width: 100%;
+  }
+  .popover_program .program_right {
+    width: 100%;
   }
 }

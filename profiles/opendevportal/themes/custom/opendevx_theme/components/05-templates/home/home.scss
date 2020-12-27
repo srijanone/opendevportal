@@ -1,6 +1,10 @@
 @import "settings";
 
 //API programs section
+.block-block-dashboard-block {
+  margin-top: 60px;
+}
+
 .block-api-programs {
   background-color: $blue;
   display: flex;
@@ -55,6 +59,10 @@
     &:focus {
       outline: 0;
     }
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .org-image {
@@ -104,6 +112,7 @@
 .block-upcoming-events {
   @include for-tablet-landscape-up {
     margin-bottom: 20px;
+    width: calc(100% - 0.9rem);
   }
 
   background-color: $gray-lighter-1;
@@ -112,7 +121,7 @@
   height: 100%;
   padding: 20px;
   position: relative;
-  width: 78.5%;
+  width: 100%;
 
   h2 {
     @include for-tablet-landscape-down {
@@ -175,11 +184,19 @@
 
 .layout__region--first {
   .block-upcoming-events {
+    @include for-tablet-landscape-down {
+      margin: 0 0 20px;
+    }
+
     margin-left: auto;
     margin-right: 0.9rem;
   }
 
   .block-latest-qna {
+    @include for-tablet-landscape-down {
+      margin: 0 0 20px;
+    }
+
     margin-left: auto;
     margin-right: 0.9rem;
   }
@@ -187,11 +204,19 @@
 
 .layout__region--second {
   .block-upcoming-events {
+    @include for-tablet-landscape-down {
+      margin: 0 0 20px;
+    }
+
     margin-right: auto;
     margin-left: 0.9rem;
   }
 
   .block-latest-qna {
+    @include for-tablet-landscape-down {
+      margin: 0 0 20px;
+    }
+
     margin-right: auto;
     margin-left: 0.9rem;
   }
@@ -200,4 +225,18 @@
 // Latest Q&A
 .block-latest-qna {
   @extend .block-upcoming-events;
+}
+
+// On Layout change on layout Builder page.
+.layout-builder__section {
+  .block-upcoming-events,
+  .block-latest-qna {
+    height: auto;
+  }
+
+  .banner__block {
+    left: auto;
+    margin-left: auto;
+    width: auto;
+  }
 }
