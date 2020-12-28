@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed6bc0f090f23aef269c67758f823ed4",
+    "content-hash": "3963c409cc884359ad309064fcb1c500",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -148,12 +148,12 @@
             "version": "v3.36.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/swagger-api/swagger-ui.git",
+                "url": "git@github.com:wordnik/swagger-ui.git",
                 "reference": "69518cf5e5554b3d7fa731892efe1f05a60682f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/69518cf5e5554b3d7fa731892efe1f05a60682f9",
+                "url": "https://api.github.com/repos/wordnik/swagger-ui/zipball/69518cf5e5554b3d7fa731892efe1f05a60682f9",
                 "reference": "69518cf5e5554b3d7fa731892efe1f05a60682f9"
             },
             "type": "bower-asset"
