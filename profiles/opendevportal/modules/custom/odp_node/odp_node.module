@@ -97,16 +97,16 @@ function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form_ids = ['node_apps_edit_form', 'node_apps_form', 'node_issues_edit_form',
     'node_issues_form', 'node_forum_edit_form', 'node_forum_form',
   ];
-  $current_user_role = \Drupal::currentUser()->getRoles(TRUE);
+  // Disable add to gallery checkbox for only developer.
   $add_gallery_element = '';
-  if (isset($current_user_role[0]) && $current_user_role[0] != 'admin' && (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE))) {
+  if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
     $add_gallery_element = 'field_add_to_gallery';
   }
   // Array to hide form elements.
   $elements_to_hide = [
     0 => 'revision_information',
     'actions' => ['preview'],
-    $add_gallery_element,
+    $add_gallery_element => $add_gallery_element,
   ];
 
   // @todo will move into odp_apps module.
