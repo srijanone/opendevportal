@@ -5,6 +5,7 @@
 }*/
 
 /* Fix drag and drop offset in ckeditor toolbar configuration */
+
 /*.adminimal .ckeditor-toolbar-configuration.js-form-wrapper.form-wrapper {
   zoom: 0.9;
 }*/
@@ -13,8 +14,7 @@
   box-sizing: border-box;
 }
 
-.adminimal .page-title,
-.adminimal .heading-a {
+.adminimal .page-title, .adminimal .heading-a {
   color: #333;
   font-size: 1.6rem;
   font-weight: 300;
@@ -49,21 +49,19 @@
   border-bottom: 1px solid #fff;
 }
 
-.adminimal th.is-active > a,
-.adminimal th.is-active > a:hover {
+.adminimal th.is-active>a, .adminimal th.is-active>a:hover {
   color: #333;
 }
 
-.adminimal th > a:hover {
+.adminimal th>a:hover {
   text-decoration: underline;
 }
 
-.adminimal th > a:after,
-.adminimal th.is-active > a:after {
+.adminimal th>a:after, .adminimal th.is-active>a:after {
   display: none;
 }
 
-.adminimal thead > tr {
+.adminimal thead>tr {
   border-bottom: 1px solid #e6e4df;
 }
 
@@ -76,7 +74,8 @@
 }
 
 .adminimal .tabs.primary .tabs__tab.is-active {
-  border-radius: 0; /* LTR */
+  border-radius: 0;
+  /* LTR */
 }
 
 [dir="rtl"] .adminimal .tabs.primary .tabs__tab.is-active {
@@ -84,7 +83,8 @@
 }
 
 .adminimal .is-collapse-enabled .tabs__trigger {
-  border-radius: 0; /* LTR */
+  border-radius: 0;
+  /* LTR */
 }
 
 [dir="rtl"] .is-collapse-enabled .tabs__trigger {
@@ -100,23 +100,14 @@
   transition: all, 0.3s;
 }
 
-.adminimal .is-horizontal .tabs__tab + .tabs__tab,
-[dir="rtl"] .adminimal .is-horizontal .tabs__tab + .tabs__tab,
-.adminimal .is-horizontal .tabs.primary .tabs__tab:first-child,
-[dir="rtl"] .adminimal .is-horizontal .tabs.primary .tabs__tab:first-child,
-.adminimal .is-horizontal .tabs.primary .tabs__tab:last-child,
-[dir="rtl"] .adminimal .is-horizontal .tabs.primary .tabs__tab:last-child,
-.adminimal .is-horizontal .tabs__tab.is-active,
-.adminimal .is-horizontal .tabs.primary .tabs__tab.is-active,
-[dir="rtl"] .adminimal .is-horizontal .tabs.primary .tabs__tab.is-active {
+.adminimal .is-horizontal .tabs__tab+.tabs__tab, [dir="rtl"] .adminimal .is-horizontal .tabs__tab+.tabs__tab, .adminimal .is-horizontal .tabs.primary .tabs__tab:first-child, [dir="rtl"] .adminimal .is-horizontal .tabs.primary .tabs__tab:first-child, .adminimal .is-horizontal .tabs.primary .tabs__tab:last-child, [dir="rtl"] .adminimal .is-horizontal .tabs.primary .tabs__tab:last-child, .adminimal .is-horizontal .tabs__tab.is-active, .adminimal .is-horizontal .tabs.primary .tabs__tab.is-active, [dir="rtl"] .adminimal .is-horizontal .tabs.primary .tabs__tab.is-active {
   border-radius: 0;
   border: none;
   margin-left: 0;
   margin-right: 0;
 }
 
-.adminimal .is-collapse-enabled .tabs:before,
-.adminimal .is-horizontal .tabs:before {
+.adminimal .is-collapse-enabled .tabs:before, .adminimal .is-horizontal .tabs:before {
   display: none;
 }
 
@@ -133,10 +124,7 @@
   top: 0;
 }
 
-.adminimal .tabs__tab,
-.adminimal .tabs__tab:hover,
-.adminimal .tabs__tab:focus,
-.adminimal .tabs.primary a:focus {
+.adminimal .tabs__tab, .adminimal .tabs__tab:hover, .adminimal .tabs__tab:focus, .adminimal .tabs.primary a:focus {
   background: transparent;
 }
 
@@ -205,8 +193,7 @@
   transition: all, 0.2s;
 }
 
-.adminimal .button:hover,
-.adminimal .button:focus {
+.adminimal .button:hover, .adminimal .button:focus {
   background-image: unset;
   background-color: #384e86;
   border-color: #384e86;
@@ -236,8 +223,7 @@
   background-image: unset;
 }
 
-.adminimal .button--primary:hover,
-.adminimal .button--primary:focus {
+.adminimal .button--primary:hover, .adminimal .button--primary:focus {
   background-image: none;
   background-color: #384e86;
   border-color: #384e86;
@@ -265,8 +251,7 @@
   padding: 0.4rem 1.33rem;
 }
 
-.adminimal .action-links .button--primary:hover,
-.adminimal .action-links .button--primary:focus {
+.adminimal .action-links .button--primary:hover, .adminimal .action-links .button--primary:focus {
   background-color: #384e86;
   background-image: none;
   box-shadow: none;
@@ -297,9 +282,7 @@
     border-radius: 0;
     background: url(../images/caret-down.svg) no-repeat 98% 64% #fcfcfa;
   }
-
-  .adminimal select:focus,
-  .adminimal select:hover {
+  .adminimal select:focus, .adminimal select:hover {
     background: url(../images/caret-down.svg) no-repeat 98% 64% #fcfcfa;
   }
   .adminimal select:focus {
@@ -310,33 +293,21 @@
   }
 }
 
-.js .adminimal .form-actions .dropbutton .dropbutton-action > * {
+.js .adminimal .form-actions .dropbutton .dropbutton-action>* {
   text-shadow: none;
 }
 
-.js .adminimal .form-actions .dropbutton .dropbutton-action > *,
-.js .adminimal .dropbutton-widget .dropbutton-action a,
-.js .adminimal .dropbutton-widget .dropbutton-action input,
-.js .adminimal .dropbutton-widget .dropbutton-action button,
-.js .adminimal .dropbutton-multiple .dropbutton-widget,
-.js .adminimal .dropbutton-widget .dropbutton-action input,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
+.js .adminimal .form-actions .dropbutton .dropbutton-action>*, .js .adminimal .dropbutton-widget .dropbutton-action a, .js .adminimal .dropbutton-widget .dropbutton-action input, .js .adminimal .dropbutton-widget .dropbutton-action button, .js .adminimal .dropbutton-multiple .dropbutton-widget, .js .adminimal .dropbutton-widget .dropbutton-action input, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
   border-radius: 0;
   box-shadow: none;
   font-weight: 500;
 }
 
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:hover,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:hover,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:hover,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:focus,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:focus,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus {
+.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:hover, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:hover, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:hover, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:focus, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:focus, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus {
   box-shadow: none;
 }
 
-.js .adminimal .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button,
-.adminimal .form-actions .dropbutton .secondary-action {
+.js .adminimal .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button, .adminimal .form-actions .dropbutton .secondary-action {
   border-color: #ffffff;
 }
 
@@ -354,13 +325,11 @@
   text-shadow: none;
 }
 
-.js .adminimal .dropbutton-multiple.open .dropbutton-action:first-child a,
-.js .adminimal .dropbutton-multiple.open .dropbutton-action:first-child .button {
+.js .adminimal .dropbutton-multiple.open .dropbutton-action:first-child a, .js .adminimal .dropbutton-multiple.open .dropbutton-action:first-child .button {
   border-radius: 0;
 }
 
-.js .adminimal .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:hover,
-.js .adminimal .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:focus {
+.js .adminimal .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:hover, .js .adminimal .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:focus {
   background-image: none;
   box-shadow: none;
 }
@@ -369,48 +338,28 @@
   margin: 0 0 0.2em;
 }
 
-.adminimal input.form-autocomplete,
-.adminimal input.form-text,
-.adminimal input.form-tel,
-.adminimal input.form-email,
-.adminimal input.form-url,
-.adminimal input.form-search,
-.adminimal input.form-number,
-.adminimal input.form-color,
-.adminimal input.form-file,
-.adminimal input.form-date,
-.adminimal input.form-time,
-.adminimal textarea.form-textarea {
+.adminimal input.form-autocomplete, .adminimal input.form-text, .adminimal input.form-tel, .adminimal input.form-email, .adminimal input.form-url, .adminimal input.form-search, .adminimal input.form-number, .adminimal input.form-color, .adminimal input.form-file, .adminimal input.form-date, .adminimal input.form-time, .adminimal textarea.form-textarea {
   box-shadow: none;
   border-radius: 0;
 }
 
-.adminimal .form-text:focus,
-.adminimal .form-tel:focus,
-.adminimal .form-email:focus,
-.adminimal .form-url:focus,
-.adminimal .form-search:focus,
-.adminimal .form-number:focus,
-.adminimal .form-color:focus,
-.adminimal .form-file:focus,
-.adminimal .form-textarea:focus,
-.adminimal .form-date:focus,
-.adminimal .form-time:focus {
+.adminimal .node-api-product-edit-form input.form-text {
+  width: 100%;
+}
+
+.adminimal .node-api-product-form input.form-text {
+  width: 100%;
+}
+
+.adminimal .form-text:focus, .adminimal .form-tel:focus, .adminimal .form-email:focus, .adminimal .form-url:focus, .adminimal .form-search:focus, .adminimal .form-number:focus, .adminimal .form-color:focus, .adminimal .form-file:focus, .adminimal .form-textarea:focus, .adminimal .form-date:focus, .adminimal .form-time:focus {
   border-color: #68A3CF;
   outline: 2px solid #C1E0FF;
   outline-offset: 0px;
   color: #000;
 }
 
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:hover,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:hover,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:hover,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:focus,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:focus,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:hover,
-.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:focus {
-  background-image:none;
+.js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:hover, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:hover, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:hover, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:focus, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:focus, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:hover, .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:focus {
+  background-image: none;
   background-color: #ffffff;
 }
 
@@ -422,9 +371,7 @@
   padding-top: 32px !important;
 }
 
-.adminimal .toolbar .toolbar-tray-vertical a,
-.adminimal .toolbar .toolbar-tray-horizontal .menu-item,
-.menu-item a {
+.adminimal .toolbar .toolbar-tray-vertical a, .adminimal .toolbar .toolbar-tray-horizontal .menu-item, .menu-item a {
   transition: all, 0.2s;
 }
 
@@ -438,15 +385,15 @@
 }
 
 .adminimal .toolbar .toolbar-tray-vertical .level-2 {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .adminimal .toolbar .toolbar-tray-vertical .level-3 {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .adminimal .toolbar .toolbar-tray-vertical .level-4 {
-  background: rgba(255,255,255,0.07);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .adminimal .toolbar .toolbar-tray-vertical {
@@ -458,23 +405,22 @@
   color: #bbbbbb;
 }
 
-.adminimal .toolbar .toolbar-bar .toolbar-tab:not(.workspaces-toolbar-tab) > .toolbar-item {
+.adminimal .toolbar .toolbar-bar .toolbar-tab:not(.workspaces-toolbar-tab)>.toolbar-item {
   color: #fff;
   font-weight: 600;
 }
 
-[dir="rtl"] .adminimal.toolbar-horizontal .toolbar-tray .menu-item + .menu-item,
-.adminimal.toolbar-horizontal .toolbar-tray .menu-item:last-child {
-  border-left: none; /* LTR */
+[dir="rtl"] .adminimal.toolbar-horizontal .toolbar-tray .menu-item+.menu-item, .adminimal.toolbar-horizontal .toolbar-tray .menu-item:last-child {
+  border-left: none;
+  /* LTR */
   border-right: none;
 }
 
-.adminimal.toolbar-horizontal .toolbar-tray .menu-item + .menu-item {
+.adminimal.toolbar-horizontal .toolbar-tray .menu-item+.menu-item {
   border-left: 1px solid #ddd;
 }
 
-.adminimal .toolbar .toolbar-tray .menu-item--active-trail > .toolbar-box a,
-.adminimal .toolbar .toolbar-tray a.is-active {
+.adminimal .toolbar .toolbar-tray .menu-item--active-trail>.toolbar-box a, .adminimal .toolbar .toolbar-tray a.is-active {
   color: #bbb;
   font-weight: 500;
   text-decoration: none;
@@ -497,7 +443,7 @@
   background: #fff;
 }
 
-.adminimal .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded.hover-intent > a {
+.adminimal .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded.hover-intent>a {
   background-color: #1d76ee;
   background-position: center right;
   background-image: url('../images/chevron-right-white.svg');
@@ -510,7 +456,7 @@
   margin: -40px 0 0 201px;
 }
 
-.adminimal .toolbar .menu-item + .menu-item {
+.adminimal .toolbar .menu-item+.menu-item {
   border: 0 none;
 }
 
@@ -555,8 +501,7 @@
   color: white;
 }
 
-.adminimal .toolbar-tray-horizontal a:focus,
-.adminimal .toolbar-box a:focus {
+.adminimal .toolbar-tray-horizontal a:focus, .adminimal .toolbar-box a:focus {
   background: transparent;
 }
 
@@ -576,16 +521,13 @@
   color: #333;
 }
 
-.adminimal .toolbar .toolbar-menu a:hover,
-.adminimal .toolbar .toolbar-menu .toolbar-menu a.is-active,
-.adminimal .toolbar .toolbar-menu a.is-active {
+.adminimal .toolbar .toolbar-menu a:hover, .adminimal .toolbar .toolbar-menu .toolbar-menu a.is-active, .adminimal .toolbar .toolbar-menu a.is-active {
   background-color: #1d76ee;
   color: #fff;
   text-decoration: none;
 }
 
-.adminimal .toolbar a.is-active:hover,
-.adminimal .toolbar .toolbar-menu .toolbar-menu a.is-active:hover {
+.adminimal .toolbar a.is-active:hover, .adminimal .toolbar .toolbar-menu .toolbar-menu a.is-active:hover {
   text-decoration: none;
 }
 
@@ -598,9 +540,8 @@
 }
 
 /* Style checkbox and radio buttons */
-input[type=checkbox],
-input[type=radio],
-input[type=checkbox]#edit-delete {
+
+input[type=checkbox], input[type=radio], input[type=checkbox]#edit-delete {
   display: inline-block;
   position: relative;
   top: 3px;
@@ -629,28 +570,17 @@ input[type=radio] {
   border-radius: 50%;
 }
 
-input[type=checkbox]:hover,
-input[type=checkbox]:focus,
-input[type=radio]:hover,
-input[type=radio]:focus {
+input[type=checkbox]:hover, input[type=checkbox]:focus, input[type=radio]:hover, input[type=radio]:focus {
   border-color: #0074bd;
   cursor: pointer;
 }
 
-input[type=checkbox]#edit-delete:hover,
-input[type=checkbox]#edit-delete:focus {
+input[type=checkbox]#edit-delete:hover, input[type=checkbox]#edit-delete:focus {
   border-color: #d01616;
   cursor: pointer;
 }
 
-input[type=checkbox]:checked,
-input[type=checkbox]:disabled:checked,
-input[type=checkbox].error:checked,
-input[type=checkbox].error:focus:checked,
-input[type=radio]:checked,
-input[type=radio]:disabled:checked,
-input[type=radio].error:checked,
-input[type=radio].error:focus:checked {
+input[type=checkbox]:checked, input[type=checkbox]:disabled:checked, input[type=checkbox].error:checked, input[type=checkbox].error:focus:checked, input[type=radio]:checked, input[type=radio]:disabled:checked, input[type=radio].error:checked, input[type=radio].error:focus:checked {
   background: #0074bd;
   box-shadow: inset 0 0 0 3px #fff;
 }
@@ -659,14 +589,12 @@ input[type=radio].error:focus:checked {
   border-color: #B5B5B5;
 }
 
-input[type=checkbox]#edit-delete:checked,
-input[type=checkbox]#edit-delete:disabled:checked {
+input[type=checkbox]#edit-delete:checked, input[type=checkbox]#edit-delete:disabled:checked {
   background: #D01616;
   box-shadow: inset 0 0 0 3px #fff;
 }
 
-input[type=checkbox]:disabled,
-input[type=radio]:disabled {
+input[type=checkbox]:disabled, input[type=radio]:disabled {
   opacity: .5;
   background: #e2e2e2;
 }
@@ -681,27 +609,24 @@ input[type=checkbox]:disabled:hover {
   cursor: default;
 }
 
-input[type=checkbox]:disabled:hover,
-input[type=radio]:disabled:hover {
+input[type=checkbox]:disabled:hover, input[type=radio]:disabled:hover {
   border-color: #b5b5b5;
   cursor: default;
 }
 
 /* in Chrome + Safari + Opera + Mozilla */
+
 @supports (-webkit-appearance:none) {
-  input[type="checkbox"],
-  input[type="radio"],
-  input[type="checkbox"]#edit-delete {
+  input[type="checkbox"], input[type="radio"], input[type="checkbox"]#edit-delete {
     -webkit-appearance: none;
   }
 }
 
 /* in Mozilla */
+
 @supports (-moz-appearance:none) {
-  input[type="checkbox"],
-  input[type="radio"],
-  input[type="checkbox"]#edit-delete {
-    -moz-appearance:none;
+  input[type="checkbox"], input[type="radio"], input[type="checkbox"]#edit-delete {
+    -moz-appearance: none;
   }
 }
 
@@ -720,8 +645,7 @@ input[type=radio]:disabled:hover {
   border-radius: 0;
 }
 
-.adminimal .ui-dialog .ui-dialog-titlebar,
-.adminimal .ui-dialog {
+.adminimal .ui-dialog .ui-dialog-titlebar, .adminimal .ui-dialog {
   outline: none;
 }
 
@@ -729,8 +653,7 @@ input[type=radio]:disabled:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.adminimal .ui-button-icon-only.ui-dialog-titlebar-close.ui-state-active,
-.adminimal .ui-button-icon-only.ui-dialog-titlebar-close.ui-widget-content .ui-state-active {
+.adminimal .ui-button-icon-only.ui-dialog-titlebar-close.ui-state-active, .adminimal .ui-button-icon-only.ui-dialog-titlebar-close.ui-widget-content .ui-state-active {
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -767,8 +690,7 @@ input[type=radio]:disabled:hover {
   border-color: #73b355;
 }
 
-.adminimal .cke_top,
-.adminimal .cke_bottom {
+.adminimal .cke_top, .adminimal .cke_bottom {
   background: #f7f7f7;
   background-image: none;
   box-shadow: none;
@@ -778,59 +700,52 @@ input[type=radio]:disabled:hover {
   background: #f7f7f7;
 }
 
-.adminimal .cke_ltr .cke_button:first-child,
-.adminimal .cke_rtl .cke_button:last-child,
-.adminimal .cke_toolgroup {
+.adminimal .cke_ltr .cke_button:first-child, .adminimal .cke_rtl .cke_button:last-child, .adminimal .cke_toolgroup {
   border-radius: 0;
 }
 
 /* Main menu icons. */
-.adminimal .toolbar-icon-system-admin-content:active:before,
-.adminimal .toolbar-icon-system-admin-content.is-active:before {
+
+.adminimal .toolbar-icon-system-admin-content:active:before, .adminimal .toolbar-icon-system-admin-content.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/file.svg);
 }
 
-.adminimal .toolbar-icon-system-admin-structure:active:before,
-.adminimal .toolbar-icon-system-admin-structure.is-active:before {
+.adminimal .toolbar-icon-system-admin-structure:active:before, .adminimal .toolbar-icon-system-admin-structure.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/orgchart.svg);
 }
 
-.adminimal .toolbar-icon-system-themes-page:active:before,
-.adminimal .toolbar-icon-system-themes-page.is-active:before {
+.adminimal .toolbar-icon-system-themes-page:active:before, .adminimal .toolbar-icon-system-themes-page.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/paintbrush.svg);
 }
 
-.adminimal .toolbar-icon-entity-user-collection:active:before,
-.adminimal .toolbar-icon-entity-user-collection.is-active:before {
+.adminimal .toolbar-icon-entity-user-collection:active:before, .adminimal .toolbar-icon-entity-user-collection.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/people.svg);
 }
 
-.adminimal .toolbar-icon-system-modules-list:active:before,
-.adminimal .toolbar-icon-system-modules-list.is-active:before {
+.adminimal .toolbar-icon-system-modules-list:active:before, .adminimal .toolbar-icon-system-modules-list.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/puzzlepiece.svg);
 }
 
-.adminimal .toolbar-icon-system-admin-config:active:before,
-.adminimal .toolbar-icon-system-admin-config.is-active:before {
+.adminimal .toolbar-icon-system-admin-config:active:before, .adminimal .toolbar-icon-system-admin-config.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/wrench.svg);
 }
 
-.adminimal .toolbar-icon-system-admin-reports:active:before,
-.adminimal .toolbar-icon-system-admin-reports.is-active:before {
+.adminimal .toolbar-icon-system-admin-reports:active:before, .adminimal .toolbar-icon-system-admin-reports.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/barchart.svg);
 }
 
-.adminimal .toolbar-icon-help-main:active:before,
-.adminimal .toolbar-icon-help-main.is-active:before {
+.adminimal .toolbar-icon-help-main:active:before, .adminimal .toolbar-icon-help-main.is-active:before {
   background-image: url(/core/themes/stable/images/core/icons/787878/questionmark-disc.svg);
 }
 
 /* Main menu icons end. */
+
 .adminimal.path-batch .layout-container {
   padding-top: 1.3rem;
 }
 
 /* Module: Views */
+
 .adminimal .views-display-top {
   background-color: #fafafa;
   border-bottom: 1px solid #f2f2f2;
@@ -857,9 +772,7 @@ input[type=radio]:disabled:hover {
   padding: 7px 0 5px;
 }
 
-.adminimal .views-displays ul.secondary li a,
-.adminimal .views-displays ul.secondary li.is-active a,
-.adminimal .views-displays ul.secondary li.is-active a.is-active {
+.adminimal .views-displays ul.secondary li a, .adminimal .views-displays ul.secondary li.is-active a, .adminimal .views-displays ul.secondary li.is-active a.is-active {
   padding: 7px 10px 5px;
 }
 
@@ -962,8 +875,8 @@ input[type=radio]:disabled:hover {
 }
 
 .header>nav .navbar-toggler {
-  color: rgba(255,255,255,.5);
-  border-color: rgba(255,255,255,.1);
+  color: rgba(255, 255, 255, .5);
+  border-color: rgba(255, 255, 255, .1);
   padding: .25rem .75rem;
   font-size: 1.25rem;
   line-height: 1;
@@ -981,7 +894,6 @@ input[type=radio]:disabled:hover {
     transition: all .3s;
     overflow: hidden;
   }
-
   .header>nav .navbar-collapse.show {
     visibility: visible;
     background: #416ad9;
@@ -992,12 +904,12 @@ input[type=radio]:disabled:hover {
 
 @media only screen and (max-width: 1200px) {
   .header>nav {
-      display: flex;
-      flex-flow: wrap;
-      align-items: center;
-      justify-content: space-between;
-      max-width:100%;
-      padding: 8px 15px;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 8px 15px;
   }
 }
 
@@ -1025,12 +937,10 @@ input[type=radio]:disabled:hover {
   .header .navbar-collapse {
     width: 100%;
   }
-
   .header .region-primary-menu {
     display: flex;
     justify-content: space-between;
   }
-
   .header>nav {
     display: flex;
   }
@@ -1068,7 +978,7 @@ input[type=radio]:disabled:hover {
   margin-right: 20px;
 }
 
-.block-views-blockcontrol-users-panes-pane-tc-new-users, .block-views-blockcontrol-content-panes-pane-tc-new, .admin-dashboard-links-block,  .block-total-control {
+.block-views-blockcontrol-users-panes-pane-tc-new-users, .block-views-blockcontrol-content-panes-pane-tc-new, .admin-dashboard-links-block, .block-total-control {
   margin-bottom: 20px;
 }
 
@@ -1085,7 +995,7 @@ input[type=radio]:disabled:hover {
 }
 
 .menu--main {
-  margin: 0 auto 0 0;
+  margin: auto;
 }
 
 .menu--account {
@@ -1095,23 +1005,27 @@ input[type=radio]:disabled:hover {
 }
 
 .menu--account .dropdown-toggle {
-  margin-left: 10px;
+  display: flex;
+  min-width: 50px;
+  padding-bottom: 14.5px;
 }
 
 .menu--account .dropdown-toggle .user {
-  background: url('/themes/custom/devportal/images/Icon-user.png') no-repeat 3px 4px;
-  background-size: 22px;
+  background: url('/profiles/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-user.svg') no-repeat 0 2px;
   display: inline-block;
-  height: 30px;
-  width: 30px;
+  height: 27px;
+  width: 25px;
 }
 
 .menu--account .dropdown-toggle .arrow {
-  background: url('/themes/custom/devportal/images/Icon-chevron-down.png') no-repeat 3px 4px;
-  background-size: 15px;
+  background: url('/profiles/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-expand_more.svg') no-repeat 0 2px;
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
+}
+
+.menu--account.show .dropdown-toggle .arrow {
+  background: url('/profiles/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-expand-less.svg') no-repeat 0 2px;
 }
 
 .menu--account .dropdown-toggle::after {
@@ -1123,15 +1037,12 @@ input[type=radio]:disabled:hover {
 }
 
 .menu--account .dropdown-menu {
-  left: auto;
   padding: 0;
   padding-bottom: 10px;
-  right: -48px;
-  top: 48px;
+  top: 100%;
   position: absolute;
   z-index: 1000;
   display: none;
-  float: left;
   min-width: 10rem;
   margin: .125rem 0 0;
   font-size: 1rem;
@@ -1140,8 +1051,18 @@ input[type=radio]:disabled:hover {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
+  border: 1px solid rgba(0, 0, 0, .15);
   border-radius: .25rem;
+  left: auto;
+  right: 0;
+  box-shadow: unset;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  min-width: 140px;
+}
+
+.menu--account .dropdown-menu:before, .menu--account .dropdown-menu:after {
+  left: 78%;
 }
 
 .menu--account.show .dropdown-menu {
@@ -1193,10 +1114,10 @@ input[type=radio]:disabled:hover {
 @media only screen and (max-width: 991px) {
   .menu--account {
     margin-left: 0;
- }
+  }
   .menu--account .dropdown-toggle {
     display: none;
- }
+  }
   .menu--account .dropdown-menu {
     background-color: transparent !important;
     border: 0;
@@ -1204,19 +1125,19 @@ input[type=radio]:disabled:hover {
     display: block;
     float: none;
     position: static;
- }
+  }
   .menu--account .dropdown-item {
     color: #fff;
     padding: 5px 14px;
- }
+  }
   .menu--account .dropdown-item:focus, .menu--account .dropdown-item:active, .menu--account .dropdown-item:hover {
     background-color: #416ad9;
     color: #fff;
     outline: none;
- }
+  }
   .menu--account .dropdown-item::before {
     display: none;
- }
+  }
 }
 
 .adminimal a.tabledrag-handle .handle {
@@ -1228,37 +1149,19 @@ input[type=radio]:disabled:hover {
   margin-left: 20px;
 }
 
-.node-apps-form.developer-form .layout-node-form,
-.node-apps-edit-form.developer-form .layout-node-form,
-.node-issues-form.developer-form .layout-node-form,
-.node-forum-form.developer-form .layout-node-form {
+.node-apps-form.developer-form .layout-node-form, .node-apps-edit-form.developer-form .layout-node-form, .node-issues-form.developer-form .layout-node-form, .node-forum-form.developer-form .layout-node-form {
   display: flex;
   flex-flow: column;
 }
 
-.node-apps-form.developer-form .layout-region-node-main,
-.node-apps-form.developer-form .layout-region-node-secondary,
-.node-apps-form.developer-form .layout-region-node-footer,
-.node-apps-edit-form.developer-form .layout-region-node-main,
-.node-apps-edit-form.developer-form .layout-region-node-secondary,
-.node-apps-edit-form.developer-form .layout-region-node-footer,
-.node-issues-form.developer-form .layout-region-node-main,
-.node-issues-form.developer-form .layout-region-node-secondary,
-.node-issues-form.developer-form .layout-region-node-footer,
-.node-forum-form.developer-form .layout-region-node-main,
-.node-forum-form.developer-form .layout-region-node-secondary,
-.node-forum-form.developer-form .layout-region-node-footer,
-.center-form .block-block-devportal-admin-page-title {
+.node-apps-form.developer-form .layout-region-node-main, .node-apps-form.developer-form .layout-region-node-secondary, .node-apps-form.developer-form .layout-region-node-footer, .node-apps-edit-form.developer-form .layout-region-node-main, .node-apps-edit-form.developer-form .layout-region-node-secondary, .node-apps-edit-form.developer-form .layout-region-node-footer, .node-issues-form.developer-form .layout-region-node-main, .node-issues-form.developer-form .layout-region-node-secondary, .node-issues-form.developer-form .layout-region-node-footer, .node-forum-form.developer-form .layout-region-node-main, .node-forum-form.developer-form .layout-region-node-secondary, .node-forum-form.developer-form .layout-region-node-footer, .center-form .block-block-devportal-admin-page-title {
   margin: 0 auto;
   max-width: 60%;
   width: 60%;
   padding-right: 0;
 }
 
-.node-forum-form.developer-form .layout-region-node-secondary,
-.node-issues-form.developer-form .layout-region-node-secondary,
-.node-apps-edit-form.developer-form .layout-region-node-secondary,
-.node-apps-form.developer-form .layout-region-node-secondary {
+.node-forum-form.developer-form .layout-region-node-secondary, .node-issues-form.developer-form .layout-region-node-secondary, .node-apps-edit-form.developer-form .layout-region-node-secondary, .node-apps-form.developer-form .layout-region-node-secondary {
   order: 3;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -1279,6 +1182,7 @@ input[type=radio]:disabled:hover {
 }
 
 /* css for admin left sidebar menu */
+
 .adminimal .row {
   display: flex;
   -ms-flex-wrap: wrap;
@@ -1301,7 +1205,7 @@ input[type=radio]:disabled:hover {
   }
 }
 
-.adminimal div aside { 
+.adminimal div aside {
   flex: 0 0 20%;
   order: 1;
 }
@@ -1338,7 +1242,7 @@ input[type=radio]:disabled:hover {
   font-family: 'FontAwesome', 'Font Awesome 5 Free';
   float: right;
   position: absolute;
-  right: 28px;
+  right: 18px;
 }
 
 .adminimal .layout-main-wrapper aside .menu-item--expanded a {
@@ -1358,16 +1262,17 @@ input[type=radio]:disabled:hover {
 }
 
 /*edit form*/
+
 .adminimal .button--danger {
   font-weight: bold;
 }
 
-.adminimal .button--primary + .button--danger {
-  margin: 10px 0;
+.adminimal .button--primary~.button--danger {
+  margin: 10px 2px;
 }
 
-.adminimal .button--danger:hover { 
-  padding: 6px 10px !important;
+.adminimal .button--danger:hover {
+  padding: 7px 11px !important;
   text-decoration: none;
 }
 
@@ -1376,7 +1281,7 @@ input[type=radio]:disabled:hover {
 }
 
 .adminimal .layout-main-wrapper aside .menu .menu-item--collapsed a {
-  color:#333;
+  color: #333;
   font-size: 14px;
   margin-left: 6%;
 }
@@ -1410,4 +1315,8 @@ input[type=radio]:disabled:hover {
   .adminimal .form-wrapper input[type="submit"] {
     width: auto;
   }
+}
+
+.adminimal .media-library-add-form--upload a.form-submit, .adminimal .media-library-add-form--oembed a.form-submit, .adminimal .view-media-library .views-exposed-form .media-library-view--form-actions a.form-submit {
+  display: none;
 }
