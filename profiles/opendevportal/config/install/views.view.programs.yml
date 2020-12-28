@@ -1238,7 +1238,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class = 'manage-apis'> <a href=\"/process/api-data?pid={{ id }}&destination=/dashboard/manage/program\">{{'Sync APIs' | trans }} </a></div>\r\n<div class = 'manage-apis'> <a href=\"/dashboard/save-program/{{ id }}?destination=dashboard/manage/api\">{{'Manage APIs' | trans }}</a></div>\r\n<div class = 'manage-applications'> <a href=\"/dashboard/save-program/{{ id }}?destination=dashboard/manage/apps\">{{'Manage Applications' | trans }} </a></div>\r\n<div class = 'manage-users'> <a  href=\"/dashboard/save-program/{{ id }}?destination=program/users\">{{'Manage Users' | trans }} </a></div>\r\n"
+            text: "<div class = 'manage-apis'> <a href=\"/coming-soon\">{{'Sync APIs' | trans }} </a></div>\r\n<div class = 'manage-apis'> <a href=\"/dashboard/save-program/{{ id }}?destination=dashboard/manage/api\">{{'Manage APIs' | trans }}</a></div>\r\n<div class = 'manage-applications'> <a href=\"/dashboard/save-program/{{ id }}?destination=dashboard/manage/apps\">{{'Manage Applications' | trans }} </a></div>\r\n<div class = 'manage-users'> <a  href=\"/dashboard/save-program/{{ id }}?destination=program/users\">{{'Manage Users' | trans }} </a></div>\r\n"
             make_link: false
             path: ''
             absolute: false
