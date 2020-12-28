@@ -152,5 +152,114 @@
             "langcode": "en",
             "lang": "en"
         }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "layout_onecol",
+                "layout_settings": {
+                    "label": ""
+                },
+                "components": [
+                    {
+                        "uuid": "c736d339-9582-4260-82bd-8122411e5de8",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "extra_field_block:node:listing_pages:links"
+                        },
+                        "additional": [],
+                        "weight": 0
+                    },
+                    {
+                        "uuid": "3f94a768-9ac5-4a66-a13d-ccb358111a1a",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "field_block:node:listing_pages:body",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            }
+                        },
+                        "additional": [],
+                        "weight": 1
+                    },
+                    {
+                        "uuid": "6ffee79b-ed70-4acb-9406-07da5ad5d25b",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "field_block:node:listing_pages:body",
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            }
+                        },
+                        "additional": [],
+                        "weight": 5
+                    },
+                    {
+                        "uuid": "920c2307-d018-47a8-9b1f-08281f1fbdeb",
+                        "region": "content",
+                        "configuration": {
+                            "id": "inline_block:api_listing_block",
+                            "label": "Use Case Landing",
+                            "provider": "layout_builder",
+                            "label_display": 0,
+                            "view_mode": "full",
+                            "block_revision_id": "6",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 7
+                    },
+                    {
+                        "uuid": "c64392f6-d568-4089-abb7-eaf8402defd0",
+                        "region": "content",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "extra_field_block:node:listing_pages:links"
+                        },
+                        "additional": [],
+                        "weight": 4
+                    },
+                    {
+                        "uuid": "d06aaf50-96a8-4adb-87bf-9b14de351add",
+                        "region": "content",
+                        "configuration": {
+                            "id": "inline_block:api_listing_block",
+                            "label": "Use case",
+                            "provider": "layout_builder",
+                            "label_display": "visible",
+                            "view_mode": "full",
+                            "block_revision_id": "83",
+                            "block_serialized": null,
+                            "context_mapping": []
+                        },
+                        "additional": [],
+                        "weight": 8
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
     ]
 }
