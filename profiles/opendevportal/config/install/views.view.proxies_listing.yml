@@ -3312,7 +3312,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: "<h4>Manage your APIs </h4>\r\n\r\n<span><a class = 'create-button create plus' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/{{ raw_arguments.gid }}/apimanager/proxies\">Create</a> <a class = 'sync-button create' href=\"/process/api-data?pid={{ raw_arguments.gid }}&destination=/dashboard/{{ raw_arguments.gid }}/apimanager/proxies\">Sync</a></span>"
+          content: "<h4>Manage your APIs </h4>\r\n\r\n<span><a class = 'create-button create plus' href=\"/group/{{ raw_arguments.gid }}/content/create/group_node:api_document?destination=/dashboard/{{ raw_arguments.gid }}/apimanager/proxies\">Create</a> <a class = 'sync-button create' href=\"/coming-soon\">Sync</a></span>"
           plugin_id: text_custom
       defaults:
         header: false
