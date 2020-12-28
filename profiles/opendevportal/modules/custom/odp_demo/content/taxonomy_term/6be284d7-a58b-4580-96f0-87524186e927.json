@@ -1,0 +1,102 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/74?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/version"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/version\/parent": [
+            null
+        ]
+    },
+    "tid": [
+        {
+            "value": 74
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6be284d7-a58b-4580-96f0-87524186e927"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 74
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "version"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-11-10T08:11:41+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "1.0",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/version\/parent": [
+            null
+        ]
+    },
+    "changed": [
+        {
+            "value": "2020-11-10T08:11:41+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/74",
+                "title": "1.0 | Open API Exchange"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

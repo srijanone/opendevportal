@@ -62,7 +62,7 @@
     ],
     "link": [
         {
-            "uri": "internal:#",
+            "uri": "internal:\/admin\/structure\/menu\/manage\/main",
             "title": "",
             "options": []
         }
@@ -94,7 +94,7 @@
     ],
     "changed": [
         {
-            "value": "2020-06-29T06:40:32+00:00",
+            "value": "2020-11-27T07:12:30+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -119,8 +119,8 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/landing-page\/home",
-                "title": "| Profiling"
+                "canonical_url": "http:\/\/default\/",
+                "title": "| Open API Exchange"
             }
         }
     ],
