@@ -1,3 +1,4 @@
+uuid: 46ff02b7-7f4c-441f-a6d7-a66803fdfdbd
 langcode: en
 status: true
 dependencies:
@@ -6,10 +7,10 @@ dependencies:
     - system
   theme:
     - opendevx_theme
-id: opendevx_theme_page_title
+id: page_title
 theme: opendevx_theme
 region: content
-weight: -22
+weight: -24
 provider: null
 plugin: page_title_block
 settings:
@@ -18,13 +19,13 @@ settings:
   provider: core
   label_display: '0'
 visibility:
-  request_path:
-    id: request_path
-    pages: "/api-product/*\r\n/products\r\n/home"
-    negate: true
-    context_mapping: {  }
   domain:
     id: domain
     domains: {  }
     negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/api-product/*\r\n/products\r\n/home"
+    negate: true
     context_mapping: {  }
