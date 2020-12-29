@@ -182,6 +182,7 @@ install:
  - odp_taxonomy
  - odp_user
  - odp_voyager
+ - odp_asyncapi
 
 # Required modules
 # Note that any dependencies of the modules listed here will be installed automatically.
