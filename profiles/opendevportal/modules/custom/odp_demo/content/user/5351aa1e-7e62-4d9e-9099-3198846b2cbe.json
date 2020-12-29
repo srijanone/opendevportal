@@ -1,0 +1,130 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        }
+    },
+    "uid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5351aa1e-7e62-4d9e-9099-3198846b2cbe"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "preferred_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "preferred_admin_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "siteadmin"
+        }
+    ],
+    "mail": [
+        {
+            "value": "siteadmin@example.com"
+        }
+    ],
+    "timezone": [
+        {
+            "value": "UTC"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-12-29T16:43:30+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-12-29T16:43:30+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "access": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "login": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "init": [
+        {
+            "value": "siteadmin@example.com"
+        }
+    ],
+    "roles": [
+        {
+            "target_id": "admin"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/user\/4",
+                "title": "siteadmin | Profiling",
+                "description": "Profiling"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_first_name": [
+        {
+            "value": "Site"
+        }
+    ],
+    "field_last_name": [
+        {
+            "value": "Admin"
+        }
+    ],
+    "field_userpoints_default_points": [
+        {
+            "value": "10",
+            "lang": "en"
+        }
+    ]
+}
