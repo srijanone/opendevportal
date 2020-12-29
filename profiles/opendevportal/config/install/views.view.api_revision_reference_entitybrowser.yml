@@ -547,6 +547,7 @@ display:
           entity_field: gid
           plugin_id: group_id
       display_extenders: {  }
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:
