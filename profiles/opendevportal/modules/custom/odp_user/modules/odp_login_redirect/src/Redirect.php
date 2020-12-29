@@ -17,6 +17,8 @@ use Drupal\odp_user\Organisation as Program;
 use Drupal\autologout\AutologoutManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\odp_core\Program\ProgramDomainInterface;
+use Drupal\odp_core\EventSubscriber\Program\ProgramDomainSubscriber;
 
 /**
  * Class definition of redirect service.
@@ -82,7 +84,7 @@ class Redirect implements RedirectInterface {
   /**
    * Object ProgramDomain.
    *
-   * @var Drupal\odp_core\Program\ProgramDomainInterface
+   * @var \Drupal\odp_core\Program\ProgramDomainInterface
    */
   protected $programDomain;
 
@@ -99,6 +101,13 @@ class Redirect implements RedirectInterface {
    * @var \Drupal\Core\Messenger\MessengerInterface
    */
   protected $messenger;
+
+  /**
+   * The Program EventSubscriber.
+   *
+   * @var \Drupal\odp_core\EventSubscriber\Program\ProgramDomainSubscriber
+   */
+  protected $programDomainSubscriber;
 
   /**
    * Constructs a new Login And Logout Redirect Per Role service object.
@@ -123,17 +132,24 @@ class Redirect implements RedirectInterface {
    *   AutoLogout Manage Service.
    * @param Drupal\Core\Messenger\MessengerInterface $messenger
    *   Messenger definition.
+   * @param Drupal\odp_core\Program\ProgramDomainInterface $program_domain
+   *   Program domain service.
+   * @param Drupal\odp_core\EventSubscriber\Program\ProgramDomainSubscriber $program_domain_subscriber
+   *   Program domain subscriber service.
    */
-  public function __construct(RouteMatchInterface $current_route_match,
-  RequestStack $request_stack,
-  ConfigFactoryInterface $config_factory,
-  AccountProxyInterface $current_user,
-  Connection $connection,
-  Program $program_service,
-  PrivateTempStoreFactory $temp_store,
-  Logger $logger,
-  AutologoutManagerInterface $autologout,
-  MessengerInterface $messenger) {
+  public function __construct(
+    RouteMatchInterface $current_route_match,
+    RequestStack $request_stack,
+    ConfigFactoryInterface $config_factory,
+    AccountProxyInterface $current_user,
+    Connection $connection,
+    Program $program_service,
+    PrivateTempStoreFactory $temp_store,
+    Logger $logger,
+    AutologoutManagerInterface $autologout,
+    MessengerInterface $messenger,
+    ProgramDomainInterface $program_domain,
+    ProgramDomainSubscriber $program_domain_subscriber) {
     $this->currentRouteMatch = $current_route_match;
     $this->currentRequest = $request_stack->getCurrentRequest();
     $this->config = $config_factory->get('odp_login_redirect.settings');
@@ -144,6 +160,8 @@ class Redirect implements RedirectInterface {
     $this->logger = $logger;
     $this->autoLogoutManager = $autologout;
     $this->messenger = $messenger;
+    $this->programDomain = $program_domain;
+    $this->programDomainSubscriber = $program_domain_subscriber;
   }
 
   /**
@@ -324,8 +342,8 @@ class Redirect implements RedirectInterface {
         return $group_roles;
       }
 
-      if ($program_id = \Drupal::service('odp_core.program_domain_subscriber')->getProgramDomain()) {
-        \Drupal::service('odp_core.program_domain')->setProgramDomainId($program_id);
+      if ($program_id = $this->programDomainSubscriber->getProgramDomain()) {
+        $this->programDomain->setProgramDomainId($program_id);
       }
       try {
         $query = $this->connection->select('group_content_field_data', 'g');
@@ -354,8 +372,8 @@ class Redirect implements RedirectInterface {
         if ($key == 0) {
           $this->programService->setProgramId($group->gid);
           if (in_array($group->role, ProgramInterface::DEV_ROLES)) {
-            $this->tempStore->set('store_pid', \Drupal::request()->get('pid'));
-            $this->tempStore->set('store_path', \Drupal::request()->get('path'));
+            $this->tempStore->set('store_pid', $this->currentRequest->get('pid'));
+            $this->tempStore->set('store_path', $this->currentRequest->get('path'));
           }
         }
       }

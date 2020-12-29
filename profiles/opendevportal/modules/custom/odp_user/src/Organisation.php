@@ -11,6 +11,8 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\odp_organisation\Organisation as Programs;
 use Drupal\odp_organisation\Utility\OrganisationUtility;
+use Drupal\Core\Path\AliasManagerInterface;
+use Drupal\odp_core\Program\ProgramDomainInterface;
 use Drupal\views\Views;
 
 /**
@@ -59,17 +61,35 @@ class Organisation extends Programs {
   protected $entityTypeManager;
 
   /**
+   * The path alias manager.
+   *
+   * @var \Drupal\Core\Path\AliasManagerInterface
+   */
+  protected $aliasManager;
+
+  /**
+   * ProgramDomain Interface.
+   *
+   * @var Drupal\odp_core\Program\ProgramDomainInterface
+   */
+  protected $programDomain;
+
+  /**
    * Pass the dependency to the object constructor.
    */
   public function __construct(
     PrivateTempStoreFactory $temp_store,
     Connection $connection,
     AccountInterface $account,
-    EntityTypeManagerInterface $entity_type_manager) {
-    $this->account = $account;
+    EntityTypeManagerInterface $entity_type_manager,
+    AliasManagerInterface $alias_manager,
+    ProgramDomainInterface $program_domain) {
     $this->organisation = $temp_store->get('odp_user');
     $this->connection = $connection;
+    $this->account = $account;
     $this->entityTypeManager = $entity_type_manager;
+    $this->aliasManager = $alias_manager;
+    $this->programDomain = $program_domain;
   }
 
   /**
@@ -192,7 +212,7 @@ class Organisation extends Programs {
       $view->execute();
       if ($view) {
         $programs = [];
-        foreach ($view->result as $key => $value) {
+        foreach ($view->result as $value) {
           $gid = $value->_entity->get('id')->value;
           $programs[$gid]['programId'] = $gid;
           $programs[$gid]['programName'] = $value->_entity->get('label')->value;
@@ -207,16 +227,16 @@ class Organisation extends Programs {
           $programs[$gid]['orgPath'] = !empty($gid) ?
           "/dashboard/save-program/$gid" : "#";
 
-          $programs[$gid]['programUrl'] = \Drupal::service('path.alias_manager')->getAliasByPath("/group/$gid");
+          $programs[$gid]['programUrl'] = $this->aliasManager->getAliasByPath("/group/$gid");
           $programs[$gid]['target'] = "_self";
-          $group_domain = \Drupal::entityTypeManager()->getStorage('domain')->load('group_' . $gid);
+          $group_domain = $this->entityTypeManager->getStorage('domain')->load('group_' . $gid);
           if ($group_domain) {
             $programs[$gid]['programUrl'] = $group_domain->getPath();
             $programs[$gid]['target'] = "_blank";
           }
         }
 
-        if ($program_id = \Drupal::service('odp_core.program_domain')->getProgramDomainId()) {
+        if ($program_id = $this->programDomain->getProgramDomainId()) {
           if ($programs[$program_id]) {
             $program[$program_id] = $programs[$program_id];
             return $program;
