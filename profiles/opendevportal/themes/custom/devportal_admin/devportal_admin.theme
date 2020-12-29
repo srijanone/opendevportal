@@ -30,22 +30,20 @@ function devportal_admin_preprocess_html(&$variables) {
     $variables['#attached']['library'][] = 'devportal_admin/google-fonts';
   }
 
-   if ($program_id = \Drupal::service('odp_core.program_domain')->getProgramDomainId()) {
-    $program = \Drupal::entityTypeManager()->getStorage('group')->load($program_id);
-    if ($program instanceof GroupInterface) {
-      if ($program->hasField('field_header_background_color') && $program->field_header_background_color->color) {
-        $color_value = ltrim($program->field_header_background_color->color, "#");
-        $variables['header_color'] = "hdr-clr-" . $color_value;
-      }
+  $program = \Drupal::service('odp_core.program_domain')->getDomainProgramInfo();
+  if ($program instanceof GroupInterface) {
+    if ($program->hasField('field_header_background_color') && $program->field_header_background_color->color) {
+      $color_value = ltrim($program->field_header_background_color->color, "#");
+      $variables['header_color'] = "hdr-clr-" . $color_value;
+    }
 
-      if ($program->hasField('field_icons_bg_color') && $program->field_icons_bg_color->color) {
-        $color_value = ltrim($program->field_icons_bg_color->color, "#");
-        $variables['icon_color'] = "ico-clr-" . $color_value;
-      }
+    if ($program->hasField('field_icons_bg_color') && $program->field_icons_bg_color->color) {
+      $color_value = ltrim($program->field_icons_bg_color->color, "#");
+      $variables['icon_color'] = "ico-clr-" . $color_value;
+    }
 
-      if ($program->hasField('field_font_family') && $program->field_font_family->value) {
-        $variables['font_family'] = "font-" . $program->field_font_family->value;
-      }
+    if ($program->hasField('field_font_family') && $program->field_font_family->value) {
+      $variables['font_family'] = "font-" . $program->field_font_family->value;
     }
   }
 
