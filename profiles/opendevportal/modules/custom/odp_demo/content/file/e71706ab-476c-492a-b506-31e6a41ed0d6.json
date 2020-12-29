@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 1120
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e71706ab-476c-492a-b506-31e6a41ed0d6"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "482fed78-cb83-4a4a-9e8b-4c11c67e2a78"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "asyncapi_demo_0_0.yaml"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-12\/asyncapi_demo_0_0.yaml",
+            "url": "\/sites\/default\/files\/2020-12\/asyncapi_demo_0_0.yaml"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 571
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-12-29T08:54:14+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-12-29T08:54:18+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "YXN5bmNhcGk6ICcyLjAuMCcKaW5mbzoKICB0aXRsZTogQW55T2YgZXhhbXBsZQogIHZlcnNpb246ICcxLjAuMCcKCmNoYW5uZWxzOgogIHRlc3Q6CiAgICBwdWJsaXNoOgogICAgICBtZXNzYWdlOgogICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvbWVzc2FnZXMvdGVzdE1lc3NhZ2VzJwoKY29tcG9uZW50czoKICBtZXNzYWdlczoKICAgIHRlc3RNZXNzYWdlczoKICAgICAgcGF5bG9hZDoKICAgICAgICBhbnlPZjogIyBhbnlPZiBpbiBwYXlsb2FkIHNjaGVtYQogICAgICAgICAgLSAkcmVmOiAiIy9jb21wb25lbnRzL3NjaGVtYXMvb2JqZWN0V2l0aEtleSIKICAgICAgICAgIC0gJHJlZjogIiMvY29tcG9uZW50cy9zY2hlbWFzL29iamVjdFdpdGhLZXkyIgoKICBzY2hlbWFzOgogICAgb2JqZWN0V2l0aEtleToKICAgICAgdHlwZTogb2JqZWN0CiAgICAgIHByb3BlcnRpZXM6CiAgICAgICAga2V5OgogICAgICAgICAgdHlwZTogc3RyaW5nCiAgICBvYmplY3RXaXRoS2V5MjoKICAgICAgdHlwZTogb2JqZWN0CiAgICAgIHByb3BlcnRpZXM6CiAgICAgICAga2V5MjoKICAgICAgICAgIHR5cGU6IHN0cmluZw=="
+        }
+    ]
+}
