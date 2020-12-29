@@ -7,6 +7,9 @@ core_version_requirement: ^8 || ^9
 
 default_content:
   media:
+    - 9a5e02af-5759-4723-8150-091580115ed4
+    - a24d3b99-df8d-4a41-bfa0-146b94a313dc
+    - 52d513c3-d868-49fa-8136-fb65f9cbf99a
     - c0b3847e-60f9-4817-a8ed-da2f625c4bf1
     - c394fc0b-9c6e-472f-b5db-82d6d910a1d6
     - 6e5e1ec0-b866-43ff-b7bb-01199d72ed17
@@ -14,6 +17,12 @@ default_content:
     - 0db99100-6591-40af-9ec6-42471ba4e19b
     - d4c69f40-6cd1-4049-ba59-bb6fe73e63cb
   file:
+    - e71706ab-476c-492a-b506-31e6a41ed0d6
+    - 7eee56b3-50cf-438a-a3b4-b818f2a8a58b
+    - 5a84017b-3903-4a36-ae4a-a191e1b7fa88
+    - 4ea66123-b6e5-4df2-bcae-22246cda2b2d
+    - f6275b75-c2e9-42ee-9ae3-8f9beccb5737
+    - 84a83831-c35a-4416-afdb-55ca047d6b18
     - 03059116-f5ba-46d8-9ec3-dc970e9b1ec8
     - 2f6705e5-c428-407a-adb9-294075338b3b
     - 88436c38-d200-484b-9401-9d7d9c21abae
@@ -73,8 +82,10 @@ default_content:
     - ab7383b9-096d-444d-8f69-25306e1a3ba8
     - 1388189d-f61f-411b-976c-443eb0dc0cee
     - fc95bce5-7803-45b2-9688-aaa0f076c670
+    - 4e0a1107-6c82-4714-b938-4be2a5eac7e7
+    - 99f8222b-5a97-4218-aeb6-59e1bd4df40d
+    - 51094621-ba8c-4aca-a62f-d354409165e7
   group_content:
-    - ee757bda-ab6c-41be-9150-6ff915a3edf5
     - 4d114383-883e-4776-ade0-20ac9cae7c92
     - f66a569d-b330-4018-8fa4-47c8ddbc0fc9
     - 8932b79e-fa4e-48a0-8279-7a70aa4d7c09
@@ -83,10 +94,14 @@ default_content:
     - 8cb82595-108a-44ad-8a3d-2261c167969d
     - a3e2d65f-7c75-46bd-8c5c-e83028a25e43
     - 03c24b83-9345-4162-8981-155fac61fcaa
+    - 8fc808f8-81b4-4787-ac84-3e3c85dad67f
+    - 0a3eb862-e92f-4c57-a78f-a61c294eaaca
+    - 63da552d-6412-469e-9699-620e48dcb11a
 
   node:
-    - b4a4f3dd-10d1-4b04-99c0-5f47371006ef
-    - a38d431e-2353-4958-98c4-117f22ecd855
+    - 988e9c6c-5b56-4376-836b-16bc0056fc20
+    - 1a1624c2-e50e-41b9-a316-1da3995ab30a
+    - 710b491b-f1e4-4abc-bb0f-eccf5000cde2
     - 00b01f64-258c-4fdf-9c1f-e2b92f0adaa1
     - 10a857c7-90b2-4620-9167-8c92c5a4376c
     - 3efedfe0-aead-4240-9885-31042ab870ba
