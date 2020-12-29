@@ -1,0 +1,102 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/81?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/issue_type"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/issue_type\/parent": [
+            null
+        ]
+    },
+    "tid": [
+        {
+            "value": 81
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e0bb72d4-04fd-4fde-8d6e-f2a72c141d29"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 81
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "issue_type"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-12-29T16:26:58+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Documentation",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/issue_type\/parent": [
+            null
+        ]
+    },
+    "changed": [
+        {
+            "value": "2020-12-29T16:26:58+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/81",
+                "title": "Documentation | Profiling"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}
