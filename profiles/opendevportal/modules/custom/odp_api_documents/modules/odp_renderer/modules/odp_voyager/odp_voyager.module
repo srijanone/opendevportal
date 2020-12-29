@@ -18,8 +18,6 @@ function odp_voyager_views_pre_render(ViewExecutable $view) {
   if ($view->storage->id() == 'api_document_formatter' &&
   isset($view->field['field_document']) &&
   $api_type == VoyagerInterface::API_TYPE[1]) {
-    $view->element['#attached']['library'][] =
-    'odp_voyager/graphQL_voyager';
     $view->field['field_document']->options['type'] =
     $view->result[0]->_entity->field_api_display->value;
   }
