@@ -1,48 +1,47 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/assets\/media?_format=hal_json"
+            "href": "http:\/\/default\/page\/banking-page?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/node\/assets"
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/document_overview"
         },
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/revision_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_api_product": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_product": [
             {
                 "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_listing_image": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_listing_image": [
             {
-                "href": "http:\/\/default\/media\/259\/edit?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/media\/255\/edit?_format=hal_json"
             }
         ]
     },
     "nid": [
         {
-            "value": 1432
+            "value": 1439
         }
     ],
     "uuid": [
         {
-            "value": "f8a3d404-c09e-4c36-9cf2-c9144a010d40"
+            "value": "16d080dd-e183-4f64-a87c-8e915f1d264a"
         }
     ],
     "vid": [
         {
-            "value": 3938
+            "value": 3934
         }
     ],
     "langcode": [
@@ -53,17 +52,17 @@
     ],
     "type": [
         {
-            "target_id": "assets"
+            "target_id": "document_overview"
         }
     ],
     "revision_timestamp": [
         {
-            "value": "2020-12-30T12:08:47+00:00",
+            "value": "2020-12-30T11:57:32+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/revision_uid": [
             {
                 "_links": {
                     "self": {
@@ -80,7 +79,7 @@
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/uid": [
             {
                 "_links": {
                     "self": {
@@ -98,7 +97,7 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_api_product": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_api_product": [
             {
                 "_links": {
                     "self": {
@@ -116,11 +115,11 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_listing_image": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/document_overview\/field_listing_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/259\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/255\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -128,10 +127,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "de2e6883-f8ee-42ff-b869-b6346ae4b83d"
+                        "value": "e5ed85c7-e900-4872-82df-028f366993c3"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ]
     },
@@ -143,27 +141,27 @@
     ],
     "title": [
         {
-            "value": "Media",
+            "value": "Banking Page",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2020-11-11T08:40:18+00:00",
+            "value": "2020-12-30T11:53:55+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2020-12-30T12:08:47+00:00",
+            "value": "2020-12-30T11:57:32+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "promote": [
         {
-            "value": true,
+            "value": false,
             "lang": "en"
         }
     ],
@@ -188,26 +186,26 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/assets\/media",
-                "title": "Media | Profiling",
-                "description": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services."
+                "canonical_url": "http:\/\/default\/page\/banking-page",
+                "title": "Banking Page | Profiling",
+                "description": "A bank is a financial institution licensed to receive deposits and make loans. Banks may also provide financial services such as wealth management, currency exchange, and safe deposit boxes."
             }
         }
     ],
     "path": [
         {
-            "alias": "\/assets\/media",
-            "pid": 28,
+            "alias": "\/page\/banking-page",
+            "pid": 34,
             "langcode": "en",
             "lang": "en"
         }
     ],
     "body": [
         {
-            "value": "<p>A well-functioning financial system is fundamental to a modern economy, and&nbsp;<b>banks<\/b>&nbsp;perform&nbsp;<b>important<\/b>&nbsp;functions for society. ...&nbsp;<b>Banks<\/b>&nbsp;should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\r\n",
+            "value": "<p>Number sense and a facility with&nbsp;<b>mathematical<\/b>&nbsp;concepts is especially&nbsp;<b>useful in banking<\/b>. We use&nbsp;<b>math<\/b>&nbsp;for budgeting, spending, saving, and investing. ... We are using&nbsp;<b>mathematical<\/b>&nbsp;concepts everyday when we utilize online&nbsp;<b>banking<\/b>&nbsp;to help us pay bills, transfer money, and manage our personal accounts.<\/p>\r\n",
             "format": "full_html",
-            "processed": "<p>A well-functioning financial system is fundamental to a modern economy, and\u00a0<b>banks<\/b>\u00a0perform\u00a0<b>important<\/b>\u00a0functions for society. ...\u00a0<b>Banks<\/b>\u00a0should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\n",
-            "summary": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services.",
+            "processed": "<p>Number sense and a facility with\u00a0<b>mathematical<\/b>\u00a0concepts is especially\u00a0<b>useful in banking<\/b>. We use\u00a0<b>math<\/b>\u00a0for budgeting, spending, saving, and investing. ... We are using\u00a0<b>mathematical<\/b>\u00a0concepts everyday when we utilize online\u00a0<b>banking<\/b>\u00a0to help us pay bills, transfer money, and manage our personal accounts.<\/p>\n",
+            "summary": "A bank is a financial institution licensed to receive deposits and make loans. Banks may also provide financial services such as wealth management, currency exchange, and safe deposit boxes.",
             "lang": "en"
         }
     ],
@@ -215,7 +213,7 @@
         {
             "status": 2,
             "cid": 0,
-            "last_comment_timestamp": 1605084025,
+            "last_comment_timestamp": 1609329452,
             "last_comment_name": null,
             "last_comment_uid": 1,
             "comment_count": 0,

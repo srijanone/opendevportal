@@ -1,48 +1,48 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/assets\/media?_format=hal_json"
+            "href": "http:\/\/default\/article\/banking-blog?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/node\/assets"
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
         },
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_api_product": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_product": [
             {
                 "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_listing_image": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_listing_image": [
             {
-                "href": "http:\/\/default\/media\/259\/edit?_format=hal_json",
+                "href": "http:\/\/default\/media\/256\/edit?_format=hal_json",
                 "lang": "en"
             }
         ]
     },
     "nid": [
         {
-            "value": 1432
+            "value": 1440
         }
     ],
     "uuid": [
         {
-            "value": "f8a3d404-c09e-4c36-9cf2-c9144a010d40"
+            "value": "22367052-fead-4a81-8883-8b137d2264e7"
         }
     ],
     "vid": [
         {
-            "value": 3938
+            "value": 3935
         }
     ],
     "langcode": [
@@ -53,17 +53,17 @@
     ],
     "type": [
         {
-            "target_id": "assets"
+            "target_id": "article"
         }
     ],
     "revision_timestamp": [
         {
-            "value": "2020-12-30T12:08:47+00:00",
+            "value": "2020-12-30T12:01:17+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/revision_uid": [
             {
                 "_links": {
                     "self": {
@@ -80,7 +80,7 @@
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/uid": [
             {
                 "_links": {
                     "self": {
@@ -98,7 +98,7 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_api_product": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_api_product": [
             {
                 "_links": {
                     "self": {
@@ -116,11 +116,11 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_listing_image": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_listing_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/259\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/256\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -128,7 +128,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "de2e6883-f8ee-42ff-b869-b6346ae4b83d"
+                        "value": "79eb39a2-84f0-4126-8eb2-1c9e2de5946e"
                     }
                 ],
                 "lang": "en"
@@ -143,20 +143,20 @@
     ],
     "title": [
         {
-            "value": "Media",
+            "value": "Banking Blog ",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2020-11-11T08:40:18+00:00",
+            "value": "2020-12-30T11:59:29+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2020-12-30T12:08:47+00:00",
+            "value": "2020-12-30T12:01:17+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -188,26 +188,26 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/assets\/media",
-                "title": "Media | Profiling",
-                "description": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services."
+                "canonical_url": "http:\/\/default\/article\/banking-blog",
+                "title": "Banking Blog  | Profiling",
+                "description": "Due to the open nature of the Internet, all web-based services such as YAB's Online Banking are inherently subject to risks such as online theft of your User ID\/UserName, Password, virus attacks, hacking, unauthorized access and fraudulent transactions."
             }
         }
     ],
     "path": [
         {
-            "alias": "\/assets\/media",
-            "pid": 28,
+            "alias": "\/article\/banking-blog",
+            "pid": 35,
             "langcode": "en",
             "lang": "en"
         }
     ],
     "body": [
         {
-            "value": "<p>A well-functioning financial system is fundamental to a modern economy, and&nbsp;<b>banks<\/b>&nbsp;perform&nbsp;<b>important<\/b>&nbsp;functions for society. ...&nbsp;<b>Banks<\/b>&nbsp;should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\r\n",
+            "value": "<p>Study of mathematics is not&nbsp;<b>compulsory<\/b>&nbsp;to apply for&nbsp;<b>banking<\/b>&nbsp;exams. Graduates in any stream can apply. Syllabus for the test include topics on mathematics like numerical ability. Basic mathematical ability, data interpretation, etc are evaluated under the test.<\/p>\r\n",
             "format": "full_html",
-            "processed": "<p>A well-functioning financial system is fundamental to a modern economy, and\u00a0<b>banks<\/b>\u00a0perform\u00a0<b>important<\/b>\u00a0functions for society. ...\u00a0<b>Banks<\/b>\u00a0should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\n",
-            "summary": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services.",
+            "processed": "<p>Study of mathematics is not\u00a0<b>compulsory<\/b>\u00a0to apply for\u00a0<b>banking<\/b>\u00a0exams. Graduates in any stream can apply. Syllabus for the test include topics on mathematics like numerical ability. Basic mathematical ability, data interpretation, etc are evaluated under the test.<\/p>\n",
+            "summary": "Due to the open nature of the Internet, all web-based services such as YAB's Online Banking are inherently subject to risks such as online theft of your User ID\/UserName, Password, virus attacks, hacking, unauthorized access and fraudulent transactions.",
             "lang": "en"
         }
     ],
@@ -215,7 +215,7 @@
         {
             "status": 2,
             "cid": 0,
-            "last_comment_timestamp": 1605084025,
+            "last_comment_timestamp": 1609329677,
             "last_comment_name": null,
             "last_comment_uid": 1,
             "comment_count": 0,
