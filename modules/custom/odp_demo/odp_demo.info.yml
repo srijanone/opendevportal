@@ -16,6 +16,14 @@ default_content:
     - b7403696-1068-4430-8fc3-8d763b43e87f
     - 0db99100-6591-40af-9ec6-42471ba4e19b
     - d4c69f40-6cd1-4049-ba59-bb6fe73e63cb
+    - 798d323d-0c48-4982-af0b-1441eb0ec9fb
+    - b7733045-8b92-4980-906f-2db2f38e0442
+    - e5ed85c7-e900-4872-82df-028f366993c3
+    - 79eb39a2-84f0-4126-8eb2-1c9e2de5946e
+    - 7df2a1d0-78f6-4910-ac11-052cc0cbda97
+    - 2149422e-c49e-4734-9cc0-fe73e5b4816c
+    - de2e6883-f8ee-42ff-b869-b6346ae4b83d
+    - ae14d8d7-69de-48cf-9b9f-08a4ca9a7837
   file:
     - e71706ab-476c-492a-b506-31e6a41ed0d6
     - 7eee56b3-50cf-438a-a3b4-b818f2a8a58b
@@ -30,6 +38,14 @@ default_content:
     - a09d7ede-0822-43b3-84c2-61f383cff7ea
     - 30c97985-5752-4e98-b849-bf44d1f6e39d
     - e8c25c5c-d361-4a18-bb26-3870bf993d4a
+    - 0bde7eec-d885-4422-831e-9289ffce14be
+    - 49561a2c-31eb-4c92-bcc1-efa837821589
+    - 2891d92a-de22-4ab6-ba54-16a2b87c20d0
+    - d9fa5b11-dbc3-45da-992b-9e181ba081c7
+    - 6293890a-898d-46d2-86f0-7c3dd641e3dc
+    - 4c007675-dfa8-48dd-b4d6-2d5cd3482f3e
+    - dadc3ca9-4009-4144-b49f-c1ac19734e03
+    - a92e6fdd-158d-4f56-885a-cc8942e6d686
   block_content:
     - 17f7ac93-3847-4175-ab94-da811c9d5c43
     - 18eaf6fc-c021-4e47-9f50-8e4be9eed19d
@@ -110,6 +126,10 @@ default_content:
     - bb734b59-7f0b-4f11-a37b-887f473aa8d0
     - 26340802-6049-449d-bba1-d7f8a582d3d7
     - 67e6d1ed-6278-4915-baa8-c3b36028786b
+    - 42ffed2e-1467-4f8b-bf64-9db3bf09d235
+    - 8244a896-0d18-4a1b-aa5e-235d32921adc
+    - aeb5c445-9a51-4028-8b46-5d923196e9c1
+    - e871c880-d3c8-43cc-9217-95bd07fce3a3
   node:
     - 988e9c6c-5b56-4376-836b-16bc0056fc20
     - 1a1624c2-e50e-41b9-a316-1da3995ab30a
@@ -142,7 +162,10 @@ default_content:
     - fa6f4b50-9bdf-46ef-bdd3-07b4724301b2
     - 44d1921b-6a37-40b0-8d6b-df66d8939683
     - c62f5bec-9f0c-4972-ba63-a2851b972af9
-
+    - a56319f8-a591-407d-97a3-0d4064d5518f
+    - 16d080dd-e183-4f64-a87c-8e915f1d264a
+    - 22367052-fead-4a81-8883-8b137d2264e7
+    - 1bcf57d6-68d3-49bc-b617-9f67faeffc7e
   menu_link_content:
     - 17d7710e-b2ff-470d-b578-94869cb16327
     - 023587a8-b70a-49cc-b5c2-63bf540ce9b0

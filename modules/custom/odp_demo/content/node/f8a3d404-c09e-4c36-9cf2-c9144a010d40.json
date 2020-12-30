@@ -25,7 +25,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/assets\/field_listing_image": [
             {
-                "href": "http:\/\/default\/media\/244\/edit?_format=hal_json",
+                "href": "http:\/\/default\/media\/259\/edit?_format=hal_json",
                 "lang": "en"
             }
         ]
@@ -42,7 +42,7 @@
     ],
     "vid": [
         {
-            "value": 3892
+            "value": 3938
         }
     ],
     "langcode": [
@@ -58,7 +58,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-11-11T08:40:25+00:00",
+            "value": "2020-12-30T12:08:47+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -75,7 +75,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
                     }
                 ]
             }
@@ -92,7 +92,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
                     }
                 ],
                 "lang": "en"
@@ -120,7 +120,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/244\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/259\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -128,7 +128,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b7403696-1068-4430-8fc3-8d763b43e87f"
+                        "value": "de2e6883-f8ee-42ff-b869-b6346ae4b83d"
                     }
                 ],
                 "lang": "en"
@@ -156,7 +156,7 @@
     ],
     "changed": [
         {
-            "value": "2020-11-11T08:40:25+00:00",
+            "value": "2020-12-30T12:08:47+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -190,24 +190,24 @@
             "value": {
                 "canonical_url": "http:\/\/default\/assets\/media",
                 "title": "Media | Profiling",
-                "description": "Media"
+                "description": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services."
             }
         }
     ],
     "path": [
         {
             "alias": "\/assets\/media",
-            "pid": 23,
+            "pid": 28,
             "langcode": "en",
             "lang": "en"
         }
     ],
     "body": [
         {
-            "value": "<p>Media<\/p>\r\n",
+            "value": "<p>A well-functioning financial system is fundamental to a modern economy, and&nbsp;<b>banks<\/b>&nbsp;perform&nbsp;<b>important<\/b>&nbsp;functions for society. ...&nbsp;<b>Banks<\/b>&nbsp;should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\r\n",
             "format": "full_html",
-            "processed": "<p>Media<\/p>\n",
-            "summary": "Media",
+            "processed": "<p>A well-functioning financial system is fundamental to a modern economy, and\u00a0<b>banks<\/b>\u00a0perform\u00a0<b>important<\/b>\u00a0functions for society. ...\u00a0<b>Banks<\/b>\u00a0should be able to lend money to consumers and businesses in both upturns and downturns. In addition, payments for goods and services should be processed swiftly, safely and at low cost.<\/p>\n",
+            "summary": "Banks are \u201cspecial\u201d because they manage the payment system through which most economic payments are made. ... So, banks are clearly special because of their importance to the way our economy transfers payments for goods and services.",
             "lang": "en"
         }
     ],
