@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_program_image": [
             {
-                "href": "http:\/\/default\/media\/244\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/248\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_site_logo": [
@@ -62,7 +62,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                        "value": "14fc8d20-15e8-4b99-b1a9-d1e5ec25a014"
                     }
                 ],
                 "lang": "en"
@@ -89,7 +89,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/244\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/248\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -97,7 +97,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b7403696-1068-4430-8fc3-8d763b43e87f"
+                        "value": "37d20443-91f5-4b5a-b978-f95f272b498a"
                     }
                 ]
             }
@@ -135,7 +135,7 @@
     ],
     "changed": [
         {
-            "value": "2020-11-11T08:22:07+00:00",
+            "value": "2020-12-30T06:26:30+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -157,7 +157,7 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "canonical_url": "http:\/\/default\/home",
                 "title": "| Profiling"
             }
         }
