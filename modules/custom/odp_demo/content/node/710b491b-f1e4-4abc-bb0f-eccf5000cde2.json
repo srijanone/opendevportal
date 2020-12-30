@@ -34,7 +34,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_listing_image": [
             {
-                "href": "http:\/\/default\/media\/247\/edit?_format=hal_json",
+                "href": "http:\/\/default\/media\/261\/edit?_format=hal_json",
                 "lang": "en"
             }
         ]
@@ -51,7 +51,7 @@
     ],
     "vid": [
         {
-            "value": 3911
+            "value": 3942
         }
     ],
     "langcode": [
@@ -67,7 +67,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-12-29T09:00:08+00:00",
+            "value": "2020-12-30T12:57:22+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -84,7 +84,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "482fed78-cb83-4a4a-9e8b-4c11c67e2a78"
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
                     }
                 ]
             }
@@ -101,7 +101,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "482fed78-cb83-4a4a-9e8b-4c11c67e2a78"
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
                     }
                 ],
                 "lang": "en"
@@ -164,7 +164,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/247\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/261\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -172,7 +172,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "52d513c3-d868-49fa-8136-fb65f9cbf99a"
+                        "value": "93c57beb-ebb5-4593-9614-ee6a0f5753df"
                     }
                 ],
                 "lang": "en"
@@ -200,7 +200,7 @@
     ],
     "changed": [
         {
-            "value": "2020-12-29T09:00:08+00:00",
+            "value": "2020-12-30T12:57:22+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -238,8 +238,8 @@
     "metatag": [
         {
             "value": {
-                "title": "API aysnc | Profiling",
                 "canonical_url": "http:\/\/default\/api-document\/api-aysnc",
+                "title": "API aysnc | Profiling",
                 "description": "Synchronous\/asynchronous APIs are application programming interfaces that return data for requests either immediately or at a later time, respectively."
             }
         }
@@ -247,7 +247,7 @@
     "path": [
         {
             "alias": "\/api-document\/api-aysnc",
-            "pid": 28,
+            "pid": 19,
             "langcode": "en",
             "lang": "en"
         }
@@ -261,9 +261,19 @@
             "lang": "en"
         }
     ],
+    "field_api_display": [
+        {
+            "value": "voyager_ui"
+        }
+    ],
     "field_api_type": [
         {
             "value": "async"
+        }
+    ],
+    "field_format": [
+        {
+            "value": "redoc_ui"
         }
     ],
     "field_user_rating": [

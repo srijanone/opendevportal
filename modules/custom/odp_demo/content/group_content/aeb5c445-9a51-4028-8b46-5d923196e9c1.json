@@ -1,0 +1,143 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/program\/banking\/content\/884?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group_content\/public-group_node-article"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/gid": [
+            {
+                "href": "http:\/\/default\/program\/banking?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/entity_id": [
+            {
+                "href": "http:\/\/default\/article\/banking-blog?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 884
+        }
+    ],
+    "uuid": [
+        {
+            "value": "aeb5c445-9a51-4028-8b46-5d923196e9c1"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "public-group_node-article"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/gid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/program\/banking?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/group\/public"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b6644c53-0ba2-48d0-9210-5ccced37c021"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-article\/entity_id": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/article\/banking-blog?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "22367052-fead-4a81-8883-8b137d2264e7"
+                    }
+                ]
+            }
+        ]
+    },
+    "label": [
+        {
+            "value": "Banking Blog ",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-12-30T12:01:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-12-30T12:01:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/home",
+                "title": "| Profiling"
+            }
+        }
+    ]
+}
