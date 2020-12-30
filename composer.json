@@ -1,7 +1,7 @@
 {
     "name": "srijanone/opendevportal",
     "description": "OpenDevPortal API Exchange",
-    "type": "project",
+    "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
     "repositories": [
