@@ -197,6 +197,10 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
-        }
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ]
     }
 }
