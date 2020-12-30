@@ -1,0 +1,57 @@
+@import "settings";
+
+@import "normalize";
+@import "root/root";
+@import "headings/headings";
+@import "embedded/embedded";
+@import "links/links";
+@import "lists/lists";
+@import "tables/tables";
+@import "text/text";
+@import "utilities/utilities";
+@import "utilities/icons";
+@import "utilities/close-icon";
+
+/**
+ * @file
+ * Visual styles for Bartik's main-content component.
+ */
+
+@media all and (min-width: 851px) {
+  .main-content {
+    position: relative;
+    float: left;
+    /* LTR */
+  }
+
+  [dir="rtl"] .main-content {
+    float: right;
+  }
+}
+
+// Ui Widget
+.ui-widget.ui-widget-content {
+  font-family: $font-family-base;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+  display: block;
+  padding: 3px 1em 3px 0.75em;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  color: $white !important;
+}
+
+.navbar-search fieldset input[type="search"].form-control:-webkit-autofill,
+.navbar-search fieldset input[type="search"].form-control:-webkit-autofill:hover,
+.navbar-search fieldset input[type="search"].form-control:-webkit-autofill:focus {
+  -webkit-text-fill-color: $white !important;
+  -webkit-box-shadow: 0 0 0 1000px #0000 inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}

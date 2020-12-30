@@ -1,0 +1,211 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/coming-soon?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/listing_pages"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 351
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8d28f5c7-690d-4d57-9e56-8090cc1eb96b"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3793
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "listing_pages"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-11-06T10:32:44+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Coming Soon",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-06-22T12:21:58+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-06T10:32:44+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/coming-soon",
+                "title": "Coming Soon | Profiling",
+                "description": "\u00a0"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/coming-soon",
+            "pid": 10,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<img alt=\"coming soon\" data-align=\"center\" data-entity-type=\"file\" data-entity-uuid=\"d3122ad7-9475-4113-851f-eb7242727206\" src=\"\/sites\/default\/files\/inline-images\/comingsoon_0.png\" \/>\r\n<p>&nbsp;<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<img alt=\"Image removed.\" data-entity-type=\"file\" data-entity-uuid=\"d3122ad7-9475-4113-851f-eb7242727206\" src=\"\/core\/misc\/icons\/e32700\/error.svg\" class=\"align-center filter-image-invalid\" title=\"This image has been removed. For security reasons, only images from the local domain are allowed.\" height=\"16\" width=\"16\" \/><p>\u00a0<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "76b87fd1-5a9f-4af9-be2b-498bb5e286c2",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "field_block:node:listing_pages:body",
+                            "label": "Body",
+                            "provider": "layout_builder",
+                            "label_display": 0,
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
+    ]
+}

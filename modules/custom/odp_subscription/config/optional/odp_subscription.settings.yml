@@ -1,0 +1,27 @@
+enable: 1
+batch_limit: '100'
+log_messages: '0'
+entity_types:
+  api_document: api_document
+  api_product: api_product
+  apps: apps
+  article: article
+  assets: assets
+  document_overview: document_overview
+  events: events
+  faq: faq
+  forum: forum
+  issues: issues
+  listing_pages: listing_pages
+  page: page
+  resources: resources
+  solutions: solutions
+  tutorials: tutorials
+  use_cases: use_cases
+include_updates: 1
+include_unpublished: 1
+mail_subject: '[site:name] - New updates to review'
+mail_body: "Hi [user:display-name],\r\n\r\nYour product has some new updates.\"\r\n\r\n----\r\n[dvp-tokens:title]\r\n[node:title]\r\n----\r\n\r\nYou can view the comment at the following URL\r\n[node:url]\r\n\r\nYou can stop receiving emails when someone updates or add a reference to this product,\r\nby click on <a href=\"[site:url]subscribe/[dvp_tokens:id]/confirm?op=remove\">unsubscribe</a>\r\n\r\n-- [site:name] team\r\n[site:url]"
+alert_users: {  }
+num_sent: 0
+num_failed: 0

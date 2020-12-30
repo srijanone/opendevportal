@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+.event-url a {
+  border: 1px solid #384e86;
+  color: #384e86;
+  text-transform: capitalize;
+}
+
+.event-url a:hover {
+  background-color: #384e86;
+  border-color: #384e86;
+  color: #fff;
+}
+
+.event-url a {
+  border-radius: 20px;
+  padding: 6px 10px;
+}
+
+.view-display-id-block_1 .other-details div {
+  margin: 15px 0;
+  padding: 0 10px;
+}
+
+.event-url {
+  margin-bottom: 10px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.event-url a {
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-block;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .event-url {
+    width: 100%;
+  }
+  .event-url a {
+    display: block;
+    text-align: center;
+  }
+}

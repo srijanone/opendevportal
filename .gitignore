@@ -1,7 +1,5 @@
 vendor/
 core/
-/modules/
-/themes/
 tmp/
 profiles/opendevx/themes/custom/*/node_modules
 

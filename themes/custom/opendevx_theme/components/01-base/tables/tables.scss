@@ -1,0 +1,121 @@
+@import 'settings';
+
+//------ Tables -------
+
+body table,
+body .table {
+  border-collapse: unset;
+
+  thead {
+    tr th {
+      background: $blue;
+      border-bottom-color: $blue-dark; //Added to override bootstrap css
+      border-top: 1px solid $blue-dark;
+      text-align: center;
+    }
+  }
+
+  tr {
+    background-color: $white;
+
+    .list-group-item {
+      border: 0;
+    }
+  }
+
+  th,
+  td {
+    border-color: $blue-dark;
+    vertical-align: middle;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+  }
+
+  .views-field-nothing {
+    max-width: 15rem;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      @extend %btn-create;
+      display: inline-block;
+      width: 12rem;
+      padding: .5rem 1rem;
+
+      &:first-child {
+        margin-left: .6rem;
+      }
+    }
+
+    div.edit-content a:first-child {
+      padding: .5rem 1rem;
+    }
+
+    div,
+    li {
+      margin-left: .6rem;
+      display: inline-block;
+
+      a:first-child {
+        margin-left: 0;
+        margin-top: .3rem;
+      }
+
+      >a {
+        margin-top: .6rem;
+      }
+    }
+
+    a+a,
+    div+a {
+      margin-left: .6rem;
+      margin-top: .3rem;
+    }
+
+    .dropbutton-widget a {
+      background-color: transparent;
+      border: 0;
+      color: $default-color;
+    }
+
+    .dropbutton-widget a:hover {
+      color: $default-color;
+    }
+
+    .dropbutton-widget {
+      width: 100%;
+    }
+  }
+}
+
+// Removed extra button.
+body .table-responsive {
+  ~.form-actions {
+    @extend %none;
+  }
+}
+
+.js .views-field-operations {
+  .dropbutton-multiple {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.js .dropbutton-multiple {
+  .dropbutton-widget .dropbutton-action a {
+    padding: 0;
+  }
+}
+
+
+.js td .dropbutton-multiple {
+  margin: 0 !important;
+  padding: 0 !important;
+}

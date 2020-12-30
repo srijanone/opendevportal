@@ -1,0 +1,13 @@
+{# Footer twig #}
+
+<footer class="footer">
+  {% block footer %}
+    <div class="container">
+      {% if page.footer_first %}
+        <div class="footer-inner clearfix">
+          {{ page.footer_first }}
+        </div>
+      {% endif %}
+    </div>
+  {% endblock %}
+</footer>

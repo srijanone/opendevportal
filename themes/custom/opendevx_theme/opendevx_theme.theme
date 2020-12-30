@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\group\Entity\GroupInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ *
+ */
+function opendevx_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+}
+
+function opendevx_theme_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'form' & !empty($variables['element']['#id'])) {
+    $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
+  }
+  if ($hook == 'block') {
+    if (isset($variables['elements']['content']) && isset($variables['elements']['content']['#block_content'])) {
+      $suggestions[] = $hook . '__' . $variables['elements']['content']['#entity_type'] . '_' . $variables['elements']['content']['#block_content']->bundle() . '_' . $variables['elements']['content']['#view_mode'];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_html.
+ */
+function opendevx_theme_preprocess_html(&$variables) {
+  if (strpos(\Drupal::service('path.current')->getPath(), 'revisions') !== false) {
+    $variables['attributes']['class'][] = 'node-type-revision';
+    $variables['attributes']['class'][] = 'node--type-api-product';
+  }
+  if (strpos($variables['head_title']['title'], 'Denied') == TRUE) {
+    $variables['attributes']['class'][] = 'node--access-denied';
+  }
+  $program = \Drupal::service('odp_core.program_domain')->getDomainProgramInfo();
+  if ($program instanceof GroupInterface) {
+    if ($program->hasField('field_header_background_color') && $program->field_header_background_color->color) {
+      $color_value = ltrim($program->field_header_background_color->color, "#");
+      $variables['header_color'] = "hdr-clr-" . $color_value;
+    }
+
+    if ($program->hasField('field_icons_bg_color') && $program->field_icons_bg_color->color) {
+      $color_value = ltrim($program->field_icons_bg_color->color, "#");
+      $variables['icon_color'] = "ico-clr-" . $color_value;
+    }
+
+    if ($program->hasField('field_font_family') && $program->field_font_family->value) {
+      $variables['font_family'] = "font-" . $program->field_font_family->value;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function opendevx_theme_preprocess_block__system_branding_block(&$variables) {
+  $variables['#cache']['max-age'] = 0;
+  $program = \Drupal::service('odp_core.program_domain')->getDomainProgramInfo();
+  if ($program instanceof GroupInterface) {
+    if ($program->hasField('field_site_logo') && $program->field_site_logo->target_id) {
+      $media = $program->field_site_logo->entity;
+      if ($media && $media->hasField('field_media_image') && $media->field_media_image->entity) {
+        $variables['site_logo_custom'] = file_create_url($media->field_media_image->entity->getFileUri());
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function opendevx_theme_preprocess(&$variables, $hook) {
+  if ($hook == 'node' && $variables['elements']['#view_mode'] == 'graphql_view') {
+    $variables['page'] = true;
+  }
+}

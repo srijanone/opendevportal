@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+.top-tags-wrapper .tags {
+  color: #adadad;
+  font-weight: bold;
+  padding-right: 20px;
+  text-transform: capitalize;
+}
+
+.field--name-field-tags {
+  font-size: 1rem;
+  font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.field--name-field-tags::before {
+  content: 'Tags: ';
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.field--name-field-tags .links a {
+  font-size: 0.85714rem;
+  font-weight: bold;
+  background: #1d76ee;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px;
+  position: relative;
+  top: 2px;
+}

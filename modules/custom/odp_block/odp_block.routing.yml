@@ -1,0 +1,7 @@
+odp_block.cta_redirection:
+  path: '/cta/redirect-url/{type}/{pid}'
+  defaults:
+    _controller: '\Drupal\odp_block\Controller\CtaController::redirectCtaUrl'
+    _title: ''
+  requirements: 
+    _permission: 'access content' 

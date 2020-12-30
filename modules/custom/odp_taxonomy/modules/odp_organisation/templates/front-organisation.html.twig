@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ */
+#}
+
+
+<div class="organisation org_right">
+    <div class="org_row" id="front-organisation">
+
+      {% for key, value in data %}
+        {% if value.referTo is same as('external') %}
+          <a class="external-url" target="_blank" rel="nofollow" href="{{ value.programUrl }}">
+        {% else %}
+          <a class="internal-url" target="{{  value.target }}" href="{{ value.programUrl }}">
+        {% endif %}
+        {% if value.orgImage is empty %}
+          <div class="no-image"></div>
+        {% else %}
+          <img class="org-image rounded-circle" src="{{ value.orgImage }}">
+        {% endif %}
+        <div class="org_title">{{ value.orgName }}</div> </a>
+      {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains odp_login_redirect.module.
+ */
+
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_user_login().
+ */
+function odp_login_redirect_user_login(AccountInterface $account) {
+  \Drupal::service('odp_login_redirect.redirect_service')->setLoginDestination($account);
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function odp_login_redirect_user_logout(AccountInterface $account) {
+  \Drupal::service('odp_login_redirect.redirect_service')->setLogoutDestination($account);
+}

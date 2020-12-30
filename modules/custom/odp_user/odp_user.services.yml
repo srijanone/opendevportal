@@ -1,0 +1,8 @@
+services:
+  odp_user.organisation:
+   class: Drupal\odp_user\Organisation
+   arguments: ['@tempstore.private', '@database', '@current_user', '@entity_type.manager']
+
+  odp_user.logger:
+   class: Drupal\odp_user\Logger\Logger
+   arguments: ['@tempstore.private', '@database', '@current_user', '@entity_type.manager']

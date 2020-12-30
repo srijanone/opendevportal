@@ -1,0 +1,48 @@
+<?php
+/**
+ * @module file
+ */
+
+use Drupal\odp_block\Utility\ListingBlockUtility;
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Hook to alter block output before rendering.
+ */
+function odp_api_listing_block_preprocess_block(&$var) {
+  $content = $var['content'];
+  if (isset($content['#block_content'])) {
+    // Check the block type.
+    if ($content['#block_content']->bundle() == 'api_listing_block') {
+      // Listing of contents based on content type.
+      if ($content['#view_mode'] == 'full') {
+        $nid = FALSE;
+        $type = 'content_listing_block';
+        $display = 'content_listing_block_display';
+        $data = $content['#block_content']->toArray();
+        $list = array_column($data['field_content_category'], 'target_id');
+        $pager = $content['#block_content']->get('field_items_per_page')->getValue();
+        $node = \Drupal::request()->attributes->get('node');
+        if ($node && $node instanceof \Drupal\node\NodeInterface && $node->bundle() == 'api_product') {
+          $nid = $node->id();
+        }
+        $result = ListingBlockUtility::getViewResults($list, $type, $display, $pager[0]['value'], $nid);
+        if ($result[0]) {
+          $var['content'] = $result;
+        }
+        else {
+          $var['label'] = '';
+        }
+      }
+    }
+
+    // Alter the featured product API block result.
+    if ($content['#block_content']->bundle() == 'content_reference' && $content['#view_mode'] == 'cards') {
+      if (empty($content['field_contents']['#title'])) {
+        $var['content'] = $var['label'] = '';
+      }
+    }
+  }
+
+}

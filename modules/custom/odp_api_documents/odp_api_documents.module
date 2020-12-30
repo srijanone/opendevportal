@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * OpenDevX Api documents module file.
+ */
+
+use Drupal\odp_api_documents\ApiInterface;
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function odp_api_documents_views_query_alter($view, $query) {
+  if ($view->id() == 'content_listing_rest_resource' && $view->current_display == 'rest_export_1') {
+    // Get the end point of the APIs.
+    $arg = explode('/', \Drupal::request()->getpathInfo());
+    if (in_array($arg[3], array_keys(ApiInterface::API_OPTIONS))) {
+      $query->where[0]['conditions'][0]['value'] = ApiInterface::API_OPTIONS[$arg[3]];
+    }
+  }
+}

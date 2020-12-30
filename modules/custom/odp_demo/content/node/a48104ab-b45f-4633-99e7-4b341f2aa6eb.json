@@ -1,0 +1,284 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/api-document\/bank-api?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/api_document"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_api_version": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/73?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_document": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_environment": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/72?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_gatewayid": [
+            {
+                "href": "http:\/\/default\/node\/1423?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1424
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a48104ab-b45f-4633-99e7-4b341f2aa6eb"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3894
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "api_document"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-11-11T08:25:39+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_api_version": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/73?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/version"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "fc95bce5-7803-45b2-9688-aaa0f076c670"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_document": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "03059116-f5ba-46d8-9ec3-dc970e9b1ec8"
+                    }
+                ],
+                "display": null,
+                "description": null
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_environment": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/72?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/environment"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1388189d-f61f-411b-976c-443eb0dc0cee"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/api_document\/field_gatewayid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/node\/1423?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/gateway"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e467bfb-47db-47f4-b675-4cd402d1cd21"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Bank API",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-11T08:22:29+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-11T08:25:39+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/api-document\/bank-api",
+                "title": "Bank API | Profiling",
+                "description": "Bank API Summary"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/api-document\/bank-api",
+            "pid": 19,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Bank API Summary<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>Bank API Summary<\/p>\n",
+            "summary": "Bank API Summary",
+            "lang": "en"
+        }
+    ],
+    "field_api_display": [
+        {
+            "value": "voyager_ui"
+        }
+    ],
+    "field_api_type": [
+        {
+            "value": "rest"
+        }
+    ],
+    "field_format": [
+        {
+            "value": "redoc_ui"
+        },
+        {
+            "value": "rapidoc_ui"
+        },
+        {
+            "value": "swagger_ui_file"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}

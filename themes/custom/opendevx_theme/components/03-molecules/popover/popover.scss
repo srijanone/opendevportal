@@ -1,0 +1,158 @@
+@import "settings";
+
+//
+// Popovers
+// --------------------------------------------------
+
+// Popover for program section.
+.popover_program {
+  padding: 0 .75rem;
+
+  @include for-tablet-landscape-down {
+    order: 6;
+  }
+
+  .select-program {
+    border: 1px solid $blue-dark;
+    border-radius: 30px;
+    color: $white;
+    cursor: pointer;
+    padding: 10px 10px 10px 35px;
+    position: relative;
+    max-width: 12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &::before {
+      @extend %awsome;
+      content: '\f64f';
+      left: 10px;
+      position: absolute;
+      top: 10px;
+    }
+
+    &.collapsed::after {
+      @extend %none;
+    }
+  }
+
+  .dashboard-user-program-header {
+    background-color: $gray-lighter;
+    box-shadow: 0 8px 10px -11px #343a40;
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 66px;
+    transition: all .5s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 2;
+
+    @include for-tablet-landscape-down {
+      top: 326px;
+    }
+
+    &.show,
+    &.collapsing {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+
+      @include for-tablet-landscape-down {
+        flex-flow: column;
+      }
+
+      &::before {
+        background: $gray-lighter;
+        content: '';
+        height: 20px;
+        position: absolute;
+        right: 190px;
+        top: -6px;
+        transform: rotate(45deg);
+        width: 20px;
+      }
+    }
+  }
+
+  .program_left {
+    padding: 20px;
+    width: 40%;
+
+    @include for-tablet-landscape-down {
+      width: 100%;
+    }
+  }
+
+  .program_right {
+    padding: 20px;
+    width: 55%;
+
+    @include for-tablet-landscape-down {
+      width: 100%;
+    }
+  }
+
+  .dashboard-program {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    a {
+      @include font(16, normal);
+      font-family: $headings-font-family;
+      color: $text-color;
+      display: flex !important; //added to override library css.
+      flex-flow: column;
+      align-items: center;
+      padding-left: 30px;
+      padding-right: 30px;
+      text-align: center;
+      max-width: 200px;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.slick-slider {
+      display: block;
+    }
+
+    .slick-slide {
+      width: 193px !important; //added because inline css giving 0.
+
+      // @include for-tablet-landscape-up {
+      //   width: 335px !important;
+      // }
+    }
+
+    .slick-track {
+      display: flex;
+      width: 100vw !important; //added because inline css giving 0.
+    }
+  }
+
+  .program-image,
+  .no-image {
+    background: $gray-light-1;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 110px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 110px;
+
+    &.active {
+      border: 5px solid #384e86;
+    }
+  }
+}

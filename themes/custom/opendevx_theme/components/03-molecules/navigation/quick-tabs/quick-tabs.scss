@@ -1,0 +1,79 @@
+@import "settings";
+
+.quick-tabs {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+	-ms-box-orient: horizontal;
+	-ms-box-pack: center;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	list-style: none;
+	margin: 40px auto 20px;
+	padding: 0;
+	position: relative;
+
+	span {
+		border-bottom: 1px solid #0003;
+		display: block;
+		-webkit-flex: 1;
+		-moz-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		margin: 0;
+		text-align: center;
+		z-index: 1;
+
+
+		a {
+			@include for-phone-up {
+				font-size: 1.5rem;
+			}
+
+			color: $gray-light;
+			font-size: .75rem;
+			line-height: 2.5;
+			position: relative;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&.active {
+				color: $blue;
+
+				&:before,
+				&:after {
+					border: solid #0000;
+					content: '';
+					height: 0;
+					left: 50%;
+					pointer-events: none;
+					position: absolute;
+					top: 100%;
+					width: 0;
+				}
+
+				&:before {
+					border-top-color: #0003;
+					border-width: 11px;
+					margin-left: -11px;
+				}
+
+				&:after {
+					border-top-color: $white;
+					border-width: 10px;
+					margin-left: -10px;
+				}
+			}
+		}
+	}
+}

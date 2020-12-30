@@ -1,0 +1,9 @@
+odp_login_redirect.login_redirect_settings:
+  route_name: odp_login_redirect.login_redirect_settings
+  title: 'Login Redirect Settings'
+  base_route: odp_login_redirect.login_redirect_settings
+
+odp_login_redirect.logout_redirect_settings:
+  route_name: odp_login_redirect.logout_redirect_settings
+  title: 'Logout Redirect Settings'
+  base_route: odp_login_redirect.login_redirect_settings

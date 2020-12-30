@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ */
+#}
+
+
+
+
+<div class="organisation programs_user">
+    <div class="org_row-new" id="front-organisation">
+      {% for key, value in data %}
+        {% if value.referTo is same as('external') %}
+          <a class="external-url" target="_blank" rel="nofollow" href="{{ value.programUrl }}">
+        {% else %}
+          <a class="internal-url" target="{{  value.target }}" href="{{ value.programUrl }}">
+        {% endif %}
+        {% if value.programImage is empty %}
+          <div class="no-image"></div>
+        {% else %}
+          <img class="org-image rounded-circle" src="{{ value.programImage }}">
+        {% endif %}
+        <div class="org_title">{{ value.programName }}</div> </a>
+      {% endfor %}
+  </div>
+</div>

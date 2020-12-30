@@ -1,0 +1,9 @@
+name: Developer Portal Organisation
+description : 'Extend the organisation taxonomy term for developer portal.'
+type: module
+package: ODP
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - odp_taxonomy:odp_taxonomy
+  - odp_node:odp_node

@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+<div class='region--breadcrumb'>
+  {% if breadcrumb %}
+    <nav role="navigation" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        {% for item in breadcrumb %}
+          {% if item.url %}
+            <li class="breadcrumb-item">
+              <a href="{{ item.url }}">{{ item.text }}</a>
+            </li>
+          {% else %}
+            <li class="breadcrumb-item active">
+              {{ item.text }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+      {# Added tour link #}
+      <!-- <button class='btn tour-btn' type='button'>Help</button> This will enable when needed. -->
+    </nav>
+  {% endif %}
+</div>

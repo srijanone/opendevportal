@@ -1,0 +1,4 @@
+services:
+  odp_paragraph.paragraph:
+   class: Drupal\odp_paragraph\Paragraph
+   arguments: ['@database']

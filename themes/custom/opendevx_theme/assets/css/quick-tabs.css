@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "ProximaNovaThin";
+  src: url("../fonts/ProximaNovaT-Thin.woff2");
+}
+
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: url("../fonts/ProximaNova-Regular.woff");
+}
+
+@font-face {
+  font-family: "ProximaNovaBold";
+  src: url("../fonts/ProximaNova-Bold.woff2");
+}
+
+.quick-tabs {
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: flex;
+  -ms-box-orient: horizontal;
+  -ms-box-pack: center;
+  -ms-flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  margin: 40px auto 20px;
+  padding: 0;
+  position: relative;
+}
+
+.quick-tabs span {
+  border-bottom: 1px solid #0003;
+  display: block;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
+  margin: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.quick-tabs span a {
+  color: #777777;
+  font-size: .75rem;
+  line-height: 2.5;
+  position: relative;
+}
+
+.quick-tabs span a:hover {
+  text-decoration: none;
+}
+
+.quick-tabs span a.active {
+  color: #1d76ee;
+}
+
+.quick-tabs span a.active:before, .quick-tabs span a.active:after {
+  border: solid #0000;
+  content: '';
+  height: 0;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  width: 0;
+}
+
+.quick-tabs span a.active:before {
+  border-top-color: #0003;
+  border-width: 11px;
+  margin-left: -11px;
+}
+
+.quick-tabs span a.active:after {
+  border-top-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+@media (min-width: 576px) {
+  .quick-tabs span a {
+    font-size: 1.5rem;
+  }
+}
