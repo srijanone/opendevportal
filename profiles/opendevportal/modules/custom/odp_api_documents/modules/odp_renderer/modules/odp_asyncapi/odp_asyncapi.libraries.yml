@@ -1,9 +1,0 @@
-react_app:
-  version: 1.x
-  css:
-    theme:
-      css/index.css: {}
-  js:
-    js/dist/main.min.js: {minified: true}
-  dependencies:
-    - core/drupal

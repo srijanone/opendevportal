@@ -1,8 +1,0 @@
-name: OpenDevX Async API
-description: 'Async Api 2.0 Specification.'
-dependencies:
-  - odp_renderer:odp_renderer
-type: module
-package: ODP
-core: 8.x
-core_version_requirement: ^8 || ^9

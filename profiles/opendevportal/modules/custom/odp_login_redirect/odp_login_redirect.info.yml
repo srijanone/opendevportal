@@ -1,9 +1,0 @@
-name: Opendevx - Role Based Redirects
-description : 'This module provides the role based redirection after login.'
-type: module
-package: ODP
-core: 8.x
-core_version_requirement: ^8 || ^9
-configure: odp_login_redirect.login_redirect_settings
-dependencies:
-  - drupal:user

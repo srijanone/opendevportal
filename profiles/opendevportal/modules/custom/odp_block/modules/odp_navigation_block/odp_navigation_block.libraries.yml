@@ -1,6 +1,0 @@
-product_header_navigation:
-  version: 1.x
-  js:
-    js/api_filteration.js: {}
-  dependencies:
-    - core/jquery

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-id: odp_vbo_published_action
-label: 'Publish latest node'
-type: node
-plugin: "odp_vbo_published_action"
-configuration: {  }

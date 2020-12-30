@@ -1,8 +1,0 @@
-name: OpenDevX Renderer
-description: Collection of API Spec renderer modules.
-dependencies:
-  - odp_api_documents:odp_api_documents
-type: module
-package: ODP
-core: 8.x
-core_version_requirement: ^8 || ^9
