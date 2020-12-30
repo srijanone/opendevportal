@@ -37,9 +37,6 @@
         "drupal/codesnippet": "1.6",
         "drupal/color_field": "^2.3",
         "drupal/config_ignore": "^2.2",
-        "drupal/core-composer-scaffold": "^8.9",
-        "drupal/core-project-message": "^8.9",
-        "drupal/core-recommended": "^8.9",
         "drupal/default_content": "1.0-alpha9",
         "drupal/devel": "^2.1",
         "drupal/disqus": "^1.0@RC",
@@ -105,7 +102,6 @@
         "drupal/views_bulk_operations": "^3.8",
         "drush/drush": "^9.2",
         "league/oauth2-client": "^2.0",
-        "oomphinc/composer-installers-extender": "^1.1"
     },
     "require-dev": {
     },
