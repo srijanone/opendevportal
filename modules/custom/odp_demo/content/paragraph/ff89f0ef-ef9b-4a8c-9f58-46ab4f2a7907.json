@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/entity\/paragraph\/1?_format=hal_json"
+            "href": "http:\/\/default\/entity\/paragraph\/4?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/product_attributes"
@@ -14,17 +14,17 @@
     },
     "id": [
         {
-            "value": 1
+            "value": 4
         }
     ],
     "uuid": [
         {
-            "value": "7a2c111e-acba-4043-bc7f-196d2cf8527f"
+            "value": "ff89f0ef-ef9b-4a8c-9f58-46ab4f2a7907"
         }
     ],
     "revision_id": [
         {
-            "value": 1
+            "value": 4
         }
     ],
     "langcode": [
@@ -46,7 +46,7 @@
     ],
     "created": [
         {
-            "value": "2020-12-29T15:37:14+00:00",
+            "value": "2020-12-31T07:43:56+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -109,7 +109,7 @@
     },
     "field_value": [
         {
-            "value": "45"
+            "value": "65"
         }
     ]
 }

@@ -25,6 +25,6 @@ visibility:
     context_mapping: {  }
   request_path:
     id: request_path
-    pages: "/api-product/*\r\n/products\r\n/home"
+    pages: "/node/*/*\r\n/api-product/*\r\n/products\r\n/home\r\n"
     negate: true
     context_mapping: {  }

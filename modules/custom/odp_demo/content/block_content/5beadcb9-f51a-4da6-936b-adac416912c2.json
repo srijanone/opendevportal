@@ -53,7 +53,7 @@
     ],
     "changed": [
         {
-            "value": "2020-05-13T07:07:16+00:00",
+            "value": "2020-12-31T07:50:16+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -78,16 +78,16 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/landing-page\/home",
-                "title": "| Profiling"
+                "canonical_url": "http:\/\/default\/home",
+                "title": "| ODP"
             }
         }
     ],
     "body": [
         {
-            "value": "<p>\u00a9 &amp; <span>Powered by<\/span> <img alt=\"developer portal\" src=\"\/themes\/custom\/devportal\/logo.svg\" \/><\/p>\r\n",
+            "value": "<p>\u00a9 &amp; <span>Powered by<\/span> <img alt=\"OpenDevPortal\" src=\"\/profiles\/contrib\/opendevportal\/themes\/custom\/opendevx_theme\/logo.svg\" \/><\/p>\r\n",
             "format": "full_html",
-            "processed": "<p>\u00a9 &amp; <span>Powered by<\/span> <img alt=\"developer portal\" src=\"\/themes\/custom\/devportal\/logo.svg\" \/><\/p>\n",
+            "processed": "<p>\u00a9 &amp; <span>Powered by<\/span> <img alt=\"OpenDevPortal\" src=\"\/profiles\/contrib\/opendevportal\/themes\/custom\/opendevx_theme\/logo.svg\" \/><\/p>\n",
             "summary": "",
             "lang": "en"
         }
