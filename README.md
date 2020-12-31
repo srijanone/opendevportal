@@ -33,12 +33,6 @@ Some of OpenDevPortal's most unique features:
 
 ---
 
-## Architecture
-
-![Architecture Diagram](.screenshots/architecture.png)
-
----
-
 ## Architecture Key Highlights
 
 - One multi-tenant platform to rule it all = Manage multiple API programs &
