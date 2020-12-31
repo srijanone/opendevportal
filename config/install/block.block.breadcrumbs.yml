@@ -2,11 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - domain
     - system
   theme:
     - opendevx_theme
-id: opendevx_theme_breadcrumbs
+id: breadcrumbs
 theme: opendevx_theme
 region: highlighted
 weight: -20
@@ -22,9 +21,4 @@ visibility:
     id: request_path
     pages: "/set-organisation\r\n/products\r\n/landing-page/solutions\r\n/landing-page/use-cases\r\n/home\r\n/api-product/*\r\n/node/*/revisions/*"
     negate: true
-    context_mapping: {  }
-  domain:
-    id: domain
-    domains: {  }
-    negate: null
     context_mapping: {  }
