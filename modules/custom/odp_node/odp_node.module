@@ -11,7 +11,6 @@ use Drupal\views\ViewExecutable;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\cache\CachePluginBase;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Field\FieldFilteredMarkup;
 
 /**
@@ -48,10 +47,6 @@ function odp_node_entity_presave(EntityInterface $entity) {
             // Set a variable to store field name to get organization.
             $org_field = '';
             switch ($entity->bundle()) {
-              case 'apps':
-                $org_field = "field_api_product_single";
-                break;
-
               case 'issues':
                 $org_field = "field_api_product";
                 break;
@@ -94,26 +89,20 @@ function odp_node_views_post_render(
  * Implements hook_form_alter().
  */
 function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form_ids = ['node_apps_edit_form', 'node_apps_form', 'node_issues_edit_form',
-    'node_issues_form', 'node_forum_edit_form', 'node_forum_form',
+  $form_ids = [
+    'node_issues_edit_form',
+    'node_issues_form',
+    'node_forum_edit_form',
+    'node_forum_form',
   ];
-  // Disable add to gallery checkbox for only developer.
-  $add_gallery_element = '';
-  if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
-    $add_gallery_element = 'field_add_to_gallery';
-  }
   // Array to hide form elements.
   $elements_to_hide = [
     0 => 'revision_information',
     'actions' => ['preview'],
-    $add_gallery_element => $add_gallery_element,
   ];
 
-  // @todo will move into odp_apps module.
   // Array of forms which are affecting in this alteration.
   $affected_forms = [
-    'node_apps_edit_form',
-    'node_apps_form',
     'node_issues_edit_form',
     'node_issues_form',
   ];
@@ -129,25 +118,12 @@ function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     }
   }
 
-  // Custom form submit handler.
-  if (in_array($form_id, ['node_apps_edit_form', 'node_apps_form'])) {
-    foreach (array_keys($form['actions']) as $action) {
-      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-        $form['actions'][$action]['#submit'][] = 'odp_node_apps_form_submit';
-      }
-    }
-  }
-
   // Create app developer flow. Hide moderation state field for app.
   if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
     $node = NULL;
     if (!empty(\Drupal::request()->get('pid'))) {
       $product_id = (int) \Drupal::request()->get('pid');
       $node = \Drupal::entityTypeManager()->getStorage('node')->load($product_id);
-    }
-    if (($form_id == 'node_apps_edit_form' || $form_id == 'node_apps_form') && ($node instanceof NodeInterface)) {
-      $node_data = $node->toArray();
-      $form['field_api_document']['widget']['#default_value'] = $node_data['field_api_specifications'][0]['target_id'];
     }
 
     if (in_array($form_id, $form_ids)) {
@@ -161,10 +137,6 @@ function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         $form['field_api_product_single']['widget']['#default_value'] = $product_id;
         $form['field_api_product_single']['#access'] = FALSE;
         $form['field_api_product']['#access'] = FALSE;
-      }
-
-      if ($form_id == 'node_apps_edit_form') {
-        $form['field_api_product_single']['#access'] = FALSE;
       }
 
       if ($form_id == 'node_issues_edit_form' || $form_id == 'node_forum_edit_form') {
@@ -257,34 +229,6 @@ function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
         has been getting created, otherwise continue with the saving content.');
     }
   }
-}
-
-/**
- * Custom Apps content type form submit hanlder.
- */
-function odp_node_apps_form_submit(array $form,
-FormStateInterface $form_state) {
-  $store = \Drupal::service('tempstore.private')->get('odp_block');
-  // Get the key/value pair.
-  $store->set('store_pid', '');
-  $store->set('store_path', '');
-  $entity = $form_state->getFormObject()->getEntity();
-  $entity->save();
-
-  if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
-    $url = "/dashboard/appmanager/apps?moderation_state=All";
-  }
-  elseif (in_array('admin', \Drupal::currentUser()->getRoles())) {
-    $url = "/dashboard/manage/apps";
-  }
-  elseif (!empty(\Drupal::request()->query->get('destination'))) {
-    $url = \Drupal::request()->query->get('destination');
-  }
-  else {
-    $url = \Drupal::request()->headers->get('referer');
-  }
-  $response = new RedirectResponse($url);
-  $response->send();
 }
 
 /**
