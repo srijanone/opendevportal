@@ -1,4 +1,0 @@
-services:
-  odp_login_redirect.redirect_service:
-    class: Drupal\odp_login_redirect\Redirect
-    arguments: ['@current_route_match', '@request_stack', '@config.factory', '@current_user', '@database', '@odp_user.organisation', '@tempstore.private', '@odp_user.logger', '@autologout.manager', '@messenger', '@odp_core.program_domain', '@odp_core.program_domain_subscriber']

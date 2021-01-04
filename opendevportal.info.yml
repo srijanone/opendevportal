@@ -161,14 +161,15 @@ install:
  - paragraphs
  - odp_api_documents
  - odp_api_listing_block
- - odp_block
  - odp_apps
+ - odp_block
  - odp_breadcrumb
  - odp_content
  - odp_content_reference
  - odp_core
  - odp_fence_tab
  - odp_forum
+ - odp_login_redirect
  - odp_menu
  - odp_navigation_block
  - odp_node
@@ -180,7 +181,6 @@ install:
  - odp_subscription
  - odp_taxonomy
  - odp_user
- - odp_login_redirect
  - odp_voyager
  - odp_asyncapi
 

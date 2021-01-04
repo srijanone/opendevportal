@@ -6,15 +6,11 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\user\RoleInterface;
-use Drupal\odp_user\Organisation;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class SetOrganisationForm to render organization.
  */
-class SetOrganisationForm extends FormBase implements ContainerInjectionInterface {
+class SetOrganisationForm extends FormBase {
 
   /**
    * Organisation.
@@ -24,28 +20,10 @@ class SetOrganisationForm extends FormBase implements ContainerInjectionInterfac
   protected $org;
 
   /**
-   * Entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
    * Default class constructor.
    */
-  public function __construct(Organisation $organisation, EntityTypeManagerInterface $entity_type_manager) {
-    $this->org = $organisation;
-    $this->entityTypeManager = $entity_type_manager;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('odp_user.organisation'),
-      $container->get('entity_type.manager')
-    );
+  public function __construct() {
+    $this->org = \Drupal::service('odp_user.organisation');
   }
 
   /**
@@ -87,7 +65,7 @@ class SetOrganisationForm extends FormBase implements ContainerInjectionInterfac
     if ($orgId = $form_state->getValue('organisation')) {
       // Set value.
       $this->org->setProgramId($orgId);
-      $roles = $this->entityTypeManager->getStorage('user_role')->loadMultiple();
+      $roles = \Drupal::service('entity_type.manager')->getStorage('user_role')->loadMultiple();
 
       foreach ($roles as $role) {
         if ($role instanceof RoleInterface) {

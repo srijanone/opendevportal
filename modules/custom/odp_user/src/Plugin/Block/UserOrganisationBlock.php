@@ -7,7 +7,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\odp_user\Organisation;
-use Drupal\Core\TempStore\PrivateTempStoreFactory;
 
 /**
  * Provides a 'User Program' Block.
@@ -28,13 +27,6 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
   protected $org;
 
   /**
-   * PrivateTempStoreFactory service.
-   *
-   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
-   */
-  protected $tempStore;
-
-  /**
    * UserOrganisationBlock constructor.
    *
    * @param array $configuration
@@ -45,13 +37,10 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
    *   The plugin implementation definition.
    * @param \Drupal\odp_user\Organisation $organisation
    *   The plugin organisation class.
-   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store
-   *   The TempStore factory class.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, Organisation $organisation, PrivateTempStoreFactory $temp_store) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, Organisation $organisation) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->org = $organisation;
-    $this->tempStore = $temp_store;
   }
 
   /**
@@ -63,7 +52,6 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
       $plugin_id,
       $plugin_definition,
       $container->get('odp_user.organisation'),
-      $container->get('tempstore.private')
     );
   }
 
@@ -76,8 +64,9 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
     $data = $this->org->getUserOrganisations();
     $title = $config['program_title'];
     $description = strip_tags($config['program_description']);
-    $program_id = $this->org->getOrgId() ?: 0;
-    $user_roles = $this->tempStore->get('odp_user')->get('user_programs');
+    $program_service = \Drupal::service('odp_user.organisation');
+    $program_id = $program_service->getOrgId() ?: 0;
+    $user_roles = \Drupal::service('tempstore.private')->get('odp_user')->get('user_programs');
     $program_ids = array_keys($user_roles);
     $non_member = array_diff(array_keys($data), $program_ids);
     foreach ($non_member as $value) {
