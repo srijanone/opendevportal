@@ -8,6 +8,7 @@ use Drupal\odp_user\ProgramInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\odp_user\Organisation as Program;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -37,6 +38,13 @@ class UserDashboardController extends ControllerBase {
   protected $account;
 
   /**
+   * PrivateTempStoreFactory service.
+   *
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
+   */
+  protected $tempStore;
+
+  /**
    * UserDashboardController constructor.
    *
    * @param \Drupal\odp_user\Organisation $program
@@ -45,13 +53,17 @@ class UserDashboardController extends ControllerBase {
    *   The plugin request stack service.
    * @param Drupal\Core\Session\AccountInterface $account
    *   The plugin account service.
+   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store
+   *   The TempStore factory class.
    */
   public function __construct(Program $program,
   RequestStack $request_stack,
-  AccountInterface $account) {
+  AccountInterface $account,
+  PrivateTempStoreFactory $temp_store) {
     $this->programService = $program;
     $this->currentPath = $request_stack;
     $this->account = $account;
+    $this->tempStore = $temp_store;
   }
 
   /**
@@ -61,7 +73,8 @@ class UserDashboardController extends ControllerBase {
     return new static(
       $container->get('odp_user.organisation'),
       $container->get('request_stack'),
-      $container->get('current_user')
+      $container->get('current_user'),
+      $container->get('tempstore.private')
     );
   }
 
@@ -72,9 +85,8 @@ class UserDashboardController extends ControllerBase {
     $referer = $this->currentPath->getCurrentRequest()->headers->get('referer');
     $regex = '/login/';
     if (preg_match($regex, $referer) == TRUE) {
-      $tempstore = \Drupal::service('tempstore.private');
       // Get the store collection.
-      $store = $tempstore->get('odp_block');
+      $store = $this->tempStore->get('odp_block');
       // Get the key/value pair.
       $pid = $store->get('store_pid');
       $path = $store->get('store_path');
@@ -99,10 +111,12 @@ class UserDashboardController extends ControllerBase {
     $referrer = $this->currentPath->getCurrentRequest()->headers->get('referer');
 
     // Get program id from URL.
-    $explode_path = explode('/', $path);
-    $program_id = $explode_path[3];
-    $this->programService->setProgramId($program_id);
-    $group_roles = $this->programService->getUserGroupRole($program_id);
+    if (strpos($path, '/') !== FALSE) {
+      $explode_path = explode('/', $path);
+      $program_id = $explode_path[3];
+      $this->programService->setProgramId($program_id);
+      $group_roles = $this->programService->getUserGroupRole($program_id);
+    }
     if (!empty($group_roles)) {
       if (in_array($group_roles[0], ProgramInterface::PM_ROLES)) {
         $referrer = '/dashboard/' . $program_id . '/products';
