@@ -74,7 +74,7 @@ class Organisation {
           }
         }
 
-        if ($program_id = \Drupal::service('odp_core.program_domain')->getProgramDomainId()) {
+        if ($program_id = \Drupal::service('odp_domain.program_domain')->getProgramDomainId()) {
             $program[$program_id]  = $organisation[$program_id];
            return $program;
         }

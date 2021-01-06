@@ -17,8 +17,8 @@ use Drupal\odp_user\Organisation as Program;
 use Drupal\autologout\AutologoutManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\odp_core\Program\ProgramDomainInterface;
-use Drupal\odp_core\EventSubscriber\Program\ProgramDomainSubscriber;
+use Drupal\odp_domain\Program\ProgramDomainInterface;
+use Drupal\odp_domain\EventSubscriber\Program\ProgramDomainSubscriber;
 
 /**
  * Class definition of redirect service.
@@ -84,7 +84,7 @@ class Redirect implements RedirectInterface {
   /**
    * Object ProgramDomain.
    *
-   * @var Drupal\odp_core\Program\ProgramDomainInterface
+   * @var Drupal\odp_domain\Program\ProgramDomainInterface
    */
   protected $programDomain;
 
@@ -105,7 +105,7 @@ class Redirect implements RedirectInterface {
   /**
    * The Program EventSubscriber.
    *
-   * @var \Drupal\odp_core\EventSubscriber\Program\ProgramDomainSubscriber
+   * @var \Drupal\odp_domain\EventSubscriber\Program\ProgramDomainSubscriber
    */
   protected $programDomainSubscriber;
 
@@ -132,9 +132,9 @@ class Redirect implements RedirectInterface {
    *   AutoLogout Manage Service.
    * @param Drupal\Core\Messenger\MessengerInterface $messenger
    *   Messenger definition.
-   * @param Drupal\odp_core\Program\ProgramDomainInterface $program_domain
+   * @param Drupal\odp_domain\Program\ProgramDomainInterface $program_domain
    *   Program domain service.
-   * @param Drupal\odp_core\EventSubscriber\Program\ProgramDomainSubscriber $program_domain_subscriber
+   * @param Drupal\odp_domain\EventSubscriber\Program\ProgramDomainSubscriber $program_domain_subscriber
    *   Program domain subscriber service.
    */
   public function __construct(RouteMatchInterface $current_route_match,
@@ -340,7 +340,6 @@ class Redirect implements RedirectInterface {
       if (in_array('administrator', $account->getRoles())) {
         return $group_roles;
       }
-
       if ($program_id = $this->programDomainSubscriber->getProgramDomain()) {
         $this->programDomain->setProgramDomainId($program_id);
       }

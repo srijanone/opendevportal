@@ -9,7 +9,7 @@
  * Implements hook_preprocess_menu().
  */
 function odp_menu_preprocess_menu(&$variables) {
-  if (!empty(\Drupal::service('odp_core.program_domain')->getProgramDomainId())
+  if (!empty(\Drupal::service('odp_domain.program_domain')->getProgramDomainId())
   && isset($variables['menu_name']) && $variables['menu_name'] === 'main') {
     foreach ($variables['items'] as $key => $item) {
       if ($item['url']->toString() == '/programs') {

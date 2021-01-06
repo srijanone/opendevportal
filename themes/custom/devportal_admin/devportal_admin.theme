@@ -30,7 +30,7 @@ function devportal_admin_preprocess_html(&$variables) {
     $variables['#attached']['library'][] = 'devportal_admin/google-fonts';
   }
 
-  $program = \Drupal::service('odp_core.program_domain')->getDomainProgramInfo();
+  $program = \Drupal::service('odp_domain.program_domain')->getDomainProgramInfo();
   if ($program instanceof GroupInterface) {
     if ($program->hasField('field_header_background_color') && $program->field_header_background_color->color) {
       $color_value = ltrim($program->field_header_background_color->color, "#");
@@ -158,7 +158,7 @@ function devportal_admin_form_system_theme_settings_alter(&$form, \Drupal\Core\F
  */
 
 function devportal_admin_preprocess_block(&$variables) {
-  if ($program_id = \Drupal::service('odp_core.program_domain')->getProgramDomainId()) {
+  if ($program_id = \Drupal::service('odp_domain.program_domain')->getProgramDomainId()) {
     $program = \Drupal::entityTypeManager()->getStorage('group')->load($program_id);
     if ($program instanceof GroupInterface) {
       if ($program->hasField('field_site_logo') && $program->field_site_logo->target_id) {

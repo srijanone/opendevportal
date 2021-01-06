@@ -13,7 +13,7 @@ use Drupal\odp_organisation\Organisation as Programs;
 use Drupal\odp_organisation\Utility\OrganisationUtility;
 use Drupal\views\Views;
 use Drupal\Core\Path\AliasManagerInterface;
-use Drupal\odp_core\Program\ProgramDomainInterface;
+use Drupal\odp_domain\Program\ProgramDomainInterface;
 
 /**
  * Class Organisation.
@@ -70,7 +70,7 @@ class Organisation extends Programs {
   /**
    * ProgramDomain Interface.
    *
-   * @var Drupal\odp_core\Program\ProgramDomainInterface
+   * @var Drupal\odp_domain\Program\ProgramDomainInterface
    */
   protected $programDomain;
 

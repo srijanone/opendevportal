@@ -1,0 +1,6 @@
+name: OpenDevPortal Programs
+description: Provides the Program.
+type: module
+package: ODP
+core: 8.x
+core_version_requirement: ^8 || ^9
