@@ -15,7 +15,7 @@ dependencies:
     - group
     - image
     - media
-    - odp_core
+    - odp_domain
     - svg_image
     - text
     - user

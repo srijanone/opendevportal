@@ -8,5 +8,5 @@ configure: odp_login_redirect.login_redirect_settings
 dependencies:
   - drupal:user
   - odp_user:odp_user
-  - odp_core:odp_core
+  - odp_domain:odp_domain
   - autologout:autologout

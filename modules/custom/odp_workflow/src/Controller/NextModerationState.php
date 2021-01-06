@@ -6,7 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\odp_notification\Services\OdpNotificationService;
 use Drupal\odp_organisation\Organisation;
-use Drupal\odp_core\Utility\Program\ProgramUtility;
+use Drupal\odp_domain\Utility\Program\ProgramUtility;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -50,7 +50,7 @@ class NextModerationState extends ControllerBase {
   /**
    * ProgramUtility object.
    *
-   * @var \Drupal\odp_core\Utility\Program\ProgramUtility
+   * @var \Drupal\odp_domain\Utility\Program\ProgramUtility
    *
    */
   protected $programUtility;
@@ -66,7 +66,7 @@ class NextModerationState extends ControllerBase {
    *   OdpNotificationService.
    * @param \Drupal\odp_organisation\Organisation $org
    *   Organisation.
-   * @param \Drupal\odp_core\Utility\Program\ProgramUtility $programUtility
+   * @param \Drupal\odp_domain\Utility\Program\ProgramUtility $programUtility
    *   ProgramUtility.
    */
   public function __construct(RequestStack $request_stack,
@@ -90,7 +90,7 @@ class NextModerationState extends ControllerBase {
       $container->get('entity_type.manager'),
       $container->get('odp_notification.notification'),
       $container->get('odp_user.organisation'),
-      $container->get('odp_core.program_utility')
+      $container->get('odp_domain.program_utility')
     );
   }
 

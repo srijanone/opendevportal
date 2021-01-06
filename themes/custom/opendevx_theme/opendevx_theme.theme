@@ -58,7 +58,7 @@ function opendevx_theme_preprocess_html(&$variables) {
   if (strpos($variables['head_title']['title'], 'Denied') == TRUE) {
     $variables['attributes']['class'][] = 'node--access-denied';
   }
-  $program = \Drupal::service('odp_core.program_domain')->getDomainProgramInfo();
+  $program = \Drupal::service('odp_domain.program_domain')->getDomainProgramInfo();
   if ($program instanceof GroupInterface) {
     if ($program->hasField('field_header_background_color') && $program->field_header_background_color->color) {
       $color_value = ltrim($program->field_header_background_color->color, "#");
@@ -81,7 +81,7 @@ function opendevx_theme_preprocess_html(&$variables) {
  */
 function opendevx_theme_preprocess_block__system_branding_block(&$variables) {
   $variables['#cache']['max-age'] = 0;
-  $program = \Drupal::service('odp_core.program_domain')->getDomainProgramInfo();
+  $program = \Drupal::service('odp_domain.program_domain')->getDomainProgramInfo();
   if ($program instanceof GroupInterface) {
     if ($program->hasField('field_site_logo') && $program->field_site_logo->target_id) {
       $media = $program->field_site_logo->entity;

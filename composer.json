@@ -176,6 +176,9 @@
             },
             "drupal/icon_select": {
                 "SvgSpriteGenerator" : "https://github.com/srijanone/opendevx/blob/master/patches/icon_select/icon_select.patch"
+            },
+            "drupal/domain_site_settings": {
+              "domain field settings": "https://www.drupal.org/files/issues/2020-06-20/3126737-8.patch"
             }
         },
         "drupal-core-project-message": {

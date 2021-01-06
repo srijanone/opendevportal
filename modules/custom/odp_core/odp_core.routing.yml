@@ -1,7 +1,0 @@
-odp_core.add_program_page:
-  path: '/program/{pid}/content/create'
-  defaults:
-    _controller: '\Drupal\odp_core\Controller\ProgramsContentController::addPage'
-    _title: 'Add Content'
-  requirements: 
-    _role: admin

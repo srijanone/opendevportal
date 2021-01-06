@@ -1,0 +1,141 @@
+<?php
+
+/**
+ * @file
+ * OpendeX Domain module file.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Database\Query\AlterableInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function odp_domain_views_data_alter(&$data) {
+  // Base data and other field definitions.
+  $data['node']['domain_filter'] = [
+    'title' => t('Program Domain'),
+    'filter' => [
+      'title' => t('Program Domain'),
+      'help' => 'filters nodes on current domain',
+      'field' => 'nid',
+      'id' => 'program_domain_filter',
+    ],
+  ];
+  $data['groups_field_data']['program_id'] = [
+    'title' => t('Program id filter'),
+    'filter' => [
+      'title' => t('Program id filter'),
+      'help' => 'Program filter on current domain',
+      'field' => 'nid',
+      'id' => 'program_id_filter',
+    ],
+  ];
+
+  $data['views']['table']['group'] = t('Custom Global');
+  $data['views']['table']['join'] = [
+    '#global' => [],
+  ];
+  $data['views']['program_domain_host'] = [
+    'title' => t('Program domain URL'),
+    'help' => t('Program domain URL.'),
+    'field' => [
+      'id' => 'program_domain_host',
+    ],
+  ];
+
+  return $data;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function odp_domain_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $view = $form_state->getStorage('view');
+  $views_id = [
+    'product_listing',
+    'use_cases_listing',
+    'app_gallery',
+    'events',
+  ];
+  if (in_array($view['view']->id(), $views_id) && \Drupal::service('odp_domain.program_domain')->getProgramDomainId()) {
+    $form['gid']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_query_search_node_search_alter().
+ */
+function odp_domain_query_search_node_search_alter(AlterableInterface $query) {
+  $program_id = \Drupal::service('odp_user.organisation')->getOrgId();
+  if (\Drupal::service('odp_domain.program_domain')->getProgramDomainId()) {
+    $program_id = \Drupal::service('odp_domain.program_domain')->getProgramDomainId();
+  }
+
+  if ($program_id) {
+    $query->join('group_content_field_data', 'gcfd', 'n.nid = gcfd.entity_id');
+    $query->condition('gcfd.gid', $program_id);
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function odp_domain_preprocess_page_title(&$variables) {
+  $path = \Drupal::service('path.current')->getPath();
+  $path_index = explode('/', $path);
+  if ($path_index[1] == 'dashboard' || (isset($path_index[3]) && !empty($path_index[3]))) {
+    return;
+  }
+  if ($group = \Drupal::routeMatch()->getParameter('group')) {
+    if (is_object($group) && method_exists($group, 'bundle')) {
+      if (in_array($group->bundle(), ['private', 'public', 'protected'])) {
+        $variables['title'] = '';
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function odp_domain_preprocess_page(&$variables) {
+  $unauthorized = \Drupal::request()->query->get('unauthorized');
+  if ($unauthorized) {
+    \Drupal::messenger()->addError('You are not authorized to login.');
+  }
+  $product_index = explode('/', \Drupal::service('path.current')->getPath());
+  $entity_id = '';
+  if (!empty($product_index[2])) {
+    try {
+      $query = \Drupal::database()->select('node__field_api_product', 'api_product');
+      $query->addField('api_product', 'entity_id');
+      $query->condition('api_product.deleted', 0);
+      $query->condition('api_product.bundle', 'resources');
+      $query->condition('api_product.field_api_product_target_id', $product_index[2]);
+
+      $entity_id = $query->execute()->fetchField();
+    }
+    catch (\Exception $e) {
+      \Drupal::service('odp_user.logger')->log(
+        ['module' => 'odp_domain', 'message' => $e->getMessage()]
+      );
+    }
+  }
+
+  if (empty($entity_id)) {
+    unset($variables['page']['content']['otherresources']);
+  }
+  $data = \Drupal::service('odp_user.organisation')->getUserProgramsData();
+  if (empty($data)) {
+    unset($variables['page']['content']['userprogramsblock']);
+  }
+}
+
+/**
+ * Implements hook_validation_constraint_alter().
+ */
+function odp_domain_validation_constraint_alter(array &$definitions) {
+  $definitions['GroupContentCardinality']['class'] = '\\Drupal\\odp_domain\\Plugin\\Validation\\Constraint\\OpenDevPortalGroupContentCardinality';
+}
