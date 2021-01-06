@@ -19,6 +19,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/set-organisation\r\n/products\r\n/landing-page/solutions\r\n/landing-page/use-cases\r\n/home\r\n/api-product/*\r\n/node/*/revisions/*"
+    pages: "/set-organisation\r\n/products\r\n/landing-page/solutions\r\n/landing-page/use-cases\r\n/home\r\n/api-product/*"
     negate: true
     context_mapping: {  }

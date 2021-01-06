@@ -1,0 +1,205 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/manage-billing-provider-coming-soon?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/listing_pages"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1444
+        }
+    ],
+    "uuid": [
+        {
+            "value": "85f396cc-bb79-446b-b1a0-c002189e4d49"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3966
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "listing_pages"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2021-01-06T14:53:17+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1c516dcb-eef0-4d31-bdcd-1dd660d651b9"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/listing_pages\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1c516dcb-eef0-4d31-bdcd-1dd660d651b9"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Manage Billing Providers Coming Soon",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2021-01-06T14:23:24+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2021-01-06T14:53:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/manage-billing-provider-coming-soon",
+                "title": "Manage Billing Providers Coming Soon | Profiling",
+                "description": ""
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/manage-billing-provider-coming-soon",
+            "pid": 38,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><img alt=\"Coming soon\" data-entity-type=\"file\" data-entity-uuid=\"8e503db3-838f-4d43-8262-44a699becabd\" src=\"\/sites\/default\/files\/inline-images\/comingsoon_0_0.png\" \/><\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p><img alt=\"Coming soon\" data-entity-type=\"file\" data-entity-uuid=\"8e503db3-838f-4d43-8262-44a699becabd\" src=\"\/sites\/default\/files\/inline-images\/comingsoon_0_0.png\" \/><\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "ds_1col",
+                "layout_settings": {
+                    "label": "",
+                    "wrappers": {
+                        "ds_content": "div"
+                    },
+                    "outer_wrapper": "div",
+                    "attributes": "",
+                    "link_attribute": "",
+                    "link_custom": "",
+                    "classes": {
+                        "layout_class": []
+                    }
+                },
+                "components": [
+                    {
+                        "uuid": "d1ff8d44-6f4e-48f8-b629-da7dce0568be",
+                        "region": "ds_content",
+                        "configuration": {
+                            "id": "field_block:node:listing_pages:body",
+                            "label": "Landing page Description",
+                            "provider": "layout_builder",
+                            "label_display": 0,
+                            "formatter": {
+                                "label": "hidden",
+                                "type": "text_default",
+                                "settings": [],
+                                "third_party_settings": []
+                            },
+                            "context_mapping": {
+                                "entity": "layout_builder.entity",
+                                "view_mode": "view_mode"
+                            }
+                        },
+                        "additional": [],
+                        "weight": 0
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
+    ]
+}

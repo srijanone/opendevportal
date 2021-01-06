@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/api-document\/api-aysnc?_format=hal_json"
+            "href": "http:\/\/default\/api-document\/api-async?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/api_document"
@@ -51,7 +51,7 @@
     ],
     "vid": [
         {
-            "value": 3942
+            "value": 3968
         }
     ],
     "langcode": [
@@ -67,7 +67,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-12-30T12:57:22+00:00",
+            "value": "2021-01-07T05:51:53+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -84,7 +84,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                        "value": "1c516dcb-eef0-4d31-bdcd-1dd660d651b9"
                     }
                 ]
             }
@@ -101,7 +101,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                        "value": "1c516dcb-eef0-4d31-bdcd-1dd660d651b9"
                     }
                 ],
                 "lang": "en"
@@ -187,7 +187,7 @@
     ],
     "title": [
         {
-            "value": "API aysnc",
+            "value": "API async",
             "lang": "en"
         }
     ],
@@ -200,7 +200,7 @@
     ],
     "changed": [
         {
-            "value": "2020-12-30T12:57:22+00:00",
+            "value": "2021-01-07T05:51:53+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -238,15 +238,15 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/api-document\/api-aysnc",
-                "title": "API aysnc | Profiling",
+                "canonical_url": "http:\/\/default\/api-document\/api-async",
+                "title": "API async | Profiling",
                 "description": "Synchronous\/asynchronous APIs are application programming interfaces that return data for requests either immediately or at a later time, respectively."
             }
         }
     ],
     "path": [
         {
-            "alias": "\/api-document\/api-aysnc",
+            "alias": "\/api-document\/api-async",
             "pid": 19,
             "langcode": "en",
             "lang": "en"
