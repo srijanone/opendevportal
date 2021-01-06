@@ -6,7 +6,7 @@ use Drupal\views_bulk_operations\Action\ViewsBulkOperationsActionBase;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\odp_notification\Services\OpendevxNotificationService;
+use Drupal\odp_notification\Services\OdpNotificationService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -18,14 +18,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   type = "",
  * )
  */
-class OpendevxNotificationAction extends ViewsBulkOperationsActionBase implements ContainerFactoryPluginInterface {
+class OdpNotificationAction extends ViewsBulkOperationsActionBase implements ContainerFactoryPluginInterface {
 
   use StringTranslationTrait;
 
   /**
    * The NotificationsService.
    *
-   * @var \Drupal\odp_notification\Services\OpendevxNotificationService
+   * @var \Drupal\odp_notification\Services\OdpNotificationService
    */
   protected $opendevx;
 
@@ -35,7 +35,7 @@ class OpendevxNotificationAction extends ViewsBulkOperationsActionBase implement
   public function __construct(array $configuration,
     $plugin_id,
     $plugin_definition,
-    OpendevxNotificationService $opendevx) {
+    OdpNotificationService $opendevx) {
     $this->opendevx = $opendevx;
   }
 

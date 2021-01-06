@@ -82,7 +82,10 @@ class NextModerationState extends ControllerBase {
         $node = $this->entityTypeManager->getStorage('node')->load($nid);
         $node->set('moderation_state', $next_state);
         $node->save();
-        \Drupal::service('odp_notification.notification')->sendNotification($node);
+        // Only use the service if the module is enabled.
+        if (\Drupal::service('module_handler')->moduleExists('odp_notification')) {
+          \Drupal::service('odp_notification.notification')->sendNotification($node);
+        }
         // Return to the listing page.
         $url = $this->currentPath->getCurrentRequest()->headers->get('referer');
         $response = new RedirectResponse($url);

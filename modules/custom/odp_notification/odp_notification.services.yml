@@ -1,4 +1,4 @@
 services:
   odp_notification.notification:
-    class: Drupal\odp_notification\Services\OpendevxNotificationService
+    class: Drupal\odp_notification\Services\OdpNotificationService
     arguments: ['@current_user', '@database', '@config.factory', '@odp_user.organisation', '@notifications_widget.logger', '@odp_user.logger']

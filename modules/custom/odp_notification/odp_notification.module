@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Opendevx Notification.
+ * OpenDevPortal Notification.
  */
 
 use Drupal\views\ViewExecutable;
@@ -47,15 +47,26 @@ function odp_notification_form_alter(&$form, FormStateInterface $form_state, $fo
 function odp_notification_apps_form_submit(array $form,
 FormStateInterface $form_state) {
   $entity = $form_state->getFormObject()->getEntity();
-  $query = \Drupal::database()->select('content_moderation_state_field_data', 'ms');
-  $query->join('node_field_revision', 'nf', 'nf.nid=ms.content_entity_id AND nf.vid=ms.content_entity_revision_id AND nf.langcode=ms.langcode');
-  $query->addField('ms', 'moderation_state');
-  $query->condition('nf.nid', $entity->id());
-  $moderation_state = $query->execute()->fetchField();
+  // Sending notification while changing the moderation state.
+  try {
+    $query = \Drupal::database()->select('content_moderation_state_field_data', 'ms');
+    $query->join('node_field_revision', 'nf', 'nf.nid=ms.content_entity_id AND nf.vid=ms.content_entity_revision_id AND nf.langcode=ms.langcode');
+    $query->addField('ms', 'moderation_state');
+    $query->condition('nf.nid', $entity->id());
+
+    $moderation_state = $query->execute()->fetchField();
+  }
+  catch (Exception $e) {
+    \Drupal::service('odp_user.logger')->log(
+      ['module' => 'odp_notification', 'message' => $e->getMessage()]
+    );
+  }
   if ($form['form_id']['#value'] == 'node_apps_form') {
     \Drupal::service('odp_notification.notification')->sendNotification($entity);
   }
-  if ($form['form_id']['#value'] == 'node_apps_edit_form' && ($entity->get('moderation_state')->value != $moderation_state)) {
+  if (!empty($moderation_state)
+   && $form['form_id']['#value'] == 'node_apps_edit_form'
+   && ($entity->get('moderation_state')->value != $moderation_state)) {
     \Drupal::service('odp_notification.notification')->sendNotification($entity);
   }
 }

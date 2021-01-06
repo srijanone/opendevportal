@@ -12,7 +12,7 @@ use Drupal\odp_user\Logger\Logger;
 /**
  * Opendevx Notification Utility class.
  */
-class OpendevxNotificationService {
+class OdpNotificationService {
 
   /**
    * Connection variable.
@@ -98,11 +98,12 @@ class OpendevxNotificationService {
     $moderation_state = $entity->hasField('moderation_state') ? $entity->moderation_state->getValue()[0]['value'] : NULL;
 
     // Prepare message link data.
-    $message                 = [];
-    $message['id']           = $entity->id();
-    $message['bundle']       = $bundle;
-    $message['content']      = $opendevxConfig->get($workflow . '_' . $moderation_state);
-    $message['content_link'] = $opendevxConfig->get($moderation_state . '_redirect_link');
+    $message = [
+      'id' => $entity->id(),
+      'bundle' => $bundle,
+      'content' => $opendevxConfig->get($workflow . '_' . $moderation_state),
+      'content_link' => $opendevxConfig->get($moderation_state . '_redirect_link'),
+    ];
 
     $this->notificationLogger->logNotification($message, 'content_moderated', $entity);
   }
@@ -187,7 +188,7 @@ class OpendevxNotificationService {
     $query->addJoin('inner', 'node', 'n',
        'cmsf.content_entity_id = n.nid');
     $query->fields('n', ['type']);
-    if (\Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
+    if ($this->org->checkAccess(TRUE)) {
       $orgid = $this->org->getOrgId();
       $query->addJoin('left', 'group_content_field_data',
         'gcfd', 'gcfd.entity_id = cmsf.content_entity_id');
@@ -220,7 +221,7 @@ class OpendevxNotificationService {
    */
   protected function getContentStateByRole($role) {
     $states = [];
-    switch (\Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
+    switch ($this->org->checkAccess(TRUE)) {
       case TRUE:
         $states['api_document'] = [
           'architecture_review',
