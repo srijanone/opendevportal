@@ -15,10 +15,14 @@ CONFIGURATION
 ---------------
 Go to configuration -> SDK Generator Settings and set the endpoint URL.
 
+References:
+https://github.com/OpenAPITools/openapi-generator
+http://api.openapi-generator.tech/index.html
+
 TROUBLESHOOTING
 ----------------
 FAQs
 -----
 MAINTAINERS
 ------------
-Srijan Technologies.
+Srijan Technologies. (https://www.drupal.org/srijan-technologies)

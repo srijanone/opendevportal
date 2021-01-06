@@ -1,5 +1,5 @@
-name: OpenDevX voyager
-description: Showing data in graphQL voyager format
+name: OpenDevPotal Voyager
+description: Provides a graphQL voyager UI field formatter for file/link fields.
 dependencies:
   - odp_renderer:odp_renderer
 type: module

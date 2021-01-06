@@ -234,8 +234,6 @@ function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form_ids = [
     'node_api_product_form',
     'node_api_product_edit_form',
-    'node_api_document_form',
-    'node_api_document_edit_form',
   ];
   if (in_array($form_id, $form_ids)) {
     $nid = $form_state->getFormObject()->getEntity()->id();
@@ -249,21 +247,12 @@ function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $pid = explode('/', $current_path)[2];
       $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
     }
-    if (in_array($form_id, [
-      'node_api_document_form',
-      'node_api_document_edit_form',
-    ])) {
-      $field = 'field_gatewayid';
-    }
-    else {
-      $field = 'field_gateways';
-    }
     if ($gateways) {
-      $form[$field]['widget']['#options'] = $gateways;
+      $form['field_gateways']['widget']['#options'] = $gateways;
     }
     else {
-      unset($form[$field]['widget']['#options']);
-      $form[$field]['widget']['#markup'] = FieldFilteredMarkup::create('Currently no Gateway attached with
+      unset($form['field_gateways']['widget']['#options']);
+      $form['field_gateways']['widget']['#markup'] = FieldFilteredMarkup::create('Currently no Gateway attached with
         the Program. If needed, Please assign Gateways to the Program under which this entity
         has been getting created, otherwise continue with the saving content.');
     }
@@ -321,20 +310,4 @@ function odp_node_local_tasks_alter(&$local_tasks) {
  */
 function odp_node_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'odp_node/odp_node';
-}
-
-/**
- * Implements hook_entity_delete().
- */
-function odp_node_entity_delete(EntityInterface $entity) {
-  $operation = 'delete';
-  switch ($entity->getEntityTypeId()) {
-    case 'node':
-      if ($entity->bundle() == 'api_document') {
-        \Drupal::service('odp_node.node')->deleteApiReference($entity->id());
-      }
-
-      break;
-
-  }
 }

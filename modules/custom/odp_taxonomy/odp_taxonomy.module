@@ -2,7 +2,7 @@
 
 /**
  * @file
- * odp_taxonomy module.
+ * Module file for odp_taxonomy.
  */
 
 use Drupal\Core\Form\FormStateInterface;
@@ -20,19 +20,5 @@ function odp_taxonomy_form_alter(&$form,
       '@type' => $type,
       '@name' => $vocab,
     ]);
-  }
-
-  if ($form_id == 'field_config_edit_form') {
-    if ($form['#entity']->bundle() == 'api_document') {
-      $config = \Drupal::config('odp_taxonomy.api_default_values');
-      // Set the environment field of API from the config.
-      if ($form['default_value']['widget']['#field_name'] == 'field_environment') {
-        $form['default_value']['widget']['#default_value'] = $config->get('api_environment');
-      }
-      // Set the version field of API from the config.
-      if ($form['default_value']['widget']['#field_name'] == 'field_api_version') {
-        $form['default_value']['widget']['#default_value'] = $config->get('api_version');
-      }
-    }
   }
 }

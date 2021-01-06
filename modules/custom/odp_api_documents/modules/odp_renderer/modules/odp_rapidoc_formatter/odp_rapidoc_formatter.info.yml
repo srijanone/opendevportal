@@ -1,4 +1,4 @@
-name: RapiDoc Field Formatter
+name: OpenDevPortal RapiDoc Field Formatter
 description: Provides a RapiDoc UI field formatter for file/link fields.
 dependencies:
   - drupal:file
