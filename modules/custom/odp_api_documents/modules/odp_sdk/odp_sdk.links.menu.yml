@@ -2,4 +2,4 @@ odp_sdk.settings:
   title: 'SDK Generator Settings'
   parent: odp_node.admin_index
   description: 'Configure SDK Generator.'
-  route_name: opendev_sdk.settings
+  route_name: odp_sdk.settings

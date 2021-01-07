@@ -1,4 +1,4 @@
-opendev_sdk.settings:
+odp_sdk.settings:
   path: '/admin/config/system/sdk-generator'
   defaults:
     _form: '\Drupal\odp_sdk\Form\SdkGeneratorSettings'

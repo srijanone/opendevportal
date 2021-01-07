@@ -1,4 +1,4 @@
-name: OpendevX - SDK Generator
+name: Opendevportal - SDK Generator
 description : 'Generate the SDK for API.'
 dependencies:
   - odp_api_documents:odp_api_documents

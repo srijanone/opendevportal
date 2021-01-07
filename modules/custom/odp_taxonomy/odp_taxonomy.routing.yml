@@ -1,7 +1,0 @@
-odp_taxonomy.api_default_value:
-  path: '/admin/config/system/api-default-values'
-  defaults:
-    _form: '\Drupal\odp_taxonomy\Form\ApiDefaultValueConfigForm'
-    _title: 'Set the API field default values'
-  requirements:
-    _permission: 'administer site configuration'

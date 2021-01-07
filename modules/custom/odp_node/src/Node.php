@@ -114,31 +114,4 @@ class Node {
     }
   }
 
-  /**
-   * Delete Api Reference.
-   */
-  public function deleteApiReference($entity_id) {
-    $result = '';
-    try {
-      $query = $this->connection->select('node__field_api_specifications', 'nfas');
-      $query->addField('nfas', 'entity_id');
-      $query->condition('nfas.field_api_specifications_target_id', $entity_id, '=');
-      $result = $query->execute()->fetchAll();
-
-      $query = $this->connection->delete('node__field_api_specifications');
-      $query->condition('field_api_specifications_target_id', $entity_id, '=');
-      $query->execute();
-      if (!empty($result)) {
-        foreach ($result as $key => $value) {
-          $node = $this->entityTypeManager->getStorage('node')->load($value->entity_id);
-          $node->save();
-        }
-      }
-    }
-    catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-api-reference');
-      $logger->error($e->getMessage());
-    }
-  }
-
 }

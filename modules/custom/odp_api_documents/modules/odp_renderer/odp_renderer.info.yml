@@ -1,4 +1,4 @@
-name: OpenDevX Renderer
+name: OpenDevPortal Renderer
 description: Collection of API Spec renderer modules.
 dependencies:
   - odp_api_documents:odp_api_documents

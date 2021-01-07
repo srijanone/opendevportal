@@ -25,12 +25,6 @@ function odp_content_entity_view_mode_alter(&$view_mode, EntityInterface $entity
     elseif ($entity->bundle() == 'apps' && in_array('anonymous', $current_user_role)) {
       $view_mode = 'anonymous_user_content';
     }
-
-    // Change the node display mode of api for type Graphql.
-    elseif ($entity->bundle() == 'api_document' && ($entity->get('field_api_type')->getValue()[0]['value'] == 'graphql'
-    || $entity->get('field_api_type')->getValue()[0]['value'] == 'async')) {
-      $view_mode = 'graphql_view';
-    }
   }
 }
 
