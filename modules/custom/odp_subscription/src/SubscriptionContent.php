@@ -125,7 +125,6 @@ class SubscriptionContent implements SubscriptionContentInterface {
       !in_array($nid,
       array_column($subscribed_products, 'target_id')))
       ? $subscribed_products : TRUE;
-
   }
 
 }

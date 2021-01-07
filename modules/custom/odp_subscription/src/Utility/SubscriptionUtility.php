@@ -225,6 +225,7 @@ class SubscriptionUtility {
     if (TRUE !== $sub_content->userHasSubscription($node->id(), $user)) {
       return FALSE;
     }
+
     return TRUE;
   }
 
