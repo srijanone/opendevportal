@@ -62,7 +62,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/coming-soon",
+            "uri": "internal:\/manage-billing-provider-coming-soon",
             "title": "",
             "options": []
         }
@@ -94,7 +94,7 @@
     ],
     "changed": [
         {
-            "value": "2020-11-06T10:27:42+00:00",
+            "value": "2021-01-06T14:53:45+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -119,7 +119,7 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "canonical_url": "http:\/\/default\/home",
                 "title": "| Profiling"
             }
         }
