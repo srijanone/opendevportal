@@ -1,6 +1,8 @@
-name: Developer Portal User
+name: OpenDevPortal User
 description : 'Extend the users functionality.'
 type: module
 package: ODP
 core: 8.x
 core_version_requirement: ^8 || ^9
+dependencies:
+  - odp_core:odp_core

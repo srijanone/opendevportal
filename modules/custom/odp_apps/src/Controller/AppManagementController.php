@@ -28,20 +28,6 @@ class AppManagementController extends ControllerBase {
   protected $entityTypeManager;
 
   /**
-   * The node id.
-   *
-   * @var int
-   */
-  private $nid;
-
-  /**
-   * The previous URL.
-   *
-   * @var string
-   */
-  private $previousUrl;
-
-  /**
    * AppManagementController constructor.
    *
    * @param Symfony\Component\HttpFoundation\RequestStack $request_stack
@@ -52,10 +38,7 @@ class AppManagementController extends ControllerBase {
   public function __construct(RequestStack $request_stack,
   EntityTypeManagerInterface $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
-    $path = $request_stack->getCurrentRequest()->getPathInfo();
-    $path_index = explode('/', $path);
-    $this->nid = (int) $path_index[2];
-    $this->previousUrl = $request_stack->getCurrentRequest()->server->get('HTTP_REFERER');
+    $this->requestStack = $request_stack;
   }
 
   /**
@@ -73,10 +56,11 @@ class AppManagementController extends ControllerBase {
    */
   public function addtogallery() {
     $node_title = $this->updategalleryfield(1);
-    $response = new RedirectResponse($this->previousUrl);
+    $response = new RedirectResponse($this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER'));
     $response->send();
 
     $this->messenger()->addMessage($this->t('Application <b>@title</b> is added to the gallery.', ['@title' => $node_title]));
+    return $response;
   }
 
   /**
@@ -84,21 +68,26 @@ class AppManagementController extends ControllerBase {
    */
   public function removefromgallery() {
     $node_title = $this->updategalleryfield(0);
-    $response = new RedirectResponse($this->previousUrl);
+    $response = new RedirectResponse($this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER'));
     $response->send();
 
     $this->messenger()->addMessage($this->t('Application <b>@title</b> is removed from the gallery.', ['@title' => $node_title]));
+    return $response;
   }
 
   /**
    * Update the gallery field data.
    */
   private function updategalleryfield($value) {
-    $node = $this->entityTypeManager->getStorage('node')->load($this->nid);
-    if ($node) {
-      $node->set('field_add_to_gallery', $value);
-      $node->save();
-      return $node->label();
+    $path = $this->requestStack->getCurrentRequest()->getPathInfo();
+    if (strpos($path, '/') !== FALSE) {
+      $path_index = explode('/', $path);
+      $nid = (int) $path_index[2];
+      if (isset($nid) && $node = $this->entityTypeManager->getStorage('node')->load($nid)) {
+        $node->set('field_add_to_gallery', $value);
+        $node->save();
+        return $node->label();
+      }
     }
   }
 

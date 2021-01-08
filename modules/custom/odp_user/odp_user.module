@@ -41,15 +41,6 @@ function odp_user_theme() {
  * Implements hook_views_query_alter().
  */
 function odp_user_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  if ($view->id() == 'organisation_users' &&
-    in_array($view->current_display, ['page_1', 'page_2'])) {
-    $role_statement = odp_user_get_roles_hierarchy();
-
-    if (isset($role_statement)) {
-      $query->addWhere(0, 'user__roles.roles_target_id', $role_statement, 'IN');
-    }
-  }
-
   if ($view->id() == 'media_library' &&
   in_array($view->current_display, ['widget', 'widget_table']) &&
   FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
@@ -60,19 +51,12 @@ function odp_user_views_query_alter(ViewExecutable $view, QueryPluginBase $query
 
 /**
  * Implements hook_form_alter().
+ *
+ * @todo: Will clean the roles for administrator later.
  */
 function odp_user_form_alter(&$form,
   FormStateInterface $form_state,
   $form_id) {
-  $current_user_roles = \Drupal::currentUser()->getRoles(TRUE);
-  if ($form_id == 'views_exposed_form' && $current_user_roles && !in_array('administrator', $current_user_roles)) {
-    if (isset($form['role'])) {
-      $form['role']['#options'] =
-        ["All" => array_shift($form['role']['#options'])] +
-        array_intersect_key($form['role']['#options'], odp_user_get_roles_hierarchy());
-    }
-  }
-
   $user_form_ids = [
     'user_form',
     'user_register_form',
@@ -82,35 +66,38 @@ function odp_user_form_alter(&$form,
     'group_content_private-group_membership_edit_form',
     'group_content_protected-group_membership_add_form',
     'group_content_protected-group_membership_edit_form',
+    'domain_group_settings_form',
   ];
   if (in_array($form_id, $user_form_ids)) {
+    $current_user_roles = \Drupal::currentUser()->getRoles(TRUE);
+    // Disable URL alias path from roles other than administrator.
     if (!in_array('administrator', $current_user_roles)) {
       unset($form['path']);
     }
-    if (in_array('administrator', $current_user_roles)) {
+    else {
+      // Hiding PM and developer roles from user form for administrator.
       unset($form['account']['roles']['#options']['product_manager']);
       unset($form['account']['roles']['#options']['developer']);
     }
     if (in_array('admin', $current_user_roles)) {
+      // Prefill the username after creation.
       if (!empty(\Drupal::request()->query->get('uid'))) {
         $form['entity_id']['widget'][0]['target_id']['#default_value'] = \Drupal::entityTypeManager()->getStorage('user')->load(\Drupal::request()->query->get('uid'));
       }
+      // Disable username and roles from add/edit user page for admin.
       $form['account']['mail']['#required'] = TRUE;
       $form['account']['roles']['#access'] = FALSE;
       $form['account']['name']['#type'] = 'hidden';
       $form['account']['name']['#value'] = 'email_registration_' . user_password();
       $form['actions']['submit']['#submit'][] = 'odp_user_redirect_new_registered_user';
-      unset($form['path']);
+
+      // Hiding site name, slogan, mail and error page from domain settings.
+      $form['domain_group_site_settings']['site_name']['#access'] = FALSE;
+      $form['domain_group_site_settings']['site_slogan']['#access'] = FALSE;
+      $form['domain_group_site_settings']['site_mail']['#access'] = FALSE;
+      $form['domain_group_site_settings']['error_page']['#access'] = FALSE;
     }
-
   }
-  if ($form_id == 'domain_group_settings_form') {
-    $form['domain_group_site_settings']['site_name']['#access'] = FALSE;
-    $form['domain_group_site_settings']['site_slogan']['#access'] = FALSE;
-    $form['domain_group_site_settings']['site_mail']['#access'] = FALSE;
-    $form['domain_group_site_settings']['error_page']['#access'] = FALSE;
-  }
-
 }
 
 /**
@@ -133,38 +120,9 @@ function odp_user_redirect_new_registered_user(&$form, FormStateInterface $form_
 }
 
 /**
- * Returns roles hierarchy for the current role.
- */
-function odp_user_get_roles_hierarchy() {
-  $current_user_role = \Drupal::currentUser()->getRoles(TRUE);
-
-  // Specify the access for roles as per hierarchy.
-  $role_access[0] = ['developer'];
-  $role_access[1] = array_merge($role_access[0], ['product_manager']);
-  $role_access[2] = array_merge($role_access[1], ['admin']);
-  switch (reset($current_user_role)) {
-    case "developer":
-      $role_statement = array_combine($role_access[0], $role_access[0]);
-      break;
-
-    case "product_manager":
-      $role_statement = array_combine($role_access[1], $role_access[1]);
-      break;
-
-    case "admin":
-      $role_statement = array_combine($role_access[2], $role_access[2]);
-      break;
-
-    default:
-      $role_statement = NULL;
-      break;
-  }
-
-  return $role_statement;
-}
-
-/**
  * Implements hook_menu_local_tasks_alter().
+ *
+ * @// TODO: will take out these code in the respective module later.
  */
 function odp_user_menu_local_tasks_alter(&$data, $route_name) {
   switch ($route_name) {
@@ -173,8 +131,10 @@ function odp_user_menu_local_tasks_alter(&$data, $route_name) {
     case 'entity.group.edit_form':
     case 'entity.group.delete_form':
     case 'layout_builder.overrides.group.view':
+    case 'entity.node.canonical':
       $user_roles = \Drupal::service('odp_login_redirect.redirect_service')->getUserRoles();
-      if (in_array('admin', $user_roles['system_roles'])) {
+      if (in_array('admin', $user_roles['system_roles']) ||
+       in_array('anonymous', $user_roles['system_roles'])) {
         unset($data['tabs'][0]);
       }
       break;

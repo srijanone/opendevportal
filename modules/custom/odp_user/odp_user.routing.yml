@@ -1,11 +1,3 @@
-odp_user.set_organisation_form:
-  path: '/set-organisation'
-  defaults:
-    _form: '\Drupal\odp_user\Form\SetOrganisationForm'
-    _title: 'My Programs'
-  requirements:
-    _role: product_manager
-
 odp_user.user_dashboard:
   path: '/dashboard'
   defaults:

@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * @file
+ * Developer portal application module file.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function odp_apps_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  $current_user_role = \Drupal::currentUser()->getRoles();
+  // Change the node display mode of applications for anonymous user.
+  if ($entity->bundle() == 'apps' && in_array('anonymous', $current_user_role)) {
+    $view_mode = 'anonymous_user_content';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function odp_apps_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!in_array($form_id, ['node_apps_edit_form', 'node_apps_form'])) {
+    return;
+  }
+  // Only for developer.
+  if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
+    $node = NULL;
+    if (!empty(\Drupal::request()->get('pid'))) {
+      $product_id = (int) \Drupal::request()->get('pid');
+      $node = \Drupal::entityTypeManager()->getStorage('node')->load($product_id);
+    }
+    if ($node instanceof NodeInterface) {
+      $node_data = $node->toArray();
+      $form['field_api_document']['widget']['#default_value'] = $node_data['field_api_specifications'][0]['target_id'];
+      $form['field_api_product']['widget'][0]['target_id']['#default_value'] = $node ?: NULL;
+      $form['field_api_product_single']['widget']['#default_value'] = $product_id;
+      $form['field_api_product_single']['#access'] = FALSE;
+      $form['field_api_product']['#access'] = FALSE;
+    }
+    $form['field_add_to_gallery']['#access'] = FALSE;
+    // Added a custom class for developer node forms.
+    if ($form['#process'][1][0]->getMode() == 'developer') {
+      $form['#attributes']['class'][] = 'developer-form';
+    }
+    $form['moderation_state']['#access'] = FALSE;
+    unset($form['meta']);
+  }
+  // Array to hide form elements.
+  $elements_to_hide = [
+    0 => 'revision_information',
+    'actions' => ['preview'],
+  ];
+
+  foreach ($elements_to_hide as $key => $element) {
+    if (!is_array($element)) {
+      $form[$element]['#access'] = FALSE;
+    }
+    else {
+      // Elements can loop around for sub elements but we can do this later.
+      $form[$key][$element[0]]['#access'] = FALSE;
+    }
+  }
+  // Custom form submit handler.
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+      $form['actions'][$action]['#submit'][] = 'odp_apps_form_submit_handler';
+    }
+  }
+}
+
+/**
+ * Custom Apps content type form submit hanlder.
+ */
+function odp_apps_form_submit_handler(array $form,
+FormStateInterface $form_state) {
+  $store = \Drupal::service('tempstore.private')->get('odp_block');
+  // Get the key/value pair.
+  $store->set('store_pid', '');
+  $store->set('store_path', '');
+  $entity = $form_state->getFormObject()->getEntity();
+  $entity->save();
+
+  if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
+    $url = "/dashboard/appmanager/apps?moderation_state=All";
+  }
+  elseif (in_array('admin', \Drupal::currentUser()->getRoles())) {
+    $url = "/dashboard/manage/apps";
+  }
+  elseif (!empty(\Drupal::request()->query->get('destination'))) {
+    $url = \Drupal::request()->query->get('destination');
+  }
+  else {
+    $url = \Drupal::request()->headers->get('referer');
+  }
+  $response = new RedirectResponse($url);
+  $response->send();
+}
