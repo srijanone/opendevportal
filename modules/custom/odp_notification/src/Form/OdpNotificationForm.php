@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a config form of notification.
  */
-class OpendevxNotificationForm extends ConfigFormBase {
+class OdpNotificationForm extends ConfigFormBase {
 
   /**
    * The entity type manager.

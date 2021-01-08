@@ -10,7 +10,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\odp_notification\Services\OpendevxNotificationService;
+use Drupal\odp_notification\Services\OdpNotificationService;
 
 /**
  * Provides a block with list of notification items.
@@ -21,7 +21,7 @@ use Drupal\odp_notification\Services\OpendevxNotificationService;
  *   category = @Translation("Openddevx Notifications widget")
  * )
  */
-class OpendevxNotificationBlock extends BlockBase implements ContainerFactoryPluginInterface, BlockPluginInterface {
+class OdpNotificationBlock extends BlockBase implements ContainerFactoryPluginInterface, BlockPluginInterface {
 
   /**
    * Drupal\Core\Session\AccountInterface definition.
@@ -41,7 +41,7 @@ class OpendevxNotificationBlock extends BlockBase implements ContainerFactoryPlu
   /**
    * The NotificationsService.
    *
-   * @var \Drupal\odp_notification\Services\OpendevxNotificationService
+   * @var \Drupal\odp_notification\Services\OdpNotificationService
    */
   protected $notification;
 
@@ -53,7 +53,7 @@ class OpendevxNotificationBlock extends BlockBase implements ContainerFactoryPlu
     $plugin_definition,
     AccountInterface $current_user,
     Connection $database,
-    OpendevxNotificationService $notificationService) {
+    OdpNotificationService $notificationService) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentUser = $current_user;
     $this->database = $database;
