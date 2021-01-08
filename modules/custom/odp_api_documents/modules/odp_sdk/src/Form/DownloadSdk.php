@@ -80,10 +80,10 @@ class DownloadSdk extends FormBase {
    */
   public function sdkApiRequestHandler(array $form, FormStateInterface $form_state) {
     $download_link = $this->sdk->sdkGenerateRequest(
-        \Drupal::config('odp_sdk.settings')->get('generator_url'),
-        $form_state->getValue('sdk_languages'),
-        $this->sdk->getApiSpecFromNode($form_state->getValue('sdk_nid')),
-      );
+      \Drupal::config('odp_sdk.settings')->get('generator_url'),
+      $form_state->getValue('sdk_languages'),
+      $this->sdk->getApiSpecFromNode($form_state->getValue('sdk_nid')),
+    );
 
     if (isset($download_link)) {
       $form_state->setResponse(new TrustedRedirectResponse($download_link));
