@@ -13,6 +13,6 @@ dependencies:
   - odp_taxonomy:odp_organisation
   - drupal:layout_builder
   - drupal:content_moderation
-  - drupal:hook_event_dispatcher
+  - hook_event_dispatcher:hook_event_dispatcher
   - odp_user:odp_user
   - group:group

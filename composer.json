@@ -158,7 +158,9 @@
                 "Admin Operations" : "https://github.com/srijanone/opendevx/blob/master/patches/total_control/admin_operations.patch"
             },
             "drupal/rules": {
-                "Rule Block Configurations" : "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch"
+                "Rule Block Configurations" : "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch",
+                "Generic event listener": "https://www.drupal.org/files/issues/2020-01-30/rules-add_generic_event_listener-2816033-74.patch",
+                "Service exception form config": "https://www.drupal.org/files/issues/2020-07-10/ServiceNotFoundException-when-installing-a-rule-via-configuration.2870851-10_0.patch"
             },
             "drupal/default_content": {
                 "Path alias not saved with pathauto" : "https://www.drupal.org/files/issues/2020-11-20/3183648-4.patch"

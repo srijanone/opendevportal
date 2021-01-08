@@ -9,3 +9,4 @@ dependencies:
   - drupal:user
   - odp_user:odp_user
   - odp_core:odp_core
+  - autologout:autologout
