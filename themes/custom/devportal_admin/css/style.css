@@ -1011,21 +1011,21 @@ input[type=checkbox]:disabled:hover, input[type=radio]:disabled:hover {
 }
 
 .menu--account .dropdown-toggle .user {
-  background: url('/profiles/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-user.svg') no-repeat 0 2px;
+  background: url('/profiles/contrib/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-user.svg') no-repeat 0 2px;
   display: inline-block;
   height: 27px;
   width: 25px;
 }
 
 .menu--account .dropdown-toggle .arrow {
-  background: url('/profiles/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-expand_more.svg') no-repeat 0 2px;
+  background: url('/profiles/contrib/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-expand_more.svg') no-repeat 0 2px;
   display: inline-block;
   height: 25px;
   width: 25px;
 }
 
 .menu--account.show .dropdown-toggle .arrow {
-  background: url('/profiles/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-expand-less.svg') no-repeat 0 2px;
+  background: url('/profiles/contrib/opendevportal/themes/custom/opendevx_theme/assets/images/icons/icon-expand-less.svg') no-repeat 0 2px;
 }
 
 .menu--account .dropdown-toggle::after {
