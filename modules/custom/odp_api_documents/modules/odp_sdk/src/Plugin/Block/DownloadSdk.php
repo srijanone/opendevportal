@@ -166,6 +166,7 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
 
     foreach ($nodes as $node) {
+      // @todo remove html markup and create template for block.
       $build[] = [
         'element_image' => [
           '#markup' => '<div class="product-image"><img src="' . ImageStyle::load('product_image')->buildUrl(
