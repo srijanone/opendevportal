@@ -10,6 +10,7 @@ use Drupal\odp_subscription\SubscriptionContent;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * Defines a confirmation form for for Subscription.
@@ -38,17 +39,27 @@ class SubscriptionConfirmForm extends ConfirmFormBase {
   protected $requestStack;
 
   /**
+   * The messenger service.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
    * SubscriptionConfirmForm class constructor.
    *
    * @param Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity object.
    * @param Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The request stack object.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger service.
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, RequestStack $request_stack) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, RequestStack $request_stack, MessengerInterface $messenger) {
     $this->account = \Drupal::currentUser();
     $this->entityTypeManager = $entityTypeManager;
     $this->requestStack = $request_stack;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -57,7 +68,8 @@ class SubscriptionConfirmForm extends ConfirmFormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager'),
-      $container->get('request_stack')
+      $container->get('request_stack'),
+      $container->get('messenger')
     );
   }
 
@@ -94,7 +106,7 @@ class SubscriptionConfirmForm extends ConfirmFormBase {
       $subscribe_content->deleteSubscription($this->id) === TRUE) {
       $message = $this->t('You have successfully un-subscribed.');
     }
-    \Drupal::messenger()->addMessage($message);
+    $this->messenger->addMessage($message);
 
     return $form_state->setRedirectUrl(Url::fromRoute('entity.node.canonical', ['node' => $this->id]));
   }

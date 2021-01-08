@@ -11,6 +11,7 @@ use Drupal\odp_subscription\SubscriptionQueueInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\odp_subscription\Form\SubscriptionSettings;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Routing\CurrentRouteMatch;
 
 /**
  * Service handler for Subscription Service.
@@ -58,18 +59,27 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
   protected $time;
 
   /**
+   * The access manager service.
+   *
+   * @var \Drupal\Core\Routing\CurrentRouteMatch
+   */
+  protected $routeMatch;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(Connection $connection,
   RequestStack $request,
   ConfigFactoryInterface $config_factory,
   LoggerChannelFactory $loggerFactory,
-  TimeInterface $time) {
-    $this->database      = $connection;
-    $this->request       = $request;
+  TimeInterface $time,
+  CurrentRouteMatch $route_match) {
+    $this->database = $connection;
+    $this->request = $request;
     $this->configFactory = $config_factory->getEditable(SubscriptionSettings::MODULE_KEY . '.settings');
     $this->loggerFactory = $loggerFactory->get('activity_tracking');
-    $this->time          = $time;
+    $this->time = $time;
+    $this->routeMatch = $route_match;
   }
 
   /**
@@ -80,7 +90,8 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
       $container->get('database'),
       $container->get('request_stack'),
       $container->get('config.factory'),
-      $container->get('datetime.time')
+      $container->get('datetime.time'),
+      $container->get('current_route_match')
     );
   }
 
@@ -111,6 +122,7 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
         $this->loggerFactory->error($e->getMessage());
       }
     }
+
     return $entity;
   }
 
@@ -119,7 +131,7 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
    */
   public function getSubsribedUsers(int $nid) {
     if (!$nid) {
-      $nid = \Drupal::routeMatch()->getParameter('node');
+      $nid = $this->routeMatch->getParameter('node');
       if (!$nid) {
         return FALSE;
       }
@@ -128,6 +140,7 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
       $query = $this->database->select('user__field_subscribed_products', 'sp');
       $query->fields('sp', ['entity_id']);
       $query->condition('field_subscribed_products_target_id', $nid, '=');
+
       $result = $query->execute()->fetchCol();
       if (empty($result)) {
         return FALSE;
@@ -160,7 +173,7 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
         'subscriber', 'action', 'status', 'created',
       ]);
 
-      $res = $query->range($offset, $limit)->execute()->fetchAll();
+      $query->range($offset, $limit)->execute()->fetchAll();
     }
     catch (\Exception $e) {
       $this->loggerFactory->error($e->getMessage());

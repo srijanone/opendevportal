@@ -47,12 +47,10 @@ function odp_subscription_mail($key, &$message, $params) {
     'langcode' => $message['langcode'],
   ];
 
-  switch ($key) {
-    case 'devportal_portal_subscribe_newsletter':
-      $message['from'] = \Drupal::config('system.site')->get('mail');
-      $message['subject'] = t('@title', ['@title' => $params['subject']], $options);
-      $message['body'][] = $params['body'];
-      break;
+  if ($key == 'devportal_portal_subscribe_newsletter') {
+    $message['from'] = \Drupal::config('system.site')->get('mail');
+    $message['subject'] = t('@title', ['@title' => $params['subject']], $options);
+    $message['body'][] = $params['body'];
   }
 }
 
@@ -134,5 +132,6 @@ function odp_subscription_tokens($type, $tokens, array $data, array $options, Bu
       }
     }
   }
+
   return $replacements;
 }
