@@ -15,6 +15,22 @@ use Drupal\odp_product\ContentInterface;
 use Drupal\node\Entity\NodeType;
 
 /**
+ * Implements hook_theme().
+ */
+function odp_product_theme() {
+  return [
+    'product_banner' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+        'banner' => NULL,
+        'productAttributes' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
  * Implements hook_entity_presave().
  */
 function odp_product_entity_presave(EntityInterface $entity) {
