@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\odp_block\Controller;
+namespace Drupal\odp_issue\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -11,24 +11,35 @@ use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Database\Connection;
 use Drupal\odp_user\Logger\Logger;
 
+/**
+ * Provides class CtaController.
+ */
 class CtaController extends ControllerBase {
 
   /**
-   * @var mixed $currentPath
+   * The current path.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
   /**
+   * The user AccountInterface.
+   *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
 
   /**
-   * @var mixed $storePath
+   * The temp storage.
+   *
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $storePath;
 
   /**
+   * The database connection.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
@@ -43,10 +54,16 @@ class CtaController extends ControllerBase {
   /**
    * CtaController constructor.
    *
-   * @param mixed $product
-   *   The plugin api product class.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   The user account service.
+   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store
+   *   The temp storage service.
+   * @param \Drupal\Core\Database\Connection $connection
+   *   The database connection service.
+   * @param \Drupal\odp_user\Logger\Logger $logger
+   *   The logger service.
    */
   public function __construct(RequestStack $request_stack,
   AccountInterface $account,
@@ -77,22 +94,18 @@ class CtaController extends ControllerBase {
   /**
    * Redirect CTA Url callback.
    */
-  public function redirectCtaUrl($type, $pid) {
+  public function redirectCtaUrl($pid) {
     $gid = $this->getGroupIdByNodeId($pid);
     if ($this->account->isAnonymous() == TRUE) {
-      if ($type = 'issues') {
-        $url = "/user/login?path=/group/$gid/content/create/group_node:issues";
-        $response = new RedirectResponse($url);
-        $response->send();
-      }
+      $url = "/user/login?path=/group/$gid/content/create/group_node:issues";
+      $response = new RedirectResponse($url);
+      $response->send();
     }
     else {
       $this->storePath->set('store_pid', $pid);
-      if ($type = 'issues') {
-        $url = "/group/$gid/content/create/group_node:issues";
-        $response = new RedirectResponse($url);
-        $response->send();
-      }
+      $url = "/group/$gid/content/create/group_node:issues";
+      $response = new RedirectResponse($url);
+      $response->send();
     }
   }
 
@@ -110,7 +123,7 @@ class CtaController extends ControllerBase {
     }
     catch (\Exception $e) {
       $this->logger->log(
-        ['module' => 'odp_block', 'message' => $e->getMessage()]
+        ['module' => 'odp_issue', 'message' => $e->getMessage()]
       );
     }
   }

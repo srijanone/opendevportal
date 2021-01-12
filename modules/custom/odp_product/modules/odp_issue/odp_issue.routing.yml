@@ -1,0 +1,7 @@
+odp_issue.cta_redirection:
+  path: '/cta/redirect-url/issues/{pid}'
+  defaults:
+    _controller: '\Drupal\odp_issue\Controller\CtaController::redirectCtaUrl'
+    _title: ''
+  requirements:
+    _permission: 'access content'

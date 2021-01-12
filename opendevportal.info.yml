@@ -168,7 +168,6 @@ install:
  - odp_content_reference
  - odp_core
  - odp_fence_tab
- - odp_forum
  - odp_menu
  - odp_navigation_block
  - odp_node
@@ -183,6 +182,10 @@ install:
  - odp_login_redirect
  - odp_voyager
  - odp_asyncapi
+ - odp_product
+ - odp_forum
+ - odp_issue
+ - odp_faq
 
 # Required modules
 # Note that any dependencies of the modules listed here will be installed automatically.

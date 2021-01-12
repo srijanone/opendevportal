@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Forum module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function odp_forum_theme($existing, $type, $theme, $path) {
+
+  return [
+    'top_tags' => [
+      'variables' => [
+        'tags' => NULL,
+      ],
+    ],
+    'forum_stats' => [
+      'variables' => [
+        'posts' => NULL,
+        'users' => NULL,
+        'comments' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function odp_forum_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!in_array($form_id, ['node_forum_edit_form', 'node_forum_form'])) {
+    return;
+  }
+  // Create app developer flow. Hide moderation state field for app.
+  if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
+    // Added a custom class for developer node forms.
+    if ($form['#process'][1][0]->getMode() == 'developer') {
+      $form['#attributes']['class'][] = 'developer-form';
+    }
+    $node = NULL;
+    if (!empty(\Drupal::request()->get('pid'))) {
+      $product_id = (int) \Drupal::request()->get('pid');
+      $node = \Drupal::entityTypeManager()->getStorage('node')->load($product_id);
+    }
+    if ($node instanceof NodeInterface) {
+      $form['field_api_product']['widget'][0]['target_id']['#default_value'] = $node ?: NULL;
+      $form['field_api_product']['#access'] = FALSE;
+    }
+    $form['moderation_state']['#access'] = FALSE;
+    unset($form['meta']);
+  }
+}
