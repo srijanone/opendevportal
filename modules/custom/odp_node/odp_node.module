@@ -58,15 +58,6 @@ function odp_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       ];
     }
   }
-
-  // Remove the unnecessary workflow values from the status filter.
-  if ($request->attributes->get('_route') == 'view.proxies_listing.page_3') {
-    unset($form['state']['#options']['API Approval Workflow']);
-    if (isset($form['state']['#options']['Approval Workflow']) && !empty($form['state']['#options']['Approval Workflow'])) {
-      $form['state']['#options'] += $form['state']['#options']['Approval Workflow'];
-      unset($form['state']['#options']['Approval Workflow']);
-    }
-  }
 }
 
 /**

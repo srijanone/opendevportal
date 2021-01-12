@@ -1,0 +1,6 @@
+name: OpenDevPortal Workflow
+description: 'Customize and extend workflow for OpenDevPortal.'
+type: module
+package: ODP
+core: 8.x
+core_version_requirement: ^8 || ^9

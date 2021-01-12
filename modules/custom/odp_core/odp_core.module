@@ -61,16 +61,6 @@ function odp_core_form_views_exposed_form_alter(array &$form, FormStateInterface
   if (in_array($view['view']->id(), $views_id) && \Drupal::service('odp_core.program_domain')->getProgramDomainId()) {
     $form['gid']['#access'] = FALSE;
   }
-
-  // Unset Application state key.
-  if ($form['#id'] == 'views-exposed-form-proxies-listing-page-1') {
-    unset($form['state']['#options']['Approval Workflow']);
-  }
-
-  // Unset Api state key.
-  if ($form['#id'] == 'views-exposed-form-proxies-listing-page-2') {
-    unset($form['state']['#options']['API Approval Workflow']);
-  }
 }
 
 /**

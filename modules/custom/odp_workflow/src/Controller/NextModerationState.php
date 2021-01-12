@@ -1,9 +1,12 @@
 <?php
 
-namespace Drupal\odp_node\Controller;
+namespace Drupal\odp_workflow\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\odp_notification\Services\OdpNotificationService;
+use Drupal\odp_organisation\Organisation;
+use Drupal\odp_core\Utility\Program\ProgramUtility;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -30,17 +33,52 @@ class NextModerationState extends ControllerBase {
   protected $entityTypeManager;
 
   /**
+   * The NotificationsService.
+   *
+   * @var \Drupal\odp_notification\Services\OdpNotificationService
+   */
+  protected $notification;
+
+  /**
+   * Organisation object.
+   *
+   * @var \Drupal\odp_organisation\Organisation
+   *
+   */
+  protected $org;
+
+  /**
+   * ProgramUtility object.
+   *
+   * @var \Drupal\odp_core\Utility\Program\ProgramUtility
+   *
+   */
+  protected $programUtility;
+
+  /**
    * UserDashboardController constructor.
    *
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   EntityTypeManagerInterface.
+   * @param \Drupal\odp_notification\Services\OdpNotificationService $notificationService
+   *   OdpNotificationService.
+   * @param \Drupal\odp_organisation\Organisation $org
+   *   Organisation.
+   * @param \Drupal\odp_core\Utility\Program\ProgramUtility $programUtility
+   *   ProgramUtility.
    */
   public function __construct(RequestStack $request_stack,
-  EntityTypeManagerInterface $entity_type_manager) {
+                              EntityTypeManagerInterface $entity_type_manager,
+                              OdpNotificationService $notificationService,
+                              Organisation $organisation,
+                              ProgramUtility $program_utility) {
     $this->currentPath = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
+    $this->notification = $notificationService;
+    $this->org = $organisation;
+    $this->programUtility = $program_utility;
   }
 
   /**
@@ -49,7 +87,10 @@ class NextModerationState extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('request_stack'),
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('odp_notification.notification'),
+      $container->get('odp_user.organisation'),
+      $container->get('odp_core.program_utility')
     );
   }
 
@@ -84,7 +125,7 @@ class NextModerationState extends ControllerBase {
         $node->save();
         // Only use the service if the module is enabled.
         if (\Drupal::service('module_handler')->moduleExists('odp_notification')) {
-          \Drupal::service('odp_notification.notification')->sendNotification($node);
+          $this->notification->sendNotification($node);
         }
         // Return to the listing page.
         $url = $this->currentPath->getCurrentRequest()->headers->get('referer');
@@ -107,8 +148,8 @@ class NextModerationState extends ControllerBase {
    * Change the member page title.
    */
   public function getMemberPageTitle() {
-    $program_id = \Drupal::service('odp_user.organisation')->getOrgId();
-    return $this->t('Add Member to @program_name', ['@program_name' => \Drupal::service('odp_core.program_utility')->getProgramName($program_id)]);
+    $program_id = $this->org->getOrgId();
+    return $this->t('Add Member to @program_name', ['@program_name' => $this->programUtility->getProgramName($program_id)]);
   }
 
   /**
