@@ -18,11 +18,6 @@ services:
     class: Drupal\odp_node\UserGroupService
     arguments: ['@current_user', '@entity_type.manager', '@group.membership_loader']
 
-  odp_node.route_subscriber:
-    class: Drupal\odp_node\Routing\RouteSubscriber
-    tags:
-      - { name: event_subscriber }
-
   odp_node.access_check:
     class: Drupal\odp_node\EventSubscriber\Access
     tags:

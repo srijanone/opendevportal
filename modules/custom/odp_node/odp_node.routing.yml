@@ -1,11 +1,3 @@
-odp_node.next_moderation_state:
-  path: '/apimanager/next-state/{state}/{nid}/{type}'
-  defaults:
-    _controller: '\Drupal\odp_node\Controller\NextModerationState::saveNextModerationState'
-    _title: ''
-  requirements:
-    _permission: 'access content'
-
 odp_node.admin_index:
   path: '/admin/config/opendevx'
   defaults:

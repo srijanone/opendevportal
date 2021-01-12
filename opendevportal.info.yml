@@ -186,6 +186,7 @@ install:
  - odp_forum
  - odp_issue
  - odp_faq
+ - odp_workflow
 
 # Required modules
 # Note that any dependencies of the modules listed here will be installed automatically.
