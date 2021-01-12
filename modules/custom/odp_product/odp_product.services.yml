@@ -1,0 +1,4 @@
+services:
+  odp_product.paragraph:
+   class: Drupal\odp_product\Paragraph
+   arguments: ['@database']

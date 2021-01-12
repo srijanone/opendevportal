@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\odp_paragraph;
+namespace Drupal\odp_product;
 
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Logger\LoggerChannelTrait;
@@ -13,10 +13,15 @@ class Paragraph {
   use LoggerChannelTrait;
 
   /**
-   * @var int $paragraphId
+   * The paragraph id.
+   *
+   * @var int
    */
   protected $paragraphId;
+
   /**
+   * The database connection.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
@@ -30,7 +35,7 @@ class Paragraph {
   }
 
   /**
-   * Set Paragraph id
+   * Set Paragraph id.
    *
    * @param mixed $paragraph_id
    *   Paragraph Id.
