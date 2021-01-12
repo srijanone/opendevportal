@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\odp_block\Plugin\Block;
+namespace Drupal\odp_product\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\odp_block\Utility\BlockUtility;
-use Drupal\odp_paragraph\Paragraph;
+use Drupal\odp_product\Paragraph;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
@@ -22,12 +22,16 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var mixed $paragraph
+   * The paragraph definition.
+   *
+   * @var \Drupal\odp_product\Paragraph
    */
   protected $paragraph;
 
   /**
-   * @var mixed $currentPath
+   * The current path definition.
+   *
+   * @var Symfony\Component\HttpFoundation\RequestStack
    */
   protected $currentPath;
 
@@ -47,12 +51,16 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $entity_type_manager
-   *   The EntityTypeManagerInterface.
-   * @param mixed $request_stack
+   * @param Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
+   * @param Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The EntityTypeManagerInterface.
+   * @param \Drupal\odp_product\Paragraph $paragraph
+   *   The plugin paragraph service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
   RequestStack $request_stack,
   EntityTypeManagerInterface $entity_type_manager,
   Paragraph $paragraph) {
@@ -63,12 +71,7 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
   }
 
   /**
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   * @param array $configuration
-   * @param string $plugin_id
-   * @param mixed $plugin_definition
-   *
-   * @return static
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
@@ -77,7 +80,7 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
       $plugin_definition,
       $container->get('request_stack'),
       $container->get('entity_type.manager'),
-      $container->get('odp_paragraph.paragraph')
+      $container->get('odp_product.paragraph')
     );
   }
 
@@ -125,7 +128,7 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
       '#productAttributes' => $key_value,
       '#cache' => [
         'max-age' => 0,
-      ]
+      ],
     ];
   }
 
