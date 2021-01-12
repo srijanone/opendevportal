@@ -24,14 +24,6 @@ function odp_block_block_access(Block $block, $operation, AccountInterface $acco
  */
 function odp_block_theme() {
   return [
-    'product_banner' => [
-      'variables' => [
-        'title' => NULL,
-        'description' => NULL,
-        'banner' => NULL,
-        'productAttributes' => NULL,
-      ],
-    ],
     'organisation_site_logo' => [
       'variables' => [
         'orgLogo' => NULL,
