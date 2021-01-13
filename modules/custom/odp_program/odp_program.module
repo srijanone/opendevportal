@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function odp_program_theme() {
+  return [
+    'front_program' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+    ],
+  ];
+ }

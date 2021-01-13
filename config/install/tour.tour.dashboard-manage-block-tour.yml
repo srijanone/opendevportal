@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odp_api_listing_block
+    - odp_blocks
 id: dashboard-manage-block-tour
 label: 'Dashboard Manage Block Tour'
-module: odp_api_listing_block
+module: odp_blocks
 routes:
   -
     route_name: view.block_content.page_2

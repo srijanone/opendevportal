@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odp_block
+    - odp_blocks
     - domain
     - system
     - user
@@ -17,7 +17,7 @@ plugin: domain_help_block
 settings:
   id: domain_help_block
   label: 'Domain: How to configure ?'
-  provider: odp_block
+  provider: odp_blocks
   label_display: visible
   domain_help_text:
     value: "<p>Domain Configuration Related information, Please fill information like steps to setup CNAME, Domain , IP etc.</p>\r\n"

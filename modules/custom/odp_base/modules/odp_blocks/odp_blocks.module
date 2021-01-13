@@ -1,0 +1,116 @@
+<?php
+
+/**
+ * @file
+ * OpenDevPortal blocks module file.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\odp_blocks\Utility\BlockUtility;
+use Drupal\odp_blocks\Utility\ListingBlockUtility;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_block_access().
+ *
+ * Visibility of the block.
+ */
+function odp_blocks_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($operation == 'view') {
+    return BlockUtility::checkBlockAccess($block);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function odp_blocks_theme() {
+  return [
+    'cta_section_block' => [
+      'variables' => [
+        'ctaData' => NULL,
+      ],
+    ],
+    'product_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+        'productTitle' => NULL,
+      ],
+    ],
+    'dashboard_product_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+        'productTitle' => NULL,
+      ],
+    ],
+    'product_header_navigation' => [
+      'variables' => [
+        'navigationData' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Hook to alter block output before rendering.
+ */
+function odp_blocks_preprocess_block(&$var) {
+  $content = $var['content'];
+  if (isset($content['#block_content'])) {
+    // Check the block type.
+    if ($content['#block_content']->bundle() == 'api_listing_block') {
+      // Listing of contents based on content type.
+      if ($content['#view_mode'] == 'full') {
+        $nid = FALSE;
+        $type = 'content_listing_block';
+        $display = 'content_listing_block_display';
+        $data = $content['#block_content']->toArray();
+        $list = array_column($data['field_content_category'], 'target_id');
+        $pager = $content['#block_content']->get('field_items_per_page')->getValue();
+        $node = \Drupal::request()->attributes->get('node');
+        if ($node && $node instanceof NodeInterface && $node->bundle() == 'api_product') {
+          $nid = $node->id();
+        }
+        $result = ListingBlockUtility::getViewResults($list, $type, $display, $pager[0]['value'], $nid);
+        if ($result[0]) {
+          $var['content'] = $result;
+        }
+        else {
+          $var['label'] = '';
+        }
+      }
+    }
+    elseif ($content['#block_content']->bundle() == 'content_reference') {
+      if ($content['#view_mode'] == 'cards') {
+        // Alter the featured product API block result.
+        if (empty($content['field_contents']['#title'])) {
+          $var['content'] = $var['label'] = '';
+        }
+      }
+      else {
+        // For dynamic listing of contents.
+        if ($content['#view_mode'] == 'full' ||
+          $content['#view_mode'] == 'cards') {
+          $type = 'content_listing_block';
+          $display = 'block_dynamic_content';
+          $data = $content['#block_content']->toArray();
+          $list = array_map('intval',
+            array_column($data['field_contents'], 'target_id'));
+          if ($content['#block_content']->hasField('field_cta_link_text')
+            && $content['#block_content']->field_cta_link_text->uri) {
+            $var['cta_uri'] = Url::fromUri($content['#block_content']->field_cta_link_text->uri);
+            $var['cta_title'] = $content['#block_content']->field_cta_link_text->title ?? '';
+          }
+
+          $result = ListingBlockUtility::getViewResults($list, $type, $display);
+
+          $var['content'] = $result;
+        }
+      }
+    }
+  }
+}

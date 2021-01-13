@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odp_navigation_block
+    - odp_blocks
     - domain
     - system
   theme:
@@ -16,7 +16,7 @@ plugin: product_header_navigation_block
 settings:
   id: product_header_navigation_block
   label: 'Product Header Navigation Block'
-  provider: odp_navigation_block
+  provider: odp_blocks
   label_display: '0'
   dvp_header_navigation:
     api_product:

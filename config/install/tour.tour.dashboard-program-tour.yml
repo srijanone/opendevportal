@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odp_content
+    - odp_base
 id: dashboard-program-tour
 label: 'Dashboard Program Tour'
-module: odp_content
+module: odp_base
 routes:
   -
     route_name: view.organisations.page_3

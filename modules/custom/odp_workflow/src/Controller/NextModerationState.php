@@ -5,7 +5,7 @@ namespace Drupal\odp_workflow\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\odp_notification\Services\OdpNotificationService;
-use Drupal\odp_organisation\Organisation;
+use Drupal\odp_user\Organisation;
 use Drupal\odp_domain\Utility\Program\ProgramUtility;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -42,7 +42,7 @@ class NextModerationState extends ControllerBase {
   /**
    * Organisation object.
    *
-   * @var \Drupal\odp_organisation\Organisation
+   * @var \Drupal\odp_user\Organisation
    *
    */
   protected $org;
@@ -64,7 +64,7 @@ class NextModerationState extends ControllerBase {
    *   EntityTypeManagerInterface.
    * @param \Drupal\odp_notification\Services\OdpNotificationService $notificationService
    *   OdpNotificationService.
-   * @param \Drupal\odp_organisation\Organisation $org
+   * @param \Drupal\odp_user\Organisation $org
    *   Organisation.
    * @param \Drupal\odp_domain\Utility\Program\ProgramUtility $programUtility
    *   ProgramUtility.

@@ -1,0 +1,4 @@
+services:
+  odp_blocks.products:
+   class: Drupal\odp_blocks\ApiProducts
+   arguments: ['@database', '@current_user']

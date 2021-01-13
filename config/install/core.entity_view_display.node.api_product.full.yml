@@ -25,8 +25,7 @@ dependencies:
     - node.type.api_product
     - views.view.content_listing_block
   module:
-    - odp_block
-    - odp_navigation_block
+    - odp_blocks
     - odp_subscription
     - ds
     - layout_builder
@@ -51,7 +50,7 @@ third_party_settings:
             configuration:
               id: product_banner_block
               label: 'Product Banner Block'
-              provider: odp_block
+              provider: odp_product
               label_display: '0'
               context_mapping: {  }
             additional: {  }
@@ -109,7 +108,7 @@ third_party_settings:
             configuration:
               id: cta_block
               label: 'CTA Block'
-              provider: odp_block
+              provider: odp_blocks
               label_display: '0'
               cta_section:
                 id:
@@ -187,7 +186,7 @@ third_party_settings:
             configuration:
               id: product_header_navigation_block
               label: 'Product Header Navigation Block'
-              provider: odp_navigation_block
+              provider: odp_blocks
               label_display: '0'
               dvp_header_navigation:
                 api_product:

@@ -6,7 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\odp_block\Utility\BlockUtility;
+use Drupal\odp_blocks\Utility\BlockUtility;
 use Drupal\odp_product\Paragraph;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
