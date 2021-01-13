@@ -173,7 +173,6 @@ install:
  - odp_node
  - odp_notification
  - odp_organisation
- - odp_paragraph
  - odp_program
  - odp_rapidoc_formatter
  - odp_sdk
