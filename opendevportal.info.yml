@@ -17,7 +17,6 @@ install:
  - allowed_formats
  - autologout
  - automated_cron
- - backup_migrate
  - basic_auth
  - better_exposed_filters
  - better_normalizers
@@ -46,7 +45,6 @@ install:
  - datetime
  - dblog
  - default_content
- - disqus
  - domain
  - domain_config
  - domain_group
@@ -67,13 +65,11 @@ install:
  - filter
  - fivestar
  - gnode
- - google_analytics
  - group
  - hal
  - help
  - history
  - hook_event_dispatcher
- - formtips
  - hook_post_action
  - icon_select
  - image
@@ -114,7 +110,6 @@ install:
  - rest
  - restui
  - rules
- - s3fs
  - schemata
  - schemata_json_schema
  - search
