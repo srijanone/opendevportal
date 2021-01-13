@@ -135,6 +135,9 @@
             ],
             "libraries/swagger_ui": [
                 "bower-asset/swagger-ui"
+            ],
+            "libraries/lazysizes": [
+                "bower-asset/lazysizes"
             ]
         },
         "patches": {
