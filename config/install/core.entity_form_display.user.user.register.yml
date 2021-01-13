@@ -94,7 +94,6 @@ hidden:
   field_social_profile: true
   field_subscribed_products: true
   field_userpoints_default_points: true
-  google_analytics: true
   language: true
   path: true
   timezone: true

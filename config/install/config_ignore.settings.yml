@@ -5,7 +5,6 @@ ignored_config_entities:
   - block.block.product_api
   - 'core.entity_view_display.node.api_product*'
   - notifications_widget.settings
-  - disqus.settings
   - recaptcha.settings
   - captcha.settings
   - 'captcha.captcha_point.*'
