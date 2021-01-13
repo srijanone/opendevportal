@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odp_navigation_block
+    - odp_blocks
     - system
     - user
   theme:
@@ -16,7 +16,7 @@ plugin: dashboard_navigation_block
 settings:
   id: dashboard_navigation_block
   label: 'Dashboard Navigation Block'
-  provider: odp_navigation_block
+  provider: odp_blocks
   label_display: '0'
 visibility:
   request_path:

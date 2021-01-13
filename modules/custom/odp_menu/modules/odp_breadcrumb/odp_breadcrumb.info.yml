@@ -1,8 +1,0 @@
-name: Developer Portal Breadcrumb
-type: module
-description: 'Module for custom configuration of the breadcrumb.'
-version: VERSION
-core: 8.x
-
-dependencies:
-  - odp_taxonomy:odp_organisation

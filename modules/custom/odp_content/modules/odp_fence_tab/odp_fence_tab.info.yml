@@ -1,9 +1,0 @@
-name: Developer Portal Fence Tab
-description: "Adds fence code tab to content when written in markdown format with fence code syntax."
-type: module
-package: ODP
-core: 8.x
-core_version_requirement: ^8 || ^9
-
-libraries:
-  - odp_fence_tab/global-styling

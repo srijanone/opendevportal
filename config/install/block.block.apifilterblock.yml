@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odp_navigation_block
+    - odp_blocks
     - domain
     - system
   theme:
@@ -16,7 +16,7 @@ plugin: api_filter_block
 settings:
   id: api_filter_block
   label: 'Api Filter block'
-  provider: odp_navigation_block
+  provider: odp_blocks
   label_display: '0'
 visibility:
   domain:

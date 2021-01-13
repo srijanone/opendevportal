@@ -155,24 +155,19 @@ install:
  - views
  - paragraphs
  - odp_api_documents
- - odp_api_listing_block
- - odp_block
+ - odp_base
+ - odp_blocks
  - odp_apps
  - odp_breadcrumb
- - odp_content
- - odp_content_reference
  - odp_domain
  - odp_fence_tab
  - odp_menu
- - odp_navigation_block
  - odp_node
  - odp_notification
- - odp_organisation
  - odp_program
  - odp_rapidoc_formatter
  - odp_sdk
  - odp_subscription
- - odp_taxonomy
  - odp_user
  - odp_login_redirect
  - odp_voyager

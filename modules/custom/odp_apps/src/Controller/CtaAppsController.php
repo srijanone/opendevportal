@@ -123,7 +123,7 @@ class CtaAppsController extends ControllerBase {
     }
     catch (\Exception $e) {
       $this->logger->log(
-        ['module' => 'odp_block', 'message' => $e->getMessage()]
+        ['module' => 'odp_apps', 'message' => $e->getMessage()]
       );
     }
   }

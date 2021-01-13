@@ -1,0 +1,4 @@
+services:
+  odp_program.program:
+   class: Drupal\odp_program\Program
+   arguments: ['@database', '@current_user']

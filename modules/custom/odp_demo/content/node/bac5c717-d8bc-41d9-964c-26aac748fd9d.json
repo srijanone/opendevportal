@@ -222,7 +222,7 @@
                         "uuid": "4d76c453-1dd1-47e2-be08-170b868d8970",
                         "region": "ds_content",
                         "configuration": {
-                            "id": "front_organisation_block",
+                            "id": "front_program_block",
                             "label": "Programs",
                             "provider": "developer_portal_organisation",
                             "label_display": "visible",

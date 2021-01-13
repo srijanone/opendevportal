@@ -9,8 +9,8 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
-use Drupal\odp_organisation\Organisation as Programs;
-use Drupal\odp_organisation\Utility\OrganisationUtility;
+use Drupal\odp_program\Program;
+use Drupal\odp_program\Utility\ProgramUtility;
 use Drupal\views\Views;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\odp_domain\Program\ProgramDomainInterface;
@@ -20,7 +20,7 @@ use Drupal\odp_domain\Program\ProgramDomainInterface;
  *
  * @package Drupal\odp_user
  */
-class Organisation extends Programs {
+class Organisation {
 
   use LoggerChannelTrait;
 
@@ -33,11 +33,11 @@ class Organisation extends Programs {
   protected $organisation;
 
   /**
-   * Programs.
+   * Current user program.
    *
    * @var mixed
    */
-  protected $programs;
+  protected $program;
 
   /**
    * The database connection.
@@ -83,9 +83,11 @@ class Organisation extends Programs {
     AccountInterface $account,
     EntityTypeManagerInterface $entity_type_manager,
     AliasManagerInterface $alias_manager,
-    ProgramDomainInterface $program_domain) {
+    ProgramDomainInterface $program_domain,
+    Program $program) {
     $this->account = $account;
     $this->organisation = $temp_store->get('odp_user');
+    $this->program = $program;
     $this->connection = $connection;
     $this->entityTypeManager = $entity_type_manager;
     $this->aliasManager = $alias_manager;
@@ -121,7 +123,7 @@ class Organisation extends Programs {
    */
   public function getUserOrganisations() {
     try {
-      return $this->getOrganisationsData();
+      return $this->program->getProgramData();
     }
     catch (\Exception $e) {
       $logger = $this->getLogger('devportal-user-block');
@@ -220,10 +222,10 @@ class Organisation extends Programs {
           if (!empty($value->_entity->get('field_program_image'))) {
             $image = $value->_entity->get('field_program_image')->getValue();
             if ($image[0]) {
-              $data = !empty($image[0]['target_id']) ? OrganisationUtility::getImageUri($image[0]['target_id']) : "";
+              $data = !empty($image[0]['target_id']) ? ProgramUtility::getImageUri($image[0]['target_id']) : "";
             }
             $programs[$gid]['programImage'] = !empty($data) ?
-            OrganisationUtility::generateOrganisationImage($data) : "";
+              ProgramUtility::generateOrganisationImage($data) : "";
           }
           $programs[$gid]['orgPath'] = !empty($gid) ?
           "/dashboard/save-program/$gid" : "#";

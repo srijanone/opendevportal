@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - odp_block
+    - odp_product
     - system
   theme:
     - opendevx_theme
@@ -15,7 +15,7 @@ plugin: product_banner_block
 settings:
   id: product_banner_block
   label: 'Product Banner Block'
-  provider: odp_block
+  provider: odp_product
   label_display: '0'
 visibility:
   request_path:

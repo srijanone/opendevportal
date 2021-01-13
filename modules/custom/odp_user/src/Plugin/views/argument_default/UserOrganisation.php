@@ -5,7 +5,7 @@ namespace Drupal\odp_user\Plugin\views\argument_default;
 use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\odp_user\Organisation as UserOrganisations;
-use Drupal\odp_organisation\Organisation;
+use Drupal\odp_program\Program;
 use Drupal\Core\Session\AccountInterface;
 
 /**
@@ -30,9 +30,9 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
   /**
    * Organisation object.
    *
-   * @var \Drupal\odp_organisation\Organisation
+   * @var \Drupal\odp_program\Program
    */
-  protected $org;
+  protected $program;
 
   /**
    * Organisation object.
@@ -52,8 +52,8 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
    *   The plugin implementation definition.
    * @param \Drupal\odp_user\UserOrganisations $user_organisation
    *   The plugin user organisation class.
-   * @param \Drupal\odp_organisation\Organisation $organisation
-   *   The plugin organisation class.
+   * @param \Drupal\odp_program\Program $program
+   *   The plugin program class.
    * @param \Drupal\Core\Session\AccountInterface $account
    *   The plugin AccountInterface class.
    */
@@ -61,11 +61,11 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
   $plugin_id,
   $plugin_definition,
   UserOrganisations $user_organisation,
-  Organisation $organisation,
+  Program $program,
   AccountInterface $account) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->userOrg = $user_organisation;
-    $this->org = $organisation;
+    $this->program = $program;
     $this->account = $account;
   }
 
@@ -78,7 +78,7 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
       $plugin_id,
       $plugin_definition,
       $container->get('odp_user.organisation'),
-      $container->get('odp_organisation.organisation'),
+      $container->get('odp_program.program'),
       $container->get('current_user'),
     );
   }
@@ -91,7 +91,7 @@ class UserOrganisation extends ArgumentDefaultPluginBase {
       return $this->userOrg->getOrgId();
     }
     else {
-      return implode("+", array_keys($this->org->getOrganisationsData()));
+      return implode("+", array_keys($this->program->getProgramData()));
     }
   }
 

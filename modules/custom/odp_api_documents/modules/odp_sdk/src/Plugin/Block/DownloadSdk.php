@@ -6,8 +6,8 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Render\RendererInterface;
+use Drupal\odp_program\Utility\ProgramUtility;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\odp_organisation\Utility\OrganisationUtility;
 use Drupal\Core\Database\Connection;
 use Drupal\odp_user\Logger\Logger;
 use Drupal\image\Entity\ImageStyle;
@@ -170,7 +170,7 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
       $build[] = [
         'element_image' => [
           '#markup' => '<div class="product-image"><img src="' . ImageStyle::load('product_image')->buildUrl(
-            OrganisationUtility::getImageUri($node->get('field_listing_image')->getValue()[0]['target_id'])
+            ProgramUtility::getImageUri($node->get('field_listing_image')->getValue()[0]['target_id'])
           ) . '"/></div>',
         ],
         'element_title' => [
