@@ -8,7 +8,50 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\FieldFilteredMarkup;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * Callback for Paragraph Experimental.
+ */
+function odp_apps_field_widget_paragraphs_form_alter(
+   &$element,
+   FormStateInterface $form_state,
+   $context) {
+  $element = get_related_gateway($element, $form_state);
+}
+
+/**
+ * Get Related Gateway.
+ */
+function get_related_gateway($element, $form_state) {
+  if ($element['#paragraph_type'] != 'app_privacy') {
+    return $element;
+  }
+  $nid = $form_state->getFormObject()->getEntity()->id();
+  $program_helper = \Drupal::service('odp_node.program_helper');
+  if ($nid) {
+    $pid = $program_helper->getProgramByNid($nid);
+    $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
+  }
+  else {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $pid = explode('/', $current_path)[2];
+    $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
+  }
+  if ($gateways) {
+    $element['subform']['field_gateway']['widget']['#options'] = $gateways;
+  }
+  else {
+    unset($element['subform']['field_gateway']['widget']['#options']);
+    $element['subform']['field_gateway']['widget']['#markup'] = FieldFilteredMarkup::create('Currently no Gateway attached with
+      the Program.');
+  }
+
+  return $element;
+}
 
 /**
  * Implements hook_entity_view_mode_alter().
