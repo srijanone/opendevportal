@@ -34,6 +34,6 @@ visibility:
     context_mapping: {  }
   request_path:
     id: request_path
-    pages: "/dashboard/*/products\r\n/dashboard/*/apimanager/apps\r\n/dashboard/*/apimanager/proxies\r\n/dashboard/*/apimanager/users\r\n/dashboard/*/program"
+    pages: "/dashboard/*/products\r\n/dashboard/*/apimanager/apps\r\n/dashboard/*/apimanager/proxies\r\n/dashboard/*/apimanager/users\r\n/dashboard/*/program\r\n/coming-soon"
     negate: false
     context_mapping: {  }

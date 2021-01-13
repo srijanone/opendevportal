@@ -125,7 +125,6 @@ hidden:
   contact: true
   field_domain_admin: true
   field_userpoints_default_points: true
-  google_analytics: true
   language: true
   path: true
   timezone: true
