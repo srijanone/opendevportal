@@ -62,7 +62,7 @@
     ],
     "link": [
         {
-            "uri": "internal:#",
+            "uri": "internal:\/admin/structure/menu/manage/main",
             "title": "",
             "options": []
         }
