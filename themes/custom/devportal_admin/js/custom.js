@@ -7,7 +7,7 @@
 
   Drupal.behaviors.devportal_admin = {
     attach: function (context, settings) {
-      $('.dropdown-toggle').on(
+      $('.dropdown-toggle', context).once().on(
         'click', function () {
           $(this).parent('.menu--account').toggleClass('show')
         }
