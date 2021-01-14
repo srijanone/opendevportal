@@ -97,7 +97,7 @@ function odp_subscription_token_info() {
     'description' => t('Custom Subscribed Product'),
     'type' => 'node',
   ];
-  $info['tokens']['dvp_tokens']['title'][] = [
+  $info['tokens']['dvp_tokens']['title'] = [
     'name' => t('Product title'),
     'description' => t('Custom Subscribed Product title.'),
   ];
