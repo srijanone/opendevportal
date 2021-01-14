@@ -1226,3 +1226,7 @@
     width: 100%;
   }
 }
+
+.listing-grid .fieldset-legend {
+  font-size: 1.071rem;
+}
