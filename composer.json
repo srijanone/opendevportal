@@ -17,6 +17,8 @@
     "require": {
         "bower-asset/swagger-ui": "^3.25",
         "bower-asset/lazysizes": "^5.1",
+        "bower-asset/jquery-simple-color": "^1.2.1",
+        "bower-asset/spectrum": "^1.8.1",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "~1.0",
         "drupal/address": "^1.8",
@@ -138,14 +140,17 @@
             ],
             "libraries/lazysizes": [
                 "bower-asset/lazysizes"
+            ],
+            "libraries/jquery-simple-color": [
+                "bower-asset/jquery-simple-color"
+            ],
+            "libraries/spectrum": [
+                "bower-asset/spectrum"
             ]
         },
         "patches": {
             "drupal/codesnippet": {
                 "code snippet library" : "https://www.drupal.org/files/issues/2020-05-04/2931474-29.patch"
-            },
-            "drupal/total_control": {
-                "Admin Operations" : "https://github.com/srijanone/opendevx/blob/master/patches/total_control/admin_operations.patch"
             },
             "drupal/rules": {
                 "Rule Block Configurations" : "https://www.drupal.org/files/issues/2020-07-23/2927132-15-remove-other-conditions-from-ui.patch",
@@ -163,9 +168,6 @@
             "drupal/group": {
                 "check create access": "https://www.drupal.org/files/issues/2020-09-10/2872645-45.patch",
                 "Views block filter on ajax": "https://www.drupal.org/files/issues/2019-06-27/group_route_ajax_route-2942657-18.patch"
-            },
-            "drupal/icon_select": {
-                "SvgSpriteGenerator" : "https://github.com/srijanone/opendevx/blob/master/patches/icon_select/icon_select.patch"
             },
             "drupal/domain_site_settings": {
               "domain field settings": "https://www.drupal.org/files/issues/2020-06-20/3126737-8.patch"
