@@ -31,7 +31,7 @@ function get_related_gateway($element, $form_state) {
     return $element;
   }
   $nid = $form_state->getFormObject()->getEntity()->id();
-  $program_helper = \Drupal::service('odp_node.program_helper');
+  $program_helper = \Drupal::service('odp_program.program');
   if ($nid) {
     $pid = $program_helper->getProgramByNid($nid);
     $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];

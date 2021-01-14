@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\odp_node;
+namespace Drupal\odp_base;
 
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Database\Connection;

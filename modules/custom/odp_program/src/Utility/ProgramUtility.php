@@ -5,16 +5,19 @@ namespace Drupal\odp_program\Utility;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 
+/**
+ * ProgramUtility class to handle program functionalities.
+ */
 class ProgramUtility {
 
   /**
    * Prepare organisation image.
    *
    * @param mixed $data
-   *    Organisation data.
+   *   Organisation data.
    *
    * @return mixed
-   *    Organisation Image.
+   *   Organisation Image.
    */
   public static function generateOrganisationImage($data) {
     $url = "";
@@ -26,15 +29,14 @@ class ProgramUtility {
     return $url;
   }
 
-
   /**
    * Fetch Image URI.
    *
-   * @param integer $mid
-   *    Media Id.
+   * @param int $mid
+   *   Media Id.
    *
    * @return string
-   *    File Uri.
+   *   File Uri.
    */
   public static function getImageUri($mid) {
     $media = Media::load($mid);
@@ -46,4 +48,5 @@ class ProgramUtility {
 
     return FALSE;
   }
+
 }

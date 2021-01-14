@@ -19,10 +19,22 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 class FrontProgramBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
+  /**
+   * User program service.
+   *
+   * @var Drupal\odp_program\Program
+   */
   protected $program;
+
+  /**
+   * Current path variable.
+   *
+   * @var mixed
+   */
+
   protected $currentPath;
 
-   /**
+  /**
    * FrontOrganisationBlock constructor.
    *
    * @param array $configuration
@@ -31,9 +43,9 @@ class FrontProgramBlock extends BlockBase implements ContainerFactoryPluginInter
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param mixed $program
+   * @param Drupal\odp_program\Program $program
    *   The plugin program class.
-   * @param mixed $request_stack
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
    */
   public function __construct(
@@ -74,7 +86,7 @@ class FrontProgramBlock extends BlockBase implements ContainerFactoryPluginInter
       '#data' => $data,
       '#cache' => [
         'tags' => ['Program-section'],
-      ]
+      ],
     ];
   }
 

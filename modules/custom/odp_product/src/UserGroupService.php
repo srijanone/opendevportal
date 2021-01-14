@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\odp_node;
+namespace Drupal\odp_product;
 
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -44,8 +44,8 @@ class UserGroupService {
    */
   public function __construct(
     AccountInterface $account,
-  EntityTypeManagerInterface $entity_type_manager,
-  GroupMembershipLoaderInterface $group_membership) {
+    EntityTypeManagerInterface $entity_type_manager,
+    GroupMembershipLoaderInterface $group_membership) {
     $this->account = $account;
     $this->entityTypeManager = $entity_type_manager;
     $this->groupMembership = $group_membership;
@@ -58,7 +58,6 @@ class UserGroupService {
   public function getUserGroups() {
 
     $user = $this->entityTypeManager->getStorage('user')->load($this->account->id());
-    $group_storage = $this->entityTypeManager->getStorage('group');
     $gids = $this->groupStorage->getQuery()->condition('type', 'Public')->execute();
     $groups = $this->groupStorage->loadMultiple($gids);
     $options = ['' => 'All'];

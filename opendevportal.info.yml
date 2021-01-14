@@ -162,7 +162,6 @@ install:
  - odp_domain
  - odp_fence_tab
  - odp_menu
- - odp_node
  - odp_notification
  - odp_program
  - odp_rapidoc_formatter

@@ -6,3 +6,14 @@ services:
   odp_user.logger:
    class: Drupal\odp_user\Logger\Logger
    arguments: ['@tempstore.private', '@database', '@current_user', '@entity_type.manager']
+
+  odp_user.access_check:
+    class: Drupal\odp_user\EventSubscriber\Access
+    tags:
+      - { name: event_subscriber }
+
+  odp_user.form_alter_subscriber:
+    class: Drupal\odp_user\EventSubscriber\FormAlterSubscriber
+    arguments: ['@request_stack', '@entity_type.manager', '@odp_user.organisation']
+    tags:
+      - { name: event_subscriber }

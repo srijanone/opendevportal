@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\odp_node\EventSubscriber;
+namespace Drupal\odp_user\EventSubscriber;
 
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;

@@ -2,6 +2,7 @@
 
 namespace Drupal\odp_program;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\views\Views;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Session\AccountInterface;
@@ -18,28 +19,40 @@ class Program {
   use LoggerChannelTrait;
 
   /**
+   * Database connection.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   protected $connection;
 
   /**
+   * Account Interface.
+   *
    * @var \Drupal\Core\Session\AccountInterface
    */
   protected $account;
+
+  /**
+   * Entity Type Manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entity;
 
   /**
    * Pass the dependency to the object constructor.
    */
   public function __construct(
     Connection $connection,
-    AccountInterface $account) {
+    AccountInterface $account,
+    EntityTypeManagerInterface $entity) {
     $this->account = $account;
     $this->connection = $connection;
+    $this->entity = $entity->getStorage('group');
   }
 
   /**
    * Function to get program information.
-   *
    *
    * @return array
    *   Program data.
@@ -75,8 +88,8 @@ class Program {
         }
 
         if ($program_id = \Drupal::service('odp_domain.program_domain')->getProgramDomainId()) {
-            $program[$program_id]  = $organisation[$program_id];
-           return $program;
+          $program[$program_id] = $organisation[$program_id];
+          return $program;
         }
         return $organisation;
       }
@@ -85,6 +98,44 @@ class Program {
       $logger = $this->getLogger('developer-portal-organisation');
       $logger->error($e->getMessage());
     }
+  }
+
+  /**
+   * Get Program by node.
+   */
+  public function getProgramByNid($nid) {
+    $query = $this->connection->select('group_content_field_data', 'gcfd')
+      ->fields('gcfd', ['gid']);
+    $query->innerJoin('group_content', 'gc', 'gc.type = gcfd.type AND gc.id = gcfd.id');
+    $query->condition('gcfd.entity_id', $nid, '=');
+    $result = $query->execute()->fetchCol();
+
+    return ($result) ? $result : [];
+  }
+
+  /**
+   * Get Gateway of Programs.
+   */
+  public function getRelatedGateway($pid) {
+    $gateways = [];
+    if (is_array($pid)) {
+      $programs = $this->entity->loadMultiple($pid);
+      foreach ($programs as $id => $program) {
+        $gateway = $program->field_gateway->referencedEntities();
+        foreach ($gateway as $value) {
+          $gateways[$value->id()] = $value->label();
+        }
+      }
+    }
+    else {
+      $program = $this->entity->load($pid);
+      $gateway = $program->field_gateway->referencedEntities();
+      foreach ($gateway as $value) {
+        $gateways[$value->id()] = $value->label();
+      }
+    }
+
+    return $gateways;
   }
 
 }

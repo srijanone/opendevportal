@@ -56,7 +56,7 @@ function odp_product_views_post_render(
   $dashboard_path = explode("/", \Drupal::request()->getPathInfo());
   if (($id === "page_dashboard_product_contents") && ($dashboard_path[1] == 'dashboard')) {
     $pid = (int) $dashboard_path[4];
-    $node_object = \Drupal::service('odp_node.node');
+    $node_object = \Drupal::service('odp_base.node');
     $node = $node_object->setNodeId($pid);
     if ($node->checkNodeExists() == TRUE) {
       $view->setTitle(ucwords($node->getTitle()));
@@ -68,6 +68,21 @@ function odp_product_views_post_render(
  * Implements hook_form_alter().
  */
 function odp_product_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $form_ids = [
+    'views-exposed-form-product-listing-block-1',
+    'views-exposed-form-use-cases-listing-block-1',
+    'views-exposed-form-use-cases-listing-block-2',
+    'views-exposed-form-app-gallery-block-1',
+    'views-exposed-form-events-block-1',
+  ];
+  if (in_array($form['#id'], $form_ids) && isset($form['gid'])) {
+    $form['gid']['#type'] = 'select';
+    $form['gid']['#options'] = \Drupal::service('odp_product.usergroup')->getUserGroups();
+    $form['gid']['#size'] = 1;
+    $form['gid']['#validated'] = TRUE;
+  }
+
   // Change label on add/edit form for product related content type.
   if (in_array($form_id, ContentInterface::FORM_IDS)) {
     $type = $form_state->getFormObject()->getEntity()->bundle();
@@ -81,7 +96,7 @@ function odp_product_form_alter(&$form, FormStateInterface $form_state, $form_id
   }
 
   $nid = $form_state->getFormObject()->getEntity()->id();
-  $program_helper = \Drupal::service('odp_node.program_helper');
+  $program_helper = \Drupal::service('odp_program.program');
   if ($nid) {
     $pid = $program_helper->getProgramByNid($nid);
     $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
@@ -128,3 +143,11 @@ function odp_product_entity_view_mode_alter(&$view_mode, EntityInterface $entity
     }
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function odp_product_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'odp_product/odp_product';
+}
+

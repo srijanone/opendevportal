@@ -11,4 +11,4 @@ dependencies:
   - allowed_formats:allowed_formats
   - drupal:media_library
   - textfield_counter:textfield_counter
-  - odp_node:odp_node
+  - odp_product:odp_product
