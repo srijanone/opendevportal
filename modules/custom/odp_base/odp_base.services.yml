@@ -1,0 +1,4 @@
+services:
+  odp_base.node:
+    class: Drupal\odp_base\Node
+    arguments: ['@database', '@current_user', '@entity_type.manager']

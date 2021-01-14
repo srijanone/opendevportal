@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * OpenDevPortal customize menu tokens inc file.
+ */
+
 use Drupal\Core\Render\BubbleableMetadata;
 
 /**

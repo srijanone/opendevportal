@@ -82,7 +82,7 @@ class DevportalBreadcrumbBuilder implements BreadcrumbBuilderInterface, Containe
     if ($attributes) {
       $parameters = $attributes->getParameters()->all();
       $this->breadcrumbUtility->setNodeByPath();
-      $this->nodeType = is_object($parameters['node']) ?
+      $this->nodeType = !empty($parameters['node']) && is_object($parameters['node']) ?
        $parameters['node']->bundle() :
        $this->breadcrumbUtility->getNode('bundle');
     }

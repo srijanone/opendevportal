@@ -6,7 +6,7 @@ use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Access\AccessResult;
-use Drupal\odp_node\ContentInterface;
+use Drupal\odp_product\ContentInterface;
 use Drupal\odp_user\ProgramInterface;
 
 /**

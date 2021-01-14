@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\odp_node\EventSubscriber;
+namespace Drupal\odp_user\EventSubscriber;
 
 use Drupal\odp_user\Organisation;
 use Drupal\Core\Entity\EntityTypeManagerInterface;

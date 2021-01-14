@@ -2,3 +2,7 @@ services:
   odp_product.paragraph:
    class: Drupal\odp_product\Paragraph
    arguments: ['@database']
+
+  odp_product.usergroup:
+    class: Drupal\odp_product\UserGroupService
+    arguments: ['@current_user', '@entity_type.manager', '@group.membership_loader']

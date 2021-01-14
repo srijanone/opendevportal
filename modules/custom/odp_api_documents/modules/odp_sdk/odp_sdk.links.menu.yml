@@ -1,5 +1,5 @@
 odp_sdk.settings:
   title: 'SDK Generator Settings'
-  parent: odp_node.admin_index
+  parent: odp_base.admin_index
   description: 'Configure SDK Generator.'
   route_name: odp_sdk.settings

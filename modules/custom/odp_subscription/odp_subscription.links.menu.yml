@@ -1,6 +1,6 @@
 odp_subscription.settings:
   title: 'Newsletter settings'
-  parent: odp_node.admin_index
+  parent: odp_base.admin_index
   description: 'Configure default newsletter settings including email templates, watchdog entries and notifications.'
   weight: -10
   route_name: odp_subscription.settings

@@ -29,7 +29,7 @@ function odp_api_documents_form_alter(&$form, FormStateInterface $form_state, $f
   $form_ids = ['node_api_document_form', 'node_api_document_edit_form'];
   if (in_array($form_id, $form_ids)) {
     $nid = $form_state->getFormObject()->getEntity()->id();
-    $program_helper = \Drupal::service('odp_node.program_helper');
+    $program_helper = \Drupal::service('odp_program.program');
     if ($nid) {
       $pid = $program_helper->getProgramByNid($nid);
       $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
