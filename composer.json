@@ -104,12 +104,6 @@
     "config": {
         "sort-packages": true
     },
-    "scripts": {
-        "post-update-cmd": [
-            "cp -R vendor/twbs/bootstrap/dist libraries/bootstrap",
-            "cp -R vendor/michelf/php-markdown libraries/php-markdown"
-        ]
-    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
