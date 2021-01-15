@@ -1,5 +1,5 @@
-name: OpenDevPortal Application
-description: "Adds the Apps content type in open dev portal."
+name: OpenDevPortal Product
+description: "Adds the product features in open dev portal."
 type: module
 package: ODP
 core: 8.x
