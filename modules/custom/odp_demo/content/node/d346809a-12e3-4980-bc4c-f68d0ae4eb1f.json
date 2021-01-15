@@ -153,6 +153,15 @@
             "lang": "en"
         }
     ],
+    "body": [
+        {
+            "value": "<p>OpendevPortal is a platform to build your API developer ecosystem. Whether you're a SaaS company looking to publish APIs for App developers or a Financial institution with a sprawling OpenBanking API program, you can use OpendevPortal to engineer a bespoke developer experience.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>OpendevPortal is a platform to build your API developer ecosystem. Whether you're a SaaS company looking to publish APIs for App developers or a Financial institution with a sprawling OpenBanking API program, you can use OpendevPortal to engineer a bespoke developer experience.<\/p>",
+            "summary": "OpendevPortal is a platform to build your API developer ecosystem. Whether you're a SaaS company looking to publish APIs for App developers or a Financial institution with a sprawling OpenBanking API program, you can use OpendevPortal to engineer a bespoke developer experience.",
+            "lang": "en"
+        }
+    ],
     "layout_builder__layout": [
         {
             "section": {

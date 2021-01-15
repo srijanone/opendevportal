@@ -1,0 +1,10 @@
+<?php
+
+
+/**
+ * Implements hook_install().
+ */
+function odp_forum_install() {
+  // Set the weight of the odp_forum.module to 2.
+  module_set_weight('odp_forum', 2);
+}
