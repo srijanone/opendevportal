@@ -153,6 +153,15 @@
             "lang": "en"
         }
     ],
+    "body": [
+        {
+            "value": "<p>Run API programs at scale. Get a unified platform that handles product catalog, program mangement and governance, while ensuring complete program autonomy.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Run API programs at scale. Get a unified platform that handles product catalog, program mangement and governance, while ensuring complete program autonomy.<\/p>",
+            "summary": "Run API programs at scale. Get a unified platform that handles product catalog, program mangement and governance, while ensuring complete program autonomy.",
+            "lang": "en"
+        }
+    ],
     "layout_builder__layout": [
         {
             "section": {

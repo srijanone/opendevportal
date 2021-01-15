@@ -5,7 +5,13 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
     },
     "uid": [
         {
@@ -61,7 +67,7 @@
     ],
     "changed": [
         {
-            "value": "2020-12-29T16:43:30+00:00",
+            "value": "2021-01-15T07:45:52+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -126,5 +132,29 @@
             "value": "10",
             "lang": "en"
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "74373b95-5e8c-4ca9-a0b4-58c3d024ce1b"
+                    }
+                ],
+                "lang": "en",
+                "alt": "",
+                "title": "",
+                "width": "100",
+                "height": "100"
+            }
+        ]
+    }
 }

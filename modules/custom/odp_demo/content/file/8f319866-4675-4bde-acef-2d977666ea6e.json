@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 1143
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8f319866-4675-4bde-acef-2d977666ea6e"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f5ca371a-96c2-4102-8a08-65b7d111f67d"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "download.jpeg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/pictures\/2021-01\/download.jpeg",
+            "url": "\/sites\/default\/files\/pictures\/2021-01\/download.jpeg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 1245
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2021-01-15T07:45:27+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2021-01-15T07:45:33+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "\/9j\/4AAQSkZJRgABAQEAYABgAAD\/\/gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gNzUK\/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy\/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy\/8AAEQgAZABkAwEiAAIRAQMRAf\/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC\/\/EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29\/j5+v\/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC\/\/EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29\/j5+v\/aAAwDAQACEQMRAD8A9jA5p4FAFSBc1YhAtOC04CnAUAN20u2n4ooAZtpNtScHpRigCIrTStTEU0igCArTCOanIphFAENFOI5ooAlUVIBTVFSAUAKBxTgKAKWgCvc3AhXAGXPQVnvI8hy7E0+5bfcOfQ4H4VFQAAY6cVYgunQgOSye\/aq9FAGyCCMjpSEVDZsXtxnqpxU9AEZFMYVMRUbCgCEjminkUUAPWnimrUgoAWlpBS0AY8oxM4\/2j\/OmVYvU2T7uzDNV6BBRRRQBo2A\/cE+rVZqO3Ty4EU9cZNS0DGmmGn9qaaAIyOaKD1ooActSColqQGgBwpaSloAr3cXmQnH3l5FZlbMkixruc4ArG79MUAFTW0XmzAEfKOTUNW7CRFLKSATjFAGhRRRQA3tTTTqaaAIz1ooPWigAU1Ip5qFTUgbAJoAjmvFiO1RuYdfQVWa9mboQv0FV8k8nqeaKAFZmc5ZiT70lFFAgooooAlS4lj4Vzj0PNTrfsPvoD7iqdFAGskiyLuU8UhNVbJj847cGrDGgYhPNFNzRQA1TUmcioAakDUAQiyP\/AD0\/8dpRYn\/noP8AvmrAanBqAK32A\/8APQflS\/YD\/wA9B+VWg1LmgCp9gP8Az0H5UfYD\/wA9B+VW80ZoAp\/YT\/z0H5Un2I\/89B\/3zVsmmlqAIoYfJLfNnPtTmNBamE0ABbmimE80UAJTgaKKAHg08GiigB2TRmiigAzRk0UUAJk01jRRQAwmmE0UUANNFFFAH\/\/Z"
+        }
+    ]
+}

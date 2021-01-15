@@ -35,7 +35,7 @@ function odp_forum_theme($existing, $type, $theme, $path) {
 function odp_forum_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (!in_array($form_id, ['node_forum_edit_form', 'node_forum_form'])) {
     return;
-  }
+  }  
   // Create app developer flow. Hide moderation state field for app.
   if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
     // Added a custom class for developer node forms.
@@ -54,4 +54,5 @@ function odp_forum_form_alter(&$form, FormStateInterface $form_state, $form_id) 
     $form['moderation_state']['#access'] = FALSE;
     unset($form['meta']);
   }
+  $form['shadow']['#access'] = FALSE;
 }
