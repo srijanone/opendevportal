@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+id: programbannerblock
+theme: opendevx_theme
+region: highlighted
+weight: -22
+provider: null
+plugin: 'block_content:bef7e39a-3e3c-48d5-87b9-45dbacb2e57c'
+settings:
+  id: 'block_content:bef7e39a-3e3c-48d5-87b9-45dbacb2e57c'
+  label: 'Program Banner block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: default
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /programs
+    negate: false
+    context_mapping: {  }

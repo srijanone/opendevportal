@@ -1,0 +1,105 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_user
+id: dashboard-manage-user-tour
+label: 'Dashboard Manage User Tour'
+module: odp_user
+routes:
+  -
+    route_name: view.organisation_users.page_dashboard_users
+  -
+    route_name: view.organisation_users.page_1
+  -
+    route_name: view.organisation_users.page_2
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: -100
+    attributes: {  }
+    body: 'In this page we manage the user as we have the lsiting of all the users in it.'
+    location: top
+  create-api:
+    id: create-api
+    plugin: text
+    label: 'Create Button'
+    weight: -99
+    attributes:
+      data-class: create-button
+    body: 'We have button in header to create the new API.'
+    location: left
+  sync-button:
+    id: sync-button
+    plugin: text
+    label: 'Sync Button'
+    weight: -98
+    attributes:
+      data-class: sync-button
+    body: 'Sync button is used to sync the configurations'
+    location: right
+  search-by-user-name:
+    id: search-by-user-name
+    plugin: text
+    label: 'Search By User Name'
+    weight: -97
+    attributes:
+      data-class: form-item-user
+    body: 'We can filter out the result on the basis of username.'
+    location: top
+  status:
+    id: status
+    plugin: text
+    label: Status
+    weight: -96
+    attributes:
+      data-class: form-item-status
+    body: 'User Status'
+    location: top
+  user-role:
+    id: user-role
+    plugin: text
+    label: 'User Role'
+    weight: -95
+    attributes:
+      data-class: form-item-role
+    body: 'Filter out the result on the basis of user role.'
+    location: top
+  search-by-application-name:
+    id: search-by-application-name
+    plugin: text
+    label: 'Search By Application Name'
+    weight: -94
+    attributes:
+      data-id: edit-field-display-name-value
+    body: 'Search by Application Name.'
+    location: top
+  filter-submit-button:
+    id: filter-submit-button
+    plugin: text
+    label: 'Filter Submit Button'
+    weight: -93
+    attributes:
+      data-class: edit-submit-organisation-users
+    body: 'Apply button to filter the result.'
+    location: right
+  bulk-operation:
+    id: bulk-operation
+    plugin: text
+    label: 'Bulk Operation'
+    weight: -92
+    attributes:
+      data-id: edit-user-bulk-form--2
+    body: 'Operations that we will apply on the bulk data.'
+    location: left
+  apply-button-of-bulk-operation:
+    id: apply-button-of-bulk-operation
+    plugin: text
+    label: 'Apply button of bulk operation'
+    weight: -91
+    attributes:
+      data-id: edit-submit--2
+    body: 'Apply button to submit the filter form.'
+    location: right

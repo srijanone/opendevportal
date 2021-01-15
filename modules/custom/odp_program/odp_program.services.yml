@@ -1,0 +1,9 @@
+services:
+  odp_program.program:
+   class: Drupal\odp_program\Program
+   arguments: ['@database', '@current_user', '@entity_type.manager']
+
+  odp_program.entity_add_subscriber:
+    class: Drupal\odp_program\EventSubscriber\EntityAddSubscriber
+    tags:
+      - { name: event_subscriber }

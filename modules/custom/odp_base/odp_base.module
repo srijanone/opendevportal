@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Module file for odp_base module.
+ */
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ *
+ * Hiding local tabs for developer role only.
+ */
+function odp_base_menu_local_tasks_alter(&$data, $route_name) {
+  if ($route_name == 'search.view_node_search') {
+    unset($data['tabs'][0]);
+  }
+  if (FALSE == \Drupal::service('odp_user.organisation')->checkAccess(TRUE)) {
+    if (in_array($route_name, ['entity.node.edit_form', 'entity.node.canonical'])) {
+      unset($data['tabs'][0]);
+    }
+  }
+}

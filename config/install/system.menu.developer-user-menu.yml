@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: developer-user-menu
+label: 'Developer User Menu'
+description: 'User menu for developers'
+locked: false

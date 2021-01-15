@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: private
+label: 'Private Program'
+description: 'Add a private program.'
+creator_membership: false
+creator_wizard: false
+creator_roles: {  }

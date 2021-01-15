@@ -1,0 +1,38 @@
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:dashboard_block:7f805e33-c0c8-4511-9c4a-196d7c3c8297'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - opendevx_theme
+id: developerdashboardlisting
+theme: opendevx_theme
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:7f805e33-c0c8-4511-9c4a-196d7c3c8297'
+settings:
+  id: 'block_content:7f805e33-c0c8-4511-9c4a-196d7c3c8297'
+  label: 'Developer Dashboard Listing'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: default
+visibility:
+  request_path:
+    id: request_path
+    pages: /dashboard
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      developer: developer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

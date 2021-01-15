@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5beadcb9-f51a-4da6-936b-adac416912c2'
+  module:
+    - block_classes
+    - block_content
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    block_class: copyright
+id: copyrightblock
+theme: opendevx_theme
+region: footer_first
+weight: -16
+provider: null
+plugin: 'block_content:5beadcb9-f51a-4da6-936b-adac416912c2'
+settings:
+  id: 'block_content:5beadcb9-f51a-4da6-936b-adac416912c2'
+  label: 'Copyright Block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/dashboard-listing\r\n/dashboard/*\r\n/apimanager/*\r\n/dashboard"
+    negate: true
+    context_mapping: {  }
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

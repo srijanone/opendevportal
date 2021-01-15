@@ -1,0 +1,8 @@
+name: OpenDevPortal - SDK Generator
+description : 'Generate the SDK for API.'
+dependencies:
+  - odp_api_documents:odp_api_documents
+type: module
+package: ODP
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,177 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/program\/banking?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group\/public"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_gateway": [
+            {
+                "href": "http:\/\/default\/node\/1423?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_program_image": [
+            {
+                "href": "http:\/\/default\/media\/248\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_site_logo": [
+            {
+                "href": "http:\/\/default\/media\/202\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b6644c53-0ba2-48d0-9210-5ccced37c021"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "public"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "14fc8d20-15e8-4b99-b1a9-d1e5ec25a014"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_gateway": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/node\/1423?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/gateway"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e467bfb-47db-47f4-b675-4cd402d1cd21"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_program_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/248\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "37d20443-91f5-4b5a-b978-f95f272b498a"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group\/public\/field_site_logo": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/202\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0db99100-6591-40af-9ec6-42471ba4e19b"
+                    }
+                ]
+            }
+        ]
+    },
+    "label": [
+        {
+            "value": "Banking",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-10-06T08:54:05+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-12-30T06:26:30+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/program\/banking",
+            "pid": 18,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/home",
+                "title": "| Profiling"
+            }
+        }
+    ],
+    "field_header_background_color": [
+        {
+            "color": "#B99AFF",
+            "opacity": null
+        }
+    ],
+    "field_hub_content_id": [
+        {
+            "value": "2248cded-4e42-48dd-94df-146d282a44d2",
+            "lang": "en"
+        }
+    ]
+}

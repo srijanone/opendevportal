@@ -1,0 +1,106 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gateway.body
+    - field.field.node.gateway.field_client_id
+    - field.field.node.gateway.field_client_secret
+    - field.field.node.gateway.field_gateway
+    - field.field.node.gateway.field_hub_content_id
+    - field.field.node.gateway.field_region
+    - node.type.gateway
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_container:
+      children:
+        - group_metadata
+        - status
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Container
+    group_metadata:
+      children:
+        - title
+        - field_gateway
+        - field_region
+        - field_client_id
+        - field_client_secret
+      parent_name: group_container
+      weight: 3
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Metadata
+id: node.gateway.default
+targetEntityType: node
+bundle: gateway
+mode: default
+content:
+  field_client_id:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_client_secret:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_gateway:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_region:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  field_hub_content_id: true
+  moderation_state: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
+  url_redirects: true

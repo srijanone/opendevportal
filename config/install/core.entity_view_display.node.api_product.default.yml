@@ -1,0 +1,117 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.api_product.body
+    - field.field.node.api_product.comment
+    - field.field.node.api_product.field_api_category
+    - field.field.node.api_product.field_api_specifications
+    - field.field.node.api_product.field_api_version
+    - field.field.node.api_product.field_banners_image
+    - field.field.node.api_product.field_environment
+    - field.field.node.api_product.field_feature_label
+    - field.field.node.api_product.field_gateways
+    - field.field.node.api_product.field_key_features
+    - field.field.node.api_product.field_organisation
+    - field.field.node.api_product.field_price
+    - field.field.node.api_product.field_product_attributes
+    - field.field.node.api_product.field_product_marketing
+    - field.field.node.api_product.field_products_image
+    - field.field.node.api_product.field_user_rating
+    - field.field.node.api_product.field_view_mode
+    - field.field.node.api_product.layout_builder__layout
+    - node.type.api_product
+  module:
+    - comment
+    - fivestar
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.api_product.default
+targetEntityType: node
+bundle: api_product
+mode: default
+content:
+  comment:
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_api_document:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_api_version:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_gateways:
+    weight: 14
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_resource:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_rating:
+    weight: 2
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_api_category: true
+  field_api_specifications: true
+  field_banners_image: true
+  field_environment: true
+  field_feature_label: true
+  field_key_features: true
+  field_organisation: true
+  field_price: true
+  field_product_attributes: true
+  field_product_marketing: true
+  field_products_image: true
+  field_view_mode: true
+  layout_builder__layout: true

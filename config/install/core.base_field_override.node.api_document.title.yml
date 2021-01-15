@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.api_document
+id: node.api_document.title
+field_name: title
+entity_type: node
+bundle: api_document
+label: 'API Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

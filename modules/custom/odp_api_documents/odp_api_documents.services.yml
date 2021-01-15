@@ -1,0 +1,4 @@
+services:
+  odp_api_documents.node:
+    class: Drupal\odp_api_documents\Node
+    arguments: ['@database', '@entity_type.manager']

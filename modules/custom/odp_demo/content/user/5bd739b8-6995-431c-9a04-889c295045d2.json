@@ -1,0 +1,155 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/3?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
+    },
+    "uid": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5bd739b8-6995-431c-9a04-889c295045d2"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "preferred_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "preferred_admin_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "productmanager"
+        }
+    ],
+    "mail": [
+        {
+            "value": "productmanager@example.com"
+        }
+    ],
+    "timezone": [
+        {
+            "value": "UTC"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-12-29T16:42:59+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2021-01-15T07:45:44+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "access": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "login": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "init": [
+        {
+            "value": "productmanager@example.com"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/user\/3",
+                "title": "productmanager | Profiling",
+                "description": "Profiling"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_first_name": [
+        {
+            "value": "product"
+        }
+    ],
+    "field_last_name": [
+        {
+            "value": "manager"
+        }
+    ],
+    "field_userpoints_default_points": [
+        {
+            "value": "10",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d93f64ad-5f0c-4e4b-b84b-facafc9a22a4"
+                    }
+                ],
+                "lang": "en",
+                "alt": "",
+                "title": "",
+                "width": "100",
+                "height": "100"
+            }
+        ]
+    }
+}

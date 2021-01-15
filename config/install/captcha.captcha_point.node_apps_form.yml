@@ -1,0 +1,6 @@
+langcode: en
+status: false
+dependencies: {  }
+formId: node_apps_form
+captchaType: default
+label: null

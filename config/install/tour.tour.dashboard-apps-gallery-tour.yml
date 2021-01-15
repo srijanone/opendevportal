@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_apps
+id: dashboard-apps-gallery-tour
+label: 'Dashboard App Gallery Tour'
+module: odp_apps
+routes:
+  -
+    route_name: view.app_gallery.page_1
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: -100
+    attributes: null
+    body: 'In this page we get the listing of the apps and status of the apps.'
+    location: top
+  application-name:
+    id: application-name
+    plugin: text
+    label: 'Application Name'
+    weight: 2
+    attributes:
+      data-class: form-item-app
+    body: 'Search content by APP name'
+    location: top
+  email:
+    id: email
+    plugin: text
+    label: Email
+    weight: 3
+    attributes:
+      data-class: form-item-mail
+    body: 'Search content my mail address.'
+    location: top
+  developer-name:
+    id: developer-name
+    plugin: text
+    label: 'Developer Name'
+    weight: 4
+    attributes:
+      data-id: edit-uid
+    body: 'Search by Username'
+    location: top
+  sorting:
+    id: sorting
+    plugin: text
+    label: Sorting
+    weight: 5
+    attributes:
+      data-class: js-form-item-sort-bef-combine
+    body: 'Sort by title'
+    location: top
+  edit-node-button:
+    id: edit-node-button
+    plugin: text
+    label: 'Edit Node button'
+    weight: 5
+    attributes:
+      data-class: 'dropbutton .edit'
+    body: 'Edit the node'
+    location: right
+  next-page:
+    id: next-page
+    plugin: text
+    label: 'Next Page'
+    weight: 6
+    attributes:
+      data-class: pager__item--next
+    body: 'Next page button for more items'
+    location: right

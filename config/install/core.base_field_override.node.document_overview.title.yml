@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.document_overview
+id: node.document_overview.title
+field_name: title
+entity_type: node
+bundle: document_overview
+label: 'Page Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

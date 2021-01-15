@@ -1,0 +1,35 @@
+api_document: api_approval_workflow
+api_approval_workflow_architecture_review: '[node:title] has been moved to Architecture Review'
+architecture_review_redirect_link: '[entity:url]'
+api_approval_workflow_draft: '[node:title] has been moved to Design'
+draft_redirect_link: '[entity:url]'
+api_approval_workflow_product_review: '[node:title] has been moved to Product Review'
+product_review_redirect_link: '[entity:url]'
+api_approval_workflow_published: '[node:title] has been moved to Approved'
+published_redirect_link: '[entity:url]'
+apps: approval_workflow
+approval_workflow_draft: '[node:title] has been moved to Draft'
+approval_workflow_pending_for_approval: '[node:title] has been moved to Approved for Sandbox'
+pending_for_approval_redirect_link: '[entity:url]'
+approval_workflow_published: '[node:title] has been moved to Approved for Production'
+workflow_type:
+  workflow_api_document: workflow_api_document
+  workflow_apps: workflow_apps
+  workflow_api_product: 0
+  workflow_article: 0
+  workflow_assets: 0
+  workflow_document_overview: 0
+  workflow_events: 0
+  workflow_faq: 0
+  workflow_forum: 0
+  workflow_issues: 0
+  workflow_listing_pages: 0
+  workflow_page: 0
+  workflow_resources: 0
+  workflow_solutions: 0
+  workflow_tutorials: 0
+  workflow_use_cases: 0
+form_build_id: form-aExrcoN1GMpPv1_be8cn_W05IKa2tPqTqXs08o1U_5g
+form_token: 7RMzw3KDSVD3CQqqQisdoF1eKMAlxasY4uFnuG2uiRo
+form_id: odp_notification_settings
+op: 'Save configuration'

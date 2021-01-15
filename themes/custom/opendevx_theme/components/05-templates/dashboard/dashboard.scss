@@ -1,0 +1,129 @@
+@import 'settings';
+
+.path-dashboard.layout-no-sidebars {
+  .main-content {
+    >.section {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+      margin: 0 -15px;
+    }
+  }
+
+  .breadcrumb-block {
+    width: 100%;
+  }
+}
+
+.dashboard-block {
+  @extend %shadow-with-bg;
+  margin: 1rem;
+  min-height: 300px;
+  padding: .8rem 1rem;
+  position: relative;
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    width: 30.65%;
+  }
+
+  h2 {
+    margin: 0 2.5rem 1rem;
+
+    &::before {
+      @extend %awsome;
+      content: '';
+      font-size: 1.71429rem;
+      left: 18px;
+      position: absolute;
+      top: 13px;
+    }
+  }
+
+  .apps {
+    &::before {
+      content: '\f085';
+    }
+  }
+
+  .support {
+    &::before {
+      content: '\f590';
+    }
+  }
+
+  .forums {
+    &::before {
+      content: '\f086';
+    }
+  }
+
+  .view-header {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+  }
+
+  .view-footer {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .view-content {
+    display: block;
+    padding: 15px;
+    min-height: 16rem;
+  }
+
+  .views-row {
+    display: flex;
+    flex-flow: column;
+
+    p {
+      margin-bottom: .5rem;
+    }
+
+    +.views-row {
+      border-top: 1px solid $gray-light;
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+  }
+
+  .views-field-field-version {
+    .field-content {
+      display: inline-block;
+    }
+  }
+
+  .views-field-edit-node,
+  .views-field-delete-node {
+    position: absolute;
+    font-size: 0;
+
+    a::after {
+      @extend %awsome;
+      font-size: 14px;
+    }
+  }
+
+  .views-field-edit-node {
+    right: 40px;
+
+    a::after {
+      content: '\f304';
+    }
+  }
+
+  .views-field-delete-node {
+    right: 16px;
+
+    a::after {
+      content: '\f2ed';
+    }
+  }
+
+  .contextual-region {
+    position: unset;
+  }
+}

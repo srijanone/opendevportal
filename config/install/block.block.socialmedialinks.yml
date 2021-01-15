@@ -1,0 +1,111 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_media_links
+  theme:
+    - opendevx_theme
+id: socialmedialinks
+theme: opendevx_theme
+region: footer_first
+weight: -17
+provider: null
+plugin: social_media_links_block
+settings:
+  id: social_media_links_block
+  label: 'Social Media Links'
+  provider: social_media_links
+  label_display: '0'
+  platforms:
+    rss:
+      value: ''
+      description: ''
+      weight: '-10'
+    email:
+      value: ''
+      description: ''
+      weight: '-9'
+    youtube_channel:
+      value: ''
+      description: ''
+      weight: '-8'
+    instagram:
+      value: devportal
+      description: ''
+      weight: '-7'
+    vimeo:
+      value: ''
+      description: ''
+      weight: '-6'
+    github:
+      value: devportal
+      description: ''
+      weight: '-5'
+    bitbucket:
+      value: devportal
+      description: ''
+      weight: '-4'
+    drupal:
+      value: devportal
+      description: ''
+      weight: '-3'
+    tumblr:
+      value: ''
+      description: ''
+      weight: '-2'
+    contact:
+      value: ''
+      description: ''
+      weight: '-1'
+    behance:
+      value: ''
+      description: ''
+      weight: '0'
+    flickr:
+      value: ''
+      description: ''
+      weight: '1'
+    linkedin:
+      value: devportal
+      description: ''
+      weight: '2'
+    twitter:
+      value: devportal
+      description: ''
+      weight: '3'
+    youtube:
+      value: devportal
+      description: ''
+      weight: '4'
+    pinterest:
+      value: ''
+      description: ''
+      weight: '5'
+    vkontakte:
+      value: ''
+      description: ''
+      weight: '6'
+    facebook:
+      value: devportal
+      description: ''
+      weight: '7'
+    googleplus:
+      value: ''
+      description: ''
+      weight: '8'
+    slideshare:
+      value: ''
+      description: ''
+      weight: '9'
+  appearance:
+    orientation: h
+    show_name: 0
+  link_attributes:
+    target: '<none>'
+    rel: '<none>'
+  iconset:
+    style: 'fontawesome:2x'
+    installed_iconsets:
+      fontawesome:
+        examples: ''
+visibility: {  }

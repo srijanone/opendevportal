@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.product-management
+  module:
+    - block_classes
+    - domain
+    - system
+  theme:
+    - opendevx_theme
+third_party_settings:
+  block_classes:
+    block_class: left-navigation
+id: pm_dashboard
+theme: opendevx_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:product-management'
+settings:
+  id: 'system_menu_block:product-management'
+  label: Dashboard
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/dashboard/*/products\r\n/dashboard/*/apimanager/apps\r\n/dashboard/*/apimanager/proxies\r\n/dashboard/*/apimanager/users\r\n/dashboard/*/program\r\n/coming-soon"
+    negate: false
+    context_mapping: {  }

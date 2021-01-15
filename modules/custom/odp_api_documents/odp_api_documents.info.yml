@@ -1,0 +1,6 @@
+name: OpenDevPortal - API Document Feature
+description: Provides the API customisations.
+type: module
+package: ODP
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,232 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/tutorials\/tutorial?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/tutorials"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_api_product": [
+            {
+                "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_listing_image": [
+            {
+                "href": "http:\/\/default\/media\/260\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1428
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7f941723-13e1-4616-890f-7ef31052e395"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3939
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "tutorials"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-12-30T12:11:18+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_api_product": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8377293e-f405-49eb-91be-956741de28f4"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/tutorials\/field_listing_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/260\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ae14d8d7-69de-48cf-9b9f-08a4ca9a7837"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Banking Tutorial",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-11T08:37:32+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-12-30T12:11:18+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/tutorials\/tutorial",
+                "title": "Banking Tutorial | Profiling",
+                "description": "Under the umbrella of banking and finance, the industry has commercial banks\u2014which are consumer-facing like Bank of America\u2014as well as central banks\u2014the government entities that regulate the industry and manage monetary policy."
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/tutorials\/tutorial",
+            "pid": 25,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><b>bank<\/b>&nbsp;is an office or institution for keeping, lending and exchanging etc of money.\u201d&nbsp;<b>Banking<\/b>&nbsp;is the process of performing the activities of a&nbsp;<b>bank<\/b>. According to oxford dictionary of finance and&nbsp;<b>banking<\/b>, \u201c<b>banking<\/b>&nbsp;is the activities undertaken by&nbsp;<b>bank<\/b>.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p><b>bank<\/b>\u00a0is an office or institution for keeping, lending and exchanging etc of money.\u201d\u00a0<b>Banking<\/b>\u00a0is the process of performing the activities of a\u00a0<b>bank<\/b>. According to oxford dictionary of finance and\u00a0<b>banking<\/b>, \u201c<b>banking<\/b>\u00a0is the activities undertaken by\u00a0<b>bank<\/b>.<\/p>\n",
+            "summary": "Under the umbrella of banking and finance, the industry has commercial banks\u2014which are consumer-facing like Bank of America\u2014as well as central banks\u2014the government entities that regulate the industry and manage monetary policy.",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1605083859,
+            "last_comment_name": null,
+            "last_comment_uid": 1,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ],
+    "field_user_rating": [
+        {
+            "rating": 80,
+            "target": null,
+            "lang": "en"
+        }
+    ]
+}

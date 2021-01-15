@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private
+id: private-developer_marketer
+label: 'Developer Marketer'
+weight: 12
+internal: false
+audience: member
+group_type: private
+permissions_ui: true
+permissions: {  }

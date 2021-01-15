@@ -1,0 +1,176 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.tutorials.body
+    - field.field.node.tutorials.comment
+    - field.field.node.tutorials.field_api_product
+    - field.field.node.tutorials.field_banners_image
+    - field.field.node.tutorials.field_description
+    - field.field.node.tutorials.field_listing_image
+    - field.field.node.tutorials.field_organisation
+    - field.field.node.tutorials.field_tags
+    - field.field.node.tutorials.field_user_rating
+    - field.field.node.tutorials.layout_builder__layout
+    - node.type.tutorials
+  module:
+    - comment
+    - fivestar
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          b5efb3c1-f72c-4fd9-bdc6-82cced7483e5:
+            uuid: b5efb3c1-f72c-4fd9-bdc6-82cced7483e5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:tutorials:links'
+            additional: {  }
+            weight: 0
+          ba738ac3-2275-4875-be17-dd2b2f762451:
+            uuid: ba738ac3-2275-4875-be17-dd2b2f762451
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:tutorials:field_banners_image'
+              formatter:
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+                type: entity_reference_entity_view
+            additional: {  }
+            weight: 1
+          9d1cb305-f6a3-47b4-8c17-b693c138fcae:
+            uuid: 9d1cb305-f6a3-47b4-8c17-b693c138fcae
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:tutorials:field_description'
+              formatter:
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 2
+          bc2bc3ff-3897-4bff-84ec-ef58999c9878:
+            uuid: bc2bc3ff-3897-4bff-84ec-ef58999c9878
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:tutorials:field_tags'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 4
+          acdde39f-5edb-4702-82d8-75c95d89a8f1:
+            uuid: acdde39f-5edb-4702-82d8-75c95d89a8f1
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:tutorials:comment'
+              formatter:
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+                type: comment_default
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
+id: node.tutorials.default
+targetEntityType: node
+bundle: tutorials
+mode: default
+content:
+  comment:
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_banners_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_listing_image:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_tags:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user_rating:
+    weight: 6
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_api_product: true
+  field_organisation: true
+  layout_builder__layout: true

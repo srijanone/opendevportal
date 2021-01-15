@@ -1,0 +1,7 @@
+odp_product:
+  version: 1.x
+  js:
+    js/odp_product.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Program module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function odp_program_theme() {
+  return [
+    'front_program' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function odp_program_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Modify the node form title while adding group content.
+  $request = \Drupal::request();
+  if ($request->attributes->get('_route') === 'entity.group_content.create_form') {
+    $type = str_replace('group_node:', '', $request->attributes->get('plugin_id'));
+    $type_label = \Drupal::entityTypeManager()->getStorage('node_type')->load($type)->get('name');
+    $form['#title'] = t("Add %label", ["%label" => $type_label]);
+  }
+
+  // Add cancel button on node add/edit form to go back to daashboard.
+  if ($request->query->get('destination')) {
+    $goto_destination_forms = [
+      'entity.group_content.create_form',
+      'entity.node.edit_form',
+      'layout_builder.overrides.node.view',
+      'entity.group.edit_form',
+      'entity.group_content.add_form',
+    ];
+
+    if (in_array($request->attributes->get('_route'), $goto_destination_forms)) {
+      if (substr($request->query->get('destination'), 0, 1) == '/') {
+        $redirect = $request->query->get('destination');
+      }
+      else {
+        $redirect = '/' . $request->query->get('destination');
+      }
+      $form['actions']['goto_destination'] = [
+        '#markup' => "<a id='goto-destination' class='button button--danger js-form-submit form-submit btn btn-primary'
+        href='" . $redirect . "'>" . t('Cancel') . "</a>",
+        '#weight' => 100,
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function odp_program_local_tasks_alter(&$local_tasks) {
+  if (in_array('admin', \Drupal::currentUser()->getRoles())) {
+    unset($local_tasks['group.content']);
+  }
+}

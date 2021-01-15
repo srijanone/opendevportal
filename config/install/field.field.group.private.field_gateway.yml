@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_gateway
+    - group.type.private
+    - node.type.gateway
+id: group.private.field_gateway
+field_name: field_gateway
+entity_type: group
+bundle: private
+label: Gateway
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      gateway: gateway
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

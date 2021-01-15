@@ -1,0 +1,124 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faq.body
+    - field.field.node.faq.field_answer
+    - field.field.node.faq.field_api_product
+    - field.field.node.faq.field_organisation
+    - field.field.node.faq.field_user_rating
+    - field.field.node.faq.layout_builder__layout
+    - node.type.faq
+  module:
+    - fivestar
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e56e77a1-d37e-4bf9-b310-ee95bcacb90e:
+            uuid: e56e77a1-d37e-4bf9-b310-ee95bcacb90e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:faq:links'
+            additional: {  }
+            weight: 0
+          be15643a-5b3b-411e-9d95-11b2308d7647:
+            uuid: be15643a-5b3b-411e-9d95-11b2308d7647
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:faq:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          ea87f507-fe80-4ad7-baac-d2dc32ad4a63:
+            uuid: ea87f507-fe80-4ad7-baac-d2dc32ad4a63
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:faq:field_answer'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 2
+          ad76f698-5803-406a-977a-0f55cf33e78c:
+            uuid: ad76f698-5803-406a-977a-0f55cf33e78c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:faq:field_user_rating'
+              formatter:
+                label: above
+                settings:
+                  text_format: average
+                  display_format: average
+                  fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+                third_party_settings: {  }
+                type: fivestar_stars
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+id: node.faq.default
+targetEntityType: node
+bundle: faq
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_answer:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_user_rating:
+    weight: 3
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_api_product: true
+  field_organisation: true
+  layout_builder__layout: true

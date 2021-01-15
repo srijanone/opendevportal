@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_search
+label: Content
+path: content
+weight: -10
+plugin: node_search
+configuration:
+  rankings: {  }

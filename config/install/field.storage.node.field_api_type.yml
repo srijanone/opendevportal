@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_api_type
+field_name: field_api_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: rest
+      label: Rest
+    -
+      value: graphql
+      label: GraphQL
+    -
+      value: async
+      label: 'Async API 2.0'
+    -
+      value: soap
+      label: 'SOAP (Coming Soon)'
+    -
+      value: cloud
+      label: 'Cloud Events (Coming Soon)'
+    -
+      value: grpc
+      label: 'gRPC (Coming Soon)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

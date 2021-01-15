@@ -1,0 +1,23 @@
+odp_blocks.api_product_content:
+  path: '/product/check-first-content/{nid}'
+  defaults:
+    _controller: '\Drupal\odp_blocks\Controller\ProductNavigationController::checkFirstContent'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+
+odp_blocks.api_name:
+  path: '/api-name'
+  defaults:
+    _controller: '\Drupal\odp_blocks\Controller\ApiFilterationController::getApiNames'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+
+odp_blocks.api_versions:
+  path: '/api-version'
+  defaults:
+    _controller: '\Drupal\odp_blocks\Controller\ApiFilterationController::getApiVersions'
+    _title: ''
+  requirements:
+    _permission: 'access content'

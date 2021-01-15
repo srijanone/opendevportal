@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - group
+id: private_program
+label: 'Private Program'
+type: 'canonical_entities:group'
+pattern: 'program/[group:title]'
+selection_criteria:
+  8c6118f6-ff96-4d12-a069-832303b9922c:
+    id: 'entity_bundle:group'
+    bundles:
+      private: private
+    negate: false
+    context_mapping:
+      group: group
+    uuid: 8c6118f6-ff96-4d12-a069-832303b9922c
+selection_logic: and
+weight: -5
+relationships: {  }

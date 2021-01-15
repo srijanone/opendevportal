@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_seniority_level
+    - taxonomy.vocabulary.seniority_level
+  module:
+    - user
+id: user.user.field_seniority_level
+field_name: field_seniority_level
+entity_type: user
+bundle: user
+label: 'Seniority Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      seniority_level: seniority_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product_image
+label: product-image
+effects:
+  4f950c45-ca2f-42be-921b-469d966041ee:
+    uuid: 4f950c45-ca2f-42be-921b-469d966041ee
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300
+      anchor: center-center

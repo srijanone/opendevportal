@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * OpenDevPortal Api documents module file.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\FieldFilteredMarkup;
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function odp_api_documents_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  if ($entity->getEntityTypeId() == 'node') {
+    // Change the node display mode of api for type Graphql.
+    if ($entity->bundle() == 'api_document' && ($entity->get('field_api_type')->getValue()[0]['value'] == 'graphql'
+    || $entity->get('field_api_type')->getValue()[0]['value'] == 'async')) {
+      $view_mode = 'graphql_view';
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function odp_api_documents_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form_ids = ['node_api_document_form', 'node_api_document_edit_form'];
+  if (in_array($form_id, $form_ids)) {
+    $nid = $form_state->getFormObject()->getEntity()->id();
+    $program_helper = \Drupal::service('odp_program.program');
+    if ($nid) {
+      $pid = $program_helper->getProgramByNid($nid);
+      $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
+    }
+    else {
+      $current_path = \Drupal::service('path.current')->getPath();
+      $pid = explode('/', $current_path)[2];
+      $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
+    }
+    if ($gateways) {
+      $form['field_gatewayid']['widget']['#options'] = $gateways;
+    }
+    else {
+      unset($form['field_gatewayid']['widget']['#options']);
+      $form['field_gatewayid']['widget']['#markup'] = FieldFilteredMarkup::create('Currently no Gateway attached with
+        the Program. If needed, Please assign Gateways to the Program under which this entity
+        has been getting created, otherwise continue with the saving content.');
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function odp_api_documents_entity_delete(EntityInterface $entity) {
+  switch ($entity->getEntityTypeId()) {
+    case 'node':
+      if ($entity->bundle() == 'api_document') {
+        \Drupal::service('odp_api_documents.node')->deleteApiReference($entity->id());
+      }
+
+      break;
+  }
+}

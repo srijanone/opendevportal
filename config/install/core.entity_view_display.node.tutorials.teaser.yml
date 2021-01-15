@@ -1,0 +1,39 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tutorials.body
+    - field.field.node.tutorials.comment
+    - field.field.node.tutorials.field_api_product
+    - field.field.node.tutorials.field_banners_image
+    - field.field.node.tutorials.field_description
+    - field.field.node.tutorials.field_listing_image
+    - field.field.node.tutorials.field_organisation
+    - field.field.node.tutorials.field_tags
+    - field.field.node.tutorials.field_user_rating
+    - field.field.node.tutorials.layout_builder__layout
+    - node.type.tutorials
+  module:
+    - user
+id: node.tutorials.teaser
+targetEntityType: node
+bundle: tutorials
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment: true
+  field_api_product: true
+  field_banners_image: true
+  field_description: true
+  field_listing_image: true
+  field_organisation: true
+  field_tags: true
+  field_user_rating: true
+  layout_builder__layout: true

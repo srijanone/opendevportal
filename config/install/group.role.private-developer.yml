@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private
+id: private-developer
+label: Developer
+weight: 8
+internal: false
+audience: member
+group_type: private
+permissions_ui: true
+permissions:
+  - 'access group_node overview'
+  - 'create group_node:api_document entity'
+  - 'create group_node:apps content'
+  - 'create group_node:apps entity'
+  - 'create group_node:forum content'
+  - 'create group_node:forum entity'
+  - 'create group_node:issues content'
+  - 'create group_node:issues entity'
+  - 'delete own group_node:apps content'
+  - 'delete own group_node:apps entity'
+  - 'update own group_node:api_document content'
+  - 'update own group_node:api_document entity'
+  - 'update own group_node:apps content'
+  - 'update own group_node:apps entity'
+  - 'update own group_node:forum content'
+  - 'update own group_node:forum entity'
+  - 'update own group_node:issues content'
+  - 'update own group_node:issues entity'
+  - 'view group'
+  - 'view group_node:api_document content'
+  - 'view group_node:api_document entity'
+  - 'view group_node:api_product content'
+  - 'view group_node:api_product entity'
+  - 'view group_node:apps content'
+  - 'view group_node:apps entity'
+  - 'view group_node:article content'
+  - 'view group_node:article entity'
+  - 'view group_node:assets content'
+  - 'view group_node:assets entity'
+  - 'view group_node:document_overview content'
+  - 'view group_node:document_overview entity'
+  - 'view group_node:events content'
+  - 'view group_node:events entity'
+  - 'view group_node:faq content'
+  - 'view group_node:faq entity'
+  - 'view group_node:forum content'
+  - 'view group_node:forum entity'
+  - 'view group_node:issues content'
+  - 'view group_node:issues entity'
+  - 'view group_node:listing_pages content'
+  - 'view group_node:listing_pages entity'
+  - 'view group_node:resources content'
+  - 'view group_node:resources entity'
+  - 'view group_node:solutions content'
+  - 'view group_node:solutions entity'
+  - 'view group_node:tutorials content'
+  - 'view group_node:tutorials entity'
+  - 'view group_node:use_cases content'
+  - 'view group_node:use_cases entity'
+  - 'view unpublished group_node:apps entity'

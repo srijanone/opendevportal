@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * FAQ module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function odp_faq_entity_presave(EntityInterface $entity) {
+  if ($entity->getEntityType()->id() !== 'node') {
+    return;
+  }
+  if ($entity->bundle() == 'faq') {
+    $question = strip_tags(trim($entity->toArray()['body'][0]['value']));
+    $string = preg_replace("/\s|&nbsp;/", ' ', $question);
+    $entity->title->value = substr($string, 0, 30);
+  }
+}

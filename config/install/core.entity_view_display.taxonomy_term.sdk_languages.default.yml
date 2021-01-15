@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sdk_languages.field_label
+    - field.field.taxonomy_term.sdk_languages.field_svg_file
+    - taxonomy.vocabulary.sdk_languages
+  module:
+    - file
+    - text
+id: taxonomy_term.sdk_languages.default
+targetEntityType: taxonomy_term
+bundle: sdk_languages
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_label:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_svg_file:
+    weight: 1
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden: {  }

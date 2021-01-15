@@ -1,0 +1,6 @@
+name: OpenDevPortal Base
+description: "Extend the basic functionality of OpenDevPortal."
+type: module
+package: ODP
+core: 8.x
+core_version_requirement: ^8 || ^9

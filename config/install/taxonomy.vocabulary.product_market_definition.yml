@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Market Definition'
+vid: product_market_definition
+description: 'Market Definition of Product Details'
+weight: 0

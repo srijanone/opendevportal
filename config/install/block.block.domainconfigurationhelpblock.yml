@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_blocks
+    - domain
+    - system
+    - user
+  theme:
+    - devportal_admin
+id: domainconfigurationhelpblock
+theme: devportal_admin
+region: content
+weight: -4
+provider: null
+plugin: domain_help_block
+settings:
+  id: domain_help_block
+  label: 'Domain: How to configure ?'
+  provider: odp_blocks
+  label_display: visible
+  domain_help_text:
+    value: "<p>Domain Configuration Related information, Please fill information like steps to setup CNAME, Domain , IP etc.</p>\r\n"
+    format: full_html
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '/group/*/domain-settings'
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      admin: admin
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

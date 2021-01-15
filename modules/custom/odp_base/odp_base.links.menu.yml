@@ -1,0 +1,5 @@
+odp_base.admin_index:
+  title: OpenDevPortal
+  description: 'OpenDevPortal Configurations.'
+  parent: system.admin_config
+  route_name: odp_base.admin_index

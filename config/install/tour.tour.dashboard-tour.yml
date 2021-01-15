@@ -1,0 +1,92 @@
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard-tour
+label: 'Dashboard API Tour'
+module: null
+routes:
+  -
+    route_name: view.proxies_listing.page_proxies_listing
+  -
+    route_name: view.proxies_listing.page_1
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: 1
+    attributes: {  }
+    body: 'This page manages the API''s'
+    location: top
+  create-api:
+    id: create-api
+    plugin: text
+    label: 'Create Button'
+    weight: 2
+    attributes:
+      data-class: create-button
+    body: 'We have button in header to create the new API.'
+    location: left
+  sync-button:
+    id: sync-button
+    plugin: text
+    label: 'Sync Button'
+    weight: 3
+    attributes:
+      data-class: sync-button
+    body: 'Sync button is used to sync the configurations'
+    location: right
+  search-by-api-name:
+    id: search-by-api-name
+    plugin: text
+    label: 'Search By API Name'
+    weight: 4
+    attributes:
+      data-id: edit-title
+    body: 'This search button is used to search application by name'
+    location: top
+  search-by-status:
+    id: search-by-status
+    plugin: text
+    label: 'Search by Status'
+    weight: 4
+    attributes:
+      data-id: edit-state
+    body: 'Search by status of the node'
+    location: top
+  filter-apply-button:
+    id: filter-apply-button
+    plugin: text
+    label: 'Filter apply button'
+    weight: 4
+    attributes:
+      data-id: edit-submit-proxies-listing
+    body: 'Apply button used to filter the result'
+    location: top
+  bulk-operations:
+    id: bulk-operations
+    plugin: text
+    label: 'Bulk operations'
+    weight: 4
+    attributes:
+      data-id: edit-action
+    body: 'Options of bulk operations'
+    location: left
+  apply-button-bulk:
+    id: apply-button-bulk
+    plugin: text
+    label: 'Apply button of bulk operation'
+    weight: 4
+    attributes:
+      data-id: edit-actions--3
+    body: 'Apply button used to apply  the options of bulk operation.'
+    location: top
+  edit-node-button:
+    id: edit-node-button
+    plugin: text
+    label: 'Edit Node button'
+    weight: 4
+    attributes:
+      data-class: 'dropbutton-widget .edit'
+    body: 'Edit the particular node.'
+    location: top

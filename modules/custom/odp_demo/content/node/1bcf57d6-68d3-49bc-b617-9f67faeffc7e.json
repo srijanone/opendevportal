@@ -1,0 +1,201 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/dashboard\/topic\/safety-measures-internet-banking?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/forum"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/forum\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/forum\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/forum\/field_api_product": [
+            {
+                "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1441
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1bcf57d6-68d3-49bc-b617-9f67faeffc7e"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3937
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "forum"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-12-30T12:05:21+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/forum\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/forum\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/forum\/field_api_product": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/api-product\/online-banking-product?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/api_product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8377293e-f405-49eb-91be-956741de28f4"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Safety measures for Internet banking",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-12-30T12:04:56+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-12-30T12:05:21+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/dashboard\/topic\/safety-measures-internet-banking",
+                "title": "Safety measures for Internet banking | Profiling",
+                "description": "It can be said that the Internet has evolved as an effective technology to facilitate people worldwide in doing their operations. There are more than 30 million users worldwide currently. The Internet improves the interaction between two businesses as well as between individuals and businesses."
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/dashboard\/topic\/safety-measures-internet-banking",
+            "pid": 36,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Electronic Banking is offered by many banking institutions due to pressures from market competitions. But at the same time it poses many challenges to user of inter banking.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>Electronic Banking is offered by many banking institutions due to pressures from market competitions. But at the same time it poses many challenges to user of inter banking.<\/p>\n",
+            "summary": "It can be said that the Internet has evolved as an effective technology to facilitate people worldwide in doing their operations. There are more than 30 million users worldwide currently. The Internet improves the interaction between two businesses as well as between individuals and businesses.",
+            "lang": "en"
+        }
+    ],
+    "comment_forum": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1609329921,
+            "last_comment_name": null,
+            "last_comment_uid": 1,
+            "comment_count": 0,
+            "lang": "en"
+        }
+    ]
+}

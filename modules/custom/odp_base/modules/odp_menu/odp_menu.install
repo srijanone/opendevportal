@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * OpenDevPortal menu install file.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function odp_menu_install() {
+  // Set the weight of the module.
+  module_set_weight('odp_menu', 2);
+}

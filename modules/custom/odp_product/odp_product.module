@@ -1,0 +1,153 @@
+<?php
+
+/**
+ * @file
+ * Product module.
+ */
+
+use Drupal\Core\Cache\Cache;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
+use Drupal\Core\Field\FieldFilteredMarkup;
+use Drupal\odp_product\ContentInterface;
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_theme().
+ */
+function odp_product_theme() {
+  return [
+    'product_banner' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+        'banner' => NULL,
+        'productAttributes' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function odp_product_entity_presave(EntityInterface $entity) {
+  if ($entity->getEntityType()->id() !== 'node') {
+    return;
+  }
+  if ($entity->bundle() == 'api_product') {
+    // Invalidate cache on product save.
+    $tags = ['product-banner:' . (int) $entity->id()];
+    Cache::invalidateTags($tags);
+  }
+}
+
+/**
+ * Implements hook_views_post_render().
+ */
+function odp_product_views_post_render(
+  ViewExecutable $view,
+  &$output,
+  CachePluginBase $cache) {
+  $display = $view->getDisplay();
+  $id = $display->display['id'];
+  $dashboard_path = explode("/", \Drupal::request()->getPathInfo());
+  if (($id === "page_dashboard_product_contents") && ($dashboard_path[1] == 'dashboard')) {
+    $pid = (int) $dashboard_path[4];
+    $node_object = \Drupal::service('odp_base.node');
+    $node = $node_object->setNodeId($pid);
+    if ($node->checkNodeExists() == TRUE) {
+      $view->setTitle(ucwords($node->getTitle()));
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function odp_product_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $form_ids = [
+    'views-exposed-form-product-listing-block-1',
+    'views-exposed-form-use-cases-listing-block-1',
+    'views-exposed-form-use-cases-listing-block-2',
+    'views-exposed-form-app-gallery-block-1',
+    'views-exposed-form-events-block-1',
+  ];
+  if (in_array($form['#id'], $form_ids) && isset($form['gid'])) {
+    $form['gid']['#type'] = 'select';
+    $form['gid']['#options'] = \Drupal::service('odp_product.usergroup')->getUserGroups();
+    $form['gid']['#size'] = 1;
+    $form['gid']['#validated'] = TRUE;
+  }
+
+  // Change label on add/edit form for product related content type.
+  if (in_array($form_id, ContentInterface::FORM_IDS)) {
+    $type = $form_state->getFormObject()->getEntity()->bundle();
+    $label = NodeType::load($type)->label();
+    $summary = $form['body']['widget'][0]['summary']['#title']->getUntranslatedString();
+    $form['body']['widget'][0]['summary']['#title'] = t($label . ' ' . $summary);
+  }
+  // Form alter for api product.
+  if (!in_array($form_id, ['node_api_product_form', 'node_api_product_edit_form'])) {
+    return;
+  }
+
+  $nid = $form_state->getFormObject()->getEntity()->id();
+  $program_helper = \Drupal::service('odp_program.program');
+  if ($nid) {
+    $pid = $program_helper->getProgramByNid($nid);
+    $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
+  }
+  else {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $pid = explode('/', $current_path)[2];
+    $gateways = ($pid) ? $program_helper->getRelatedGateway($pid) : [];
+  }
+  if ($gateways) {
+    $form['field_gateways']['widget']['#options'] = $gateways;
+  }
+  else {
+    unset($form['field_gateways']['widget']['#options']);
+    $form['field_gateways']['widget']['#markup'] = FieldFilteredMarkup::create('Currently no Gateway attached with
+      the Program. If needed, Please assign Gateways to the Program under which this entity
+      has been getting created, otherwise continue with the saving content.');
+  }
+}
+
+/**
+ * Implements hook_form_form_id_alter().
+ */
+function odp_product_form_webform_submission_api_product_checkout_form_add_form_alter(&$form, FormStateInterface &$form_state) {
+  if (isset($form['elements']['product']) && $form['elements']['product']['#default_value']->get('field_price')->first()) {
+    $form['elements']['price']['#default_value'] = $form['elements']['product']['#default_value']->get('field_price')->first()->get('entity')->getValue()->get('field_rate')->value;
+  }
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function odp_product_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  if ($entity->getEntityTypeId() == 'node') {
+    // Change the node display mode of product.
+    if ($entity->bundle() == 'api_product' && $view_mode == 'full') {
+      $view_mode = $entity->get('field_view_mode')->getValue()[0]['value'];
+    }
+
+    // Change the node display mode of api for type Graphql.
+    elseif ($entity->bundle() == 'api_document' && ($entity->get('field_api_type')->getValue()[0]['value'] == 'graphql'
+    || $entity->get('field_api_type')->getValue()[0]['value'] == 'async')) {
+      $view_mode = 'graphql_view';
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function odp_product_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'odp_product/odp_product';
+}
+

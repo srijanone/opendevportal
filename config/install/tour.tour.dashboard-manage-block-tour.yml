@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - odp_blocks
+id: dashboard-manage-block-tour
+label: 'Dashboard Manage Block Tour'
+module: odp_blocks
+routes:
+  -
+    route_name: view.block_content.page_2
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: Introduction
+    weight: null
+    attributes: null
+    body: 'Manage the Custom blocks'
+    location: top
+  create-button:
+    id: create-button
+    plugin: text
+    label: 'Create Button'
+    weight: 1
+    attributes:
+      data-class: create-button
+    body: 'Create button is used to create a new custom block.'
+    location: left
+  block-description:
+    id: block-description
+    plugin: text
+    label: 'Block Description'
+    weight: 2
+    attributes:
+      data-id: edit-info
+    body: 'Filter out the result by Block Description'
+    location: left
+  block-type:
+    id: block-type
+    plugin: text
+    label: 'Block Type'
+    weight: 3
+    attributes:
+      data-id: edit-type
+    body: 'Filter out the result by Block Type.'
+    location: top
+  block-edit-button:
+    id: block-edit-button
+    plugin: text
+    label: 'Block Edit Button'
+    weight: 5
+    attributes:
+      data-class: 'dropbutton .edit'
+    body: 'Block edit button.'
+    location: top

@@ -1,0 +1,143 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/program\/banking\/content\/870?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/group_content\/public-group_node-use_cases"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-use_cases\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-use_cases\/gid": [
+            {
+                "href": "http:\/\/default\/program\/banking?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-use_cases\/entity_id": [
+            {
+                "href": "http:\/\/default\/use-cases\/use-case?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 870
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f9309f19-995d-47ab-8e03-7cbc0b5fb264"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "public-group_node-use_cases"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-use_cases\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "552b2bad-e293-41e8-a461-ee101dd63a91"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-use_cases\/gid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/program\/banking?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/group\/public"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b6644c53-0ba2-48d0-9210-5ccced37c021"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/group_content\/public-group_node-use_cases\/entity_id": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/use-cases\/use-case?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/use_cases"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "929f73cf-88eb-4cda-a9b8-77a55cd6afa5"
+                    }
+                ]
+            }
+        ]
+    },
+    "label": [
+        {
+            "value": "Use case",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-11-11T08:38:10+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-11-11T08:38:10+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "title": "| Profiling"
+            }
+        }
+    ]
+}

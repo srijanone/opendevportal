@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * OpenDevPortal Notification.
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ *
+ * Twig template for render notification content.
+ */
+function odp_notification_theme($existing, $type, $theme, $path) {
+  return [
+    'odp_notification_widget' => [
+      'variables' => [
+        'uid' => NULL,
+        'notification_type' => NULL,
+        'total' => NULL,
+        'unread' => NULL,
+        'notification_list' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function odp_notification_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Custom form submit handler.
+  if (in_array($form_id, ['node_apps_edit_form', 'node_apps_form'])) {
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'odp_notification_apps_form_submit';
+      }
+    }
+  }
+}
+
+/**
+ * Custom form submit hanlder for sending notification.
+ */
+function odp_notification_apps_form_submit(array $form,
+FormStateInterface $form_state) {
+  $entity = $form_state->getFormObject()->getEntity();
+  // Sending notification while changing the moderation state.
+  try {
+    $query = \Drupal::database()->select('content_moderation_state_field_data', 'ms');
+    $query->join('node_field_revision', 'nf', 'nf.nid=ms.content_entity_id AND nf.vid=ms.content_entity_revision_id AND nf.langcode=ms.langcode');
+    $query->addField('ms', 'moderation_state');
+    $query->condition('nf.nid', $entity->id());
+
+    $moderation_state = $query->execute()->fetchField();
+  }
+  catch (Exception $e) {
+    \Drupal::service('odp_user.logger')->log(
+      ['module' => 'odp_notification', 'message' => $e->getMessage()]
+    );
+  }
+  if ($form['form_id']['#value'] == 'node_apps_form') {
+    \Drupal::service('odp_notification.notification')->sendNotification($entity);
+  }
+  if (!empty($moderation_state)
+   && $form['form_id']['#value'] == 'node_apps_edit_form'
+   && ($entity->get('moderation_state')->value != $moderation_state)) {
+    \Drupal::service('odp_notification.notification')->sendNotification($entity);
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function odp_notification_views_query_alter(ViewExecutable $view, $query) {
+  if ($view->id() == 'notification_view' && $view->current_display == 'notification_view') {
+    $query->addWhere('1', 'notifications_node_field_data.action', 'content_moderated');
+    $roles = \Drupal::currentUser()->getRoles(TRUE);
+    if (!empty($roles[0])) {
+      $notifi_id = \Drupal::service('odp_notification.notification')->getNotification();
+      $notifi_id = array_column($notifi_id['notificationList'], 'id');
+      $notifi_id = ($notifi_id) ? $notifi_id : [''];
+      $query->addWhere('1', 'notifications_node_field_data.id', $notifi_id, 'IN');
+    }
+  }
+}

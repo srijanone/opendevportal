@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.features.field_description
+    - field.field.paragraph.features.field_feature_image
+    - image.style.feature
+    - paragraphs.paragraphs_type.features
+  module:
+    - media
+    - text
+id: paragraph.features.default
+targetEntityType: paragraph
+bundle: features
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_feature_image:
+    type: media_thumbnail
+    weight: 1
+    label: hidden
+    settings:
+      image_style: feature
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

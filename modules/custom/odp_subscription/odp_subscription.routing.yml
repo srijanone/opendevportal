@@ -1,0 +1,16 @@
+odp_subscription.confirm:
+  path: '/subscribe/{id}/confirm'
+  defaults:
+    _form: '\Drupal\odp_subscription\Form\SubscriptionConfirmForm'
+    _title_callback: '\Drupal\odp_subscription\Controller\Subscription::getTitle'
+  requirements:
+    _permission: 'access content'
+    id: ^\d+$
+
+odp_subscription.settings:
+  path: '/admin/config/people/email-subscription'
+  defaults:
+    _form: '\Drupal\odp_subscription\Form\SubscriptionSettings'
+    _title: 'Newsletter Settings'
+  requirements:
+    _permission: 'administer site configuration'

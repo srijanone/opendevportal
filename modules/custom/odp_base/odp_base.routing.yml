@@ -1,0 +1,7 @@
+odp_base.admin_index:
+  path: '/admin/config/opendevportal'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'OpenDevPortal Configurations'
+  requirements:
+    _permission: 'access administration pages'

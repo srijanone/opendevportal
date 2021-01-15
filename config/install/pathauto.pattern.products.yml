@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: products
+label: Products
+type: 'canonical_entities:node'
+pattern: 'api-product/[node:title]'
+selection_criteria:
+  93434d61-6e88-484c-a070-af39fb8a6fa4:
+    id: node_type
+    bundles:
+      api_product: api_product
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 93434d61-6e88-484c-a070-af39fb8a6fa4
+selection_logic: and
+weight: -5
+relationships: {  }

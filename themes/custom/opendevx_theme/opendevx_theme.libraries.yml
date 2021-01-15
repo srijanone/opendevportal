@@ -1,0 +1,369 @@
+## 1. The SMACSS category Base — CSS reset/normalize plus HTML element styling.
+base:
+  css:
+    base:
+      assets/css/base.css: {}
+  js:
+    assets/js/global.min.js: {}
+
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+## 2. The SMACSS category Component — discrete, reusable UI elements
+
+### 2.1 Atoms
+alert:
+  css:
+    component:
+      assets/css/alert.css: {}
+
+badge:
+  css:
+    component:
+      assets/css/badge.css: {}
+
+icons:
+  css:
+    component:
+      assets/css/icons-fa.css: {}
+
+button:
+  css:
+    component:
+      assets/css/button.css: {}
+
+cards:
+  css:
+    component:
+      assets/css/cards.css: {}
+
+home:
+  css:
+    component:
+      assets/css/home.css: {}
+
+product_details:
+  css:
+    component:
+      assets/css/product_details.css: {}
+
+login:
+  css:
+    component:
+      assets/css/login.css: {}
+
+form-controls:
+  css:
+    component:
+      assets/css/form-controls.css: {}
+
+fitframe:
+  css:
+    component:
+      assets/css/fitframe.css: {}
+
+list:
+  css:
+    component:
+      assets/css/list.css: {}
+
+spinner:
+  css:
+    component:
+      assets/css/spinner.css: {}
+
+### 2.2 Molecules
+block--introtext:
+  css:
+    component:
+      assets/css/block--introtext.css: {}
+
+block--informblock:
+  css:
+    component:
+      assets/css/block--informblock.css: {}
+
+breadcrumb:
+  css:
+    component:
+      assets/css/breadcrumb.css: {}
+
+dropdown:
+  css:
+    component:
+      assets/css/dropdown.css: {}
+
+file:
+  css:
+    component:
+      assets/css/file.css: {}
+
+form-elements:
+  css:
+    component:
+      assets/css/form-elements.css: {}
+
+form--input-groups:
+  css:
+    component:
+      assets/css/input-groups.css: {}
+
+form--password:
+  css:
+    component:
+      assets/css/password.css: {}
+
+form--social-auth-buttons:
+  css:
+    component:
+      assets/css/social-auth-buttons.css: {}
+
+form--timepicker:
+  remote: https://github.com/jonthornton/jquery-timepicker
+  version: "1.11.4"
+  license:
+    name: MIT
+    url: https://raw.githubusercontent.com/jonthornton/jquery-timepicker/master/README.md
+    gpl-compatible: true
+  css:
+    component:
+      assets/css/timepicker.css: {}
+  js:
+    /libraries/timepicker/jquery.timepicker.min.js: { minified: true }
+
+form--toolbar:
+  css:
+    component:
+      assets/css/form-toolbar.css: {}
+
+image-widget:
+  css:
+    component:
+      assets/css/image-widget.css: {}
+
+media:
+  css:
+    component:
+      assets/css/media.css: {}
+
+aside:
+  css:
+    component:
+      assets/css/aside.css: {}
+
+nav-book:
+  css:
+    component:
+      assets/css/nav-book.css: {}
+
+nav-tabs:
+  css:
+    component:
+      assets/css/nav-tabs.css: {}
+
+navbar:
+  css:
+    component:
+      assets/css/navbar.css: {}
+
+pagination:
+  css:
+    component:
+      assets/css/pagination.css: {}
+
+photoswipe-gallery:
+  css:
+    component:
+      assets/css/photoswipe-gallery.css: {}
+
+popover:
+  css:
+    component:
+      assets/css/popover.css: {}
+
+select2:
+  css:
+    component:
+      assets/css/select2.css: {}
+
+teaser:
+  css:
+    component:
+      assets/css/teaser.css: {}
+
+tour:
+  css:
+    component:
+      assets/css/tour.css: {}
+
+quick-tabs:
+  css:
+    component:
+      assets/css/quick-tabs.css: {}
+
+### 2.3 Organisms
+admin-toolbar:
+  css:
+    component:
+      assets/css/admin-toolbar.css: {}
+
+comment:
+  css:
+    component:
+      assets/css/comment.css: {}
+  dependencies:
+    - socialbase/fitframe
+
+form-default:
+  css:
+    component:
+      assets/css/form-default.css: {}
+
+form-horizontal:
+  css:
+    component:
+      assets/css/form-horizontal.css: {}
+
+form-post-create:
+  css:
+    component:
+      assets/css/form-post-create.css: {}
+
+forum:
+  css:
+    component:
+      assets/css/forum.css: {}
+
+group-managers:
+  css:
+    component:
+      assets/css/group-managers.css: {}
+
+hero:
+  css:
+    component:
+      assets/css/hero.css: {}
+
+message:
+  css:
+    component:
+      assets/css/message.css: {}
+
+meta:
+  css:
+    component:
+      assets/css/meta.css: {}
+
+modal:
+  css:
+    component:
+      assets/css/modal.css: {}
+
+offcanvas:
+  css:
+    component:
+      assets/css/offcanvas.css: {}
+
+social-linking:
+  css:
+    component:
+      assets/css/social-linking.css: {}
+
+stream:
+  css:
+    component:
+      assets/css/stream.css: {}
+
+post:
+  css:
+    component:
+      assets/css/post.css: {}
+
+tags:
+  css:
+    component:
+      assets/css/tags.css: {}
+
+files:
+  css:
+    component:
+      assets/css/files.css: {}
+
+ratings:
+  css:
+    component:
+      assets/css/ratings.css: {}
+
+### 2.4 Templates
+home:
+  css:
+    component:
+      assets/css/home.css: {}
+
+dashboard:
+  css:
+    component:
+      assets/css/dashboard.css: {}
+
+layout:
+  css:
+    layout:
+      assets/css/layout.css: {}
+
+page-node:
+  css:
+    layout:
+      assets/css/page-node.css: {}
+
+page-profile:
+  css:
+    layout:
+      assets/css/profile.css: {}
+
+page-events:
+  css:
+    layout:
+      assets/css/page-events.css: {}
+
+page-search:
+  css:
+    layout:
+      assets/css/page-search.css: {}
+
+theme:
+  css:
+    layout:
+      assets/css/theme.css: {}
+
+# Library
+library:
+  css:
+    layout:
+      components/06-library/slick/slick-theme.css: {}
+      components/06-library/slick/slick.css: {}
+  js:
+    assets/js/slick.min.js: {}
+
+
+# Contains libraries required for the layout builder that have been previously
+# removed in Open Social to fix our own modals.
+layout_builder:
+  css:
+    component:
+      /core/assets/vendor/jquery.ui/themes/base/core.css: {}
+      /core/assets/vendor/jquery.ui/themes/base/button.css: {}
+      /core/assets/vendor/jquery.ui/themes/base/dialog.css: {}
+      /core/assets/vendor/jquery.ui/themes/base/menu.css: {}
+    theme:
+      /core/assets/vendor/jquery.ui/themes/base/theme.css: {}
+
+# Bootstrap cdn.
+bootstrap_cdn:
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js: {}
+    //stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js: {}
+  css:
+    component:
+      //stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css: {}

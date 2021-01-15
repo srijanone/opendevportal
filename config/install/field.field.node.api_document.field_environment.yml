@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_environment
+    - node.type.api_document
+    - taxonomy.vocabulary.environment
+  content:
+    - 'taxonomy_term:environment:a25998ec-3819-4de7-ac25-2f3d9a0fc3cd'
+id: node.api_document.field_environment
+field_name: field_environment
+entity_type: node
+bundle: api_document
+label: Environment
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: a25998ec-3819-4de7-ac25-2f3d9a0fc3cd
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      environment: environment
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Issue Status'
+vid: issue_status
+description: 'Issue type is to define the current state of the issue raised like open, duplicate, closed, etc.'
+weight: 0

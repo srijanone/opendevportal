@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.protected
+id: protected-anonymous
+label: Anonymous
+weight: -102
+internal: true
+audience: anonymous
+group_type: protected
+permissions_ui: true
+permissions: {  }

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: product-management
+label: 'Product Management'
+description: 'The menu for managing contents around products'
+locked: false
