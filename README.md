@@ -1,11 +1,13 @@
 # OpenDevPortal
 
-OpenDevPortal is a product framework to build custom developer portals.
+[OpenDevPortal](https://www.drupal.org/project/opendevportal) is a product framework to build custom developer portals.
 Whether you're a SaaS company looking to publish APIs for App developers or a
 Financial institution with a sprawling OpenBanking API program,
 you can use OpenDevPortal to engineer a bespoke developer experience.
 
-Some of OpenDevPortal's most unique features:
+ <img src="https://www.drupal.org/files/styles/grid-3-2x/public/project-images/logo_0.jpg"/>
+
+## Some of OpenDevPortal's most unique features:
 - API Program & Product Management with access control
 - Fully Customizable Developer Experience & Program Branding
 - Connector based architecture (to API gateways & integration systems)
@@ -85,6 +87,12 @@ In case you come across any memory issues, run this command -
 ```bash
 php -d memory_limit=-1 /path/to/composer.phar create-project
 srijanone/opendevportal-project:1.0 MY_PROJECT --no-interaction
+```
+
+Installation using drush -
+
+```bash
+time php -d memory_limit=-1 ./vendor/bin/drush si opendevportal  --db-url='mysql://drupal_user:drupal_password@localhost/drupal_db' --site-name='OpenDevPortal' --account-name='Srijan' --account-pass='Admin@123'  --account-mail='admin@example.com' -y
 ```
 
 ---
