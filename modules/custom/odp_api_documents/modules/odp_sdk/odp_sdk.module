@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * OpenDevPortal sdk module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function odp_sdk_theme() {
+  return [
+    'sdk_card' => [
+      'variables' => [
+        'items' => [],
+      ],
+    ],
+  ];
+}

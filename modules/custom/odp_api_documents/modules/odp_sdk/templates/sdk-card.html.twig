@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Sdk Cards template file.
+ */
+#}
+
+<div class="item-list">
+  <ul class="card-field">
+    {% for item in items %}
+      <li class="card__item">
+        <div class="card-paragraph">
+          <div class="product-image">
+            <img src="{{ item.card_img }}" alt="API image">
+          </div>
+          <div class="title">{{ item.card_title }}</div>
+          {{ item.card_langs }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

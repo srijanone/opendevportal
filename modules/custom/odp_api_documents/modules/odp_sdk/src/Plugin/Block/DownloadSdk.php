@@ -12,6 +12,7 @@ use Drupal\Core\Database\Connection;
 use Drupal\odp_user\Logger\Logger;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Path\CurrentPathStack;
+use Drupal\Core\Form\FormBuilderInterface;
 
 /**
  * Provides a 'Download SDK' Block.
@@ -60,6 +61,13 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
   protected $currentPath;
 
   /**
+   * Form builder will be used via Dependency Injection.
+   *
+   * @var \Drupal\Core\Form\FormBuilderInterface
+   */
+  protected $formBuilder;
+
+  /**
    * Constructs a new DownloadSdkBlock.
    *
    * @param array $configuration
@@ -78,6 +86,8 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
    *   The logger service.
    * @param \Drupal\Core\Path\CurrentPathStack $current_path
    *   The current path service.
+   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
+   *   The form builder instance.
    */
   public function __construct(array $configuration,
     $plugin_id,
@@ -86,7 +96,8 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
     RendererInterface $renderer,
     Connection $connection,
     Logger $logger,
-    CurrentPathStack $current_path) {
+    CurrentPathStack $current_path,
+    FormBuilderInterface $form_builder) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->entityTypeManager = $entity_type_manager;
@@ -94,6 +105,7 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
     $this->connection = $connection;
     $this->logger = $logger;
     $this->currentPath = $current_path;
+    $this->formBuilder = $form_builder;
   }
 
   /**
@@ -111,7 +123,8 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
       $container->get('renderer'),
       $container->get('database'),
       $container->get('odp_user.logger'),
-      $container->get('path.current')
+      $container->get('path.current'),
+      $container->get('form_builder')
     );
   }
 
@@ -165,29 +178,24 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
     }
     $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
 
+    $items = [];
     foreach ($nodes as $node) {
-      // @todo remove html markup and create template for block.
-      $build[] = [
-        'element_image' => [
-          '#markup' => '<div class="product-image"><img src="' . ImageStyle::load('product_image')->buildUrl(
-            ProgramUtility::getImageUri($node->get('field_listing_image')->getValue()[0]['target_id'])
-          ) . '"/></div>',
-        ],
-        'element_title' => [
-          '#markup' => '<div class="title">' . $node->getTitle() . '</div>',
-        ],
-        'element_download' => [
-          '#markup' => $this->renderer->render(\Drupal::formBuilder()->getForm('Drupal\odp_sdk\Form\DownloadSdk', $node->id())),
-        ],
-        '#cache' => [
-          'max-age' => 0,
-        ],
-        '#prefix' => '<li class="card__item"><div class="card-paragraph">',
-        '#suffix' => '</div></li>',
+      $items[] = [
+        'card_img' => ImageStyle::load('product_image')->buildUrl(
+          ProgramUtility::getImageUri($node->get('field_listing_image')->getValue()[0]['target_id'])
+        ),
+        'card_title' => $node->getTitle(),
+        'card_langs' => $this->renderer->render($this->formBuilder->getForm('Drupal\odp_sdk\Form\DownloadSdk', $node->id())),
       ];
     }
 
-    return $build;
+    return [
+      '#theme' => 'sdk_card',
+      '#items' => $items,
+      '#cache' => [
+        'max-age' => 0,
+      ],
+    ];
   }
 
 }
