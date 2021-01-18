@@ -55,8 +55,9 @@ function opendevx_theme_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'node-type-revision';
     $variables['attributes']['class'][] = 'node--type-api-product';
   }
-  if (strpos($variables['head_title']['title'], 'Denied') == TRUE) {
-    $variables['attributes']['class'][] = 'node--access-denied';
+  $statusCode = Drupal::request()->query->get('_exception_statuscode');
+  if (isset($statusCode) and (($statusCode == 404) or ($statusCode == 403))) {
+      $variables['attributes']['class'][] = 'node--access-denied';
   }
   $program = \Drupal::service('odp_domain.program_domain')->getDomainProgramInfo();
   if ($program instanceof GroupInterface) {
