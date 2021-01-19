@@ -42,7 +42,7 @@
     ],
     "vid": [
         {
-            "value": 3933
+            "value": 3976
         }
     ],
     "langcode": [
@@ -58,7 +58,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-12-30T11:52:35+00:00",
+            "value": "2021-01-19T09:35:40+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -75,7 +75,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                        "value": "f5ca371a-96c2-4102-8a08-65b7d111f67d"
                     }
                 ]
             }
@@ -92,7 +92,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "16c825fa-78f1-4ddf-8f8a-45ecbf64686f"
+                        "value": "f5ca371a-96c2-4102-8a08-65b7d111f67d"
                     }
                 ],
                 "lang": "en"
@@ -156,7 +156,7 @@
     ],
     "changed": [
         {
-            "value": "2020-12-30T11:52:35+00:00",
+            "value": "2021-01-19T09:35:40+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -197,7 +197,7 @@
     "path": [
         {
             "alias": "\/events\/banking-event",
-            "pid": 33,
+            "pid": 27,
             "langcode": "en",
             "lang": "en"
         }
@@ -220,23 +220,6 @@
             "last_comment_uid": 1,
             "comment_count": 0,
             "lang": "en"
-        }
-    ],
-    "field_address_block": [
-        {
-            "langcode": "",
-            "country_code": "BZ",
-            "administrative_area": null,
-            "locality": "",
-            "dependent_locality": null,
-            "postal_code": null,
-            "sorting_code": null,
-            "address_line1": "",
-            "address_line2": "",
-            "organization": null,
-            "given_name": null,
-            "additional_name": null,
-            "family_name": null
         }
     ],
     "field_end_date": [
