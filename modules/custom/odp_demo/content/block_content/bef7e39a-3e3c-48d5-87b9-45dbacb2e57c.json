@@ -5,7 +5,12 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_block"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_banner_images": [
+            {
+                "href": "http:\/\/default\/media\/258\/edit?_format=hal_json"
+            }
+        ]
     },
     "id": [
         {
@@ -53,7 +58,7 @@
     ],
     "changed": [
         {
-            "value": "2020-11-04T06:36:51+00:00",
+            "value": "2021-01-19T11:54:20+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -78,11 +83,39 @@
     "metatag": [
         {
             "value": {
-                "canonical_url": "http:\/\/default\/landing-page\/home",
+                "canonical_url": "http:\/\/default\/home",
                 "title": "| Profiling"
             }
         }
     ],
+    "body": [
+        {
+            "value": "<p>Universal Developer Portal Solutions for Enterprises.<\/p>\r\n\r\n<p>Build Your Custom Developer Portal with ease using OpenDevX<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Universal Developer Portal Solutions for Enterprises.<\/p>\n\n<p>Build Your Custom Developer Portal with ease using OpenDevX<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_block\/field_banner_images": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/258\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2149422e-c49e-4734-9cc0-fe73e5b4816c"
+                    }
+                ]
+            }
+        ]
+    },
     "field_title": [
         {
             "value": "Program"

@@ -113,12 +113,12 @@ third_party_settings:
               cta_section:
                 id:
                   cta_title: 'Getting Started'
-                  cta_description: 'This is a description.'
+                  cta_description: ''
                   cta_type: apps
                   cta_label: 'Get Started'
                 label:
                   cta_title: 'Need help'
-                  cta_description: 'Need support for this content'
+                  cta_description: ''
                   cta_type: issues
                   cta_label: Support
                 provider:
