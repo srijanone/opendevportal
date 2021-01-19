@@ -94,7 +94,7 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
     if (!empty($id)) {
       $node = $this->entityTypeManager->getStorage('node')->load($id);
       $node_data = isset($node) ? $node->toArray() : [];
-      if ($node_data['field_products_image']) {
+      if (isset($node_data['field_products_image']) && $node_data['field_products_image']) {
         $banner = array_column($node_data['field_products_image'], 'target_id');
       }
       $key_value = [];

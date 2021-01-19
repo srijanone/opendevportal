@@ -268,7 +268,8 @@ class Redirect implements RedirectInterface {
     $destination = $this->currentRequest->query->get('destination');
     foreach ($config as $role_type => $roles) {
       foreach ($roles as $role_id => $settings) {
-        if (in_array($role_id, $user_roles[$role_type]) && $settings['redirect_url']) {
+        if (isset($user_roles[$role_type]) && !empty($user_roles[$role_type])
+          && in_array($role_id, $user_roles[$role_type]) && $settings['redirect_url']) {
           // Prevent redirect if destination usage is allowed.
           if ($settings['allow_destination'] && $destination) {
             return $url;

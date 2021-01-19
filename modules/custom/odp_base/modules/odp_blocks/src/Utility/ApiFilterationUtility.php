@@ -11,6 +11,7 @@ class ApiFilterationUtility {
    * {@inheritdoc}
    */
   public static function getApiEnvironemt($parent) {
+    $result = [];
     try {
       $query = \Drupal::database();
       $query = $query->select('taxonomy_term_field_data', 't');

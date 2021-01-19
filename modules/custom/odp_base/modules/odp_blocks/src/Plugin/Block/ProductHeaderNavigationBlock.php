@@ -207,11 +207,14 @@ class ProductHeaderNavigationBlock extends BlockBase implements ContainerFactory
           'childClass' => 'child_api_product',
         ],
       ];
-      $navigation_data[array_keys($navigation_data)[0]] = $this->prePareValue(
-        $navigation_data[array_keys($navigation_data)[0]],
-        $product_pos,
-        $insert_value
-      );
+
+      if (isset(array_keys($navigation_data)[0])) {
+        $navigation_data[array_keys($navigation_data)[0]] = $this->prePareValue(
+          $navigation_data[array_keys($navigation_data)[0]],
+          $product_pos,
+          $insert_value
+        );
+      }
 
       $url_alias = $this->path->getPath();
       $explode_path = explode('/', $url_alias);
@@ -224,7 +227,7 @@ class ProductHeaderNavigationBlock extends BlockBase implements ContainerFactory
         $navigation_data[array_keys($navigation_data)[0]][$api_name]['childPath'] = $api_path;
       }
       $node_type = $this->entityTypeManager->getStorage('node')->load($explode_path[2]);
-      if ($node_type && $explode_path[3] != 'document_overview') {
+      if ($node_type && isset($explode_path[3]) && $explode_path[3] != 'document_overview') {
         if ($node_type->bundle() == 'api_product') {
           $navigation_data[array_keys($navigation_data)[0]][$list['api_product']]['childClass'] = 'active';
         }
@@ -232,13 +235,13 @@ class ProductHeaderNavigationBlock extends BlockBase implements ContainerFactory
           $navigation_data[array_keys($navigation_data)[0]][$list['api_document']]['childClass'] = 'active';
         }
       }
-      if ($explode_path[3] == 'document_overview') {
+      if (isset($explode_path[3]) && $explode_path[3] == 'document_overview') {
         $navigation_data[array_keys($navigation_data)[0]][$list['document_overview']]['childClass'] = 'active';
       }
     }
     return [
       '#theme' => 'product_header_navigation',
-      '#navigationData' => array_values($navigation_data)[0],
+      '#navigationData' => isset(array_values($navigation_data)[0]) ? array_values($navigation_data)[0] : '',
       '#attached' => [
         'library' => [
           'odp_blocks/product_header_navigation',
