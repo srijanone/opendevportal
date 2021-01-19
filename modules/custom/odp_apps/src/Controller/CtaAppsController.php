@@ -107,6 +107,7 @@ class CtaAppsController extends ControllerBase {
       $response = new RedirectResponse($url);
       $response->send();
     }
+    return $response;
   }
 
   /**

@@ -122,7 +122,7 @@ class OdpNotificationService {
     ];
 
     // Get the nids which are not as per role.
-    $nid = $this->getNotificationNode($uid, $roles[0], $this->getContentStateByRole($roles[0]));
+    $nid = !empty($roles) ? $this->getNotificationNode($uid, $roles[0], $this->getContentStateByRole($roles[0])) : '';
     if (!$nid) {
       return $notification;
     }

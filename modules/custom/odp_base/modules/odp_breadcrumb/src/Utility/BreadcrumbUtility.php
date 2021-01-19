@@ -199,7 +199,7 @@ class BreadcrumbUtility {
       elseif ($this->programService->checkAccess(TRUE)) {
         $path_info_data = explode('/', $path_info);
         $path_info_data[2] = '[program:program_id]';
-        $path_info = implode($path_info_data, '/');
+        $path_info = implode('/', $path_info_data);
         $menu_breadcrumb = $this->getParentMenuInfo(BreadcrumbInterface::PRODUCT_MANAGER_MENU_NAME, $path_info);
       }
       else {
@@ -211,7 +211,8 @@ class BreadcrumbUtility {
     }
 
     $breadcrumb->addLink(Link::createFromRoute($this->getViewTitle($parameters['view_id'], $parameters['display_id']), '<nolink>'));
-    if ($this->programService->checkAccess(TRUE) && $path_info_data[3] == 'contents' &&
+    if ($this->programService->checkAccess(TRUE) && (!empty($path_info_data)
+      && isset($path_info_data) && $path_info_data[3] == 'contents') &&
       !empty($path_info_data[4])) {
       $breadcrumb->addLink(Link::createFromRoute(BreadcrumbInterface::CONTENT_TYPE_NAME_MAPPING[$path_info_data[4]], '<nolink>'));
     }
@@ -231,7 +232,7 @@ class BreadcrumbUtility {
    *   Return breadcrumb object.
    */
   public function getNodeBreadcrumb($breadcrumb, array $parameters) {
-    $node = is_object($parameters['node']) ? $parameters['node'] : $this->getNode();
+    $node = (isset($parameters['node']) && is_object($parameters['node'])) ? $parameters['node'] : $this->getNode();
     $node_type = $node->bundle();
     $path_index = explode('/', $this->currentPath->getPath());
     $breadcrumb->addLink(Link::fromTextAndUrl('Products', Url::fromUri('base:products')));

@@ -91,7 +91,7 @@ class ApiFilterForm extends FormBase {
       '#type' => 'select',
       '#title' => $this->t('API Version'),
       '#options' => ApiFilterationUtility::getApiVersions($this->nid),
-      '#default_value' => $explode_path[4] ? $explode_path[4] : $vid,
+      '#default_value' => isset($explode_path[4]) ? $explode_path[4] : $vid,
     ];
 
     $form['product_id'] = [

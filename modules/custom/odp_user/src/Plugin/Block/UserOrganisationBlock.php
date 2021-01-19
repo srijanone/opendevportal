@@ -72,18 +72,21 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
    */
   public function build() {
     $current_program = $title = $description = '';
+    $non_member = [];
     $config = $this->getConfiguration();
     $data = $this->org->getUserOrganisations();
     $title = $config['program_title'];
     $description = strip_tags($config['program_description']);
     $program_id = $this->org->getOrgId() ?: 0;
     $user_roles = $this->tempStore->get('odp_user')->get('user_programs');
-    $program_ids = array_keys($user_roles);
-    $non_member = array_diff(array_keys($data), $program_ids);
+    if (!empty($user_roles)) {
+      $program_ids = array_keys($user_roles);
+      $non_member = array_diff(array_keys($data), $program_ids);
+    }
     foreach ($non_member as $value) {
       unset($data[$value]);
     }
-    $current_program = $data[$program_id]['orgName'];
+    $current_program = array_key_exists($program_id, $data) ? $data[$program_id]['orgName'] : '';
 
     return [
       '#theme' => 'user_organisation',

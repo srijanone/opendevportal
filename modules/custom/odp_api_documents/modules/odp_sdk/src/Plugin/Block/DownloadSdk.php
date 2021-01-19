@@ -180,12 +180,13 @@ class DownloadSdk extends BlockBase implements ContainerFactoryPluginInterface {
 
     $items = [];
     foreach ($nodes as $node) {
+      $form = $this->formBuilder->getForm('Drupal\odp_sdk\Form\DownloadSdk', $node->id());
       $items[] = [
         'card_img' => ImageStyle::load('product_image')->buildUrl(
           ProgramUtility::getImageUri($node->get('field_listing_image')->getValue()[0]['target_id'])
         ),
         'card_title' => $node->getTitle(),
-        'card_langs' => $this->renderer->render($this->formBuilder->getForm('Drupal\odp_sdk\Form\DownloadSdk', $node->id())),
+        'card_langs' => $this->renderer->render($form),
       ];
     }
 
