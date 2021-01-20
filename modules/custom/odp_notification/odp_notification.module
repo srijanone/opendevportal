@@ -45,7 +45,7 @@ function odp_notification_form_alter(&$form, FormStateInterface $form_state, $fo
  * Custom form submit hanlder for sending notification.
  */
 function odp_notification_apps_form_submit(array $form,
-FormStateInterface $form_state) {
+  FormStateInterface $form_state) {
   $entity = $form_state->getFormObject()->getEntity();
   // Sending notification while changing the moderation state.
   try {
@@ -79,10 +79,10 @@ function odp_notification_views_query_alter(ViewExecutable $view, $query) {
     $query->addWhere('1', 'notifications_node_field_data.action', 'content_moderated');
     $roles = \Drupal::currentUser()->getRoles(TRUE);
     if (!empty($roles[0])) {
-      $notifi_id = \Drupal::service('odp_notification.notification')->getNotification();
-      $notifi_id = array_column($notifi_id['notificationList'], 'id');
-      $notifi_id = ($notifi_id) ? $notifi_id : [''];
-      $query->addWhere('1', 'notifications_node_field_data.id', $notifi_id, 'IN');
+      $notifications = \Drupal::service('odp_notification.notification')->getNotification();
+      $notification_id = array_column($notifications['notificationList'], 'id');
+      $notification_id = ($notification_id) ? $notification_id : [''];
+      $query->addWhere('1', 'notifications_node_field_data.id', $notification_id, 'IN');
     }
   }
 }
