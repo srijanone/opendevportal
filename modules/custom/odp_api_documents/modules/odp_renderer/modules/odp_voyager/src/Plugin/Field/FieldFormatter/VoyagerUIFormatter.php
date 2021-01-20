@@ -51,6 +51,7 @@ class VoyagerUIFormatter extends FileFormatterBase {
       $voyager_file = file_create_url($file->getFileUri());
       $elements['#attached']['drupalSettings']['odp_voyager']['document'] = $voyager_file;
     }
+
     return $elements;
   }
 
@@ -62,6 +63,7 @@ class VoyagerUIFormatter extends FileFormatterBase {
     $element[] = [
       '#theme' => 'voyager_ui_field_item',
     ];
+
     return $element;
   }
 
