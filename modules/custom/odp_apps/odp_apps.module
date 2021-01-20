@@ -87,10 +87,6 @@ function odp_apps_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['field_api_product']['#access'] = FALSE;
     }
     $form['field_add_to_gallery']['#access'] = FALSE;
-    // Added a custom class for developer node forms.
-    if ($form['#process'][1][0]->getMode() == 'developer') {
-      $form['#attributes']['class'][] = 'developer-form';
-    }
     $form['moderation_state']['#access'] = FALSE;
     unset($form['meta']);
   }

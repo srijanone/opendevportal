@@ -45,7 +45,7 @@ class CtaAppsController extends ControllerBase {
   protected $connection;
 
   /**
-   * Opendevx Logger Service.
+   * OpenDevPortal Logger Service.
    *
    * @var \Drupal\odp_user\Logger\Logger
    */
@@ -87,7 +87,6 @@ class CtaAppsController extends ControllerBase {
       $container->get('tempstore.private'),
       $container->get('database'),
       $container->get('odp_user.logger')
-
     );
   }
 
@@ -107,6 +106,7 @@ class CtaAppsController extends ControllerBase {
       $response = new RedirectResponse($url);
       $response->send();
     }
+
     return $response;
   }
 
@@ -115,9 +115,10 @@ class CtaAppsController extends ControllerBase {
    */
   protected function getGroupIdByNodeId($nid) {
     try {
-      $query = $this->connection->select('group_content_field_data', 'g');
-      $query->addField('g', 'gid');
-      $query->condition('g.entity_id', $nid);
+      $query = $this->connection->select('group_content', 'g');
+      $query->addJoin('INNER', 'group_content_field_data', 'gd', 'g.id = gd.id');
+      $query->addField('gd', 'gid');
+      $query->condition('gd.entity_id', $nid);
       $groups = $query->execute()->fetchAssoc();
 
       return $groups['gid'];
