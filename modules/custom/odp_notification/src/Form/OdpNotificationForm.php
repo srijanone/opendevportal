@@ -66,7 +66,7 @@ class OdpNotificationForm extends ConfigFormBase {
     $config = $this->config('odp_notification.settings');
     $form['workflow_type'] = [
       '#type' => 'fieldset',
-      '#title' => 'Workflow Types',
+      '#title' => $this->t('Workflow Types'),
     ];
     $workflow = [
       'api_approval_workflow',
@@ -85,7 +85,7 @@ class OdpNotificationForm extends ConfigFormBase {
 
     $form['content_type'] = [
       '#type' => 'details',
-      '#title' => 'Content Types',
+      '#title' => $this->t('Content Types'),
       '#open' => FALSE,
     ];
     foreach ($nodeTypes as $nodeType => $nodeTypeData) {
@@ -94,7 +94,7 @@ class OdpNotificationForm extends ConfigFormBase {
     }
     $form['content_type']['workflow_type'] = [
       '#type' => 'checkboxes',
-      '#title' => 'Enable Notification for Content type',
+      '#title' => $this->t('Enable Notification for Content type'),
       '#options' => $option,
       '#default_value' => $config->get('workflow_type'),
     ];
@@ -143,12 +143,12 @@ class OdpNotificationForm extends ConfigFormBase {
        '[entity:url]' : $notification->get($key . '_redirect_link');
       $form[$workflow][$message_key] = [
         '#type'          => 'textfield',
-        '#title'         => $title . ' Notification Message',
+        '#title'         => $this->t($title . ' Notification Message'),
         '#default_value' => $messageValue,
       ];
       $form[$workflow][$key . '_redirect_link'] = [
         '#type'          => 'textfield',
-        '#title'         => $title . ' Notification Message URL',
+        '#title'         => $this->t($title . ' Notification Message URL'),
         '#description'   => $this->t('The url, path for this notification to link. Leave blank if no link is required.'),
         '#default_value' => $redirectValue,
       ];

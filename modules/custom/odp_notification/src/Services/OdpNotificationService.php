@@ -10,7 +10,7 @@ use Drupal\notifications_widget\Services\NotificationsWidgetService;
 use Drupal\odp_user\Logger\Logger;
 
 /**
- * Opendevx Notification Utility class.
+ * OpenDevPortal Notification Utility class.
  */
 class OdpNotificationService {
 
@@ -50,7 +50,7 @@ class OdpNotificationService {
   protected $notificationLogger;
 
   /**
-   * Opendevx Logger Service.
+   * OpenDevPortal Logger Service.
    *
    * @var \Drupal\odp_user\Logger\Logger
    */
@@ -83,14 +83,14 @@ class OdpNotificationService {
       return;
     }
 
-    $opendevxConfig = $this->config->get('odp_notification.settings');
+    $odpConfig = $this->config->get('odp_notification.settings');
 
     // Get the workflow as per bundle.
     $bundle = $entity->bundle();
-    $workflow = $opendevxConfig->get($bundle);
+    $workflow = $odpConfig->get($bundle);
 
     // Return if notification not enable for bundle.
-    if (!in_array($bundle, $opendevxConfig->get('workflow_type')) || empty($workflow)) {
+    if (!in_array($bundle, $odpConfig->get('workflow_type')) || empty($workflow)) {
       return;
     }
 
@@ -101,8 +101,8 @@ class OdpNotificationService {
     $message = [
       'id' => $entity->id(),
       'bundle' => $bundle,
-      'content' => $opendevxConfig->get($workflow . '_' . $moderation_state),
-      'content_link' => $opendevxConfig->get($moderation_state . '_redirect_link'),
+      'content' => $odpConfig->get($workflow . '_' . $moderation_state),
+      'content_link' => $odpConfig->get($moderation_state . '_redirect_link'),
     ];
 
     $this->notificationLogger->logNotification($message, 'content_moderated', $entity);

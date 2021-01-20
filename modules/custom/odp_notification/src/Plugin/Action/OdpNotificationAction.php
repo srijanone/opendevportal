@@ -27,7 +27,7 @@ class OdpNotificationAction extends ViewsBulkOperationsActionBase implements Con
    *
    * @var \Drupal\odp_notification\Services\OdpNotificationService
    */
-  protected $opendevx;
+  protected $odp_notification;
 
   /**
    * {@inheritdoc}
@@ -35,8 +35,9 @@ class OdpNotificationAction extends ViewsBulkOperationsActionBase implements Con
   public function __construct(array $configuration,
     $plugin_id,
     $plugin_definition,
-    OdpNotificationService $opendevx) {
-    $this->opendevx = $opendevx;
+    OdpNotificationService $odp_notification) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->odp_notification = $odp_notification;
   }
 
   /**
@@ -61,8 +62,8 @@ class OdpNotificationAction extends ViewsBulkOperationsActionBase implements Con
     if (!$entity->hasField('nid')) {
       return;
     }
-    // Update the notitfication status.
-    $this->opendevx->updateNotificationStatus($entity, 1);
+    // Update the notification status.
+    $this->odp_notification->updateNotificationStatus($entity, 1);
     return $this->t('Updated');
   }
 

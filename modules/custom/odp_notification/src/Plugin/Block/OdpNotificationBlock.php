@@ -17,7 +17,7 @@ use Drupal\odp_notification\Services\OdpNotificationService;
  *
  * @Block(
  *   id = "odp_notification_widget_block",
- *   admin_label = @Translation("Opendevx Notification block"),
+ *   admin_label = @Translation("OpenDevPortal Notification block"),
  *   category = @Translation("Openddevx Notifications widget")
  * )
  */
