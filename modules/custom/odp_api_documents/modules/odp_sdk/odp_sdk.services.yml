@@ -1,0 +1,4 @@
+services:
+  odp_sk.sdk_utility:
+   class: Drupal\odp_sdk\Utility\GenerateSdk
+   arguments: ['@entity_type.manager', '@odp_user.logger', '@http_client', '@messenger']

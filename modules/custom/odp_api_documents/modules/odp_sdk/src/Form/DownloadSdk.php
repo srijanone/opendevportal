@@ -6,6 +6,8 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\odp_sdk\Utility\GenerateSdk;
 use Drupal\Core\Routing\TrustedRedirectResponse;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a config form of Download SDK.
@@ -15,15 +17,33 @@ class DownloadSdk extends FormBase {
   /**
    * Utility class object.
    *
-   * @var object
+   * @var \Drupal\odp_sdk\Utility\GenerateSdk
    */
   protected $sdk;
 
   /**
+   * OpenDevPortal config Service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * Class constructor.
    */
-  public function __construct() {
-    $this->sdk = new GenerateSdk();
+  public function __construct(ConfigFactoryInterface $config_factory, GenerateSdk $generate_sdk) {
+    $this->configFactory = $config_factory;
+    $this->sdk = $generate_sdk;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('odp_sk.sdk_utility')
+    );
   }
 
   /**
@@ -80,7 +100,7 @@ class DownloadSdk extends FormBase {
    */
   public function sdkApiRequestHandler(array $form, FormStateInterface $form_state) {
     $download_link = $this->sdk->sdkGenerateRequest(
-      \Drupal::config('odp_sdk.settings')->get('generator_url'),
+      $this->configFactory->get('odp_sdk.settings')->get('generator_url'),
       $form_state->getValue('sdk_languages'),
       $this->sdk->getApiSpecFromNode($form_state->getValue('sdk_nid')),
     );
