@@ -74,7 +74,12 @@ class SettingsBaseForm extends ConfigFormBase {
    * @param \Drupal\Core\Utility\Token $token
    *   The token service.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, PathValidatorInterface $path_validator, EntityTypeManagerInterface $entity_type_manager, ModuleHandlerInterface $module_handler, Token $token) {
+  public function __construct(
+    ConfigFactoryInterface $config_factory,
+    PathValidatorInterface $path_validator,
+    EntityTypeManagerInterface $entity_type_manager,
+    ModuleHandlerInterface $module_handler,
+    Token $token) {
     parent::__construct($config_factory);
     $this->pathValidator = $path_validator;
     $this->entityTypeManager = $entity_type_manager;

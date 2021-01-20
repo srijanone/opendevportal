@@ -37,7 +37,11 @@ class UserProgramsBlock extends BlockBase implements ContainerFactoryPluginInter
    * @param \Drupal\odp_user\Organisation $organisation
    *   The plugin organisation class.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, Organisation $organisation) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    Organisation $organisation) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->program = $organisation;
