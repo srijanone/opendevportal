@@ -1,16 +1,16 @@
 odp_apps.add:
   path: '/process/{nid}/add'
   defaults:
-    _controller: '\Drupal\odp_apps\Controller\AppManagementController::addtogallery'
-    _title: ''
+    _controller: '\Drupal\odp_apps\Controller\AppManagementController::addToGallery'
+    _title: 'Add application to gallery'
   requirements:
     _role: 'authenticated'
 
 odp_apps.remove:
   path: '/process/{nid}/remove'
   defaults:
-    _controller: '\Drupal\odp_apps\Controller\AppManagementController::removefromgallery'
-    _title: ''
+    _controller: '\Drupal\odp_apps\Controller\AppManagementController::removeFromGallery'
+    _title: 'Remove application from gallery'
   requirements:
     _role: 'authenticated'
 
@@ -18,6 +18,6 @@ odp_apps.cta_redirection:
   path: '/cta/redirect-url/apps/{pid}'
   defaults:
     _controller: '\Drupal\odp_apps\Controller\CtaAppsController::redirectCtaUrl'
-    _title: ''
+    _title: 'Redirect to add application'
   requirements:
     _permission: 'access content'

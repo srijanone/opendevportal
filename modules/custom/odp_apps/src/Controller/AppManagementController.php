@@ -35,8 +35,9 @@ class AppManagementController extends ControllerBase {
    * @param Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   EntityTypeManagerInterface.
    */
-  public function __construct(RequestStack $request_stack,
-  EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(
+    RequestStack $request_stack,
+    EntityTypeManagerInterface $entity_type_manager) {
     $this->entityTypeManager = $entity_type_manager;
     $this->requestStack = $request_stack;
   }
@@ -54,31 +55,33 @@ class AppManagementController extends ControllerBase {
   /**
    * This function is used to set the gallery field value in applications.
    */
-  public function addtogallery() {
-    $node_title = $this->updategalleryfield(1);
+  public function addToGallery() {
+    $node_title = $this->updateGalleryField(1);
     $response = new RedirectResponse($this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER'));
     $response->send();
+    $this->messenger()->addMessage($this->t('Application <b>@title</b> is added to the gallery.',
+     ['@title' => $node_title]));
 
-    $this->messenger()->addMessage($this->t('Application <b>@title</b> is added to the gallery.', ['@title' => $node_title]));
     return $response;
   }
 
   /**
    * This function is used to unset the gallery field value in applications.
    */
-  public function removefromgallery() {
-    $node_title = $this->updategalleryfield(0);
+  public function removeFromGallery() {
+    $node_title = $this->updateGalleryField(0);
     $response = new RedirectResponse($this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER'));
     $response->send();
+    $this->messenger()->addMessage($this->t('Application <b>@title</b> is removed from the gallery.',
+     ['@title' => $node_title]));
 
-    $this->messenger()->addMessage($this->t('Application <b>@title</b> is removed from the gallery.', ['@title' => $node_title]));
     return $response;
   }
 
   /**
    * Update the gallery field data.
    */
-  private function updategalleryfield($value) {
+  private function updateGalleryField($value) {
     $path = $this->requestStack->getCurrentRequest()->getPathInfo();
     if (strpos($path, '/') !== FALSE) {
       $path_index = explode('/', $path);
