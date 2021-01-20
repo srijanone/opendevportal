@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the notification module module.
+ * Install, update and uninstall functions for the subscription module.
  */
 
 use Drupal\Core\Url;
@@ -12,7 +12,7 @@ use Drupal\Core\Url;
  */
 function odp_subscription_schema() {
   $schema['odp_subscription'] = [
-    'description' => 'Create table used to store data of each site notifications of users',
+    'description' => 'Create table used to store data of each site subscription of users',
     'fields' => [
       'id' => [
         'type' => 'serial',

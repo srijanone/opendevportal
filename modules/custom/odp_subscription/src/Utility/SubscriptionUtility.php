@@ -2,10 +2,13 @@
 
 namespace Drupal\odp_subscription\Utility;
 
-use Drupal\user\Entity\User;
+use Drupal\Core\Database\Connection;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Utility\Token;
 use Drupal\odp_subscription\Form\SubscriptionSettings;
 use Drupal\Core\Mail\MailFormatHelper;
-use Drupal\node\Entity\Node;
 use Drupal\odp_subscription\Services\SubscriptionQueue;
 use Drupal\odp_subscription\SubscriptionContent;
 
@@ -57,15 +60,29 @@ class SubscriptionUtility {
   protected $subQueue;
 
   /**
+   * Object EntityTypeManager.
+   *
+   * @var Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Pass the dependency to the object constructor.
    */
-  public function __construct() {
-    $this->database      = \Drupal::service('database');
-    $this->currentUser   = \Drupal::service('current_user');
+  public function __construct(
+    Connection $connection,
+    AccountInterface $current_user,
+    Token $token,
+    MailManagerInterface $mailManager,
+    SubscriptionQueue $subQueue,
+    EntityTypeManagerInterface $entity_type_manager) {
+    $this->database = $connection;
+    $this->currentUser = $current_user;
     $this->configFactory = \Drupal::service('config.factory')->getEditable(SubscriptionSettings::MODULE_KEY . '.settings');
-    $this->token         = \Drupal::service('token');
-    $this->subQueue      = \Drupal::service('odp_subscription.subscription');
-    $this->mailManager   = \Drupal::service('plugin.manager.mail');
+    $this->token = $token;
+    $this->subQueue = $subQueue;
+    $this->mailManager = $mailManager;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -107,8 +124,8 @@ class SubscriptionUtility {
     if (!$nids) {
       return FALSE;
     }
-    $nodes = Node::loadMultiple($nids);
-    $entity_nodes = Node::loadMultiple($entity_ids);
+    $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
+    $entity_nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($entity_ids);
     // Start processing DB records.
     foreach ($uresult as $index => $userrow) {
       // Get actual subscribed product NID.
@@ -119,7 +136,7 @@ class SubscriptionUtility {
       }
       // Decode the serialized user IDs.
       $user_ids = unserialize($userrow['subscribers']);
-      $users = User::loadMultiple($user_ids);
+      $users = $this->entityTypeManager->getStorage('user')->loadMultiple($user_ids);
       // Process users one by one.
       foreach ($user_ids as $user_id) {
         $userobj = $users[$user_id];
@@ -189,14 +206,14 @@ class SubscriptionUtility {
     $subject = $this->configFactory->get('mail_subject');
     $body = $this->configFactory->get('mail_body');
     // Here entity is the referring content and node is the reference.
-    $subject = \Drupal::service('token')->replace($subject, [
-      'user'       => $user,
-      'node'       => $entity,
+    $subject = $this->token->replace($subject, [
+      'user' => $user,
+      'node' => $entity,
       'dvp-product' => $node,
     ]);
-    $body = \Drupal::service('token')->replace($body, [
-      'user'    => $user,
-      'node'    => $entity,
+    $body = $this->token->replace($body, [
+      'user' => $user,
+      'node' => $entity,
       'dvp-product' => $node,
     ]);
 
