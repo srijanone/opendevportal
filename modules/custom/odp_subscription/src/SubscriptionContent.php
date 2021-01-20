@@ -2,8 +2,6 @@
 
 namespace Drupal\odp_subscription;
 
-use Drupal\Core\Database\Connection;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\user\Entity\User;
 
 /**
@@ -31,21 +29,11 @@ class SubscriptionContent implements SubscriptionContentInterface {
   protected $connection;
 
   /**
-   * Object EntityTypeManager.
-   *
-   * @var Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
    * Class constructor.
    */
-  public function __construct(
-    Connection $connection,
-    EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct() {
     $this->account = User::load(\Drupal::currentUser()->id());
-    $this->connection = $connection;
-    $this->entityTypeManager = $entity_type_manager;
+    $this->connection = \Drupal::service('database');
   }
 
   /**
@@ -113,7 +101,7 @@ class SubscriptionContent implements SubscriptionContentInterface {
     $user = $this->account;
 
     if ($uid && $uid != $user->id()) {
-      $user = $this->entityTypeManager->getStorage('user')->load($uid);
+      $user = User::load($uid);
     }
     if ($user->hasField(self::SUBSCRIPTION_FIELD_NAME)) {
       $subscribed_products = $user->get(self::SUBSCRIPTION_FIELD_NAME)->getValue();
@@ -135,7 +123,7 @@ class SubscriptionContent implements SubscriptionContentInterface {
     $subscribed_products = $this->getSubscribedContent($account->id());
     return (empty($subscribed_products) ||
       !in_array($nid,
-      array_column($subscribed_products, 'target_id')))
+        array_column($subscribed_products, 'target_id')))
       ? $subscribed_products : TRUE;
   }
 
