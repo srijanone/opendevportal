@@ -20,7 +20,7 @@ use Drupal\odp_subscription\Utility\SubscriptionUtility;
  * Implements hook_cron().
  */
 function odp_subscription_cron() {
-  $utility = new SubscriptionUtility();
+  $utility = \Drupal::service('odp_subscription.subscription_utility');
 
   // Developer Portal Subscription Configuration.
   $config = \Drupal::config(SubscriptionSettings::MODULE_KEY . '.settings');

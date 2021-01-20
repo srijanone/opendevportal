@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\odp_subscription\Utility;
+namespace Drupal\odp_subscription\Services;
 
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -9,7 +9,6 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Utility\Token;
 use Drupal\odp_subscription\Form\SubscriptionSettings;
 use Drupal\Core\Mail\MailFormatHelper;
-use Drupal\odp_subscription\Services\SubscriptionQueue;
 use Drupal\odp_subscription\SubscriptionContent;
 
 /**
