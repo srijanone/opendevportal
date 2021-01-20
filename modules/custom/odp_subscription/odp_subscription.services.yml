@@ -1,4 +1,8 @@
 services:
   odp_subscription.subscription:
-   class: Drupal\odp_subscription\Services\SubscriptionQueue
-   arguments: ['@database', '@request_stack', '@config.factory', '@logger.factory', '@datetime.time', '@current_route_match']
+    class: Drupal\odp_subscription\Services\SubscriptionQueue
+    arguments: ['@database', '@request_stack', '@config.factory', '@logger.factory', '@datetime.time', '@current_route_match']
+
+  odp_subscription.subscription_utility:
+    class: Drupal\odp_subscription\Services\SubscriptionUtility
+    arguments: ['@database', '@current_user', '@token', '@plugin.manager.mail', '@odp_subscription.subscription', '@entity_type.manager']
