@@ -2,6 +2,8 @@
 
 namespace Drupal\odp_subscription;
 
+use Drupal\Core\Database\Connection;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\user\Entity\User;
 
 /**
@@ -29,11 +31,21 @@ class SubscriptionContent implements SubscriptionContentInterface {
   protected $connection;
 
   /**
+   * Object EntityTypeManager.
+   *
+   * @var Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Class constructor.
    */
-  public function __construct() {
+  public function __construct(
+    Connection $connection,
+    EntityTypeManagerInterface $entity_type_manager) {
     $this->account = User::load(\Drupal::currentUser()->id());
-    $this->connection = \Drupal::service('database');
+    $this->connection = $connection;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -101,7 +113,7 @@ class SubscriptionContent implements SubscriptionContentInterface {
     $user = $this->account;
 
     if ($uid && $uid != $user->id()) {
-      $user = User::load($uid);
+      $user = $this->entityTypeManager->getStorage('user')->load($uid);
     }
     if ($user->hasField(self::SUBSCRIPTION_FIELD_NAME)) {
       $subscribed_products = $user->get(self::SUBSCRIPTION_FIELD_NAME)->getValue();

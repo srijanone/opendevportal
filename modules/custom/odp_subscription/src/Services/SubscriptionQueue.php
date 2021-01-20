@@ -20,7 +20,6 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
 
   const SUBSCRIPTION_QUEUED = 0;
   const SUBSCRIPTION_SENT = 1;
-  const SUBSCRIPTION_FAILURE = 2;
   const TABLE_NAME = 'odp_subscription';
 
   /**
@@ -244,13 +243,13 @@ class SubscriptionQueue implements SubscriptionQueueInterface {
       $users = $this->getSubsribedUsers($product_id);
       if ($users) {
         $data[$product_id] = [
-          'entity_id'   => (int) $entity_id,
-          'bundle'      => $bundle,
-          'nid'         => $product_id,
+          'entity_id' => (int) $entity_id,
+          'bundle' => $bundle,
+          'nid' => $product_id,
           'subscribers' => serialize($users),
-          'action'      => $action,
-          'status'      => self::SUBSCRIPTION_QUEUED,
-          'created'     => $this->time->getRequestTime(),
+          'action' => $action,
+          'status' => self::SUBSCRIPTION_QUEUED,
+          'created' => $this->time->getRequestTime(),
         ];
       }
     }
