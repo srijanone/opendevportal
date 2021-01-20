@@ -48,7 +48,12 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
    * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store
    *   The TempStore factory class.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, Organisation $organisation, PrivateTempStoreFactory $temp_store) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    Organisation $organisation,
+    PrivateTempStoreFactory $temp_store) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->org = $organisation;
     $this->tempStore = $temp_store;
@@ -71,7 +76,6 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
    * {@inheritdoc}
    */
   public function build() {
-    $current_program = $title = $description = '';
     $non_member = [];
     $config = $this->getConfiguration();
     $data = $this->org->getUserOrganisations();
@@ -91,8 +95,8 @@ class UserOrganisationBlock extends BlockBase implements ContainerFactoryPluginI
     return [
       '#theme' => 'user_organisation',
       '#orgData' => $data,
-      '#orgTitle' => $title,
-      '#orgDescription' => $description,
+      '#orgTitle' => $title ? $title : '',
+      '#orgDescription' => $description ? $description : '',
       '#currentOrganisation' => $current_program,
     ];
   }

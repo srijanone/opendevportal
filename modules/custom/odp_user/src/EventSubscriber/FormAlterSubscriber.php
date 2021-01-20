@@ -38,7 +38,10 @@ class FormAlterSubscriber implements EventSubscriberInterface {
   /**
    * Pass the dependency to the object constructor.
    */
-  public function __construct(RequestStack $request_stack, EntityTypeManagerInterface $entity_type_manager, Organisation $program) {
+  public function __construct(
+    RequestStack $request_stack,
+    EntityTypeManagerInterface $entity_type_manager,
+    Organisation $program) {
     $this->currentPath = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
     $this->program = $program;
