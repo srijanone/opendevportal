@@ -58,6 +58,7 @@ you can use OpenDevPortal to engineer a bespoke developer experience.
 ```
 - PHP >= 7.3
 - MySQL >= 5.7
+- Composer = 1.*
 ```
 
 OpenDevPortal utilizes composer to manage its dependencies. So, before using OpenDevPortal,
@@ -65,8 +66,8 @@ make sure you have Composer installed on your machine.
 
 ## Installation from source ##
 ```
-git clone git@github.com:srijanone/opendevportal.git
-cd opendevportal
+git clone git@github.com:srijanone/opendevportal-project.git
+cd opendevportal-project
 composer install
 ```
 
@@ -144,12 +145,12 @@ time php -d memory_limit=-1 ./vendor/bin/drush si opendevportal  --db-url='mysql
 
 ---
 
-[Request for Demo](https://www.opendevportal.io/)
+[Request for Demo](https://srijan.net/contact)
 
 ## Contribution
 
-- Explore various features of OpenDevPortal.
-- In case of bug please create issue [here](https://github.com/srijanone/opendevportal/issues)
+- Explore various features of [OpenDevPortal](https://www.drupal.org/project/opendevportal).
+- In case of bug please create issue [here](https://www.drupal.org/node/add/project-issue/opendevportal)
 
 ---
 
