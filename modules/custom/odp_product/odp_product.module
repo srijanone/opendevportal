@@ -12,7 +12,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\cache\CachePluginBase;
 use Drupal\Core\Field\FieldFilteredMarkup;
 use Drupal\odp_product\ContentInterface;
-use Drupal\node\Entity\NodeType;
 
 /**
  * Implements hook_theme().
@@ -86,7 +85,7 @@ function odp_product_form_alter(&$form, FormStateInterface $form_state, $form_id
   // Change label on add/edit form for product related content type.
   if (in_array($form_id, ContentInterface::FORM_IDS)) {
     $type = $form_state->getFormObject()->getEntity()->bundle();
-    $label = NodeType::load($type)->label();
+    $label = \Drupal::entityTypeManager()->getStorage('node_type')->load($type)->label();
     $summary = $form['body']['widget'][0]['summary']['#title']->getUntranslatedString();
     $form['body']['widget'][0]['summary']['#title'] = t($label . ' ' . $summary);
   }
