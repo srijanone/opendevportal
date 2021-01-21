@@ -4,4 +4,4 @@ odp_base.admin_index:
     _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
     _title: 'OpenDevPortal Configurations'
   requirements:
-    _permission: 'access administration pages'
+    _permission: 'administer site configuration'

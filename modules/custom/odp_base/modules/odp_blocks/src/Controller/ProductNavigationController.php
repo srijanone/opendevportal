@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\odp_blocks\ApiProducts;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\Config\ConfigFactoryInterface;
 
 /**
  * Provides class ProductNavigationController.
@@ -28,16 +29,29 @@ class ProductNavigationController extends ControllerBase {
   protected $currentPath;
 
   /**
+   * OpenDevPortal config Service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * ProductNavigationController constructor.
    *
    * @param \Drupal\odp_blocks\ApiProducts $product
    *   The plugin api product class.
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    *   The plugin request stack service.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The plugin request stack service.
    */
-  public function __construct(ApiProducts $product, RequestStack $request_stack) {
+  public function __construct(
+    ApiProducts $product,
+    RequestStack $request_stack,
+    ConfigFactoryInterface $config_factory) {
     $this->product = $product;
     $this->currentPath = $request_stack;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -46,7 +60,8 @@ class ProductNavigationController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('odp_blocks.products'),
-      $container->get('request_stack')
+      $container->get('request_stack'),
+      $container->get('config.factory')
     );
   }
 
@@ -57,7 +72,7 @@ class ProductNavigationController extends ControllerBase {
     $path = $this->currentPath->getCurrentRequest()->getPathInfo();
     $explode_path = explode('/', $path);
     $nid = (int) $explode_path[3];
-    $config = \Drupal::config('block.block.product_api');
+    $config = $this->configFactory->get('block.block.product_api');
     $navigation = $config->getRawData()['settings']['dvp_sidebar_navigation'];
     $list = [];
     if (!empty($navigation)) {

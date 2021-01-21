@@ -3,11 +3,14 @@
 namespace Drupal\odp_blocks\Utility;
 
 use Drupal\views\Views;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Purpose of this class is to get results for dynamic listings of block.
  */
 class ListingBlockUtility {
+
+  use StringTranslationTrait;
 
   /**
    * Get view contents.
@@ -67,7 +70,7 @@ class ListingBlockUtility {
       'relationship' => 'none',
       'group_type' => 'none',
       'admin_label' => '',
-      'content' => '<a href = ' . $path . '>' . t('More Items') . '</a>',
+      'content' => '<a href = ' . $path . '>' . $this->t('More Items') . '</a>',
       'empty' => TRUE,
       'tokenize' => FALSE,
       'plugin_id' => 'text_custom',

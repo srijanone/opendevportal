@@ -99,7 +99,7 @@ class ApiProducts {
       return $output;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-block');
+      $logger = $this->getLogger('odp-block');
       $logger->error($e->getMessage());
     }
   }
@@ -122,7 +122,7 @@ class ApiProducts {
       return $result;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-block');
+      $logger = $this->getLogger('odp-block');
       $logger->error($e->getMessage());
     }
   }
