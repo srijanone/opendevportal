@@ -9,26 +9,11 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\odp_product\ContentInterface;
 use Drupal\odp_user\ProgramInterface;
 use Drupal\block\Entity\Block;
-use Drupal\odp_blocks\ApiProducts;
 
 /**
  * Class to extend and provide the features of developer portal.
  */
 class BlockUtility {
-
-  /**
-   * The API product block definition.
-   *
-   * @var \Drupal\odp_blocks\ApiProducts
-   */
-  protected $apiProduct;
-
-  /**
-   * Pass the dependency to the object constructor.
-   */
-  public function __construct(ApiProducts $api_product) {
-    $this->apiProduct = $api_product;
-  }
 
   /**
    * Prepare dashboard navigation block.
@@ -44,7 +29,7 @@ class BlockUtility {
   public static function prepareDashboardNavBlock(array $bundles, $pid) {
     $output = [];
     // API Product service.
-    $product_title = $this->apiProduct->setProductId($pid)->getTitle();
+    $product_title = \Drupal::service('odp_blocks.products')->setProductId($pid)->getTitle();
     foreach ($bundles as $key => $value) {
       $program_id = \Drupal::service('odp_user.organisation')->getOrgId();
       $label = $value['label'];
