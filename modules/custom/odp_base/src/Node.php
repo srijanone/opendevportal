@@ -81,6 +81,7 @@ class Node {
       $query->fields('n', ['nid'])
         ->condition('n.nid', $this->nodeId, '=')
         ->range(0, 1);
+
       $result = $query->execute()->fetchAll();
       if (empty($result)) {
         return FALSE;
@@ -89,7 +90,7 @@ class Node {
       return TRUE;
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-node-exists');
+      $logger = $this->getLogger('odp-base');
       $logger->error($e->getMessage());
     }
   }
@@ -103,13 +104,14 @@ class Node {
       $query = $this->connection->select('node_field_data', 'n');
       $query->addField('n', 'title');
       $query->condition('n.nid', $this->nodeId, '=');
+
       $result = $query->execute()->fetchField();
       if (!empty($result)) {
         return $result;
       }
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('developer-portal-node-title');
+      $logger = $this->getLogger('odp-base');
       $logger->error($e->getMessage());
     }
   }

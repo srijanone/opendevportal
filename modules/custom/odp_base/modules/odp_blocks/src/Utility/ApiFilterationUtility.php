@@ -2,29 +2,10 @@
 
 namespace Drupal\odp_blocks\Utility;
 
-use Drupal\Core\Database\Connection;
-use Drupal\Core\Logger\LoggerChannelTrait;
-
 /**
  * Class to extend and provide the features of developer portal.
  */
 class ApiFilterationUtility {
-
-  use LoggerChannelTrait;
-
-  /**
-   * The database connection object.
-   *
-   * @var \Drupal\Core\Database\Connection
-   */
-  protected $connection;
-
-  /**
-   * Pass the dependency to the object constructor.
-   */
-  public function __construct(Connection $connection) {
-    $this->connection = $connection;
-  }
 
   /**
    * {@inheritdoc}
@@ -32,7 +13,8 @@ class ApiFilterationUtility {
   public static function getApiEnvironemt($parent) {
     $result = [];
     try {
-      $query = $this->connection->select('taxonomy_term_field_data', 't');
+      $query = \Drupal::database();
+      $query = $query->select('taxonomy_term_field_data', 't');
       $query->addField('t', 'name');
       $query->addField('t', 'tid');
       $query->addJoin('left', 'node_revision__field_environment',
@@ -48,8 +30,6 @@ class ApiFilterationUtility {
       return array_unique($result);
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('odp-block');
-      $logger->error($e->getMessage());
     }
   }
 
@@ -58,7 +38,8 @@ class ApiFilterationUtility {
    */
   public static function getApiNames($environment_id, $parent) {
     try {
-      $query = $this->connection->select('node_field_revision', 'n');
+      $query = \Drupal::database();
+      $query = $query->select('node_field_revision', 'n');
       $query->addField('n', 'nid');
       $query->addField('n', 'title');
       $query->addJoin('left', 'node_revision__field_api_specifications',
@@ -73,8 +54,6 @@ class ApiFilterationUtility {
       return array_unique($names);
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('odp-block');
-      $logger->error($e->getMessage());
     }
   }
 
@@ -83,7 +62,8 @@ class ApiFilterationUtility {
    */
   public static function getApiVersions($version_id) {
     try {
-      $query = $this->connection->select('taxonomy_term_field_data', 't');
+      $query = \Drupal::database();
+      $query = $query->select('taxonomy_term_field_data', 't');
       $query->addField('t', 'tid');
       $query->addField('t', 'name');
       $query->addField('nf', 'revision_id');
@@ -97,8 +77,6 @@ class ApiFilterationUtility {
       return array_unique($result);
     }
     catch (\Exception $e) {
-      $logger = $this->getLogger('odp-block');
-      $logger->error($e->getMessage());
     }
   }
 
