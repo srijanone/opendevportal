@@ -62,7 +62,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/dashboard\/appmanager\/apps",
+            "uri": "internal:\/dashboard\/appmanager\/apps?moderation_state=All",
             "title": "",
             "options": []
         }
