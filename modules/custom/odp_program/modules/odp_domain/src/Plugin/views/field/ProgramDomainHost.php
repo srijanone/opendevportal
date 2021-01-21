@@ -24,7 +24,6 @@ class ProgramDomainHost extends FieldPluginBase {
    */
   public function render(ResultRow $values) {
     if (!empty($values)) {
-      $label = '';
       $gid = $values->_entity->get('id')->value;
       $program_domain_url = \Drupal::service('path.alias_manager')->getAliasByPath("/group/$gid");
       $program_target = "_self";
