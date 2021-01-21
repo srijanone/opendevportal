@@ -2,9 +2,6 @@
 
 namespace Drupal\odp_program\Utility;
 
-use Drupal\media\Entity\Media;
-use Drupal\file\Entity\File;
-
 /**
  * ProgramUtility class to handle program functionalities.
  */
@@ -39,9 +36,9 @@ class ProgramUtility {
    *   File Uri.
    */
   public static function getImageUri($mid) {
-    $media = Media::load($mid);
+    $media = \Drupal::entityTypeManager()->getStorage('media')->load($mid);
     $fid = $media->field_media_image->target_id;
-    $file = File::load($fid);
+    $file = \Drupal::entityTypeManager()->getStorage('file')->load($fid);
     if ($file) {
       return $file->getFileUri();
     }
