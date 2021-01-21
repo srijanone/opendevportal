@@ -65,11 +65,12 @@ class CtaController extends ControllerBase {
    * @param \Drupal\odp_user\Logger\Logger $logger
    *   The logger service.
    */
-  public function __construct(RequestStack $request_stack,
-  AccountInterface $account,
-  PrivateTempStoreFactory $temp_store,
-  Connection $connection,
-  Logger $logger) {
+  public function __construct(
+    RequestStack $request_stack,
+    AccountInterface $account,
+    PrivateTempStoreFactory $temp_store,
+    Connection $connection,
+    Logger $logger) {
     $this->currentPath = $request_stack;
     $this->account = $account;
     $this->storePath = $temp_store->get('odp_block');

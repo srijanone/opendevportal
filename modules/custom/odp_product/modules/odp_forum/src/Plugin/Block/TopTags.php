@@ -36,7 +36,11 @@ class TopTags extends BlockBase implements ContainerFactoryPluginInterface {
    * @param Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity object.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    EntityTypeManagerInterface $entityTypeManager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityTypeManager = $entityTypeManager;
   }

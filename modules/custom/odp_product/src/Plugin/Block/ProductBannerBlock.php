@@ -58,12 +58,13 @@ class ProductBannerBlock extends BlockBase implements ContainerFactoryPluginInte
    * @param \Drupal\odp_product\Paragraph $paragraph
    *   The plugin paragraph service.
    */
-  public function __construct(array $configuration,
-  $plugin_id,
-  $plugin_definition,
-  RequestStack $request_stack,
-  EntityTypeManagerInterface $entity_type_manager,
-  Paragraph $paragraph) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    RequestStack $request_stack,
+    EntityTypeManagerInterface $entity_type_manager,
+    Paragraph $paragraph) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentPath = $request_stack;
     $this->entityTypeManager = $entity_type_manager;
