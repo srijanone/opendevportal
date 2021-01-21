@@ -118,25 +118,3 @@ function odp_user_redirect_new_registered_user(&$form, FormStateInterface $form_
   $response = new RedirectResponse($url->toString());
   $response->send();
 }
-
-/**
- * Implements hook_menu_local_tasks_alter().
- *
- * @// TODO: will take out these code in the respective module later.
- */
-function odp_user_menu_local_tasks_alter(&$data, $route_name) {
-  switch ($route_name) {
-    case 'domain_group.domain_group_settings_form':
-    case 'entity.group.canonical':
-    case 'entity.group.edit_form':
-    case 'entity.group.delete_form':
-    case 'layout_builder.overrides.group.view':
-    case 'entity.node.canonical':
-      $user_roles = \Drupal::service('odp_login_redirect.redirect_service')->getUserRoles();
-      if (in_array('admin', $user_roles['system_roles']) ||
-       in_array('anonymous', $user_roles['system_roles'])) {
-        unset($data['tabs'][0]);
-      }
-      break;
-  }
-}

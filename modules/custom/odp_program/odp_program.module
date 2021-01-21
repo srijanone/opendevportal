@@ -66,3 +66,21 @@ function odp_program_local_tasks_alter(&$local_tasks) {
     unset($local_tasks['group.content']);
   }
 }
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function odp_program_menu_local_tasks_alter(&$data, $route_name) {
+  switch ($route_name) {
+    case 'domain_group.domain_group_settings_form':
+    case 'entity.group.canonical':
+    case 'entity.group.edit_form':
+    case 'entity.group.delete_form':
+    case 'layout_builder.overrides.group.view':
+      $user_roles = \Drupal::service('odp_login_redirect.redirect_service')->getUserRoles();
+      if (in_array('admin', $user_roles['system_roles'])) {
+        unset($data['tabs'][0]);
+      }
+      break;
+  }
+}
