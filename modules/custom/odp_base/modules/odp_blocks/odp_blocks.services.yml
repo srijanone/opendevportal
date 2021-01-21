@@ -2,3 +2,11 @@ services:
   odp_blocks.products:
    class: Drupal\odp_blocks\ApiProducts
    arguments: ['@database', '@current_user']
+
+  odp_blocks.api_filter_block:
+   class: Drupal\odp_blocks\Utility\ApiFilterationUtility
+   arguments: ['@database']
+
+  odp_blocks.api_block_utility:
+    class: Drupal\odp_blocks\Utility\BlockUtility
+    arguments: ['@odp_blocks.products']

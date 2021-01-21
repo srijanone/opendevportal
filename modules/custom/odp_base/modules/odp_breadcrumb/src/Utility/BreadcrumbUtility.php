@@ -13,11 +13,14 @@ use Drupal\odp_breadcrumb\BreadcrumbInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\odp_user\Organisation as Program;
 use Drupal\Core\Entity\EntityRepositoryInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Class to extend and provide the features of customizing breadcrumbs.
  */
 class BreadcrumbUtility {
+
+  use StringTranslationTrait;
 
   /**
    * The entity type manager.
@@ -251,9 +254,9 @@ class BreadcrumbUtility {
           $breadcrumb->addLink(Link::createFromRoute(BreadcrumbInterface::CONTENT_TYPE_NAME_MAPPING[$path_index[3]], '<nolink>'));
         }
         elseif ($path_index[1] == 'subscribe') {
-          $link_title = t('Subscribe');
+          $link_title = $this->t('Subscribe');
           if ($this->requestStack->getCurrentRequest()->get('op') == 'remove') {
-            $link_title = t('Unsubscribe');
+            $link_title = $this->t('Unsubscribe');
           }
           $breadcrumb->addLink(Link::createFromRoute($link_title, '<nolink>'));
         }

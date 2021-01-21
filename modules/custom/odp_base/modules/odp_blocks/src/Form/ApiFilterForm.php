@@ -24,6 +24,22 @@ class ApiFilterForm extends FormBase {
   protected $currentPath;
 
   /**
+   * Parent variable.
+   *
+   * @var int
+   */
+
+  protected $parent;
+
+  /**
+   * The node id variable.
+   *
+   * @var int
+   */
+
+  protected $nid;
+
+  /**
    * ApiFilterForm constructor.
    *
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
