@@ -189,8 +189,8 @@ class BlockUtility {
 
       case 'user_organisation_block':
         $user_roles = \Drupal::service('tempstore.private')->get('odp_user')->get('user_programs');
-        $roles = !empty($user_roles) ? array_unique(array_intersect($user_roles, ProgramInterface::PM_ROLES)) : '';
-        if (!empty($roles) && count($roles) < 1) {
+        $roles = array_unique(array_intersect($user_roles, ProgramInterface::PM_ROLES));
+        if (count($roles) < 1) {
           return AccessResult::forbiddenIf(TRUE)->addCacheableDependency($block);
         }
         break;
