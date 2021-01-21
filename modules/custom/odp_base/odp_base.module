@@ -19,4 +19,10 @@ function odp_base_menu_local_tasks_alter(&$data, $route_name) {
       unset($data['tabs'][0]);
     }
   }
+
+  // Hide local tabs for anonymous user from node pages.
+  $user_roles = \Drupal::service('odp_login_redirect.redirect_service')->getUserRoles();
+  if (in_array($route_name, ['entity.node.canonical']) && in_array('anonymous', $user_roles['system_roles'])) {
+    unset($data['tabs'][0]);
+  }
 }

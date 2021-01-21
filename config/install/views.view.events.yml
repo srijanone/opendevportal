@@ -1653,7 +1653,20 @@ display:
             'group_node:use_cases': '0'
           entity_type: node
           plugin_id: group_content_to_entity_reverse
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'No event found!'
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
